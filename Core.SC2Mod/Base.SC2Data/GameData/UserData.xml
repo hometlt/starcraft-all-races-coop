@@ -2887,6 +2887,7 @@
             <EditorColumn value="11"/>
         </Fields>
         <Instances Id="[Default]"/>
+        <Instances Id="Amon"/>
         <Instances Id="CommanderPrestigeRaynor">
             <GameLink GameLink="ButtonPrestigeCommanderRaynor">
                 <Field Id="Icon"/>
@@ -3561,7 +3562,109 @@
                 <Field Id="Icon"/>
             </GameLink>
         </Instances>
-        <Instances Id="Amon"/>
+        <Instances Id="CommanderPrestigeDragonBio">
+            <GameLink GameLink="CommanderPrestigeDragonBio">
+                <Field Id="PrimaryUpgrade"/>
+            </GameLink>
+        </Instances>
+        <Instances Id="CommanderPrestigeDragonMech">
+            <GameLink GameLink="CommanderPrestigeDragonMech">
+                <Field Id="PrimaryUpgrade"/>
+            </GameLink>
+        </Instances>
+        <Instances Id="CommanderPrestigeDragonAir">
+            <GameLink GameLink="CommanderPrestigeDragonAir">
+                <Field Id="PrimaryUpgrade"/>
+            </GameLink>
+        </Instances>
+        <Instances Id="CommanderPrestigeXayidBio">
+            <GameLink GameLink="CommanderPrestigeXayidBio">
+                <Field Id="PrimaryUpgrade"/>
+            </GameLink>
+        </Instances>
+        <Instances Id="CommanderPrestigeXayidMech">
+            <GameLink GameLink="CommanderPrestigeXayidMech">
+                <Field Id="PrimaryUpgrade"/>
+            </GameLink>
+        </Instances>
+        <Instances Id="CommanderPrestigeXayidAir">
+            <GameLink GameLink="CommanderPrestigeXayidAir">
+                <Field Id="PrimaryUpgrade"/>
+            </GameLink>
+        </Instances>
+        <Instances Id="CommanderPrestigeKeironBio">
+            <GameLink GameLink="CommanderPrestigeKeironBio">
+                <Field Id="PrimaryUpgrade"/>
+            </GameLink>
+        </Instances>
+        <Instances Id="CommanderPrestigeKeironMech">
+            <GameLink GameLink="CommanderPrestigeKeironMech">
+                <Field Id="PrimaryUpgrade"/>
+            </GameLink>
+        </Instances>
+        <Instances Id="CommanderPrestigeKeironAir">
+            <GameLink GameLink="CommanderPrestigeKeironAir">
+                <Field Id="PrimaryUpgrade"/>
+            </GameLink>
+        </Instances>
+        <Instances Id="CommanderPrestigeGenetronBio">
+            <GameLink GameLink="CommanderPrestigeGenetronBio">
+                <Field Id="PrimaryUpgrade"/>
+            </GameLink>
+        </Instances>
+        <Instances Id="CommanderPrestigeGenetronMech">
+            <GameLink GameLink="CommanderPrestigeGenetronMech">
+                <Field Id="PrimaryUpgrade"/>
+            </GameLink>
+        </Instances>
+        <Instances Id="CommanderPrestigeGenetronAir">
+            <GameLink GameLink="CommanderPrestigeGenetronAir">
+                <Field Id="PrimaryUpgrade"/>
+            </GameLink>
+        </Instances>
+        <Instances Id="CommanderPrestigeNetworkBio">
+            <GameLink GameLink="CommanderPrestigeNetworkBio">
+                <Field Id="PrimaryUpgrade"/>
+            </GameLink>
+        </Instances>
+        <Instances Id="CommanderPrestigeNetworkMech">
+            <GameLink GameLink="CommanderPrestigeNetworkMech">
+                <Field Id="PrimaryUpgrade"/>
+            </GameLink>
+        </Instances>
+        <Instances Id="CommanderPrestigeNetworkAir">
+            <GameLink GameLink="CommanderPrestigeNetworkAir">
+                <Field Id="PrimaryUpgrade"/>
+            </GameLink>
+        </Instances>
+        <Instances Id="CommanderPrestigeUEDBio">
+            <GameLink GameLink="CommanderPrestigeUEDBio">
+                <Field Id="PrimaryUpgrade"/>
+            </GameLink>
+        </Instances>
+        <Instances Id="CommanderPrestigeUEDMech">
+            <GameLink GameLink="CommanderPrestigeUEDMech">
+                <Field Id="PrimaryUpgrade"/>
+            </GameLink>
+        </Instances>
+        <Instances Id="CommanderPrestigeUEDAir">
+            <GameLink GameLink="CommanderPrestigeUEDAir">
+                <Field Id="PrimaryUpgrade"/>
+            </GameLink>
+        </Instances>
+        <Instances Id="CommanderPrestigeProtossTalon">
+            <GameLink GameLink="CommanderPrestigeProtossTalon">
+                <Field Id="Icon"/>
+            </GameLink>
+            <User Type="PlayerPrestigeUpgradeSupplements" Instance="[Default]">
+                <Field Id="UpgradeSupplements"/>
+            </User>
+        </Instances>
+        <Instances Id="CommanderPrestigeProtossTalonCI">
+            <GameLink GameLink="WarpInCyberAdept">
+                <Field Id="Icon"/>
+            </GameLink>
+        </Instances>
     </CUser>
     <CUser id="PlayerPrestigeUpgradeSupplements">
         <Fields>

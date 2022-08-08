@@ -6027,4 +6027,7 @@
         <EditorCategories value="Race:Zerg,TechType:Unit"/>
         <NodeArray index="Use" Link="AndEq3804783965CountUnitUltraliskCavernStetmannQueuedOrBetter0CountUnitHiveStetmannCompleteOnly"/>
     </CRequirement>
+    <CRequirement id="HaveTimeWarpProductionBehaviorOnUnit">
+        <NodeArray index="Use" Link="CountBehaviorTimeWarpProductionCompleteOnlyAtUnit"/>
+    </CRequirement>
 </Catalog>

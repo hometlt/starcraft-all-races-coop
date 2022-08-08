@@ -1119,6 +1119,14 @@ trigger libCOMM_gt_CM_ZeratulArtifactTriggerUpgrades;
 trigger libCOMM_gt_CM_Zeratul_StasisDuration;
 trigger libCOMM_gt_CM_ZeratulAvatarMinimapIcon;
 trigger libCOMM_gt_CM_Zeratul_RallySetToZeratul;
+trigger libCOMM_gt_InitializeUED;
+trigger libCOMM_gt_InitializeDragons;
+trigger libCOMM_gt_InitializeHybrids;
+trigger libCOMM_gt_InitializeKeiron;
+trigger libCOMM_gt_KeironUpgrades;
+trigger libCOMM_gt_KeironAutoAperture;
+trigger libCOMM_gt_AegisDied;
+trigger libCOMM_gt_AegisCreated;
 
 // Library Initialization
 void libCOMM_InitVariables ();

@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Includes>
+    <Catalog path="GameData/Units/Helios.xml"/>
+    <Catalog path="GameData/Units/Predator.xml"/>
+    <Catalog path="GameData/Units/Reaper.xml"/>
+    <Catalog path="GameData/Units/LabTurret.xml"/>
+    <Catalog path="GameData/Units/Broodlord.xml"/>
+    <Catalog path="GameData/Units/TemporalAnchor.xml"/>
+    <Catalog path="GameData/Commanders/Protoss.xml"/>
     <Catalog path="GameData/Commanders/Alarak.xml"/>
     <Catalog path="GameData/Commanders/Dehaka.xml"/>
     <Catalog path="GameData/Commanders/Horner.xml"/>
@@ -13,6 +20,14 @@
     <Catalog path="GameData/Commanders/Swann.xml"/>
     <Catalog path="GameData/Commanders/Raynor.xml"/>
     <Catalog path="GameData/Commanders/Karax.xml"/>
+    <Catalog path="GameData/Commanders/Dragons.xml"/>
+    <Catalog path="GameData/Commanders/Genetron.xml"/>
+    <Catalog path="GameData/Commanders/Hybrids.xml"/>
+    <Catalog path="GameData/Commanders/Keiron.xml"/>
+    <Catalog path="GameData/Commanders/UED.xml"/>
+    <Catalog path="GameData/Commanders/UPL.xml"/>
+    <Catalog path="GameData/Commanders/Xayid.xml"/>
+    <Catalog path="GameData/Commanders/Talon.xml"/>
     <Catalog path="GameData/Custom/Commanders.xml"/>
     <Catalog path="GameData/Custom/Enemies.xml"/>
     <Catalog path="GameData/Custom/Heroes.xml"/>
@@ -21,9 +36,4 @@
     <Catalog path="GameData/Custom/Skins.xml"/>
     <Catalog path="GameData/Custom/Tech.xml"/>
     <Catalog path="GameData/Custom/Masteries.xml"/>
-    <Catalog path="GameData/units/Helios.xml"/>
-    <Catalog path="GameData/units/Predator.xml"/>
-    <Catalog path="GameData/units/Reaper.xml"/>
-    <Catalog path="GameData/units/LabTurret.xml"/>
-    <Catalog path="GameData/units/Broodlord.xml"/>
 </Includes>

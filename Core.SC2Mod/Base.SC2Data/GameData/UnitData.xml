@@ -4727,6 +4727,34 @@
             <LayoutButtons Face="WarpInWarPrism" Type="AbilCmd" AbilCmd="RoboticsFacilityTrain,Train30" Row="1" Column="1"/>
             <LayoutButtons Face="Shuttle" Type="AbilCmd" AbilCmd="RoboticsFacilityTrain,Train11" Row="1" Column="1"/>
             <LayoutButtons Face="FenixWarpinDisruptorLocked" Type="Passive" Requirements="FenixLevel07" Row="0" Column="2"/>
+
+
+
+
+
+            <LayoutButtons index="4" Face="WarpInCrusader" AbilCmd="RoboticsFacilityTrainTalon,Train5"/>
+            <LayoutButtons index="5" Face="WarpinDisruptorFIX" AbilCmd="RoboticsFacilityTrainTalon,Train4"/>
+            <LayoutButtons index="6" Face="WarpinDisruptor" AbilCmd="RoboticsFacilityTrain,Train19"/>
+            <LayoutButtons index="14" Face="Immortal" AbilCmd="RoboticsFacilityTrain,Train4"/>
+            <LayoutButtons index="15" Face="ImmortalAiur" AbilCmd="RoboticsFacilityTrain,Train6"/>
+            <LayoutButtons index="16" Face="ImmortalTaldarim" AbilCmd="RoboticsFacilityTrain,Train8"/>
+            <LayoutButtons index="19" Face="WarpInVaporizer" AbilCmd="RoboticsFacilityTrainTalon,Train1"/>
+            <LayoutButtons index="20" Face="WarpPrism" AbilCmd="RoboticsFacilityTrain,Train1"/>
+            <LayoutButtons index="21" Face="WarpInWarPrism" AbilCmd="RoboticsFacilityTrain,Train30"/>
+            <LayoutButtons index="22" Face="WarpInReplicant" Type="AbilCmd" AbilCmd="GatewayTrain,Train3" Requirements=""/>
+            <LayoutButtons index="23" Face="ImmortalShakuras" AbilCmd="RoboticsFacilityTrain,Train7" Column="0"/>
+            <LayoutButtons index="24" Face="Shuttle" Type="AbilCmd" AbilCmd="RoboticsFacilityTrain,Train11" Row="1" Column="1"/>
+            <LayoutButtons index="25" Face="WarpinVindicator" AbilCmd="RoboticsFacilityTrainTalon,Train3" Column="2"/>
+            <LayoutButtons index="26">
+                <Face value="FenixWarpinDisruptorLocked"/>
+                <Type value="Passive"/>
+                <AbilCmd value=""/>
+                <Requirements value="FenixLevel07"/>
+                <Row value="0"/>
+                <Column value="2"/>
+            </LayoutButtons>
+            <LayoutButtons index="27" removed="1"/>
+
         </CardLayouts>
         <Footprint value="Footprint3x3CreepNormalContour"/>
         <PlacementFootprint value="Footprint3x3CreepNormal"/>
@@ -7943,42 +7971,6 @@
     </CUnit>
     <CUnit id="CelestialLock">
         <FogVisibility value="Snapshot"/>
-    </CUnit>
-    <CUnit id="Changeling">
-        <KillXP value="0"/>
-        <DamageDealtXP value="0"/>
-        <DamageTakenXP value="0"/>
-        <SubgroupPriority value="105"/>
-    </CUnit>
-    <CUnit id="ChangelingMarine">
-        <KillXP value="0"/>
-        <DamageDealtXP value="0"/>
-        <DamageTakenXP value="0"/>
-        <SubgroupPriority value="105"/>
-    </CUnit>
-    <CUnit id="ChangelingMarineShield">
-        <KillXP value="0"/>
-        <DamageDealtXP value="0"/>
-        <DamageTakenXP value="0"/>
-        <SubgroupPriority value="105"/>
-    </CUnit>
-    <CUnit id="ChangelingZealot">
-        <KillXP value="0"/>
-        <DamageDealtXP value="0"/>
-        <DamageTakenXP value="0"/>
-        <SubgroupPriority value="105"/>
-    </CUnit>
-    <CUnit id="ChangelingZergling">
-        <KillXP value="0"/>
-        <DamageDealtXP value="0"/>
-        <DamageTakenXP value="0"/>
-        <SubgroupPriority value="105"/>
-    </CUnit>
-    <CUnit id="ChangelingZerglingWings">
-        <KillXP value="0"/>
-        <DamageDealtXP value="0"/>
-        <DamageTakenXP value="0"/>
-        <SubgroupPriority value="105"/>
     </CUnit>
     <CUnit id="CharEggSackOneEgg">
         <KillXP value="0"/>
@@ -38607,5 +38599,41 @@
             <LayoutButtons Face="NukeArm" Type="AbilCmd" AbilCmd="HeroArmNuke,Ammo1" Row="2" Column="0"/>
             <LayoutButtons Face="CancelMothershipMorph" Type="AbilCmd" AbilCmd="que5,CancelLast" Row="2" Column="4"/>
         </CardLayouts>
+    </CUnit>
+
+
+
+    <CUnit id="Changeling">
+        <BehaviorArray Link="AllUnitBehaviorController"/>
+    </CUnit>
+    <CUnit id="ChangelingMarine">
+        <BehaviorArray Link="AllUnitBehaviorController"/>
+    </CUnit>
+    <CUnit id="ChangelingMarineShield">
+        <BehaviorArray Link="AllUnitBehaviorController"/>
+    </CUnit>
+    <CUnit id="ChangelingZealot">
+        <BehaviorArray Link="AllUnitBehaviorController"/>
+    </CUnit>
+    <CUnit id="ChangelingZergling">
+        <BehaviorArray Link="AllUnitBehaviorController"/>
+    </CUnit>
+    <CUnit id="ChangelingZerglingWings">
+        <BehaviorArray Link="AllUnitBehaviorController"/>
+    </CUnit>
+    <CUnit id="ChangelingFlamespitter">
+        <BehaviorArray Link="AllUnitBehaviorController"/>
+    </CUnit>
+    <CUnit id="ChangelingSfire">
+        <BehaviorArray Link="AllUnitBehaviorController"/>
+    </CUnit>
+    <CUnit id="ChangelingStrikeTrooper">
+        <BehaviorArray Link="AllUnitBehaviorController"/>
+    </CUnit>
+    <CUnit id="ChangelingVolt">
+        <BehaviorArray Link="AllUnitBehaviorController"/>
+    </CUnit>
+    <CUnit id="ChangelingXayidling">
+        <BehaviorArray Link="AllUnitBehaviorController"/>
     </CUnit>
 </Catalog>

@@ -1,4 +1,7 @@
 include "TriggerLibs/NativeLib"
+include "LibUEDC"
+include "LibNHBR"
+include "LibDRAG"
 include "LibCOMI_h"
 
 include "LibCOMM_h"
@@ -9,6 +12,8 @@ include "LibCOMM_h"
 // External Library Initialization
 void libCOMM_InitLibraries () {
     libNtve_InitVariables();
+    libUEDC_InitVariables();
+    libNHBR_InitVariables();
     libCOMI_InitVariables();
 }
 
@@ -29606,6 +29611,309 @@ void libCOMM_gt_CM_Zeratul_RallySetToZeratul_Init () {
     TriggerAddEventUnitAbility(libCOMM_gt_CM_Zeratul_RallySetToZeratul, null, AbilityCommand("Rally", 0), c_abilRallyStagePlace, true);
 }
 
+//--------------------------------------------------------------------------------------------------
+// Trigger: Initialize UED
+//--------------------------------------------------------------------------------------------------
+bool libCOMM_gt_InitializeUED_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    playergroup lv_players;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_players = libCOMI_gf_GetPlayersWithSpecifiedCommanderCC_PlayerOfCommander("Artanis");
+
+    // Conditions
+    if (testConds) {
+        if (!((PlayerGroupCount(lv_players) > 0))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    TriggerExecute(libUEDC_gt_InitializeUEDRace, true, false);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMM_gt_InitializeUED_Init () {
+    libCOMM_gt_InitializeUED = TriggerCreate("libCOMM_gt_InitializeUED_Func");
+    TriggerAddEventGeneric(libCOMM_gt_InitializeUED, libCOMI_gv_cOOP_MISSION_STARTED);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Initialize Dragons
+//--------------------------------------------------------------------------------------------------
+bool libCOMM_gt_InitializeDragons_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    playergroup lv_players;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_players = libCOMI_gf_GetPlayersWithSpecifiedCommanderCC_PlayerOfCommander("Artanis");
+
+    // Conditions
+    if (testConds) {
+        if (!((PlayerGroupCount(lv_players) > 0))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    TriggerExecute(libDRAG_gt_InitializeDragonsRace, true, false);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMM_gt_InitializeDragons_Init () {
+    libCOMM_gt_InitializeDragons = TriggerCreate("libCOMM_gt_InitializeDragons_Func");
+    TriggerAddEventGeneric(libCOMM_gt_InitializeDragons, libCOMI_gv_cOOP_MISSION_STARTED);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Initialize Hybrids
+//--------------------------------------------------------------------------------------------------
+bool libCOMM_gt_InitializeHybrids_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    playergroup lv_players;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_players = libCOMI_gf_GetPlayersWithSpecifiedCommanderCC_PlayerOfCommander("Artanis");
+
+    // Conditions
+    if (testConds) {
+        if (!((PlayerGroupCount(lv_players) > 0))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    TriggerExecute(libNHBR_gt_InitializeNetworkHybridRace, true, false);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMM_gt_InitializeHybrids_Init () {
+    libCOMM_gt_InitializeHybrids = TriggerCreate("libCOMM_gt_InitializeHybrids_Func");
+    TriggerAddEventGeneric(libCOMM_gt_InitializeHybrids, libCOMI_gv_cOOP_MISSION_STARTED);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Initialize Keiron
+//--------------------------------------------------------------------------------------------------
+bool libCOMM_gt_InitializeKeiron_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    TriggerEnable(libCOMM_gt_KeironUpgrades, true);
+    TriggerEnable(libCOMM_gt_KeironAutoAperture, true);
+    TriggerEnable(libCOMM_gt_AegisDied, true);
+    TriggerEnable(libCOMM_gt_AegisCreated, true);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMM_gt_InitializeKeiron_Init () {
+    libCOMM_gt_InitializeKeiron = TriggerCreate("libCOMM_gt_InitializeKeiron_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: KeironUpgrades
+//--------------------------------------------------------------------------------------------------
+bool libCOMM_gt_KeironUpgrades_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    string auto306E8244_val;
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    auto306E8244_val = EventUpgradeName();
+    if (auto306E8244_val == "UpgradeKeironLevel01") {
+    }
+    else if (auto306E8244_val == "UpgradeKeironLevel02") {
+    }
+    else if (auto306E8244_val == "UpgradeKeironLevel03") {
+    }
+    else if (auto306E8244_val == "UpgradeKeironLevel04") {
+    }
+    else if (auto306E8244_val == "UpgradeKeironLevel05") {
+    }
+    else if (auto306E8244_val == "UpgradeKeironLevel06") {
+    }
+    else if (auto306E8244_val == "UpgradeKeironLevel07") {
+    }
+    else if (auto306E8244_val == "UpgradeKeironLevel08") {
+    }
+    else if (auto306E8244_val == "UpgradeKeironLevel09") {
+    }
+    else if (auto306E8244_val == "UpgradeKeironLevel10") {
+    }
+    else if (auto306E8244_val == "UpgradeKeironLevel11") {
+    }
+    else if (auto306E8244_val == "UpgradeKeironLevel12") {
+    }
+    else if (auto306E8244_val == "UpgradeKeironLevel13") {
+    }
+    else if (auto306E8244_val == "UpgradeKeironLevel14") {
+    }
+    else if (auto306E8244_val == "UpgradeKeironLevel15") {
+    }
+    else {
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMM_gt_KeironUpgrades_Init () {
+    libCOMM_gt_KeironUpgrades = TriggerCreate("libCOMM_gt_KeironUpgrades_Func");
+    TriggerEnable(libCOMM_gt_KeironUpgrades, false);
+    TriggerAddEventUpgradeLevelChanged(libCOMM_gt_KeironUpgrades, c_playerAny);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: KeironAutoAperture
+//--------------------------------------------------------------------------------------------------
+bool libCOMM_gt_KeironAutoAperture_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_apertureUnit;
+    unitgroup lv_apertures;
+    int lv_neededEnergy;
+    unit lv_bestAperture;
+    fixed lv_bestDistance;
+    fixed lv_newDistance;
+    string lv_weapon;
+    string lv_effect;
+    fixed lv_damage;
+
+    // Automatic Variable Declarations
+    unitgroup autoBB48316C_g;
+    int autoBB48316C_u;
+
+    // Variable Initialization
+    lv_apertures = UnitGroup("Aperture", UnitGetOwner(EventUnit()), RegionCircle(UnitGetPosition(EventUnit()), 500.0), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+    lv_neededEnergy = (CatalogFieldValueGetAsInt(c_gameCatalogUnit, UnitGetType(EventUnit()), "CargoSize", c_playerAny) * 10);
+    lv_bestDistance = 999.0;
+    lv_effect = EventUnitDamageEffect();
+    lv_damage = EventUnitDamageAmount();
+
+    // Conditions
+    if (testConds) {
+        if (!((UnitGroupCount(lv_apertures, c_unitCountAlive) > 0))) {
+            return false;
+        }
+
+        if (!(((UnitGetPropertyInt(EventUnit(), c_unitPropLife, c_unitPropCurrent) + UnitGetPropertyInt(EventUnit(), c_unitPropShields, c_unitPropCurrent)) < FixedToInt(lv_damage)))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    autoBB48316C_g = lv_apertures;
+    autoBB48316C_u = UnitGroupCount(autoBB48316C_g, c_unitCountAll);
+    for (;; autoBB48316C_u -= 1) {
+        lv_apertureUnit = UnitGroupUnitFromEnd(autoBB48316C_g, autoBB48316C_u);
+        if (lv_apertureUnit == null) { break; }
+        if ((lv_apertureUnit != EventUnit()) && (UnitCheckAbilCmdState(lv_apertureUnit, AbilityCommand("AutoKeyhole", 0), c_cmdStateIsAutoCast) == true) && (UnitGetPropertyFixed(lv_apertureUnit, c_unitPropEnergy, c_unitPropCurrent) >= lv_neededEnergy)) {
+            lv_newDistance = DistanceBetweenPoints(UnitGetPosition(EventUnit()), UnitGetPosition(lv_apertureUnit));
+            if ((lv_newDistance < lv_bestDistance)) {
+                lv_bestDistance = lv_newDistance;
+                lv_bestAperture = lv_apertureUnit;
+            }
+
+        }
+
+    }
+    if ((lv_bestAperture != null)) {
+        UnitIssueOrder(lv_bestAperture, OrderTargetingUnit(AbilityCommand("AutoKeyhole", 0), EventUnit()), c_orderQueueAddToFront);
+    }
+
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMM_gt_KeironAutoAperture_Init () {
+    libCOMM_gt_KeironAutoAperture = TriggerCreate("libCOMM_gt_KeironAutoAperture_Func");
+    TriggerEnable(libCOMM_gt_KeironAutoAperture, false);
+    TriggerAddEventUnitDamaged(libCOMM_gt_KeironAutoAperture, null, c_unitDamageTypeAny, c_unitDamageNonFatal, null);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: AegisDied
+//--------------------------------------------------------------------------------------------------
+bool libCOMM_gt_AegisDied_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((UnitGetType(EventUnit()) == "AegisShielded"))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libNtve_gf_CatalogFieldValueSetAsReal(c_gameCatalogAbil, "KeironCitadelAegisTrainHero", "InfoArray[" + IntToString(0) + "].Cooldown.TimeUse", EventPlayer(), 300.0);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMM_gt_AegisDied_Init () {
+    libCOMM_gt_AegisDied = TriggerCreate("libCOMM_gt_AegisDied_Func");
+    TriggerEnable(libCOMM_gt_AegisDied, false);
+    TriggerAddEventUnitDied(libCOMM_gt_AegisDied, null);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: AegisCreated
+//--------------------------------------------------------------------------------------------------
+bool libCOMM_gt_AegisCreated_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((UnitGetType(EventUnitCreatedUnit()) == "AegisShielded"))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libNtve_gf_CatalogFieldValueSetAsReal(c_gameCatalogAbil, "KeironCitadelAegisTrainHero", "InfoArray[" + IntToString(0) + "].Cooldown.TimeUse", UnitGetOwner(EventUnitCreatedUnit()), 0.0);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMM_gt_AegisCreated_Init () {
+    libCOMM_gt_AegisCreated = TriggerCreate("libCOMM_gt_AegisCreated_Func");
+    TriggerEnable(libCOMM_gt_AegisCreated, false);
+    TriggerAddEventUnitCreated(libCOMM_gt_AegisCreated, null, null, null);
+}
+
 void libCOMM_InitTriggers () {
     libCOMM_gt_CM_DebugCommanderCooldowns_Init();
     libCOMM_gt_ShieldColorUnitCreate_Init();
@@ -30172,6 +30480,14 @@ void libCOMM_InitTriggers () {
     libCOMM_gt_CM_Zeratul_StasisDuration_Init();
     libCOMM_gt_CM_ZeratulAvatarMinimapIcon_Init();
     libCOMM_gt_CM_Zeratul_RallySetToZeratul_Init();
+    libCOMM_gt_InitializeUED_Init();
+    libCOMM_gt_InitializeDragons_Init();
+    libCOMM_gt_InitializeHybrids_Init();
+    libCOMM_gt_InitializeKeiron_Init();
+    libCOMM_gt_KeironUpgrades_Init();
+    libCOMM_gt_KeironAutoAperture_Init();
+    libCOMM_gt_AegisDied_Init();
+    libCOMM_gt_AegisCreated_Init();
 }
 
 //--------------------------------------------------------------------------------------------------

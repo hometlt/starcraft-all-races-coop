@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CValidatorUnitCompareBehaviorCount id="IsChronoBoosted115">
+        <WhichUnit Value="Source"/>
+        <Compare value="GT"/>
+        <Behavior value="SOAMapWideChronoPassiveTarget"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="IsChronoBoosted122">
+        <WhichUnit Value="Source"/>
+        <Compare value="GT"/>
+        <Behavior value="TimeWarpProduction"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="IsChronoBoosted150">
+        <WhichUnit Value="Source"/>
+        <Compare value="GT"/>
+        <Behavior value="ChronoBoostEnergyCost"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="IsChronoBoosted200">
+        <WhichUnit Value="Source"/>
+        <Compare value="GT"/>
+        <Behavior value="SOAMapWideChrono"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="IsChronoBoosted999">
+        <WhichUnit Value="Source"/>
+        <Compare value="GT"/>
+        <Behavior value="SOASuperChrono"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="SOATimewarpProduction">
+        <CombineArray value="IsEdifice"/>
+        <CombineArray value="IsAtrium"/>
+        <CombineArray value="IsElysium"/>
+        <CombineArray value="IsFoundry"/>
+        <CombineArray value="IsSanctum"/>
+        <CombineArray value="IsPantheon"/>
+        <CombineArray value="IsAstralConduit"/>
+        <CombineArray value="IsCelestialOutlet"/>
+        <CombineArray value="IsEmpyrean"/>
+        <CombineArray value="IsZenith"/>
+        <CombineArray value="IsCitadel"/>
+        <CombineArray value="IsCitadelCharged"/>
+        <CombineArray value="IsAquifer"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="SOATimewarpResearch">
+        <CombineArray value="IsEdifice"/>
+        <CombineArray value="IsAtrium"/>
+        <CombineArray value="IsElysium"/>
+        <CombineArray value="IsFoundry"/>
+        <CombineArray value="IsSanctum"/>
+        <CombineArray value="IsPantheon"/>
+        <CombineArray value="IsAstralConduit"/>
+        <CombineArray value="IsCelestialOutlet"/>
+        <CombineArray value="IsEmpyrean"/>
+        <CombineArray value="IsZenith"/>
+        <CombineArray value="IsReliquary"/>
+    </CValidatorCombine>
+</Catalog>

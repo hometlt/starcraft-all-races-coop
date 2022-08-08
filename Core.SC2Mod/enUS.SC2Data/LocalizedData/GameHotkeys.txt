@@ -5009,3 +5009,5 @@ Letter/[=BracketOpen
 Letter/\=BackSlash
 Letter/]=BracketClose
 Letter/`=Grave
+Button/Hotkey/TimeWarp2=C
+Button/Hotkey/SOAChronoPassive2=F

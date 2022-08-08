@@ -1,1 +1,0 @@
-COPY /Y "EXTRAS.SC2Mod" "../../ARC.SC2Mod"

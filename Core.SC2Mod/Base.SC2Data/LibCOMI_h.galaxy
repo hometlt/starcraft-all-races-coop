@@ -1181,6 +1181,9 @@ void libCOMI_gf_CM_MasteryResearchCostReduction (int lp_player, string lp_master
 void libCOMI_gf_CM_AIThinkCoop2 (int lp_player);
 bool libCOMI_gf_AISuspectDetectionDanger (int lp_player);
 void libCOMI_gf_CM_CoopAI_AIDetection_AddDetectionDanger (int lp_player);
+void libCOMI_gf_AIDiamondback (int lp_owner, unit lp_diamondback, unitgroup lp_nearbyUnits);
+void libCOMI_gf_AIHavoc (int lp_player, unit lp_havoc, unitgroup lp_scan_group);
+void libCOMI_gf_AIAscendant (int lp_player, unit lp_ascendant, unitgroup lp_scan_group);
 void libCOMI_gf_CM_AIThinkCoop (int lp_player);
 void libCOMI_gf_TacticalAIFilterSortByLife (aifilter lp_filter, fixed lp_damage, fixed lp_distance);
 string libCOMI_gf_CC_AIPersonalityRace (string lp_personality);

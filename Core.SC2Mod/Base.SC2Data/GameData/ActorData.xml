@@ -75,7 +75,8 @@
         <ErrorArray Error="CantBuildLocationInvalid" Sound="Alert_ZergBuildError" GroupSound="Alert_ZergBuildError"/>
         <ErrorArray Error="CantLandLocationInvalid" Sound="Alert_ZergBuildError" GroupSound="Alert_ZergBuildError"/>
     </CActorUnit>
-    <CActorModel default="1" id="MercDropModelRaynorBase">
+    <CActorModel id="MercDropModelRaynorBase">
+    <!--default="1"-->
         <Flags index="SuppressSaveLoad" value="1"/>
         <Host Subject="_Selectable"/>
         <HostSiteOps Ops="SOpAttachOriginStationary SOpForwardNorth"/>
@@ -102,10 +103,9 @@
         <On Terms="Effect.MutatorEyeBeamsAirPersistent.Start; At Target" Send="Create"/>
         <On Terms="Effect.MutatorEyeBeamsAirPersistent.Stop; FromEffectTreeDescendant" Send="AnimBracketStop BSD"/>
     </CActorBeamSimple>
-    <CActorModel default="1" id="AbathurCoopSelfOnlyFloatingTextActorDefault">
-        <?token id="effectPickup" type="CEffectLink" value="Bogus"?>
-        <?token id="actorCreate" type="CActorLink" value="Bogus"?>
-        <?token id="upgradedActorCreate" type="CActorLink" value="Bogus"?>
+    <CActorModel id="AbathurCoopSelfOnlyFloatingTextActorDefault"  effectPickup="Bogus" actorCreate="Bogus" upgradedActorCreate="Bogus">
+
+        <!--default="1"-->
         <Host Subject="FloatingTextSite" Actor="Create"/>
         <HostSiteOps Ops="SOpAttachOriginStationary"/>
         <Model value="Invisible"/>
@@ -164,7 +164,8 @@
         <On Terms="ActorCreation" Send="Create PrimalZergConstructionAttached"/>
         <On Terms="UnitConstruction.*.Finish" Send="AnimClear ::Progress"/>
     </CActorModel>
-    <CActorModel default="1" id="PrimalZergBuildAttachedExtra">
+    <CActorModel id="PrimalZergBuildAttachedExtra">
+   <!--  default="1"-->
         <Terms value="Cap 1"/>
         <Aliases value="_Snapshot"/>
         <Aliases value="_PrimalZergBuildModelExtra"/>
@@ -193,7 +194,8 @@
         <On Terms="UnitDeath; !AnimPlaying Active" Send="AnimBracketStop BSD"/>
         <On Terms="UnitConstruction.*.Finish" Send="AnimClear ::Progress"/>
     </CActorModel>
-    <CActorModel default="1" id="PrimalZergBuildAttachedBurrowedSplat">
+    <CActorModel id="PrimalZergBuildAttachedBurrowedSplat">
+   <!--  default="1"-->
         <Aliases value="_Snapshot"/>
         <Aliases value="_PrimalZergBuildModelExtra"/>
         <Inherits index="CastShadows" value="1"/>
@@ -22120,6 +22122,8 @@
     </CActorSound>
     <CActorSound id="TimeWarpImpactSound">
         <On Terms="BehaviorLevel.SOAMapWideChrono.Start; Level 1" Send="Create"/>
+        <On Terms="BehaviorLevel.SOAMapWideChronoPassiveTarget.Start; Level 1" Send="Create"/>
+        <On Terms="BehaviorLevel.SOAMapWideChronoPassiveTarget.Start; Level 1" Send="Create"/>
     </CActorSound>
     <CActorUnit id="CreepColony" parent="GenericUnitBase" unitName="CreepColony">
         <!--On Terms="AbilMorph.*.Start; MorphFrom CreepColony" Send="Create SunkenColonyBuild"/>
@@ -38118,6 +38122,11 @@
         <On Terms="Behavior.ZeratulKhaydarinMonolithStun.Off" Send="Destroy"/>
         <!--On Terms="Behavior.FenixMojoScoutAirStun.On" Send="Create"/>
         <On Terms="Behavior.FenixMojoScoutAirStun.Off" Send="Destroy"/-->
+        <!--Keiron-->
+        <On Terms="Behavior.PariahProjectionImpactSlow.On" Send="Create"/>
+        <On Terms="Behavior.PariahProjectionImpactSlow.Off" Send="Destroy"/>
+        <On Terms="Behavior.PariahProjectionImpactStun.On" Send="Create"/>
+        <On Terms="Behavior.PariahProjectionImpactStun.Off" Send="Destroy"/>
     </CActorModel>
     <CActorUnit id="FenixAdeptShade" parent="GenericUnitStandard" unitName="FenixAdeptShade">
         <Model value="FenixAdeptShadeSpirit"/>

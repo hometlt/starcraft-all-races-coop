@@ -9827,4 +9827,10 @@
     <CRequirementCountUnit id="CountUnitQueensNestCompleteOnly891770602TechTreeCheat2">
         <Count Link="QueensNest2" State="CompleteOnly"/>
     </CRequirementCountUnit>
+    <CRequirementCountBehavior id="CountBehaviorTimeWarpProductionCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="TimeWarpProduction" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+
 </Catalog>

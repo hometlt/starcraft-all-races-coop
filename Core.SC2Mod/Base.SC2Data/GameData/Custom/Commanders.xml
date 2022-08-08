@@ -3035,5 +3035,466 @@
                 <Field Id="Type"/>
             </User>
         </Instances>
+        <Instances Id="UED">
+            <GameLink GameLink="UED">
+                <Field Id="AdjutantRace"/>
+            </GameLink>
+            <GameLink GameLink="UED">
+                <Field Id="Race"/>
+            </GameLink>
+            <GameLink GameLink="UED">
+                <Field Id="SpawnRace"/>
+            </GameLink>
+            <GameLink GameLink="UED">
+                <Field Id="CommanderData"/>
+            </GameLink>
+            <Image>
+                <Field Id="PrestigeIcon"/>
+            </Image>
+            <Int>
+                <Field Id="hidden"/>
+            </Int>
+            <Model Model="WarfieldPortrait">
+                <Field Id="PortraitModel"/>
+            </Model>
+            <Text Text="UserData/PlayerCommanders/UED_Name">
+                <Field Id="Name"/>
+            </Text>
+            <Text Text="UserData/PlayerCommanders/UED_Description">
+                <Field Id="Description"/>
+            </Text>
+            <Upgrade Upgrade="UEDCommander">
+                <Field Id="DefaultUpgrades"/>
+            </Upgrade>
+        </Instances>
+        <Instances Id="NetworkHybrids">
+            <GameLink GameLink="NHbr">
+                <Field Id="Race"/>
+            </GameLink>
+            <GameLink GameLink="NHbr">
+                <Field Id="SpawnRace"/>
+            </GameLink>
+            <GameLink GameLink="NHbr">
+                <Field Id="AdjutantRace"/>
+            </GameLink>
+            <GameLink GameLink="ButtonNetworkLevel01">
+                <Field Id="PerkButton"/>
+            </GameLink>
+            <GameLink GameLink="ButtonNetworkLevel02">
+                <Field Id="PerkButton" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="ButtonNetworkLevel03">
+                <Field Id="PerkButton" Index="2"/>
+            </GameLink>
+            <GameLink GameLink="ButtonNetworkLevel04">
+                <Field Id="PerkButton" Index="3"/>
+            </GameLink>
+            <GameLink GameLink="ButtonNetworkLevel05">
+                <Field Id="PerkButton" Index="4"/>
+            </GameLink>
+            <GameLink GameLink="ButtonNetworkLevel06">
+                <Field Id="PerkButton" Index="5"/>
+            </GameLink>
+            <GameLink GameLink="ButtonNetworkLevel07">
+                <Field Id="PerkButton" Index="6"/>
+            </GameLink>
+            <GameLink GameLink="ButtonNetworkLevel08">
+                <Field Id="PerkButton" Index="7"/>
+            </GameLink>
+            <GameLink GameLink="ButtonNetworkLevel09">
+                <Field Id="PerkButton" Index="8"/>
+            </GameLink>
+            <GameLink GameLink="ButtonNetworkLevel10">
+                <Field Id="PerkButton" Index="9"/>
+            </GameLink>
+            <GameLink GameLink="ButtonNetworkLevel11">
+                <Field Id="PerkButton" Index="10"/>
+            </GameLink>
+            <GameLink GameLink="ButtonNetworkLevel12">
+                <Field Id="PerkButton" Index="11"/>
+            </GameLink>
+            <GameLink GameLink="ButtonNetworkLevel13">
+                <Field Id="PerkButton" Index="12"/>
+            </GameLink>
+            <GameLink GameLink="ButtonNetworkLevel14">
+                <Field Id="PerkButton" Index="13"/>
+            </GameLink>
+            <GameLink GameLink="ButtonNetworkLevel15">
+                <Field Id="PerkButton" Index="14"/>
+            </GameLink>
+            <Image>
+                <Field Id="CustomImage"/>
+            </Image>
+            <Int>
+                <Field Id="locked"/>
+            </Int>
+            <Int>
+                <Field Id="hidden"/>
+            </Int>
+            <Model Model="NHbrPollinator@Portrait">
+                <Field Id="PortraitModel"/>
+            </Model>
+            <Text Text="UserData/PlayerCommanders/NetworkHybrids_Description">
+                <Field Id="Description"/>
+            </Text>
+            <Text Text="UserData/PlayerCommanders/NetworkHybrids_Name">
+                <Field Id="Name"/>
+            </Text>
+            <Upgrade Upgrade="NetworkCommander">
+                <Field Id="DefaultUpgrades"/>
+            </Upgrade>
+        </Instances>
+        <Instances Id="Genetron">
+            <GameLink GameLink="Gen">
+                <Field Id="Race"/>
+            </GameLink>
+            <GameLink GameLink="Gen">
+                <Field Id="SpawnRace"/>
+            </GameLink>
+            <GameLink GameLink="GenetronCommander">
+                <Field Id="CommanderData"/>
+            </GameLink>
+            <GameLink GameLink="ButtonGenetronLevel01">
+                <Field Id="PerkButton"/>
+            </GameLink>
+            <GameLink GameLink="ButtonGenetronLevel02">
+                <Field Id="PerkButton" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="ButtonGenetronLevel03">
+                <Field Id="PerkButton" Index="2"/>
+            </GameLink>
+            <GameLink GameLink="ButtonGenetronLevel04">
+                <Field Id="PerkButton" Index="3"/>
+            </GameLink>
+            <GameLink GameLink="ButtonGenetronLevel05">
+                <Field Id="PerkButton" Index="4"/>
+            </GameLink>
+            <GameLink GameLink="ButtonGenetronLevel06">
+                <Field Id="PerkButton" Index="5"/>
+            </GameLink>
+            <GameLink GameLink="ButtonGenetronLevel07">
+                <Field Id="PerkButton" Index="6"/>
+            </GameLink>
+            <GameLink GameLink="ButtonGenetronLevel08">
+                <Field Id="PerkButton" Index="7"/>
+            </GameLink>
+            <GameLink GameLink="ButtonGenetronLevel09">
+                <Field Id="PerkButton" Index="8"/>
+            </GameLink>
+            <GameLink GameLink="ButtonGenetronLevel10">
+                <Field Id="PerkButton" Index="9"/>
+            </GameLink>
+            <GameLink GameLink="ButtonGenetronLevel11">
+                <Field Id="PerkButton" Index="10"/>
+            </GameLink>
+            <GameLink GameLink="ButtonGenetronLevel12">
+                <Field Id="PerkButton" Index="11"/>
+            </GameLink>
+            <GameLink GameLink="ButtonGenetronLevel13">
+                <Field Id="PerkButton" Index="12"/>
+            </GameLink>
+            <GameLink GameLink="ButtonGenetronLevel14">
+                <Field Id="PerkButton" Index="13"/>
+            </GameLink>
+            <GameLink GameLink="ButtonGenetronLevel15">
+                <Field Id="PerkButton" Index="14"/>
+            </GameLink>
+            <Int>
+                <Field Id="locked"/>
+            </Int>
+            <Int>
+                <Field Id="hidden"/>
+            </Int>
+            <Model Model="GenetronAdjutantPortrait">
+                <Field Id="PortraitModel"/>
+            </Model>
+            <Text Text="UserData/PlayerCommanders/Genetron_Description">
+                <Field Id="Description"/>
+            </Text>
+            <Text Text="UserData/PlayerCommanders/Genetron_Name">
+                <Field Id="Name"/>
+            </Text>
+            <Upgrade Upgrade="GenetronCommander">
+                <Field Id="DefaultUpgrades"/>
+            </Upgrade>
+        </Instances>
+        <Instances Id="Xayid">
+            <GameLink GameLink="Xayi">
+                <Field Id="SpawnRace"/>
+            </GameLink>
+            <GameLink GameLink="Xayi">
+                <Field Id="Race"/>
+            </GameLink>
+            <GameLink GameLink="XayidCommander">
+                <Field Id="CommanderData"/>
+            </GameLink>
+            <GameLink GameLink="ButtonXayidLevel01">
+                <Field Id="PerkButton"/>
+            </GameLink>
+            <GameLink GameLink="ButtonXayidLevel02">
+                <Field Id="PerkButton" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="ButtonXayidLevel03">
+                <Field Id="PerkButton" Index="2"/>
+            </GameLink>
+            <GameLink GameLink="ButtonXayidLevel04">
+                <Field Id="PerkButton" Index="3"/>
+            </GameLink>
+            <GameLink GameLink="ButtonXayidLevel05">
+                <Field Id="PerkButton" Index="4"/>
+            </GameLink>
+            <GameLink GameLink="ButtonXayidLevel06">
+                <Field Id="PerkButton" Index="5"/>
+            </GameLink>
+            <GameLink GameLink="ButtonXayidLevel07">
+                <Field Id="PerkButton" Index="6"/>
+            </GameLink>
+            <GameLink GameLink="ButtonXayidLevel08">
+                <Field Id="PerkButton" Index="7"/>
+            </GameLink>
+            <GameLink GameLink="ButtonXayidLevel09">
+                <Field Id="PerkButton" Index="8"/>
+            </GameLink>
+            <GameLink GameLink="ButtonXayidLevel10">
+                <Field Id="PerkButton" Index="9"/>
+            </GameLink>
+            <GameLink GameLink="ButtonXayidLevel11">
+                <Field Id="PerkButton" Index="10"/>
+            </GameLink>
+            <GameLink GameLink="ButtonXayidLevel12">
+                <Field Id="PerkButton" Index="11"/>
+            </GameLink>
+            <GameLink GameLink="ButtonXayidLevel13">
+                <Field Id="PerkButton" Index="12"/>
+            </GameLink>
+            <GameLink GameLink="ButtonXayidLevel14">
+                <Field Id="PerkButton" Index="13"/>
+            </GameLink>
+            <GameLink GameLink="ButtonXayidLevel15">
+                <Field Id="PerkButton" Index="14"/>
+            </GameLink>
+            <Int>
+                <Field Id="locked"/>
+            </Int>
+            <Int>
+                <Field Id="hidden"/>
+            </Int>
+            <Model Model="PortraitEroder">
+                <Field Id="PortraitModel"/>
+            </Model>
+            <Text Text="UserData/PlayerCommanders/Xayid_Description">
+                <Field Id="Description"/>
+            </Text>
+            <Text Text="UserData/PlayerCommanders/Xayid_Name">
+                <Field Id="Name"/>
+            </Text>
+            <Upgrade Upgrade="XayidCommander">
+                <Field Id="DefaultUpgrades"/>
+            </Upgrade>
+        </Instances>
+        <Instances Id="Dragon">
+            <GameLink GameLink="Dragon">
+                <Field Id="SpawnRace"/>
+            </GameLink>
+            <GameLink GameLink="Dragon">
+                <Field Id="Race"/>
+            </GameLink>
+            <GameLink GameLink="DragonCommander">
+                <Field Id="CommanderData"/>
+            </GameLink>
+            <GameLink GameLink="Aquifer">
+                <Field Id="HeroReviveUnit"/>
+            </GameLink>
+            <GameLink GameLink="Zerg">
+                <Field Id="AdjutantRace"/>
+            </GameLink>
+            <GameLink GameLink="ButtonDragonLevel01">
+                <Field Id="PerkButton"/>
+            </GameLink>
+            <GameLink GameLink="ButtonDragonLevel02">
+                <Field Id="PerkButton" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="ButtonDragonLevel03">
+                <Field Id="PerkButton" Index="2"/>
+            </GameLink>
+            <GameLink GameLink="ButtonDragonLevel04">
+                <Field Id="PerkButton" Index="3"/>
+            </GameLink>
+            <GameLink GameLink="ButtonDragonLevel05">
+                <Field Id="PerkButton" Index="4"/>
+            </GameLink>
+            <GameLink GameLink="ButtonDragonLevel06">
+                <Field Id="PerkButton" Index="5"/>
+            </GameLink>
+            <GameLink GameLink="ButtonDragonLevel07">
+                <Field Id="PerkButton" Index="6"/>
+            </GameLink>
+            <GameLink GameLink="ButtonDragonLevel08">
+                <Field Id="PerkButton" Index="7"/>
+            </GameLink>
+            <GameLink GameLink="ButtonDragonLevel09">
+                <Field Id="PerkButton" Index="8"/>
+            </GameLink>
+            <GameLink GameLink="ButtonDragonLevel10">
+                <Field Id="PerkButton" Index="9"/>
+            </GameLink>
+            <GameLink GameLink="ButtonDragonLevel11">
+                <Field Id="PerkButton" Index="10"/>
+            </GameLink>
+            <GameLink GameLink="ButtonDragonLevel12">
+                <Field Id="PerkButton" Index="11"/>
+            </GameLink>
+            <GameLink GameLink="ButtonDragonLevel13">
+                <Field Id="PerkButton" Index="12"/>
+            </GameLink>
+            <GameLink GameLink="ButtonDragonLevel14">
+                <Field Id="PerkButton" Index="13"/>
+            </GameLink>
+            <GameLink GameLink="ButtonDragonLevel15">
+                <Field Id="PerkButton" Index="14"/>
+            </GameLink>
+            <Image>
+                <Field Id="PrestigeIcon"/>
+            </Image>
+            <Image>
+                <Field Id="CustomImage"/>
+            </Image>
+            <Model Model="DragonBuildingPortrait">
+                <Field Id="PortraitModel"/>
+            </Model>
+            <Text Text="UserData/PlayerCommanders/Dragon_Description">
+                <Field Id="Description"/>
+            </Text>
+            <Text Text="UserData/PlayerCommanders/Dragon_Name">
+                <Field Id="Name"/>
+            </Text>
+            <Upgrade Upgrade="DragonCommander">
+                <Field Id="DefaultUpgrades"/>
+            </Upgrade>
+        </Instances>
+        <Instances Id="Keiron">
+            <GameLink GameLink="Keir">
+                <Field Id="SpawnRace"/>
+            </GameLink>
+            <GameLink GameLink="Keir">
+                <Field Id="Race"/>
+            </GameLink>
+            <GameLink GameLink="KeironCommander">
+                <Field Id="CommanderData"/>
+            </GameLink>
+            <GameLink GameLink="Aquifer">
+                <Field Id="HeroReviveUnit"/>
+            </GameLink>
+            <GameLink GameLink="ButtonKeironLevel01">
+                <Field Id="PerkButton"/>
+            </GameLink>
+            <GameLink GameLink="ButtonKeironLevel02">
+                <Field Id="PerkButton" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="ButtonKeironLevel03">
+                <Field Id="PerkButton" Index="2"/>
+            </GameLink>
+            <GameLink GameLink="ButtonKeironLevel04">
+                <Field Id="PerkButton" Index="3"/>
+            </GameLink>
+            <GameLink GameLink="ButtonKeironLevel05">
+                <Field Id="PerkButton" Index="4"/>
+            </GameLink>
+            <GameLink GameLink="ButtonKeironLevel06">
+                <Field Id="PerkButton" Index="5"/>
+            </GameLink>
+            <GameLink GameLink="ButtonKeironLevel07">
+                <Field Id="PerkButton" Index="6"/>
+            </GameLink>
+            <GameLink GameLink="ButtonKeironLevel08">
+                <Field Id="PerkButton" Index="7"/>
+            </GameLink>
+            <GameLink GameLink="ButtonKeironLevel09">
+                <Field Id="PerkButton" Index="8"/>
+            </GameLink>
+            <GameLink GameLink="ButtonKeironLevel10">
+                <Field Id="PerkButton" Index="9"/>
+            </GameLink>
+            <GameLink GameLink="ButtonKeironLevel11">
+                <Field Id="PerkButton" Index="10"/>
+            </GameLink>
+            <GameLink GameLink="ButtonKeironLevel12">
+                <Field Id="PerkButton" Index="11"/>
+            </GameLink>
+            <GameLink GameLink="ButtonKeironLevel13">
+                <Field Id="PerkButton" Index="12"/>
+            </GameLink>
+            <GameLink GameLink="ButtonKeironLevel14">
+                <Field Id="PerkButton" Index="13"/>
+            </GameLink>
+            <GameLink GameLink="ButtonKeironLevel15">
+                <Field Id="PerkButton" Index="14"/>
+            </GameLink>
+            <Image>
+                <Field Id="PrestigeIcon"/>
+            </Image>
+            <Image>
+                <Field Id="CustomImage"/>
+            </Image>
+            <Model Model="HybridDominatorVoidPortrait">
+                <Field Id="PortraitModel"/>
+            </Model>
+            <Text Text="UserData/PlayerCommanders/Keiron_Description">
+                <Field Id="Description"/>
+            </Text>
+            <Text Text="UserData/PlayerCommanders/Keiron_Name">
+                <Field Id="Name"/>
+            </Text>
+            <Upgrade Upgrade="KeironCommander">
+                <Field Id="DefaultUpgrades"/>
+            </Upgrade>
+        </Instances>
+        <Instances Id="ProtossVolchron">
+            <GameLink GameLink="Prot">
+                <Field Id="AdjutantRace"/>
+            </GameLink>
+            <GameLink GameLink="ProtossTalon">
+                <Field Id="CommanderSkin"/>
+            </GameLink>
+            <GameLink GameLink="AlarakReviveBeacon">
+                <Field Id="HeroReviveUnit"/>
+            </GameLink>
+            <GameLink GameLink="VolchrontheHunter">
+                <Field Id="HeroUnit"/>
+            </GameLink>
+            <GameLink GameLink="KerriganFirstReviveTimer">
+                <Field Id="HeroUnitFirstReviveBehavior"/>
+            </GameLink>
+            <GameLink GameLink="KerriganNormalReviveTimer">
+                <Field Id="HeroUnitNormalReviveBehavior"/>
+            </GameLink>
+            <GameLink GameLink="Prot">
+                <Field Id="SpawnRace"/>
+            </GameLink>
+            <GameLink GameLink="Prot">
+                <Field Id="Race"/>
+            </GameLink>
+            <Image>
+                <Field Id="PrestigeIcon"/>
+            </Image>
+            <Image>
+                <Field Id="CustomImage"/>
+            </Image>
+            <Int Int="1">
+                <Field Id="hidden"/>
+            </Int>
+            <Model Model="Carrier_AmonBrood_Collection_Portrait">
+                <Field Id="PortraitModel"/>
+            </Model>
+            <String String="Abil/KerriganRevive">
+                <Field Id="HeroReviveLink"/>
+            </String>
+            <Text Text="UserData/PlayerCommanders/ProtossVolchron_Description">
+                <Field Id="Description"/>
+            </Text>
+            <Text Text="UserData/PlayerCommanders/ProtossVolchron_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
     </CUser>
 </Catalog>

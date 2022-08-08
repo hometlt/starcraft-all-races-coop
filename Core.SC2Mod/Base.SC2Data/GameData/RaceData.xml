@@ -247,6 +247,9 @@
         <LevelAchievementId value="91475320767755"/>
         <Icon value="Assets\Factions\NerazimLogo.dds"/>
     </CRace>
+    <CRace id="ProtL">
+        <Icon value="Assets\Factions\FistOfUlrezajLogo.dds"/>
+    </CRace>
     <CRace id="Terr">
         <Icon value="Assets\Textures\ui_battlenet_glues_multiplayer_racebutton_raceicon_normal_terr.dds"/>
     </CRace>

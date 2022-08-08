@@ -4164,13 +4164,31 @@
     <CValidatorCombine id="TimewarpProduction">
         <CombineArray value="IsNydusNetwork"/>
         <CombineArray value="IsSICocoon"/>
+        <!--Primal-->
         <CombineArray value="IsDehakaBarracks"/>
         <CombineArray value="IsDehakaHatchery"/>
+        <!--Marauders-->
         <CombineArray value="IsHanStarport"/>
+        <!--Outlaws-->
         <CombineArray value="IsTychusCommandCenter"/>
         <CombineArray value="IsTychusMedivacPlatform"/>
+        <!--IhanRii-->
         <CombineArray value="IsZeratulGateway"/>
         <CombineArray value="IsZeratulRoboticsFacility"/>
+        <!--Keiron-->
+        <CombineArray value="IsEdifice"/>
+        <CombineArray value="IsAtrium"/>
+        <CombineArray value="IsElysium"/>
+        <CombineArray value="IsFoundry"/>
+        <CombineArray value="IsSanctum"/>
+        <CombineArray value="IsPantheon"/>
+        <CombineArray value="IsAstralConduit"/>
+        <CombineArray value="IsCelestialOutlet"/>
+        <CombineArray value="IsEmpyrean"/>
+        <CombineArray value="IsZenith"/>
+        <CombineArray value="IsCitadel"/>
+        <CombineArray value="IsCitadelCharged"/>
+        <CombineArray value="IsAquifer"/>
     </CValidatorCombine>
     <CValidatorCombine id="TimewarpResearch">
         <CombineArray value="IsBarracksTechReactor"/>
@@ -4208,6 +4226,18 @@
         <CombineArray value="IsHHStarportFlying"/>
         <CombineArray value="IsHHMercCompound"/>
         <CombineArray value="IsTychusEngineeringBay"/>
+        <!--Keiron-->
+        <CombineArray value="IsEdifice"/>
+        <CombineArray value="IsAtrium"/>
+        <CombineArray value="IsElysium"/>
+        <CombineArray value="IsFoundry"/>
+        <CombineArray value="IsSanctum"/>
+        <CombineArray value="IsPantheon"/>
+        <CombineArray value="IsAstralConduit"/>
+        <CombineArray value="IsCelestialOutlet"/>
+        <CombineArray value="IsEmpyrean"/>
+        <CombineArray value="IsZenith"/>
+        <CombineArray value="IsReliquary"/>
     </CValidatorCombine>
     <CValidatorCombine id="UnitOrAttackable">
         <CombineArray value="NotStructure"/>
@@ -7103,6 +7133,8 @@
         <CombineArray value="IsSISCV"/>
         <CombineArray value="IsTychusSCV"/>
         <CombineArray value="isHHSCV"/>
+        <CombineArray value="isGenetronACR"/>
+        <CombineArray value="IsSalvager"/>
     </CValidatorCombine>
     <CValidatorCombine id="isWorker">
         <CombineArray index="0" value="IsMULE"/>
@@ -7115,9 +7147,14 @@
         <CombineArray value="IsSIDrone"/>
         <CombineArray value="IsDehakaDrone"/>
         <CombineArray value="IsDroneFull"/>
+        <CombineArray value="isXayedScavenger"/>
+        <CombineArray value="isDragonPlodder"/>
+        <CombineArray value="isDragonAscendedPlodder"/>
     </CValidatorCombine>
     <CValidatorCombine id="isProtossInteractWorker">
         <CombineArray value="IsProbe"/>
+        <CombineArray value="isKeironConverter"/>
+        <CombineArray value="NHbrCommon@IsMinion"/>
     </CValidatorCombine>
     <CValidatorUnitCompareBehaviorCount id="noDevour">
         <Behavior value="noDevour"/>
