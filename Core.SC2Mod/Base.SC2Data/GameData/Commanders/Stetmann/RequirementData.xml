@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CRequirement id="HaveRavagerUnstableEruption">
+        <EditorCategories value="Race:Zerg,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="CountUpgradeStetmannRavagerUnstableEruptionCompleteOnly"/>
+        <NodeArray index="Show" Link="AllowUpgradeStetmannRavagerUnstableEruption"/>
+    </CRequirement>
+    <CRequirement id="HaveRoachRavagerUpgrade">
+        <EditorCategories value="Race:Zerg,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="CountUpgradeMechaRoachMechaRavagerUpgradeCacheCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="LearnStetmannArtificialIncubationSacs">
+        <EditorCategories value="Race:Zerg,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="NotCountUpgradeStetmannSwarmHostDoubleLocustsQueuedOrBetter"/>
+    </CRequirement>
+    <CRequirement id="LearnStetmannMegaExtractor">
+        <EditorCategories value="Race:Zerg,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="NotCountUpgradeMegaExtractorQueuedOrBetter"/>
+    </CRequirement>
+    <CRequirement id="LearnStetmannRoachSuperRegeneration">
+        <EditorCategories value="Race:Zerg,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="NotCountUpgradeSuperRegenerationQueuedOrBetter"/>
+    </CRequirement>
+    <CRequirement id="LearnStetmannPotentEruption">
+        <EditorCategories value="Race:Zerg,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="NotCountUpgradeStetmannRavagerPotentEruptionQueuedOrBetter"/>
+    </CRequirement>
+    <CRequirement id="LearnStetmannExplosiveLocusts">
+        <EditorCategories value="Race:Zerg,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="NotCountUpgradeStetmannSwarmHostExplosiveLocustsQueuedOrBetter"/>
+    </CRequirement>
+    <CRequirement id="LearnStetmannRavagerUnstableEruption">
+        <EditorCategories value="Race:Zerg,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="NotCountUpgradeStetmannRavagerBileRadiusQueuedOrBetter"/>
+    </CRequirement>
+    <CRequirement id="CanMorphMechaLurkerFromLarva">
+        <EditorCategories value="Race:Zerg,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="CountUnitLurkerDenStetmannCompleteOnly1236643295TechTreeCheat"/>
+        <NodeArray index="Show" Link="CountUpgradeLurkeStetmannEasyManufacturingCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="DontHaveMechaHatchery">
+        <EditorCategories value="Race:Zerg,TechType:Unit"/>
+        <NodeArray index="Use" Link="AndNotCountUnitHatcheryStetmannCompleteOnlyNotCountUnitLairStetmannCompleteOnlyNotCountUnitHiveStetmannCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveDoubleInjectStetmann">
+        <EditorCategories value="Race:Zerg,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="CountUpgradeDoubleInjectMechaLarvaeCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveDoubleLocustsStetmann">
+        <EditorCategories value="Race:Zerg,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="CountUpgradeStetmannSwarmHostDoubleLocustsCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveExplosiveLocustsStetmann">
+        <EditorCategories value="Race:Zerg,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="CountUpgradeStetmannSwarmHostExplosiveLocustsCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveLightningFieldStetmann">
+        <EditorCategories value="Race:Zerg,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="CountUpgradeLightningFieldCompleteOnly"/>
+        <NodeArray index="Show" Link="AllowUpgradeLightningField"/>
+    </CRequirement>
+    <CRequirement id="HaveStetmannRavagerBileRadius">
+        <EditorCategories value="Race:Zerg,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="CountUpgradeStetmannRavagerBileRadiusCompleteOnly"/>
+        <NodeArray index="Show" Link="AllowUpgradeStetmannRavagerBileRadius"/>
+    </CRequirement>
+    <CRequirement id="HaveRavagerPotentEruption">
+        <EditorCategories value="Race:Zerg,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="CountUpgradeStetmannRavagerPotentEruptionCompleteOnly"/>
+        <NodeArray index="Show" Link="AllowUpgradeStetmannRavagerPotentEruption"/>
+    </CRequirement>
+    <CRequirement id="HaveRoachStetmannVanadiumClaws">
+        <EditorCategories value="Race:Zerg,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="CountUpgradeVanadiumClawsCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveRoachStetmannSuperRegeneration">
+        <EditorCategories value="Race:Zerg,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="CountUpgradeSuperRegenerationCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="RoachWarrenRequirementsStetmann">
+        <EditorCategories value="Race:Zerg,TechType:Unit"/>
+        <NodeArray index="Use" Link="AndEq3804783965CountUnitRoachWarrenStetmannQueuedOrBetter0CountUnitSpawningPoolStetmannCompleteOnly46800118TechTreeCheat"/>
+    </CRequirement>
+    <CRequirement id="HaveMegaExtractor">
+        <EditorCategories value="Race:Zerg,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="CountUpgradeMegaExtractorCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveNoMegaExtractor">
+        <EditorCategories value="Race:Zerg,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="NotCountUpgradeMegaExtractorCompleteOnly"/>
+    </CRequirement>
+</Catalog>

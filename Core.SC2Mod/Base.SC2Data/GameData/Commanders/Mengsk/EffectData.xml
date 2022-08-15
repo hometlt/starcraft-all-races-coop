@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CEffectCreatePersistent id="FirebatMengskCreatePersistentLong">
+        <EditorCategories value="Race:Terran"/>
+        <WhichLocation Value="SourcePoint"/>
+        <OffsetVectorStartLocation Value="SourcePoint"/>
+        <Flags index="Channeled" value="1"/>
+        <PeriodCount value="6"/>
+        <PeriodicEffectArray value="MengskFirebatSearchArea2"/>
+        <PeriodicOffsetArray value="0,-0.9,0"/>
+        <PeriodicOffsetArray value="0,-1.4,0"/>
+        <PeriodicOffsetArray value="0,-1.9,0"/>
+        <PeriodicOffsetArray value="0,-2.4,0"/>
+        <PeriodicOffsetArray value="0,-3.9,0"/>
+        <PeriodicOffsetArray value="0,-4.4,0"/>
+        <PeriodicPeriodArray value="0.022"/>
+        <PeriodicPeriodArray value="0.022"/>
+        <PeriodicPeriodArray value="0.022"/>
+        <PeriodicPeriodArray value="0.022"/>
+        <PeriodicPeriodArray value="0.022"/>
+        <PeriodicPeriodArray value="0.022"/>
+    </CEffectCreatePersistent>
+    <CEffectSwitch id="FirebatMengskCreatePersistentSwitch">
+        <EditorCategories value=""/>
+        <CaseArray Validator="CasterLevelGTE3" Effect="FirebatMengskCreatePersistentLong"/>
+        <CaseDefault value="FirebatMengskCreatePersistent"/>
+    </CEffectSwitch>
+    <CEffectSet id="FirebatMengskLevel3CappedSet">
+        <EditorCategories value=""/>
+        <EffectArray value="MengskVeteranMaxedTrigger"/>
+        <EffectArray value="FirebatMengskRangeAB"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="FirebatMengskRangeAB">
+        <EditorCategories value=""/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="FirebatMengskRange"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="FirebatMengskVeterancyAB">
+        <EditorCategories value=""/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="MengskVeterancyFirebatMengsk"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="FirebatMengskVeterancyCappedAB">
+        <EditorCategories value=""/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="MengskVeterancyFirebatMengskCapped"/>
+    </CEffectApplyBehavior>
+    <CEffectSwitch id="FirebatMengskVeterancySwitch">
+        <EditorCategories value=""/>
+        <CaseArray Validator="RoyalGuardMengskLevel4Allowed" Effect="FirebatMengskVeterancyAB"/>
+        <CaseDefault value="FirebatMengskVeterancyCappedAB"/>
+    </CEffectSwitch>
+    <CEffectApplyBehavior id="FirebatMengskShieldAB">
+        <EditorCategories value=""/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="FirebatMengskShield"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="FirebatMengskLevel2Set">
+        <EditorCategories value=""/>
+        <EffectArray value="MengskVeteranLevelUpDummy"/>
+        <EffectArray value="FirebatMengskShieldAB"/>
+    </CEffectSet>
+    <CEffectSet id="FirebatMengskLevel3Set">
+        <EditorCategories value=""/>
+        <EffectArray value="MengskVeteranLevelUpDummy"/>
+        <EffectArray value="FirebatMengskRangeAB"/>
+    </CEffectSet>
+    <CEffectCreatePersistent id="FirebatMengskCreatePersistent">
+        <EditorCategories value="Race:Terran"/>
+        <WhichLocation Value="SourcePoint"/>
+        <OffsetVectorStartLocation Value="SourcePoint"/>
+        <Flags index="Channeled" value="1"/>
+        <PeriodCount value="4"/>
+        <PeriodicEffectArray value="MengskFirebatSearchArea2"/>
+        <PeriodicOffsetArray value="0,-0.9,0"/>
+        <PeriodicOffsetArray value="0,-1.4,0"/>
+        <PeriodicOffsetArray value="0,-1.9,0"/>
+        <PeriodicOffsetArray value="0,-2.4,0"/>
+        <PeriodicPeriodArray value="0.022"/>
+        <PeriodicPeriodArray value="0.022"/>
+        <PeriodicPeriodArray value="0.022"/>
+        <PeriodicPeriodArray value="0.022"/>
+    </CEffectCreatePersistent>
+    <CEffectDamage id="FirebatMengskDamage" parent="DU_WEAP_SPLASH">
+        <ValidatorArray value="noMarkers"/>
+        <EditorCategories value="Race:Terran"/>
+        <AttributeBonus index="Light" value="10"/>
+        <Amount value="20"/>
+        <Death value="Fire"/>
+    </CEffectDamage>
+    <CEffectEnumArea id="MengskFirebatSearchArea2" parent="EA_WEAP">
+        <EditorCategories value="Race:Terran"/>
+        <SearchFilters value="Ground;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="1" Effect="FirebatMengskDamage"/>
+    </CEffectEnumArea>
+    <CEffectSet id="FirebatMengskSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="FirebatMengskCreatePersistentSwitch"/>
+        <EffectArray value="FirebatMengskDamage"/>
+    </CEffectSet>
+</Catalog>

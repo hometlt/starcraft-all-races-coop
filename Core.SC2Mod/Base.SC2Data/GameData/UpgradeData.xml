@@ -1,20 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
-
-
-
-
-
-    <CUpgrade id="MedivacIncreaseSpeedBoost">
-        <Race value="Terr"/>
-        <EffectArray Operation="Set" Reference="Unit,SpecialOpsDropship,Speed" Value="3"/>
-        <AffectedUnitArray value="SpecialOpsDropship"/>
-    </CUpgrade>
-    <CUpgrade id="TriLithiumPowerCells">
-        <EffectArray index="0" Value="2"/>
-    </CUpgrade>
-
-
     <CUpgrade default="1" id="CollectionSkinDeluxe">
         <EditorCategories value="Race:Neutral"/>
     </CUpgrade>
@@ -389,6 +374,14 @@
         <LeaderAlias value="MengskTrooperWeapons"/>
         <LeaderLevel value="1"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+    </CUpgrade>
+    <CUpgrade id="MedivacIncreaseSpeedBoost">
+        <Race value="Terr"/>
+        <EffectArray Operation="Set" Reference="Unit,SpecialOpsDropship,Speed" Value="3"/>
+        <AffectedUnitArray value="SpecialOpsDropship"/>
+    </CUpgrade>
+    <CUpgrade id="TriLithiumPowerCells">
+        <EffectArray index="0" Value="2"/>
     </CUpgrade>
     <CUpgrade id="AlarakTheStrongestSurvive"/>
     <CUpgrade id="FortifiedBunkerCarapace2">
@@ -15060,7 +15053,7 @@
         <EffectArray Reference="Abil,SIClusterRockets,Cost[0].Charge.CountMax" Value="50"/-->
     </CUpgrade>
     <!-- given to players, simplified from the previous check each different type of upgrade a player may have -->
-    <CUpgrade id="PlayerCommander">
+    <CUpgrade id="IsPlayerCommanderUpgrade">
         <LeaderAlias value=""/>
     </CUpgrade>
     <CUpgrade id="DisruptorCloak">

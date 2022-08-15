@@ -10923,6 +10923,7 @@ Param/Value/lib_COMI_137FF493=No Challenge
 Param/Value/lib_COMI_1395FEED={Starting Location}
 Param/Value/lib_COMI_14271841=Economy test enabled<n/>
 Param/Value/lib_COMI_14A52DB3=~Hero~
+Param/Value/lib_COMI_15F390A4=Applying Settings
 Param/Value/lib_COMI_1665482B=<c val="FF8000">SlimUI deactivated</c>
 Param/Value/lib_COMI_175187BA=~Reviver~
 Param/Value/lib_COMI_1769E792=<c val="FF9800">Nova has been revived.</c>
@@ -11037,6 +11038,7 @@ Param/Value/lib_COMI_621E9839=Hellion (26 kills)
 Param/Value/lib_COMI_6315861A=<c val="FF8000">Tracing disabled</c>
 Param/Value/lib_COMI_6316D76C=Hellion (26 kills)
 Param/Value/lib_COMI_64F998FB=<ul indent="2" text="•">
+Param/Value/lib_COMI_65842B6C=Applying Tech
 Param/Value/lib_COMI_67B18601=Missions
 Param/Value/lib_COMI_68A54BFE=Invalid difficulty parameter
 Param/Value/lib_COMI_69481749=<c val="FF9800">Kerrigan is ready for battle.</c>
@@ -11078,6 +11080,7 @@ Param/Value/lib_COMI_8A8A4B48=<c val="FF8000">Controlling enemy</c>
 Param/Value/lib_COMI_8ADB8EC0=<c val="FF9800">Gary is ready for battle.</c>
 Param/Value/lib_COMI_8B040849=<s val="@@StandardTooltipHeader">Drakken Laser Drill (Unfinished)</s><n/>The Drakken Laser Drill is under construction
 Param/Value/lib_COMI_8B3E555D=Ground
+Param/Value/lib_COMI_8B843D5A=Initialize Variables
 Param/Value/lib_COMI_8D72AB6D=<c val="FF8000">Change lighting with "+" or "-" keys</c>
 Param/Value/lib_COMI_8D7D1E1A=Start mission!
 Param/Value/lib_COMI_8E0E31E2=<c val="FF9800">Alarak is ready for battle.</c>
@@ -11149,6 +11152,7 @@ Param/Value/lib_COMI_B8CE450F=Other emotes
 Param/Value/lib_COMI_B9031494=<c val="B0B0B0">DPS (5s): —<n/>DPS (?s): —</c>
 Param/Value/lib_COMI_B90F2179=Unable to add a wave unit ping group, may need to increase max ping count.
 Param/Value/lib_COMI_B9A66432=Random
+Param/Value/lib_COMI_B9CBC084=Starting Base
 Param/Value/lib_COMI_BAEB517D=Quit
 Param/Value/lib_COMI_BAEB7C3F=<c val="FF9800">Zagara has been revived at your Hatchery.</c>
 Param/Value/lib_COMI_BB77207C=<c val="FF8000">AI paused</c>
@@ -11177,6 +11181,7 @@ Param/Value/lib_COMI_CDE8D4FE=Ran out of CoopAI upgrade slots, need to increase 
 Param/Value/lib_COMI_CFE86DC9=<c val="FF9800">Alarak has died. You must warp in a Nexus to revive him.</c>
 Param/Value/lib_COMI_D0279C5B=<c val="FF8000">Godmode enabled</c>
 Param/Value/lib_COMI_D16B0347=<c val="FF9800">Zagara is ready for battle.</c>
+Param/Value/lib_COMI_D1ACB22F=Commanders Triggers
 Param/Value/lib_COMI_D2E7A067=Days Taken to Complete Mission:
 Param/Value/lib_COMI_D48C033D=5 Days
 Param/Value/lib_COMI_D49AC1F7=<min2/>:<sec2/>
@@ -11191,6 +11196,7 @@ Param/Value/lib_COMI_DE48020F=INCOME
 Param/Value/lib_COMI_DEF66645=Hybrid Destroyer
 Param/Value/lib_COMI_DFBFC6A7=<c val="FF9800">Zeratul is ready for battle.</c>
 Param/Value/lib_COMI_E097BCCD=Unit type with the most kills:
+Param/Value/lib_COMI_E0A20D7A=Applying Settings
 Param/Value/lib_COMI_E37B86F5=Welcome To ALL RACES COOP (ARC)! ARC is currently in active development. Please visit our group in discord  for leave your feedback and find more info and other players
 Param/Value/lib_COMI_E38ED372=Void Income increased
 Param/Value/lib_COMI_E3D9543E=Days Taken to Complete Mission:
@@ -11214,6 +11220,7 @@ Param/Value/lib_COMI_F33D8F8C=Hybrid Behemoth
 Param/Value/lib_COMI_F39CCBB4=Select Next Mission
 Param/Value/lib_COMI_F4065A5D=~Spawner~
 Param/Value/lib_COMI_F4C11E4E=Missions
+Param/Value/lib_COMI_F4C70C8D=Add Enemies
 Param/Value/lib_COMI_F57F76EC=5 Days
 Param/Value/lib_COMI_F5967CF5=Unit type with the most kills:
 Param/Value/lib_COMI_F66AE9FC=<c val="FF8000">Resetting ability ranges.</c>
@@ -13238,6 +13245,7 @@ Upgrade/Name/InfestedSiegeTankArmoredDamage=Acidic Enzymes
 Upgrade/Name/InfestorEnergyUpgrade2=Gamete Meiosis
 Upgrade/Name/InfestorStetmannBonusRavager=BONUS Ravager!
 Upgrade/Name/InfestorStetmannRecharge=UMI-C Charging Protocol
+Upgrade/Name/IsPlayerCommanderUpgrade=IsPlayerCommanderUpgrade
 Upgrade/Name/K5ChainLightning=Chain Reaction
 Upgrade/Name/K5Cooldowns=Ability Efficiency
 Upgrade/Name/Karax20Ally=Karax 2.0 Ally
@@ -14065,9 +14073,13 @@ UserData/CoopAIFactions/Any_Name=Any
 UserData/CoopAIFactions/CovertOps_Name=CovertOps
 UserData/CoopAIFactions/Custom_Name=Custom
 UserData/CoopAIFactions/Dominion_Name=Dominion
+UserData/CoopAIFactions/Dragon_Name=Dragon
 UserData/CoopAIFactions/Evolved_Name=Evolved
+UserData/CoopAIFactions/Genetron_Name=Genetron
+UserData/CoopAIFactions/Hybrids_Name=Hybrids
 UserData/CoopAIFactions/IhanRii_Name=Ihan-Rii
 UserData/CoopAIFactions/Infested_Name=Infested
+UserData/CoopAIFactions/Keiron_Name=Keiron
 UserData/CoopAIFactions/Kerrigan_Name=Kerrigan
 UserData/CoopAIFactions/Leviathan_Name=Zerg Leviathan
 UserData/CoopAIFactions/Marauders_Name=Marauders
@@ -14085,6 +14097,8 @@ UserData/CoopAIFactions/Taldarim_Name=Taldarim
 UserData/CoopAIFactions/TerranStandart_Name=Terran Standart
 UserData/CoopAIFactions/Terran_Name=Terran
 UserData/CoopAIFactions/Terrans Infested_Name=Infested
+UserData/CoopAIFactions/UED_Name=UED
+UserData/CoopAIFactions/Xayid_Name=Xayid
 UserData/CoopAIFactions/Zerg Evolved_Name=Evolved
 UserData/CoopAIFactions/Zerg Leviathan_Name=Zerg Leviathan
 UserData/CoopAIFactions/ZergEvolved_Name=Evolved
@@ -16465,6 +16479,8 @@ UserData/PlayerCommanders/Confederates_Description=NYI
 UserData/PlayerCommanders/Confederates_Name=New Confederates
 UserData/PlayerCommanders/Dehaka_Description=Dehaka uses Essence gained from fallen enemies to grow and get stronger, while being backed up with a powerful force of Primal units.<n/><n/>Combat units:<n/><img path="Assets\Textures\btn-unit-collection-primal-zergling.dds"/><img path="Assets\Textures\btn-unit-collection-primal-roach.dds"/><img path="Assets\Textures\btn-unit-collection-primal-hydralisk.dds"/><img path="Assets\Textures\btn-unit-collection-primal-creeperhost.dds"/><img path="Assets\Textures\btn-unit-collection-primal-ultralisk.dds"/><img path="Assets\Textures\btn-unit-collection-primal-ravasaur.dds"/><img path="Assets\Textures\btn-unit-collection-primal-roachupgrade.dds"/><img path="Assets\Textures\btn-unit-collection-primal-lurker.dds"/><img path="Assets\Textures\btn-unit-collection-primal-swarmhost.dds"/><img path="Assets\Textures\btn-unit-collection-primal-tyrannozor.dds"/><img path="Assets\Textures\btn-unit-collection-primal-guardian.dds"/><img path="Assets\Textures\btn-unit-collection-primal-mutalisk.dds"/><img path="Assets\Textures\btn-building-dehaka-primalwurm.dds"/>
 UserData/PlayerCommanders/Dehaka_Name=Dehaka
+UserData/PlayerCommanders/Dragon_Description=Dragon
+UserData/PlayerCommanders/Dragon_Name=Dragon
 UserData/PlayerCommanders/Fenix_Description=Fenix uses a variety of different suits, backed up with an army led by AI Champions to dominate the battlefield.<n/><n/>Combat units:<n/><img path="Assets\Textures\btn-unit-protoss-champion-zealot-purifier.dds"/><img path="Assets\Textures\btn-unit-protoss-champion-adept-purifier.dds"/><img path="Assets\Textures\btn-unit-collection-purifier-sentry.dds"/><n/><img path="Assets\Textures\btn-unit-protoss-champion-immortal-purifier.dds"/><img path="Assets\Textures\btn-unit-protoss-champion-colossus-purifier.dds"/><img path="Assets\Textures\btn-unit-protoss-disruptorfenix-purifier.dds"/><n/><img path="Assets\Textures\btn-unit-protoss-champion-scout-purifier.dds"/><img path="Assets\Textures\btn-unit-protoss-champion-carrier-purifier.dds"/>
 UserData/PlayerCommanders/Fenix_Name=Fenix
 UserData/PlayerCommanders/Genetron_Description=NYI
@@ -16484,6 +16500,7 @@ UserData/PlayerCommanders/Mengsk_Description=Emperor of the Dominion
 UserData/PlayerCommanders/Mengsk_Name=Mengsk
 UserData/PlayerCommanders/Nakryss_Description=NYI
 UserData/PlayerCommanders/Nakryss_Name=Nakryss
+UserData/PlayerCommanders/NetworkHybrids_Name=Hybrids
 UserData/PlayerCommanders/Nokryss_Description=NYI
 UserData/PlayerCommanders/Nokryss_Name=Nok'Ryss
 UserData/PlayerCommanders/Nova_Description=Nova army consists of elite special ops units that deploy instantly and have more hit points, but have substantial resource costs over normal units.<n/><n/>Combat units:<n/><img path="Assets\Textures\btn-unit-terran-marineblackops.dds"/><img path="Assets\Textures\btn-unit-terran-marauderblackops.dds"/><img path="Assets\Textures\btn-unit-terran-blackops-ghost.dds"/><n/><img path="Assets\Textures\btn-unit-terran-hellbatblackops.dds"/><img path="Assets\Textures\btn-unit-terran-goliathblackops.dds"/><img path="Assets\Textures\btn-unit-terran-siegetankblackops-tank.dds"/><n/><img path="Assets\Textures\btn-unit-terran-liberatorblackops.dds"/><img path="Assets\Textures\btn-unit-terran-bansheeblackops.dds"/><img path="Assets\Textures\btn-unit-terran-ravenblackops.dds"/><n/><img path="Assets\Textures\btn-unit-terran-autoturretblackops.dds"/><img path="Assets\Textures\btn-building-nova-missileturret.dds"/>
@@ -16502,6 +16519,8 @@ UserData/PlayerCommanders/ProtossFenix_Name=Fenix
 UserData/PlayerCommanders/ProtossKarax_Description=Karax uses powerful static defenses backed up by robotic units and the Spear of Adun to control the battlefield.<n/><n/>Combat units:<n/><img path="Assets\Textures\btn-unit-collection-purifier-zealot.dds"/><img path="Assets\Textures\btn-unit-protoss-sentry-purifier.dds"/><n/><img path="Assets\Textures\btn-unit-protoss-immortal.dds"/><img path="Assets\Textures\btn-unit-protoss-colossus-purifier.dds"/><img path="Assets\Textures\btn-unit-protoss-phoenix-purifier.dds"/><img path="Assets\Textures\btn-unit-protoss-carrier.dds"/><n/><img path="Assets\Textures\btn-building-protoss-photoncannon.dds"/><img path="Assets\Textures\btn-building-protoss-shieldbattery.dds"/><img path="Assets\Textures\btn-building-protoss-khaydarinmonolithaiur.dds"/>
 UserData/PlayerCommanders/ProtossKarax_InfoDetails=<ul indent="2" text="•"><li/>Has access to the Solar Forge structure which upgrades the Spear of Adun's energy regen and cooldown reduction.<li/>Does not warp in air units.
 UserData/PlayerCommanders/ProtossKarax_Name=Karax
+UserData/PlayerCommanders/ProtossVolchron_Description=Talon
+UserData/PlayerCommanders/ProtossVolchron_Name=Volchron
 UserData/PlayerCommanders/ProtossVorazun_Description=Vorazun uses the power of cloaked units to wreak havoc around the battlefield, combined with a powerful ability to stop time.<n/><n/>Combat units:<n/><img path="Assets\Textures\btn-unit-protoss-zealot-nerazim.dds"/><img path="Assets\Textures\btn-unit-protoss-stalker.dds"/><img path="Assets\Textures\btn-unit-protoss-darktemplar.dds"/><img path="Assets\Textures\btn-unit-protoss-darkarchon.dds"/><n/><img path="Assets\Textures\btn-unit-protoss-corsair.dds"/><img path="Assets\Textures\btn-unit-protoss-oracle.dds"/><img path="Assets\Textures\btn-unit-protoss-warpray.dds"/>
 UserData/PlayerCommanders/ProtossVorazun_InfoDetails=<ul indent="2" text="•"><li/>Spear of Adun powers can stun enemies and cloak allies.<li/>Has powerful Dark Templar units.<li/>Commander Difficulty: Hard
 UserData/PlayerCommanders/ProtossVorazun_Name=Vorazun
@@ -16553,6 +16572,10 @@ UserData/PlayerCommanders/Terran_Description=Descendents of a colonization exped
 UserData/PlayerCommanders/Terran_Name=Terran
 UserData/PlayerCommanders/Tychus_Description=Has experience making deals with devils.<n/><n/><img path="Assets\Textures\btn-unit-terran-tychuscoop.dds"/><img path="Assets\Textures\btn-unit-terran-tychusreaper.dds"/><img path="Assets\Textures\btn-unit-terran-tychuswarhound.dds"/><n/><img path="Assets\Textures\btn-unit-terran-tychusfirebat.dds"/><img path="Assets\Textures\btn-unit-terran-tychusherc.dds"/><img path="Assets\Textures\btn-unit-terran-tychusmarauder.dds"/><n/><img path="Assets\Textures\btn-unit-terran-tychusghost.dds"/><img path="Assets\Textures\btn-unit-terran-tychusspectre.dds"/><img path="Assets\Textures\btn-unit-terran-tychusmedic.dds"/><n/><img path="Assets\Textures\btn-building-terran-tychusturret.dds"/>
 UserData/PlayerCommanders/Tychus_Name=Tychus
+UserData/PlayerCommanders/UED_Description=UED General
+UserData/PlayerCommanders/UED_Name=UED
+UserData/PlayerCommanders/UPL_Description=UPL
+UserData/PlayerCommanders/UPL_Name=UPL
 UserData/PlayerCommanders/Volchron_Description=NYI
 UserData/PlayerCommanders/Volchron_Name=Volchron
 UserData/PlayerCommanders/Vorazun_Description=Vorazun uses the power of cloaked units to wreak havoc around the battlefield, combined with a powerful ability to stop time.<n/><n/>Combat units:<n/><img path="Assets\Textures\btn-unit-protoss-zealot-nerazim.dds"/><img path="Assets\Textures\btn-unit-protoss-stalker.dds"/><img path="Assets\Textures\btn-unit-protoss-darktemplar.dds"/><img path="Assets\Textures\btn-unit-protoss-darkarchon.dds"/><n/><img path="Assets\Textures\btn-unit-protoss-corsair.dds"/><img path="Assets\Textures\btn-unit-protoss-oracle.dds"/><img path="Assets\Textures\btn-unit-protoss-warpray.dds"/>

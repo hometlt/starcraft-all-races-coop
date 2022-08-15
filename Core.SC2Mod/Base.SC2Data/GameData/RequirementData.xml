@@ -4219,7 +4219,7 @@
     </CRequirement>
     <CRequirement id="HavePlayerCommander">
         <EditorCategories value="Race:Zerg,TechType:Ability"/>
-        <NodeArray index="Show" Link="CountUpgradePlayerCommanderCompleteOnly"/>
+        <NodeArray index="Show" Link="CountUpgradeIsPlayerCommanderUpgradeCompleteOnly"/>
     </CRequirement>
     <CRequirement id="HaveZagaraCommander">
         <EditorCategories value="Race:Zerg,TechType:Ability"/>
@@ -6030,4 +6030,12 @@
     <CRequirement id="HaveTimeWarpProductionBehaviorOnUnit">
         <NodeArray index="Use" Link="CountBehaviorTimeWarpProductionCompleteOnlyAtUnit"/>
     </CRequirement>
+    <CRequirementOr id="OrLT1788454840CountUnitAlias_MercStarportQueuedOrBetterCountUpgradeHHMercStarportLimitCountCompleteOnlyCountUpgradeCommanderPrestigeHornerArmyCompleteOnly">
+        <OperandArray value="LT1788454840CountUnitAlias_MercStarportQueuedOrBetterCountUpgradeHHMercStarportLimitCountCompleteOnly"/>
+        <OperandArray value="CountUpgradeCommanderPrestigeHornerArmyCompleteOnly"/>
+    </CRequirementOr>
+    <CRequirementCountUpgrade id="CountUpgradeCommanderPrestigeHornerArmyCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="CommanderPrestigeHornerArmy" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
 </Catalog>

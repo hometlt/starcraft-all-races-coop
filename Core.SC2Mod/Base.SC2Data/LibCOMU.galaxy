@@ -4599,7 +4599,7 @@ void libCOMU_gf_CT_ApplyOrderCosts (unit lp_orderedUnit, order lp_order) {
 
     // Implementation
     lv_microPlayer = OrderGetPlayer(lp_order);
-    if (((libCOMI_gv_cT_MutatorEnabledQuickList[(libCOMI_ge_CT_MutatorQuickList_CT_QuickOrderCosts)] == false) || (PlayerGroupHasPlayer(libCOMI_gf_CommanderPlayers(), lv_microPlayer) == false) || (OrderGetFlag(lp_order, c_cmdUser) == false) || (UnitGroupHasUnit(libCOMU_gv_cT_OrderCostImmuneUnits, lp_orderedUnit) == true))) {
+    if (((libCOMI_gv_cT_MutatorEnabledQuickList[(libCOMI_ge_CT_MutatorQuickList_CT_QuickOrderCosts)] == false) || (PlayerGroupHasPlayer(libCOMI_gf_GetAlliedCommandersPlayersCopy(), lv_microPlayer) == false) || (OrderGetFlag(lp_order, c_cmdUser) == false) || (UnitGroupHasUnit(libCOMU_gv_cT_OrderCostImmuneUnits, lp_orderedUnit) == true))) {
         return ;
     }
 
@@ -4607,7 +4607,7 @@ void libCOMU_gf_CT_ApplyOrderCosts (unit lp_orderedUnit, order lp_order) {
         return ;
     }
 
-    if (((lp_orderedUnit == libCOMI_gv_oBSOLETE_CM_HeroUnit[lv_microPlayer]) || (lp_orderedUnit == libCOMI_gv_cM_GlobalCasterUnit[lv_microPlayer]) || (UnitHasBehavior2(lp_orderedUnit, "TychusHeroCount") == true))) {
+    if (((lp_orderedUnit == libCOMI_gv_oBSOLETE_CM_HeroUnit[lv_microPlayer]) || (lp_orderedUnit == libCOMI_gv_yY_GPCasterUnit[lv_microPlayer]) || (UnitHasBehavior2(lp_orderedUnit, "TychusHeroCount") == true))) {
         if ((PlayerGetPropertyInt(UnitGetOwner(lp_orderedUnit), c_playerPropVespene) > 0)) {
             libCOMI_gf_GivePlayerResources(PointWithOffset(UnitGetPosition(lp_orderedUnit), -0.4, 0.0), libCOMI_ge_CacheResourceType_Mineral, -10, null, null, lv_microPlayer);
             libCOMI_gf_GivePlayerResources(PointWithOffset(UnitGetPosition(lp_orderedUnit), 0.4, 0.0), libCOMI_ge_CacheResourceType_Vespene, -5, null, null, lv_microPlayer);
@@ -6633,7 +6633,7 @@ void libCOMU_gf_CT_ApplyStructureSteal (unit lp_killingUnit, unit lp_deadStructu
 
     // Implementation
     lv_structureType = UnitGetType(lp_deadStructure);
-    if ((lp_killingUnit != lp_deadStructure) && (PlayerGroupHasPlayer(libCOMI_gf_CommanderPlayers(), UnitGetOwner(lp_killingUnit)) == true)) {
+    if ((lp_killingUnit != lp_deadStructure) && (PlayerGroupHasPlayer(libCOMI_gf_GetAlliedCommandersPlayersCopy(), UnitGetOwner(lp_killingUnit)) == true)) {
         UnitKill(lp_deadStructure);
         return ;
     }
@@ -7339,7 +7339,7 @@ bool libCOMU_gt_InitializeMutators_Func (bool testConds, bool runActions) {
 //--------------------------------------------------------------------------------------------------
 void libCOMU_gt_InitializeMutators_Init () {
     libCOMU_gt_InitializeMutators = TriggerCreate("libCOMU_gt_InitializeMutators_Func");
-    TriggerAddEventGeneric(libCOMU_gt_InitializeMutators, libCOMI_gv_cOOP_MISSION_STARTED);
+    TriggerAddEventGeneric(libCOMU_gt_InitializeMutators, libCOMI_gv_iNIT_COOP_MISSION);
 }
 
 //--------------------------------------------------------------------------------------------------

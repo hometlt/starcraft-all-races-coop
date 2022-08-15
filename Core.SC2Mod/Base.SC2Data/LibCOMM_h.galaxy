@@ -379,6 +379,7 @@ point[17] libCOMM_gv_cM_ZeratulTopBarRallyPoint;
 unit[libCOMI_gv_cCC_MAXPLAYERS + 1] libCOMM_gv_cM_Zeratul_VoidRift;
 int libCOMM_gv_cM_ZeratulPlayer;
 unitgroup libCOMM_gv_cM_Zeratul_RalliedGroup;
+unit[libCOMI_gv_cCC_MAXPLAYERS + 1] libCOMM_gv_yY_GPCasterUnitSecondary;
 
 // Function Declarations
 unit libCOMM_gf_CM_PlayerGetGlobalCaster2 (int lp_player);
@@ -391,6 +392,7 @@ bool libCOMM_gf_AF_AbilityHasCooldownAndEnergyCost (int lp_pPlayer, int lp_pButt
 bool libCOMM_gf_AF_AbilityIsAvailable (int lp_pPlayer, int lp_pButtonIndex);
 fixed libCOMM_gf_AF_EnergyCostofAbility (string lp_pAbility);
 string libCOMM_gf_AF_GetButton (int lp_pPlayer, int lp_pButtonIndex);
+void libCOMM_gf_AF_TopBarNotificationsInitialization (int lp_player);
 void libCOMM_gf_CM_SoATargetingModeEnter (int lp_player);
 void libCOMM_gf_CM_SoATargetingModeExit (int lp_player);
 void libCOMM_gf_CM_SoATargetingCleanupActorsAndUnits (int lp_player);
@@ -558,7 +560,6 @@ trigger libCOMM_gt_CM_DebugCommanderCooldowns;
 trigger libCOMM_gt_ShieldColorUnitCreate;
 trigger libCOMM_gt_ShieldColorUnitMorph;
 trigger libCOMM_gt_AF_TopBarNotificationsEnableDisable;
-trigger libCOMM_gt_AF_TopBarNotificationsInitialization;
 trigger libCOMM_gt_AF_TopBarClicked;
 trigger libCOMM_gt_AF_MouseEntersTopBar;
 trigger libCOMM_gt_AF_MouseExitsTopBar;

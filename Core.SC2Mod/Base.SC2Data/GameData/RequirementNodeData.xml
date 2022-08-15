@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CRequirementCountUpgrade id="CountUpgradeIsPlayerCommanderUpgradeCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="IsPlayerCommanderUpgrade" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
     <!--    <CRequirementAllowUnit id="AllowUnitGreaterSpire">-->
     <!--        <Tooltip value="RequirementNode/Tooltip/##id##"/>-->
     <!--        <Link value="GreaterSpire"/>-->
@@ -33,7 +38,6 @@
         <Link value="AdvancedHealingAI"/>
     </CRequirementAllowUpgrade>
     <CRequirementAllowUpgrade id="AllowUpgradeAlarakTheStrongestSurvive">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Link value="AlarakTheStrongestSurvive"/>
     </CRequirementAllowUpgrade>
     <CRequirementAllowUpgrade id="AllowUpgradeAnabolicSynthesis">
@@ -2098,7 +2102,6 @@
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeAlarakTheStrongestSurviveCompleteOnly">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="AlarakTheStrongestSurvive" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeAlias_PneumatizedCarapaceCompleteOnly1781825861">
@@ -8186,11 +8189,6 @@
         <OperandArray index="0" value="CountUpgradeSITerranShipWeaponsLevel2CompleteOnly"/>
         <OperandArray index="1" value="1"/>
     </CRequirementEq>
-    <CRequirementCountUpgrade id="CountUpgradePlayerCommanderCompleteOnly">
-        <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value=""/>
-        <Count Link="PlayerCommander" State="CompleteOnly"/>
-    </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeZagaraCommanderCompleteOnly">
         <Flags index="TechTreeCheat" value="0"/>
         <Tooltip value=""/>
@@ -9829,8 +9827,6 @@
     </CRequirementCountUnit>
     <CRequirementCountBehavior id="CountBehaviorTimeWarpProductionCompleteOnlyAtUnit">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="TimeWarpProduction" State="CompleteOnlyAtUnit"/>
     </CRequirementCountBehavior>
-
 </Catalog>

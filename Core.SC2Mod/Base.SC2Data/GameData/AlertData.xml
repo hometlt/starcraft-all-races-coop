@@ -6,14 +6,6 @@
     <CAlert id="SpiderMineComplete">
         <Sound value="Vulture_SpiderMinePlace"/>
     </CAlert>
-    <CAlert id="MorphComplete_Brutalisk">
-        <Peripheral value="MorphComplete"/>
-        <Sound value="AbathurCommander_Brutalisk"/>
-    </CAlert>
-    <CAlert id="MorphComplete_Leviathan">
-        <Peripheral value="MorphComplete"/>
-        <Sound value="AbathurCommander_Leviathan"/>
-    </CAlert>
     <CAlert id="VictoryAlert">
         <Sound value=""/>
     </CAlert>
@@ -31,5 +23,13 @@
     </CAlert>
     <CAlert id="DrawAlertCoop" parent="DrawAlert">
         <Sound value="Alert_Draw"/>
+    </CAlert>
+    <CAlert id="MorphComplete_Brutalisk">
+        <Peripheral value="MorphComplete"/>
+        <Sound value="AbathurCommander_Brutalisk"/>
+    </CAlert>
+    <CAlert id="MorphComplete_Leviathan">
+        <Peripheral value="MorphComplete"/>
+        <Sound value="AbathurCommander_Leviathan"/>
     </CAlert>
 </Catalog>

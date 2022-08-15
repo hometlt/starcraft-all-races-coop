@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CButton id="ResearchSuperRegeneration">
+        <Icon value="Assets\Textures\btn-ability-stetmann-stetelliteoverloadhealth.dds"/>
+        <AlertName value="Button/Name/SuperRegeneration2"/>
+        <HotkeyAlias value="SuperRegeneration"/>
+    </CButton>
+    <CButton id="ResearchVanadiumClaws">
+        <Icon value="Assets\Textures\btn-upgrade-stetmann-mechameleeattacks-level3.dds"/>
+        <HotkeyAlias value="SuperRegeneration"/>
+    </CButton>
+    <CButton id="ExplosiveLocusts">
+        <Icon value="Assets\Textures\btn-ability-dehaka-explosiveshot.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-dehaka-explosiveshot.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="VanadiumClaws">
+        <Icon value="Assets\Textures\btn-upgrade-stetmann-mechameleeattacks-level3.dds"/>
+        <HotkeyAlias value="SuperRegeneration"/>
+    </CButton>
+    <CButton id="ArtificialIncubationSacs">
+        <Icon value="Assets\Textures\btn-unit-zerg-creeperhostspawnflyer-mecha-double.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-creeperhostspawnflyer-mecha-double.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="BigPuppy">
+        <Icon value="Assets\Textures\btn-unit-zerg-zerglingupgrade-mecha.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="buildMechaLarva">
+        <Name value="Button/Name/buildLarva"/>
+        <Icon value="Assets\Textures\btn-unit-zerg-larva-mecha.dds"/>
+        <AlertTooltip value="Button/Tooltip/buildLarva"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="buildMechaZerglings">
+        <Icon value="Assets\Textures\btn-unit-collection-zergling-mecha.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-zergling-mecha.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="StetmannCorrosiveBileRadiusIncrease">
+        <Icon value="Assets\Textures\btn-ability-stetmann-ravagermechacorrosivebile.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-stetmann-ravagermechacorrosivebile.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="LurkerLarvaStetmann">
+        <Icon value="Assets\Textures\btn-unit-collection-lurker-mecha.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-collection-lurker-mecha.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value="LurkerStetmann"/>
+    </CButton>
+    <CButton id="AutomatedExtractorStetmann">
+        <Icon value="Assets\Textures\btn-building-zerg-extractor-mecha.dds"/>
+        <AlertIcon value="Assets\Textures\btn-building-zerg-extractor-mecha.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value="ExtractorStetmann"/>
+    </CButton>
+    <CButton id="LocustStetmannSwoop">
+        <Icon value="Assets\Textures\btn-ability-neutral-ursadonleap.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-neutral-ursadonleap.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="SpawnLocustsStetmann">
+        <Tooltip value="Button/Tooltip/SwarmHostStetmann"/>
+        <Icon value="Assets\Textures\btn-unit-zerg-creeperhostspawn-mecha.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-creeperhostspawn-mecha.dds"/>
+        <EditorCategories value="Race:PrimalZerg"/>
+    </CButton>
+    <CButton id="SwarmHostStetmann">
+        <Icon value="Assets\Textures\btn-unit-zerg-swarmhost-mecha.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-swarmhost-mecha.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="SwarmHostStetmannPassive">
+        <Icon value="Assets\Textures\btn-unit-zerg-swarmhost-mecha.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-swarmhost-mecha.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="SwarmHostStetmannBurrowUp">
+        <Name value="Button/Name/BurrowUp"/>
+        <Tooltip value="Button/Tooltip/BurrowUp"/>
+        <Icon value="Assets\Textures\btn-ability-zerg-upburrow-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-upburrow-color.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value="BurrowUp"/>
+        <Universal value="1"/>
+    </CButton>
+    <CButton id="SwarmHostStetmannBurrowDown">
+        <Name value="Button/Name/BurrowDown"/>
+        <Tooltip value="Button/Tooltip/BurrowDown"/>
+        <Icon value="Assets\Textures\btn-ability-zerg-burrow-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-burrow-color.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value="BurrowDown"/>
+        <Universal value="1"/>
+    </CButton>
+    <CButton id="RavagerStetmannUnstableBile">
+        <Icon value="Assets\Textures\btn-ability-zerg-abathur-corrosivebilelarge.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-abathur-corrosivebilelarge.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value="RavagerStetmannCorrosiveBile"/>
+    </CButton>
+    <CButton id="RavagerStetmannPotentBile">
+        <Icon value="Assets\Textures\potentbile_coop.dds"/>
+        <AlertIcon value="Assets\Textures\potentbile_coop.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="RavagerStetmannUnstableBileResearch">
+        <Icon value="Assets\Textures\btn-ability-zerg-abathur-corrosivebilelarge.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-abathur-corrosivebilelarge.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="MechaRoachMechaRavagerUpgradeCache">
+        <Icon value="Assets\Textures\btn-ability-stetmann-infestorrainofroaches.dds"/>
+        <Placeholder value="1"/>
+    </CButton>
+    <CButton id="MechaInfestorandMechaViperUpgradeCache">
+        <Icon value="Assets\Textures\btn-progression-stetmann-10-infestorupgradecache.dds"/>
+        <Placeholder value="1"/>
+    </CButton>
+    <CButton id="MegaExtractors">
+        <Icon value="Assets\Textures\btn-building-zerg-extractor-mecha.dds"/>
+        <HotkeyAlias value="Stetisfaction"/>
+    </CButton>
+    <CButton id="RavagerStetmannScrapDrop">
+        <TooltipAppender Validator="CommanderPrestigeStetmannStetzones" Text="Button/Tooltip/CommanderPrestigeStetmannBestOilUpgrade"/>
+        <Icon value="Assets\Textures\btn-ability-stetmann-scrapdrop.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-stetmann-scrapdrop.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value="LurkerStetmannScrapDrop"/>
+    </CButton>
+    <CButton id="RoachStetmannScrapDrop">
+        <TooltipAppender Validator="CommanderPrestigeStetmannStetzones" Text="Button/Tooltip/CommanderPrestigeStetmannBestOilUpgrade"/>
+        <Icon value="Assets\Textures\btn-ability-stetmann-scrapdrop.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-stetmann-scrapdrop.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value="HydraliskStetmannScrapDrop"/>
+    </CButton>
+    <CButton id="RoachStetmannRespawn">
+        <Icon value="Assets\Textures\btn-ability-stetmann-infestorrainofroaches.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-stetmann-infestorrainofroaches.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value="HydraliskStetmannRespawn"/>
+        <ChargeText value="Button/ChargeText/RoachStetmannRespawn"/>
+    </CButton>
+    <CButton id="SuperRegeneration">
+        <Icon value="Assets\Textures\btn-ability-stetmann-stetelliteoverloadhealth.dds"/>
+    </CButton>
+    <CButton id="RavagerStetmannPassive">
+        <TooltipAppender Validator="HaveMasteryStetmannMaximumEgonergyPool" Text="Button/Tooltip/MasteryStetmannMaximumEgonergyPoolAppend"/>
+        <Icon value="Assets\Textures\btn-unit-zerg-ravager-mecha.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-ravager-mecha.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="MorphMorphaliskStetmann">
+        <Icon value="Assets\Textures\btn-unit-zerg-larva-mecha.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TooltipFlags index="ShowLevel" value="0"/>
+    </CButton>
+    <CButton id="MechanicalTransfusion">
+        <Icon value="Assets\Textures\btn-ability-stetmann-garyselfhealing.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-stetmann-garyselfhealing.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TooltipFlags index="ShowLevel" value="0"/>
+    </CButton>
+    <CButton id="QueenStetmann">
+        <Icon value="Assets\Textures\btn-unit-zerg-queen-mecha.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-queen-mecha.dds"/>
+        <Hotkey value="Button/Hotkey/Queen"/>
+        <EditorCategories value="Race:Zerg"/>
+        <Universal value="1"/>
+    </CButton>
+    <CButton id="RavagerStetmann">
+        <Icon value="Assets\Textures\btn-unit-zerg-ravager-mecha.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-ravager-mecha.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value="Ravager"/>
+    </CButton>
+    <CButton id="RoachStetmann">
+        <Icon value="Assets\Textures\btn-unit-zerg-roach-mecha.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-roach-mecha.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="ViperStetmann">
+        <Icon value="Assets\Textures\btn-unit-zerg-viper-mecha.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-viper-mecha.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="QueenStetmannPassive">
+        <TooltipAppender Validator="HaveMasteryStetmannMaximumEgonergyPool" Text="Button/Tooltip/MasteryStetmannMaximumEgonergyPoolAppend"/>
+        <Icon value="Assets\Textures\btn-unit-zerg-queen-mecha.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-queen-mecha.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="RoachStetmannPassive">
+        <TooltipAppender Validator="HaveMasteryStetmannMaximumEgonergyPool" Text="Button/Tooltip/MasteryStetmannMaximumEgonergyPoolAppend"/>
+        <Icon value="Assets\Textures\btn-unit-zerg-roachupgrade-mecha.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-roachupgrade-mecha.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="BanelingLarvaStetmann">
+        <Tooltip value="Button/Tooltip/BanelingStetmann"/>
+        <Icon value="Assets\Textures\btn-unit-zerg-baneling-mecha.dds"/>
+        <AlertTooltip value="Button/Tooltip/BanelingStetmann"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-baneling-mecha.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="StetmannAdvancedRecycling">
+        <Icon value="Assets\Textures\btn-ability-stetmann-zerglingrespawn.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-stetmann-zerglingrespawn.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="LightningSurprise">
+        <Icon value="Assets\Textures\btn-ability-terran-electricfield.dds"/>
+    </CButton>
+</Catalog>
