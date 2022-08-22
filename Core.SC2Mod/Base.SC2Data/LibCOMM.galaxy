@@ -2598,13 +2598,6 @@ void libCOMM_gf_CU_GPInitFenix (int lp_player) {
     }
 }
 
-void libCOMM_gf_LinkUnitEnergyToGlobalCasterButton (unit lp_unit, int lp_player, int lp_index) {
-    // Automatic Variable Declarations
-    // Implementation
-    libNtve_gf_SetDialogItemUnit(libCOMI_gv_cU_GPUnitEnergyLinks[lp_index][lp_player], lp_unit, PlayerGroupSingle(lp_player));
-    DialogControlSetVisible(libCOMI_gv_cU_GPUnitEnergyLinks[lp_index][lp_player], PlayerGroupSingle(lp_player), true);
-}
-
 void libCOMM_gf_TransferGuardianShell (unit lp_source, unit lp_target) {
     // Variable Declarations
     string lv_itbehavior;
@@ -2617,6 +2610,38 @@ void libCOMM_gf_TransferGuardianShell (unit lp_source, unit lp_target) {
     UnitBehaviorTransfer(lp_source, lp_target, "SOARecallOnDeathRecentlyRecalled", c_unitBehaviorCountAll);
     UnitBehaviorTransfer(lp_source, lp_target, "SOAHeroicShieldWeakness", c_unitBehaviorCountAll);
     UnitBehaviorTransfer(lp_source, lp_target, "SOAHeroicShieldImmunity", c_unitBehaviorCountAll);
+}
+
+void libCOMM_gf_FenixInitialDummySpawn (int lp_player) {
+    // Variable Declarations
+    int lv_itPlayer;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_itPlayer = lp_player;
+
+    // Implementation
+    libNtve_gf_CreateUnitsWithDefaultFacing(1, "FenixManaDummy1", c_unitCreateIgnorePlacement, lv_itPlayer, Point(0.0, 0.0));
+    UnitGroupAdd(libCOMM_gv_cM_Fenix_DummyGroup[lv_itPlayer], UnitLastCreated());
+    libCOMM_gv_cM_Fenix_Suits[1][lv_itPlayer] = UnitLastCreated();
+    libCOMI_gf_LinkUnitEnergyToGlobalCasterButton(libCOMM_gv_cM_Fenix_Suits[1][lv_itPlayer], lv_itPlayer, 1);
+    libNtve_gf_CreateUnitsWithDefaultFacing(1, "FenixManaDummy2", c_unitCreateIgnorePlacement, lv_itPlayer, Point(0.0, 0.0));
+    UnitGroupAdd(libCOMM_gv_cM_Fenix_DummyGroup[lv_itPlayer], UnitLastCreated());
+    libCOMM_gv_cM_Fenix_Suits[2][lv_itPlayer] = UnitLastCreated();
+    libCOMI_gf_LinkUnitEnergyToGlobalCasterButton(libCOMM_gv_cM_Fenix_Suits[2][lv_itPlayer], lv_itPlayer, 2);
+    libNtve_gf_CreateUnitsWithDefaultFacing(1, "FenixManaDummy3", c_unitCreateIgnorePlacement, lv_itPlayer, Point(0.0, 0.0));
+    UnitGroupAdd(libCOMM_gv_cM_Fenix_DummyGroup[lv_itPlayer], UnitLastCreated());
+    libCOMM_gv_cM_Fenix_Suits[3][lv_itPlayer] = UnitLastCreated();
+    libCOMI_gf_LinkUnitEnergyToGlobalCasterButton(libCOMM_gv_cM_Fenix_Suits[3][lv_itPlayer], lv_itPlayer, 3);
+    libCOMM_gv_cM_Fenix_AbilCmdArray[1] = "SOASummonFenix";
+    libCOMM_gv_cM_Fenix_AbilCmdArray[2] = "SOASummonFenixDragoon";
+    libCOMM_gv_cM_Fenix_AbilCmdArray[3] = "SOASummonFenixArbiter";
+    if ((TechTreeUpgradeCount(lv_itPlayer, "FenixOfflineSuitRegen", c_techCountCompleteOnly) == 1)) {
+        libCOMM_gv_cM_Fenix_OfflineHealthRegen[lv_itPlayer] *= libCOMM_gv_cM_Fenix_OfflineVitalRegenMultiplier;
+        libCOMM_gv_cM_Fenix_OfflineShieldRegen[lv_itPlayer] *= libCOMM_gv_cM_Fenix_OfflineVitalRegenMultiplier;
+    }
+
+    libCOMM_gv_cM_Fenix_OfflineEnergyRegen[lv_itPlayer] *= ((TechTreeUpgradeCount(lv_itPlayer, "MasteryFenixSuitEnergyRegen", c_techCountCompleteOnly) / 100.0) + 1.0);
 }
 
 trigger auto_libCOMM_gf_CM_Fenix_SuicideRecallTalandarThread_Trigger = null;
@@ -2684,7 +2709,7 @@ void libCOMM_gf_CM_Fenix_VitalMatch (unit lp_hero) {
             UnitSetPropertyFixed(libCOMM_gv_cM_Fenix_Suits[1][lv_player], c_unitPropShields, UnitGetPropertyFixed(lp_hero, c_unitPropShields, c_unitPropCurrent));
         }
 
-        libCOMM_gf_LinkUnitEnergyToGlobalCasterButton(libCOMM_gv_cM_Fenix_Suits[1][lv_player], UnitGetOwner(lp_hero), 1);
+        libCOMI_gf_LinkUnitEnergyToGlobalCasterButton(libCOMM_gv_cM_Fenix_Suits[1][lv_player], UnitGetOwner(lp_hero), 1);
     }
     else if (auto62920C5D_val == "FenixDragoon") {
         UnitSetPropertyFixed(libCOMM_gv_cM_Fenix_Suits[2][lv_player], c_unitPropEnergy, UnitGetPropertyFixed(lp_hero, c_unitPropEnergy, c_unitPropCurrent));
@@ -2694,7 +2719,7 @@ void libCOMM_gf_CM_Fenix_VitalMatch (unit lp_hero) {
             UnitSetPropertyFixed(libCOMM_gv_cM_Fenix_Suits[2][lv_player], c_unitPropShields, UnitGetPropertyFixed(lp_hero, c_unitPropShields, c_unitPropCurrent));
         }
 
-        libCOMM_gf_LinkUnitEnergyToGlobalCasterButton(libCOMM_gv_cM_Fenix_Suits[2][lv_player], UnitGetOwner(lp_hero), 2);
+        libCOMI_gf_LinkUnitEnergyToGlobalCasterButton(libCOMM_gv_cM_Fenix_Suits[2][lv_player], UnitGetOwner(lp_hero), 2);
     }
     else if (auto62920C5D_val == "FenixArbiter") {
         UnitSetPropertyFixed(libCOMM_gv_cM_Fenix_Suits[3][lv_player], c_unitPropEnergy, UnitGetPropertyFixed(lp_hero, c_unitPropEnergy, c_unitPropCurrent));
@@ -2704,7 +2729,7 @@ void libCOMM_gf_CM_Fenix_VitalMatch (unit lp_hero) {
             UnitSetPropertyFixed(libCOMM_gv_cM_Fenix_Suits[3][lv_player], c_unitPropShields, UnitGetPropertyFixed(lp_hero, c_unitPropShields, c_unitPropCurrent));
         }
 
-        libCOMM_gf_LinkUnitEnergyToGlobalCasterButton(libCOMM_gv_cM_Fenix_Suits[3][lv_player], UnitGetOwner(lp_hero), 3);
+        libCOMI_gf_LinkUnitEnergyToGlobalCasterButton(libCOMM_gv_cM_Fenix_Suits[3][lv_player], UnitGetOwner(lp_hero), 3);
     }
     else {
     }
@@ -8218,6 +8243,74 @@ void libCOMM_gt_DUT_CommanderAlarak_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Trigger: CU_GPAlarakGemPress
+//--------------------------------------------------------------------------------------------------
+bool libCOMM_gt_CU_GPAlarakGemPress_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_indexPlayer;
+
+    // Automatic Variable Declarations
+    playergroup auto17B65871_g;
+
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    auto17B65871_g = libCOMI_gf_HumanPlayers();
+    lv_indexPlayer = -1;
+    while (true) {
+        lv_indexPlayer = PlayerGroupNextPlayer(auto17B65871_g, lv_indexPlayer);
+        if (lv_indexPlayer < 0) { break; }
+        if ((EventDialogControl() == libCOMM_gv_cU_GPAlarakButton[lv_indexPlayer])) {
+            libCOMM_gv_cU_GPAlarakGemClickCount += 1;
+            if ((ModI(libCOMM_gv_cU_GPAlarakGemClickCount, 2) == 1)) {
+                CutsceneGoToBookmark(CutsceneGetTriggerControl(libCOMI_gv_cU_GPCutscene[lv_indexPlayer]), "WorkStart");
+                SoundPlayForPlayer(SoundLink("AlarakGemActivate", 0), c_maxPlayers, PlayerGroupSingle(lv_indexPlayer), 100.0, 0.0);
+            }
+            else {
+                CutsceneGoToBookmark(CutsceneGetTriggerControl(libCOMI_gv_cU_GPCutscene[lv_indexPlayer]), "WorkEnd");
+                SoundPlayForPlayer(SoundLink("AlarakGemDeactivate", 0), c_maxPlayers, PlayerGroupSingle(lv_indexPlayer), 100.0, 0.0);
+            }
+            if ((libCOMM_gv_cU_GPAlarakGemClickCount == 7)) {
+                libCOMI_gf_CM_CommanderVOSend(lv_indexPlayer, SoundLink("AlarakCommander_TopBarLines", 0), PlayerGroupSingle(lv_indexPlayer));
+            }
+            else if ((libCOMM_gv_cU_GPAlarakGemClickCount == 9)) {
+                libCOMI_gf_CM_CommanderVOSend(lv_indexPlayer, SoundLink("AlarakCommander_TopBarLines", 1), PlayerGroupSingle(lv_indexPlayer));
+            }
+            else if ((libCOMM_gv_cU_GPAlarakGemClickCount == 11)) {
+                libCOMI_gf_CM_CommanderVOSend(lv_indexPlayer, SoundLink("AlarakCommander_TopBarLines", 2), PlayerGroupSingle(lv_indexPlayer));
+            }
+            else if ((libCOMM_gv_cU_GPAlarakGemClickCount == 13)) {
+                libCOMI_gf_CM_CommanderVOSend(lv_indexPlayer, SoundLink("AlarakCommander_TopBarLines", 3), PlayerGroupSingle(lv_indexPlayer));
+            }
+            else if ((libCOMM_gv_cU_GPAlarakGemClickCount == 15)) {
+                libCOMI_gf_CM_CommanderVOSend(lv_indexPlayer, SoundLink("AlarakCommander_TopBarLines", 4), PlayerGroupSingle(lv_indexPlayer));
+            }
+            else if ((libCOMM_gv_cU_GPAlarakGemClickCount == 17)) {
+                libCOMI_gf_CM_CommanderVOSend(lv_indexPlayer, SoundLink("AlarakCommander_TopBarLines", 5), PlayerGroupSingle(lv_indexPlayer));
+                libCOMM_gv_cU_GPAlarakGemClickCount = -1;
+            }
+            TriggerEnable(TriggerGetCurrent(), false);
+            Wait(2.5, c_timeReal);
+            TriggerEnable(TriggerGetCurrent(), true);
+            return true;
+        }
+
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMM_gt_CU_GPAlarakGemPress_Init () {
+    libCOMM_gt_CU_GPAlarakGemPress = TriggerCreate("libCOMM_gt_CU_GPAlarakGemPress_Func");
+    TriggerEnable(libCOMM_gt_CU_GPAlarakGemPress, false);
+    TriggerAddEventDialogControl(libCOMM_gt_CU_GPAlarakGemPress, c_playerAny, c_invalidDialogControlId, c_triggerControlEventTypeClick);
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger: CM_AbilityTransmissionAlarakEmpower
 //--------------------------------------------------------------------------------------------------
 bool libCOMM_gt_CM_AbilityTransmissionAlarakEmpower_Func (bool testConds, bool runActions) {
@@ -8310,74 +8403,6 @@ void libCOMM_gt_CM_AbilityTransmissionAlarakSacrifice_Init () {
     libCOMM_gt_CM_AbilityTransmissionAlarakSacrifice = TriggerCreate("libCOMM_gt_CM_AbilityTransmissionAlarakSacrifice_Func");
     TriggerEnable(libCOMM_gt_CM_AbilityTransmissionAlarakSacrifice, false);
     TriggerAddEventPlayerEffectUsed(libCOMM_gt_CM_AbilityTransmissionAlarakSacrifice, c_playerAny, "AlarakTheStrongestSurviveSearchImpact");
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: CU_GPAlarakGemPress
-//--------------------------------------------------------------------------------------------------
-bool libCOMM_gt_CU_GPAlarakGemPress_Func (bool testConds, bool runActions) {
-    // Variable Declarations
-    int lv_indexPlayer;
-
-    // Automatic Variable Declarations
-    playergroup auto17B65871_g;
-
-    // Variable Initialization
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    auto17B65871_g = libCOMI_gf_HumanPlayers();
-    lv_indexPlayer = -1;
-    while (true) {
-        lv_indexPlayer = PlayerGroupNextPlayer(auto17B65871_g, lv_indexPlayer);
-        if (lv_indexPlayer < 0) { break; }
-        if ((EventDialogControl() == libCOMM_gv_cU_GPAlarakButton[lv_indexPlayer])) {
-            libCOMM_gv_cU_GPAlarakGemClickCount += 1;
-            if ((ModI(libCOMM_gv_cU_GPAlarakGemClickCount, 2) == 1)) {
-                CutsceneGoToBookmark(CutsceneGetTriggerControl(libCOMI_gv_cU_GPCutscene[lv_indexPlayer]), "WorkStart");
-                SoundPlayForPlayer(SoundLink("AlarakGemActivate", 0), c_maxPlayers, PlayerGroupSingle(lv_indexPlayer), 100.0, 0.0);
-            }
-            else {
-                CutsceneGoToBookmark(CutsceneGetTriggerControl(libCOMI_gv_cU_GPCutscene[lv_indexPlayer]), "WorkEnd");
-                SoundPlayForPlayer(SoundLink("AlarakGemDeactivate", 0), c_maxPlayers, PlayerGroupSingle(lv_indexPlayer), 100.0, 0.0);
-            }
-            if ((libCOMM_gv_cU_GPAlarakGemClickCount == 7)) {
-                libCOMI_gf_CM_CommanderVOSend(lv_indexPlayer, SoundLink("AlarakCommander_TopBarLines", 0), PlayerGroupSingle(lv_indexPlayer));
-            }
-            else if ((libCOMM_gv_cU_GPAlarakGemClickCount == 9)) {
-                libCOMI_gf_CM_CommanderVOSend(lv_indexPlayer, SoundLink("AlarakCommander_TopBarLines", 1), PlayerGroupSingle(lv_indexPlayer));
-            }
-            else if ((libCOMM_gv_cU_GPAlarakGemClickCount == 11)) {
-                libCOMI_gf_CM_CommanderVOSend(lv_indexPlayer, SoundLink("AlarakCommander_TopBarLines", 2), PlayerGroupSingle(lv_indexPlayer));
-            }
-            else if ((libCOMM_gv_cU_GPAlarakGemClickCount == 13)) {
-                libCOMI_gf_CM_CommanderVOSend(lv_indexPlayer, SoundLink("AlarakCommander_TopBarLines", 3), PlayerGroupSingle(lv_indexPlayer));
-            }
-            else if ((libCOMM_gv_cU_GPAlarakGemClickCount == 15)) {
-                libCOMI_gf_CM_CommanderVOSend(lv_indexPlayer, SoundLink("AlarakCommander_TopBarLines", 4), PlayerGroupSingle(lv_indexPlayer));
-            }
-            else if ((libCOMM_gv_cU_GPAlarakGemClickCount == 17)) {
-                libCOMI_gf_CM_CommanderVOSend(lv_indexPlayer, SoundLink("AlarakCommander_TopBarLines", 5), PlayerGroupSingle(lv_indexPlayer));
-                libCOMM_gv_cU_GPAlarakGemClickCount = -1;
-            }
-            TriggerEnable(TriggerGetCurrent(), false);
-            Wait(2.5, c_timeReal);
-            TriggerEnable(TriggerGetCurrent(), true);
-            return true;
-        }
-
-    }
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMM_gt_CU_GPAlarakGemPress_Init () {
-    libCOMM_gt_CU_GPAlarakGemPress = TriggerCreate("libCOMM_gt_CU_GPAlarakGemPress_Func");
-    TriggerEnable(libCOMM_gt_CU_GPAlarakGemPress, false);
-    TriggerAddEventDialogControl(libCOMM_gt_CU_GPAlarakGemPress, c_playerAny, c_invalidDialogControlId, c_triggerControlEventTypeClick);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -12673,7 +12698,6 @@ bool libCOMM_gt_DUT_CommanderFenix_Func (bool testConds, bool runActions) {
 
     TriggerEnable(libCOMM_gt_CC_ScoreFenixChampionDmg, true);
     TriggerEnable(libCOMM_gt_CC_ScoreFenixSuitDmg, true);
-    TriggerExecute(libCOMM_gt_CM_Fenix_InitialDummySpawn, true, false);
     TriggerExecute(libCOMM_gt_CM_Fenix_ChampionInitialSetup, true, false);
     TriggerEnable(libCOMM_gt_CM_Fenix_SentryNullShield, true);
     TriggerEnable(libCOMM_gt_CM_Fenix_TaldarinDetonationStore, true);
@@ -12722,6 +12746,7 @@ bool libCOMM_gt_DUT_CommanderFenix_Func (bool testConds, bool runActions) {
             libCOMI_gf_CreateACCaster(autoC07469AE_var, "SoACasterFenix");
             libCOMM_gf_CU_GPInitFenix(autoC07469AE_var);
             libNtve_gf_SetDialogItemUnit(libCOMI_gv_cU_GPCmdPanel[autoC07469AE_var], libCOMI_gv_yY_GPCasterUnit[autoC07469AE_var], PlayerGroupSingle(autoC07469AE_var));
+            libCOMM_gf_FenixInitialDummySpawn(autoC07469AE_var);
         }
 
     }
@@ -13426,58 +13451,6 @@ void libCOMM_gt_CM_Fenix_TaldarinDetonationRelease_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: CM_Fenix_InitialDummySpawn
-//--------------------------------------------------------------------------------------------------
-bool libCOMM_gt_CM_Fenix_InitialDummySpawn_Func (bool testConds, bool runActions) {
-    // Variable Declarations
-    int lv_itPlayer;
-
-    // Automatic Variable Declarations
-    playergroup autoF7E0AABA_g;
-
-    // Variable Initialization
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    autoF7E0AABA_g = libCOMI_gf_CC_PlayersOfCommander("Fenix");
-    lv_itPlayer = -1;
-    while (true) {
-        lv_itPlayer = PlayerGroupNextPlayer(autoF7E0AABA_g, lv_itPlayer);
-        if (lv_itPlayer < 0) { break; }
-        libNtve_gf_CreateUnitsWithDefaultFacing(1, "FenixManaDummy1", c_unitCreateIgnorePlacement, lv_itPlayer, Point(0.0, 0.0));
-        UnitGroupAdd(libCOMM_gv_cM_Fenix_DummyGroup[lv_itPlayer], UnitLastCreated());
-        libCOMM_gv_cM_Fenix_Suits[1][lv_itPlayer] = UnitLastCreated();
-        libCOMM_gf_LinkUnitEnergyToGlobalCasterButton(libCOMM_gv_cM_Fenix_Suits[1][lv_itPlayer], lv_itPlayer, 1);
-        libNtve_gf_CreateUnitsWithDefaultFacing(1, "FenixManaDummy2", c_unitCreateIgnorePlacement, lv_itPlayer, Point(0.0, 0.0));
-        UnitGroupAdd(libCOMM_gv_cM_Fenix_DummyGroup[lv_itPlayer], UnitLastCreated());
-        libCOMM_gv_cM_Fenix_Suits[2][lv_itPlayer] = UnitLastCreated();
-        libCOMM_gf_LinkUnitEnergyToGlobalCasterButton(libCOMM_gv_cM_Fenix_Suits[2][lv_itPlayer], lv_itPlayer, 2);
-        libNtve_gf_CreateUnitsWithDefaultFacing(1, "FenixManaDummy3", c_unitCreateIgnorePlacement, lv_itPlayer, Point(0.0, 0.0));
-        UnitGroupAdd(libCOMM_gv_cM_Fenix_DummyGroup[lv_itPlayer], UnitLastCreated());
-        libCOMM_gv_cM_Fenix_Suits[3][lv_itPlayer] = UnitLastCreated();
-        libCOMM_gf_LinkUnitEnergyToGlobalCasterButton(libCOMM_gv_cM_Fenix_Suits[3][lv_itPlayer], lv_itPlayer, 3);
-        libCOMM_gv_cM_Fenix_AbilCmdArray[1] = "SOASummonFenix";
-        libCOMM_gv_cM_Fenix_AbilCmdArray[2] = "SOASummonFenixDragoon";
-        libCOMM_gv_cM_Fenix_AbilCmdArray[3] = "SOASummonFenixArbiter";
-        if ((TechTreeUpgradeCount(lv_itPlayer, "FenixOfflineSuitRegen", c_techCountCompleteOnly) == 1)) {
-            libCOMM_gv_cM_Fenix_OfflineHealthRegen[lv_itPlayer] *= libCOMM_gv_cM_Fenix_OfflineVitalRegenMultiplier;
-            libCOMM_gv_cM_Fenix_OfflineShieldRegen[lv_itPlayer] *= libCOMM_gv_cM_Fenix_OfflineVitalRegenMultiplier;
-        }
-
-        libCOMM_gv_cM_Fenix_OfflineEnergyRegen[lv_itPlayer] *= ((TechTreeUpgradeCount(lv_itPlayer, "MasteryFenixSuitEnergyRegen", c_techCountCompleteOnly) / 100.0) + 1.0);
-    }
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMM_gt_CM_Fenix_InitialDummySpawn_Init () {
-    libCOMM_gt_CM_Fenix_InitialDummySpawn = TriggerCreate("libCOMM_gt_CM_Fenix_InitialDummySpawn_Func");
-}
-
-//--------------------------------------------------------------------------------------------------
 // Trigger: CM_Fenix_HeroSpawn
 //--------------------------------------------------------------------------------------------------
 bool libCOMM_gt_CM_Fenix_HeroSpawn_Func (bool testConds, bool runActions) {
@@ -13550,7 +13523,7 @@ bool libCOMM_gt_CM_Fenix_HeroSpawn_Func (bool testConds, bool runActions) {
         UnitSetPropertyFixed(libCOMM_gv_cM_Fenix_ActiveHero[lv_fenixPlayer], c_unitPropLife, UnitGetPropertyFixed(libCOMM_gv_cM_Fenix_Suits[1][lv_fenixPlayer], c_unitPropLife, c_unitPropCurrent));
         UnitSetPropertyFixed(libCOMM_gv_cM_Fenix_ActiveHero[lv_fenixPlayer], c_unitPropShields, UnitGetPropertyFixed(libCOMM_gv_cM_Fenix_Suits[1][lv_fenixPlayer], c_unitPropShields, c_unitPropCurrent));
         UnitSetPropertyFixed(libCOMM_gv_cM_Fenix_ActiveHero[lv_fenixPlayer], c_unitPropEnergy, UnitGetPropertyFixed(libCOMM_gv_cM_Fenix_Suits[1][lv_fenixPlayer], c_unitPropEnergy, c_unitPropCurrent));
-        libCOMM_gf_LinkUnitEnergyToGlobalCasterButton(libCOMM_gv_cM_Fenix_ActiveHero[lv_fenixPlayer], UnitGetOwner(EventUnitCreatedUnit()), 1);
+        libCOMI_gf_LinkUnitEnergyToGlobalCasterButton(libCOMM_gv_cM_Fenix_ActiveHero[lv_fenixPlayer], UnitGetOwner(EventUnitCreatedUnit()), 1);
         CutsceneGoToBookmark(CutsceneGetTriggerControl(libCOMI_gv_cU_GPCutscene[lv_fenixPlayer]), "WorkStart");
         lv_i = 1;
         for ( ; ( (auto3F75EE12_ai >= 0 && lv_i <= auto3F75EE12_ae) || (auto3F75EE12_ai < 0 && lv_i >= auto3F75EE12_ae) ) ; lv_i += auto3F75EE12_ai ) {
@@ -13565,7 +13538,7 @@ bool libCOMM_gt_CM_Fenix_HeroSpawn_Func (bool testConds, bool runActions) {
         UnitSetPropertyFixed(libCOMM_gv_cM_Fenix_ActiveHero[lv_fenixPlayer], c_unitPropLife, UnitGetPropertyFixed(libCOMM_gv_cM_Fenix_Suits[2][lv_fenixPlayer], c_unitPropLife, c_unitPropCurrent));
         UnitSetPropertyFixed(libCOMM_gv_cM_Fenix_ActiveHero[lv_fenixPlayer], c_unitPropShields, UnitGetPropertyFixed(libCOMM_gv_cM_Fenix_Suits[2][lv_fenixPlayer], c_unitPropShields, c_unitPropCurrent));
         UnitSetPropertyFixed(libCOMM_gv_cM_Fenix_ActiveHero[lv_fenixPlayer], c_unitPropEnergy, UnitGetPropertyFixed(libCOMM_gv_cM_Fenix_Suits[2][lv_fenixPlayer], c_unitPropEnergy, c_unitPropCurrent));
-        libCOMM_gf_LinkUnitEnergyToGlobalCasterButton(libCOMM_gv_cM_Fenix_ActiveHero[lv_fenixPlayer], UnitGetOwner(lv_fenixUnitNew), 2);
+        libCOMI_gf_LinkUnitEnergyToGlobalCasterButton(libCOMM_gv_cM_Fenix_ActiveHero[lv_fenixPlayer], UnitGetOwner(lv_fenixUnitNew), 2);
         CutsceneGoToBookmark(CutsceneGetTriggerControl(libCOMI_gv_cU_GPCutscene[UnitGetOwner(lv_fenixUnitNew)]), "WorkStart");
         lv_i = 1;
         for ( ; ( (autoF95F91B8_ai >= 0 && lv_i <= autoF95F91B8_ae) || (autoF95F91B8_ai < 0 && lv_i >= autoF95F91B8_ae) ) ; lv_i += autoF95F91B8_ai ) {
@@ -13580,7 +13553,7 @@ bool libCOMM_gt_CM_Fenix_HeroSpawn_Func (bool testConds, bool runActions) {
         UnitSetPropertyFixed(libCOMM_gv_cM_Fenix_ActiveHero[lv_fenixPlayer], c_unitPropLife, UnitGetPropertyFixed(libCOMM_gv_cM_Fenix_Suits[3][lv_fenixPlayer], c_unitPropLife, c_unitPropCurrent));
         UnitSetPropertyFixed(libCOMM_gv_cM_Fenix_ActiveHero[lv_fenixPlayer], c_unitPropShields, UnitGetPropertyFixed(libCOMM_gv_cM_Fenix_Suits[3][lv_fenixPlayer], c_unitPropShields, c_unitPropCurrent));
         UnitSetPropertyFixed(libCOMM_gv_cM_Fenix_ActiveHero[lv_fenixPlayer], c_unitPropEnergy, UnitGetPropertyFixed(libCOMM_gv_cM_Fenix_Suits[3][lv_fenixPlayer], c_unitPropEnergy, c_unitPropCurrent));
-        libCOMM_gf_LinkUnitEnergyToGlobalCasterButton(libCOMM_gv_cM_Fenix_ActiveHero[lv_fenixPlayer], UnitGetOwner(lv_fenixUnitNew), 3);
+        libCOMI_gf_LinkUnitEnergyToGlobalCasterButton(libCOMM_gv_cM_Fenix_ActiveHero[lv_fenixPlayer], UnitGetOwner(lv_fenixUnitNew), 3);
         CutsceneGoToBookmark(CutsceneGetTriggerControl(libCOMI_gv_cU_GPCutscene[lv_fenixPlayer]), "WorkStart");
         lv_i = 1;
         for ( ; ( (autoE3F2790A_ai >= 0 && lv_i <= autoE3F2790A_ae) || (autoE3F2790A_ai < 0 && lv_i >= autoE3F2790A_ae) ) ; lv_i += autoE3F2790A_ai ) {
@@ -29916,11 +29889,11 @@ void libCOMM_InitTriggers () {
     libCOMM_gt_CM_SoAOrbitalStrikeActivated_Init();
     libCOMM_gt_CM_SoAOrbitalStrikeActivatedKarax_Init();
     libCOMM_gt_DUT_CommanderAlarak_Init();
+    libCOMM_gt_CU_GPAlarakGemPress_Init();
     libCOMM_gt_CM_AbilityTransmissionAlarakEmpower_Init();
     libCOMM_gt_CM_AbilityTransmissionAlarakDeathFleet_Init();
     libCOMM_gt_CM_AbilityTransmissionAlarakOvercharge_Init();
     libCOMM_gt_CM_AbilityTransmissionAlarakSacrifice_Init();
-    libCOMM_gt_CU_GPAlarakGemPress_Init();
     libCOMM_gt_CC_ScoreAlarakDmg_Init();
     libCOMM_gt_CC_ScoreAlarakHeal_Init();
     libCOMM_gt_CC_ScoreAlarakSacrificeHeal_Init();
@@ -30044,7 +30017,6 @@ void libCOMM_InitTriggers () {
     libCOMM_gt_CM_Fenix_AchievementCarrierResearched_Init();
     libCOMM_gt_CM_Fenix_TaldarinDetonationStore_Init();
     libCOMM_gt_CM_Fenix_TaldarinDetonationRelease_Init();
-    libCOMM_gt_CM_Fenix_InitialDummySpawn_Init();
     libCOMM_gt_CM_Fenix_HeroSpawn_Init();
     libCOMM_gt_CM_Fenix_HeroSpawnCleanup_Init();
     libCOMM_gt_CM_Fenix_HeroKilled_Init();

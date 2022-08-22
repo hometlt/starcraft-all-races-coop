@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Includes>
+    <Catalog path="CommandersData/Xayid/Xayid.xml"/>
+    <Catalog path="CommandersData/UED/UED.xml"/>
+    <Catalog path="CommandersData/UPL/UPL.xml"/>
+    <Catalog path="CommandersData/Keiron/ChargesBoosts.xml"/>
+    <Catalog path="CommandersData/Keiron/Keiron.xml"/>
+    <Catalog path="CommandersData/Talon/Talon.xml"/>
+    <Catalog path="CommandersData/Hybrids/Hybrids.xml"/>
+    <Catalog path="CommandersData/Dragons/Dragons.xml"/>
+    <Catalog path="CommandersData/Genetron/Genetron.xml"/>
+    <Catalog path="CommandersData/Zerg/UnitData.xml"/>
+</Includes>

@@ -617,13 +617,13 @@ fixed libCOMU_gf_CT_MathNumberWrap (fixed lp_value, fixed lp_minAmount, fixed lp
 void libCOMU_gf_MM_ApplyBloodlust (unit lp_pUnit) {
     // Automatic Variable Declarations
     // Implementation
-    if (((libCOMI_gv_mM_MutatorEnabledQuickList[(libCOMI_ge_MM_CustomMutators_Bloodlust)] == false) || (UnitGetOwner(lp_pUnit) == c_playerAny) || (libNtve_gf_PlayerIsEnemy(UnitGetOwner(lp_pUnit), 1, libNtve_ge_PlayerRelation_Enemy) == false) || (UnitFilterMatch(lp_pUnit, 1, UnitFilter(0, 0, (1 << c_targetFilterPlayer) | (1 << c_targetFilterAlly) | (1 << c_targetFilterNeutral) | (1 << c_targetFilterStructure) | (1 << c_targetFilterMissile), (1 << (c_targetFilterInvulnerable - 32)))) == false) || (UnitHasBehavior2(lp_pUnit, "Bloodlust") == true) || (UnitHasBehavior2(lp_pUnit, "Bloodlust2") == true) || (UnitHasBehavior2(lp_pUnit, "Bloodlust3") == true))) {
+    if (((libCOMI_gv_mM_MutatorEnabledQuickList[(libCOMI_ge_MM_CustomMutators_Bloodlust)] == false) || (UnitGetOwner(lp_pUnit) == c_playerAny) || (libNtve_gf_PlayerIsEnemy(UnitGetOwner(lp_pUnit), 1, libNtve_ge_PlayerRelation_Enemy) == false) || (UnitFilterMatch(lp_pUnit, 1, UnitFilter(0, 0, (1 << c_targetFilterPlayer) | (1 << c_targetFilterAlly) | (1 << c_targetFilterNeutral) | (1 << c_targetFilterStructure) | (1 << c_targetFilterMissile), (1 << (c_targetFilterInvulnerable - 32)))) == false) || (UnitHasBehavior2(lp_pUnit, "MutatorBloodlust") == true) || (UnitHasBehavior2(lp_pUnit, "MutatorBloodlust2") == true) || (UnitHasBehavior2(lp_pUnit, "MutatorBloodlust3") == true))) {
         return ;
     }
 
-    UnitBehaviorAddPlayer(lp_pUnit, "Bloodlust", 3, 1);
-    UnitBehaviorAddPlayer(lp_pUnit, "Bloodlust2", 3, 1);
-    UnitBehaviorAddPlayer(lp_pUnit, "Bloodlust3", 3, 1);
+    UnitBehaviorAddPlayer(lp_pUnit, "MutatorBloodlust", 3, 1);
+    UnitBehaviorAddPlayer(lp_pUnit, "MutatorBloodlust2", 3, 1);
+    UnitBehaviorAddPlayer(lp_pUnit, "MutatorBloodlust3", 3, 1);
 }
 
 trigger auto_libCOMU_gf_CT_BoomBotsUpdate_Trigger = null;
@@ -7123,22 +7123,24 @@ void libCOMU_gf_CT_VoidRiftSpawnUnitsPlain (int lp_player, point lp_spawnLocatio
     fixed lv_resourceValue;
     string lv_spawnType;
     int lv_maxRandom;
+    fixed lv_difficultyMultiplier;
 
     // Automatic Variable Declarations
     int auto84D90EE7_val;
 
     // Variable Initialization
+    lv_difficultyMultiplier = (2.0 + libCOMI_gf_CC_DifficultyIndex(libCOMI_gf_DifficultyLevelForPlayerCoop(lp_player)));
 
     // Implementation
     libCOMU_gv_cT_VoidRiftLastSpawnedUnits = UnitGroupEmpty();
     if ((GameGetMissionTime() >= 1200.0)) {
-        lv_resourceValue = UserDataGetFixed("CoopAIAttackWaves", "SiegeMissionWave03", "resourceSize", libCOMI_gf_CC_DifficultyIndex(libCOMI_gf_DifficultyLevelForPlayerCoop(lp_player)));
+        lv_resourceValue = (200.0 * lv_difficultyMultiplier);
     }
     else if ((GameGetMissionTime() >= 500.0)) {
-        lv_resourceValue = UserDataGetFixed("CoopAIAttackWaves", "SiegeMissionWave02", "resourceSize", libCOMI_gf_CC_DifficultyIndex(libCOMI_gf_DifficultyLevelForPlayerCoop(lp_player)));
+        lv_resourceValue = (100.0 * lv_difficultyMultiplier);
     }
     else if (true) {
-        lv_resourceValue = UserDataGetFixed("CoopAIAttackWaves", "SiegeMissionWave01", "resourceSize", libCOMI_gf_CC_DifficultyIndex(libCOMI_gf_DifficultyLevelForPlayerCoop(lp_player)));
+        lv_resourceValue = (50.0 * lv_difficultyMultiplier);
     }
     if ((GameGetMissionTime() >= 1000.0)) {
         lv_maxRandom = libCOMI_gf_DifficultyValueInt2(libCOMI_gf_DifficultyLevelForPlayerCoop(lp_player), 10, 15, 19, 20, 20, 20);
@@ -8193,7 +8195,7 @@ bool libCOMU_gt_MM_BloodlustActivated_Func (bool testConds, bool runActions) {
     }
 
     TriggerEnable(TriggerGetCurrent(), false);
-    SoundPlayAtPointForPlayer(SoundLink("Bloodlust", -1), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(EventUnit()), 0.0, 200.0, 0.0);
+    SoundPlayAtPointForPlayer(SoundLink("MutatorBloodlust", -1), c_maxPlayers, PlayerGroupAll(), UnitGetPosition(EventUnit()), 0.0, 200.0, 0.0);
     Wait(RandomInt(2, 10), c_timeGame);
     TriggerEnable(TriggerGetCurrent(), true);
     return true;
@@ -8203,9 +8205,9 @@ bool libCOMU_gt_MM_BloodlustActivated_Func (bool testConds, bool runActions) {
 void libCOMU_gt_MM_BloodlustActivated_Init () {
     libCOMU_gt_MM_BloodlustActivated = TriggerCreate("libCOMU_gt_MM_BloodlustActivated_Func");
     TriggerEnable(libCOMU_gt_MM_BloodlustActivated, false);
-    TriggerAddEventUnitBehaviorChange(libCOMU_gt_MM_BloodlustActivated, null, "Bloodlust", c_unitBehaviorChangeActivate);
-    TriggerAddEventUnitBehaviorChange(libCOMU_gt_MM_BloodlustActivated, null, "Bloodlust2", c_unitBehaviorChangeActivate);
-    TriggerAddEventUnitBehaviorChange(libCOMU_gt_MM_BloodlustActivated, null, "Bloodlust3", c_unitBehaviorChangeActivate);
+    TriggerAddEventUnitBehaviorChange(libCOMU_gt_MM_BloodlustActivated, null, "MutatorBloodlust", c_unitBehaviorChangeActivate);
+    TriggerAddEventUnitBehaviorChange(libCOMU_gt_MM_BloodlustActivated, null, "MutatorBloodlust2", c_unitBehaviorChangeActivate);
+    TriggerAddEventUnitBehaviorChange(libCOMU_gt_MM_BloodlustActivated, null, "MutatorBloodlust3", c_unitBehaviorChangeActivate);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -8229,9 +8231,9 @@ bool libCOMU_gt_MM_ShutdownBloodlust_Func (bool testConds, bool runActions) {
     for (;; auto801E0137_u -= 1) {
         auto801E0137_var = UnitGroupUnitFromEnd(auto801E0137_g, auto801E0137_u);
         if (auto801E0137_var == null) { break; }
-        UnitBehaviorRemovePlayer(auto801E0137_var, "Bloodlust", 3, 1);
-        UnitBehaviorRemovePlayer(auto801E0137_var, "Bloodlust2", 3, 1);
-        UnitBehaviorRemovePlayer(auto801E0137_var, "Bloodlust3", 3, 1);
+        UnitBehaviorRemovePlayer(auto801E0137_var, "MutatorBloodlust", 3, 1);
+        UnitBehaviorRemovePlayer(auto801E0137_var, "MutatorBloodlust2", 3, 1);
+        UnitBehaviorRemovePlayer(auto801E0137_var, "MutatorBloodlust3", 3, 1);
     }
     return true;
 }
@@ -8259,9 +8261,9 @@ bool libCOMU_gt_MM_UnitChangesOwner_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    UnitBehaviorRemovePlayer(EventUnit(), "Bloodlust", 1, 1);
-    UnitBehaviorRemovePlayer(EventUnit(), "Bloodlust2", 1, 1);
-    UnitBehaviorRemovePlayer(EventUnit(), "Bloodlust3", 1, 1);
+    UnitBehaviorRemovePlayer(EventUnit(), "MutatorBloodlust", 1, 1);
+    UnitBehaviorRemovePlayer(EventUnit(), "MutatorBloodlust2", 1, 1);
+    UnitBehaviorRemovePlayer(EventUnit(), "MutatorBloodlust3", 1, 1);
     return true;
 }
 

@@ -3,7 +3,15 @@ include "TriggerLibs/natives"
 //--------------------------------------------------------------------------------------------------
 // Library: LIB
 //--------------------------------------------------------------------------------------------------
+// Variable Declarations
+string libARRA_gv_lOG;
+
 // Function Declarations
+void libARRA_gf_LOGString (string lp_lOG);
+void libARRA_gf_LOGAbilCmd (abilcmd lp_lOG);
+void libARRA_gf_LOGInteger (int lp_lOG);
+void libARRA_gf_LOGUpgrade (string lp_lOG);
+void libARRA_gf_LOGUnit (string lp_lOG);
 string libARRA_gf_IIF (bool lp_condition, string lp_iF, string lp_eLSE);
 bool libARRA_gf_IIF2 (bool lp_condition);
 string libARRA_gf_IIF3 (bool lp_condition, string lp_iF, string lp_eLSE);
@@ -42,4 +50,7 @@ void libARRA_gf_DynamicStringArrayInsert (string lp_arrayName, int lp_index, str
 int libARRA_gf_DynamicStringArrayIndexOf (string lp_arrayName, string lp_value);
 bool libARRA_gf_DynamicStringArrayIncludes (string lp_arrayName, string lp_value);
 void libARRA_gf_DynamicStringArrayRemove (string lp_arrayName, string lp_value);
+
+// Library Initialization
+void libARRA_InitVariables ();
 

@@ -1,0 +1,4 @@
+﻿Requirement/Name/HaveNerazimSkin=HaveNerazimSkin
+RequirementNode/Name/CountUpgradeFactionSkinNerazimCompleteOnly=CountUpgrade(FactionSkinNerazim,CompleteOnly)
+Sound/Name/MutatorBloodlust=MutatorBloodlust
+Validator/Name/HaveNerazimSkin=HaveNerazimSkin

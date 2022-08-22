@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
-    <CObjective default="1" id="AC_DefaultObjective">
-        <UserReference value="MissionObjective;##id##"/>
-    </CObjective>
     <CObjective id="AC_AiurSiege_Bonus01" parent="AC_DefaultObjective">
         <RequiredCount value="1"/>
     </CObjective>
@@ -124,10 +121,6 @@
     <CObjective id="AC_ShakurasTemple_Bonus01" parent="AC_DefaultObjective">
         <RequiredCount value="3"/>
     </CObjective>
-    <CObjective id="PlaceholderPrimary">
-        <Type value="Primary"/>
-        <RequiredCount value="1"/>
-    </CObjective>
     <CObjective id="AC_ShakurasTemple_Primary01" parent="AC_DefaultObjective">
         <Type value="Primary"/>
         <RequiredCount value="1"/>
@@ -144,9 +137,6 @@
     <CObjective id="AC_BelshirEscort_Primary01" parent="AC_DefaultObjective">
         <Type value="Primary"/>
         <RequiredCount value="5"/>
-    </CObjective>
-    <CObjective id="PlaceholderSecondary">
-        <RequiredCount value="3"/>
     </CObjective>
     <CObjective id="AC_KaldirShuttle_Bonus01" parent="AC_DefaultObjective">
         <RequiredCount value="3"/>

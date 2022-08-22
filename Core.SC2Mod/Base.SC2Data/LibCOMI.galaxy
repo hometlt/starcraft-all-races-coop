@@ -17,6 +17,7 @@ void libCOMI_InitLibraries () {
     libHots_InitVariables();
     libCOMM_InitVariables();
     libCOMU_InitVariables();
+    libARRA_InitVariables();
 }
 
 // Variable Initialization
@@ -252,6 +253,11 @@ void libCOMI_InitVariables () {
     for (init_i = 0; init_i <= libCOMI_gv_cCC_MAXPLAYERS; init_i += 1) {
         libCOMI_gv_cU_GPCutsceneFilter[init_i] = "";
     }
+    for (init_i = 0; init_i <= 4; init_i += 1) {
+        for (init_j = 0; init_j <= libCOMI_gv_cCC_MAXPLAYERS; init_j += 1) {
+            libCOMI_gv_cU_GPUnitEnergyLinks[init_i][init_j] = c_invalidDialogControlId;
+        }
+    }
     for (init_i = 0; init_i <= libCOMI_gv_cCC_MAXPLAYERS; init_i += 1) {
         libCOMI_gv_cU_GPEnergyLabel[init_i] = c_invalidDialogControlId;
     }
@@ -266,11 +272,6 @@ void libCOMI_InitVariables () {
     }
     for (init_i = 0; init_i <= libCOMI_gv_cCC_MAXPLAYERS; init_i += 1) {
         libCOMI_gv_cU_GPEnergyBar[init_i] = c_invalidDialogControlId;
-    }
-    for (init_i = 0; init_i <= 4; init_i += 1) {
-        for (init_j = 0; init_j <= libCOMI_gv_cCC_MAXPLAYERS; init_j += 1) {
-            libCOMI_gv_cU_GPUnitEnergyLinks[init_i][init_j] = c_invalidDialogControlId;
-        }
     }
     libCOMI_gv_wEBSITE = StringExternal("Param/Value/lib_COMI_4D0EA868");
     libCOMI_gv_aNNOUNCE_MESSAGE = StringExternal("Param/Value/lib_COMI_E37B86F5");
@@ -3395,6 +3396,7 @@ void libCOMI_gf_CC_ApplyTechNew (int lp_player) {
     int lv_cheatValue;
     string lv_techUnitsArrayName;
     string lv_techAbilitiesArrayName;
+    string lv_techDisabledAbilitiesArrayName;
     string lv_techUpgradesArrayName;
     string lv_techBehaviorsArrayName;
 
@@ -3407,7 +3409,7 @@ void libCOMI_gf_CC_ApplyTechNew (int lp_player) {
     int autoDCCFE03B_var;
     string auto18C67634_userType;
     int auto18C67634_i;
-    string auto8E206B6C_val;
+    string auto1936B579_val;
     int auto7CFBDB4F_ae;
     int auto7CFBDB4F_var;
     int autoC752E0E6_ae;
@@ -3427,6 +3429,7 @@ void libCOMI_gf_CC_ApplyTechNew (int lp_player) {
     lv_playerLevel = libCOMI_gv_cC_PlayerLevel[lp_player][libCOMI_gf_CC_CommanderInternalIndex(lv_playerCommander)];
     lv_techUnitsArrayName = ("TechUnits" + IntToString(lp_player));
     lv_techAbilitiesArrayName = ("TechAbilities" + IntToString(lp_player));
+    lv_techDisabledAbilitiesArrayName = ("TechDisabledAbilities" + IntToString(lp_player));
     lv_techUpgradesArrayName = ("TechUpgrades" + IntToString(lp_player));
     lv_techBehaviorsArrayName = ("TechBehaviors" + IntToString(lp_player));
 
@@ -3441,14 +3444,14 @@ void libCOMI_gf_CC_ApplyTechNew (int lp_player) {
     TechTreeRequirementsEnable(lp_player, true);
     libNtve_gf_SetUpgradeLevelForPlayer(lp_player, "CommanderLevel", lv_playerLevel);
     PlayerModifyPropertyInt(lp_player, c_playerPropSuppliesLimit, c_playerPropOperSetTo, 200);
-    PlayerModifyPropertyInt(lp_player, c_playerPropSuppliesMade, c_playerPropOperSetTo, 200);
-    auto039F9621_userType = "CommanderTech";
+    libARRA_gf_DynamicArrayCreate(lv_techDisabledAbilitiesArrayName);
+    auto039F9621_userType = "Tech";
     auto039F9621_i = 1;
     for ( ; auto039F9621_i <= UserDataInstanceCount(auto039F9621_userType) ; auto039F9621_i += 1 ) {
         lv_tech = UserDataInstance(auto039F9621_userType, auto039F9621_i);
-        lv_state = UserDataGetUserInstance("CommanderTech", lv_tech, "state", 1);
+        lv_state = UserDataGetUserInstance("Tech", lv_tech, "state", 1);
         if ((lv_state != "OFF")) {
-            lv_upgrade = UserDataGetUpgrade("CommanderTech", lv_tech, "upgrade", 1);
+            lv_upgrade = UserDataGetUpgrade("Tech", lv_tech, "upgrade", 1);
             if ((lv_upgrade != null) && (lv_upgrade != "NONE")) {
                 TechTreeUpgradeAllow(lp_player, lv_upgrade, false);
                 libNtve_gf_SetUpgradeLevelForPlayer(lp_player, lv_upgrade, 0);
@@ -3459,7 +3462,7 @@ void libCOMI_gf_CC_ApplyTechNew (int lp_player) {
                 }
             }
 
-            lv_unit = UserDataGetUnit("CommanderTech", lv_tech, "unit", 1);
+            lv_unit = UserDataGetUnit("Tech", lv_tech, "unit", 1);
             if ((lv_unit != null) && (lv_unit != "NONE")) {
                 TechTreeUnitAllow(lp_player, lv_unit, false);
                 autoDCCFE03B_ae = TechTreeUnitProducedAbilCmdCount(lv_unit);
@@ -3469,12 +3472,13 @@ void libCOMI_gf_CC_ApplyTechNew (int lp_player) {
                 }
             }
 
-            lv_ability = UserDataGetAbilCmd("CommanderTech", lv_tech, "ability", 1);
+            lv_ability = UserDataGetAbilCmd("Tech", lv_tech, "ability", 1);
             if ((lv_ability != null)) {
                 TechTreeAbilityAllow(lp_player, lv_ability, false);
+                libARRA_gf_DynamicAbilCmdArrayAddUnique(lv_techDisabledAbilitiesArrayName, lv_ability);
             }
 
-            lv_behavior = UserDataGetGameLink("CommanderTech", lv_tech, "behavior", 1);
+            lv_behavior = UserDataGetGameLink("Tech", lv_tech, "behavior", 1);
             if ((lv_behavior != null)) {
                 TechTreeBehaviorAllow(lp_player, lv_behavior, false);
             }
@@ -3482,16 +3486,16 @@ void libCOMI_gf_CC_ApplyTechNew (int lp_player) {
         }
 
     }
-    auto18C67634_userType = "CommanderTech";
+    auto18C67634_userType = "Tech";
     auto18C67634_i = 1;
     for ( ; auto18C67634_i <= UserDataInstanceCount(auto18C67634_userType) ; auto18C67634_i += 1 ) {
         lv_tech = UserDataInstance(auto18C67634_userType, auto18C67634_i);
-        lv_commander = UserDataGetUserInstance("CommanderTech", lv_tech, "commander", 1);
-        lv_prestige = UserDataGetUserInstance("CommanderTech", lv_tech, "prestige", 1);
-        lv_level = UserDataGetInt("CommanderTech", lv_tech, "level", 1);
+        lv_commander = UserDataGetUserInstance("Tech", lv_tech, "commander", 1);
+        lv_prestige = UserDataGetUserInstance("Tech", lv_tech, "prestige", 1);
+        lv_level = UserDataGetInt("Tech", lv_tech, "level", 1);
         if (((lv_commander == lv_playerCommander) || (lv_commander == null)) && (lv_level <= lv_playerLevel) && ((lv_prestige == null) || (lv_prestige == lv_playerPrestige))) {
-            lv_state = UserDataGetUserInstance("CommanderTech", lv_tech, "state", 1);
-            lv_upgrade = UserDataGetUpgrade("CommanderTech", lv_tech, "upgrade", 1);
+            lv_state = UserDataGetUserInstance("Tech", lv_tech, "state", 1);
+            lv_upgrade = UserDataGetUpgrade("Tech", lv_tech, "upgrade", 1);
             if ((lv_upgrade != null) && (lv_upgrade != "NONE")) {
                 if ((lv_state == "OFF")) {
                     libNtve_gf_SetUpgradeLevelForPlayer(lp_player, lv_upgrade, 0);
@@ -3500,38 +3504,43 @@ void libCOMI_gf_CC_ApplyTechNew (int lp_player) {
                     autoC752E0E6_ae = TechTreeUpgradeProducedAbilCmdCount(lv_upgrade);
                     autoC752E0E6_var = 1;
                     for ( ; autoC752E0E6_var <= autoC752E0E6_ae; autoC752E0E6_var += 1 ) {
-                        TechTreeAbilityAllow(lp_player, TechTreeUpgradeProducedAbilCmd(lv_upgrade, autoC752E0E6_var), false);
+                        if ((libARRA_gf_DynamicAbilCmdArrayIncludes(lv_techAbilitiesArrayName, TechTreeUpgradeProducedAbilCmd(lv_upgrade, autoC752E0E6_var)) == true)) {
+                            TechTreeAbilityAllow(lp_player, TechTreeUpgradeProducedAbilCmd(lv_upgrade, autoC752E0E6_var), false);
+                        }
+
                     }
                 }
                 else {
-                    auto8E206B6C_val = lv_state;
-                    if (auto8E206B6C_val == "CHEAT") {
-                        lv_cheatValue = 1;
-                    }
-                    else if (auto8E206B6C_val == "SET50") {
-                        lv_cheatValue = 50;
-                    }
-                    else if (auto8E206B6C_val == "SET100") {
-                        lv_cheatValue = 100;
-                    }
-                    else if (auto8E206B6C_val == "SET200") {
-                        lv_cheatValue = 200;
-                    }
-                    else {
-                        lv_cheatValue = 0;
-                    }
-                    libNtve_gf_SetUpgradeLevelForPlayer(lp_player, lv_upgrade, lv_cheatValue);
                     TechTreeUpgradeAllow(lp_player, lv_upgrade, true);
                     libARRA_gf_DynamicStringArrayAddUnique(lv_techUpgradesArrayName, (lv_upgrade));
+                    auto1936B579_val = lv_state;
+                    if (auto1936B579_val == "CHEAT") {
+                        libNtve_gf_SetUpgradeLevelForPlayer(lp_player, lv_upgrade, 1);
+                    }
+                    else if (auto1936B579_val == "SET50") {
+                        TechTreeUpgradeAddLevel(lp_player, lv_upgrade, 50);
+                    }
+                    else if (auto1936B579_val == "SET100") {
+                        TechTreeUpgradeAddLevel(lp_player, lv_upgrade, 100);
+                    }
+                    else if (auto1936B579_val == "SET200") {
+                        TechTreeUpgradeAddLevel(lp_player, lv_upgrade, 200);
+                    }
+                    else {
+                        libNtve_gf_SetUpgradeLevelForPlayer(lp_player, lv_upgrade, 0);
+                    }
                     auto7CFBDB4F_ae = TechTreeUpgradeProducedAbilCmdCount(lv_upgrade);
                     auto7CFBDB4F_var = 1;
                     for ( ; auto7CFBDB4F_var <= auto7CFBDB4F_ae; auto7CFBDB4F_var += 1 ) {
-                        TechTreeAbilityAllow(lp_player, TechTreeUpgradeProducedAbilCmd(lv_upgrade, auto7CFBDB4F_var), true);
+                        if ((libARRA_gf_DynamicAbilCmdArrayIncludes(lv_techDisabledAbilitiesArrayName, TechTreeUpgradeProducedAbilCmd(lv_upgrade, auto7CFBDB4F_var)) == true)) {
+                            TechTreeAbilityAllow(lp_player, TechTreeUpgradeProducedAbilCmd(lv_upgrade, auto7CFBDB4F_var), true);
+                        }
+
                     }
                 }
             }
 
-            lv_unit = UserDataGetUnit("CommanderTech", lv_tech, "unit", 1);
+            lv_unit = UserDataGetUnit("Tech", lv_tech, "unit", 1);
             if ((lv_unit != null) && (lv_unit != "NONE")) {
                 if ((lv_state != "OFF")) {
                     TechTreeUnitAllow(lp_player, lv_unit, true);
@@ -3539,7 +3548,10 @@ void libCOMI_gf_CC_ApplyTechNew (int lp_player) {
                     auto6C48D36C_ae = TechTreeUnitProducedAbilCmdCount(lv_unit);
                     auto6C48D36C_var = 1;
                     for ( ; auto6C48D36C_var <= auto6C48D36C_ae; auto6C48D36C_var += 1 ) {
-                        TechTreeAbilityAllow(lp_player, TechTreeUnitProducedAbilCmd(lv_unit, auto6C48D36C_var), true);
+                        if ((libARRA_gf_DynamicAbilCmdArrayIncludes(lv_techDisabledAbilitiesArrayName, TechTreeUnitProducedAbilCmd(lv_unit, auto6C48D36C_var)) == true)) {
+                            TechTreeAbilityAllow(lp_player, TechTreeUnitProducedAbilCmd(lv_unit, auto6C48D36C_var), true);
+                        }
+
                     }
                 }
                 else {
@@ -3548,24 +3560,29 @@ void libCOMI_gf_CC_ApplyTechNew (int lp_player) {
                     autoEA91D502_ae = TechTreeUnitProducedAbilCmdCount(lv_unit);
                     autoEA91D502_var = 1;
                     for ( ; autoEA91D502_var <= autoEA91D502_ae; autoEA91D502_var += 1 ) {
-                        TechTreeAbilityAllow(lp_player, TechTreeUnitProducedAbilCmd(lv_unit, autoEA91D502_var), false);
+                        if ((libARRA_gf_DynamicAbilCmdArrayIncludes(lv_techAbilitiesArrayName, TechTreeUnitProducedAbilCmd(lv_unit, autoEA91D502_var)) == true)) {
+                            TechTreeAbilityAllow(lp_player, TechTreeUnitProducedAbilCmd(lv_unit, autoEA91D502_var), false);
+                        }
+
                     }
                 }
             }
 
-            lv_ability = UserDataGetAbilCmd("CommanderTech", lv_tech, "ability", 1);
+            lv_ability = UserDataGetAbilCmd("Tech", lv_tech, "ability", 1);
             if ((lv_ability != null)) {
                 if ((lv_state != "OFF")) {
                     TechTreeAbilityAllow(lp_player, lv_ability, true);
                     libARRA_gf_DynamicAbilCmdArrayAddUnique(lv_techAbilitiesArrayName, lv_ability);
+                    libARRA_gf_DynamicAbilCmdArrayRemove(lv_techDisabledAbilitiesArrayName, lv_ability);
                 }
                 else {
                     TechTreeAbilityAllow(lp_player, lv_ability, false);
                     libARRA_gf_DynamicAbilCmdArrayRemove(lv_techAbilitiesArrayName, lv_ability);
+                    libARRA_gf_DynamicAbilCmdArrayAddUnique(lv_techDisabledAbilitiesArrayName, lv_ability);
                 }
             }
 
-            lv_behavior = UserDataGetGameLink("CommanderTech", lv_tech, "behavior", 1);
+            lv_behavior = UserDataGetGameLink("Tech", lv_tech, "behavior", 1);
             if ((lv_behavior != null)) {
                 if ((lv_state != "OFF")) {
                     TechTreeBehaviorAllow(lp_player, lv_behavior, true);
@@ -3594,6 +3611,8 @@ void libCOMI_gf_CC_ApplyTechNew (int lp_player) {
     }
 
     libCOMI_gf_CC_ApplyMasteryTech(lp_player);
+    libARRA_gf_DynamicArrayDestroy(lv_techDisabledAbilitiesArrayName);
+    TechTreeAbilityAllow(lp_player, AbilityCommand("OrbitalCommandSupplyDepotDrop", 0), false);
 }
 
 void libCOMI_gf_CC_PlayerResponseEnable (int lp_player, string lp_response, bool lp_enforceMinLvl) {
@@ -5103,38 +5122,58 @@ int libCOMI_gf_PopulateAttackForceUnits (int lp_player, int lp_techLevel, fixed 
 fixed libCOMI_gf_CM_CoopAI_GetResourceAmount (int lp_resourceSize, int lp_difficulty) {
     // Variable Declarations
     string lv_waveInstance;
-    fixed lv_resourcesFromUserData;
+    fixed lv_baseResources;
+    fixed lv_difficultyMultiplyer;
 
     // Automatic Variable Declarations
     int autoE7DE9BF5_val;
+    int autoE78CA953_val;
 
     // Variable Initialization
 
     // Implementation
     autoE7DE9BF5_val = lp_resourceSize;
     if (autoE7DE9BF5_val == libCOMI_ge_CoopAIAttackWaveBuckets__1Smallest) {
-        lv_waveInstance = "SiegeMissionWave01";
+        lv_baseResources = 50.0;
     }
     else if (autoE7DE9BF5_val == libCOMI_ge_CoopAIAttackWaveBuckets__2Smaller) {
-        lv_waveInstance = "SiegeMissionWave02";
+        lv_baseResources = 100.0;
     }
     else if (autoE7DE9BF5_val == libCOMI_ge_CoopAIAttackWaveBuckets__3Small) {
-        lv_waveInstance = "SiegeMissionWave03";
+        lv_baseResources = 200.0;
     }
     else if (autoE7DE9BF5_val == libCOMI_ge_CoopAIAttackWaveBuckets__4Medium) {
-        lv_waveInstance = "SiegeMissionWave04";
+        lv_baseResources = 300.0;
     }
     else if (autoE7DE9BF5_val == libCOMI_ge_CoopAIAttackWaveBuckets__5Large) {
-        lv_waveInstance = "SiegeMissionWave05";
+        lv_baseResources = 400.0;
     }
     else if (autoE7DE9BF5_val == libCOMI_ge_CoopAIAttackWaveBuckets__6Larger) {
-        lv_waveInstance = "SiegeMissionWave06";
+        lv_baseResources = 600.0;
+    }
+    else if (autoE7DE9BF5_val == libCOMI_ge_CoopAIAttackWaveBuckets__7Largest) {
+        lv_baseResources = 800.0;
     }
     else {
-        lv_waveInstance = "SiegeMissionWave07";
+        lv_baseResources = 1000.0;
     }
-    lv_resourcesFromUserData = UserDataGetFixed("CoopAIAttackWaves", lv_waveInstance, "resourceSize", libCOMI_gf_CC_DifficultyIndex(lp_difficulty));
-    return lv_resourcesFromUserData;
+    autoE78CA953_val = libCOMI_gf_CC_DifficultyIndex(lp_difficulty);
+    if (autoE78CA953_val == 1) {
+        lv_difficultyMultiplyer = 3.0;
+    }
+    else if (autoE78CA953_val == 2) {
+        lv_difficultyMultiplyer = 4.0;
+    }
+    else if (autoE78CA953_val == 3) {
+        lv_difficultyMultiplyer = 5.0;
+    }
+    else if (autoE78CA953_val == 4) {
+        lv_difficultyMultiplyer = 6.0;
+    }
+    else {
+        lv_difficultyMultiplyer = 10.0;
+    }
+    return (lv_baseResources * lv_difficultyMultiplyer);
 }
 
 string libCOMI_gf_CM_CoopAI_GetTechLevel (int lp_player, int lp_techLevel) {
@@ -9523,10 +9562,68 @@ void libCOMI_gf_CU_GPInitCommonCaster (int lp_player, string lp_heroUnit, string
     CutscenePlay(CutsceneGetTriggerControl(libCOMI_gv_cU_GPCutscene[lp_player]));
 }
 
+void libCOMI_gf_LinkUnitEnergyToGlobalCasterButton (unit lp_unit, int lp_player, int lp_index) {
+    // Automatic Variable Declarations
+    // Implementation
+    libNtve_gf_SetDialogItemUnit(libCOMI_gv_cU_GPUnitEnergyLinks[lp_index][lp_player], lp_unit, PlayerGroupSingle(lp_player));
+    DialogControlSetVisible(libCOMI_gv_cU_GPUnitEnergyLinks[lp_index][lp_player], PlayerGroupSingle(lp_player), true);
+}
+
+void libCOMI_gf_CU_GPInitEnergyCaster (int lp_player, string lp_heroUnit) {
+    // Variable Declarations
+    int lv_lastFrame;
+    int lv_buttonIndex;
+
+    // Automatic Variable Declarations
+    const int autoE0F92619_ae = 4;
+    const int autoE0F92619_ai = 1;
+
+    // Variable Initialization
+    lv_lastFrame = c_invalidDialogControlId;
+
+    // Implementation
+    if ((TechTreeUnitIsAllowed(lp_player, lp_heroUnit) == false)) {
+        return ;
+    }
+
+    TriggerEnable(libCOMI_gt_CU_GPVitalChanges, true);
+    DialogControlCreateInPanelFromTemplate(libCOMI_gv_cU_GPPanelHolder, c_triggerControlTypePanel, "Coop_GlobalCastingTemplates/ProtossCasterPanelTemplate");
+    libCOMI_gv_cU_GPPanel[lp_player] = DialogControlLastCreated();
+    DialogControlHookup(libCOMI_gv_cU_GPPanel[lp_player], c_triggerControlTypePanel, "SoAButtonHolder");
+    lv_lastFrame = DialogControlLastCreated();
+    DialogControlCreateInPanelFromTemplate(lv_lastFrame, c_triggerControlTypeCommandPanel, "LotV_SoAMissionUIPanel/SoACommandPanelTemplate");
+    libCOMI_gv_cU_GPCmdPanel[lp_player] = DialogControlLastCreated();
+    lv_buttonIndex = 1;
+    for ( ; ( (autoE0F92619_ai >= 0 && lv_buttonIndex <= autoE0F92619_ae) || (autoE0F92619_ai < 0 && lv_buttonIndex >= autoE0F92619_ae) ) ; lv_buttonIndex += autoE0F92619_ai ) {
+        DialogControlHookup(libCOMI_gv_cU_GPCmdPanel[lp_player], c_triggerControlTypeButton, "CommandButton0" + IntToString(lv_buttonIndex-1));
+        libCOMI_gv_cU_GPCmdButtons[lv_buttonIndex][lp_player] = DialogControlLastCreated();
+        DialogControlHookup(libCOMI_gv_cU_GPPanel[lp_player], c_triggerControlTypePanel, "SoAAbilityArrow0" + IntToString(lv_buttonIndex));
+        libCOMI_gv_cU_GPCmdButtonArrows[lv_buttonIndex][lp_player] = DialogControlLastCreated();
+        DialogControlSetPositionRelative(libCOMI_gv_cU_GPCmdButtonArrows[lv_buttonIndex][lp_player], PlayerGroupSingle(lp_player), c_anchorTop, libCOMI_gv_cU_GPCmdButtons[lv_buttonIndex][lp_player], c_anchorBottom, 0, 15);
+    }
+    DialogControlHookup(libCOMI_gv_cU_GPPanel[lp_player], c_triggerControlTypePanel, "SoAEnergyTooltipHitFrame");
+    libCOMI_gv_cU_GPEnergyTooltip[lp_player] = DialogControlLastCreated();
+    DialogControlHookup(libCOMI_gv_cU_GPPanel[lp_player], c_triggerControlTypePanel, "SoAEnergyBarFill");
+    libCOMI_gv_cU_GPEnergyBar[lp_player] = DialogControlLastCreated();
+    DialogControlHookup(libCOMI_gv_cU_GPPanel[lp_player], c_triggerControlTypeLabel, "SoAEnergyLabel");
+    libCOMI_gv_cU_GPEnergyLabel[lp_player] = DialogControlLastCreated();
+    DialogControlSetVisible(libCOMI_gv_cU_GPPanel[lp_player], PlayerGroupAll(), false);
+    DialogControlHookup(libCOMI_gv_cU_GPPanel[lp_player], c_triggerControlTypeCutscene, "SoACommandCutscene");
+    libCOMI_gv_cU_GPCutscene[lp_player] = DialogControlLastCreated();
+    libNtve_gf_SetDialogItemCutscene(libCOMI_gv_cU_GPCutscene[lp_player], "Cutscenes\\UI_SoAMission.SC2Cutscene", PlayerGroupAll());
+    CutscenePlay(CutsceneGetTriggerControl(libCOMI_gv_cU_GPCutscene[lp_player]));
+    DialogControlHookup(libCOMI_gv_cU_GPEnergyBar[lp_player], c_triggerControlTypeCutscene, "SoAFillScene");
+    libCOMI_gv_cU_GPEnergyBarScene[lp_player] = DialogControlLastCreated();
+    CutscenePlay(CutsceneGetTriggerControl(libCOMI_gv_cU_GPEnergyBarScene[lp_player]));
+    DialogControlHookup(libCOMI_gv_cU_GPPanel[lp_player], c_triggerControlTypeCutscene, "SoAOverlayCutscene");
+    libCOMI_gv_cU_GPEnergyGlassScene[lp_player] = DialogControlLastCreated();
+    CutscenePlay(CutsceneGetTriggerControl(libCOMI_gv_cU_GPEnergyGlassScene[lp_player]));
+}
+
 void libCOMI_gf_CU_GPCheckForEnergyHighlight (int lp_player) {
     // Automatic Variable Declarations
     // Implementation
-    if (((PlayerRace(lp_player) != "Prot") || (libCOMI_gf_ActiveCommanderForPlayer(lp_player) == "Alarak") || (libCOMI_gf_ActiveCommanderForPlayer(lp_player) == "Fenix") || (DialogControlIsVisible(libCOMI_gv_cU_GPCmdPanel[lp_player], lp_player) == false))) {
+    if ((UnitGetPropertyFixed(libCOMI_gv_yY_GPCasterUnit[lp_player], c_unitPropEnergyMax, c_unitPropCurrent) == 0.0)) {
         return ;
     }
 
@@ -9582,57 +9679,6 @@ void libCOMI_gf_CU_GPSoAUpdateVitals (int lp_player) {
     DialogControlSetAnimationTime(libCOMI_gv_cU_GPEnergyBarScene[lp_player], PlayerGroupAll(), "EnergyLevel", UnitGetPropertyFixed(libCOMI_gv_yY_GPCasterUnit[lp_player], c_unitPropEnergyPercent, c_unitPropCurrent));
     DialogControlSendAnimationEvent(libCOMI_gv_cU_GPEnergyBarScene[lp_player], PlayerGroupAll(), "SetEnergyPause");
     libCOMI_gf_CU_GPCheckForEnergyHighlight(lp_player);
-}
-
-void libCOMI_gf_CU_GPInitEnergyCaster (int lp_player, string lp_heroUnit) {
-    // Variable Declarations
-    int lv_lastFrame;
-    int lv_buttonIndex;
-
-    // Automatic Variable Declarations
-    const int autoE0F92619_ae = 4;
-    const int autoE0F92619_ai = 1;
-
-    // Variable Initialization
-    lv_lastFrame = c_invalidDialogControlId;
-
-    // Implementation
-    if ((TechTreeUnitIsAllowed(lp_player, lp_heroUnit) == false)) {
-        return ;
-    }
-
-    TriggerEnable(libCOMI_gt_CU_GPVitalChanges, true);
-    DialogControlCreateInPanelFromTemplate(libCOMI_gv_cU_GPPanelHolder, c_triggerControlTypePanel, "Coop_GlobalCastingTemplates/ProtossCasterPanelTemplate");
-    libCOMI_gv_cU_GPPanel[lp_player] = DialogControlLastCreated();
-    DialogControlHookup(libCOMI_gv_cU_GPPanel[lp_player], c_triggerControlTypePanel, "SoAButtonHolder");
-    lv_lastFrame = DialogControlLastCreated();
-    DialogControlCreateInPanelFromTemplate(lv_lastFrame, c_triggerControlTypeCommandPanel, "LotV_SoAMissionUIPanel/SoACommandPanelTemplate");
-    libCOMI_gv_cU_GPCmdPanel[lp_player] = DialogControlLastCreated();
-    lv_buttonIndex = 1;
-    for ( ; ( (autoE0F92619_ai >= 0 && lv_buttonIndex <= autoE0F92619_ae) || (autoE0F92619_ai < 0 && lv_buttonIndex >= autoE0F92619_ae) ) ; lv_buttonIndex += autoE0F92619_ai ) {
-        DialogControlHookup(libCOMI_gv_cU_GPCmdPanel[lp_player], c_triggerControlTypeButton, "CommandButton0" + IntToString(lv_buttonIndex-1));
-        libCOMI_gv_cU_GPCmdButtons[lv_buttonIndex][lp_player] = DialogControlLastCreated();
-        DialogControlHookup(libCOMI_gv_cU_GPPanel[lp_player], c_triggerControlTypePanel, "SoAAbilityArrow0" + IntToString(lv_buttonIndex));
-        libCOMI_gv_cU_GPCmdButtonArrows[lv_buttonIndex][lp_player] = DialogControlLastCreated();
-        DialogControlSetPositionRelative(libCOMI_gv_cU_GPCmdButtonArrows[lv_buttonIndex][lp_player], PlayerGroupSingle(lp_player), c_anchorTop, libCOMI_gv_cU_GPCmdButtons[lv_buttonIndex][lp_player], c_anchorBottom, 0, 15);
-    }
-    DialogControlHookup(libCOMI_gv_cU_GPPanel[lp_player], c_triggerControlTypePanel, "SoAEnergyTooltipHitFrame");
-    libCOMI_gv_cU_GPEnergyTooltip[lp_player] = DialogControlLastCreated();
-    DialogControlHookup(libCOMI_gv_cU_GPPanel[lp_player], c_triggerControlTypePanel, "SoAEnergyBarFill");
-    libCOMI_gv_cU_GPEnergyBar[lp_player] = DialogControlLastCreated();
-    DialogControlHookup(libCOMI_gv_cU_GPPanel[lp_player], c_triggerControlTypeLabel, "SoAEnergyLabel");
-    libCOMI_gv_cU_GPEnergyLabel[lp_player] = DialogControlLastCreated();
-    DialogControlSetVisible(libCOMI_gv_cU_GPPanel[lp_player], PlayerGroupAll(), false);
-    DialogControlHookup(libCOMI_gv_cU_GPPanel[lp_player], c_triggerControlTypeCutscene, "SoACommandCutscene");
-    libCOMI_gv_cU_GPCutscene[lp_player] = DialogControlLastCreated();
-    libNtve_gf_SetDialogItemCutscene(libCOMI_gv_cU_GPCutscene[lp_player], "Cutscenes\\UI_SoAMission.SC2Cutscene", PlayerGroupAll());
-    CutscenePlay(CutsceneGetTriggerControl(libCOMI_gv_cU_GPCutscene[lp_player]));
-    DialogControlHookup(libCOMI_gv_cU_GPEnergyBar[lp_player], c_triggerControlTypeCutscene, "SoAFillScene");
-    libCOMI_gv_cU_GPEnergyBarScene[lp_player] = DialogControlLastCreated();
-    CutscenePlay(CutsceneGetTriggerControl(libCOMI_gv_cU_GPEnergyBarScene[lp_player]));
-    DialogControlHookup(libCOMI_gv_cU_GPPanel[lp_player], c_triggerControlTypeCutscene, "SoAOverlayCutscene");
-    libCOMI_gv_cU_GPEnergyGlassScene[lp_player] = DialogControlLastCreated();
-    CutscenePlay(CutsceneGetTriggerControl(libCOMI_gv_cU_GPEnergyGlassScene[lp_player]));
 }
 
 void libCOMI_gf_CM_GPReminderDisable (int lp_player) {
@@ -24884,6 +24930,7 @@ bool libCOMI_gt_CM_CampaignMissionInitialize_Func (bool testConds, bool runActio
     camerainfo lv_camera;
     point lv_point;
     string lv_triggerName;
+    string lv_ability;
 
     // Automatic Variable Declarations
     playergroup auto6B1E1E16_g;
@@ -24897,6 +24944,7 @@ bool libCOMI_gt_CM_CampaignMissionInitialize_Func (bool testConds, bool runActio
     lv_itPlayerGroup = PlayerGroupEmpty();
     lv_camera = CameraInfoDefault();
     lv_triggerName = "";
+    lv_ability = "";
 
     // Actions
     if (!runActions) {
@@ -25089,6 +25137,89 @@ void libCOMI_gt_setobserver_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Trigger: Check Starting Supplies
+//--------------------------------------------------------------------------------------------------
+bool libCOMI_gt_CheckStartingSupplies_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_count;
+
+    // Automatic Variable Declarations
+    playergroup auto1E3B2A2E_g;
+    int auto1E3B2A2E_var;
+
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    auto1E3B2A2E_g = PlayerGroupAll();
+    auto1E3B2A2E_var = -1;
+    while (true) {
+        auto1E3B2A2E_var = PlayerGroupNextPlayer(auto1E3B2A2E_g, auto1E3B2A2E_var);
+        if (auto1E3B2A2E_var < 0) { break; }
+        lv_count = TechTreeUpgradeCount(auto1E3B2A2E_var, "SuppliesMax", c_techCountCompleteOnly);
+        libARRA_gf_LOGInteger(lv_count);
+        if ((lv_count > 0)) {
+            libARRA_gf_LOGString("??");
+            PlayerModifyPropertyInt(auto1E3B2A2E_var, c_playerPropSuppliesLimit, c_playerPropOperSetTo, TechTreeUpgradeCount(auto1E3B2A2E_var, "SuppliesMax", c_techCountCompleteOnly));
+        }
+        else {
+            PlayerModifyPropertyInt(auto1E3B2A2E_var, c_playerPropSuppliesLimit, c_playerPropOperSetTo, 200);
+        }
+        lv_count = TechTreeUpgradeCount(auto1E3B2A2E_var, "SuppliesMade", c_techCountCompleteOnly);
+        libARRA_gf_LOGInteger(lv_count);
+        if ((lv_count > 0)) {
+            libARRA_gf_LOGString("!!");
+            PlayerModifyPropertyInt(auto1E3B2A2E_var, c_playerPropSuppliesMade, c_playerPropOperSetTo, lv_count);
+        }
+
+    }
+    TriggerEnable(libCOMI_gt_SuppliesMaxUpgrades, true);
+    TriggerEnable(libCOMI_gt_SuppliesMadeUpgrades, true);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMI_gt_CheckStartingSupplies_Init () {
+    libCOMI_gt_CheckStartingSupplies = TriggerCreate("libCOMI_gt_CheckStartingSupplies_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Check Starting Resources
+//--------------------------------------------------------------------------------------------------
+bool libCOMI_gt_CheckStartingResources_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_count;
+
+    // Automatic Variable Declarations
+    playergroup autoD580D410_g;
+    int autoD580D410_var;
+
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    autoD580D410_g = libCOMI_gf_GetHumanPlayers();
+    autoD580D410_var = -1;
+    while (true) {
+        autoD580D410_var = PlayerGroupNextPlayer(autoD580D410_g, autoD580D410_var);
+        if (autoD580D410_var < 0) { break; }
+        PlayerModifyPropertyInt(autoD580D410_var, c_playerPropMinerals, c_playerPropOperSetTo, 50);
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMI_gt_CheckStartingResources_Init () {
+    libCOMI_gt_CheckStartingResources = TriggerCreate("libCOMI_gt_CheckStartingResources_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger: CC_SharedUpgradesRecheck
 //--------------------------------------------------------------------------------------------------
 bool libCOMI_gt_CC_SharedUpgradesRecheck_Func (bool testConds, bool runActions) {
@@ -25233,85 +25364,6 @@ bool libCOMI_gt_SkinUpgrades_Func (bool testConds, bool runActions) {
 void libCOMI_gt_SkinUpgrades_Init () {
     libCOMI_gt_SkinUpgrades = TriggerCreate("libCOMI_gt_SkinUpgrades_Func");
     TriggerAddEventUpgradeLevelChanged(libCOMI_gt_SkinUpgrades, c_playerAny);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Check Starting Supplies
-//--------------------------------------------------------------------------------------------------
-bool libCOMI_gt_CheckStartingSupplies_Func (bool testConds, bool runActions) {
-    // Variable Declarations
-    int lv_count;
-
-    // Automatic Variable Declarations
-    playergroup auto1E3B2A2E_g;
-    int auto1E3B2A2E_var;
-
-    // Variable Initialization
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    auto1E3B2A2E_g = libCOMI_gf_GetHumanPlayers();
-    auto1E3B2A2E_var = -1;
-    while (true) {
-        auto1E3B2A2E_var = PlayerGroupNextPlayer(auto1E3B2A2E_g, auto1E3B2A2E_var);
-        if (auto1E3B2A2E_var < 0) { break; }
-        lv_count = TechTreeUpgradeCount(auto1E3B2A2E_var, "SuppliesMax", c_techCountCompleteOnly);
-        if ((lv_count > 0)) {
-            PlayerModifyPropertyInt(auto1E3B2A2E_var, c_playerPropSuppliesLimit, c_playerPropOperSetTo, TechTreeUpgradeCount(auto1E3B2A2E_var, "SuppliesMax", c_techCountCompleteOnly));
-        }
-        else {
-            PlayerModifyPropertyInt(auto1E3B2A2E_var, c_playerPropSuppliesLimit, c_playerPropOperSetTo, 200);
-        }
-        lv_count = TechTreeUpgradeCount(auto1E3B2A2E_var, "SuppliesMade", c_techCountCompleteOnly);
-        if ((lv_count > 0)) {
-            PlayerModifyPropertyInt(auto1E3B2A2E_var, c_playerPropSuppliesMade, c_playerPropOperSetTo, lv_count);
-        }
-
-    }
-    TriggerEnable(libCOMI_gt_SuppliesMaxUpgrades, true);
-    TriggerEnable(libCOMI_gt_SuppliesMadeUpgrades, true);
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMI_gt_CheckStartingSupplies_Init () {
-    libCOMI_gt_CheckStartingSupplies = TriggerCreate("libCOMI_gt_CheckStartingSupplies_Func");
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Check Starting Resources
-//--------------------------------------------------------------------------------------------------
-bool libCOMI_gt_CheckStartingResources_Func (bool testConds, bool runActions) {
-    // Variable Declarations
-    int lv_count;
-
-    // Automatic Variable Declarations
-    playergroup autoD580D410_g;
-    int autoD580D410_var;
-
-    // Variable Initialization
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    autoD580D410_g = libCOMI_gf_GetHumanPlayers();
-    autoD580D410_var = -1;
-    while (true) {
-        autoD580D410_var = PlayerGroupNextPlayer(autoD580D410_g, autoD580D410_var);
-        if (autoD580D410_var < 0) { break; }
-        PlayerModifyPropertyInt(autoD580D410_var, c_playerPropMinerals, c_playerPropOperSetTo, 50);
-    }
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMI_gt_CheckStartingResources_Init () {
-    libCOMI_gt_CheckStartingResources = TriggerCreate("libCOMI_gt_CheckStartingResources_Func");
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -27140,15 +27192,19 @@ void libCOMI_gt_CU_GPDeathRemove2D_Init () {
 //--------------------------------------------------------------------------------------------------
 bool libCOMI_gt_CU_GPVitalChanges_Func (bool testConds, bool runActions) {
     // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!(((EventUnit() == libCOMI_gv_yY_GPCasterUnit[1]) || (EventUnit() == libCOMI_gv_yY_GPCasterUnit[2]) || (EventUnit() == libCOMI_gv_yY_GPCasterUnit[3]) || (EventUnit() == libCOMI_gv_yY_GPCasterUnit[4]) || (EventUnit() == libCOMI_gv_yY_GPCasterUnit[5])))) {
+            return false;
+        }
+    }
+
     // Actions
     if (!runActions) {
         return true;
     }
 
-    if ((libCOMI_gf_GetPlayerCommanderUserData(EventPlayer()) == "Karax") && (libCOMI_gf_GetPlayerCommanderUserData(EventPlayer()) == "Artanis") && (libCOMI_gf_GetPlayerCommanderUserData(EventPlayer()) == "Vorazun")) {
-        libCOMI_gf_CU_GPSoAUpdateVitals(EventPlayer());
-    }
-
+    libCOMI_gf_CU_GPSoAUpdateVitals(EventPlayer());
     return true;
 }
 
@@ -27156,11 +27212,7 @@ bool libCOMI_gt_CU_GPVitalChanges_Func (bool testConds, bool runActions) {
 void libCOMI_gt_CU_GPVitalChanges_Init () {
     libCOMI_gt_CU_GPVitalChanges = TriggerCreate("libCOMI_gt_CU_GPVitalChanges_Func");
     TriggerEnable(libCOMI_gt_CU_GPVitalChanges, false);
-    TriggerAddEventUnitProperty(libCOMI_gt_CU_GPVitalChanges, UnitRefFromVariable("libCOMI_gv_yY_GPCasterUnit[1]"), c_unitPropEnergy);
-    TriggerAddEventUnitProperty(libCOMI_gt_CU_GPVitalChanges, UnitRefFromVariable("libCOMI_gv_yY_GPCasterUnit[2]"), c_unitPropEnergy);
-    TriggerAddEventUnitProperty(libCOMI_gt_CU_GPVitalChanges, UnitRefFromVariable("libCOMI_gv_yY_GPCasterUnit[3]"), c_unitPropEnergy);
-    TriggerAddEventUnitProperty(libCOMI_gt_CU_GPVitalChanges, UnitRefFromVariable("libCOMI_gv_yY_GPCasterUnit[4]"), c_unitPropEnergy);
-    TriggerAddEventUnitProperty(libCOMI_gt_CU_GPVitalChanges, UnitRefFromVariable("libCOMI_gv_yY_GPCasterUnit[5]"), c_unitPropEnergy);
+    TriggerAddEventUnitProperty(libCOMI_gt_CU_GPVitalChanges, null, c_unitPropEnergy);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -40278,11 +40330,11 @@ void libCOMI_InitTriggers () {
     libCOMI_gt_CM_CampaignMissionInitialize_Init();
     libCOMI_gt_CM_CampaignMissionInitialize2_Init();
     libCOMI_gt_setobserver_Init();
+    libCOMI_gt_CheckStartingSupplies_Init();
+    libCOMI_gt_CheckStartingResources_Init();
     libCOMI_gt_CC_SharedUpgradesRecheck_Init();
     libCOMI_gt_CC_PrestigeUpgradeSupplement_Init();
     libCOMI_gt_SkinUpgrades_Init();
-    libCOMI_gt_CheckStartingSupplies_Init();
-    libCOMI_gt_CheckStartingResources_Init();
     libCOMI_gt_SuppliesMaxUpgrades_Init();
     libCOMI_gt_SuppliesMadeUpgrades_Init();
     libCOMI_gt_Autocasting_Init();

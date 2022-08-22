@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CUnit id="ChangelingSpitfire">
+        <BehaviorArray Link="AllUnitBehaviorController"/>
+    </CUnit>
+    <CUnit id="ChangelingVolt">
+        <BehaviorArray Link="AllUnitBehaviorController"/>
+    </CUnit>
+    <CUnit id="ChangelingXayidling">
+        <BehaviorArray Link="AllUnitBehaviorController"/>
+    </CUnit>
+    <CUnit id="ChangelingFlamespitter">
+        <BehaviorArray Link="AllUnitBehaviorController"/>
+    </CUnit>
+    <CUnit id="ChangelingStrikeTrooper">
+    <BehaviorArray Link="AllUnitBehaviorController"/>
+    </CUnit>
+    <CUnit id="NHbrWarrior@Changeling">
+        <BehaviorArray Link="AllUnitBehaviorController"/>
+    </CUnit>
+</Catalog>

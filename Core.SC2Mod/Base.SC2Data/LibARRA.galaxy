@@ -10,7 +10,51 @@ void libARRA_InitLibraries () {
     libNtve_InitVariables();
 }
 
+// Variable Initialization
+bool libARRA_InitVariables_completed = false;
+
+void libARRA_InitVariables () {
+    if (libARRA_InitVariables_completed) {
+        return;
+    }
+
+    libARRA_InitVariables_completed = true;
+
+    libARRA_gv_lOG = "";
+}
+
 // Functions
+void libARRA_gf_LOGString (string lp_lOG) {
+    // Automatic Variable Declarations
+    // Implementation
+    libARRA_gv_lOG = (libARRA_gv_lOG + " ");
+    libARRA_gv_lOG = (libARRA_gv_lOG + lp_lOG);
+}
+
+void libARRA_gf_LOGAbilCmd (abilcmd lp_lOG) {
+    // Automatic Variable Declarations
+    // Implementation
+    libARRA_gv_lOG = (libARRA_gv_lOG + " " + (AbilityCommandGetAbility(lp_lOG)) + "," + IntToString(AbilityCommandGetCommand(lp_lOG)));
+}
+
+void libARRA_gf_LOGInteger (int lp_lOG) {
+    // Automatic Variable Declarations
+    // Implementation
+    libARRA_gv_lOG = (libARRA_gv_lOG + " " + IntToString(lp_lOG));
+}
+
+void libARRA_gf_LOGUpgrade (string lp_lOG) {
+    // Automatic Variable Declarations
+    // Implementation
+    libARRA_gv_lOG = (libARRA_gv_lOG + " " + (lp_lOG));
+}
+
+void libARRA_gf_LOGUnit (string lp_lOG) {
+    // Automatic Variable Declarations
+    // Implementation
+    libARRA_gv_lOG = (libARRA_gv_lOG + " " + (lp_lOG));
+}
+
 string libARRA_gf_IIF (bool lp_condition, string lp_iF, string lp_eLSE) {
     // Automatic Variable Declarations
     // Implementation
@@ -569,5 +613,6 @@ void libARRA_InitLib () {
     libARRA_InitLib_completed = true;
 
     libARRA_InitLibraries();
+    libARRA_InitVariables();
 }
 

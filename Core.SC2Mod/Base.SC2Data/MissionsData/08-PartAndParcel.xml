@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+
+    <CSound id="Archangel_Parts_Pickup" parent="Movement">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Liberator_Cover_Start_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Liberator_Cover_Start_01a.wav" FacialGroup=""/>
+        <DupeDestroyCount value="6"/>
+        <DupeMuteCount value="3"/>
+        <Pitch value="-2.000000,0.000000"/>
+    </CSound>
+    <CSound id="PartsPickupCreationSound" parent="Spell">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\HellionTankMorph_StandMorphStart_Stage00.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\HellionTankMorph_StandMorphStart_Stage04.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\HellionTankMorph_StandMorphStart_Stage03.wav" FacialGroup=""/>
+        <Pitch value="-2.000000,-2.000000"/>
+        <Volume value="-6.000000,-5.000000"/>
+    </CSound>
+    <CSound id="Event_Balius_Morph_EngineStart" parent="Movement">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\PnP_Balius_Fighter_RepairReturn_StartMorph.wav" FacialGroup=""/>
+        <DupeDestroyCount value="10"/>
+        <DupeMuteCount value="6"/>
+        <Mode value="2D"/>
+        <Pitch value="-2.000000,0.000000"/>
+        <Volume value="-6.000000,-6.000000"/>
+        <Flags index="Download" value="1"/>
+    </CSound>
+    <CSound id="Event_Balius_Morph_EngineOff" parent="Movement">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\PnP_Balius_Fighter_RepairReturn_EndFlight.wav" FacialGroup=""/>
+        <DupeDestroyCount value="10"/>
+        <DupeMuteCount value="6"/>
+        <Mode value="2D"/>
+        <Pitch value="-4.000000,-2.000000"/>
+        <Volume value="-6.000000,-6.000000"/>
+        <Flags index="Download" value="1"/>
+    </CSound>
+    <CSound id="Event_Balius_Morph_to_Fighter_A" parent="Movement">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Eradicator_SWS_A_a.wav" FacialGroup=""/>
+        <DupeDestroyCount value="10"/>
+        <DupeMuteCount value="6"/>
+        <Mode value="2D"/>
+        <Pitch value="-4.000000,-2.000000"/>
+        <Volume value="-6.000000,-6.000000"/>
+    </CSound>
+    <CSound id="Event_Balius_ReturnFlight_toRepair" parent="Movement">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\PnP_Balius_Fighter_RepairReturn_FlyOut_Alt.ogg" FacialGroup=""/>
+        <Flags index="Download" value="1"/>
+        <DupeDestroyCount value="10"/>
+        <DupeMuteCount value="6"/>
+        <Mode value="2D"/>
+        <Pitch value="-2.000000,0.000000"/>
+        <PlayDelay value="1000,1000"/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="AC_Stinger_2D_TrainEscapes_PartParcel" parent="Ambience_Map">
+        <AssetArray File="Assets\Sounds\AC_Stinger_EsoEthereal.wav" FacialGroup=""/>
+        <LoopCount value="0"/>
+        <Pitch value="-4.000000,-4.000000"/>
+        <Volume value="-10.000000,-10.000000"/>
+        <Flags index="Download" value="1"/>
+        <Flags index="VariationFallback" value="0"/>
+    </CSound>
+    <CSound id="AC_Music_PartParcel_BossFight_Win" parent="MUSIC">
+        <AssetArray File="Assets\Music\Music_Heir_Apparent_Pt1_Mx_Edit_BaliusWin_PnP.ogg" FacialGroup=""/>
+        <Flags index="Download" value="1"/>
+        <SpeakerMix index="Center" value="0.000000"/>
+        <SpeakerMix index="BackLeft" value="0.500000"/>
+        <SpeakerMix index="BackRight" value="0.500000"/>
+        <SpeakerMix index="SideLeft" value="0.000000"/>
+        <SpeakerMix index="SideRight" value="0.000000"/>
+        <SustainFade index="1" Time="500" Volume="-96.000000"/>
+        <Volume value="-4.000000,-4.000000"/>
+        <PlayDelay value="1500,1500"/>
+    </CSound>
+    <CSound id="AC_Music_PartParcel_Balius_MovingOut" parent="MUSIC">
+        <AssetArray File="Assets\Music\Music_HeirApparent_Mx_Edit_PnP.ogg" FacialGroup=""/>
+        <Flags index="Download" value="1"/>
+        <SpeakerMix index="Center" value="0.000000"/>
+        <SpeakerMix index="BackLeft" value="0.500000"/>
+        <SpeakerMix index="BackRight" value="0.500000"/>
+        <SpeakerMix index="SideLeft" value="0.000000"/>
+        <SpeakerMix index="SideRight" value="0.000000"/>
+        <SustainFade index="1" Time="500" Volume="-96.000000"/>
+        <Volume value="0.000000,0.000000"/>
+    </CSound>
+    <CSound id="AC_Music_PartParcel_HornerFleet_CallDown" parent="MUSIC">
+        <AssetArray File="Assets\Sounds\Music_Qd_Event_Horner_PnP_FleetCallDown.ogg" FacialGroup=""/>
+        <Flags index="Download" value="1"/>
+        <Category value="Other"/>
+        <SpeakerMix index="Center" value="0.000000"/>
+        <SpeakerMix index="BackLeft" value="1.000000"/>
+        <SpeakerMix index="BackRight" value="1.000000"/>
+        <SpeakerMix index="SideLeft" value="0.000000"/>
+        <SpeakerMix index="SideRight" value="0.000000"/>
+        <SustainFade index="1" Time="500" Volume="-96.000000"/>
+        <Volume value="0.000000,0.000000"/>
+        <Chance value="0"/>
+    </CSound>
+    <CSound id="AC_Music_PartParcel_HybridBossFight" parent="MUSIC">
+        <AssetArray File="Assets\Music\Music_Card_to_Play_Mx_Edit_PnP.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Music\Music_EFMS_Mx_Edit_PnP.ogg" FacialGroup=""/>
+        <Flags index="Download" value="1"/>
+        <SpeakerMix index="Center" value="0.000000"/>
+        <SpeakerMix index="BackLeft" value="0.500000"/>
+        <SpeakerMix index="BackRight" value="0.500000"/>
+        <SpeakerMix index="SideLeft" value="0.000000"/>
+        <SpeakerMix index="SideRight" value="0.000000"/>
+        <SustainFade index="1" Time="500" Volume="-96.000000"/>
+        <Volume value="1.000000,1.000000"/>
+    </CSound>
+    <CSound id="AC_Music_PartParcel_Defeat" parent="MUSIC">
+        <AssetArray File="Assets\Music\UI_Stinger_DefeatPanelGeneric.ogg" FacialGroup=""/>
+        <Flags index="Download" value="1"/>
+        <Category value="Other"/>
+        <SpeakerMix index="Center" value="0.000000"/>
+        <SpeakerMix index="BackLeft" value="0.500000"/>
+        <SpeakerMix index="BackRight" value="0.500000"/>
+        <SpeakerMix index="SideLeft" value="0.000000"/>
+        <SpeakerMix index="SideRight" value="0.000000"/>
+        <SustainFade index="1" Time="500" Volume="-96.000000"/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="DavisHeroVO_Pissed" parent="TerranPissed">
+        <AssetArray TemplateParam="DavisHeroVO_Pissed00"/>
+        <AssetArray TemplateParam="DavisHeroVO_Pissed01"/>
+        <AssetArray TemplateParam="DavisHeroVO_Pissed02"/>
+        <AssetArray TemplateParam="DavisHeroVO_Pissed03"/>
+        <AssetArray TemplateParam="DavisHeroVO_Pissed04"/>
+    </CSound>
+    <CSound id="DavisHeroVO_What" parent="TerranAck_Void">
+        <AssetArray TemplateParam="DavisHeroVO_What00"/>
+        <AssetArray TemplateParam="DavisHeroVO_What01"/>
+        <AssetArray TemplateParam="DavisHeroVO_What02"/>
+        <AssetArray TemplateParam="DavisHeroVO_What03"/>
+    </CSound>
+    <CSound id="Event_2D_Train_Depart_Horn_PartParcel" parent="Other">
+        <AssetArray File="Assets\Sounds\Train_Departing_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Train_Departing_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Train_Departing_03.wav" FacialGroup=""/>
+        <Pitch value="-2.000000,0.000000"/>
+        <SpeakerMix index="Center" value="0.250000"/>
+        <SpeakerMix index="BackLeft" value="0.500000"/>
+        <SpeakerMix index="BackRight" value="0.500000"/>
+        <SpeakerMix index="SideLeft" value="0.125000"/>
+        <SpeakerMix index="SideRight" value="0.125000"/>
+        <Volume value="-10.000000,-10.000000"/>
+    </CSound>
+    <CSound id="Event_2D_Train_Depart_PullsOut_PartParcel" parent="Other">
+        <AssetArray File="Assets\Sounds\Train_Pulls_Out_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Train_Pulls_Out_02.wav" FacialGroup=""/>
+        <Pitch value="-2.000000,0.000000"/>
+        <SpeakerMix index="Center" value="0.000000"/>
+        <SpeakerMix index="BackLeft" value="0.125000"/>
+        <SpeakerMix index="BackRight" value="0.125000"/>
+        <SpeakerMix index="SideLeft" value="0.125000"/>
+        <SpeakerMix index="SideRight" value="0.125000"/>
+        <Volume value="-8.000000,-8.000000"/>
+    </CSound>
+    <CSound id="AC_AirFleet_FlyOver_3D_PnP" parent="Spell">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\AC_PnP_Fleet_SquadFlyOver_Quad_01.ogg" FacialGroup=""/>
+        <Flags index="Stream" value="1"/>
+        <OffsetFadeIn Volume="-96.000000"/>
+        <OffsetFadeIn Time="1000"/>
+        <Pitch value="-3.000000,-3.000000"/>
+        <ReverbBalance Room="-10000"/>
+        <SustainFade index="1" Time="2000"/>
+        <Volume value="3.000000,3.000000"/>
+        <Spread value="30.000000"/>
+        <VolumeRolloffPoints Distance="20.000000"/>
+        <VolumeRolloffPoints Distance="50.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="AC_AirFleet_Init_3D_PnP" parent="Spell">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\AC_PnP_CallDown_Init_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\AC_PnP_CallDown_Init_04.wav" FacialGroup=""/>
+        <Flags index="Stream" value="1"/>
+        <OffsetFadeIn Volume="-96.000000"/>
+        <OffsetFadeIn Time="1000"/>
+        <Pitch value="1.000000,1.000000"/>
+        <ReverbBalance Room="-10000"/>
+        <Spread value="30.000000"/>
+        <SustainFade index="1" Time="2000"/>
+        <Volume value="2.000000,2.000000"/>
+        <VolumeRolloffPoints Distance="20.000000"/>
+        <VolumeRolloffPoints Distance="50.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="AC_Alarm_AirRaidSiren_2D_PnP" parent="Ambience_Map">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\AC_Alarm_AirRaid_Siren.ogg" FacialGroup=""/>
+        <LoopCount value="0"/>
+        <Pitch value="-2.000000,-2.000000"/>
+        <SpeakerMix index="Center" value="0.000000"/>
+        <SpeakerMix index="SideLeft" value="0.125000"/>
+        <SpeakerMix index="SideRight" value="0.125000"/>
+        <Volume value="-12.000000,-12.000000"/>
+    </CSound>
+    <CSound id="AC_AirFleet_SynthPulse_2D_PnP" parent="Ambience_Map">
+        <AssetArray File="Assets\Sounds\AC_PnP_Fleet_SynthPulse_Quad_02.ogg" FacialGroup=""/>
+        <LoopCount value="0"/>
+        <SpeakerMix index="Center" value="0.000000"/>
+        <SpeakerMix index="SideLeft" value="0.000000"/>
+        <SpeakerMix index="SideRight" value="0.000000"/>
+        <Volume value="1.000000,1.000000"/>
+        <DupeMuteCount value="4"/>
+    </CSound>
+
+    <CSound id="Event_PnP_Hybrid_Ready_ReleasedFromStasis" parent="Ready">
+        <EditorCategories value="Race:Protoss"/>
+        <AssetArray File="LocalizedData\Sounds\ProtossVO\CampaignUnits\Hybrid\Hybrid_Ready00.ogg"/>
+        <Mode value="2D"/>
+        <Volume value="-3.000000,-3.000000"/>
+        <PlayDelay value="1500,1500"/>
+    </CSound>
+    <CSound id="ArchAngel_PnP_PwrDn" parent="Ambience_Object">
+        <EditorCategories value="Race:Neutral"/>
+        <AssetArray File="Assets\Sounds\Generator_Pwr_Dn_02.wav" FacialGroup=""/>
+        <Pitch value="8.000000,10.000000"/>
+        <Volume value="-3.000000,-1.000000"/>
+    </CSound>
+    <CSound id="PnP_ArchAngel_MissileFly" parent="Combat">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray>
+            <File value="Assets\Sounds\SM_CS\SoA_MissileEvade_FlyBy_CenterSweet.wav"/>
+            <Pitch value="-2.000000,-2.000000"/>
+            <Volume value="-3.000000,-3.000000"/>
+            <FacialGroup value=""/>
+        </AssetArray>
+        <AssetArray>
+            <File value="Assets\Sounds\SM_CS\SoA_MissilePass_Center_Sweet.wav"/>
+            <Pitch value="-2.000000,-2.000000"/>
+            <Volume value="-4.000000,-4.000000"/>
+            <FacialGroup value=""/>
+        </AssetArray>
+        <AssetArray File="Assets\Sounds\OrdnanceTower_AttackLaunch_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\OrdnanceTower_AttackLaunch_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\OrdnanceTower_AttackLaunch_03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\OrdnanceTower_AttackLaunch_04.wav" FacialGroup=""/>
+        <DupeDestroyCount value="3"/>
+        <DupeMaximumMethod value="Replace"/>
+        <DupeMuteCount value="4"/>
+        <DupePrioritization value="Oldest"/>
+        <Pitch value="-3.000000,1.000000"/>
+        <Select value="Random"/>
+        <Spread value="10.000000"/>
+        <Volume value="-4.000000,-2.000000"/>
+    </CSound>
+    <CSound id="PnPHybridFloorBurst_Electric" parent="Combat">
+        <AssetArray File="Assets\Sounds\HybridThrasher_2DImpactElectric_Short_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\HybridThrasher_2DImpactElectric_Short_02.wav" FacialGroup=""/>
+        <Pitch value="-3.000000,1.000000"/>
+        <Volume value="-4.000000,-2.000000"/>
+        <DupeMuteCount value="3"/>
+    </CSound>
+    <CSound id="PnPHybridFloorBurst_Impact" parent="Combat">
+        <AssetArray File="Assets\Sounds\Taldarim01_Geyser_Erupt_03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Taldarim01_Geyser_Erupt_04.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Taldarim01_Geyser_Erupt_05.wav" FacialGroup=""/>
+        <Pitch value="-1.000000,1.000000"/>
+        <Volume value="-6.000000,-3.000000"/>
+        <DupeMuteCount value="2"/>
+    </CSound>
+    <CSound id="PnPHybridPuddle_Impact" parent="Ambience_Object">
+        <EditorCategories value="Race:Neutral"/>
+        <AssetArray File="Assets\Sounds\FlameTurret_Start_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\FlameTurret_Start_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\FlameTurret_Start_03.wav" FacialGroup=""/>
+        <DupeDestroyCount value="48"/>
+        <DupeMuteCount value="3"/>
+        <Pitch value="-4.000000,-2.000000"/>
+        <ResourcePriority value="15"/>
+        <Spread value="12.000000"/>
+        <Volume value="-1.000000,1.000000"/>
+        <VolumeRolloffPoints Distance="5.000000"/>
+        <VolumeRolloffPoints Distance="30.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="ArchAngel_PnPMissileLaunch" parent="Combat">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Eradicator_RailGun_Launch_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Eradicator_RailGun_Launch_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Eradicator_RailGun_Launch_03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Eradicator_RailGun_Launch_04.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Eradicator_RailGun_Launch_05.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Eradicator_RailGun_Launch_06.wav" FacialGroup=""/>
+        <DupeDestroyCount value="8"/>
+        <DupeMaximumMethod value="Replace"/>
+        <DupeMuteCount value="8"/>
+        <DupeThresholdPoints/>
+        <DupeThresholdPoints Count="4" Volume="-4.000000"/>
+        <DupePrioritization value="Oldest"/>
+        <Pitch value="-3.000000,0.000000"/>
+        <Select value="Random"/>
+        <Volume value="-3.000000,-2.000000"/>
+    </CSound>
+    <CSound id="ArchAngel_PnP_Mv_Servo" parent="Movement">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Balius_Mv_Servo_1.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Balius_Mv_Servo_2.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Balius_Mv_Servo_3.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Balius_Mv_Servo_4.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Balius_Mv_Servo_5.wav" FacialGroup=""/>
+        <Flags index="Purgable" value="0"/>
+        <Category value="Doodad"/>
+        <DupeDestroyCount value="32"/>
+        <DupeMaximumMethod value="Replace"/>
+        <DupeMuteCount value="3"/>
+        <DupePrioritization value="Oldest"/>
+        <Pitch value="-4.000000,1.000000"/>
+        <SustainFade index="1" Time="1000"/>
+        <Volume value="-14.000000,-8.000000"/>
+    </CSound>
+    <CSound id="ArchAngel_PnP_Mv_FootSteps" parent="Movement">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\MonsterHuge_BaseFootstepFS01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\MonsterHuge_BaseFootstepFS02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\MonsterHuge_BaseFootstepFS03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\MonsterHuge_BaseFootstepFS04.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\MonsterHuge_BaseFootstepFS05.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\MonsterHuge_BaseFootstepFS06.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\MonsterHuge_BaseFootstepFS07.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\MonsterHuge_BaseFootstepFS08.wav" FacialGroup=""/>
+        <Pitch value="-1.000000,1.000000"/>
+        <Volume value="-2.000000,0.000000"/>
+        <Flags index="Download" value="1"/>
+    </CSound>
+    <CSound id="ArchAngel_PnP_Poof" parent="Ambience_Object">
+        <AssetArray File="Assets\Sounds\Harness_Release_Steam_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Harness_Release_Steam_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Harness_Release_Steam_03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Harness_Release_Steam_04.wav" FacialGroup=""/>
+        <Pitch value="-6.000000,-4.000000"/>
+        <Spread value="20.000000"/>
+        <Volume value="-6.000000,-4.000000"/>
+        <VolumeRolloffFadeOut/>
+        <VolumeRolloffFadeOut Time="500" Volume="-96.000000"/>
+        <VolumeRolloffPoints Distance="5.000000"/>
+        <VolumeRolloffPoints Distance="25.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="ArchAngel_PnP_SWE_Pwr" parent="Spell">
+        <EditorCategories value="Race:Protoss"/>
+        <AssetArray File="Assets\Sounds\Psi_PowerLink_Discharge_2.wav" FacialGroup=""/>
+        <DupeMaximumMethod value="Replace"/>
+        <DupeMuteCount value="3"/>
+        <DupePrioritization value="Oldest"/>
+        <Exclusivity value="WarbringerAndColossusPurifier_UnitDX_Exclusivity"/>
+        <MuteFadeOut/>
+        <MuteFadeOut Time="299" Volume="-96.000000"/>
+        <OffsetFadeIn Volume="-96.000000"/>
+        <OffsetFadeIn Time="100"/>
+        <OffsetShiftBlend value="Logarithmic"/>
+        <Pitch value="-9.000000,-8.000000"/>
+        <Spread value="20.000000"/>
+        <Volume value="-12.000000,-8.000000"/>
+        <VolumeRolloffPoints Distance="10.000000"/>
+        <VolumeRolloffPoints Distance="25.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="Hybrid_Dom_CoopBoss_SpellB" parent="Spell">
+        <AssetArray File="Assets\Sounds\Hybrid_Dom_Boss_Spell_B_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Hybrid_Dom_Boss_Spell_B_01a.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Hybrid_Dom_Boss_Spell_B_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Hybrid_Dom_Boss_Spell_B_02a.wav" FacialGroup=""/>
+        <Pitch value="-1.000000,1.000000"/>
+        <Spread value="12.000000"/>
+        <Volume value="-2.000000,0.000000"/>
+    </CSound>
+    <CSound id="Hybrid_Dom_CoopBoss_MirrorImage" parent="Spell">
+        <AssetArray File="Assets\Sounds\Hybrid_Dom_Boss_MirrorImage_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Hybrid_Dom_Boss_MirrorImage_01a.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Hybrid_Dom_Boss_MirrorImage_01b.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Hybrid_Dom_Boss_MirrorImage_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Hybrid_Dom_Boss_MirrorImage_02a.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Hybrid_Dom_Boss_MirrorImage_02b.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Hybrid_Dom_Boss_MirrorImage_03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Hybrid_Dom_Boss_MirrorImage_04.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Hybrid_Dom_Boss_MirrorImage_04a.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Hybrid_Dom_Boss_MirrorImage_05.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Hybrid_Dom_Boss_MirrorImage_05a.wav" FacialGroup=""/>
+        <Pitch value="-1.000000,1.000000"/>
+        <Spread value="15.000000"/>
+        <Volume value="2.000000,2.000000"/>
+    </CSound>
+    <CSound id="Hybrid_Dom_CoopBoss_Birth" parent="Spell">
+        <AssetArray File="Assets\Sounds\Hybrid_Dom_Boss_Birth_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Hybrid_Dom_Boss_Birth_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Hybrid_Dom_Boss_Birth_03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Hybrid_Dom_Boss_Birth_04.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Hybrid_Dom_Boss_Birth_05.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Hybrid_Dom_Boss_Birth_06.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Hybrid_Dom_Boss_Birth_07.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Hybrid_Dom_Boss_Birth_08.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Hybrid_Dom_Boss_Birth_09.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Hybrid_Dom_Boss_Birth_10.wav" FacialGroup=""/>
+        <Spread value="20.000000"/>
+    </CSound>
+    <CSound id="Hybrid_Dom_CoopBoss_MirrorImage_Death" parent="Death">
+        <AssetArray File="Assets\Sounds\Hybrid_Dom_Boss_MirrorImage_Death_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Hybrid_Dom_Boss_MirrorImage_Death_02.wav" FacialGroup=""/>
+        <Pitch value="-1.000000,0.000000"/>
+        <Spread value="15.000000"/>
+        <Flags index="VariationFallback" value="0"/>
+    </CSound>
+    <CSound id="Event_HybridDominatorCoopBoss_Death_RedEnergy_2D" parent="Other">
+        <AssetArray File="Assets\Sounds\Uni\UI\Quad_Diamond_Transform_SynthLayer.ogg" FacialGroup=""/>
+        <Mode value="3DWorld"/>
+        <SpeakerMix index="Center" value="1.000000"/>
+        <SpeakerMix index="BackLeft" value="1.000000"/>
+        <SpeakerMix index="BackRight" value="1.000000"/>
+        <SpeakerMix index="SideLeft" value="1.000000"/>
+        <SpeakerMix index="SideRight" value="1.000000"/>
+        <Spread value="90.000000"/>
+        <VolumeRolloffPoints Distance="10.000000"/>
+        <VolumeRolloffPoints Distance="200.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="Event_HybridDominatorCoopBoss_Death_Blast_2D" parent="Other">
+        <AssetArray File="Assets\Sounds\Taldarim01_6Ch_TempleDeath_2ndStrike_Implode.ogg" FacialGroup=""/>
+        <Mode value="3DWorld"/>
+        <Pitch value="-2.000000,-2.000000"/>
+        <SpeakerMix index="Center" value="1.000000"/>
+        <SpeakerMix index="LFE" value="0.400000"/>
+        <SpeakerMix index="BackLeft" value="1.000000"/>
+        <SpeakerMix index="BackRight" value="1.000000"/>
+        <SpeakerMix index="SideLeft" value="1.000000"/>
+        <SpeakerMix index="SideRight" value="1.000000"/>
+        <Spread value="45.000000"/>
+        <Volume value="-3.000000,-3.000000"/>
+        <VolumeRolloffPoints Distance="10.000000"/>
+        <VolumeRolloffPoints Distance="200.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="Event_HybridDominatorCoopBoss_Death_LFE_2D" parent="Other">
+        <AssetArray File="Assets\Sounds\PowerCore_Boom_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\PowerCore_Boom_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\PowerCore_Boom_03.wav" FacialGroup=""/>
+        <SpeakerMix index="Center" value="0.250000"/>
+        <SpeakerMix index="LFE" value="0.500000"/>
+        <SpeakerMix index="BackLeft" value="0.500000"/>
+        <SpeakerMix index="BackRight" value="0.500000"/>
+        <SpeakerMix index="SideLeft" value="0.000000"/>
+        <SpeakerMix index="SideRight" value="0.000000"/>
+        <Pitch value="-1.000000,-1.000000"/>
+        <VolumeRolloffPoints Distance="10.000000"/>
+        <VolumeRolloffPoints Distance="200.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="Event_HybridDominatorCoopBoss_Death_RedSpirit_2D" parent="Other">
+        <AssetArray File="Assets\Sounds\Event_Aiur_03_Victory_Pre_Blast_Sub_Energy_Swirl_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Event_Aiur_03_Victory_Pre_Blast_Sub_Energy_Swirl_02.wav" FacialGroup=""/>
+        <Mode value="3DWorld"/>
+        <SpeakerMix index="Center" value="1.000000"/>
+        <SpeakerMix index="BackLeft" value="1.000000"/>
+        <SpeakerMix index="BackRight" value="1.000000"/>
+        <SpeakerMix index="SideLeft" value="1.000000"/>
+        <SpeakerMix index="SideRight" value="1.000000"/>
+        <Spread value="120.000000"/>
+        <VolumeRolloffPoints Distance="10.000000"/>
+        <VolumeRolloffPoints Distance="200.000000" Volume="-96.000000"/>
+        <Pitch value="-1.000000,0.000000"/>
+        <Volume value="-2.000000,-2.000000"/>
+    </CSound>
+    <CSound id="Event_HybridDominatorCoopBoss_Death_SoulVapor_2D" parent="Spell">
+        <EditorCategories value="Race:Neutral"/>
+        <AssetArray File="Assets\Sounds\Alarak_SoulTake_03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Alarak_SoulTake_04.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Alarak_SoulTake_Rv1_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Alarak_SoulTake_Rv1_04.wav" FacialGroup=""/>
+        <Flags index="Download" value="0"/>
+        <Flags index="Purgable" value="0"/>
+        <DupeDestroyCount value="3"/>
+        <DupeMaximumMethod value="Replace"/>
+        <DupeMuteCount value="2"/>
+        <Pitch value="-3.000000,-3.000000"/>
+        <Select value="Random"/>
+        <Spread value="120.000000"/>
+        <VolumeRolloffPoints Distance="10.000000"/>
+        <VolumeRolloffPoints Distance="200.000000" Volume="-96.000000"/>
+        <Volume value="6.000000,6.000000"/>
+    </CSound>
+    <CSound id="Event_HybridDominatorCoopBoss_Fight_QuadSplit" parent="Other">
+        <AssetArray File="Assets\Sounds\Vanish2D_04.wav" FacialGroup=""/>
+        <Mode value="3DWorld"/>
+        <Pitch value="-3.000000,-3.000000"/>
+        <SpeakerMix index="Center" value="1.000000"/>
+        <SpeakerMix index="LFE" value="0.400000"/>
+        <SpeakerMix index="BackLeft" value="1.000000"/>
+        <SpeakerMix index="BackRight" value="1.000000"/>
+        <SpeakerMix index="SideLeft" value="1.000000"/>
+        <SpeakerMix index="SideRight" value="1.000000"/>
+        <Spread value="45.000000"/>
+        <Volume value="-6.000000,-4.000000"/>
+        <VolumeRolloffPoints Distance="10.000000"/>
+        <VolumeRolloffPoints Distance="40.000000" Volume="-96.000000"/>
+    </CSound>
+
+
+    <CSound id="acObj_ACPartAndParcel_2150" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02150"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2151" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02151"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2152" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02152"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2153" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02153"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2154" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02154"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2155" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02155"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2156" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02156"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2157" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02157"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2159" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02159"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2160" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02160"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2162" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02162"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2163" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02163"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2165" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02165"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2166" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02166"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2168" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02168"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2169" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02169"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2171" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02171"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2172" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02172"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2174" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02174"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2175" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02175"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2177" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02177"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2178" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02178"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2180" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02180"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2181" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02181"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2183" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02183"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2184" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02184"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2186" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02186"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2187" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02187"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2189" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02189"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2190" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02190"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2195" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02195"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2196" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02196"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2197" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02197"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2198" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02198"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2199" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02199"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2200" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02200"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2201" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02201"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2202" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02202"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2207" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02207"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2208" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02208"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2210" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02210"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2211" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02211"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2213" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02213"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2214" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02214"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2216" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02216"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2217" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02217"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2219" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02219"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2220" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02220"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2222" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02222"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2223" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02223"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2225" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02225"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2226" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02226"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2228" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02228"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2229" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02229"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2231" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02231"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2232" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02232"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2158" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02158"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2161" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02161"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2164" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02164"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2167" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02167"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2170" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02170"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2173" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02173"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2176" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02176"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2179" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02179"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2182" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02182"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2185" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02185"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2188" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02188"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2191" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02191"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2203" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02203"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2204" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02204"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2205" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02205"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2206" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02206"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2209" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02209"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2212" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02212"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2215" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02215"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2218" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02218"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2221" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02221"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2224" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02224"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2227" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02227"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2230" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02230"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="acObj_ACPartAndParcel_2233" parent="ACVO_Priority" Portrait="GeneralDavisMoebiusLabPortrait" Subtitle="acObj" Speaker="ACPartAndParcel" Actor="GeneralDavisMoebiusLabPortrait" Line="02233"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+
+</Catalog>

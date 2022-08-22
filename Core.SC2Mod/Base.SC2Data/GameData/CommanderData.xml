@@ -11,10 +11,6 @@
     <CCommander id="Artanis">
         <UserReference value="PlayerCommanders;ProtossArtanis"/>
     </CCommander>
-    <CCommander id="Dehaka">
-        <UserReference value="PlayerCommanders;ZergDehaka"/>
-        <ProductId value="0"/>
-    </CCommander>
     <CCommander id="Horner">
         <UserReference value="PlayerCommanders;TerranHorner"/>
         <ProductId value="0"/>
@@ -25,15 +21,6 @@
     </CCommander>
     <CCommander id="Kerrigan">
         <UserReference value="PlayerCommanders;ZergKerrigan"/>
-    </CCommander>
-    <CCommander id="Mengsk">
-        <ConsoleSkin value="ConsoleTerran_Imperial"/>
-        <UserReference value="PlayerCommanders;TerranMengsk"/>
-        <ProductId value="0"/>
-    </CCommander>
-    <CCommander id="Nova">
-        <UserReference value="PlayerCommanders;TerranNova"/>
-        <ProductId value="0"/>
     </CCommander>
     <CCommander id="Raynor">
         <UserReference value="PlayerCommanders;TerranRaynor"/>
@@ -83,10 +70,6 @@
     </CCommander>
     <CCommander id="Fenix">
         <UserReference value="PlayerCommanders;ProtossFenix"/>
-        <ProductId value="0"/>
-    </CCommander>
-    <CCommander id="Stetmann">
-        <UserReference value="PlayerCommanders;ZergStetmann"/>
         <ProductId value="0"/>
     </CCommander>
     <CCommander id="ProtossCommander">
