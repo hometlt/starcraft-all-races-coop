@@ -1,4 +1,7 @@
 .idea/**
 **.temp/**
-MODS.SC2Mod/**
+MODS.SC2Mod/Assets/**
+MODS.SC2Mod/Base.SC2Assets/**
+MODS.SC2Mod/ruRU.SC2Assets/**
+MODS.SC2Mod/enUS.SC2Assets/**
 TESTER.SC2Mod/**
