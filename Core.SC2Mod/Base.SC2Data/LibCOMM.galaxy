@@ -263,7 +263,7 @@ unit libCOMM_gf_CM_PlayerGetGlobalCaster2 (int lp_player) {
     return libCOMI_gv_yY_GPCasterUnit[lp_player];
 }
 
-unit libCOMM_gf_AF_GetHeroUnit (int lp_pPlayer) {
+unit libCOMM_gf_OBSOLETE_AF_GetHeroUnit (int lp_pPlayer) {
     // Variable Declarations
     unit lv_vUnit;
 
@@ -973,7 +973,7 @@ fixed libCOMM_gf_AF_GetCharges (int lp_pPlayer, int lp_pButtonIndex) {
             return UnitAbilityChargeInfo(libCOMM_gf_CM_PlayerGetGlobalCaster2(lp_pPlayer), AbilityCommand("NovaDefensiveMatrixDrone", 0), c_unitAbilChargeCountLeft);
         }
         else if (auto7C39F272_val == 4) {
-            return UnitAbilityChargeInfo(libCOMM_gf_AF_GetHeroUnit(lp_pPlayer), AbilityCommand("NovaCoopCasterNuke", 0), c_unitAbilChargeCountLeft);
+            return UnitAbilityChargeInfo(libCOMM_gf_OBSOLETE_AF_GetHeroUnit(lp_pPlayer), AbilityCommand("NovaCoopCasterNuke", 0), c_unitAbilChargeCountLeft);
         }
         else {
         }
@@ -2357,7 +2357,7 @@ void libCOMM_gf_CM_Dehaka_LevelUp (int lp_dehakaPlayer, unit lp_dehakaUnit) {
     lv_dehakaBaseScale = 0.5;
     lv_dehakaAttackDamagePerLevel = 10;
     lv_dehakaAttackDamageBase = 20;
-    lv_dehakaUnit = libCOMI_gv_oBSOLETE_CM_HeroUnit[lp_dehakaPlayer];
+    lv_dehakaUnit = UnitGroupUnit(UnitGroup("DehakaCoop", lp_dehakaPlayer, RegionEntireMap(), UnitFilter(0, 0, 0, 0), 1), 1);
     lv_dehakaCurrentLevel = UnitXPGetCurrentLevel(lp_dehakaUnit, null);
     lv_dehakaUnitType = UnitGetType(lp_dehakaUnit);
     lv_dehakaUnitActor = libNtve_gf_MainActorofUnit(lp_dehakaUnit);
@@ -2391,7 +2391,7 @@ void libCOMM_gf_CM_Dehaka_LevelUp (int lp_dehakaPlayer, unit lp_dehakaUnit) {
 
     libNtve_gf_CatalogFieldValueSetAsReal(c_gameCatalogUnit, lv_dehakaUnitType, "TurningRate", lp_dehakaPlayer, lv_dehakaTurnSpeed);
     libNtve_gf_CatalogFieldValueSetAsReal(c_gameCatalogUnit, lv_dehakaUnitType, "StationaryTurningRate", lp_dehakaPlayer, lv_dehakaTurnSpeed);
-    if ((lp_dehakaUnit == libCOMI_gv_oBSOLETE_CM_HeroUnit[lp_dehakaPlayer])) {
+    if (true) {
         libCOMM_gv_cM_DehakaEatReviveTimerAdjustment = ((lv_dehakaCurrentLevel * 1) - 24);
         libNtve_gf_CatalogFieldValueSetAsReal(c_gameCatalogEffect, "DehakaDroneReviveTimerRefLink", "Amount", lp_dehakaPlayer, libCOMM_gv_cM_DehakaEatReviveTimerAdjustment);
         if (((libCOMI_gf_DifficultyLevelForPlayerCoop(lp_dehakaPlayer) == 3) || (libCOMI_gf_DifficultyLevelForPlayerCoop(lp_dehakaPlayer) == 4)) && (lv_dehakaCurrentLevel >= 6) && (GameGetMissionTime() < 360.0)) {
@@ -4131,10 +4131,12 @@ bool auto_libCOMM_gf_CM_AbilityTransmissionNovaNukeReadyActionVer_TriggerFunc (b
 
     // Variable Declarations
     int lv_locNovaPlayer;
+    unit lv_heroUnit;
 
     // Automatic Variable Declarations
     // Variable Initialization
     lv_locNovaPlayer = lp_novaPlayer;
+    lv_heroUnit = libCOMI_gf_GetHeroUnitBad(lp_novaPlayer, "NovaCoop");
 
     // Implementation
     if ((TechTreeAbilityIsAllowed(lp_novaPlayer, AbilityCommand("NovaCoopCasterNuke", 0)) == true)) {
@@ -4142,13 +4144,13 @@ bool auto_libCOMM_gf_CM_AbilityTransmissionNovaNukeReadyActionVer_TriggerFunc (b
     }
 
     while (true) {
-        while (!((UnitAbilityChargeInfo(libCOMI_gv_oBSOLETE_CM_HeroUnit[lv_locNovaPlayer], AbilityCommand("NovaCoopCasterNuke", 0), c_unitAbilChargeCountLeft) <= 0.0))) {
+        while (!((UnitAbilityChargeInfo(lv_heroUnit, AbilityCommand("NovaCoopCasterNuke", 0), c_unitAbilChargeCountLeft) <= 0.0))) {
             Wait(1.0, c_timeGame);
         }
-        while (!((UnitAbilityChargeInfo(libCOMI_gv_oBSOLETE_CM_HeroUnit[lv_locNovaPlayer], AbilityCommand("NovaCoopCasterNuke", 0), c_unitAbilChargeCountLeft) >= 1.0))) {
+        while (!((UnitAbilityChargeInfo(lv_heroUnit, AbilityCommand("NovaCoopCasterNuke", 0), c_unitAbilChargeCountLeft) >= 1.0))) {
             Wait(1.0, c_timeGame);
         }
-        if (((libCOMI_gv_oBSOLETE_CM_HeroUnit[lv_locNovaPlayer] == null) || (UnitIsAlive(libCOMI_gv_oBSOLETE_CM_HeroUnit[lv_locNovaPlayer]) == true))) {
+        if (((lv_heroUnit == null) || (UnitIsAlive(lv_heroUnit) == true))) {
             libCOMI_gf_CM_CommanderVOSend(libCOMI_gf_CC_PlayerAllyNew(lv_locNovaPlayer), SoundLink("NovaCommander_NukeReady", -1), PlayerGroupSingle(lv_locNovaPlayer));
         }
 
@@ -4533,6 +4535,7 @@ bool auto_libCOMM_gf_CM_AbilityTransmission_GaryUpgradeReminder_TriggerFunc (boo
     fixed lv_reminderdelay;
     fixed lv_minimumrevivedelay;
     timer lv_remindertimer;
+    unit lv_heroUnit;
 
     // Automatic Variable Declarations
     // Variable Initialization
@@ -4540,6 +4543,7 @@ bool auto_libCOMM_gf_CM_AbilityTransmission_GaryUpgradeReminder_TriggerFunc (boo
     lv_reminderdelay = 60.0;
     lv_minimumrevivedelay = 15.0;
     lv_remindertimer = TimerCreate();
+    lv_heroUnit = libCOMI_gf_GetHeroUnit(lp_stetmannPlayer, "Gary");
 
     // Implementation
     TimerStart(lv_remindertimer, lv_reminderdelay, false, c_timeReal);
@@ -4551,7 +4555,7 @@ bool auto_libCOMM_gf_CM_AbilityTransmission_GaryUpgradeReminder_TriggerFunc (boo
         else if (((TechTreeUnitCount(lp_stetmannPlayer, "SuperGaryStetmann", c_techCountQueuedOrBetter) > 0) || (TechTreeUnitCount(lp_stetmannPlayer, "HiveStetmann", c_techCountCompleteOnly) == 0))) {
             TimerStart(lv_remindertimer, lv_reminderdelay, false, c_timeReal);
         }
-        else if ((UnitIsAlive(libCOMI_gv_oBSOLETE_CM_HeroUnit[lp_stetmannPlayer]) == false)) {
+        else if ((UnitIsAlive(lv_heroUnit) == false)) {
             TimerStart(lv_remindertimer, MaxF(lv_minimumrevivedelay, TimerGetRemaining(lv_remindertimer)), false, c_timeReal);
         }
         else if ((TimerGetRemaining(lv_remindertimer) <= 0.0)) {
@@ -5238,7 +5242,7 @@ void libCOMM_gf_InitTychusSquadUI (int lp_tychusPlayer) {
     // Variable Initialization
 
     // Implementation
-    libCOMM_gv_cU_TychusSquadContainer = libCOMI_gv_cU_GPPanel[libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Tychus", libCOMI_gf_GetAlliedCommandersPlayersCopy())];
+    libCOMM_gv_cU_TychusSquadContainer = libCOMI_gv_cU_GPPanel[lp_tychusPlayer];
     DialogControlSetAnimationState(libCOMM_gv_cU_TychusSquadContainer, PlayerGroupAll(), "AbilityMaxChargesState", IntToString(libCOMM_gv_cU_TychusMedivacMaxCharges));
     DialogControlSetAnimationState(libCOMM_gv_cU_TychusSquadContainer, PlayerGroupAll(), "AbilityCurrentChargesState", IntToString(libCOMM_gv_cU_TychusMedivacCurrentCharges));
     DialogControlHookup(libCOMM_gv_cU_TychusSquadContainer, c_triggerControlTypeProgressBar, libNtve_gf_ConvertStringToUILayoutFrameName("BarTrainingProgress"));
@@ -5275,11 +5279,11 @@ void libCOMM_gf_InitTychusSquadUI (int lp_tychusPlayer) {
     TriggerEnable(libCOMM_gt_CU_TychusSquadStructureBuilt, true);
     TriggerEnable(libCOMM_gt_CU_TychusMedivacAbilityReady, true);
     TriggerEnable(libCOMM_gt_CU_TychusMedivacAbilityUnready, true);
-    TriggerEnable(libCOMM_gt_CU_TycusMedivacPlatformBuilt, true);
+    TriggerEnable(libCOMM_gt_CU_TychusMedivacPlatformBuilt, true);
     TriggerEnable(libCOMM_gt_CU_TychusSquadBarDies, true);
     TriggerEnable(libCOMM_gt_CU_TychusEquipmentUpgraded, true);
     TriggerEnable(libCOMM_gt_CU_TychusSquadSpawnCheat, true);
-    libCOMM_gf_UpdateTychusSquadAvailability();
+    libCOMM_gf_UpdateTychusSquadAvailability(lp_tychusPlayer);
 }
 
 void libCOMM_gf_ModifyTychusMedivacCharges (int lp_chargesDelta) {
@@ -5290,8 +5294,11 @@ void libCOMM_gf_ModifyTychusMedivacCharges (int lp_chargesDelta) {
 }
 
 trigger auto_libCOMM_gf_UpdateTychusSquadAvailability_Trigger = null;
+int auto_libCOMM_gf_UpdateTychusSquadAvailability_lp_player;
 
-void libCOMM_gf_UpdateTychusSquadAvailability () {
+void libCOMM_gf_UpdateTychusSquadAvailability (int lp_player) {
+    auto_libCOMM_gf_UpdateTychusSquadAvailability_lp_player = lp_player;
+
     if (auto_libCOMM_gf_UpdateTychusSquadAvailability_Trigger == null) {
         auto_libCOMM_gf_UpdateTychusSquadAvailability_Trigger = TriggerCreate("auto_libCOMM_gf_UpdateTychusSquadAvailability_TriggerFunc");
     }
@@ -5300,6 +5307,8 @@ void libCOMM_gf_UpdateTychusSquadAvailability () {
 }
 
 bool auto_libCOMM_gf_UpdateTychusSquadAvailability_TriggerFunc (bool testConds, bool runActions) {
+    int lp_player = auto_libCOMM_gf_UpdateTychusSquadAvailability_lp_player;
+
     // Variable Declarations
     int lv_tychusplayer;
     fixed lv_initialchargetime;
@@ -5315,7 +5324,7 @@ bool auto_libCOMM_gf_UpdateTychusSquadAvailability_TriggerFunc (bool testConds, 
     const int auto8BC2F91D_ai = 1;
 
     // Variable Initialization
-    lv_tychusplayer = libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Tychus", libCOMI_gf_GetAlliedCommandersPlayersCopy());
+    lv_tychusplayer = lp_player;
     lv_initialchargetime = (libCOMM_gv_cM_Tychus_InitialTrainTime + 1.0);
     lv_rechargetime = libCOMM_gf_CalculateTychusRecruitmentChargeCooldown(lv_tychusplayer);
     lv_numberofinitialheroesavailable = 1;
@@ -6056,9 +6065,15 @@ void libCOMM_gf_CM_ZeratulProphecyEvent (trigger t, string lp_event) {
 }
 
 void libCOMM_gf_CM_SendZeratulProphecyEventArtifact (string lp_event, int lp_zeratulPlayer, unit lp_artifactUnit, int lp_artifactNumber) {
+    // Variable Declarations
+    unit lv_heroUnit;
+
     // Automatic Variable Declarations
+    // Variable Initialization
+    lv_heroUnit = libCOMI_gf_GetHeroUnitBad(lp_zeratulPlayer, "ZeratulCoop");
+
     // Implementation
-    DataTableSetUnit(false, TriggerEventParamName((lp_event), "ZeratulEventUnit"), libCOMI_gv_oBSOLETE_CM_HeroUnit[lp_zeratulPlayer]);
+    DataTableSetUnit(false, TriggerEventParamName((lp_event), "ZeratulEventUnit"), lv_heroUnit);
     DataTableSetUnit(false, TriggerEventParamName((lp_event), "ZeratulEventArtifactUnit"), lp_artifactUnit);
     DataTableSetInt(false, TriggerEventParamName((lp_event), "ZeratulEventPlayer"), lp_zeratulPlayer);
     DataTableSetInt(false, TriggerEventParamName((lp_event), "ZeratulEventArtifactNumber"), lp_artifactNumber);
@@ -6397,6 +6412,7 @@ point libCOMM_gf_CM_Zeratul_FindArtifactPlacementPointOld (fixed lp_maxDistance)
     int lv_validPointsCount;
     point lv_pickedPoint;
     unit lv_dEBUG_lastPicked;
+    unit lv_heroUnit;
 
     // Automatic Variable Declarations
     fixed auto82779DD0_ae;
@@ -6411,6 +6427,7 @@ point libCOMM_gf_CM_Zeratul_FindArtifactPlacementPointOld (fixed lp_maxDistance)
     lv_startLocationBuffer = 15.0;
     lv_nearbyUnitHealthLimit = 1000.0;
     lv_distanceBetweenPoints = 8.0;
+    lv_heroUnit = libCOMI_gf_GetHeroUnit(libCOMM_gv_cM_ZeratulPlayer, "Zeratul");
 
     // Implementation
     auto82779DD0_ae = lv_startLocationBuffer;
@@ -6422,7 +6439,7 @@ point libCOMM_gf_CM_Zeratul_FindArtifactPlacementPointOld (fixed lp_maxDistance)
         lv_angleIter = RandomFixed(0.0, lv_angleDelta);
         for ( ; ( (auto8DA33354_ai >= 0 && lv_angleIter <= auto8DA33354_ae) || (auto8DA33354_ai < 0 && lv_angleIter >= auto8DA33354_ae) ) ; lv_angleIter += auto8DA33354_ai ) {
             lv_pointIter = PointWithOffsetPolar(PlayerStartLocation(libCOMM_gv_cM_ZeratulPlayer), lv_radiusIter, lv_angleIter);
-            if ((IntToFixed(lv_validPointsCount) < (lp_maxDistance * 0.33)) && (PointPathingPassable(lv_pointIter) == true) && (PointPathingCost(PlayerStartLocation(libCOMM_gv_cM_ZeratulPlayer), lv_pointIter) <= FixedToInt(lp_maxDistance)) && (DistanceBetweenPoints(PlayerStartLocation(PlayerGroupPlayer(libCOMI_gf_GetAlliedCommandersPlayersCopy(), 1)), lv_pointIter) >= lv_startLocationBuffer) && (DistanceBetweenPoints(PlayerStartLocation(PlayerGroupPlayer(libCOMI_gf_GetAlliedCommandersPlayersCopy(), 2)), lv_pointIter) >= lv_startLocationBuffer) && ((UnitIsAlive(libCOMI_gv_oBSOLETE_CM_HeroUnit[libCOMM_gv_cM_ZeratulPlayer]) == false) || (DistanceBetweenPoints(UnitGetPosition(libCOMI_gv_oBSOLETE_CM_HeroUnit[libCOMM_gv_cM_ZeratulPlayer]), lv_pointIter) > libNtve_gf_CatalogFieldValueGetAsReal(c_gameCatalogEffect, "ProphecyArtifactRevealSearch", "AreaArray[" + IntToString(0) + "].Radius", c_playerAny)))) {
+            if ((IntToFixed(lv_validPointsCount) < (lp_maxDistance * 0.33)) && (PointPathingPassable(lv_pointIter) == true) && (PointPathingCost(PlayerStartLocation(libCOMM_gv_cM_ZeratulPlayer), lv_pointIter) <= FixedToInt(lp_maxDistance)) && (DistanceBetweenPoints(PlayerStartLocation(PlayerGroupPlayer(libCOMI_gf_GetAlliedCommandersPlayersCopy(), 1)), lv_pointIter) >= lv_startLocationBuffer) && (DistanceBetweenPoints(PlayerStartLocation(PlayerGroupPlayer(libCOMI_gf_GetAlliedCommandersPlayersCopy(), 2)), lv_pointIter) >= lv_startLocationBuffer) && ((UnitIsAlive(lv_heroUnit) == false) || (DistanceBetweenPoints(UnitGetPosition(lv_heroUnit), lv_pointIter) > libNtve_gf_CatalogFieldValueGetAsReal(c_gameCatalogEffect, "ProphecyArtifactRevealSearch", "AreaArray[" + IntToString(0) + "].Radius", c_playerAny)))) {
                 lv_nearbyUnitHealth = 0;
                 auto31999576_g = libNtve_gf_UnitsInRegionWithAllianceToPlayerMatchingCondition(null, "", "", libCOMM_gv_cM_ZeratulPlayer, c_unitAllianceEnemy, RegionCircle(lv_pointIter, 10.0), UnitFilter((1 << c_targetFilterStructure), 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
                 auto31999576_u = UnitGroupCount(auto31999576_g, c_unitCountAll);
@@ -6476,6 +6493,7 @@ point libCOMM_gf_CM_Zeratul_FindArtifactPlacementPointNew (int lp_artifactNumber
     int lv_validPointsCount;
     point lv_pickedPoint;
     unit lv_dEBUG_lastPicked;
+    unit lv_heroUnit;
 
     // Automatic Variable Declarations
     fixed auto22016781_ae;
@@ -6498,6 +6516,7 @@ point libCOMM_gf_CM_Zeratul_FindArtifactPlacementPointNew (int lp_artifactNumber
     lv_nearbyUnitHealthLimit = UserDataGetFixed("XAC_ZeratulArtifactPlacement", lv_artifactPlacementData, "maxNearbyHealth", lv_artifactIndex);
     lv_zeratulSearchRadius = libNtve_gf_CatalogFieldValueGetAsReal(c_gameCatalogEffect, "ProphecyArtifactRevealSearch", "AreaArray[" + IntToString(0) + "].Radius", c_playerAny);
     lv_distanceBetweenPoints = UserDataGetFixed("XAC_ZeratulArtifactPlacement", lv_artifactPlacementData, "distanceBetweenPoints", 1);
+    lv_heroUnit = libCOMI_gf_GetHeroUnit(libCOMM_gv_cM_ZeratulPlayer, "Zeratul");
 
     // Implementation
     libCOMM_gf_CM_ZeratulProphecyArtifactBadRegion_Set();
@@ -6510,7 +6529,7 @@ point libCOMM_gf_CM_Zeratul_FindArtifactPlacementPointNew (int lp_artifactNumber
         lv_angleIter = RandomFixed(0.0, lv_angleDelta);
         for ( ; ( (autoC4CE9F08_ai >= 0 && lv_angleIter <= autoC4CE9F08_ae) || (autoC4CE9F08_ai < 0 && lv_angleIter >= autoC4CE9F08_ae) ) ; lv_angleIter += autoC4CE9F08_ai ) {
             lv_pointIter = PointWithOffsetPolar(lv_artifactOrigin, lv_radiusIter, lv_angleIter);
-            lv_pointIsPassableAndNotNearZeratul = ((PointPathingPassable(lv_pointIter) == true) && (!(UnitIsAlive(libCOMI_gv_oBSOLETE_CM_HeroUnit[libCOMM_gv_cM_ZeratulPlayer])) || (DistanceBetweenPoints(UnitGetPosition(libCOMI_gv_oBSOLETE_CM_HeroUnit[libCOMM_gv_cM_ZeratulPlayer]), lv_pointIter) > lv_zeratulSearchRadius)) && (RegionContainsPoint(libCOMM_gv_cM_ZeratulProphecyArtifactBadRegion, lv_pointIter) == false));
+            lv_pointIsPassableAndNotNearZeratul = ((PointPathingPassable(lv_pointIter) == true) && (!(UnitIsAlive(lv_heroUnit)) || (DistanceBetweenPoints(UnitGetPosition(lv_heroUnit), lv_pointIter) > lv_zeratulSearchRadius)) && (RegionContainsPoint(libCOMM_gv_cM_ZeratulProphecyArtifactBadRegion, lv_pointIter) == false));
             if ((lv_pointIsPassableAndNotNearZeratul == true) && ((lv_checkPathing == false) || (PointPathingIsConnected(lv_pathingCheckPoint, lv_pointIter) == true)) && ((lv_maxWalkingDistance == 0.0) || (PointPathingCost(lv_pathingCheckPoint, lv_pointIter) <= FixedToInt(lv_maxWalkingDistance)))) {
                 if ((lv_nearbyUnitHealthLimit > 0.0)) {
                     lv_nearbyUnitHealth = 0;
@@ -6570,6 +6589,7 @@ point libCOMM_gf_CM_Zeratul_FindArtifactPlacementPointDebug (int lp_artifactNumb
     unit lv_dEBUG_lastPicked;
     string lv_tintactormessage;
     string lv_pickedtintactormessage;
+    unit lv_heroUnit;
 
     // Automatic Variable Declarations
     fixed autoFC7EE10F_ae;
@@ -6594,6 +6614,7 @@ point libCOMM_gf_CM_Zeratul_FindArtifactPlacementPointDebug (int lp_artifactNumb
     lv_distanceBetweenPoints = UserDataGetFixed("XAC_ZeratulArtifactPlacement", lv_artifactPlacementData, "distanceBetweenPoints", 1);
     lv_tintactormessage = (("SetTintColor " + libNtve_gf_ConvertColorToString(lp_color)));
     lv_pickedtintactormessage = (("SetTintColor " + libNtve_gf_ConvertColorToString(lp_pickedColor)));
+    lv_heroUnit = libCOMI_gf_GetHeroUnit(libCOMM_gv_cM_ZeratulPlayer, "Zeratul");
 
     // Implementation
     libCOMM_gf_CM_ZeratulProphecyArtifactBadRegion_Set();
@@ -6606,7 +6627,7 @@ point libCOMM_gf_CM_Zeratul_FindArtifactPlacementPointDebug (int lp_artifactNumb
         lv_angleIter = RandomFixed(0.0, lv_angleDelta);
         for ( ; ( (autoFCBF9785_ai >= 0 && lv_angleIter <= autoFCBF9785_ae) || (autoFCBF9785_ai < 0 && lv_angleIter >= autoFCBF9785_ae) ) ; lv_angleIter += autoFCBF9785_ai ) {
             lv_pointIter = PointWithOffsetPolar(lv_artifactOrigin, lv_radiusIter, lv_angleIter);
-            lv_pointIsPassableAndNotNearZeratul = ((PointPathingPassable(lv_pointIter) == true) && (!(UnitIsAlive(libCOMI_gv_oBSOLETE_CM_HeroUnit[libCOMM_gv_cM_ZeratulPlayer])) || (DistanceBetweenPoints(UnitGetPosition(libCOMI_gv_oBSOLETE_CM_HeroUnit[libCOMM_gv_cM_ZeratulPlayer]), lv_pointIter) > lv_zeratulSearchRadius)) && (RegionContainsPoint(libCOMM_gv_cM_ZeratulProphecyArtifactBadRegion, lv_pointIter) == false));
+            lv_pointIsPassableAndNotNearZeratul = ((PointPathingPassable(lv_pointIter) == true) && (!(UnitIsAlive(lv_heroUnit)) || (DistanceBetweenPoints(UnitGetPosition(lv_heroUnit), lv_pointIter) > lv_zeratulSearchRadius)) && (RegionContainsPoint(libCOMM_gv_cM_ZeratulProphecyArtifactBadRegion, lv_pointIter) == false));
             if ((lv_pointIsPassableAndNotNearZeratul == true) && ((lv_checkPathing == false) || (PointPathingIsConnected(lv_pathingCheckPoint, lv_pointIter) == true)) && ((lv_maxWalkingDistance == 0.0) || (PointPathingCost(lv_pathingCheckPoint, lv_pointIter) <= FixedToInt(lv_maxWalkingDistance)))) {
                 if ((lv_nearbyUnitHealthLimit > 0.0)) {
                     lv_nearbyUnitHealth = 0;
@@ -6781,20 +6802,28 @@ void libCOMM_gt_CM_DebugCommanderCooldowns_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: ShieldColorUnitCreate
+// Trigger: ShieldColorUnitCreate (Alarak/Fenix)
 //--------------------------------------------------------------------------------------------------
-bool libCOMM_gt_ShieldColorUnitCreate_Func (bool testConds, bool runActions) {
+bool libCOMM_gt_ShieldColorUnitCreateAlarakFenix_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_unit;
+    string lv_commander;
+
     // Automatic Variable Declarations
+    // Variable Initialization
+    lv_unit = EventUnitCreatedUnit();
+    lv_commander = PlayerCommander(UnitGetOwner(lv_unit));
+
     // Actions
     if (!runActions) {
         return true;
     }
 
-    if ((UnitGetOwner(EventUnitCreatedUnit()) == libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Alarak", libCOMI_gf_CC_PlayersOfCommander("Alarak")))) {
+    if ((lv_commander == "Alarak")) {
         libNtve_gf_SendActorMessageToUnit(EventUnitCreatedUnit(), "AliasAdd _ShieldRed");
     }
 
-    if ((UnitGetOwner(EventUnitCreatedUnit()) == libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Fenix", libCOMI_gf_CC_PlayersOfCommander("Fenix")))) {
+    if ((lv_commander == "Fenix")) {
         libNtve_gf_SendActorMessageToUnit(EventUnitCreatedUnit(), "AliasAdd _ShieldYellow");
     }
 
@@ -6802,38 +6831,46 @@ bool libCOMM_gt_ShieldColorUnitCreate_Func (bool testConds, bool runActions) {
 }
 
 //--------------------------------------------------------------------------------------------------
-void libCOMM_gt_ShieldColorUnitCreate_Init () {
-    libCOMM_gt_ShieldColorUnitCreate = TriggerCreate("libCOMM_gt_ShieldColorUnitCreate_Func");
-    TriggerAddEventUnitCreated(libCOMM_gt_ShieldColorUnitCreate, null, null, null);
+void libCOMM_gt_ShieldColorUnitCreateAlarakFenix_Init () {
+    libCOMM_gt_ShieldColorUnitCreateAlarakFenix = TriggerCreate("libCOMM_gt_ShieldColorUnitCreateAlarakFenix_Func");
+    TriggerAddEventUnitCreated(libCOMM_gt_ShieldColorUnitCreateAlarakFenix, null, null, null);
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: ShieldColorUnitMorph
+// Trigger: ShieldColorUnitMorph (Alarak/Fenix)
 //--------------------------------------------------------------------------------------------------
-bool libCOMM_gt_ShieldColorUnitMorph_Func (bool testConds, bool runActions) {
+bool libCOMM_gt_ShieldColorUnitMorphAlarakFenix_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_unit;
+    string lv_commander;
+
     // Automatic Variable Declarations
+    // Variable Initialization
+    lv_unit = EventUnit();
+    lv_commander = PlayerCommander(UnitGetOwner(lv_unit));
+
     // Actions
     if (!runActions) {
         return true;
     }
 
-    if ((EventPlayer() == libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Alarak", libCOMI_gf_CC_PlayersOfCommander("Alarak")))) {
-        libNtve_gf_SendActorMessageToUnit(EventUnit(), "AliasAdd _ShieldRed");
+    if ((lv_commander == "Alarak")) {
+        libNtve_gf_SendActorMessageToUnit(lv_unit, "AliasAdd _ShieldRed");
     }
 
-    if ((EventPlayer() == libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Fenix", libCOMI_gf_CC_PlayersOfCommander("Fenix")))) {
-        libNtve_gf_SendActorMessageToUnit(EventUnit(), "AliasAdd _ShieldYellow");
+    if ((lv_commander == "Fenix")) {
+        libNtve_gf_SendActorMessageToUnit(lv_unit, "AliasAdd _ShieldYellow");
     }
 
     return true;
 }
 
 //--------------------------------------------------------------------------------------------------
-void libCOMM_gt_ShieldColorUnitMorph_Init () {
-    libCOMM_gt_ShieldColorUnitMorph = TriggerCreate("libCOMM_gt_ShieldColorUnitMorph_Func");
-    TriggerAddEventUnitAbility(libCOMM_gt_ShieldColorUnitMorph, null, null, c_abilMorphStageActorEnd, false);
-    TriggerAddEventUnitAbility(libCOMM_gt_ShieldColorUnitMorph, null, null, c_abilBuildStageFinish, false);
-    TriggerAddEventUnitBehaviorChange(libCOMM_gt_ShieldColorUnitMorph, null, "PowerUserWarpable", c_unitBehaviorChangeDestroy);
+void libCOMM_gt_ShieldColorUnitMorphAlarakFenix_Init () {
+    libCOMM_gt_ShieldColorUnitMorphAlarakFenix = TriggerCreate("libCOMM_gt_ShieldColorUnitMorphAlarakFenix_Func");
+    TriggerAddEventUnitAbility(libCOMM_gt_ShieldColorUnitMorphAlarakFenix, null, null, c_abilMorphStageActorEnd, false);
+    TriggerAddEventUnitAbility(libCOMM_gt_ShieldColorUnitMorphAlarakFenix, null, null, c_abilBuildStageFinish, false);
+    TriggerAddEventUnitBehaviorChange(libCOMM_gt_ShieldColorUnitMorphAlarakFenix, null, "PowerUserWarpable", c_unitBehaviorChangeDestroy);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -6929,7 +6966,7 @@ bool libCOMM_gt_AF_TopBarClicked_Func (bool testConds, bool runActions) {
         TriggerEnable(TriggerGetCurrent(), true);
         return true;
     }
-    if (((libCOMM_gf_AF_GetButtonText(EventPlayer(), lv_vButtonIndex) == "") || (((libCOMI_gf_ActiveCommanderForPlayer3(EventPlayer()) == "Zagara") || (libCOMI_gf_ActiveCommanderForPlayer3(EventPlayer()) == "Kerrigan")) && (UnitGroupUnit(UnitSubgroupSelected(EventPlayer()), 1) != libCOMM_gf_AF_GetHeroUnit(EventPlayer()))) || ((libCOMI_gf_ActiveCommanderForPlayer3(EventPlayer()) == "Nova") && (EventDialogControl() == libCOMM_gv_aF_TopbarButton[4][EventPlayer()]) && ((UnitGroupUnit(UnitSubgroupSelected(EventPlayer()), 1) != libCOMM_gf_AF_GetHeroUnit(EventPlayer())) || (UnitHasBehavior2(libCOMM_gf_AF_GetHeroUnit(EventPlayer()), "NovaCombatSuit") == true))))) {
+    if (((libCOMM_gf_AF_GetButtonText(EventPlayer(), lv_vButtonIndex) == "") || ((libCOMI_gf_ActiveCommanderForPlayer3(EventPlayer()) == "Zagara") && (UnitGroupUnit(UnitSubgroupSelected(EventPlayer()), 1) != libCOMI_gf_GetHeroUnitBad(EventPlayer(), "ZagaraVoidCoop"))) || ((libCOMI_gf_ActiveCommanderForPlayer3(EventPlayer()) == "Kerrigan") && (UnitGroupUnit(UnitSubgroupSelected(EventPlayer()), 1) != libCOMI_gf_GetHeroUnitBad(EventPlayer(), "K5Kerrigan"))) || ((libCOMI_gf_ActiveCommanderForPlayer3(EventPlayer()) == "Nova") && (EventDialogControl() == libCOMM_gv_aF_TopbarButton[4][EventPlayer()]) && ((UnitGroupUnit(UnitSubgroupSelected(EventPlayer()), 1) != libCOMI_gf_GetHeroUnitBad(EventPlayer(), "NovaCoop")) || (UnitHasBehavior2(libCOMI_gf_GetHeroUnitBad(EventPlayer(), "NovaCoop"), "NovaCombatSuit") == true))))) {
         TriggerEnable(TriggerGetCurrent(), true);
         return true;
     }
@@ -7126,11 +7163,16 @@ bool libCOMM_gt_BanelingScourgeDeathrattleScrapDeaths_Func (bool testConds, bool
 
     // Automatic Variable Declarations
     // Variable Initialization
+    lv_dyingUnitPlayer = UnitGetOwner(EventUnit());
     lv_scrapPlayerDivisor = 10;
     lv_hornerCommander = libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Horner", libCOMI_gf_GetAlliedCommandersPlayersCopy());
 
     // Conditions
     if (testConds) {
+        if (!((lv_dyingUnitPlayer != c_playerAny))) {
+            return false;
+        }
+
         if (!((lv_hornerCommander != c_playerAny))) {
             return false;
         }
@@ -7157,19 +7199,14 @@ bool libCOMM_gt_BanelingScourgeDeathrattleScrapDeaths_Func (bool testConds, bool
         return true;
     }
 
-    lv_dyingUnitPlayer = UnitGetOwner(EventUnit());
-    if ((lv_dyingUnitPlayer == c_playerAny)) {
-        return true;
-    }
-
-    if ((libCOMI_gf_GetPlayerCommanderGameLink(lv_dyingUnitPlayer) == "Horner")) {
+    if ((libCOMI_gf_GetPlayerCommanderUserData(UnitGetOwner(EventUnitCreatedUnit())) == "Horner")) {
         lv_scrapPlayerDivisor = 5;
     }
 
     lv_dyingUnitMineralCost = (FixedToInt(StringToFixed(CatalogFieldValueGet(c_gameCatalogUnit, UnitGetType(EventUnit()), "CostResource[" + IntToString(0) + "]", EventPlayer()))) / lv_scrapPlayerDivisor);
     lv_dyingUnitVespeneCost = (FixedToInt(StringToFixed(CatalogFieldValueGet(c_gameCatalogUnit, UnitGetType(EventUnit()), "CostResource[" + IntToString(1) + "]", EventPlayer()))) / lv_scrapPlayerDivisor);
     if ((lv_dyingUnitMineralCost > 0)) {
-        if ((RandomInt(1, 100) <= FixedToInt(CatalogFieldValueGetAsInt(c_gameCatalogEffect, "MasteryHornerDoubleSalvageChanceDisplayDummy", "Amount", libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Horner", libCOMI_gf_CC_PlayersOfCommander("Horner")))))) {
+        if ((RandomInt(1, 100) <= FixedToInt(CatalogFieldValueGetAsInt(c_gameCatalogEffect, "MasteryHornerDoubleSalvageChanceDisplayDummy", "Amount", libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Horner", libCOMI_gf_GetAlliedCommandersPlayers()))))) {
             libNtve_gf_CreateUnitsWithDefaultFacing(1, "HHScrapPickup", 0, lv_dyingUnitPlayer, PointWithOffset(UnitGetPosition(EventUnit()), -0.25, 0.0));
             libCOMM_gf_CM_Horner_ScrapResourceSetStack(UnitLastCreated(), lv_dyingUnitMineralCost, lv_dyingUnitVespeneCost);
             if ((lv_dyingUnitVespeneCost == 0)) {
@@ -7217,7 +7254,7 @@ bool libCOMM_gt_BanelingScourgeEconDrop_Func (bool testConds, bool runActions) {
     playergroup auto25916AE3_g;
 
     // Variable Initialization
-    lv_kerriganCommander = libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Kerrigan", libCOMI_gf_GetAlliedCommandersPlayersCopy());
+    lv_kerriganCommander = libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Kerrigan", libCOMI_gf_GetAlliedCommandersPlayers());
 
     // Conditions
     if (testConds) {
@@ -7277,7 +7314,7 @@ bool libCOMM_gt_BanelingScourgeLocusts_Func (bool testConds, bool runActions) {
     lv_locustUnitType = "Locust";
     lv_rand = RandomInt(1, 100);
     lv_foodCompare = (StringToFixed(CatalogFieldValueGet(c_gameCatalogUnit, UnitGetType(EventUnit()), "Food", 0)) * -16.0);
-    lv_abathurCommander = libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Abathur", libCOMI_gf_GetAlliedCommandersPlayersCopy());
+    lv_abathurCommander = libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Abathur", libCOMI_gf_GetAlliedCommandersPlayers());
 
     // Conditions
     if (testConds) {
@@ -7353,7 +7390,7 @@ bool libCOMM_gt_BanelingScourgeEssenceDrop_Func (bool testConds, bool runActions
     lv_essenceNormalMultiplier = 2;
     lv_essenceHardMultiplier = 1.5;
     lv_essenceBrutalMultiplier = 1;
-    lv_dehakaPlayer = libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Dehaka", libCOMI_gf_GetAlliedCommandersPlayersCopy());
+    lv_dehakaPlayer = libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Dehaka", libCOMI_gf_GetAlliedCommandersPlayers());
 
     // Conditions
     if (testConds) {
@@ -7434,7 +7471,7 @@ bool libCOMM_gt_BanelingScourgeBiomassDrop_Func (bool testConds, bool runActions
     lv_biomassHardMultiplier = 1.5;
     lv_biomassBrutalMultiplier = 1;
     lv_biomassToxicNestMultiplier = 2;
-    lv_abathurPlayer = libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Abathur", libCOMI_gf_GetAlliedCommandersPlayersCopy());
+    lv_abathurPlayer = libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Abathur", libCOMI_gf_GetAlliedCommandersPlayers());
 
     // Conditions
     if (testConds) {
@@ -8231,7 +8268,7 @@ bool libCOMM_gt_DUT_CommanderAlarak_Func (bool testConds, bool runActions) {
 
         TriggerEnable(libCOMM_gt_CM_AbilityTransmissionAlarakEmpower, true);
         TriggerEnable(libCOMM_gt_CM_AbilityTransmissionAlarakSacrifice, true);
-        libCOMI_gf_CM_CommanderVOAbilityWatch(auto2DA74008_var, SoundLink("AlarakCommander_EMReady", -1), "Abil/AlarakEmpower", libCOMI_gv_oBSOLETE_CM_HeroUnit[auto2DA74008_var], null);
+        libCOMI_gf_CM_CommanderVOAbilityWatch(auto2DA74008_var, SoundLink("AlarakCommander_EMReady", -1), "Abil/AlarakEmpower", libCOMI_gf_GetHeroUnitBad(auto2DA74008_var, "AlarakCoop"), null);
     }
     return true;
 }
@@ -8846,21 +8883,19 @@ void libCOMM_gt_CM_AlarakLightningStrikes_FlashOff_Init () {
 //--------------------------------------------------------------------------------------------------
 bool libCOMM_gt_CM_AlarakLightningStrikes_Sacriface_Func (bool testConds, bool runActions) {
     // Variable Declarations
-    int lv_p;
-    unit lv_alarak;
+    unit lv_alarakHero;
 
     // Automatic Variable Declarations
     // Variable Initialization
-    lv_p = UnitGetOwner(EventUnit());
-    lv_alarak = libCOMI_gv_oBSOLETE_CM_HeroUnit[lv_p];
+    lv_alarakHero = libCOMI_gf_GetHeroUnit(UnitGetOwner(EventUnit()), "Alarak");
 
     // Conditions
     if (testConds) {
-        if (!((UnitIsAlive(lv_alarak) == true))) {
+        if (!((UnitIsAlive(lv_alarakHero) == true))) {
             return false;
         }
 
-        if (!((UnitGetType(lv_alarak) == "AlarakCoop"))) {
+        if (!((UnitGetType(lv_alarakHero) == "AlarakCoop"))) {
             return false;
         }
     }
@@ -8870,7 +8905,7 @@ bool libCOMM_gt_CM_AlarakLightningStrikes_Sacriface_Func (bool testConds, bool r
         return true;
     }
 
-    UnitBehaviorAdd(lv_alarak, libCOMM_gv_cM_AlarakLightningStrikes_Behavior, lv_alarak, 1);
+    UnitBehaviorAdd(lv_alarakHero, libCOMM_gv_cM_AlarakLightningStrikes_Behavior, lv_alarakHero, 1);
     return true;
 }
 
@@ -9828,7 +9863,7 @@ bool libCOMM_gt_CM_Abathur_MeleeBonusUpgrade_Func (bool testConds, bool runActio
     // Automatic Variable Declarations
     // Conditions
     if (testConds) {
-        if (!((libCOMI_gf_GetPlayerCommanderGameLink(UnitGetOwner(EventUnit())) == "Abathur"))) {
+        if (!((libCOMI_gf_GetPlayerCommanderUserData(EventPlayer()) == "Abathur"))) {
             return false;
         }
 
@@ -9842,18 +9877,18 @@ bool libCOMM_gt_CM_Abathur_MeleeBonusUpgrade_Func (bool testConds, bool runActio
         return true;
     }
 
-    CatalogFieldValueModify(c_gameCatalogEffect, "BrutalizeDamage", "Amount", libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Abathur", libCOMI_gf_CC_PlayersOfCommander("Abathur")), "3", c_upgradeOperationAdd);
-    CatalogFieldValueModify(c_gameCatalogWeapon, "Brutalize", "Level", libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Abathur", libCOMI_gf_CC_PlayersOfCommander("Abathur")), "1", c_upgradeOperationAdd);
+    CatalogFieldValueModify(c_gameCatalogEffect, "BrutalizeDamage", "Amount", EventPlayer(), "3", c_upgradeOperationAdd);
+    CatalogFieldValueModify(c_gameCatalogWeapon, "Brutalize", "Level", EventPlayer(), "1", c_upgradeOperationAdd);
     if ((libNtve_gf_TriggeringProgressUpgrade() == "ZergMissileWeaponsLevel1")) {
-        CatalogFieldValueSet(c_gameCatalogWeapon, "Brutalize", "Icon", libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Abathur", libCOMI_gf_CC_PlayersOfCommander("Abathur")), "Assets\\Textures\\btn-upgrade-zerg-meleeattacks-level1.dds");
+        CatalogFieldValueSet(c_gameCatalogWeapon, "Brutalize", "Icon", EventPlayer(), "Assets\\Textures\\btn-upgrade-zerg-meleeattacks-level1.dds");
     }
 
     if ((libNtve_gf_TriggeringProgressUpgrade() == "ZergMissileWeaponsLevel2")) {
-        CatalogFieldValueSet(c_gameCatalogWeapon, "Brutalize", "Icon", libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Abathur", libCOMI_gf_CC_PlayersOfCommander("Abathur")), "Assets\\Textures\\btn-upgrade-zerg-meleeattacks-level2.dds");
+        CatalogFieldValueSet(c_gameCatalogWeapon, "Brutalize", "Icon", EventPlayer(), "Assets\\Textures\\btn-upgrade-zerg-meleeattacks-level2.dds");
     }
 
     if ((libNtve_gf_TriggeringProgressUpgrade() == "ZergMissileWeaponsLevel3")) {
-        CatalogFieldValueSet(c_gameCatalogWeapon, "Brutalize", "Icon", libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Abathur", libCOMI_gf_CC_PlayersOfCommander("Abathur")), "Assets\\Textures\\btn-upgrade-zerg-meleeattacks-level3.dds");
+        CatalogFieldValueSet(c_gameCatalogWeapon, "Brutalize", "Icon", EventPlayer(), "Assets\\Textures\\btn-upgrade-zerg-meleeattacks-level3.dds");
     }
 
     return true;
@@ -10484,6 +10519,7 @@ void libCOMM_gt_CM_Abathur_RavagerSpellCooldown_Init () {
 bool libCOMM_gt_DUT_CommanderDehaka_Func (bool testConds, bool runActions) {
     // Variable Declarations
     playergroup lv_players;
+    unit lv_dehakaUnit;
 
     // Automatic Variable Declarations
     playergroup autoE1728E31_g;
@@ -10588,12 +10624,12 @@ bool libCOMM_gt_DUT_CommanderDehaka_Func (bool testConds, bool runActions) {
         libCOMI_gf_CU_GPInitCommonCaster(autoE1728E31_var, "CoopCasterDehaka", "Coop_GlobalCastingTemplates/ZergCasterPanelTemplate", "Coop_GlobalCastingTemplates/DehakaGlobalCommandPanelTemplate", 4, "Cutscenes\\UI_DehakaCastingPanel.SC2Cutscene", "");
         if ((TechTreeUnitIsAllowed(autoE1728E31_var, "DehakaCoopReviveCocoon") == true)) {
             libCOMI_gf_CreateACStructure(autoE1728E31_var, "DehakaCoopReviveCocoon");
-            libCOMI_gv_oBSOLETE_CM_HeroReviver[autoE1728E31_var] = UnitLastCreated();
-            UnitBehaviorAdd(libCOMI_gv_oBSOLETE_CM_HeroUnit[autoE1728E31_var], libCOMM_gv_cM_DehakaVeterencyBehavior[autoE1728E31_var], libCOMI_gv_oBSOLETE_CM_HeroUnit[autoE1728E31_var], 1);
+            lv_dehakaUnit = libCOMI_gf_GetHeroUnitBad(autoE1728E31_var, "DehakaCoop");
+            UnitBehaviorAdd(lv_dehakaUnit, libCOMM_gv_cM_DehakaVeterencyBehavior[autoE1728E31_var], lv_dehakaUnit, 1);
             if ((TechTreeUpgradeCount(autoE1728E31_var, "MasteryDehakaAttackSpeed", c_techCountCompleteOnly) >= 1)) {
                 libCOMM_gv_cM_Dehaka_EssenceAttribute = "DehakaAttEssenceMastery";
-                UnitBehaviorAdd(libCOMI_gv_oBSOLETE_CM_HeroUnit[autoE1728E31_var], "DehakaAttEssenceMastery", libCOMI_gv_oBSOLETE_CM_HeroUnit[autoE1728E31_var], 1);
-                UnitBehaviorRemove(libCOMI_gv_oBSOLETE_CM_HeroUnit[autoE1728E31_var], "DehakaAttEssence", 1);
+                UnitBehaviorAdd(lv_dehakaUnit, "DehakaAttEssenceMastery", lv_dehakaUnit, 1);
+                UnitBehaviorRemove(lv_dehakaUnit, "DehakaAttEssence", 1);
             }
 
         }
@@ -11963,12 +11999,16 @@ void libCOMM_gt_CM_DehakaReviveGasWorkerBehaviorRemove_Init () {
 //--------------------------------------------------------------------------------------------------
 bool libCOMM_gt_CM_DehakaReviveEatButtonClicked_Func (bool testConds, bool runActions) {
     // Variable Declarations
+    unit lv_heroUnit;
+    unit lv_reviverUnit;
     fixed lv_reviveTimer;
     int lv_needs;
 
     // Automatic Variable Declarations
     // Variable Initialization
-    lv_reviveTimer = UnitBehaviorDuration(libCOMI_gv_oBSOLETE_CM_HeroReviver[EventPlayer()], "DehakaNormalReviveTimer");
+    lv_heroUnit = libCOMI_gf_GetHeroUnitBad(EventPlayer(), "DehakaCoop");
+    lv_reviverUnit = libCOMI_gf_GetHeroReviverUnit(lv_heroUnit);
+    lv_reviveTimer = UnitBehaviorDuration(lv_reviverUnit, "DehakaNormalReviveTimer");
     lv_needs = RoundI((lv_reviveTimer/(-libCOMM_gv_cM_DehakaEatReviveTimerAdjustment)));
 
     // Conditions
@@ -11986,10 +12026,10 @@ bool libCOMM_gt_CM_DehakaReviveEatButtonClicked_Func (bool testConds, bool runAc
     if ((lv_needs > 0)) {
         CatalogReferenceModify("Abil,DehakaCoopReviveEat,MaxCargoCount", EventPlayer(), IntToString(lv_needs), c_upgradeOperationSet);
         CatalogReferenceModify("Abil,DehakaCoopReviveEat,TotalCargoSpace", EventPlayer(), IntToString(lv_needs), c_upgradeOperationSet);
-        UnitAbilityEnable(libCOMI_gv_oBSOLETE_CM_HeroReviver[EventPlayer()], "DehakaConcoonEatSearch", true);
+        UnitAbilityEnable(lv_reviverUnit, "DehakaConcoonEatSearch", true);
     }
     else {
-        UnitAbilityEnable(libCOMI_gv_oBSOLETE_CM_HeroReviver[EventPlayer()], "DehakaConcoonEatSearch", false);
+        UnitAbilityEnable(lv_reviverUnit, "DehakaConcoonEatSearch", false);
     }
     return true;
 }
@@ -12008,24 +12048,33 @@ void libCOMM_gt_CM_DehakaReviveEatButtonClicked_Init () {
 //--------------------------------------------------------------------------------------------------
 bool libCOMM_gt_CM_DehakaReviveTimerAdjustments_Func (bool testConds, bool runActions) {
     // Variable Declarations
+    unit lv_heroUnit;
+    int lv_heroUnitIndex;
+    unit lv_heroReviverUnit;
+    string lv_heroReviveLink;
     fixed lv_reviveTimer;
     fixed lv_reviveTimerAdjustment;
     fixed lv_healthAdjustment;
 
     // Automatic Variable Declarations
     // Variable Initialization
+    lv_heroUnit = libCOMI_gf_GetHeroUnitBad(EventPlayer(), "DehakaCoop");
+    lv_heroUnitIndex = libCOMI_gf_GetHeroUnitIndex(lv_heroUnit);
+    lv_heroReviverUnit = libCOMI_gv_heroUnitsData[lv_heroUnitIndex].lv_reviverUnit;
+    lv_heroReviveLink = "";
     lv_reviveTimerAdjustment = libCOMM_gv_cM_DehakaEatReviveTimerAdjustment;
-    lv_healthAdjustment = ((AbsF(libCOMM_gv_cM_DehakaEatReviveTimerAdjustment) / libNtve_gf_CatalogFieldValueGetAsReal(c_gameCatalogBehavior, "DehakaNormalReviveTimer", "Duration", EventPlayer())) * UnitGetPropertyFixed(libCOMI_gv_oBSOLETE_CM_HeroReviver[EventPlayer()], c_unitPropLifeMax, c_unitPropCurrent));
+    lv_healthAdjustment = ((AbsF(libCOMM_gv_cM_DehakaEatReviveTimerAdjustment) / libNtve_gf_CatalogFieldValueGetAsReal(c_gameCatalogBehavior, "DehakaNormalReviveTimer", "Duration", EventPlayer())) * UnitGetPropertyFixed(lv_heroReviverUnit, c_unitPropLifeMax, c_unitPropCurrent));
 
     // Actions
     if (!runActions) {
         return true;
     }
 
-    lv_reviveTimer = UnitBehaviorDuration(libCOMI_gv_oBSOLETE_CM_HeroReviver[EventPlayer()], "DehakaNormalReviveTimer");
+    lv_reviveTimer = UnitBehaviorDuration(lv_heroReviverUnit, "DehakaNormalReviveTimer");
     lv_reviveTimer += lv_reviveTimerAdjustment;
-    UnitBehaviorSetDurationRemaining(libCOMI_gv_oBSOLETE_CM_HeroReviver[EventPlayer()], "DehakaNormalReviveTimer", lv_reviveTimer);
-    UnitSetPropertyFixed(libCOMI_gv_oBSOLETE_CM_HeroReviver[EventPlayer()], c_unitPropLife, (UnitGetPropertyFixed(libCOMI_gv_oBSOLETE_CM_HeroReviver[EventPlayer()], c_unitPropLife, c_unitPropCurrent) + lv_healthAdjustment));
+    UnitBehaviorSetDurationRemaining(lv_heroReviverUnit, "DehakaNormalReviveTimer", lv_reviveTimer);
+    UnitSetPropertyFixed(lv_heroReviverUnit, c_unitPropLife, (UnitGetPropertyFixed(lv_heroReviverUnit, c_unitPropLife, c_unitPropCurrent) + lv_healthAdjustment));
+    PlayerAddCooldown(EventPlayer(), libCOMI_gf_GetHeroReviveLink(lv_heroUnit), lv_reviveTimerAdjustment);
     return true;
 }
 
@@ -12193,19 +12242,6 @@ void libCOMM_gt_CM_DehakaAutocastBossSummonStateAdjust_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: CM_Dehaka_TriggersInit
-//--------------------------------------------------------------------------------------------------
-bool libCOMM_gt_CM_Dehaka_TriggersInit_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMM_gt_CM_Dehaka_TriggersInit_Init () {
-    libCOMM_gt_CM_Dehaka_TriggersInit = TriggerCreate("libCOMM_gt_CM_Dehaka_TriggersInit_Func");
-}
-
-//--------------------------------------------------------------------------------------------------
 // Trigger: CM_Dehaka_EssenceDrop
 //--------------------------------------------------------------------------------------------------
 bool libCOMM_gt_CM_Dehaka_EssenceDrop_Func (bool testConds, bool runActions) {
@@ -12320,6 +12356,7 @@ bool libCOMM_gt_CM_Dehaka_EssencePickup_Func (bool testConds, bool runActions) {
     unit lv_collectorUnit;
     string lv_collectorUnitType;
     int lv_doublehealmastery;
+    unit lv_heroUnit;
 
     // Automatic Variable Declarations
     // Variable Initialization
@@ -12330,6 +12367,7 @@ bool libCOMM_gt_CM_Dehaka_EssencePickup_Func (bool testConds, bool runActions) {
     lv_collectorUnit = EventPlayerEffectUsedUnit(c_effectUnitTarget);
     lv_collectorUnitType = UnitGetType(lv_collectorUnit);
     lv_doublehealmastery = CatalogFieldValueGetAsInt(c_gameCatalogEffect, "MasteryDehakaDoubleHealEssenceDisplayDummy", "Amount", lv_player);
+    lv_heroUnit = UnitGroupUnit(UnitGroup("DehakaCoop", lv_player, RegionEntireMap(), UnitFilter(0, 0, 0, 0), 1), 1);
 
     // Actions
     if (!runActions) {
@@ -12337,7 +12375,7 @@ bool libCOMM_gt_CM_Dehaka_EssencePickup_Func (bool testConds, bool runActions) {
     }
 
     if ((UnitHasBehavior2(lv_collectorUnit, "DehakaTopBarSummonTimedLife") == true)) {
-        lv_collectorUnit = libCOMI_gv_oBSOLETE_CM_HeroUnit[lv_player];
+        lv_collectorUnit = lv_heroUnit;
         lv_collectorUnitType = UnitGetType(lv_collectorUnit);
     }
 
@@ -12583,6 +12621,8 @@ bool libCOMM_gt_CM_Dehaka_PrestigeClone_Func (bool testConds, bool runActions) {
     unit lv_dehakaclone;
     int lv_dehakaplayer;
     order lv_order;
+    unit lv_heroUnit;
+    int lv_heroUnitIndex;
     unit lv_reviver;
     point lv_rallyPoint;
     unit lv_rallyUnit;
@@ -12591,7 +12631,9 @@ bool libCOMM_gt_CM_Dehaka_PrestigeClone_Func (bool testConds, bool runActions) {
     // Variable Initialization
     lv_dehakaclone = EventPlayerEffectUsedUnit(c_effectUnitTarget);
     lv_dehakaplayer = UnitGetOwner(lv_dehakaclone);
-    lv_reviver = libCOMI_gv_oBSOLETE_CM_HeroReviver[lv_dehakaplayer];
+    lv_heroUnit = UnitGroupUnit(UnitGroup("DehakaCoop", EventPlayer(), RegionEntireMap(), UnitFilter(0, 0, 0, 0), 1), 1);
+    lv_heroUnitIndex = libCOMI_gf_GetHeroUnitIndex(lv_heroUnit);
+    lv_reviver = libCOMI_gv_heroUnitsData[lv_heroUnitIndex].lv_reviverUnit;
     lv_rallyPoint = UnitRallyPointTargetPoint(lv_reviver, 1, 1);
     lv_rallyUnit = UnitRallyPointTargetUnit(lv_reviver, 1, 1);
 
@@ -12634,6 +12676,8 @@ bool libCOMM_gt_CM_Dehaka_PrestigeCloneRevive_Func (bool testConds, bool runActi
     unit lv_dehakaclone;
     int lv_dehakaplayer;
     order lv_order;
+    unit lv_heroUnit;
+    int lv_heroUnitIndex;
     unit lv_reviver;
     point lv_rallyPoint;
     unit lv_rallyUnit;
@@ -12642,7 +12686,9 @@ bool libCOMM_gt_CM_Dehaka_PrestigeCloneRevive_Func (bool testConds, bool runActi
     // Variable Initialization
     lv_dehakaclone = EventPlayerEffectUsedUnit(c_effectUnitTarget);
     lv_dehakaplayer = UnitGetOwner(lv_dehakaclone);
-    lv_reviver = libCOMI_gv_oBSOLETE_CM_HeroReviver[lv_dehakaplayer];
+    lv_heroUnit = UnitGroupUnit(UnitGroup("DehakaCoop", EventPlayer(), RegionEntireMap(), UnitFilter(0, 0, 0, 0), 1), 1);
+    lv_heroUnitIndex = libCOMI_gf_GetHeroUnitIndex(lv_heroUnit);
+    lv_reviver = libCOMI_gv_heroUnitsData[lv_heroUnitIndex].lv_reviverUnit;
     lv_rallyPoint = UnitRallyPointTargetPoint(lv_reviver, 1, 1);
     lv_rallyUnit = UnitRallyPointTargetUnit(lv_reviver, 1, 1);
 
@@ -16827,8 +16873,8 @@ bool libCOMM_gt_DUT_CommanderKerrigan_Func (bool testConds, bool runActions) {
     while (true) {
         auto8D6E8B0E_var = PlayerGroupNextPlayer(auto8D6E8B0E_g, auto8D6E8B0E_var);
         if (auto8D6E8B0E_var < 0) { break; }
-        libCOMI_gf_CM_CommanderVOAbilityWatch(auto8D6E8B0E_var, SoundLink("IzshaAlert_KerriganImmobilWave", -1), "Abil/KerriganVoidCoopCrushingGripWave", libCOMI_gv_oBSOLETE_CM_HeroUnit[auto8D6E8B0E_var], null);
-        libCOMI_gf_CM_CommanderVOAbilityWatch(auto8D6E8B0E_var, SoundLink("IzshaAlert_KerriganAssmilAura", -1), "Abil/KerriganVoidCoopEconDrop", libCOMI_gv_oBSOLETE_CM_HeroUnit[auto8D6E8B0E_var], null);
+        libCOMI_gf_CM_CommanderVOAbilityWatch(auto8D6E8B0E_var, SoundLink("IzshaAlert_KerriganImmobilWave", -1), "Abil/KerriganVoidCoopCrushingGripWave", libCOMI_gf_GetHeroUnitBad(auto8D6E8B0E_var, "K5Kerrigan"), null);
+        libCOMI_gf_CM_CommanderVOAbilityWatch(auto8D6E8B0E_var, SoundLink("IzshaAlert_KerriganAssmilAura", -1), "Abil/KerriganVoidCoopEconDrop", libCOMI_gf_GetHeroUnitBad(auto8D6E8B0E_var, "K5Kerrigan"), null);
     }
     return true;
 }
@@ -17365,18 +17411,18 @@ void libCOMM_gt_NYDUS_CREATED3_Init () {
 //--------------------------------------------------------------------------------------------------
 bool libCOMM_gt_CM_MasteryKerriganInstantReviveCooldown_Func (bool testConds, bool runActions) {
     // Variable Declarations
-    int lv_p;
+    unit lv_heroUnit;
 
     // Automatic Variable Declarations
     // Variable Initialization
-    lv_p = EventPlayer();
+    lv_heroUnit = libCOMI_gf_GetHeroUnitBad(EventPlayer(), "K5Kerrigan");
 
     // Actions
     if (!runActions) {
         return true;
     }
 
-    UnitBehaviorAdd(libCOMI_gv_oBSOLETE_CM_HeroUnit[lv_p], "KerriganInstantReviveCooldown", libCOMI_gv_oBSOLETE_CM_HeroUnit[lv_p], 1);
+    UnitBehaviorAdd(lv_heroUnit, "KerriganInstantReviveCooldown", lv_heroUnit, 1);
     return true;
 }
 
@@ -19209,12 +19255,18 @@ bool libCOMM_gt_CM_NovaRespawnBuyBackCostAdjustment_Func (bool testConds, bool r
     int lv_reviveCostPerSecond;
     fixed lv_totalBuybackCost;
     int lv_itPlayer;
+    int lv_heroPlayer;
+    string lv_heroUnit;
+    int lv_heroUnitIndex;
 
     // Automatic Variable Declarations
     playergroup auto11163F41_g;
 
     // Variable Initialization
     lv_reviveCostPerSecond = 5;
+    lv_heroPlayer = EventPlayer();
+    lv_heroUnit = "NovaCoop";
+    lv_heroUnitIndex = c_unitAbilAutoCastChangeAll;
 
     // Actions
     if (!runActions) {
@@ -19226,8 +19278,9 @@ bool libCOMM_gt_CM_NovaRespawnBuyBackCostAdjustment_Func (bool testConds, bool r
     while (true) {
         lv_itPlayer = PlayerGroupNextPlayer(auto11163F41_g, lv_itPlayer);
         if (lv_itPlayer < 0) { break; }
-        lv_reviveTimer[lv_itPlayer] = UnitBehaviorDuration(libCOMI_gv_oBSOLETE_CM_HeroReviver[lv_itPlayer], "NovaReviveTimer");
-        lv_totalBuybackCost = (Round(lv_reviveTimer[lv_itPlayer]) * lv_reviveCostPerSecond);
+        lv_heroUnitIndex = libCOMI_gf_GetHeroUnitIndex(UnitGroupUnit(UnitGroup(lv_heroUnit, lv_itPlayer, RegionEntireMap(), UnitFilter(0, 0, 0, 0), 1), 1));
+        libCOMI_gv_heroUnitsData[lv_heroUnitIndex].lv_reviveTimer = UnitBehaviorDuration(libCOMI_gv_heroUnitsData[lv_heroUnitIndex].lv_reviverUnit, "NovaReviveTimer");
+        lv_totalBuybackCost = (Round(libCOMI_gv_heroUnitsData[lv_heroUnitIndex].lv_reviveTimer) * lv_reviveCostPerSecond);
         CatalogFieldValueSet(c_gameCatalogAbil, "NovaReviveInstantBuyback", "Cost[" + IntToString(0) + "].Resource[" + IntToString(c_resourceTypeMinerals) + "]", lv_itPlayer, FixedToString(lv_totalBuybackCost, 0));
     }
     return true;
@@ -19244,16 +19297,33 @@ void libCOMM_gt_CM_NovaRespawnBuyBackCostAdjustment_Init () {
 // Trigger: CM_NovaRespawnBuyBack
 //--------------------------------------------------------------------------------------------------
 bool libCOMM_gt_CM_NovaRespawnBuyBack_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_heroPlayer;
+    string lv_heroUnitType;
+    unit lv_heroUnit;
+    int lv_heroUnitIndex;
+    string lv_heroUnitUserDataInstance;
+    string lv_heroReviveAbilityLink;
+
     // Automatic Variable Declarations
+    // Variable Initialization
+    lv_heroPlayer = EventPlayer();
+    lv_heroUnitType = "NovaCoop";
+    lv_heroUnit = UnitGroupUnit(UnitGroup(lv_heroUnitType, lv_heroPlayer, RegionEntireMap(), UnitFilter(0, 0, 0, 0), 1), 1);
+    lv_heroUnitIndex = libCOMI_gf_GetHeroUnitIndex(lv_heroUnit);
+    lv_heroUnitUserDataInstance = libCOMI_gv_heroUnitsData[lv_heroUnitIndex].lv_userData;
+    lv_heroReviveAbilityLink = UserDataGetString("Heroes", lv_heroUnitUserDataInstance, "ReviveLink", 1);
+
     // Actions
     if (!runActions) {
         return true;
     }
 
-    libCOMI_gv_cM_HeroReviveTargetLocation[EventPlayer()] = EventUnitTargetPoint();
+    libCOMI_gv_heroUnitsData[lv_heroUnitIndex].lv_reviveTargetLocation = EventUnitTargetPoint();
+    libNtve_gf_PlayerRemoveCooldown(EventPlayer(), lv_heroReviveAbilityLink);
     TriggerEnable(libCOMM_gt_CM_NovaRespawnBuyBackCostAdjustment, false);
     CatalogFieldValueSet(c_gameCatalogAbil, "NovaReviveInstantBuyback", "Cost[" + IntToString(0) + "].Resource[" + IntToString(c_resourceTypeMinerals) + "]", EventPlayer(), "450");
-    UnitBehaviorAdd(libCOMI_gv_oBSOLETE_CM_HeroUnit[EventPlayer()], "TargetedRevive", libCOMI_gv_oBSOLETE_CM_HeroUnit[EventPlayer()], 1);
+    UnitBehaviorAdd(lv_heroUnit, "TargetedRevive", lv_heroUnit, 1);
     return true;
 }
 
@@ -20441,27 +20511,26 @@ bool libCOMM_gt_DUT_CommanderStetmann_Func (bool testConds, bool runActions) {
         if (auto64346A24_var < 0) { break; }
         lv_upgradeCount = TechTreeUpgradeCount(auto64346A24_var, "MasteryStetmannStetzoneBonuses", c_techCountCompleteOnly);
         libCOMM_gf_CM_MasteryStetmannUpgradeCost(auto64346A24_var);
-        DialogControlSetAnimationState(libCOMI_gv_cU_GPPanel[auto64346A24_var], PlayerGroupSingle(auto64346A24_var), "ReminderStetzones", "NoReminder");
-        DialogControlSetAnimationState(libCOMI_gv_cU_GPPanel[auto64346A24_var], PlayerGroupSingle(auto64346A24_var), "ReminderStetellites", "NoReminder");
-        libNtve_gf_SetUpgradeLevelForPlayer(auto64346A24_var, "MasteryStetmannStetzoneBonusesMovementSpeed", lv_upgradeCount);
-        if ((libCOMI_gf_CC_CommanderLevel(auto64346A24_var, "Stetmann") >= 2)) {
-            DialogControlSetAnimationState(libCOMI_gv_cU_GPPanel[auto64346A24_var], PlayerGroupSingle(auto64346A24_var), "EgonergyLockedState", "Unlocked");
-        }
-        else {
-            DialogControlSetAnimationState(libCOMI_gv_cU_GPPanel[auto64346A24_var], PlayerGroupSingle(auto64346A24_var), "EgonergyLockedState", "Locked");
-        }
         if ((TechTreeUnitIsAllowed(auto64346A24_var, "CoopCasterStetmann") == true)) {
             libCOMM_gf_CM_AbilityTransmission_StetelliteReminder(auto64346A24_var);
             libCOMM_gf_CM_AbilityTransmission_StetzoneReminder(auto64346A24_var);
             libCOMI_gf_CreateACCaster(auto64346A24_var, "CoopCasterStetmann");
             libCOMM_gf_CU_GPInitStetmann(auto64346A24_var);
+            if ((libCOMI_gf_CC_CommanderLevel(auto64346A24_var, "Stetmann") >= 2)) {
+                DialogControlSetAnimationState(libCOMI_gv_cU_GPPanel[auto64346A24_var], PlayerGroupSingle(auto64346A24_var), "EgonergyLockedState", "Unlocked");
+            }
+            else {
+                DialogControlSetAnimationState(libCOMI_gv_cU_GPPanel[auto64346A24_var], PlayerGroupSingle(auto64346A24_var), "EgonergyLockedState", "Locked");
+            }
+            DialogControlSetAnimationState(libCOMI_gv_cU_GPPanel[auto64346A24_var], PlayerGroupSingle(auto64346A24_var), "ReminderStetzones", "NoReminder");
+            DialogControlSetAnimationState(libCOMI_gv_cU_GPPanel[auto64346A24_var], PlayerGroupSingle(auto64346A24_var), "ReminderStetellites", "NoReminder");
+            libNtve_gf_SetUpgradeLevelForPlayer(auto64346A24_var, "MasteryStetmannStetzoneBonusesMovementSpeed", lv_upgradeCount);
         }
 
         if ((TechTreeUnitIsAllowed(auto64346A24_var, "GarysDen") == true)) {
             TriggerEnable(libCOMM_gt_CM_GaryDeath, true);
             TriggerEnable(libCOMM_gt_CM_GaryUpgradeReminder, true);
             libCOMI_gf_CreateACStructure(auto64346A24_var, "GarysDen");
-            libCOMI_gv_oBSOLETE_CM_HeroReviver[auto64346A24_var] = UnitLastCreated();
         }
 
     }
@@ -20481,11 +20550,11 @@ bool libCOMM_gt_CM_GaryDeath_Func (bool testConds, bool runActions) {
     // Automatic Variable Declarations
     // Conditions
     if (testConds) {
-        if (!((libCOMI_gf_PlayerIsCommander(UnitGetOwner(EventUnit())) == true))) {
+        if (!((UnitGroupHasUnit(libCOMI_gv_heroUnits, EventUnit()) == true))) {
             return false;
         }
 
-        if (!((libCOMI_gv_oBSOLETE_CM_HeroDeathCount[UnitGetOwner(EventUnit())] > 0))) {
+        if (!((libCOMI_gv_heroUnitsData[libCOMI_gf_GetHeroUnitIndex(EventUnit())].lv_deathCount > 0))) {
             return false;
         }
 
@@ -21257,7 +21326,7 @@ bool libCOMM_gt_DUT_CommanderStukov_Func (bool testConds, bool runActions) {
     int auto462818DC_var;
 
     // Variable Initialization
-    lv_players = libCOMI_gf_GetPlayersWithSpecifiedCommanderCC_PlayerOfCommander("Artanis");
+    lv_players = libCOMI_gf_GetPlayersWithSpecifiedCommanderCC_PlayerOfCommander("Stukov");
 
     // Conditions
     if (testConds) {
@@ -24416,7 +24485,7 @@ bool libCOMM_gt_CU_TychusSquadMemberReviveQueued_Func (bool testConds, bool runA
 
     // Conditions
     if (testConds) {
-        if (!((EventPlayer() == libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Tychus", libCOMI_gf_GetAlliedCommandersPlayersCopy())))) {
+        if (!((PlayerCommander(EventPlayer()) == "Tychus"))) {
             return false;
         }
     }
@@ -24464,7 +24533,7 @@ bool libCOMM_gt_CU_TychusSquadMemberReviveCancelled_Func (bool testConds, bool r
 
     // Conditions
     if (testConds) {
-        if (!((EventPlayer() == libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Tychus", libCOMI_gf_GetAlliedCommandersPlayersCopy())))) {
+        if (!((PlayerCommander(EventPlayer()) == "Tychus"))) {
             return false;
         }
     }
@@ -24619,11 +24688,11 @@ bool libCOMM_gt_CU_TychusSquadBarBuilt_Func (bool testConds, bool runActions) {
 
     // Conditions
     if (testConds) {
-        if (!(((UnitGetType(EventUnitProgressUnit()) == "TychusResearchCenter") || (UnitGetType(EventUnitProgressUnit()) == "TychusResearchCenterUnlocked")))) {
+        if (!((PlayerCommander(UnitGetOwner(EventUnitProgressUnit())) == "Tychus"))) {
             return false;
         }
 
-        if (!((UnitGetOwner(EventUnitProgressUnit()) == libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Tychus", libCOMI_gf_GetAlliedCommandersPlayersCopy())))) {
+        if (!(((UnitGetType(EventUnitProgressUnit()) == "TychusResearchCenter") || (UnitGetType(EventUnitProgressUnit()) == "TychusResearchCenterUnlocked")))) {
             return false;
         }
     }
@@ -24698,23 +24767,23 @@ void libCOMM_gt_CU_TychusSquadBarUpdateProgress_Init () {
 //--------------------------------------------------------------------------------------------------
 // Trigger: CU_TycusMedivacPlatformBuilt
 //--------------------------------------------------------------------------------------------------
-bool libCOMM_gt_CU_TycusMedivacPlatformBuilt_Func (bool testConds, bool runActions) {
+bool libCOMM_gt_CU_TychusMedivacPlatformBuilt_Func (bool testConds, bool runActions) {
     // Variable Declarations
-    unit lv_medivacplatform;
-    playergroup lv_cmdsPlayers;
-    int lv_firstCommander;
+    int lv_player;
     unitgroup lv_globalCasterUnitGroup;
 
     // Automatic Variable Declarations
     // Variable Initialization
-    lv_medivacplatform = EventUnitCreatedUnit();
-    lv_cmdsPlayers = libCOMI_gf_GetAlliedCommandersPlayersCopy();
-    lv_firstCommander = libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Tychus", lv_cmdsPlayers);
-    lv_globalCasterUnitGroup = libNtve_gf_ConvertUnitToUnitGroup(libCOMI_gv_yY_GPCasterUnit[lv_firstCommander]);
+    lv_player = UnitGetOwner(EventUnitCreatedUnit());
+    lv_globalCasterUnitGroup = libNtve_gf_ConvertUnitToUnitGroup(libCOMI_gv_yY_GPCasterUnit[lv_player]);
 
     // Conditions
     if (testConds) {
-        if (!((UnitGetType(lv_medivacplatform) == "TychusMedivacPlatform"))) {
+        if (!((PlayerCommander(lv_player) == "Tychus"))) {
+            return false;
+        }
+
+        if (!((UnitGetType(EventUnitCreatedUnit()) == "TychusMedivacPlatform"))) {
             return false;
         }
     }
@@ -24724,16 +24793,16 @@ bool libCOMM_gt_CU_TycusMedivacPlatformBuilt_Func (bool testConds, bool runActio
         return true;
     }
 
-    UnitGroupAdd(lv_globalCasterUnitGroup, lv_medivacplatform);
-    libNtve_gf_SetDialogItemUnitGroup(libCOMI_gv_cU_GPCmdPanel[lv_firstCommander], lv_globalCasterUnitGroup, PlayerGroupAll());
+    UnitGroupAdd(lv_globalCasterUnitGroup, EventUnitCreatedUnit());
+    libNtve_gf_SetDialogItemUnitGroup(libCOMI_gv_cU_GPCmdPanel[lv_player], lv_globalCasterUnitGroup, PlayerGroupAll());
     return true;
 }
 
 //--------------------------------------------------------------------------------------------------
-void libCOMM_gt_CU_TycusMedivacPlatformBuilt_Init () {
-    libCOMM_gt_CU_TycusMedivacPlatformBuilt = TriggerCreate("libCOMM_gt_CU_TycusMedivacPlatformBuilt_Func");
-    TriggerEnable(libCOMM_gt_CU_TycusMedivacPlatformBuilt, false);
-    TriggerAddEventUnitCreated(libCOMM_gt_CU_TycusMedivacPlatformBuilt, null, "TychusTerranBuild", null);
+void libCOMM_gt_CU_TychusMedivacPlatformBuilt_Init () {
+    libCOMM_gt_CU_TychusMedivacPlatformBuilt = TriggerCreate("libCOMM_gt_CU_TychusMedivacPlatformBuilt_Func");
+    TriggerEnable(libCOMM_gt_CU_TychusMedivacPlatformBuilt, false);
+    TriggerAddEventUnitCreated(libCOMM_gt_CU_TychusMedivacPlatformBuilt, null, "TychusTerranBuild", null);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -24743,7 +24812,7 @@ bool libCOMM_gt_CU_TychusMedivacAbilityReady_Func (bool testConds, bool runActio
     // Automatic Variable Declarations
     // Conditions
     if (testConds) {
-        if (!((UnitGetOwner(EventUnit()) == libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Tychus", libCOMI_gf_GetAlliedCommandersPlayersCopy())))) {
+        if (!((libCOMI_gf_GetPlayerCommanderUserData(UnitGetOwner(EventUnit())) == "Tychus"))) {
             return false;
         }
     }
@@ -24771,7 +24840,7 @@ bool libCOMM_gt_CU_TychusMedivacAbilityUnready_Func (bool testConds, bool runAct
     // Automatic Variable Declarations
     // Conditions
     if (testConds) {
-        if (!((UnitGetOwner(EventUnit()) == libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Tychus", libCOMI_gf_GetAlliedCommandersPlayersCopy())))) {
+        if (!((libCOMI_gf_GetPlayerCommanderUserData(UnitGetOwner(EventUnit())) == "Tychus"))) {
             return false;
         }
     }
@@ -24814,7 +24883,7 @@ bool libCOMM_gt_CU_TychusEquipmentUpgraded_Func (bool testConds, bool runActions
 
     // Conditions
     if (testConds) {
-        if (!((EventPlayer() == libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Tychus", libCOMI_gf_GetAlliedCommandersPlayersCopy())))) {
+        if (!((libCOMI_gf_GetPlayerCommanderUserData(EventPlayer()) == "Tychus"))) {
             return false;
         }
     }
@@ -25003,10 +25072,10 @@ bool libCOMM_gt_CM_TychusHERC_CriticalText_Func (bool testConds, bool runActions
     // Automatic Variable Declarations
     // Variable Initialization
     lv_crittexttag = c_textTagNone;
-    lv_critmultiplier = CatalogReferenceGetAsInt("Behavior,TychusHercCritPassive,DamageResponse.ModifyFraction", libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Tychus", libCOMI_gf_CC_PlayersOfCommander("Tychus")));
+    lv_critmultiplier = CatalogReferenceGetAsInt("Behavior,TychusHercCritPassive,DamageResponse.ModifyFraction", EventPlayer());
     lv_ragestacks = UnitBehaviorCount(EventPlayerEffectUsedUnit(c_effectUnitCaster), "TychusHercRageDamageBuff");
-    lv_ragedamage = CatalogReferenceGetAsInt("Behavior,TychusHercRageDamageBuff,Modification.DamageDealtUnscaled[Melee]", libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Tychus", libCOMI_gf_CC_PlayersOfCommander("Tychus")));
-    lv_weapondamage = CatalogFieldValueGetAsInt(c_gameCatalogEffect, "TychusHERCWeaponDamage", "Amount", libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Tychus", libCOMI_gf_CC_PlayersOfCommander("Tychus")));
+    lv_ragedamage = CatalogReferenceGetAsInt("Behavior,TychusHercRageDamageBuff,Modification.DamageDealtUnscaled[Melee]", EventPlayer());
+    lv_weapondamage = CatalogFieldValueGetAsInt(c_gameCatalogEffect, "TychusHERCWeaponDamage", "Amount", EventPlayer());
 
     // Actions
     if (!runActions) {
@@ -25018,12 +25087,12 @@ bool libCOMM_gt_CM_TychusHERC_CriticalText_Func (bool testConds, bool runActions
         TextExpressionSetToken("Param/Expression/lib_COMM_20334C15", "B", StringExternal("Param/Value/lib_COMM_0C8B8E08"));
         TextTagCreate(TextExpressionAssemble("Param/Expression/lib_COMM_20334C15"), 24, UnitGetPosition(EventPlayerEffectUsedUnit(c_effectUnitCaster)), 3.0, true, false, PlayerGroupAll());
     }
-    else if ((UnitBehaviorCount(EventPlayerEffectUsedUnit(c_effectUnitCaster), "TychusHercRageDamageBuff") > 0) && (UnitBehaviorCount(EventPlayerEffectUsedUnit(c_effectUnitCaster), "TychusHercRageDamageBuff") < CatalogFieldValueGetAsInt(c_gameCatalogBehavior, "TychusHercRageDamageBuff", "MaxStackCount", libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Tychus", libCOMI_gf_CC_PlayersOfCommander("Tychus"))))) {
+    else if ((UnitBehaviorCount(EventPlayerEffectUsedUnit(c_effectUnitCaster), "TychusHercRageDamageBuff") > 0) && (UnitBehaviorCount(EventPlayerEffectUsedUnit(c_effectUnitCaster), "TychusHercRageDamageBuff") < CatalogFieldValueGetAsInt(c_gameCatalogBehavior, "TychusHercRageDamageBuff", "MaxStackCount", EventPlayer()))) {
         TextExpressionSetToken("Param/Expression/lib_COMM_4EF60250", "A", FixedToText(((lv_critmultiplier * (lv_weapondamage + (lv_ragestacks * lv_ragedamage))) - (lv_critmultiplier * lv_ragedamage)), c_fixedPrecisionAny));
         TextExpressionSetToken("Param/Expression/lib_COMM_4EF60250", "B", StringExternal("Param/Value/lib_COMM_C463A0E7"));
         TextTagCreate(TextExpressionAssemble("Param/Expression/lib_COMM_4EF60250"), 24, UnitGetPosition(EventPlayerEffectUsedUnit(c_effectUnitCaster)), 3.0, true, false, PlayerGroupAll());
     }
-    else if ((UnitBehaviorCount(EventPlayerEffectUsedUnit(c_effectUnitCaster), "TychusHercRageDamageBuff") == CatalogFieldValueGetAsInt(c_gameCatalogBehavior, "TychusHercRageDamageBuff", "MaxStackCount", libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Tychus", libCOMI_gf_CC_PlayersOfCommander("Tychus"))))) {
+    else if ((UnitBehaviorCount(EventPlayerEffectUsedUnit(c_effectUnitCaster), "TychusHercRageDamageBuff") == CatalogFieldValueGetAsInt(c_gameCatalogBehavior, "TychusHercRageDamageBuff", "MaxStackCount", EventPlayer()))) {
         TextExpressionSetToken("Param/Expression/lib_COMM_CC85A2A3", "A", FixedToText((lv_critmultiplier * (lv_weapondamage + (lv_ragestacks * lv_ragedamage))), c_fixedPrecisionAny));
         TextExpressionSetToken("Param/Expression/lib_COMM_CC85A2A3", "B", StringExternal("Param/Value/lib_COMM_D7DFDFC6"));
         TextTagCreate(TextExpressionAssemble("Param/Expression/lib_COMM_CC85A2A3"), 24, UnitGetPosition(EventPlayerEffectUsedUnit(c_effectUnitCaster)), 3.0, true, false, PlayerGroupAll());
@@ -25040,7 +25109,7 @@ bool libCOMM_gt_CM_TychusHERC_CriticalText_Func (bool testConds, bool runActions
 void libCOMM_gt_CM_TychusHERC_CriticalText_Init () {
     libCOMM_gt_CM_TychusHERC_CriticalText = TriggerCreate("libCOMM_gt_CM_TychusHERC_CriticalText_Func");
     TriggerEnable(libCOMM_gt_CM_TychusHERC_CriticalText, false);
-    TriggerAddEventPlayerEffectUsed(libCOMM_gt_CM_TychusHERC_CriticalText, libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Tychus", libCOMI_gf_CC_PlayersOfCommander("Tychus")), "TychusHERCWeaponDamageCritDummy");
+    TriggerAddEventPlayerEffectUsed(libCOMM_gt_CM_TychusHERC_CriticalText, c_playerAny, "TychusHERCWeaponDamageCritDummy");
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -25060,11 +25129,11 @@ bool libCOMM_gt_CM_Tychus_OdinSummon_Used_Func (bool testConds, bool runActions)
     }
 
     libNtve_gf_PlayerRemoveCooldown(lv_p, libCOMM_gv_tychusReviveCommand);
-    UnitRevive(libCOMI_gv_oBSOLETE_CM_HeroUnit[lv_p]);
-    UnitSetPropertyFixed(libCOMI_gv_oBSOLETE_CM_HeroUnit[lv_p], c_unitPropLifePercent, 100.0);
-    UnitCreateEffectPoint(libCOMI_gv_oBSOLETE_CM_HeroUnit[lv_p], libCOMM_gv_cM_Tychus_OdinSummonEffect_Called, EventPlayerEffectUsedPoint(c_effectLocationTargetPoint));
+    UnitRevive(libCOMM_gv_tychus_Unit[lv_p]);
+    UnitSetPropertyFixed(libCOMM_gv_tychus_Unit[lv_p], c_unitPropLifePercent, 100.0);
+    UnitCreateEffectPoint(libCOMM_gv_tychus_Unit[lv_p], libCOMM_gv_cM_Tychus_OdinSummonEffect_Called, EventPlayerEffectUsedPoint(c_effectLocationTargetPoint));
     Wait(1.0, c_timeGame);
-    UnitSetPosition(libCOMI_gv_oBSOLETE_CM_HeroUnit[lv_p], RegionGetBoundsMin(RegionEntireMap()), false);
+    UnitSetPosition(libCOMM_gv_tychus_Unit[lv_p], RegionGetBoundsMin(RegionEntireMap()), false);
     return true;
 }
 
@@ -25896,7 +25965,7 @@ bool libCOMM_gt_CM_Tychus_OilBombFireDamageResponse_Func (bool testConds, bool r
     }
 
     if ((lv_oilcaster == null)) {
-        libCOMM_gv_cM_Tychus_FirebatOilCaster = UnitGroupUnit(UnitGroup("TychusFirebat", libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Tychus", libCOMI_gf_GetAlliedCommandersPlayersCopy()), RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), 0), 0), 1);
+        libCOMM_gv_cM_Tychus_FirebatOilCaster = UnitGroupUnit(UnitGroup("TychusFirebat", EventUnitDamageSourcePlayer(), RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), 0), 0), 1);
         lv_oilcaster = libCOMM_gv_cM_Tychus_FirebatOilCaster;
     }
 
@@ -25925,7 +25994,7 @@ bool libCOMM_gt_CM_Tychus_UltimateAchievement_Func (bool testConds, bool runActi
 
     // Automatic Variable Declarations
     // Variable Initialization
-    lv_player = libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Tychus", libCOMI_gf_CC_PlayersOfCommander("Tychus"));
+    lv_player = EventPlayer();
 
     // Conditions
     if (testConds) {
@@ -26180,7 +26249,7 @@ bool libCOMM_gt_CM_TychusReplaceResearchCenter_Func (bool testConds, bool runAct
 
     TriggerEnable(TriggerGetCurrent(), false);
     CatalogLinkReplace(UnitGetOwner(libCOMM_gf_EventTychusHero()), c_gameCatalogUnit, "TychusResearchCenter", "TychusResearchCenterUnlocked");
-    libCOMI_gv_oBSOLETE_CM_HeroUnit[lv_p] = libCOMM_gf_EventTychusHero();
+    libCOMM_gv_tychus_Unit[lv_p] = libCOMM_gf_EventTychusHero();
     libCOMI_gv_cU_HeroUnit[0][lv_p] = lv_unit;
     auto500C78AC_g = UnitGroup("TychusResearchCenter", UnitGetOwner(libCOMM_gf_EventTychusHero()), RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
     auto500C78AC_u = UnitGroupCount(auto500C78AC_g, c_unitCountAll);
@@ -26302,7 +26371,7 @@ bool libCOMM_gt_CM_Tychus_CalldownOdinTychusSelect_Func (bool testConds, bool ru
 
     // Automatic Variable Declarations
     // Variable Initialization
-    lv_tychus = libCOMI_gv_oBSOLETE_CM_HeroUnit[libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Tychus", libCOMI_gf_CC_PlayersOfCommander("Tychus"))];
+    lv_tychus = libCOMM_gv_tychus_Unit[EventPlayer()];
 
     // Conditions
     if (testConds) {
@@ -26324,7 +26393,7 @@ bool libCOMM_gt_CM_Tychus_CalldownOdinTychusSelect_Func (bool testConds, bool ru
         UnitSelect(lv_tychus, UnitGetOwner(EventUnit()), true);
     }
 
-    libCOMM_gf_UpdateTychusSquadTargetFrame("Tychus", libCOMI_gv_oBSOLETE_CM_HeroUnit[libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Tychus", libCOMI_gf_CC_PlayersOfCommander("Tychus"))]);
+    libCOMM_gf_UpdateTychusSquadTargetFrame("Tychus", lv_tychus);
     return true;
 }
 
@@ -26924,6 +26993,7 @@ void libCOMM_gt_CM_MasteryVorazunDarkPylonRadius_Init () {
 bool libCOMM_gt_DUT_CommanderZagara_Func (bool testConds, bool runActions) {
     // Variable Declarations
     playergroup lv_players;
+    unit lv_heroUnit;
 
     // Automatic Variable Declarations
     playergroup autoBC34D6AC_g;
@@ -26955,8 +27025,9 @@ bool libCOMM_gt_DUT_CommanderZagara_Func (bool testConds, bool runActions) {
     while (true) {
         autoBC34D6AC_var = PlayerGroupNextPlayer(autoBC34D6AC_g, autoBC34D6AC_var);
         if (autoBC34D6AC_var < 0) { break; }
-        libCOMI_gf_CM_CommanderVOAbilityWatch(autoBC34D6AC_var, SoundLink("IzshaAlert_ZagaraInfestedDrop", -1), "ZagaraVoidCoopInfestedPods", libCOMI_gv_oBSOLETE_CM_HeroUnit[autoBC34D6AC_var], null);
-        libCOMI_gf_CM_CommanderVOAbilityWatch(autoBC34D6AC_var, SoundLink("IzshaAlert_ZagaraMassFrenzy", -1), "ZagaraVoidCoopMassFrenzy", libCOMI_gv_oBSOLETE_CM_HeroUnit[autoBC34D6AC_var], null);
+        lv_heroUnit = libCOMI_gf_GetHeroUnit(autoBC34D6AC_var, "Zagara");
+        libCOMI_gf_CM_CommanderVOAbilityWatch(autoBC34D6AC_var, SoundLink("IzshaAlert_ZagaraInfestedDrop", -1), "ZagaraVoidCoopInfestedPods", lv_heroUnit, null);
+        libCOMI_gf_CM_CommanderVOAbilityWatch(autoBC34D6AC_var, SoundLink("IzshaAlert_ZagaraMassFrenzy", -1), "ZagaraVoidCoopMassFrenzy", lv_heroUnit, null);
     }
     return true;
 }
@@ -27832,19 +27903,21 @@ void libCOMM_gt_CM_ZeratulProphecyEventVision_Init () {
 //--------------------------------------------------------------------------------------------------
 bool libCOMM_gt_CM_ZeratulProphecyEventArtifactMissed_Func (bool testConds, bool runActions) {
     // Variable Declarations
+    unit lv_heroUnit;
     string lv_event;
 
     // Automatic Variable Declarations
     // Variable Initialization
+    lv_heroUnit = libCOMI_gf_GetHeroUnit(EventPlayer(), "Zeratul");
     lv_event = "ZeratulEvent_ArtifactMissed";
 
     // Conditions
     if (testConds) {
-        if (!((libCOMI_gf_GetPlayerCommanderGameLink(EventPlayer()) == "Zeratul"))) {
+        if (!((PlayerCommander(EventPlayer()) == "Zeratul"))) {
             return false;
         }
 
-        if (!((EventPlayerEffectUsedUnit(c_effectUnitCaster) == libCOMI_gv_oBSOLETE_CM_HeroUnit[libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Zeratul", libCOMI_gf_GetAlliedCommandersPlayersCopy())]))) {
+        if (!((EventPlayerEffectUsedUnit(c_effectUnitCaster) == lv_heroUnit))) {
             return false;
         }
     }
@@ -27988,12 +28061,14 @@ void libCOMM_gt_CM_ZeratulProphecyEventArtifactUsed_Init () {
 bool libCOMM_gt_CM_ZeratulProphecyEventProphecyCast_Func (bool testConds, bool runActions) {
     // Variable Declarations
     string lv_event;
+    unit lv_heroUnit;
 
     // Automatic Variable Declarations
     int auto653BA609_val;
 
     // Variable Initialization
     lv_event = "ZeratulEvent_ArtifactMissed";
+    lv_heroUnit = libCOMI_gf_GetHeroUnit(UnitGetOwner(EventUnit()), "Zeratul");
 
     // Conditions
     if (testConds) {
@@ -28001,7 +28076,7 @@ bool libCOMM_gt_CM_ZeratulProphecyEventProphecyCast_Func (bool testConds, bool r
             return false;
         }
 
-        if (!((EventUnit() == libCOMI_gv_oBSOLETE_CM_HeroUnit[UnitGetOwner(EventUnit())]))) {
+        if (!((EventUnit() == lv_heroUnit))) {
             return false;
         }
     }
@@ -28111,13 +28186,19 @@ void libCOMM_gt_CM_Zeratul_TransportDropOff_Init () {
 // Trigger: CM_Zeratul_TransportResetRally
 //--------------------------------------------------------------------------------------------------
 bool libCOMM_gt_CM_Zeratul_TransportResetRally_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_heroUnit;
+
     // Automatic Variable Declarations
+    // Variable Initialization
+    lv_heroUnit = libCOMI_gf_GetHeroUnitBad(EventPlayer(), "ZeratulCoop");
+
     // Actions
     if (!runActions) {
         return true;
     }
 
-    UnitGroupIssueOrder(libCOMM_gv_cM_Zeratul_RalliedGroup, OrderTargetingUnit(AbilityCommand("Rally", 0), libCOMI_gv_oBSOLETE_CM_HeroUnit[libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Zeratul", libCOMI_gf_GetAlliedCommandersPlayersCopy())]), c_orderQueueAddToFront);
+    UnitGroupIssueOrder(libCOMM_gv_cM_Zeratul_RalliedGroup, OrderTargetingUnit(AbilityCommand("Rally", 0), lv_heroUnit), c_orderQueueAddToFront);
     return true;
 }
 
@@ -28396,7 +28477,13 @@ void libCOMM_gt_CM_Zeratul_ProphecyCastStop_Init () {
 // Trigger: CM_Zeratul_ProphecyIntro Q
 //--------------------------------------------------------------------------------------------------
 bool libCOMM_gt_CM_Zeratul_ProphecyIntroQ_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_heroUnit;
+
     // Automatic Variable Declarations
+    // Variable Initialization
+    lv_heroUnit = libCOMI_gf_GetHeroUnit(libCOMM_gv_cM_ZeratulPlayer, "Zeratul");
+
     // Conditions
     if (testConds) {
         if (!((TriggerIsEnabled(TriggerGetCurrent()) == true))) {
@@ -28411,7 +28498,7 @@ bool libCOMM_gt_CM_Zeratul_ProphecyIntroQ_Func (bool testConds, bool runActions)
 
     TriggerEnable(TriggerGetCurrent(), false);
     TriggerQueueEnter();
-    libCOMI_gf_CM_SendTransmissionCampaignInternal(true, libCOMI_gv_oBSOLETE_CM_HeroUnit[libCOMM_gv_cM_ZeratulPlayer], null, SoundLink("PlaceholderSoundFile", -1), StringExternal("Param/Value/lib_COMM_C055FD5B"), StringExternal("Param/Value/lib_COMM_FBA29BB0"), c_transmissionDurationAdd, 10.0, true, libCOMI_ge_MissionTransmissionPortraitOptioins_HidePortraitAfter, libCOMI_ge_MissionTransmissionCueSoundOptions_DefaultCueSoundBehavior, "");
+    libCOMI_gf_CM_SendTransmissionCampaignInternal(true, lv_heroUnit, null, SoundLink("PlaceholderSoundFile", -1), StringExternal("Param/Value/lib_COMM_C055FD5B"), StringExternal("Param/Value/lib_COMM_FBA29BB0"), c_transmissionDurationAdd, 10.0, true, libCOMI_ge_MissionTransmissionPortraitOptioins_HidePortraitAfter, libCOMI_ge_MissionTransmissionCueSoundOptions_DefaultCueSoundBehavior, "");
     TriggerQueueExit();
     return true;
 }
@@ -29531,13 +29618,19 @@ void libCOMM_gt_CM_ZeratulAvatarMinimapIcon_Init () {
 // Trigger: CM_Zeratul_RallySetToZeratul
 //--------------------------------------------------------------------------------------------------
 bool libCOMM_gt_CM_Zeratul_RallySetToZeratul_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_heroUnit;
+
     // Automatic Variable Declarations
+    // Variable Initialization
+    lv_heroUnit = libCOMI_gf_GetHeroUnit(libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Zeratul", libCOMI_gf_GetAlliedCommandersPlayersCopy()), "Zeratul");
+
     // Actions
     if (!runActions) {
         return true;
     }
 
-    if ((UnitIsAlive(EventUnitTargetUnit()) == true) && (EventUnitTargetUnit() == libCOMI_gv_oBSOLETE_CM_HeroUnit[libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Zeratul", libCOMI_gf_GetAlliedCommandersPlayersCopy())])) {
+    if ((UnitIsAlive(EventUnitTargetUnit()) == true) && (EventUnitTargetUnit() == lv_heroUnit)) {
         UnitGroupAdd(libCOMM_gv_cM_Zeratul_RalliedGroup, EventUnit());
     }
     else {
@@ -29858,8 +29951,8 @@ void libCOMM_gt_AegisCreated_Init () {
 
 void libCOMM_InitTriggers () {
     libCOMM_gt_CM_DebugCommanderCooldowns_Init();
-    libCOMM_gt_ShieldColorUnitCreate_Init();
-    libCOMM_gt_ShieldColorUnitMorph_Init();
+    libCOMM_gt_ShieldColorUnitCreateAlarakFenix_Init();
+    libCOMM_gt_ShieldColorUnitMorphAlarakFenix_Init();
     libCOMM_gt_AF_TopBarNotificationsEnableDisable_Init();
     libCOMM_gt_AF_TopBarClicked_Init();
     libCOMM_gt_AF_MouseEntersTopBar_Init();
@@ -29985,7 +30078,6 @@ void libCOMM_InitTriggers () {
     libCOMM_gt_CM_DehakaAutocastSettingsOn_Init();
     libCOMM_gt_CM_DehakaAutocastSettingsOff_Init();
     libCOMM_gt_CM_DehakaAutocastBossSummonStateAdjust_Init();
-    libCOMM_gt_CM_Dehaka_TriggersInit_Init();
     libCOMM_gt_CM_Dehaka_EssenceDrop_Init();
     libCOMM_gt_CM_Dehaka_EssencePickup_Init();
     libCOMM_gt_CM_Dehaka_EssenceManualUpdate_Init();
@@ -30297,7 +30389,7 @@ void libCOMM_InitTriggers () {
     libCOMM_gt_CU_TychusSquadBarBuilt_Init();
     libCOMM_gt_CU_TychusSquadBarDies_Init();
     libCOMM_gt_CU_TychusSquadBarUpdateProgress_Init();
-    libCOMM_gt_CU_TycusMedivacPlatformBuilt_Init();
+    libCOMM_gt_CU_TychusMedivacPlatformBuilt_Init();
     libCOMM_gt_CU_TychusMedivacAbilityReady_Init();
     libCOMM_gt_CU_TychusMedivacAbilityUnready_Init();
     libCOMM_gt_CU_TychusEquipmentUpgraded_Init();

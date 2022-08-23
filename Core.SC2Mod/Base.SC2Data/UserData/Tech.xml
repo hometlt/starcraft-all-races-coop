@@ -15071,5 +15071,24 @@
                 <Field Id="prestige"/>
             </User>
         </Instances>
+        <Instances Id="Stetmann_Gary">
+            <Int Int="1">
+                <Field Id="level"/>
+            </Int>
+            <Unit Unit="GaryStetmann">
+                <Field Id="unit"/>
+            </Unit>
+            <User Type="PlayerCommanders" Instance="Stetmann">
+                <Field Id="commander"/>
+            </User>
+        </Instances>
+        <Instances Id="Dehaka_Dehaka">
+            <Unit Unit="DehakaCoop">
+                <Field Id="unit"/>
+            </Unit>
+            <User Type="PlayerCommanders" Instance="Dehaka">
+                <Field Id="commander"/>
+            </User>
+        </Instances>
     </CUser>
 </Catalog>

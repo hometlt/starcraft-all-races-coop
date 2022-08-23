@@ -7,7 +7,7 @@ include "TriggerLibs/natives"
 string libARRA_gv_lOG;
 
 // Function Declarations
-void libARRA_gf_LOGString (string lp_lOG);
+void libARRA_gf_LOGString (string lp_value);
 void libARRA_gf_LOGAbilCmd (abilcmd lp_lOG);
 void libARRA_gf_LOGInteger (int lp_lOG);
 void libARRA_gf_LOGUpgrade (string lp_lOG);

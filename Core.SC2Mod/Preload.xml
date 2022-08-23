@@ -274,9 +274,6 @@
 <Effect id="DiffusionDummyImpact"/>
 <Effect id="HHWidowMineBlossomIssueOrderSet"/>
 <Effect id="BanelingExplodeLargeSetStetmann"/>
-<Effect id="BattlecruiserAttackTrackerUnitSet"/>
-<Effect id="BattlecruiserAttackTrackerDP"/>
-<Effect id="BattlecruiserChasingRB"/>
 <Effect id="MutatorConcussiveAttacksAB"/>
 <Effect id="DrakkenLaserDrillSpotterCallForHelp"/>
 <Effect id="ItemKnockbackBy3"/>
@@ -639,6 +636,7 @@
 <Unit id="InvisibleTargetDummy"/>
 <Unit id="HydraliskLurkerBurrowed"/>
 <Unit id="HydraliskLurker"/>
+<Unit id="K5Kerrigan"/>
 <Unit id="HotSTorrasqueBurrowed"/>
 <Unit id="HotSTorrasque"/>
 <Unit id="MutaliskBroodlord"/>
@@ -663,6 +661,7 @@
 <Unit id="ShadowCloudEpilogue01"/>
 <Unit id="HybridNemesis"/>
 <Unit id="HybridBehemoth"/>
+<Unit id="ZagaraVoidCoop"/>
 <Unit id="FenixAltarOfPsiStorms"/>
 <Unit id="SolarForge"/>
 <Unit id="HHWraith_SpawnerUnit"/>
@@ -676,6 +675,7 @@
 <Unit id="DehakaGlevigStructure"/>
 <Unit id="DehakaMurvarStructure"/>
 <Unit id="DehakaDakrunStructure"/>
+<Unit id="DehakaCoop"/>
 <Unit id="HydraliskMengsk"/>
 <Unit id="ZerglingMengsk"/>
 <Unit id="ThorMengskSieged"/>
@@ -757,6 +757,7 @@
 <Unit id="NuclearMine"/>
 <Unit id="RipFieldGenerator2"/>
 <Unit id="CoopCasterAlarak"/>
+<Unit id="AlarakCoop"/>
 <Unit id="DehakaCoopReviveCocoonFootPrint"/>
 <Unit id="CoopCasterDehaka"/>
 <Unit id="EssencePickup"/>
@@ -766,12 +767,14 @@
 <Unit id="SoACasterFenix"/>
 <Unit id="CoopCasterMengsk"/>
 <Unit id="CoopCasterNova"/>
+<Unit id="NovaCoop"/>
 <Unit id="CoopCasterStetmann"/>
 <Unit id="SIStukovRallyBeaconPsiEmitterPoint"/>
 <Unit id="CoopCasterStukov"/>
 <Unit id="CreepTumorStukov"/>
 <Unit id="CoopCasterTychus"/>
 <Unit id="ZeratulArtifactPickupUnlimited"/>
+<Unit id="ZeratulCoop"/>
 <Unit id="CoopCasterZeratulSpecialization"/>
 <Unit id="PurificationOrbSmall"/>
 <Unit id="CoopCasterZeratul"/>

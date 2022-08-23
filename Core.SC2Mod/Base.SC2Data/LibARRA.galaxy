@@ -24,35 +24,35 @@ void libARRA_InitVariables () {
 }
 
 // Functions
-void libARRA_gf_LOGString (string lp_lOG) {
+void libARRA_gf_LOGString (string lp_value) {
     // Automatic Variable Declarations
     // Implementation
-    libARRA_gv_lOG = (libARRA_gv_lOG + " ");
-    libARRA_gv_lOG = (libARRA_gv_lOG + lp_lOG);
+    TriggerDebugOutput(4, StringToText(lp_value), true);
+    libARRA_gv_lOG = (libARRA_gv_lOG + " " + lp_value);
 }
 
 void libARRA_gf_LOGAbilCmd (abilcmd lp_lOG) {
     // Automatic Variable Declarations
     // Implementation
-    libARRA_gv_lOG = (libARRA_gv_lOG + " " + (AbilityCommandGetAbility(lp_lOG)) + "," + IntToString(AbilityCommandGetCommand(lp_lOG)));
+    libARRA_gf_LOGString(((AbilityCommandGetAbility(lp_lOG)) + "," + IntToString(AbilityCommandGetCommand(lp_lOG))));
 }
 
 void libARRA_gf_LOGInteger (int lp_lOG) {
     // Automatic Variable Declarations
     // Implementation
-    libARRA_gv_lOG = (libARRA_gv_lOG + " " + IntToString(lp_lOG));
+    libARRA_gf_LOGString(IntToString(lp_lOG));
 }
 
 void libARRA_gf_LOGUpgrade (string lp_lOG) {
     // Automatic Variable Declarations
     // Implementation
-    libARRA_gv_lOG = (libARRA_gv_lOG + " " + (lp_lOG));
+    libARRA_gf_LOGString((lp_lOG));
 }
 
 void libARRA_gf_LOGUnit (string lp_lOG) {
     // Automatic Variable Declarations
     // Implementation
-    libARRA_gv_lOG = (libARRA_gv_lOG + " " + (lp_lOG));
+    libARRA_gf_LOGString((lp_lOG));
 }
 
 string libARRA_gf_IIF (bool lp_condition, string lp_iF, string lp_eLSE) {
