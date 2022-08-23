@@ -58810,7 +58810,7 @@
   <ScoreMake value="275"/>
   <ScoreKill value="275"/>
   <ScoreResult value="BuildOrder"/>
-  <SubgroupPriority value="79"/>
+  <SubgroupPriority value="80"/>
   <MinimapRadius value="1"/>
   <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
   <TacticalAI value="SiegeTank"/>
@@ -58873,7 +58873,7 @@
   <AbilArray Link="moveUED"/>
   <AbilArray Link="MedivacTransport3"/>
   <AbilArray Link="attackUED"/>
-  <AbilArray Link="AttackRedirect"/>
+  <AbilArray Link="AttackRedirectUED"/>
   <AbilArray Link="GoAttackRedirect"/>
   <WeaponArray Link="DrakkarMachineGun" Turret="DrakkarAPC"/>
   <CardLayouts>
@@ -58894,7 +58894,7 @@
   <ScoreMake value="100"/>
   <ScoreKill value="100"/>
   <ScoreResult value="BuildOrder"/>
-  <SubgroupPriority value="66"/>
+  <SubgroupPriority value="81"/>
   <MinimapRadius value="0.625"/>
   <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
   <TacticalAIThink value="AIThinkHellion"/>
@@ -59058,7 +59058,7 @@
   <ScoreMake value="300"/>
   <ScoreKill value="300"/>
   <ScoreResult value="BuildOrder"/>
-  <SubgroupPriority value="85"/>
+  <SubgroupPriority value="90"/>
   <MinimapRadius value="0.375"/>
   <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
   <TacticalAI value="Ghost"/>
@@ -59219,7 +59219,7 @@
   <ScoreMake value="100"/>
   <ScoreKill value="100"/>
   <ScoreResult value="BuildOrder"/>
-  <SubgroupPriority value="70"/>
+  <SubgroupPriority value="82"/>
   <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
   <TacticalAI value="Roach"/>
   <GlossaryCategory value="Unit/Category/UEDUnits"/>
@@ -60047,7 +60047,7 @@
   <ScoreMake value="100"/>
   <ScoreKill value="100"/>
   <ScoreResult value="BuildOrder"/>
-  <SubgroupPriority value="80"/>
+  <SubgroupPriority value="79"/>
   <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
   <AIEvalFactor value="0"/>
   <GlossaryCategory value="Unit/Category/UEDUnits"/>
@@ -60335,7 +60335,7 @@
   <ScoreMake value="50"/>
   <ScoreKill value="50"/>
   <ScoreResult value="Units"/>
-  <SubgroupPriority value="60"/>
+  <SubgroupPriority value="95"/>
   <MinimapRadius value="0.375"/>
   <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
   <TacticalAI value="Drone"/>

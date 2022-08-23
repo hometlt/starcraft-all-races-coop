@@ -11220,7 +11220,7 @@ Param/Value/lib_COMI_F33D8F8C=Hybrid Behemoth
 Param/Value/lib_COMI_F39CCBB4=Select Next Mission
 Param/Value/lib_COMI_F4065A5D=~Spawner~
 Param/Value/lib_COMI_F4C11E4E=Missions
-Param/Value/lib_COMI_F4C70C8D=Add Enemies
+Param/Value/lib_COMI_F4C70C8D=Init Enemies
 Param/Value/lib_COMI_F57F76EC=5 Days
 Param/Value/lib_COMI_F5967CF5=Unit type with the most kills:
 Param/Value/lib_COMI_F66AE9FC=<c val="FF8000">Resetting ability ranges.</c>

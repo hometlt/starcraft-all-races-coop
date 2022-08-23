@@ -616,6 +616,7 @@ int[5][libCOMI_gv_cCC_MAXPLAYERS + 1] libCOMI_gv_cU_GPCmdButtonArrows;
 int[5][libCOMI_gv_cCC_MAXPLAYERS + 1] libCOMI_gv_cU_GPCmdButtons;
 int[libCOMI_gv_cCC_MAXPLAYERS + 1] libCOMI_gv_cU_GPCutscene;
 int[libCOMI_gv_cCC_MAXPLAYERS + 1] libCOMI_gv_cU_GPCmdPanel;
+int[libCOMI_gv_cCC_MAXPLAYERS + 1] libCOMI_gv_cU_GPCmdPanelUnitStatus;
 bool[libCOMI_gv_cCC_MAXPLAYERS + 1] libCOMI_gv_cU_GPVisible;
 int libCOMI_gv_cU_GPPanelHolder;
 int[libCOMI_gv_cCC_MAXPLAYERS + 1] libCOMI_gv_cU_GPPanel;
@@ -1107,6 +1108,7 @@ void libCOMI_gf_CC_PlayerExperienceSetToLevel (int lp_player, int lp_level, stri
 void libCOMI_gf_CC_ResetCurrency (int lp_player);
 playergroup libCOMI_gf_CC_PlayersOfCommander (string lp_commander);
 playergroup libCOMI_gf_GetAlliedCommandersPlayers ();
+int libCOMI_gf_GetRolePlayer (int lp_slot);
 playergroup libCOMI_gf_GetAlliedCommandersPlayersCopy ();
 playergroup libCOMI_gf_HumanPlayers ();
 int libCOMI_gf_CC_PlayerAlly (int lp_player);

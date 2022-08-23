@@ -9,6 +9,31 @@
             <LayoutButtons index="17" Face="WarpInCyberHunter" Type="Undefined" AbilCmd="GatewayTrainTalon,255"/>
         </CardLayouts>
     </CUnit>
+    <CUnit id="RoboticsBay">
+        <CardLayouts index="0">
+            <LayoutButtons index="7" Row="0" Column="4"/>
+            <LayoutButtons index="8" Column="4"/>
+            <LayoutButtons index="9" Row="0" Column="4"/>
+            <LayoutButtons index="10" Column="4"/>
+            <LayoutButtons index="12" Face="ResearchBarrier" AbilCmd="RoboticsBayResearch,Research9" Column="2"/>
+            <LayoutButtons index="14" Face="ResearchFireBeamLocked" Type="Passive" AbilCmd="" Requirements="KaraxLevel09"/>
+            <LayoutButtons index="15" Face="ResearchShadowCannon" AbilCmd="RoboticsBayResearch,Research10" Column="3"/>
+            <LayoutButtons index="16" Column="3"/>
+            <LayoutButtons index="17" Face="ResearchAlarakColossusChargedBlastAirAttack" AbilCmd="RoboticsBayResearch,Research18" Column="0"/>
+            <LayoutButtons index="18" Face="ResearchVanguardArmoredDamage" AbilCmd="RoboticsBayResearch,Research16"/>
+            <LayoutButtons index="19" Face="ResearchReaverIncreasedScarabCount" AbilCmd="RoboticsBayResearch,Research13" Row="1"/>
+            <LayoutButtons index="20" Face="ResearchDisruptorCloak" Type="AbilCmd" AbilCmd="RoboticsBayResearch,Research19" Requirements="" Row="1"/>
+            <LayoutButtons index="21" Face="ResearchIncreasedScarabCountLocked" Requirements="ArtanisLevel09" Row="1"/>
+            <LayoutButtons index="22" Face="FenixResearchDisruptorCloakLocked" Requirements="FenixLevel09" Row="1"/>
+            <LayoutButtons index="23" Row="1"/>
+            <LayoutButtons index="24" Face="ResearchAlarakColossusChargedBlastChargeTime" AbilCmd="RoboticsBayResearch,Research17" Column="1"/>
+            <LayoutButtons index="25" Face="FenixResearchDisruptorSecondExplosionLocked" Type="Passive" AbilCmd="" Requirements="FenixLevel09" Row="1"/>
+            <LayoutButtons index="26" Row="1"/>
+            <LayoutButtons index="27" Row="1"/>
+            <LayoutButtons index="29" Column="1"/>
+            <LayoutButtons index="30" Face="ResearchAlarakVanguardIncreaseSplashArea" Type="AbilCmd" AbilCmd="RoboticsBayResearch,Research15" Requirements=""/>
+        </CardLayouts>
+    </CUnit>
     <CUnit id="RoboticsFacility">
         <CardLayouts index="0">
             <LayoutButtons index="4" Face="Immortal" AbilCmd="RoboticsFacilityTrain,Train4"/>

@@ -3,6 +3,7 @@ include "LibUEDC"
 include "LibNHBR"
 include "LibDRAG"
 include "LibCOMI_h"
+include "LibARRA_h"
 
 include "LibCOMM_h"
 
@@ -15,6 +16,7 @@ void libCOMM_InitLibraries () {
     libUEDC_InitVariables();
     libNHBR_InitVariables();
     libCOMI_InitVariables();
+    libARRA_InitVariables();
 }
 
 // Variable Initialization
@@ -185,7 +187,6 @@ void libCOMM_InitVariables () {
         libCOMM_gv_cM_LaserDrillUnitGroup[init_i] = UnitGroupEmpty();
     }
     libCOMM_gv_tychusReviveCommand = "Abil/TychusRevive";
-    libCOMM_gv_cM_TychusVOTransportReminderTimer = TimerCreate();
     libCOMM_gv_cM_TychusVOTransportFlairCooldownTimer = TimerCreate();
     libCOMM_gv_cM_TychusVOOutlawReviveReminderTimer = TimerCreate();
     libCOMM_gv_cM_TychusVOOutlawRecruitReminderTimer = TimerCreate();
@@ -213,6 +214,7 @@ void libCOMM_InitVariables () {
     for (init_i = 0; init_i <= libCOMM_gv_cUC_TYCHUS_MAX_SQUAD_SIZE; init_i += 1) {
         libCOMM_gv_cU_TychusSquadPortraitsStatic[init_i] = c_invalidDialogControlId;
     }
+    libCOMM_gv_cM_TychusVOTransportReminderTimer = TimerCreate();
     for (init_i = 0; init_i <= libCOMI_gv_cCC_MAXPLAYERS; init_i += 1) {
         libCOMM_gv_cM_TychusMedicTransportUnitGroup[init_i] = UnitGroupEmpty();
     }
@@ -2570,7 +2572,7 @@ void libCOMM_gf_CU_GPInitFenix (int lp_player) {
     DialogControlCreateInPanelFromTemplate(lv_lastFrame, c_triggerControlTypeCommandPanel, "Coop_TopBar_Fenix/FenixGlobalCasterCommandPanelTemplate");
     libCOMI_gv_cU_GPCmdPanel[lp_player] = DialogControlLastCreated();
     DialogControlHookup(libCOMI_gv_cU_GPCmdPanel[lp_player], c_triggerControlTypeUnitStatus, "CommandPanelUnitStatus");
-    libCOMI_gv_cU_GPCmdPanel[lp_player] = DialogControlLastCreated();
+    libCOMI_gv_cU_GPCmdPanelUnitStatus[lp_player] = DialogControlLastCreated();
     lv_buttonIndex = 1;
     for ( ; ( (autoBA0BA79B_ai >= 0 && lv_buttonIndex <= autoBA0BA79B_ae) || (autoBA0BA79B_ai < 0 && lv_buttonIndex >= autoBA0BA79B_ae) ) ; lv_buttonIndex += autoBA0BA79B_ai ) {
         DialogControlHookup(libCOMI_gv_cU_GPCmdPanel[lp_player], c_triggerControlTypeButton, "CommandButton0" + IntToString(lv_buttonIndex-1));
@@ -5286,13 +5288,6 @@ void libCOMM_gf_InitTychusSquadUI (int lp_tychusPlayer) {
     libCOMM_gf_UpdateTychusSquadAvailability(lp_tychusPlayer);
 }
 
-void libCOMM_gf_ModifyTychusMedivacCharges (int lp_chargesDelta) {
-    // Automatic Variable Declarations
-    // Implementation
-    libCOMM_gv_cU_TychusMedivacCurrentCharges += lp_chargesDelta;
-    DialogControlSetAnimationState(libCOMM_gv_cU_TychusSquadContainer, PlayerGroupAll(), "AbilityCurrentChargesState", IntToString(libCOMM_gv_cU_TychusMedivacCurrentCharges));
-}
-
 trigger auto_libCOMM_gf_UpdateTychusSquadAvailability_Trigger = null;
 int auto_libCOMM_gf_UpdateTychusSquadAvailability_lp_player;
 
@@ -5529,6 +5524,13 @@ unit libCOMM_gf_EventTychusStructure () {
     // Automatic Variable Declarations
     // Implementation
     return DataTableGetUnit(false, TriggerEventParamName(EventGenericName(), "EventStructure"));
+}
+
+void libCOMM_gf_ModifyTychusMedivacCharges (int lp_chargesDelta) {
+    // Automatic Variable Declarations
+    // Implementation
+    libCOMM_gv_cU_TychusMedivacCurrentCharges += lp_chargesDelta;
+    DialogControlSetAnimationState(libCOMM_gv_cU_TychusSquadContainer, PlayerGroupAll(), "AbilityCurrentChargesState", IntToString(libCOMM_gv_cU_TychusMedivacCurrentCharges));
 }
 
 void libCOMM_gf_CM_Tychus_UpdateHeroTechTree (int lp_p) {
@@ -12786,12 +12788,13 @@ bool libCOMM_gt_DUT_CommanderFenix_Func (bool testConds, bool runActions) {
         }
 
         if ((TechTreeUnitIsAllowed(autoC07469AE_var, "SoACasterFenix") == true)) {
+            libARRA_gf_LOGString("FENIX");
             TriggerEnable(libCOMM_gt_CM_AbilityTransmissionFenixZealotSuit, true);
             TriggerEnable(libCOMM_gt_CM_AbilityTransmissionFenixDragoonSuit, true);
             TriggerEnable(libCOMM_gt_CM_AbilityTransmissionFenixArbiterSuit, true);
             libCOMI_gf_CreateACCaster(autoC07469AE_var, "SoACasterFenix");
             libCOMM_gf_CU_GPInitFenix(autoC07469AE_var);
-            libNtve_gf_SetDialogItemUnit(libCOMI_gv_cU_GPCmdPanel[autoC07469AE_var], libCOMI_gv_yY_GPCasterUnit[autoC07469AE_var], PlayerGroupSingle(autoC07469AE_var));
+            libNtve_gf_SetDialogItemUnit(libCOMI_gv_cU_GPCmdPanelUnitStatus[autoC07469AE_var], libCOMI_gv_yY_GPCasterUnit[autoC07469AE_var], PlayerGroupSingle(autoC07469AE_var));
             libCOMM_gf_FenixInitialDummySpawn(autoC07469AE_var);
         }
 
@@ -23611,97 +23614,6 @@ void libCOMM_gt_CM_AbilityTransmissionTychusOdinUse_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: CM_AbilityTransmissionTychusTransportUse
-//--------------------------------------------------------------------------------------------------
-bool libCOMM_gt_CM_AbilityTransmissionTychusTransportUse_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    libCOMI_gf_CM_GPReminderDisable(UnitGetOwner(EventUnit()));
-    libCOMI_gf_CM_CommanderVOSend(libCOMI_gf_CC_PlayerAllyNew(UnitGetOwner(EventUnit())), SoundLink("TychusCommander_MedivacUsed", -1), PlayerGroupAll());
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMM_gt_CM_AbilityTransmissionTychusTransportUse_Init () {
-    libCOMM_gt_CM_AbilityTransmissionTychusTransportUse = TriggerCreate("libCOMM_gt_CM_AbilityTransmissionTychusTransportUse_Func");
-    TriggerEnable(libCOMM_gt_CM_AbilityTransmissionTychusTransportUse, false);
-    TriggerAddEventUnitAbility(libCOMM_gt_CM_AbilityTransmissionTychusTransportUse, null, AbilityCommand("TychusMedicTransportLoadUnits", 0), c_unitAbilStageExecute, false);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: CM_AbilityTransmissionTychusTransportReminder
-//--------------------------------------------------------------------------------------------------
-bool libCOMM_gt_CM_AbilityTransmissionTychusTransportReminder_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Conditions
-    if (testConds) {
-        if (!((TriggerIsEnabled(TriggerGetCurrent()) == true))) {
-            return false;
-        }
-
-        if (!((TimerGetRemaining(libCOMM_gv_cM_TychusVOTransportFlairCooldownTimer) <= 0.0))) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    libCOMI_gf_CM_CommanderVOSend(libCOMM_gv_cM_TychusVOTychusPlayer, SoundLink("TychusCommander_MedivacPlatformReminder", -1), PlayerGroupSingle(libCOMM_gv_cM_TychusVOTychusPlayer));
-    TriggerEnable(libCOMM_gt_CM_UnitTransmissionTychusTransportBuild, false);
-    TriggerEnable(TriggerGetCurrent(), false);
-    TimerStart(libCOMM_gv_cM_TychusVOTransportFlairCooldownTimer, libCOMM_gv_cMC_TychusVOTransportFlairCooldown, false, c_timeGame);
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMM_gt_CM_AbilityTransmissionTychusTransportReminder_Init () {
-    libCOMM_gt_CM_AbilityTransmissionTychusTransportReminder = TriggerCreate("libCOMM_gt_CM_AbilityTransmissionTychusTransportReminder_Func");
-    TriggerEnable(libCOMM_gt_CM_AbilityTransmissionTychusTransportReminder, false);
-    TriggerAddEventTimer(libCOMM_gt_CM_AbilityTransmissionTychusTransportReminder, libCOMM_gv_cM_TychusVOTransportReminderTimer);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: CM_UnitTransmissionTychusTransportBuild
-//--------------------------------------------------------------------------------------------------
-bool libCOMM_gt_CM_UnitTransmissionTychusTransportBuild_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Conditions
-    if (testConds) {
-        if (!((TriggerIsEnabled(TriggerGetCurrent()) == true))) {
-            return false;
-        }
-
-        if (!((UnitGetType(EventUnitProgressUnit()) == "TychusMedivacPlatform"))) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    TriggerEnable(libCOMM_gt_CM_AbilityTransmissionTychusTransportReminder, false);
-    libNtve_gf_StopTimer(libCOMM_gv_cM_TychusVOTransportReminderTimer);
-    TriggerEnable(TriggerGetCurrent(), false);
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMM_gt_CM_UnitTransmissionTychusTransportBuild_Init () {
-    libCOMM_gt_CM_UnitTransmissionTychusTransportBuild = TriggerCreate("libCOMM_gt_CM_UnitTransmissionTychusTransportBuild_Func");
-    TriggerEnable(libCOMM_gt_CM_UnitTransmissionTychusTransportBuild, false);
-    TriggerAddEventUnitConstructProgress(libCOMM_gt_CM_UnitTransmissionTychusTransportBuild, null, c_unitProgressStageComplete);
-}
-
-//--------------------------------------------------------------------------------------------------
 // Trigger: CM_UnitTransmissionTychusOutlawFirstDeath
 //--------------------------------------------------------------------------------------------------
 bool libCOMM_gt_CM_UnitTransmissionTychusOutlawFirstDeath_Func (bool testConds, bool runActions) {
@@ -24765,103 +24677,6 @@ void libCOMM_gt_CU_TychusSquadBarUpdateProgress_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: CU_TycusMedivacPlatformBuilt
-//--------------------------------------------------------------------------------------------------
-bool libCOMM_gt_CU_TychusMedivacPlatformBuilt_Func (bool testConds, bool runActions) {
-    // Variable Declarations
-    int lv_player;
-    unitgroup lv_globalCasterUnitGroup;
-
-    // Automatic Variable Declarations
-    // Variable Initialization
-    lv_player = UnitGetOwner(EventUnitCreatedUnit());
-    lv_globalCasterUnitGroup = libNtve_gf_ConvertUnitToUnitGroup(libCOMI_gv_yY_GPCasterUnit[lv_player]);
-
-    // Conditions
-    if (testConds) {
-        if (!((PlayerCommander(lv_player) == "Tychus"))) {
-            return false;
-        }
-
-        if (!((UnitGetType(EventUnitCreatedUnit()) == "TychusMedivacPlatform"))) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    UnitGroupAdd(lv_globalCasterUnitGroup, EventUnitCreatedUnit());
-    libNtve_gf_SetDialogItemUnitGroup(libCOMI_gv_cU_GPCmdPanel[lv_player], lv_globalCasterUnitGroup, PlayerGroupAll());
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMM_gt_CU_TychusMedivacPlatformBuilt_Init () {
-    libCOMM_gt_CU_TychusMedivacPlatformBuilt = TriggerCreate("libCOMM_gt_CU_TychusMedivacPlatformBuilt_Func");
-    TriggerEnable(libCOMM_gt_CU_TychusMedivacPlatformBuilt, false);
-    TriggerAddEventUnitCreated(libCOMM_gt_CU_TychusMedivacPlatformBuilt, null, "TychusTerranBuild", null);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: CU_TychusMedivacAbilityReady
-//--------------------------------------------------------------------------------------------------
-bool libCOMM_gt_CU_TychusMedivacAbilityReady_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Conditions
-    if (testConds) {
-        if (!((libCOMI_gf_GetPlayerCommanderUserData(UnitGetOwner(EventUnit())) == "Tychus"))) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    libCOMM_gf_ModifyTychusMedivacCharges(1);
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMM_gt_CU_TychusMedivacAbilityReady_Init () {
-    libCOMM_gt_CU_TychusMedivacAbilityReady = TriggerCreate("libCOMM_gt_CU_TychusMedivacAbilityReady_Func");
-    TriggerEnable(libCOMM_gt_CU_TychusMedivacAbilityReady, false);
-    TriggerAddEventUnitBehaviorChange(libCOMM_gt_CU_TychusMedivacAbilityReady, null, "TychusMedivacCooldownTracker", c_unitBehaviorChangeActivate);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: CU_TychusMedivacAbilityUnready
-//--------------------------------------------------------------------------------------------------
-bool libCOMM_gt_CU_TychusMedivacAbilityUnready_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Conditions
-    if (testConds) {
-        if (!((libCOMI_gf_GetPlayerCommanderUserData(UnitGetOwner(EventUnit())) == "Tychus"))) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    libCOMM_gf_ModifyTychusMedivacCharges(-1);
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMM_gt_CU_TychusMedivacAbilityUnready_Init () {
-    libCOMM_gt_CU_TychusMedivacAbilityUnready = TriggerCreate("libCOMM_gt_CU_TychusMedivacAbilityUnready_Func");
-    TriggerEnable(libCOMM_gt_CU_TychusMedivacAbilityUnready, false);
-    TriggerAddEventUnitBehaviorChange(libCOMM_gt_CU_TychusMedivacAbilityUnready, null, "TychusMedivacCooldownTracker", c_unitBehaviorChangeDeactivate);
-}
-
-//--------------------------------------------------------------------------------------------------
 // Trigger: CU_TychusEquipmentUpgraded
 //--------------------------------------------------------------------------------------------------
 bool libCOMM_gt_CU_TychusEquipmentUpgraded_Func (bool testConds, bool runActions) {
@@ -25409,6 +25224,97 @@ void libCOMM_gt_CM_TychusSpecialistTrainingAuraOff_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Trigger: CM_AbilityTransmissionTychusTransportUse
+//--------------------------------------------------------------------------------------------------
+bool libCOMM_gt_CM_AbilityTransmissionTychusTransportUse_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libCOMI_gf_CM_GPReminderDisable(UnitGetOwner(EventUnit()));
+    libCOMI_gf_CM_CommanderVOSend(libCOMI_gf_CC_PlayerAllyNew(UnitGetOwner(EventUnit())), SoundLink("TychusCommander_MedivacUsed", -1), PlayerGroupAll());
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMM_gt_CM_AbilityTransmissionTychusTransportUse_Init () {
+    libCOMM_gt_CM_AbilityTransmissionTychusTransportUse = TriggerCreate("libCOMM_gt_CM_AbilityTransmissionTychusTransportUse_Func");
+    TriggerEnable(libCOMM_gt_CM_AbilityTransmissionTychusTransportUse, false);
+    TriggerAddEventUnitAbility(libCOMM_gt_CM_AbilityTransmissionTychusTransportUse, null, AbilityCommand("TychusMedicTransportLoadUnits", 0), c_unitAbilStageExecute, false);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: CM_AbilityTransmissionTychusTransportReminder
+//--------------------------------------------------------------------------------------------------
+bool libCOMM_gt_CM_AbilityTransmissionTychusTransportReminder_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((TriggerIsEnabled(TriggerGetCurrent()) == true))) {
+            return false;
+        }
+
+        if (!((TimerGetRemaining(libCOMM_gv_cM_TychusVOTransportFlairCooldownTimer) <= 0.0))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libCOMI_gf_CM_CommanderVOSend(libCOMM_gv_cM_TychusVOTychusPlayer, SoundLink("TychusCommander_MedivacPlatformReminder", -1), PlayerGroupSingle(libCOMM_gv_cM_TychusVOTychusPlayer));
+    TriggerEnable(libCOMM_gt_CM_UnitTransmissionTychusTransportBuild, false);
+    TriggerEnable(TriggerGetCurrent(), false);
+    TimerStart(libCOMM_gv_cM_TychusVOTransportFlairCooldownTimer, libCOMM_gv_cMC_TychusVOTransportFlairCooldown, false, c_timeGame);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMM_gt_CM_AbilityTransmissionTychusTransportReminder_Init () {
+    libCOMM_gt_CM_AbilityTransmissionTychusTransportReminder = TriggerCreate("libCOMM_gt_CM_AbilityTransmissionTychusTransportReminder_Func");
+    TriggerEnable(libCOMM_gt_CM_AbilityTransmissionTychusTransportReminder, false);
+    TriggerAddEventTimer(libCOMM_gt_CM_AbilityTransmissionTychusTransportReminder, libCOMM_gv_cM_TychusVOTransportReminderTimer);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: CM_UnitTransmissionTychusTransportBuild
+//--------------------------------------------------------------------------------------------------
+bool libCOMM_gt_CM_UnitTransmissionTychusTransportBuild_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((TriggerIsEnabled(TriggerGetCurrent()) == true))) {
+            return false;
+        }
+
+        if (!((UnitGetType(EventUnitProgressUnit()) == "TychusMedivacPlatform"))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    TriggerEnable(libCOMM_gt_CM_AbilityTransmissionTychusTransportReminder, false);
+    libNtve_gf_StopTimer(libCOMM_gv_cM_TychusVOTransportReminderTimer);
+    TriggerEnable(TriggerGetCurrent(), false);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMM_gt_CM_UnitTransmissionTychusTransportBuild_Init () {
+    libCOMM_gt_CM_UnitTransmissionTychusTransportBuild = TriggerCreate("libCOMM_gt_CM_UnitTransmissionTychusTransportBuild_Func");
+    TriggerEnable(libCOMM_gt_CM_UnitTransmissionTychusTransportBuild, false);
+    TriggerAddEventUnitConstructProgress(libCOMM_gt_CM_UnitTransmissionTychusTransportBuild, null, c_unitProgressStageComplete);
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger: CM_TychusMedicTransportActived
 //--------------------------------------------------------------------------------------------------
 bool libCOMM_gt_CM_TychusMedicTransportActived_Func (bool testConds, bool runActions) {
@@ -25748,6 +25654,103 @@ void libCOMM_gt_CM_TychusMedicTransportTeleportUnload_Init () {
     libCOMM_gt_CM_TychusMedicTransportTeleportUnload = TriggerCreate("libCOMM_gt_CM_TychusMedicTransportTeleportUnload_Func");
     TriggerEnable(libCOMM_gt_CM_TychusMedicTransportTeleportUnload, false);
     TriggerAddEventPlayerEffectUsed(libCOMM_gt_CM_TychusMedicTransportTeleportUnload, c_playerAny, "TychusMedicTransportUnloadUnitsCompletionSet");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: CU_TycusMedivacPlatformBuilt
+//--------------------------------------------------------------------------------------------------
+bool libCOMM_gt_CU_TychusMedivacPlatformBuilt_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_player;
+    unitgroup lv_globalCasterUnitGroup;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_player = UnitGetOwner(EventUnitCreatedUnit());
+    lv_globalCasterUnitGroup = libCOMI_gv_yY_GPCasterGroup[lv_player];
+
+    // Conditions
+    if (testConds) {
+        if (!((libCOMI_gf_GetPlayerCommanderUserData(lv_player) == "Tychus"))) {
+            return false;
+        }
+
+        if (!((UnitGetType(EventUnitCreatedUnit()) == "TychusMedivacPlatform"))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    UnitGroupAdd(libCOMI_gv_yY_GPCasterGroup[lv_player], EventUnitCreatedUnit());
+    libNtve_gf_SetDialogItemUnitGroup(libCOMI_gv_cU_GPCmdPanel[lv_player], libCOMI_gv_yY_GPCasterGroup[lv_player], PlayerGroupAll());
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMM_gt_CU_TychusMedivacPlatformBuilt_Init () {
+    libCOMM_gt_CU_TychusMedivacPlatformBuilt = TriggerCreate("libCOMM_gt_CU_TychusMedivacPlatformBuilt_Func");
+    TriggerEnable(libCOMM_gt_CU_TychusMedivacPlatformBuilt, false);
+    TriggerAddEventUnitCreated(libCOMM_gt_CU_TychusMedivacPlatformBuilt, null, "TychusTerranBuild", null);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: CU_TychusMedivacAbilityReady
+//--------------------------------------------------------------------------------------------------
+bool libCOMM_gt_CU_TychusMedivacAbilityReady_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((libCOMI_gf_GetPlayerCommanderUserData(UnitGetOwner(EventUnit())) == "Tychus"))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libCOMM_gf_ModifyTychusMedivacCharges(1);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMM_gt_CU_TychusMedivacAbilityReady_Init () {
+    libCOMM_gt_CU_TychusMedivacAbilityReady = TriggerCreate("libCOMM_gt_CU_TychusMedivacAbilityReady_Func");
+    TriggerEnable(libCOMM_gt_CU_TychusMedivacAbilityReady, false);
+    TriggerAddEventUnitBehaviorChange(libCOMM_gt_CU_TychusMedivacAbilityReady, null, "TychusMedivacCooldownTracker", c_unitBehaviorChangeActivate);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: CU_TychusMedivacAbilityUnready
+//--------------------------------------------------------------------------------------------------
+bool libCOMM_gt_CU_TychusMedivacAbilityUnready_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((libCOMI_gf_GetPlayerCommanderUserData(UnitGetOwner(EventUnit())) == "Tychus"))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libCOMM_gf_ModifyTychusMedivacCharges(-1);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMM_gt_CU_TychusMedivacAbilityUnready_Init () {
+    libCOMM_gt_CU_TychusMedivacAbilityUnready = TriggerCreate("libCOMM_gt_CU_TychusMedivacAbilityUnready_Func");
+    TriggerEnable(libCOMM_gt_CU_TychusMedivacAbilityUnready, false);
+    TriggerAddEventUnitBehaviorChange(libCOMM_gt_CU_TychusMedivacAbilityUnready, null, "TychusMedivacCooldownTracker", c_unitBehaviorChangeDeactivate);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -30357,9 +30360,6 @@ void libCOMM_InitTriggers () {
     libCOMM_gt_CM_AbilityTransmissionTychusCreatePhantom_Init();
     libCOMM_gt_CM_AbilityTransmissionTychusCreateMedic_Init();
     libCOMM_gt_CM_AbilityTransmissionTychusOdinUse_Init();
-    libCOMM_gt_CM_AbilityTransmissionTychusTransportUse_Init();
-    libCOMM_gt_CM_AbilityTransmissionTychusTransportReminder_Init();
-    libCOMM_gt_CM_UnitTransmissionTychusTransportBuild_Init();
     libCOMM_gt_CM_UnitTransmissionTychusOutlawFirstDeath_Init();
     libCOMM_gt_CM_UnitTransmissionTychusOutlawDeath_Init();
     libCOMM_gt_CM_UnitTransmissionTychusOutlawRevived_Init();
@@ -30389,9 +30389,6 @@ void libCOMM_InitTriggers () {
     libCOMM_gt_CU_TychusSquadBarBuilt_Init();
     libCOMM_gt_CU_TychusSquadBarDies_Init();
     libCOMM_gt_CU_TychusSquadBarUpdateProgress_Init();
-    libCOMM_gt_CU_TychusMedivacPlatformBuilt_Init();
-    libCOMM_gt_CU_TychusMedivacAbilityReady_Init();
-    libCOMM_gt_CU_TychusMedivacAbilityUnready_Init();
     libCOMM_gt_CU_TychusEquipmentUpgraded_Init();
     libCOMM_gt__CM_TychusEventHook_Init();
     libCOMM_gt__CM_TychusStructureEventHook_Init();
@@ -30403,6 +30400,9 @@ void libCOMM_InitTriggers () {
     libCOMM_gt_CM_Tychus_WarhoundFearApply_Init();
     libCOMM_gt_CM_TychusSpecialistTrainingAuraOn_Init();
     libCOMM_gt_CM_TychusSpecialistTrainingAuraOff_Init();
+    libCOMM_gt_CM_AbilityTransmissionTychusTransportUse_Init();
+    libCOMM_gt_CM_AbilityTransmissionTychusTransportReminder_Init();
+    libCOMM_gt_CM_UnitTransmissionTychusTransportBuild_Init();
     libCOMM_gt_CM_TychusMedicTransportActived_Init();
     libCOMM_gt_CM_TychusMedicTopBarButton_Init();
     libCOMM_gt_CM_TychusMedicTransportTargetOn_Init();
@@ -30412,6 +30412,9 @@ void libCOMM_InitTriggers () {
     libCOMM_gt_CM_TychusMedicTransportAirBehaviorApplied_Init();
     libCOMM_gt_CM_TychusMedicTransportGroundBehaviorApplied_Init();
     libCOMM_gt_CM_TychusMedicTransportTeleportUnload_Init();
+    libCOMM_gt_CU_TychusMedivacPlatformBuilt_Init();
+    libCOMM_gt_CU_TychusMedivacAbilityReady_Init();
+    libCOMM_gt_CU_TychusMedivacAbilityUnready_Init();
     libCOMM_gt_CM_Tychus_HeroQueue_Init();
     libCOMM_gt_CM_Tychus_HeroCancel_Init();
     libCOMM_gt_CM_Tychus_TrainMaxChargesRemove_Init();
@@ -30540,4 +30543,5 @@ void libCOMM_InitLib () {
 }
 
 include "LibCOMI"
+include "LibARRA"
 

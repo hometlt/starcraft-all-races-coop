@@ -246,6 +246,9 @@ void libCOMI_InitVariables () {
     for (init_i = 0; init_i <= libCOMI_gv_cCC_MAXPLAYERS; init_i += 1) {
         libCOMI_gv_cU_GPCmdPanel[init_i] = c_invalidDialogControlId;
     }
+    for (init_i = 0; init_i <= libCOMI_gv_cCC_MAXPLAYERS; init_i += 1) {
+        libCOMI_gv_cU_GPCmdPanelUnitStatus[init_i] = c_invalidDialogControlId;
+    }
     libCOMI_gv_cU_GPPanelHolder = c_invalidDialogControlId;
     for (init_i = 0; init_i <= libCOMI_gv_cCC_MAXPLAYERS; init_i += 1) {
         libCOMI_gv_cU_GPPanel[init_i] = c_invalidDialogControlId;
@@ -2719,6 +2722,17 @@ playergroup libCOMI_gf_GetAlliedCommandersPlayers () {
     // Automatic Variable Declarations
     // Implementation
     return PlayerGroupCopy(libCOMI_gv_vU_AlliedCommanders);
+}
+
+int libCOMI_gf_GetRolePlayer (int lp_slot) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((PlayerGroupCount(libCOMI_gf_GetAlliedCommandersPlayers()) < lp_slot)) {
+        return PlayerGroupPlayer(libCOMI_gf_GetAlliedCommandersPlayers(), 1);
+    }
+    else {
+        return PlayerGroupPlayer(libCOMI_gf_GetAlliedCommandersPlayers(), lp_slot);
+    }
 }
 
 playergroup libCOMI_gf_GetAlliedCommandersPlayersCopy () {
@@ -25017,8 +25031,8 @@ bool libCOMI_gt_CM_CampaignMissionInitialize_Func (bool testConds, bool runActio
     libCOMI_gf_UT_FixConsoleSkins();
     libCOMI_gf_UT_AotDFix();
     libCOMI_gf_UT_SignalMutators();
-    libCOMI_gf_PlayersandAllienceSettings();
     libCOMI_gf_PreparingMapProgress(StringExternal("Param/Value/lib_COMI_F4C70C8D"));
+    libCOMI_gf_PlayersandAllienceSettings();
     libCOMI_gf_InitEnemies();
     libCOMI_gf_PreparingMapProgress(StringExternal("Param/Value/lib_COMI_65842B6C"));
     auto6B1E1E16_g = libCOMI_gf_GetAlliedCommandersPlayers();

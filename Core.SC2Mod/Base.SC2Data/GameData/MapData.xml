@@ -3,6 +3,13 @@
     <CMap default="1" id="ACMap">
         <UserReference value="Maps;##id##"/>
     </CMap>
+    <CMap id="AC_SlaynPayload" parent="ACMap">
+        <File value="AC_SlaynHamsterBall"/>
+        <LoadingImage value="Assets\Textures\ui_void_loading_taldarim02.dds"/>
+    </CMap>
+    <CMap id="AC_CradleOfDeath" parent="ACMap">
+        <File value="AC_CradleOfDeath"/>
+    </CMap>
     <CMap id="AC_AiurSiege" parent="ACMap">
         <File value="AC_AiurSiege"/>
     </CMap>
@@ -28,10 +35,6 @@
     <CMap id="AC_ShakurasTemple" parent="ACMap">
         <File value="AC_ShakurasTemple"/>
         <LoadingImage value="Assets\Textures\ui_ac_loading_shakurastemple.dds"/>
-    </CMap>
-    <CMap id="AC_SlaynPayload" parent="ACMap">
-        <File value="AC_SlaynHamsterBall"/>
-        <LoadingImage value="Assets\Textures\ui_void_loading_taldarim02.dds"/>
     </CMap>
     <CMap id="AC_UlnarLocks" parent="ACMap">
         <File value="AC_UlnarLocks"/>
@@ -64,8 +67,5 @@
     </CMap>
     <CMap id="AC_CybrosEscort" parent="ACMap">
         <File value="AC_CybrosEscort"/>
-    </CMap>
-    <CMap id="AC_CradleOfDeath" parent="ACMap">
-        <File value="AC_CradleOfDeath"/>
     </CMap>
 </Catalog>
