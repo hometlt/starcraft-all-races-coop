@@ -119,6 +119,11 @@ void libCOMI_InitVariables () {
         libCOMI_gv_cM_VisionShareUnits[init_i] = UnitGroupEmpty();
     }
     libCOMI_gv_cM_VisionShareEnabled = true;
+    libCOMI_gv_heroUnits = UnitGroupEmpty();
+    for (init_i = 0; init_i <= libCOMI_gv_mAX_HERO_UNITS; init_i += 1) {
+        libCOMI_gv_heroUnitsData[init_i].lv_reviveTimer = 60.0;
+        libCOMI_gv_heroUnitsData[init_i].lv_deathCount = -1;
+    }
     libCOMI_gv_cU_HeroCooldownTime = 60.0;
     for (init_i = 0; init_i <= libCOMI_gv_oBSOLETE_CUC_HeroMaxCount; init_i += 1) {
         for (init_j = 0; init_j <= libCOMI_gv_cCC_MAXPLAYERS; init_j += 1) {
@@ -204,11 +209,6 @@ void libCOMI_InitVariables () {
         }
     }
     libCOMI_gv_cU_HeroAutomaticIndex = 1;
-    libCOMI_gv_heroUnits = UnitGroupEmpty();
-    for (init_i = 0; init_i <= libCOMI_gv_mAX_HERO_UNITS; init_i += 1) {
-        libCOMI_gv_heroUnitsData[init_i].lv_reviveTimer = 60.0;
-        libCOMI_gv_heroUnitsData[init_i].lv_deathCount = -1;
-    }
     for (init_i = 0; init_i <= libCOMI_gv_oBSOLETE_CUC_HeroMaxCount; init_i += 1) {
         for (init_j = 0; init_j <= libCOMI_gv_cCC_MAXPLAYERS; init_j += 1) {
             libCOMI_gv_oBSOLETE_CU_HeroReviveTimer[init_i][init_j] = 60.0;
@@ -5738,7 +5738,7 @@ void libCOMI_gf_CreateCoopDropForceinTransportsatLocationandWaitforthemtospawn (
                     lv_transportType = libCOMI_gf_CoopAIUnitCategory(libCOMI_ge_UnitCategory_Transport, lv_player);
                     if ((lv_unitCount > 0)) {
                         if ((PlayerGroupHasPlayer(libCOMI_gf_CM_CoopAI_AttackForce_GetExcludedPlayers(lv_unitTypeIter), lv_player) == false)) {
-                            if ((libCOMU_gf_UnitMoverExists(lv_unitTypeToCreate, "Fly") == false)) {
+                            if ((libCOMI_gf_UnitMoverExists(lv_unitTypeToCreate, "Fly") == false)) {
                                 if (((lv_transportCurrent[lv_playerIter] == null) || ((UnitCargoValue(lv_transportCurrent[lv_playerIter], c_unitCargoSpaceFree) * 0.75) < (CatalogFieldValueGetAsInt(c_gameCatalogUnit, lv_unitTypeToCreate, "CargoSize", lv_player) + 1)))) {
                                     UnitCreate(1, lv_transportType, c_unitCreateIgnorePlacement, lv_player, lp_spawnLocation, PointGetFacing(lp_spawnLocation));
                                     lv_transportCurrent[lv_playerIter] = UnitLastCreated();
@@ -5805,6 +5805,12 @@ bool libCOMI_gf_AttackWaveContainsPingworthyUnits (unitgroup lp_attackWave) {
 
     }
     return false;
+}
+
+void libCOMI_gf_AddAttackWaveUnitType (int lp_count, string lp_unitType) {
+    // Automatic Variable Declarations
+    // Implementation
+    libARRA_gf_LOGString(("AddAttackWaveUnitType-" + (lp_unitType)));
 }
 
 unitgroup libCOMI_gf_CM_CoopAI_CreateDropAttack_Terran (int lp_player, unitgroup lp_attackGroup, point lp_dropLocation) {
@@ -7965,6 +7971,17 @@ void libCOMI_gf_SpawnLarvaForHatchery (unit lp_hatchery, int lp_larvaCount) {
     // Automatic Variable Declarations
     // Implementation
     UnitBehaviorSpawn(lp_hatchery, "SpawnLarva", lp_larvaCount);
+}
+
+bool libCOMI_gf_UnitMoverExists (string lp_unitType, string lp_mover) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((CatalogFieldValueGet(c_gameCatalogUnit, lp_unitType, "Mover", c_playerAny) == lp_mover)) {
+        return true;
+    }
+    else {
+        return false;
+    }
 }
 
 string libCOMI_gf_TraingingUnitTypeInAbilCommand (abilcmd lp_abilityCommand, int lp_p, int lp_unitIndex) {
@@ -25150,6 +25167,8 @@ bool libCOMI_gt_CM_CampaignMissionInitialize2_Func (bool testConds, bool runActi
     libCOMI_gf_CM_ChatBarSetMode(libCOMI_ge_CM_ChatBarMode_CM_ChatBarNormal, PlayerGroupAll());
     libCOMI_gv_gameHasBegun = true;
     TriggerExecute(libCOMI_gt_CM_CampaignMissionIntroZoomIn, true, true);
+    TriggerExecute(libCOMI_gt_PerformanceSleepArea, true, false);
+    TriggerExecute(libCOMI_gt_InitialExploration, true, false);
     libCOMI_gf_Unpause();
     auto2D7A536C_g = libCOMI_gf_GetAlliedCommandersPlayers();
     lv_player = -1;
@@ -25939,7 +25958,6 @@ bool libCOMI_gt_PerformanceSleepArea_Func (bool testConds, bool runActions) {
 //--------------------------------------------------------------------------------------------------
 void libCOMI_gt_PerformanceSleepArea_Init () {
     libCOMI_gt_PerformanceSleepArea = TriggerCreate("libCOMI_gt_PerformanceSleepArea_Func");
-    TriggerAddEventMapInit(libCOMI_gt_PerformanceSleepArea);
 }
 
 //--------------------------------------------------------------------------------------------------

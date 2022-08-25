@@ -744,8 +744,6 @@
 <Unit id="MutatorVoidRift"/>
 <Unit id="MutatorTurking"/>
 <Unit id="MutatorInfestedTurkey"/>
-<Unit id="CoopCasterHorner"/>
-<Unit id="HHScrapPickup"/>
 <Unit id="SoloDummy"/>
 <Unit id="GWDummy"/>
 <Unit id="DummyArmored"/>
@@ -765,6 +763,8 @@
 <Unit id="FenixManaDummy2"/>
 <Unit id="FenixManaDummy3"/>
 <Unit id="SoACasterFenix"/>
+<Unit id="CoopCasterHorner"/>
+<Unit id="HHScrapPickup"/>
 <Unit id="CoopCasterMengsk"/>
 <Unit id="CoopCasterNova"/>
 <Unit id="NovaCoop"/>

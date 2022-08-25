@@ -460,19 +460,6 @@
         <On Terms="Behavior.ZeratulDarkArchonMindControl.Off" Target="::Main" Send="SetSoundSuffix"/>
         <On Terms="Behavior.ZeratulDarkArchonMindControl.Off" Send="Destroy"/>
     </CActorModel>
-    <CActorModel id="HHHellionBombSlow">
-        <Inherits index="CloakEffect" value="1"/>
-        <On Terms="Behavior.HHHellionBombSlow.On" Send="Create"/>
-        <On Terms="ActorCreation; ScopeContains _UnitLarge" Send="Destroy"/>
-        <On Terms="ActorCreation; ScopeContains _UnitHuge" Send="Destroy"/>
-        <On Terms="ActorCreation" Send="$Birth"/>
-        <On Terms="ActorCreation" Send="TimerSet 1.000000 Rebirth"/>
-        <On Terms="TimerExpired; TimerName Rebirth" Send="$Birth"/>
-        <On Terms="TimerExpired; TimerName Rebirth" Send="TimerSet 1.000000 Rebirth"/>
-        <On Terms="Behavior.HHHellionBombSlow.Off" Send="Destroy"/>
-        <Host Subject="_Selectable"/>
-        <HostSiteOps Ops="SOpAttachOrigin"/>
-    </CActorModel>
     <CActorRange id="NexusBuildRange" parent="RangeAbil" abil="NexusBuild">
         <EditorCategories value=""/>
         <On index="1" Terms="Abil.TargetOn" Send="Create"/>
@@ -8590,15 +8577,6 @@
     <CActorMissile id="ArtanisPhoenixAirAttackMissile" parent="GenericAttackMissile" unitName="ArtanisIonCannonsWeapon">
         <Model value="IonCannonsWeapon"/>
     </CActorMissile>
-    <CActorBeamSimple id="HHWidowMineTargetingBeam" parent="BeamSimpleAnimationStyleContinuous">
-        <On Terms="Effect.HHWidowMineTargetingBeamDummy.Start; At Caster" Send="Create"/>
-        <On Terms="Abil.HHWidowMineBurrowedAttack.SourcePrepStop" Send="Destroy"/>
-        <HostLaunch Subject="_Selectable" Scope="Caster"/>
-        <HostLaunchSiteOps Ops="SOpAttachOrigin"/>
-        <HostImpact Subject="_Selectable" Scope="Target"/>
-        <HostImpactSiteOps Ops="SOpAttachCenter"/>
-        <Model value="WidowMineTargetingBeam"/>
-    </CActorBeamSimple>
     <CActorMissile id="CoopMutaliskAttackSegment1Missile" parent="GenericAttackMissile" unitName="CoopGlaiveWurmWeapon">
         <Model value="GlaiveWurmWeapon"/>
     </CActorMissile>

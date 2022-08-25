@@ -64,6 +64,7 @@
     <Catalog path="CommandersData/Horner/SoundData.xml"/>
     <Catalog path="CommandersData/Horner/SoundMixSnapshotData.xml"/>
     <Catalog path="CommandersData/Horner/UserData.xml"/>
+    <Catalog path="CommandersData/Horner/UnitData.xml"/>
     <Catalog path="CommandersData/Karax/Karax.xml"/>
     <Catalog path="CommandersData/Karax/KineticData.xml"/>
     <Catalog path="CommandersData/Karax/SoundData.xml"/>
@@ -231,6 +232,11 @@
     <Catalog path="CommandersData/Zerg/UpgradeData.xml"/>
     <Catalog path="CommandersData/Zerg/ValidatorData.xml"/>
     <Catalog path="CommandersData/Zerg/WeaponData.xml"/>
+    <Catalog path="CommandersData/Hologram/ActorData.xml"/>
+    <Catalog path="CommandersData/Hologram/ModelData.xml"/>
+    <Catalog path="CommandersData/Hologram/SkinData.xml"/>
+
+
     <Catalog path="MissionsData/AbilData.xml"/>
     <Catalog path="MissionsData/ActorData.xml"/>
     <Catalog path="MissionsData/AttachMethodData.xml"/>

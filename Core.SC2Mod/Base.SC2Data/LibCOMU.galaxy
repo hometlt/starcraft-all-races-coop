@@ -795,17 +795,6 @@ string libCOMU_gf_CT_RandomUnusedCycleMutator () {
     return null;
 }
 
-bool libCOMU_gf_UnitMoverExists (string lp_unitType, string lp_mover) {
-    // Automatic Variable Declarations
-    // Implementation
-    if ((CatalogFieldValueGet(c_gameCatalogUnit, lp_unitType, "Mover", c_playerAny) == lp_mover)) {
-        return true;
-    }
-    else {
-        return false;
-    }
-}
-
 void libCOMU_gf_MM_DM_CopyBeneficialBehaviors (unit lp_pBehUnit, unit lp_pTargetUnit) {
     // Variable Declarations
     string lv_vBehavior;
@@ -1034,7 +1023,7 @@ unitgroup libCOMU_gf_MM_DM_CreateWave (int lp_pPlayer, point lp_pPoint, fixed lp
                 else {
                     lv_vTargetCost -= libCOMU_gf_MM_DM_UnitCost(lv_vUnit);
                 }
-                if ((libCOMU_gf_UnitMoverExists(lv_vUnitType, "Fly") == false)) {
+                if ((libCOMI_gf_UnitMoverExists(lv_vUnitType, "Fly") == false)) {
                     if (((lv_vTransportCurrent == null) || ((UnitCargoValue(lv_vTransportCurrent, c_unitCargoSpaceFree) * 0.75) < (CatalogFieldValueGetAsInt(c_gameCatalogUnit, lv_vUnitType, "CargoSize", lp_pPlayer) + 1)))) {
                         UnitCreate(1, lp_transportType, c_unitCreateIgnorePlacement, libCOMI_gv_mM_PlayerX, lp_pPoint, PointGetFacing(lp_pPoint));
                         lv_vTransportCurrent = UnitLastCreated();

@@ -10394,7 +10394,6 @@ Param/Expression/lib_COMI_02B8FA69=target is hidden: ~A~<n/>target is invulnerab
 Param/Expression/lib_COMI_02D35D5B=~A~<c val="FFFF8A">(+~B~%)</c>
 Param/Expression/lib_COMI_02DEBC44=<c val="FF9800">Fenix has died. He will be revived at the Nexus in ~A~ seconds.</c>
 Param/Expression/lib_COMI_037B887C=<c val="FF8000">ALL (~A~)</c>
-Param/Expression/lib_COMI_045F50EB=~A~},
 Param/Expression/lib_COMI_04D3D687=<c val="FF9800">Gary has died. He will be "revived" at his room in ~Duration~ seconds.</c>
 Param/Expression/lib_COMI_05698672=~A~<c val="FFFF8A">(+~B~%)</c>
 Param/Expression/lib_COMI_06A202BC=~C~<n/>~A~<c val="FFFF8A">(+~B~%)</c>
@@ -10409,13 +10408,11 @@ Param/Expression/lib_COMI_0B8C6D77=~A~ –<c val="FF8000"> ~B~</c>
 Param/Expression/lib_COMI_0C0853FD=<c val="FF9800">Your hero has died.</c>
 Param/Expression/lib_COMI_0CB37498=<s val="Coop_Prestige_Tooltip_Title">~A~</s><n/><s val="Coop_Prestige_Tooltip_Subtitle">~B~</s><n/><n/><s val="@@@StandardTooltip">~C~</s>
 Param/Expression/lib_COMI_0E561944=<c val="FF8040">Setting sight range to selected units to: ~A~</c>
-Param/Expression/lib_COMI_0E69B2ED=~A~'~B~',
 Param/Expression/lib_COMI_0F08E43B=~A~<c val="FFFF8A">(+~B~%)</c>
 Param/Expression/lib_COMI_109EB585=Final:~D~<n/>~OriginalText~
 Param/Expression/lib_COMI_11BCBA90=<c val="FF9800">Zagara has died. She will be revived at the Hatchery in ~Duration~ seconds.</c>
 Param/Expression/lib_COMI_123A4C9E=~C~<n/>~A~<c val="FFFF8A">(+~B~%)</c>
 Param/Expression/lib_COMI_148B4663=~A~<Frame type="Label" name="Score~B~_Label" template="ReplayDataLayout/Score_LabelTemplate"><Anchor side="Bottom" relative="$parent/Score~D~_Label" pos="0" offset="0"/> <Text val="Devour off cooldown"/> </Frame> <Frame type="Label" name="Score~B~_Value" template="ReplayDataLayout/Score_ValueTemplate"> <Anchor side="Bottom" relative="$parent/Score~D~_Label" pos="0" offset="0"/> <Text val="{$parent/Score~B~_Ref/@RealValue}"/> </Frame> <Frame type="DataRefFrame" name="Score~B~_Ref"> <PlayerId val="{$parent/$parent/PlayerStore/@Text}"/> <Argument name="Score" val="~C~"/> </Frame> <StateGroup name="Score~B~_SG"> <State name="Invisible"> <When type="Property" frame="$this/Score~B~_Value" Text="0"/> <Action type="SetProperty" frame="$this/Score~B~_Label" Visible="False"/> <Action type="SetProperty" frame="$this/Score~B~_Value" Visible="False"/> </State> </StateGroup>
-Param/Expression/lib_COMI_14976A94=~A~"~B~",
 Param/Expression/lib_COMI_1497D6BC=<c val="FF8040">Removing all units at screen of player ~A~</c>
 Param/Expression/lib_COMI_14AAEB5E=~A~<c val="FFFF8A">(+~B~%)</c>
 Param/Expression/lib_COMI_14C34455=~C~<n/>~A~<c val="FFFF8A">(-~B~s)</c>
@@ -10423,7 +10420,6 @@ Param/Expression/lib_COMI_15AD7BE4=<s val="WeaponUI">NEWS</s>:<s val="Void_ShipP
 Param/Expression/lib_COMI_16338079=~C~<n/>~A~<c val="FFFF8A">(+~B~s)</c>
 Param/Expression/lib_COMI_167DD620=~C~<n/>~A~<c val="FFFF8A">(+~B~%)</c>
 Param/Expression/lib_COMI_16A90BEF=~A~<Frame type="Label" name="Score~B~_Label" template="ReplayDataLayout/Score_LabelTemplate"> <Anchor side="Bottom" relative="$parent/Score~D~_Label" pos="0" offset="0"/> <Anchor side="Left" relative="$parent" pos="0" offset="#MasteryLabelLeft"/> <Text val="@ScoreValue/Name/~C~"/> </Frame> <Frame type="Label" name="Score~B~_Value" template="ReplayDataLayout/Score_ValueTemplate"> <Anchor side="Bottom" relative="$parent/Score~D~_Label" pos="0" offset="0"/> <Text val="{$parent/Score~B~_Ref/@RealValue}"/> </Frame> <Frame type="DataRefFrame" name="Score~B~_Ref"> <PlayerId val="{$parent/$parent/PlayerStore/@Text}"/> <Argument name="Score" val="~C~"/> </Frame> <Frame type="MathFrame" name="Score~B~_Multiply" template="ReplayDataLayout/Score_MultiplyTemplate"> <A val="{$parent/Score~B~_Value/@Text}"/> </Frame> <Frame type="MathFrame" name="Score~B~_Divide" template="ReplayDataLayout/Score_DivideTemplate">> <A val="{$parent/Score~B~_Multiply/@Result}"/> </Frame> <Frame type="Label" name="Score~B~_PercentValue" template="ReplayDataLayout/Score_PercentValueTemplate"> <Anchor side="Bottom" relative="$parent/Score~D~_Label" pos="0" offset="0"/> <Text val="{$parent/Score~B~_Divide/@ResultRound}"/> </Frame> <Frame type="Label" name="Score~B~_PercentSign" template="ReplayDataLayout/Score_PercentSignTemplate"> <Anchor side="Bottom" relative="$parent/Score~D~_Label" pos="0" offset="0"/> </Frame> <StateGroup name="Score~B~_SG"> <State name="Invisible"> <When type="Property" frame="$this/Score~B~_Value" Text="0"/> <Action type="SetProperty" frame="$this/Score~B~_Label" Visible="False"/> <Action type="SetProperty" frame="$this/Score~B~_Value" Visible="False"/> <Action type="SetProperty" frame="$this/Score~B~_PercentValue" Visible="False"/> <Action type="SetProperty" frame="$this/Score~B~_PercentSign" Visible="False"/> </State> </StateGroup>
-Param/Expression/lib_COMI_16BCC71F=~A~}
 Param/Expression/lib_COMI_173FF518=~A~<c val="FFFF8A">(+~B~%)</c>
 Param/Expression/lib_COMI_17A0A69A=<c val="FF9800">Nova has died. She will be revived at the Command Center in ~Duration~ seconds. You can instantly revive Nova by using Instant Regeneration from the top bar.</c>
 Param/Expression/lib_COMI_18415273=Setting prestige index ~A~ for player ~B~
@@ -10436,13 +10432,11 @@ Param/Expression/lib_COMI_1C88F6E4=<s val="@@UnitInfoTip">~A~</s>
 Param/Expression/lib_COMI_1CAFE485=~A~<c val="FFFF8A">(+~B~%)</c>
 Param/Expression/lib_COMI_1CC0375F=~A~%
 Param/Expression/lib_COMI_1DDD924E=~C~<n/>~A~<c val="FFFF8A">(+~B~%)</c>
-Param/Expression/lib_COMI_1DFB9A70=~A~],
 Param/Expression/lib_COMI_1E12CE26=~C~<n/>~A~<c val="FFFF8A">(+~B~%)</c>
 Param/Expression/lib_COMI_1FCBE922=~A~<Frame type="Label" name="Score~B~_Label" template="ReplayDataLayout/Score_LabelTemplate"><Anchor side="Bottom" relative="$parent/Score~D~_Label" pos="0" offset="0"/> <Text val="~C~"/><Color val="#MissionMutatorColor" /> </Frame> <Frame type="Label" name="Score~B~_Value" template="ReplayDataLayout/Score_ValueTemplate"> <Anchor side="Bottom" relative="$parent/Score~D~_Label" pos="0" offset="0"/><Color val="#MissionMutatorColor" /> <Text val="{$parent/Score~B~_Ref/@RealValue}"/> </Frame> <Frame type="DataRefFrame" name="Score~B~_Ref"> <Argument name="GalaxyVar" val="~E~"/> </Frame> <StateGroup name="Score~B~_SG"> <State name="Invisible"> <When type="Property" frame="$this/Score~B~_Value" Text="0"/> <Action type="SetProperty" frame="$this/Score~B~_Label" Visible="False"/> <Action type="SetProperty" frame="$this/Score~B~_Value" Visible="False"/> </State> </StateGroup>
 Param/Expression/lib_COMI_21481F4B=~A~,~B~
 Param/Expression/lib_COMI_215A334E=~C~<n/>~A~<c val="FFFF8A">(+~B~%)</c>
 Param/Expression/lib_COMI_21C9D3B1=~A~<Frame type="Label" name="Score~B~_Label" template="ReplayDataLayout/Score_LabelTemplate"><Anchor side="Bottom" relative="$parent/Score~D~_Label" pos="0" offset="0"/> <Text val="@ScoreValue/Name/~C~"/> </Frame> <Frame type="Label" name="Score~B~_Value" template="ReplayDataLayout/Score_ValueTemplate"> <Anchor side="Bottom" relative="$parent/Score~D~_Label" pos="0" offset="0"/> <Text val="{$parent/Score~B~_Ref/@RealValue}"/> </Frame> <Frame type="DataRefFrame" name="Score~B~_Ref"> <PlayerId val="{$parent/$parent/PlayerStore/@Text}"/> <Argument name="Score" val="~C~"/> </Frame> <StateGroup name="Score~B~_SG"> <State name="Invisible"> <When type="Property" frame="$this/Score~B~_Value" Text="0"/> <Action type="SetProperty" frame="$this/Score~B~_Label" Visible="False"/> <Action type="SetProperty" frame="$this/Score~B~_Value" Visible="False"/> </State> </StateGroup>
-Param/Expression/lib_COMI_2288D559=~A~],
 Param/Expression/lib_COMI_22C1F924=<c val="FF9800">Zeratul has died. He will be revived at the Nexus in ~Duration~ seconds.</c>
 Param/Expression/lib_COMI_23472B0B=<c val="FF8040">Radius set to ~A~<n/>(Use negative value to reset)</c>
 Param/Expression/lib_COMI_242FDFAD=<s val="~Style~">~A~</s>
@@ -10456,17 +10450,14 @@ Param/Expression/lib_COMI_2A65282F=missile: ~A~ (~B~) – (~C~,~D~)
 Param/Expression/lib_COMI_2B90ACF7=<c val="FF9800">Gary has died. He will be "revived" at his room in ~Duration~ seconds.</c>
 Param/Expression/lib_COMI_2D090992=~A~
 Param/Expression/lib_COMI_2D5785AE=<c val="485AFF">Avg: ~A~</c><n/><c val="FF8000">Now: ~B~</c>
-Param/Expression/lib_COMI_2E01780C=~A~}
 Param/Expression/lib_COMI_2E54AC15=~C~<n/>~A~<c val="FFFF8A">(+~B~%)</c>
 Param/Expression/lib_COMI_2FBE2D56=~C~<n/>~A~<c val="FFFF8A">(+~B~%)</c>
 Param/Expression/lib_COMI_3017CE7C=Full saturation at ~A~
-Param/Expression/lib_COMI_31519BF4=~A~}
 Param/Expression/lib_COMI_318FEC11=~C~<n/>~A~<c val="FFFF8A">(+~B~s)</c>
 Param/Expression/lib_COMI_32B2A5BB=~C~<n/>~A~<c val="FFFF8A">(+~B~%)</c>
 Param/Expression/lib_COMI_32B5C57C=~C~<n/>~A~<c val="FFFF8A">(+~B~%)</c>
 Param/Expression/lib_COMI_32EAD844=<c val="FF9800">Gary has died. He will be "revived" at his room in ~Duration~ seconds.</c>
 Param/Expression/lib_COMI_331E1A59=Button: ~A~
-Param/Expression/lib_COMI_33A611CC=~A~["~B~"
 Param/Expression/lib_COMI_3401B18A=<c val="FF8000"> ~A~</c>
 Param/Expression/lib_COMI_34A22F5D=<c val="FF9800">Kerrigan has died. She will be revived at the Hatchery in ~Duration~ seconds.</c>
 Param/Expression/lib_COMI_36BB0BCB=No bank data found for player ~A~, setting to default
@@ -10480,12 +10471,10 @@ Param/Expression/lib_COMI_3B33F470=~A~<c val="FFFF8A">(-~B~%)</c>
 Param/Expression/lib_COMI_3B8EF282=<c val="FF8000">Timescale set to ~A~</c>
 Param/Expression/lib_COMI_3BA63506=~C~<n/>~A~<c val="FFFF8A">(-~B~s)</c>
 Param/Expression/lib_COMI_3C2EF7CA=~C~<n/>~A~<c val="FFFF8A">(+~B~%)</c>
-Param/Expression/lib_COMI_3C4DDFBF=~A~</StateGroup>
 Param/Expression/lib_COMI_3D845762=<s val="~A~">~SIGN~~B~
 Param/Expression/lib_COMI_3F432766=Changing hotkey for <c val="FF8040">~A~</c> to <c val="FF8040">~B~</c>
 Param/Expression/lib_COMI_40392385=~C~<n/>~A~<c val="FFFF8A">(+~B~%)</c>
 Param/Expression/lib_COMI_40766198=<c val="FF8000">Supply limit set to ~A~</c>
-Param/Expression/lib_COMI_4081BC5B=~A~'~B~':[
 Param/Expression/lib_COMI_40DD3816=Patch ~A~
 Param/Expression/lib_COMI_417FF1CB=Set Wave Timer Window Icon Tooltip: Invalid slot ~A~ selected
 Param/Expression/lib_COMI_41824EF1=~C~<n/>~A~<c val="FFFF8A">(+~B~%)</c>
@@ -10504,13 +10493,9 @@ Param/Expression/lib_COMI_49650270=<c val="FF8000">Timescale set to ~A~</c>
 Param/Expression/lib_COMI_4965BB39=<c val="485AFF">Avg: ~A~</c><n/><c val="FF8000">Now: –</c>
 Param/Expression/lib_COMI_4965F6C6=<s val="@StandardTooltipHeader">~A~</s><n/><s val="@StandardTooltip">~B~<n/><n/>~C~</s>
 Param/Expression/lib_COMI_4A7804D4=<s val="@@StandardTooltipHeader">~NAME~</s><n/><s val="@@StandardTooltip">~DESCRIPTION~</s>
-Param/Expression/lib_COMI_4ADCCC14=~A~, #~B~#: #~C~#
-Param/Expression/lib_COMI_4AF73A9F=~C~~A~###~B~////
 Param/Expression/lib_COMI_4AFC1368=Kills: <c val="FFFFFF">~A~</c><n/>Units trained:<c val="FFFFFF"> ~B~</c><n/>Units lost: <c val="FFFFFF">~D~</c><n/>- - - -<n/>Life healed: <c val="FFFFFF">~C~</c><n/>Shields healed: <c val="FFFFFF">~E~</c><n/>Energy spent:<c val="FFFFFF"> ~I~</c><n/>- - - -<n/>Minerals gathered: <c val="FFFFFF">~F~</c><n/>Vespene gathered: <c val="FFFFFF">~G~</c><n/>Resources spent:<c val="FFFFFF"> ~H~</c><n/>- - -<n/>~J~: <c val="FFFFFF">~K~</c><n/>~L~: <c val="FFFFFF">~M~</c><n/>- - -<n/>~N~: <c val="FFFFFF">~O~</c>~P~
 Param/Expression/lib_COMI_4C2CB6DD=~C~<n/>~A~<c val="FFFF8A">(+~B~)</c>
-Param/Expression/lib_COMI_4D9DE5A3=~A~{
 Param/Expression/lib_COMI_4DF9F16D=Total - <c val="FF0000">Supply: ~B~</c> <c val="00FF00">Total Cost: ~C~</c>
-Param/Expression/lib_COMI_4E0DD780=~C~~A~###~B~////
 Param/Expression/lib_COMI_4E4A0DC3=P~Player~/W~Wave~/~State~
 Param/Expression/lib_COMI_4F19AFD0=~A~
 Param/Expression/lib_COMI_4F64D446=~C~<n/>~A~<c val="FFFF8A">(+~B~%)</c>
@@ -10528,10 +10513,8 @@ Param/Expression/lib_COMI_580E8038=~A~<c val="FFFF8A">(+~B~%)</c>
 Param/Expression/lib_COMI_5966D169=~A~ ~B~
 Param/Expression/lib_COMI_59DFEB68=~A~%
 Param/Expression/lib_COMI_59E6D697=~C~<n/>~A~<c val="FFFF8A">(+~B~s)</c>
-Param/Expression/lib_COMI_5A563F00=~A~, "~B~"
 Param/Expression/lib_COMI_5A955CAA=~A~/~B~ at ~C~
 Param/Expression/lib_COMI_5ACA431E=~C~<n/>~A~<c val="FFFF8A">(+~B~%)</c>
-Param/Expression/lib_COMI_5AD54998=~A~, "~B~"]
 Param/Expression/lib_COMI_5B6942DB=~C~<n/>~A~<c val="FFFF8A">(+~B~%)</c>
 Param/Expression/lib_COMI_5C0940C4=(DEBUG) ~A~: ~B~
 Param/Expression/lib_COMI_5C7A1C02=~A~<Frame type="Label" name="Score~B~_Label" template="ReplayDataLayout/Score_LabelTemplate"><Anchor side="Bottom" relative="$parent/Score~D~_Label" pos="0" offset="0"/> <Text val="@ScoreValue/Name/~C~"/><Color val="#MissionMutatorColor" /> </Frame> <Frame type="Label" name="Score~B~_Value" template="ReplayDataLayout/Score_ValueTemplate"> <Anchor side="Bottom" relative="$parent/Score~D~_Label" pos="0" offset="0"/><Color val="#MissionMutatorColor" /> <Text val="{$parent/Score~B~_Ref/@RealValue}"/> </Frame> <Frame type="DataRefFrame" name="Score~B~_Ref"> <PlayerId val="1"/> <Argument name="Score" val="~C~"/> </Frame> <StateGroup name="Score~B~_SG"> <State name="Invisible"> <When type="Property" frame="$this/Score~B~_Value" Text="0"/> <Action type="SetProperty" frame="$this/Score~B~_Label" Visible="False"/> <Action type="SetProperty" frame="$this/Score~B~_Value" Visible="False"/> </State> </StateGroup>
@@ -10543,7 +10526,6 @@ Param/Expression/lib_COMI_6475462F=<s val="@@StandardTooltipHeader">~NAME~</s><n
 Param/Expression/lib_COMI_64DF7A24=<c val="32cd32">TIP</c> -- ~A~.
 Param/Expression/lib_COMI_66596FEC=~C~<n/>~A~<c val="FFFF8A">(+~B~%)</c>
 Param/Expression/lib_COMI_677DD770=Found mutator in index ~A~, setting mutator: ~B~
-Param/Expression/lib_COMI_688B55E0=~A~}
 Param/Expression/lib_COMI_69068AB7=(~A~ – ~B~)
 Param/Expression/lib_COMI_69162470=~C~<n/>~A~<c val="FFFF8A">(+~B~s)</c>
 Param/Expression/lib_COMI_69CFFD6B=~A~<c val="FFFF8A">(+~B~%)</c>
@@ -10587,7 +10569,6 @@ Param/Expression/lib_COMI_8060C82F=~A~<StateGroup name="CommanderNameSG">
 Param/Expression/lib_COMI_80A7430D=(Unfinished) ~A~
 Param/Expression/lib_COMI_80DA4E1C=~C~<n/>~A~<c val="FFFF8A">(+~B~%)</c>
 Param/Expression/lib_COMI_813A56C3=~C~<n/>~A~<c val="FFFF8A">(-~B~%)</c>
-Param/Expression/lib_COMI_81615131=~A~'~B~',
 Param/Expression/lib_COMI_84392794=~C~<n/>~A~<c val="FFFF8A">(-~B~s)</c>
 Param/Expression/lib_COMI_871639CE=~A~<c val="FFFF8A">(-~B~s)</c>
 Param/Expression/lib_COMI_8743E7EB=~A~ ~B~
@@ -10609,19 +10590,15 @@ Param/Expression/lib_COMI_8EB4A42D=The party leader has selected ~DIFFICULTY~ di
 Param/Expression/lib_COMI_8F2F72F6=~A~<Frame type="Label" name="Score~B~_Label"> <Anchor side="Bottom" relative="$parent/AIComp" pos="0" offset="0" /> <Visible val="False"/><CollapseLayout val="True" /> </Frame>
 Param/Expression/lib_COMI_8F34D3BF=~C~<n/>~A~<c val="FFFF8A">(+~B~%)</c>
 Param/Expression/lib_COMI_8F40F017=~C~<n/>~A~<c val="FFFF8A">(+~B~%)</c>
-Param/Expression/lib_COMI_8FA50A66=~A~"~B~":[
 Param/Expression/lib_COMI_9128F2EC=~C~<n/>~A~<c val="FFFF8A">(-~B~%)</c>
 Param/Expression/lib_COMI_913DC549=<s val="@@StandardTooltipHeader">~NAME~</s><n/><s val="@@StandardTooltip">~DESCRIPTION~</s>
-Param/Expression/lib_COMI_919A0259=~A~<State name="~B~"><When type="Property" frame="$this/Data" StringValue="~B~"/><Action type="SetProperty" frame="$this/AIStore" Text="@UserData/CoopAICommanders/~B~_Name"/><Action type="SetProperty" frame="$this/RaceStore" Text="@Race/Name/~C~"/></State>
 Param/Expression/lib_COMI_91FCD7C6=~A~<c val="FFFF8A">(-~B~s)</c>
 Param/Expression/lib_COMI_9205F897=~A~/~B~
 Param/Expression/lib_COMI_9418B4B8=<c val="FF9800">Your hero has revived.</c>
-Param/Expression/lib_COMI_9432ED8B=~A~ - ~B~
 Param/Expression/lib_COMI_94852538=<s val="@@StandardTooltipHeader">~NAME~</s><n/><s val="@@StandardTooltip">~DESCRIPTION~</s>
 Param/Expression/lib_COMI_954EE9B0=<c val="[d Player='~ID~' GameValue='PlayerColor'/]">~PLAYER~</c>: <c val="FFFF8A">~MUTATOR~</c>
 Param/Expression/lib_COMI_958DABAE=~CurrentLife~/~MaxLife~
 Param/Expression/lib_COMI_95D542DF=~C~<n/>~A~<c val="FFFF8A">(+~B~%)</c>
-Param/Expression/lib_COMI_96FECA17=~A~}
 Param/Expression/lib_COMI_98293AF2=~C~<n/>~A~<c val="FFFF8A">(-~B~s)</c>
 Param/Expression/lib_COMI_9902A686=<c val="FF9800">Your hero has died.</c>
 Param/Expression/lib_COMI_993EAF5A=~C~<n/>~A~<c val="FFFF8A">(-~B~s)</c>
@@ -10651,7 +10628,6 @@ Param/Expression/lib_COMI_A8624C75=~A~ ~B~
 Param/Expression/lib_COMI_A8A44649=<c val="FF9800">Zagara has died. She will be revived at the Hatchery in ~Duration~ seconds.</c>
 Param/Expression/lib_COMI_A8B3022A=<c val="FF8000">created units:</c> ~A~<n/><c val="FF0000">Might not work properly for some attack waves and mutators</c>
 Param/Expression/lib_COMI_AA9BB8FA=~CurrentEnergy~/~MaxEnergy~
-Param/Expression/lib_COMI_AB14F7ED=~A~}
 Param/Expression/lib_COMI_ABE2CE3E=any: ~A~ (~B~) – (~C~,~D~) ~E~
 Param/Expression/lib_COMI_AC0DB059=~C~<n/>~A~<c val="FFFF8A">(+~B~%)</c>
 Param/Expression/lib_COMI_AC4FD7AD=dmg: ~A~
@@ -10662,9 +10638,7 @@ Param/Expression/lib_COMI_B0AD93B9=~C~<n/>~A~<c val="FFFF8A">(-~B~%)</c>
 Param/Expression/lib_COMI_B2417694=~C~<n/>~A~<c val="FFFF8A">(+~B~%)</c>
 Param/Expression/lib_COMI_B286A863=~C~<n/>~A~<c val="FFFF8A">(+~B~%)</c>
 Param/Expression/lib_COMI_B3DB9C9E=~A~
-Param/Expression/lib_COMI_B5DEE347=~A~ "~B~":
 Param/Expression/lib_COMI_B5FA7A87=~A~ -dead
-Param/Expression/lib_COMI_B613083D=~A~"~B~":[
 Param/Expression/lib_COMI_B763DD40=Join Our DISCORD server:<n/>~A~
 Param/Expression/lib_COMI_B810D8EC=<c val="FF0000">~A~</c>/<c val="00FF00">~B~</c>
 Param/Expression/lib_COMI_B860BF11=Upgrade: ~A~ ~B~ for ~C~
@@ -10689,7 +10663,6 @@ Param/Expression/lib_COMI_C44C2811=Copying behaviors on ~A~
 Param/Expression/lib_COMI_C512A3DC=<n/><s val="AchievementFrameName_Prot"><c val="668aff">~A~</c><c val="FFFFFF"> -</c> <c val="FF9D3C">~D~%</c><c val="8D8D8D"> (~C~)</c></s>
 Param/Expression/lib_COMI_C72C124F=hidden: ~A~ (~B~) -- (~C~,~D~) -- cargo
 Param/Expression/lib_COMI_C759BEF1=<c val="FF9800">Alarak has died. He will be revived at the Nexus in ~Duration~ seconds.</c>
-Param/Expression/lib_COMI_C838A9F9=~A~],
 Param/Expression/lib_COMI_C8541C61=~C~<n/>~A~<c val="FFFF8A">(+~B~%)</c>
 Param/Expression/lib_COMI_C8E147FC=Checking P1 Retry Mutator Index 1: ~A~
 Param/Expression/lib_COMI_C99B9DE4=~A~</s><IMG path="Assets\Textures\icon-mineral-zerg.dds" height="20" width="20"/>
@@ -10699,7 +10672,6 @@ Param/Expression/lib_COMI_CB718F8C=~C~<n/>~A~<c val="FFFF8A">(+~B~%)</c>
 Param/Expression/lib_COMI_CDC62691=<s val="@@StandardTooltipHeaderSub">~A~</s><n/><s val="@@StandardTooltipHeader">~B~</s><s val="StandardTooltipHalfSize"><n/><n/></s><s val="@@StandardTooltip">~C~<n/>~D~</s>
 Param/Expression/lib_COMI_CE3C1F06=~C~<n/>~A~<c val="FFFF8A">(-~B~%)</c>
 Param/Expression/lib_COMI_CE6AF086=~C~<n/>~A~<c val="FFFF8A">(-~B~s)</c>
-Param/Expression/lib_COMI_CE7D221D=~A~"~B~",
 Param/Expression/lib_COMI_CE81C9D4=~A~:~B~
 Param/Expression/lib_COMI_CE9A3665=dead: ~A~ (~B~) – (~C~,~D~)
 Param/Expression/lib_COMI_D0D07512=~A~ (~B~)
@@ -10716,10 +10688,8 @@ Param/Expression/lib_COMI_D80C54A7=Cost: ~A~<n/>Supply: ~B~<n/>Life+Shield: ~C~
 Param/Expression/lib_COMI_D8533531=~C~<n/>~A~<c val="FFFF8A">(+~B~)</c>
 Param/Expression/lib_COMI_DA5FCB30=~C~<n/>~A~<c val="FFFF8A">(+~B~%)</c>
 Param/Expression/lib_COMI_DCDB98DB=~A~<c val="FFFF8A">(+~B~%)</c>
-Param/Expression/lib_COMI_E0154CE9=~A~, #~B~#: #~C~#
 Param/Expression/lib_COMI_E1144253=Mutators <c val="FFFA24">(~A~)</c>
 Param/Expression/lib_COMI_E2B75BEB=~B~</n>~A~~C~~D~
-Param/Expression/lib_COMI_E36AE348=Final entries:~A~/~B~
 Param/Expression/lib_COMI_E38BE096=~C~<n/>~A~<c val="FFFF8A">(-~B~s)</c>
 Param/Expression/lib_COMI_E3BF1656=~A~</ignore>
 Param/Expression/lib_COMI_E45A8AE0=Debug: Active voice pack: ~A~
@@ -10730,7 +10700,6 @@ Param/Expression/lib_COMI_E70C65CC=~C~<n/>~A~<c val="FFFF8A">(-~B~%)</c>
 Param/Expression/lib_COMI_E9BD83F8=Player: ~A~ (~D~) <c val="FF0000">Supply: ~B~</c> <c val="00FF00">Total Cost: ~C~</c>
 Param/Expression/lib_COMI_ED6E0872=Player ~A~
 Param/Expression/lib_COMI_EDD5658D=~A~<c val="FFFF8A">(+~B~%)</c>
-Param/Expression/lib_COMI_EF348A95=~A~, "~B~":
 Param/Expression/lib_COMI_EF5DAE27=<c val="FF9800">Zagara has died. She will be revived at the Hatchery in ~Duration~ seconds.</c>
 Param/Expression/lib_COMI_EFA4A2E6=<c val="FF9800">Dehaka has died. He will be revived at his den in ~Duration~ seconds.  You can also feed him drones to revive faster</c>
 Param/Expression/lib_COMI_F04F0776=<c val="FF9800">Your hero has died.</c>
@@ -10881,7 +10850,6 @@ Param/Value/lib_COMI_01B1761C=Unit type with the most kills:
 Param/Value/lib_COMI_02440B53=<c val="FF8000">SlimUI activated</c>
 Param/Value/lib_COMI_02BB495A={Siege Tank} -- {Heavy tank. Long-range artillery in Siege Mode.}
 Param/Value/lib_COMI_02F45858=<c val="FF8000">Camera control disabled</c>
-Param/Value/lib_COMI_03293022={
 Param/Value/lib_COMI_033B1E98=Select a Mission
 Param/Value/lib_COMI_03726AAE=damage
 Param/Value/lib_COMI_03ED8FAC=All of your structures have been destroyed.
@@ -10977,7 +10945,6 @@ Param/Value/lib_COMI_31602919=Warning: Only one Bar may be created per Unit. Ori
 Param/Value/lib_COMI_325425B9=<c val="FF9800">Alarak has been revived at your Nexus.</c>
 Param/Value/lib_COMI_32A4FA0B=<c val="FF8000">Log cleared</c>
 Param/Value/lib_COMI_33955EE2=AI Units will attack spawned units as normal units. (Current Behavior)
-Param/Value/lib_COMI_33B5EECD=MutDict = {
 Param/Value/lib_COMI_34E12E00=Development commands used
 Param/Value/lib_COMI_3514FDE9=<c val="FF8000">Enemies are empowered</c>
 Param/Value/lib_COMI_367FA459=<c val="FF0000">Warning: May causes some performance degradation</c>
@@ -11026,7 +10993,6 @@ Param/Value/lib_COMI_5A218560=Acceptable commands are "on", "off" or "random" af
 Param/Value/lib_COMI_5A703436=(DEBUG) Only player 1 can do this.  Sorry!
 Param/Value/lib_COMI_5BBB9DBA=<c val="FF9800">Zeratul is ready for battle.</c>
 Param/Value/lib_COMI_5C0911D5=Too many Amon Factions
-Param/Value/lib_COMI_5C0D6C42=UnitCompDict = {
 Param/Value/lib_COMI_5C52372E=Starting Base
 Param/Value/lib_COMI_5FD3EBFB=<s val="ArmyCustomizationSelectedUnitDescriptionName"><c val="FFFFFF">Healing log</c></s> <s val="AchievementFrameName_Prot"><c val="FFFFFF">(total:
 Param/Value/lib_COMI_5FD56F8C=The game speed cannot be modified when Brutal difficulty is selected.
@@ -11060,11 +11026,9 @@ Param/Value/lib_COMI_7C806B7F=Boss
 Param/Value/lib_COMI_7D8527FB=<c val="FF8000">Make sure to run the game with "-development" command and in windowed mode</c>
 Param/Value/lib_COMI_7E3DA9A4=Destroy
 Param/Value/lib_COMI_7E52D2B5=libCOMU_gv_cT_AmonHeroNumber
-Param/Value/lib_COMI_803C7F96={
 Param/Value/lib_COMI_80A5717F=Broodlings Spawned (mutator)
 Param/Value/lib_COMI_81EF797C=Decrease
 Param/Value/lib_COMI_8209D1EF=<c val="FF8000">Logging stopped</c>
-Param/Value/lib_COMI_824751DA=<StateGroup name="EnemyAI_SG">
 Param/Value/lib_COMI_82B838AD=<c val="FF8000">Copy-paste disabled.</c>
 Param/Value/lib_COMI_84DABCBC=<c val="FF9800">Kerrigan is ready for battle.</c>
 Param/Value/lib_COMI_867DFB12=New Mutator
@@ -11200,12 +11164,10 @@ Param/Value/lib_COMI_E0A20D7A=Applying Settings
 Param/Value/lib_COMI_E37B86F5=Welcome To ALL RACES COOP (ARC)! ARC is currently in active development. Please visit our group in discord  for leave your feedback and find more info and other players
 Param/Value/lib_COMI_E38ED372=Void Income increased
 Param/Value/lib_COMI_E3D9543E=Days Taken to Complete Mission:
-Param/Value/lib_COMI_E3EC5A47=UnitNameDict = {
 Param/Value/lib_COMI_E4789FB4=Refresh
 Param/Value/lib_COMI_E62A2F76=Cliff
 Param/Value/lib_COMI_E6FED409=<s val="ArmyCustomizationSelectedUnitDescriptionName"><c val="FFFFFF">Damage log</s></c> <s val="AchievementFrameName_Prot"><c val="FFFFFF">(total:
 Param/Value/lib_COMI_E7447647=Initializing Brutal+ difficulty settings...
-Param/Value/lib_COMI_E7947677=ComMastery = {
 Param/Value/lib_COMI_E7A3D318=Load campaign bank
 Param/Value/lib_COMI_E81C0E89=<k val="HeroSelect1"/>
 Param/Value/lib_COMI_E9409815={Zerutal is killed}

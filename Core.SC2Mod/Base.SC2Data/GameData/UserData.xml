@@ -6369,3470 +6369,6 @@
             </Text>
         </Instances>
     </CUser>
-    <CUser id="MissionObjective">
-        <Fields Id="Progress" Type="Int" GameLinkType="Abil">
-            <Flags index="Modifiable" value="1"/>
-        </Fields>
-        <Fields Id="Complete" Type="Int" GameLinkType="Abil">
-            <Flags index="Modifiable" value="1"/>
-            <Flags index="ConvState" value="1"/>
-        </Fields>
-        <Fields Id="Available" Type="Int" GameLinkType="Abil">
-            <Flags index="Modifiable" value="1"/>
-            <Flags index="ConvState" value="1"/>
-        </Fields>
-        <Fields Id="RewardText" Type="Text"/>
-        <Fields Id="FormatText" Type="Text"/>
-        <Fields Id="XPMultiplier" Type="Fixed"/>
-        <Fields Id="Required Count" Type="Int">
-            <Flags index="Modifiable" value="1"/>
-        </Fields>
-        <Instances Id="[Default]">
-            <Fixed Fixed="1">
-                <Field Id="XPMultiplier"/>
-            </Fixed>
-            <Int Int="-1">
-                <Field Id="Required Count"/>
-            </Int>
-            <Text Text="UserData/MissionObjective/[Default]_FormatText">
-                <Field Id="FormatText"/>
-            </Text>
-        </Instances>
-        <Instances Id="AC_KaldirShuttle_Bonus01"/>
-        <Instances Id="AC_KorhalRift_Bonus01">
-            <Fixed Fixed="0.5">
-                <Field Id="XPMultiplier"/>
-            </Fixed>
-            <Text Text="UserData/MissionObjective/AC_KorhalRift_Bonus01_FormatText">
-                <Field Id="FormatText"/>
-            </Text>
-        </Instances>
-        <Instances Id="AC_KorhalRift_Bonus02">
-            <Fixed Fixed="0.5">
-                <Field Id="XPMultiplier"/>
-            </Fixed>
-            <Text Text="UserData/MissionObjective/AC_KorhalRift_Bonus02_FormatText">
-                <Field Id="FormatText"/>
-            </Text>
-        </Instances>
-        <Instances Id="AC_KorhalRift_Bonus03">
-            <Fixed Fixed="0.4">
-                <Field Id="XPMultiplier"/>
-            </Fixed>
-            <Text Text="UserData/MissionObjective/AC_KorhalRift_Bonus03_FormatText">
-                <Field Id="FormatText"/>
-            </Text>
-        </Instances>
-        <Instances Id="AC_TarsonisTrain_Bonus01"/>
-        <Instances Id="AC_ShakurasTemple_Bonus01"/>
-        <Instances Id="AC_ShakurasTemple_Primary01">
-            <Text Text="UserData/MissionObjective/AC_ShakurasTemple_Primary01_FormatText">
-                <Field Id="FormatText"/>
-            </Text>
-        </Instances>
-        <Instances Id="AC_CharThrasher_Bonus01">
-            <Text Text="UserData/MissionObjective/AC_CharThrasher_Bonus01_FormatText">
-                <Field Id="FormatText"/>
-            </Text>
-        </Instances>
-        <Instances Id="AC_KaldirShuttle_Primary02">
-            <Text Text="UserData/MissionObjective/AC_KaldirShuttle_Primary02_FormatText">
-                <Field Id="FormatText"/>
-            </Text>
-        </Instances>
-        <Instances Id="AC_TarsonisTrain_Primary02">
-            <Text Text="UserData/MissionObjective/AC_TarsonisTrain_Primary02_FormatText">
-                <Field Id="FormatText"/>
-            </Text>
-        </Instances>
-        <Instances Id="AC_KorhalRift_Primary05">
-            <Text Text="UserData/MissionObjective/AC_KorhalRift_Primary05_FormatText">
-                <Field Id="FormatText"/>
-            </Text>
-        </Instances>
-        <Instances Id="AC_CharThrasher_Primary02">
-            <Text Text="UserData/MissionObjective/AC_CharThrasher_Primary02_FormatText">
-                <Field Id="FormatText"/>
-            </Text>
-        </Instances>
-        <Instances Id="AC_KaldirShuttle_Primary01">
-            <Text Text="UserData/MissionObjective/AC_KaldirShuttle_Primary01_FormatText">
-                <Field Id="FormatText"/>
-            </Text>
-        </Instances>
-        <Instances Id="AC_SkyGuard_Primary02">
-            <Text Text="UserData/MissionObjective/AC_SkyGuard_Primary02_FormatText">
-                <Field Id="FormatText"/>
-            </Text>
-        </Instances>
-        <Instances Id="AC_UlnarLocks_Primary02">
-            <Text Text="UserData/MissionObjective/AC_UlnarLocks_Primary02_FormatText">
-                <Field Id="FormatText"/>
-            </Text>
-        </Instances>
-        <Instances Id="AC_VeridiaCourier_Bonus01">
-            <Int Int="1">
-                <Field Id="Required Count"/>
-            </Int>
-            <Text Text="UserData/MissionObjective/AC_VeridiaCourier_Bonus01_FormatText">
-                <Field Id="FormatText"/>
-            </Text>
-        </Instances>
-        <Instances Id="AC_VeridiaCourier_Primary02">
-            <Text Text="UserData/MissionObjective/AC_VeridiaCourier_Primary02_FormatText">
-                <Field Id="FormatText"/>
-            </Text>
-        </Instances>
-        <Instances Id="AC_SkyguardHoldout_Primary01">
-            <Text Text="UserData/MissionObjective/AC_SkyguardHoldout_Primary01_FormatText">
-                <Field Id="FormatText"/>
-            </Text>
-        </Instances>
-        <Instances Id="AC_SkyguardHoldout_Primary02">
-            <Text Text="UserData/MissionObjective/AC_SkyguardHoldout_Primary02_FormatText">
-                <Field Id="FormatText"/>
-            </Text>
-        </Instances>
-        <Instances Id="AC_SkyguardHoldout_Primary03">
-            <Text Text="UserData/MissionObjective/AC_SkyguardHoldout_Primary03_FormatText">
-                <Field Id="FormatText"/>
-            </Text>
-        </Instances>
-        <Instances Id="AC_SkyguardHoldout_Primary04">
-            <Text Text="UserData/MissionObjective/AC_SkyguardHoldout_Primary04_FormatText">
-                <Field Id="FormatText"/>
-            </Text>
-        </Instances>
-        <Instances Id="AC_BelshirEscort_Bonus01">
-            <Fixed Fixed="0.5">
-                <Field Id="XPMultiplier"/>
-            </Fixed>
-            <Text Text="UserData/MissionObjective/AC_BelshirEscort_Bonus01_FormatText">
-                <Field Id="FormatText"/>
-            </Text>
-        </Instances>
-        <Instances Id="AC_BelshirEscort_Bonus02">
-            <Fixed Fixed="0.5">
-                <Field Id="XPMultiplier"/>
-            </Fixed>
-            <Text Text="UserData/MissionObjective/AC_BelshirEscort_Bonus02_FormatText">
-                <Field Id="FormatText"/>
-            </Text>
-        </Instances>
-        <Instances Id="AC_BelshirEscort_Primary01">
-            <Text Text="UserData/MissionObjective/AC_BelshirEscort_Primary01_FormatText">
-                <Field Id="FormatText"/>
-            </Text>
-        </Instances>
-        <Instances Id="AC_BelshirEscort_Primary02">
-            <Text Text="UserData/MissionObjective/AC_BelshirEscort_Primary02_FormatText">
-                <Field Id="FormatText"/>
-            </Text>
-        </Instances>
-        <Instances Id="AC_JarbanPointCapture_Primary01"/>
-        <Instances Id="AC_JarbanPointCapture_Primary02">
-            <Text Text="UserData/MissionObjective/AC_JarbanPointCapture_Primary02_FormatText">
-                <Field Id="FormatText"/>
-            </Text>
-        </Instances>
-        <Instances Id="AC_JarbanPointCapture_Bonus01a">
-            <Text Text="UserData/MissionObjective/AC_JarbanPointCapture_Bonus01a_FormatText">
-                <Field Id="FormatText"/>
-            </Text>
-        </Instances>
-        <Instances Id="AC_JarbanPointCapture_Bonus02a">
-            <Text Text="UserData/MissionObjective/AC_JarbanPointCapture_Bonus02a_FormatText">
-                <Field Id="FormatText"/>
-            </Text>
-        </Instances>
-        <Instances Id="AC_JarbanPointCapture_Bonus01b">
-            <Text Text="UserData/MissionObjective/AC_JarbanPointCapture_Bonus01b_FormatText">
-                <Field Id="FormatText"/>
-            </Text>
-        </Instances>
-        <Instances Id="AC_JarbanPointCapture_Bonus02b">
-            <Fixed Fixed="0.66">
-                <Field Id="XPMultiplier"/>
-            </Fixed>
-            <Int Int="2">
-                <Field Id="Required Count"/>
-            </Int>
-            <Text Text="UserData/MissionObjective/AC_JarbanPointCapture_Bonus02b_FormatText">
-                <Field Id="FormatText"/>
-            </Text>
-        </Instances>
-        <Instances Id="AC_JarbanPointCapture_Bonus01c">
-            <Fixed Fixed="0.3398">
-                <Field Id="XPMultiplier"/>
-            </Fixed>
-            <Int Int="1">
-                <Field Id="Required Count"/>
-            </Int>
-            <Text Text="UserData/MissionObjective/AC_JarbanPointCapture_Bonus01c_FormatText">
-                <Field Id="FormatText"/>
-            </Text>
-        </Instances>
-        <Instances Id="AC_AiurSiege_Primary01">
-            <Int Int="5">
-                <Field Id="Required Count"/>
-            </Int>
-        </Instances>
-        <Instances Id="AC_AiurSiege_Primary02">
-            <Text Text="UserData/MissionObjective/AC_AiurSiege_Primary02_FormatText">
-                <Field Id="FormatText"/>
-            </Text>
-        </Instances>
-        <Instances Id="AC_AiurSiege_Bonus01">
-            <Fixed Fixed="0.3398">
-                <Field Id="XPMultiplier"/>
-            </Fixed>
-            <Int Int="1">
-                <Field Id="Required Count"/>
-            </Int>
-            <Text Text="UserData/MissionObjective/AC_AiurSiege_Bonus01_FormatText">
-                <Field Id="FormatText"/>
-            </Text>
-        </Instances>
-        <Instances Id="AC_AiurSiege_Bonus02">
-            <Fixed Fixed="0.3298">
-                <Field Id="XPMultiplier"/>
-            </Fixed>
-            <Int Int="1">
-                <Field Id="Required Count"/>
-            </Int>
-            <Text Text="UserData/MissionObjective/AC_AiurSiege_Bonus02_FormatText">
-                <Field Id="FormatText"/>
-            </Text>
-        </Instances>
-        <Instances Id="AC_AiurSiege_Bonus03">
-            <Fixed Fixed="0.3298">
-                <Field Id="XPMultiplier"/>
-            </Fixed>
-            <Int Int="1">
-                <Field Id="Required Count"/>
-            </Int>
-            <Text Text="UserData/MissionObjective/AC_AiurSiege_Bonus03_FormatText">
-                <Field Id="FormatText"/>
-            </Text>
-        </Instances>
-        <Instances Id="AC_PartAndParcel_Primary01">
-            <Text Text="UserData/MissionObjective/AC_PartAndParcel_Primary01_FormatText">
-                <Field Id="FormatText"/>
-            </Text>
-        </Instances>
-        <Instances Id="AC_PartAndParcel_Primary02">
-            <Text Text="UserData/MissionObjective/AC_PartAndParcel_Primary02_FormatText">
-                <Field Id="FormatText"/>
-            </Text>
-        </Instances>
-        <Instances Id="AC_PartAndParcel_Primary03"/>
-        <Instances Id="AC_PartAndParcel_Primary04"/>
-        <Instances Id="AC_PartAndParcel_Bonus01"/>
-    </CUser>
-    <CUser id="MissionTransmission">
-        <Fields Id="PlayingNow" Type="Int">
-            <Flags index="Modifiable" value="1"/>
-            <Flags index="ConvState" value="1"/>
-        </Fields>
-        <Fields>
-            <Id value="Name"/>
-            <Type value="Text"/>
-            <EditorColumn value="1"/>
-            <EditorText value="Name"/>
-        </Fields>
-        <Fields>
-            <Id value="Conversation"/>
-            <Type value="GameLink"/>
-            <GameLinkType value="Conversation"/>
-            <EditorColumn value="3"/>
-        </Fields>
-        <Fields>
-            <Id value="Suffix"/>
-            <Type value="Text"/>
-            <EditorColumn value="2"/>
-            <EditorText value="Suffix"/>
-        </Fields>
-        <Fields Id="ResponseChance" Type="Int" EditorColumn="4"/>
-        <Instances Id="[Default]">
-            <GameLink GameLink="acObj">
-                <Field Id="Conversation"/>
-            </GameLink>
-            <Int Int="100">
-                <Field Id="ResponseChance"/>
-            </Int>
-        </Instances>
-        <Instances Id="PrimaryObjectiveRevealed">
-            <Text Text="UserData/MissionTransmission/PrimaryObjectiveRevealed_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="PrimaryObjectiveFinalStage">
-            <Text Text="UserData/MissionTransmission/PrimaryObjectiveFinalStage_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="PrimaryObjectiveDestroyed">
-            <Text Text="UserData/MissionTransmission/PrimaryObjectiveDestroyed_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="ForcesEngagedDestroy">
-            <GameLink GameLink="acResponses">
-                <Field Id="Conversation"/>
-            </GameLink>
-            <Text Text="UserData/MissionTransmission/ForcesEngagedDestroy_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="DestroyedReminder">
-            <Text Text="UserData/MissionTransmission/DestroyedReminder_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="ReverseEscortReady">
-            <Text Text="UserData/MissionTransmission/ReverseEscortReady_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="ReverseEscortEscaping">
-            <Text Text="UserData/MissionTransmission/ReverseEscortEscaping_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="ReverseEscortDestroyed">
-            <Text Text="UserData/MissionTransmission/ReverseEscortDestroyed_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="ForcesEngagedEscape">
-            <GameLink GameLink="acResponses">
-                <Field Id="Conversation"/>
-            </GameLink>
-            <Text Text="UserData/MissionTransmission/ForcesEngagedEscape_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="ReverseEscortReminder">
-            <Text Text="UserData/MissionTransmission/ReverseEscortReminder_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="PrimaryObjectiveDefendReady">
-            <Text Text="UserData/MissionTransmission/PrimaryObjectiveDefendReady_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="MainObjectiveDefendDamaged">
-            <Text Text="UserData/MissionTransmission/MainObjectiveDefendDamaged_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="MainObjectiveDefendCritical">
-            <Text Text="UserData/MissionTransmission/MainObjectiveDefendCritical_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="DefendSucces">
-            <Text Text="UserData/MissionTransmission/DefendSucces_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="ForcesEngagedDefend">
-            <GameLink GameLink="acResponses">
-                <Field Id="Conversation"/>
-            </GameLink>
-            <Text Text="UserData/MissionTransmission/ForcesEngagedDefend_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="DefendReminder">
-            <Text Text="UserData/MissionTransmission/DefendReminder_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="CaptureReady">
-            <Text Text="UserData/MissionTransmission/CaptureReady_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="CaptureEnemyCapturing">
-            <Text Text="UserData/MissionTransmission/CaptureEnemyCapturing_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="CaptureStand">
-            <Text Text="UserData/MissionTransmission/CaptureStand_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="CaptureNeedAlly">
-            <Text Text="UserData/MissionTransmission/CaptureNeedAlly_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="CaptureAllyWaiting">
-            <Text Text="UserData/MissionTransmission/CaptureAllyWaiting_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="CaptureControlLost">
-            <Text Text="UserData/MissionTransmission/CaptureControlLost_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="ControlSuccessful">
-            <Text Text="UserData/MissionTransmission/ControlSuccessful_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="CaptureContested">
-            <Text Text="UserData/MissionTransmission/CaptureContested_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="ForcesEngagedControl">
-            <GameLink GameLink="acResponses">
-                <Field Id="Conversation"/>
-            </GameLink>
-            <Text Text="UserData/MissionTransmission/ForcesEngagedControl_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="CaptureReminder">
-            <Text Text="UserData/MissionTransmission/CaptureReminder_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="CaptureObjectReady">
-            <Text Text="UserData/MissionTransmission/CaptureObjectReady_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="CaptureObjectEnemyControl">
-            <Text Text="UserData/MissionTransmission/CaptureObjectEnemyControl_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="CaptureObjectAlliedControl">
-            <Text Text="UserData/MissionTransmission/CaptureObjectAlliedControl_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="CaptureObjectLost">
-            <Text Text="UserData/MissionTransmission/CaptureObjectLost_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="CaptureObjectComplete">
-            <Text Text="UserData/MissionTransmission/CaptureObjectComplete_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="ForcesEngagedCaptureObject">
-            <GameLink GameLink="acResponses">
-                <Field Id="Conversation"/>
-            </GameLink>
-            <Text Text="UserData/MissionTransmission/ForcesEngagedCaptureObject_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="CaptureObjectReminder">
-            <Text Text="UserData/MissionTransmission/CaptureObjectReminder_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="TransportReady">
-            <Text Text="UserData/MissionTransmission/TransportReady_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="TransportUnderAttack">
-            <Text Text="UserData/MissionTransmission/TransportUnderAttack_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="TransportLost">
-            <Text Text="UserData/MissionTransmission/TransportLost_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="TransportReclaim">
-            <Text Text="UserData/MissionTransmission/TransportReclaim_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="TransportAlmostThere">
-            <Text Text="UserData/MissionTransmission/TransportAlmostThere_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="TransportSuccess">
-            <Text Text="UserData/MissionTransmission/TransportSuccess_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="ForcesEngagedTransport">
-            <GameLink GameLink="acResponses">
-                <Field Id="Conversation"/>
-            </GameLink>
-            <Text Text="UserData/MissionTransmission/ForcesEngagedTransport_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="TransportReminder">
-            <Text Text="UserData/MissionTransmission/TransportReminder_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="EscortReady">
-            <Text Text="UserData/MissionTransmission/EscortReady_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="EscortMoving">
-            <Text Text="UserData/MissionTransmission/EscortMoving_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="EscortStopped">
-            <Text Text="UserData/MissionTransmission/EscortStopped_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="MainObjectiveEscortAlmostThere">
-            <Text Text="UserData/MissionTransmission/MainObjectiveEscortAlmostThere_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="EscortUnderAttack">
-            <Text Text="UserData/MissionTransmission/EscortUnderAttack_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="EscortLowHealth">
-            <Text Text="UserData/MissionTransmission/EscortLowHealth_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="EscortSuccessful">
-            <Text Text="UserData/MissionTransmission/EscortSuccessful_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="ForcesEngagedEscort">
-            <GameLink GameLink="acResponses">
-                <Field Id="Conversation"/>
-            </GameLink>
-            <Text Text="UserData/MissionTransmission/ForcesEngagedEscort_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="EscortReminder">
-            <Text Text="UserData/MissionTransmission/EscortReminder_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="PrimaryObjectiveHoldout">
-            <Text Text="UserData/MissionTransmission/PrimaryObjectiveHoldout_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="PrimaryObjectiveAlmostDone">
-            <Text Text="UserData/MissionTransmission/PrimaryObjectiveAlmostDone_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="HoldoutReminder">
-            <Text Text="UserData/MissionTransmission/HoldoutReminder_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="PrimaryObjectiveUpdated">
-            <Text Text="UserData/MissionTransmission/PrimaryObjectiveUpdated_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="MainObjectiveSingle">
-            <Text Text="UserData/MissionTransmission/MainObjectiveSingle_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="MainObjectiveMultiple">
-            <Text Text="UserData/MissionTransmission/MainObjectiveMultiple_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="PrimaryObjectiveVictory">
-            <Text Text="UserData/MissionTransmission/PrimaryObjectiveVictory_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusObjectiveDestroy">
-            <Text Text="UserData/MissionTransmission/BonusObjectiveDestroy_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusObjectiveReverseEscort">
-            <Text Text="UserData/MissionTransmission/BonusObjectiveReverseEscort_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusObjectiveEscaping">
-            <Text Text="UserData/MissionTransmission/BonusObjectiveEscaping_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusObjectiveDefend">
-            <Text Text="UserData/MissionTransmission/BonusObjectiveDefend_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusObjectiveDefendDamaged">
-            <Text Text="UserData/MissionTransmission/BonusObjectiveDefendDamaged_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusObjectiveDefendCritical">
-            <Text Text="UserData/MissionTransmission/BonusObjectiveDefendCritical_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusObjectiveControl">
-            <Text Text="UserData/MissionTransmission/BonusObjectiveControl_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusObjectiveControlUnderAttack">
-            <Text Text="UserData/MissionTransmission/BonusObjectiveControlUnderAttack_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusObjectiveControlLost">
-            <Text Text="UserData/MissionTransmission/BonusObjectiveControlLost_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusObjectiveControlContested">
-            <Text Text="UserData/MissionTransmission/BonusObjectiveControlContested_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusObjectiveCapture">
-            <Text Text="UserData/MissionTransmission/BonusObjectiveCapture_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusObjectiveCaptureEnemy">
-            <Text Text="UserData/MissionTransmission/BonusObjectiveCaptureEnemy_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusObjectiveCaptureAlly">
-            <Text Text="UserData/MissionTransmission/BonusObjectiveCaptureAlly_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusObjectiveTransport">
-            <Text Text="UserData/MissionTransmission/BonusObjectiveTransport_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusObjectiveTransportAttack">
-            <Text Text="UserData/MissionTransmission/BonusObjectiveTransportAttack_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusObjectiveTransportLost">
-            <Text Text="UserData/MissionTransmission/BonusObjectiveTransportLost_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusObjectiveTransportReclaim">
-            <Text Text="UserData/MissionTransmission/BonusObjectiveTransportReclaim_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusObjectiveTransportNear">
-            <Text Text="UserData/MissionTransmission/BonusObjectiveTransportNear_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusObjectiveTug">
-            <Text Text="UserData/MissionTransmission/BonusObjectiveTug_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusObjectiveTugWaiting">
-            <Text Text="UserData/MissionTransmission/BonusObjectiveTugWaiting_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusObjectiveTugFalling">
-            <Text Text="UserData/MissionTransmission/BonusObjectiveTugFalling_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusObjectiveTugNearComplete">
-            <Text Text="UserData/MissionTransmission/BonusObjectiveTugNearComplete_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusObjectiveTugNearLost">
-            <Text Text="UserData/MissionTransmission/BonusObjectiveTugNearLost_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusObjectiveEscort">
-            <Text Text="UserData/MissionTransmission/BonusObjectiveEscort_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusObjectiveEscortMoving">
-            <Text Text="UserData/MissionTransmission/BonusObjectiveEscortMoving_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusObjectiveEscortStop">
-            <Text Text="UserData/MissionTransmission/BonusObjectiveEscortStop_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusObjectiveEscortNear">
-            <Text Text="UserData/MissionTransmission/BonusObjectiveEscortNear_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusObjectiveEscortDamaged">
-            <Text Text="UserData/MissionTransmission/BonusObjectiveEscortDamaged_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusObjectiveEscortCritical">
-            <Text Text="UserData/MissionTransmission/BonusObjectiveEscortCritical_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusObjectiveHoldout">
-            <Text Text="UserData/MissionTransmission/BonusObjectiveHoldout_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusObjectiveHoldoutNear">
-            <Text Text="UserData/MissionTransmission/BonusObjectiveHoldoutNear_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusObjectiveAdditional">
-            <Text Text="UserData/MissionTransmission/BonusObjectiveAdditional_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusObjectiveExpiring">
-            <Text Text="UserData/MissionTransmission/BonusObjectiveExpiring_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusObjectiveLost">
-            <Text Text="UserData/MissionTransmission/BonusObjectiveLost_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusObjectiveUpdated">
-            <Text Text="UserData/MissionTransmission/BonusObjectiveUpdated_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusObjectiveSuccess">
-            <Text Text="UserData/MissionTransmission/BonusObjectiveSuccess_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="AttackWaveGather">
-            <GameLink GameLink="acAttackWave">
-                <Field Id="Conversation"/>
-            </GameLink>
-            <Text Text="UserData/MissionTransmission/AttackWaveGather_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="AttackWave">
-            <GameLink GameLink="acAttackWave">
-                <Field Id="Conversation"/>
-            </GameLink>
-            <Text Text="UserData/MissionTransmission/AttackWave_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/AttackWave_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BaseUnderAttackCombined">
-            <GameLink GameLink="acAttackWave">
-                <Field Id="Conversation"/>
-            </GameLink>
-            <Text Text="UserData/MissionTransmission/BaseUnderAttackCombined_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BaseUnderAttackCombined_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BaseUnderAttackSeparate">
-            <GameLink GameLink="acAttackWave">
-                <Field Id="Conversation"/>
-            </GameLink>
-            <Text Text="UserData/MissionTransmission/BaseUnderAttackSeparate_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BaseUnderAttackSeparate_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="HybridDetected">
-            <Text Text="UserData/MissionTransmission/HybridDetected_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="VoidThrasherAppears">
-            <Int Int="100">
-                <Field Id="ResponseChance"/>
-            </Int>
-            <Text Text="UserData/MissionTransmission/VoidThrasherAppears_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="VoidThrasherMultiple">
-            <Text Text="UserData/MissionTransmission/VoidThrasherMultiple_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="VoidThrasherAttacking">
-            <Text Text="UserData/MissionTransmission/VoidThrasherAttacking_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="VoidThrasherDeath">
-            <Text Text="UserData/MissionTransmission/VoidThrasherDeath_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="EnemyWarningWarpIn">
-            <Text Text="UserData/MissionTransmission/EnemyWarningWarpIn_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="EnemyWarningDropPods">
-            <Text Text="UserData/MissionTransmission/EnemyWarningDropPods_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="Enemy Warning - Nydus Worm">
-            <Text Text="UserData/MissionTransmission/Enemy Warning - Nydus Worm_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="Victory">
-            <GameLink GameLink="acVictory">
-                <Field Id="Conversation"/>
-            </GameLink>
-            <Text Text="UserData/MissionTransmission/Victory_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="CloakedUnitsSpotted">
-            <GameLink GameLink="acAttackWave">
-                <Field Id="Conversation"/>
-            </GameLink>
-            <Text Text="UserData/MissionTransmission/CloakedUnitsSpotted_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/CloakedUnitsSpotted_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="Intro1LnL">
-            <Text Text="UserData/MissionTransmission/Intro1LnL_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/Intro1LnL_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="Intro2LnL">
-            <Text Text="UserData/MissionTransmission/Intro2LnL_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/Intro2LnL_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="Intro3LnL">
-            <Text Text="UserData/MissionTransmission/Intro3LnL_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/Intro3LnL_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="EnemyEngagesLockFirst">
-            <Text Text="UserData/MissionTransmission/EnemyEngagesLockFirst_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/EnemyEngagesLockFirst_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="EnemySecuresLockFirst">
-            <Text Text="UserData/MissionTransmission/EnemySecuresLockFirst_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/EnemySecuresLockFirst_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="PlayerSecuresLockFirst">
-            <Text Text="UserData/MissionTransmission/PlayerSecuresLockFirst_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/PlayerSecuresLockFirst_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="PlayerSecuresLockRepeat">
-            <Text Text="UserData/MissionTransmission/PlayerSecuresLockRepeat_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/PlayerSecuresLockRepeat_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="TwoLocksRemain">
-            <Text Text="UserData/MissionTransmission/TwoLocksRemain_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/TwoLocksRemain_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="OneLockRemains">
-            <Text Text="UserData/MissionTransmission/OneLockRemains_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/OneLockRemains_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="EnemySecuresLockRepeat">
-            <Text Text="UserData/MissionTransmission/EnemySecuresLockRepeat_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/EnemySecuresLockRepeat_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="EnemyContestsLock">
-            <Text Text="UserData/MissionTransmission/EnemyContestsLock_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/EnemyContestsLock_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="EnemySecuresLockMultiple">
-            <Text Text="UserData/MissionTransmission/EnemySecuresLockMultiple_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/EnemySecuresLockMultiple_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusObjectiveLnL">
-            <Text Text="UserData/MissionTransmission/BonusObjectiveLnL_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusObjectiveLnL_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusCompleteLnL">
-            <Text Text="UserData/MissionTransmission/BonusCompleteLnL_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusCompleteLnL_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="OverloadWarning">
-            <Text Text="UserData/MissionTransmission/OverloadWarning_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/OverloadWarning_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="OverloadCritical">
-            <Text Text="UserData/MissionTransmission/OverloadCritical_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/OverloadCritical_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="OverloadImminent">
-            <Text Text="UserData/MissionTransmission/OverloadImminent_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/OverloadImminent_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="DefeatLnL">
-            <Text Text="UserData/MissionTransmission/DefeatLnL_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/DefeatLnL_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="VictoryLnL">
-            <Text Text="UserData/MissionTransmission/VictoryLnL_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/VictoryLnL_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="Intro1OE">
-            <Text Text="UserData/MissionTransmission/Intro1OE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/Intro1OE_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="Intro2OE">
-            <Text Text="UserData/MissionTransmission/Intro2OE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/Intro2OE_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="Intro3OE">
-            <Text Text="UserData/MissionTransmission/Intro3OE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/Intro3OE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="FirstTrainDetected">
-            <Text Text="UserData/MissionTransmission/FirstTrainDetected_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/FirstTrainDetected_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="TrainDetectedRepeat">
-            <Text Text="UserData/MissionTransmission/TrainDetectedRepeat_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/TrainDetectedRepeat_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="MultipleTrainsRepeat">
-            <Text Text="UserData/MissionTransmission/MultipleTrainsRepeat_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/MultipleTrainsRepeat_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusTrainFirst">
-            <Text Text="UserData/MissionTransmission/BonusTrainFirst_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusTrainFirst_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusTrainRepeat">
-            <Text Text="UserData/MissionTransmission/BonusTrainRepeat_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusTrainRepeat_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="HalfwayCompleteOE">
-            <Text Text="UserData/MissionTransmission/HalfwayCompleteOE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/HalfwayCompleteOE_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="NearCompleteOE">
-            <Text Text="UserData/MissionTransmission/NearCompleteOE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/NearCompleteOE_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="FailingWarningOE">
-            <Text Text="UserData/MissionTransmission/FailingWarningOE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/FailingWarningOE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="NearFailingWarningOE">
-            <Text Text="UserData/MissionTransmission/NearFailingWarningOE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/NearFailingWarningOE_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="DefeatOE">
-            <Text Text="UserData/MissionTransmission/DefeatOE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/DefeatOE_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="VictoryOE">
-            <Text Text="UserData/MissionTransmission/VictoryOE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/VictoryOE_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="Intro1KR">
-            <Text Text="UserData/MissionTransmission/Intro1KR_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/Intro1KR_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="Intro2KR">
-            <Text Text="UserData/MissionTransmission/Intro2KR_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/Intro2KR_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="Intro3KR">
-            <Text Text="UserData/MissionTransmission/Intro3KR_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/Intro3KR_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="FirstShard">
-            <Text Text="UserData/MissionTransmission/FirstShard_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/FirstShard_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="MultipleShards">
-            <Text Text="UserData/MissionTransmission/MultipleShards_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/MultipleShards_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="FirstShardDestroyed">
-            <Text Text="UserData/MissionTransmission/FirstShardDestroyed_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/FirstShardDestroyed_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="VoidShardDestroyed">
-            <Text Text="UserData/MissionTransmission/VoidShardDestroyed_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/VoidShardDestroyed_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="LastShards">
-            <Text Text="UserData/MissionTransmission/LastShards_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/LastShards_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="4MinuteFirst">
-            <Text Text="UserData/MissionTransmission/4MinuteFirst_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/4MinuteFirst_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="2MinuteFirst">
-            <Text Text="UserData/MissionTransmission/2MinuteFirst_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/2MinuteFirst_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="4MinuteWarning">
-            <Text Text="UserData/MissionTransmission/4MinuteWarning_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/4MinuteWarning_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="2MinuteWarning">
-            <Text Text="UserData/MissionTransmission/2MinuteWarning_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/2MinuteWarning_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusObjective1KR">
-            <Text Text="UserData/MissionTransmission/BonusObjective1KR_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusObjective1KR_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusObjective2KR">
-            <Text Text="UserData/MissionTransmission/BonusObjective2KR_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusObjective2KR_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusEscapedKR">
-            <Text Text="UserData/MissionTransmission/BonusEscapedKR_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusEscapedKR_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusCompleteKR">
-            <Text Text="UserData/MissionTransmission/BonusCompleteKR_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusCompleteKR_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="DefeatKR">
-            <Text Text="UserData/MissionTransmission/DefeatKR_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/DefeatKR_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="VictoryKR">
-            <Text Text="UserData/MissionTransmission/VictoryKR_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/VictoryKR_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="Intro1CT">
-            <Text Text="UserData/MissionTransmission/Intro1CT_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/Intro1CT_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="Intro2CT">
-            <Text Text="UserData/MissionTransmission/Intro2CT_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/Intro2CT_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="Intro3CT">
-            <Text Text="UserData/MissionTransmission/Intro3CT_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/Intro3CT_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="ThrasherRiftFirst">
-            <Text Text="UserData/MissionTransmission/ThrasherRiftFirst_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/ThrasherRiftFirst_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="ThrasherSpawnFirst">
-            <Text Text="UserData/MissionTransmission/ThrasherSpawnFirst_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/ThrasherSpawnFirst_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="RiftsAppearingCT">
-            <Text Text="UserData/MissionTransmission/RiftsAppearingCT_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/RiftsAppearingCT_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="ThrashersSpawningCT">
-            <Text Text="UserData/MissionTransmission/ThrashersSpawningCT_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/ThrashersSpawningCT_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="FinalGroupCT">
-            <Text Text="UserData/MissionTransmission/FinalGroupCT_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/FinalGroupCT_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="TwoGroupsRemainCT">
-            <Text Text="UserData/MissionTransmission/TwoGroupsRemainCT_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/TwoGroupsRemainCT_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="OneGroupRemainsCT">
-            <Text Text="UserData/MissionTransmission/OneGroupRemainsCT_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/OneGroupRemainsCT_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="ThreeThrashersLeftCT">
-            <Text Text="UserData/MissionTransmission/ThreeThrashersLeftCT_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/ThreeThrashersLeftCT_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="TwoThrashersLeftCT">
-            <Text Text="UserData/MissionTransmission/TwoThrashersLeftCT_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/TwoThrashersLeftCT_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="OneThrasherLeftCT">
-            <Text Text="UserData/MissionTransmission/OneThrasherLeftCT_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/OneThrasherLeftCT_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusObjectiveCT">
-            <Text Text="UserData/MissionTransmission/BonusObjectiveCT_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusObjectiveCT_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusMovingCT">
-            <Text Text="UserData/MissionTransmission/BonusMovingCT_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusMovingCT_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusCompleteCT">
-            <Text Text="UserData/MissionTransmission/BonusCompleteCT_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusCompleteCT_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusLostCT">
-            <Text Text="UserData/MissionTransmission/BonusLostCT_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusLostCT_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="FortressUnderAttack">
-            <Int Int="50">
-                <Field Id="ResponseChance"/>
-            </Int>
-            <Text Text="UserData/MissionTransmission/FortressUnderAttack_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/FortressUnderAttack_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="FortressLowHealth">
-            <Text Text="UserData/MissionTransmission/FortressLowHealth_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/FortressLowHealth_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="FortressVeryLowHealth">
-            <Text Text="UserData/MissionTransmission/FortressVeryLowHealth_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/FortressVeryLowHealth_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="FortressCriticalHealth">
-            <Text Text="UserData/MissionTransmission/FortressCriticalHealth_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/FortressCriticalHealth_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="DefeatCT">
-            <Text Text="UserData/MissionTransmission/DefeatCT_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/DefeatCT_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="VictoryCT">
-            <Text Text="UserData/MissionTransmission/VictoryCT_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/VictoryCT_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="Intro1ST">
-            <Text Text="UserData/MissionTransmission/Intro1ST_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/Intro1ST_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="Intro2ST">
-            <Text Text="UserData/MissionTransmission/Intro2ST_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/Intro2ST_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="Intro3ST">
-            <Text Text="UserData/MissionTransmission/Intro3ST_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/Intro3ST_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="VoidThrasherAttackST">
-            <Text Text="UserData/MissionTransmission/VoidThrasherAttackST_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/VoidThrasherAttackST_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="VoidThrasherSummonST">
-            <Text Text="UserData/MissionTransmission/VoidThrasherSummonST_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/VoidThrasherSummonST_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="TempleUnderAttackST">
-            <Int Int="50">
-                <Field Id="ResponseChance"/>
-            </Int>
-            <Text Text="UserData/MissionTransmission/TempleUnderAttackST_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/TempleUnderAttackST_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="TempleHalfHealthST">
-            <Text Text="UserData/MissionTransmission/TempleHalfHealthST_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/TempleHalfHealthST_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="TempleLowHealthST">
-            <Text Text="UserData/MissionTransmission/TempleLowHealthST_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/TempleLowHealthST_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="TempleCriticalHealthST">
-            <Text Text="UserData/MissionTransmission/TempleCriticalHealthST_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/TempleCriticalHealthST_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="HalfwayCompleteST">
-            <Text Text="UserData/MissionTransmission/HalfwayCompleteST_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/HalfwayCompleteST_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="NearCompleteST">
-            <Text Text="UserData/MissionTransmission/NearCompleteST_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/NearCompleteST_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="FinalCompleteST">
-            <Text Text="UserData/MissionTransmission/FinalCompleteST_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/FinalCompleteST_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusObjectiveST">
-            <Text Text="UserData/MissionTransmission/BonusObjectiveST_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusObjectiveST_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusTwoLeftST">
-            <Text Text="UserData/MissionTransmission/BonusTwoLeftST_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusTwoLeftST_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusOneLeftST">
-            <Text Text="UserData/MissionTransmission/BonusOneLeftST_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusOneLeftST_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusCompleteST">
-            <Text Text="UserData/MissionTransmission/BonusCompleteST_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusCompleteST_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="DefeatST">
-            <Text Text="UserData/MissionTransmission/DefeatST_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/DefeatST_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="VictoryST">
-            <Text Text="UserData/MissionTransmission/VictoryST_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/VictoryST_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="Intro1KS">
-            <Text Text="UserData/MissionTransmission/Intro1KS_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/Intro1KS_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="Intro2KS">
-            <Text Text="UserData/MissionTransmission/Intro2KS_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/Intro2KS_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="Intro3KS">
-            <Text Text="UserData/MissionTransmission/Intro3KS_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/Intro3KS_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="WarpConduitOnline">
-            <Text Text="UserData/MissionTransmission/WarpConduitOnline_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/WarpConduitOnline_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="ShuttleSentFirst">
-            <Text Text="UserData/MissionTransmission/ShuttleSentFirst_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/ShuttleSentFirst_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="ShuttleSentSingle">
-            <Text Text="UserData/MissionTransmission/ShuttleSentSingle_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/ShuttleSentSingle_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="ShuttleSentMutliple">
-            <Text Text="UserData/MissionTransmission/ShuttleSentMutliple_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/ShuttleSentMutliple_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="ShuttleSentAll">
-            <Text Text="UserData/MissionTransmission/ShuttleSentAll_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/ShuttleSentAll_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="ShuttleSentOne">
-            <Text Text="UserData/MissionTransmission/ShuttleSentOne_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/ShuttleSentOne_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="ShuttleSentFinal">
-            <Text Text="UserData/MissionTransmission/ShuttleSentFinal_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/ShuttleSentFinal_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="ShuttleDestroyed">
-            <Text Text="UserData/MissionTransmission/ShuttleDestroyed_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/ShuttleDestroyed_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="ThreeWavesRemainKS">
-            <Text Text="UserData/MissionTransmission/ThreeWavesRemainKS_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/ThreeWavesRemainKS_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="TwoWavesRemainKS">
-            <Text Text="UserData/MissionTransmission/TwoWavesRemainKS_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/TwoWavesRemainKS_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="OneWaveRemainsKS">
-            <Text Text="UserData/MissionTransmission/OneWaveRemainsKS_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/OneWaveRemainsKS_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="ShuttleWarpImminent">
-            <Text Text="UserData/MissionTransmission/ShuttleWarpImminent_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/ShuttleWarpImminent_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="ShuttleWaveEscaped">
-            <Text Text="UserData/MissionTransmission/ShuttleWaveEscaped_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/ShuttleWaveEscaped_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="ShuttlePartialEscaped">
-            <Text Text="UserData/MissionTransmission/ShuttlePartialEscaped_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/ShuttlePartialEscaped_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="FailureQuarterKS">
-            <Text Text="UserData/MissionTransmission/FailureQuarterKS_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/FailureQuarterKS_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="FailureHalfKS">
-            <Text Text="UserData/MissionTransmission/FailureHalfKS_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/FailureHalfKS_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="FailureCritical">
-            <Text Text="UserData/MissionTransmission/FailureCritical_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/FailureCritical_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusObjectiveKS">
-            <Text Text="UserData/MissionTransmission/BonusObjectiveKS_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusObjectiveKS_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusMovingKS">
-            <Text Text="UserData/MissionTransmission/BonusMovingKS_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusMovingKS_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusIncomingKS">
-            <Text Text="UserData/MissionTransmission/BonusIncomingKS_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusIncomingKS_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusUnderAttackKS">
-            <Text Text="UserData/MissionTransmission/BonusUnderAttackKS_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusUnderAttackKS_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusSuccessKS">
-            <Text Text="UserData/MissionTransmission/BonusSuccessKS_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusSuccessKS_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusLostKS">
-            <Text Text="UserData/MissionTransmission/BonusLostKS_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusLostKS_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="DefeatKS">
-            <Text Text="UserData/MissionTransmission/DefeatKS_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/DefeatKS_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="VictoryKS">
-            <Text Text="UserData/MissionTransmission/VictoryKS_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/VictoryKS_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="Intro1RC">
-            <Text Text="UserData/MissionTransmission/Intro1RC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/Intro1RC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="Intro2RC">
-            <Text Text="UserData/MissionTransmission/Intro2RC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/Intro2RC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="Intro3RC">
-            <Text Text="UserData/MissionTransmission/Intro3RC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/Intro3RC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="LavaAlertFirstRC">
-            <Text Text="UserData/MissionTransmission/LavaAlertFirstRC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/LavaAlertFirstRC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="LavaRisingFirstRC">
-            <Text Text="UserData/MissionTransmission/LavaRisingFirstRC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/LavaRisingFirstRC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="LavaAlertRepeatRC">
-            <Text Text="UserData/MissionTransmission/LavaAlertRepeatRC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/LavaAlertRepeatRC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="LavaRisingRepeatRC">
-            <Text Text="UserData/MissionTransmission/LavaRisingRepeatRC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/LavaRisingRepeatRC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="LavaRecedingRepeatRC">
-            <Text Text="UserData/MissionTransmission/LavaRecedingRepeatRC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/LavaRecedingRepeatRC_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="AirSpoutDamageRC">
-            <Text Text="UserData/MissionTransmission/AirSpoutDamageRC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/AirSpoutDamageRC_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="AirSpoutAlertRC">
-            <Text Text="UserData/MissionTransmission/AirSpoutAlertRC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/AirSpoutAlertRC_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="ReminderObjRC">
-            <Text Text="UserData/MissionTransmission/ReminderObjRC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/ReminderObjRC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="ReminderCoopRC">
-            <Text Text="UserData/MissionTransmission/ReminderCoopRC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/ReminderCoopRC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="25PercentRC">
-            <Text Text="UserData/MissionTransmission/25PercentRC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/25PercentRC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="50PercentRC">
-            <Text Text="UserData/MissionTransmission/50PercentRC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/50PercentRC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="75PercentRC">
-            <Text Text="UserData/MissionTransmission/75PercentRC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/75PercentRC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="Timer4minRC">
-            <Text Text="UserData/MissionTransmission/Timer4minRC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/Timer4minRC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="Timer3minRC">
-            <Text Text="UserData/MissionTransmission/Timer3minRC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/Timer3minRC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="Timer2minRC">
-            <Text Text="UserData/MissionTransmission/Timer2minRC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/Timer2minRC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="Timer1minRC">
-            <Text Text="UserData/MissionTransmission/Timer1minRC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/Timer1minRC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusNewRC">
-            <Text Text="UserData/MissionTransmission/BonusNewRC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusNewRC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusResurfaceRC">
-            <Text Text="UserData/MissionTransmission/BonusResurfaceRC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusResurfaceRC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusCompleteRC">
-            <Text Text="UserData/MissionTransmission/BonusCompleteRC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusCompleteRC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="DefeatRC">
-            <Text Text="UserData/MissionTransmission/DefeatRC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/DefeatRC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="VictoryRC">
-            <Text Text="UserData/MissionTransmission/VictoryRC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/VictoryRC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="WorkerDiesRC">
-            <Text Text="UserData/MissionTransmission/WorkerDiesRC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/WorkerDiesRC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="FuelDestroyedRC">
-            <Text Text="UserData/MissionTransmission/FuelDestroyedRC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/FuelDestroyedRC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="LavaRecedingFirstRC">
-            <Text Text="UserData/MissionTransmission/LavaRecedingFirstRC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/LavaRecedingFirstRC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="EnemyAttackRC">
-            <Text Text="UserData/MissionTransmission/EnemyAttackRC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/EnemyAttackRC_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="FirstTurnIn">
-            <Text Text="UserData/MissionTransmission/FirstTurnIn_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/FirstTurnIn_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="LavaAlertSecondRC">
-            <Text Text="UserData/MissionTransmission/LavaAlertSecondRC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/LavaAlertSecondRC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="Intro1BE">
-            <Text Text="UserData/MissionTransmission/Intro1BE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/Intro1BE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="Intro2BE">
-            <Text Text="UserData/MissionTransmission/Intro2BE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/Intro2BE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="Intro3BE">
-            <Text Text="UserData/MissionTransmission/Intro3BE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/Intro3BE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="Geyser1BE">
-            <Text Text="UserData/MissionTransmission/Geyser1BE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/Geyser1BE_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="Geyser2BE">
-            <Text Text="UserData/MissionTransmission/Geyser2BE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/Geyser2BE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="Geyser3BE">
-            <Text Text="UserData/MissionTransmission/Geyser3BE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/Geyser3BE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="Geyser4BE">
-            <Text Text="UserData/MissionTransmission/Geyser4BE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/Geyser4BE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="Geyser5BE">
-            <Text Text="UserData/MissionTransmission/Geyser5BE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/Geyser5BE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BotDepartFirstBE">
-            <Text Text="UserData/MissionTransmission/BotDepartFirstBE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BotDepartFirstBE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BotDepartRepeatBE">
-            <Text Text="UserData/MissionTransmission/BotDepartRepeatBE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BotDepartRepeatBE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BotHarvestFirstBE">
-            <Text Text="UserData/MissionTransmission/BotHarvestFirstBE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BotHarvestFirstBE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BotHarvestRepeatBE">
-            <Text Text="UserData/MissionTransmission/BotHarvestRepeatBE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BotHarvestRepeatBE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BotReturnFirstBE">
-            <Text Text="UserData/MissionTransmission/BotReturnFirstBE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BotReturnFirstBE_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BotReturnRepeatBE">
-            <Text Text="UserData/MissionTransmission/BotReturnRepeatBE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BotReturnRepeatBE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BotEnemyInboundBE">
-            <Text Text="UserData/MissionTransmission/BotEnemyInboundBE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BotEnemyInboundBE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BotWarpProtossBE">
-            <Text Text="UserData/MissionTransmission/BotWarpProtossBE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BotWarpProtossBE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BotDropTerranBE">
-            <Text Text="UserData/MissionTransmission/BotDropTerranBE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BotDropTerranBE_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BotDropZergBE">
-            <Text Text="UserData/MissionTransmission/BotDropZergBE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BotDropZergBE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="VoidThrasherFirstBE">
-            <Text Text="UserData/MissionTransmission/VoidThrasherFirstBE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/VoidThrasherFirstBE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="VoidThrasherRepeatBE">
-            <Text Text="UserData/MissionTransmission/VoidThrasherRepeatBE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/VoidThrasherRepeatBE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="HybridFirstBE">
-            <Text Text="UserData/MissionTransmission/HybridFirstBE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/HybridFirstBE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="HybridRepeatBE">
-            <Text Text="UserData/MissionTransmission/HybridRepeatBE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/HybridRepeatBE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BotUnderAttackBE">
-            <Text Text="UserData/MissionTransmission/BotUnderAttackBE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BotUnderAttackBE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BotDestroyEarlyBE">
-            <Text Text="UserData/MissionTransmission/BotDestroyEarlyBE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BotDestroyEarlyBE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BotDeliveryBE">
-            <Text Text="UserData/MissionTransmission/BotDeliveryBE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BotDeliveryBE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="FailureFirstBE">
-            <Text Text="UserData/MissionTransmission/FailureFirstBE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/FailureFirstBE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="FailureSecondBE">
-            <Text Text="UserData/MissionTransmission/FailureSecondBE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/FailureSecondBE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="ProgressFirstBE">
-            <Text Text="UserData/MissionTransmission/ProgressFirstBE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/ProgressFirstBE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="ProgressSecondBE">
-            <Text Text="UserData/MissionTransmission/ProgressSecondBE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/ProgressSecondBE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="ProgressThirdBE">
-            <Text Text="UserData/MissionTransmission/ProgressThirdBE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/ProgressThirdBE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusLocatedFirstBE">
-            <Text Text="UserData/MissionTransmission/BonusLocatedFirstBE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusLocatedFirstBE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusLocatedRepeatBE">
-            <Text Text="UserData/MissionTransmission/BonusLocatedRepeatBE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusLocatedRepeatBE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusExpireFirstBE">
-            <Text Text="UserData/MissionTransmission/BonusExpireFirstBE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusExpireFirstBE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusExpireRepeatBE">
-            <Text Text="UserData/MissionTransmission/BonusExpireRepeatBE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusExpireRepeatBE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusLostBE">
-            <Text Text="UserData/MissionTransmission/BonusLostBE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusLostBE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusCompleteBE">
-            <Text Text="UserData/MissionTransmission/BonusCompleteBE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusCompleteBE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="DefeatBE">
-            <Text Text="UserData/MissionTransmission/DefeatBE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/DefeatBE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="VictoryBE">
-            <Text Text="UserData/MissionTransmission/VictoryBE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/VictoryBE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="Intro1JC">
-            <Text Text="UserData/MissionTransmission/Intro1JC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/Intro1JC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="Intro2JC">
-            <Text Text="UserData/MissionTransmission/Intro2JC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/Intro2JC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="Intro3JC">
-            <Text Text="UserData/MissionTransmission/Intro3JC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/Intro3JC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="CapturePingJC">
-            <Text Text="UserData/MissionTransmission/CapturePingJC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/CapturePingJC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="CaptureStartFirstJC">
-            <Text Text="UserData/MissionTransmission/CaptureStartFirstJC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/CaptureStartFirstJC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="CaptureStartRepeatJC">
-            <Text Text="UserData/MissionTransmission/CaptureStartRepeatJC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/CaptureStartRepeatJC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="CaptureAutoWarnFirstJC">
-            <Text Text="UserData/MissionTransmission/CaptureAutoWarnFirstJC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/CaptureAutoWarnFirstJC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="CaptureAutoWarnRepeatJC">
-            <Text Text="UserData/MissionTransmission/CaptureAutoWarnRepeatJC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/CaptureAutoWarnRepeatJC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="CaptureAutoStartFirstJC">
-            <Text Text="UserData/MissionTransmission/CaptureAutoStartFirstJC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/CaptureAutoStartFirstJC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="CaptureAutoStartRepeatJC">
-            <Text Text="UserData/MissionTransmission/CaptureAutoStartRepeatJC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/CaptureAutoStartRepeatJC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="CaptureUnderAttackJC">
-            <Text Text="UserData/MissionTransmission/CaptureUnderAttackJC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/CaptureUnderAttackJC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="CaptureAlmostDeadJC">
-            <Text Text="UserData/MissionTransmission/CaptureAlmostDeadJC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/CaptureAlmostDeadJC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="CaptureCompleteFirstJC">
-            <Text Text="UserData/MissionTransmission/CaptureCompleteFirstJC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/CaptureCompleteFirstJC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="CaptureCompleteRepeatJC">
-            <Text Text="UserData/MissionTransmission/CaptureCompleteRepeatJC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/CaptureCompleteRepeatJC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="CaptureMoveOutJC">
-            <Text Text="UserData/MissionTransmission/CaptureMoveOutJC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/CaptureMoveOutJC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="CaptureDefendJC">
-            <Text Text="UserData/MissionTransmission/CaptureDefendJC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/CaptureDefendJC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="CaptureMultiJC">
-            <Text Text="UserData/MissionTransmission/CaptureMultiJC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/CaptureMultiJC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="AttackWarnFirstJC">
-            <Text Text="UserData/MissionTransmission/AttackWarnFirstJC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/AttackWarnFirstJC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="AttackWarnRepeatJC">
-            <Text Text="UserData/MissionTransmission/AttackWarnRepeatJC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/AttackWarnRepeatJC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="AttackDepartFirstJC">
-            <Text Text="UserData/MissionTransmission/AttackDepartFirstJC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/AttackDepartFirstJC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="AttackDepartRepeatJC">
-            <Text Text="UserData/MissionTransmission/AttackDepartRepeatJC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/AttackDepartRepeatJC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="AttackReminderJC">
-            <Text Text="UserData/MissionTransmission/AttackReminderJC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/AttackReminderJC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="AttackNowJC">
-            <Text Text="UserData/MissionTransmission/AttackNowJC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/AttackNowJC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="AttackStopPlayerJC">
-            <Text Text="UserData/MissionTransmission/AttackStopPlayerJC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/AttackStopPlayerJC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="AttackStopInfestedJC">
-            <Text Text="UserData/MissionTransmission/AttackStopInfestedJC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/AttackStopInfestedJC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="FailureFirstJC">
-            <Text Text="UserData/MissionTransmission/FailureFirstJC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/FailureFirstJC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="FailureSecondJC">
-            <Text Text="UserData/MissionTransmission/FailureSecondJC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/FailureSecondJC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="FailureFinalJC">
-            <Text Text="UserData/MissionTransmission/FailureFinalJC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/FailureFinalJC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="ProgressFirstJC">
-            <Text Text="UserData/MissionTransmission/ProgressFirstJC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/ProgressFirstJC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="ProgressSecondJC">
-            <Text Text="UserData/MissionTransmission/ProgressSecondJC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/ProgressSecondJC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="ProgressFinalJC">
-            <Text Text="UserData/MissionTransmission/ProgressFinalJC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/ProgressFinalJC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusLocatedFirstJC">
-            <Text Text="UserData/MissionTransmission/BonusLocatedFirstJC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusLocatedFirstJC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusReminderFirstJC">
-            <Text Text="UserData/MissionTransmission/BonusReminderFirstJC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusReminderFirstJC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusExpireFirstJC">
-            <Text Text="UserData/MissionTransmission/BonusExpireFirstJC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusExpireFirstJC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusCompleteFirstJC">
-            <Text Text="UserData/MissionTransmission/BonusCompleteFirstJC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusCompleteFirstJC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusLocatedSecondJC">
-            <Text Text="UserData/MissionTransmission/BonusLocatedSecondJC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusLocatedSecondJC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusReminderSecondJC">
-            <Text Text="UserData/MissionTransmission/BonusReminderSecondJC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusReminderSecondJC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusExpireSecondJC">
-            <Text Text="UserData/MissionTransmission/BonusExpireSecondJC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusExpireSecondJC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusCompleteSecondJC">
-            <Text Text="UserData/MissionTransmission/BonusCompleteSecondJC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusCompleteSecondJC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="DefeatJC">
-            <Text Text="UserData/MissionTransmission/DefeatJC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/DefeatJC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="VictoryJC">
-            <Text Text="UserData/MissionTransmission/VictoryJC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/VictoryJC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="AberrationJC">
-            <Text Text="UserData/MissionTransmission/AberrationJC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/AberrationJC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="CrazedDriverJC">
-            <Text Text="UserData/MissionTransmission/CrazedDriverJC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/CrazedDriverJC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="IntruderAlertJC">
-            <Text Text="UserData/MissionTransmission/IntruderAlertJC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/IntruderAlertJC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="ExterminateJC">
-            <Text Text="UserData/MissionTransmission/ExterminateJC_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/ExterminateJC_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="Intro1AS">
-            <Text Text="UserData/MissionTransmission/Intro1AS_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/Intro1AS_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="Intro2AS">
-            <Text Text="UserData/MissionTransmission/Intro2AS_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/Intro2AS_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="Intro3AS">
-            <Text Text="UserData/MissionTransmission/Intro3AS_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/Intro3AS_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="FailWarningAS">
-            <Text Text="UserData/MissionTransmission/FailWarningAS_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/FailWarningAS_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="FailImminentAS">
-            <Text Text="UserData/MissionTransmission/FailImminentAS_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/FailImminentAS_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="VoidShardDestroyedFirstAS">
-            <Text Text="UserData/MissionTransmission/VoidShardDestroyedFirstAS_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/VoidShardDestroyedFirstAS_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="VoidShardDestroyedSecondAS">
-            <Text Text="UserData/MissionTransmission/VoidShardDestroyedSecondAS_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/VoidShardDestroyedSecondAS_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="VoidShardDestroyedThirdAS">
-            <Text Text="UserData/MissionTransmission/VoidShardDestroyedThirdAS_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/VoidShardDestroyedThirdAS_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="VoidShardDestroyedFourthAS">
-            <Text Text="UserData/MissionTransmission/VoidShardDestroyedFourthAS_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/VoidShardDestroyedFourthAS_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusIntro1AS">
-            <Text Text="UserData/MissionTransmission/BonusIntro1AS_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusIntro1AS_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusIntro2AS">
-            <Text Text="UserData/MissionTransmission/BonusIntro2AS_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusIntro2AS_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusIntro3AS">
-            <Text Text="UserData/MissionTransmission/BonusIntro3AS_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusIntro3AS_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusMovingAS">
-            <Text Text="UserData/MissionTransmission/BonusMovingAS_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusMovingAS_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusStoppedAS">
-            <Text Text="UserData/MissionTransmission/BonusStoppedAS_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusStoppedAS_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusCreateAS">
-            <Text Text="UserData/MissionTransmission/BonusCreateAS_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusCreateAS_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusDestroyedAS">
-            <Text Text="UserData/MissionTransmission/BonusDestroyedAS_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusDestroyedAS_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusFailedAS">
-            <Text Text="UserData/MissionTransmission/BonusFailedAS_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusFailedAS_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusComplete">
-            <Text Text="UserData/MissionTransmission/BonusComplete_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusComplete_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="DefeatAS">
-            <Text Text="UserData/MissionTransmission/DefeatAS_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/DefeatAS_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="VictoryAS">
-            <Text Text="UserData/MissionTransmission/VictoryAS_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/VictoryAS_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="Intro1CE">
-            <Text Text="UserData/MissionTransmission/Intro1CE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/Intro1CE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="Intro2CE">
-            <Text Text="UserData/MissionTransmission/Intro2CE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/Intro2CE_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="Intro3CE">
-            <Text Text="UserData/MissionTransmission/Intro3CE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/Intro3CE_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="HoldoutStartCE">
-            <Text Text="UserData/MissionTransmission/HoldoutStartCE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/HoldoutStartCE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="HoldoutHarassCE">
-            <Text Text="UserData/MissionTransmission/HoldoutHarassCE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/HoldoutHarassCE_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="HoldoutProgress50CE">
-            <Text Text="UserData/MissionTransmission/HoldoutProgress50CE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/HoldoutProgress50CE_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="HoldoutProgress75CE">
-            <Text Text="UserData/MissionTransmission/HoldoutProgress75CE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/HoldoutProgress75CE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="HoldoutCompleteRepeat">
-            <Text Text="UserData/MissionTransmission/HoldoutCompleteRepeat_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/HoldoutCompleteRepeat_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="HoldoutCompleteFirstCE">
-            <Text Text="UserData/MissionTransmission/HoldoutCompleteFirstCE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/HoldoutCompleteFirstCE_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="HoldoutPausedCE">
-            <Text Text="UserData/MissionTransmission/HoldoutPausedCE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/HoldoutPausedCE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="TowerDetectedFirstCE">
-            <Text Text="UserData/MissionTransmission/TowerDetectedFirstCE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/TowerDetectedFirstCE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="TowerDetectedSingleCE">
-            <Text Text="UserData/MissionTransmission/TowerDetectedSingleCE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/TowerDetectedSingleCE_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="TowerDetectedMultipleCE">
-            <Text Text="UserData/MissionTransmission/TowerDetectedMultipleCE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/TowerDetectedMultipleCE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="TowerDestroyedCE">
-            <Text Text="UserData/MissionTransmission/TowerDestroyedCE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/TowerDestroyedCE_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="AboutToMoveCE">
-            <Text Text="UserData/MissionTransmission/AboutToMoveCE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/AboutToMoveCE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="AboutToMove3rdLockCE">
-            <Text Text="UserData/MissionTransmission/AboutToMove3rdLockCE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/AboutToMove3rdLockCE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="AboutToMoveFinalCE">
-            <Text Text="UserData/MissionTransmission/AboutToMoveFinalCE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/AboutToMoveFinalCE_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="EscortMovingCE">
-            <Text Text="UserData/MissionTransmission/EscortMovingCE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/EscortMovingCE_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="TakingDamageCE">
-            <Text Text="UserData/MissionTransmission/TakingDamageCE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/TakingDamageCE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="TakingDamageCriticalCE">
-            <Text Text="UserData/MissionTransmission/TakingDamageCriticalCE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/TakingDamageCriticalCE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusFirstIntro1CE">
-            <Text Text="UserData/MissionTransmission/BonusFirstIntro1CE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusFirstIntro1CE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusFirstIntro2CE">
-            <Text Text="UserData/MissionTransmission/BonusFirstIntro2CE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusFirstIntro2CE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusFirstIntro3CE">
-            <Text Text="UserData/MissionTransmission/BonusFirstIntro3CE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusFirstIntro3CE_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusSecondIntro1CE">
-            <Text Text="UserData/MissionTransmission/BonusSecondIntro1CE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusSecondIntro1CE_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusSecondIntro2CE">
-            <Text Text="UserData/MissionTransmission/BonusSecondIntro2CE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusSecondIntro2CE_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusFailTimerExpireCE">
-            <Text Text="UserData/MissionTransmission/BonusFailTimerExpireCE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusFailTimerExpireCE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusFailDestroyedCE">
-            <Text Text="UserData/MissionTransmission/BonusFailDestroyedCE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusFailDestroyedCE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusUnderAttackCE">
-            <Text Text="UserData/MissionTransmission/BonusUnderAttackCE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusUnderAttackCE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusSuccessCE">
-            <Text Text="UserData/MissionTransmission/BonusSuccessCE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusSuccessCE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusTimerWarningCE">
-            <Text Text="UserData/MissionTransmission/BonusTimerWarningCE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusTimerWarningCE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusTimerWarningFinalCE">
-            <Text Text="UserData/MissionTransmission/BonusTimerWarningFinalCE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusTimerWarningFinalCE_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusDownloadCompleteCE">
-            <Text Text="UserData/MissionTransmission/BonusDownloadCompleteCE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusDownloadCompleteCE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="FirstAttackWaveCE">
-            <Text Text="UserData/MissionTransmission/FirstAttackWaveCE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/FirstAttackWaveCE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="VictoryCE">
-            <Text Text="UserData/MissionTransmission/VictoryCE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/VictoryCE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="DefeatCE">
-            <Text Text="UserData/MissionTransmission/DefeatCE_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/DefeatCE_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="Intro1PnP">
-            <Text Text="UserData/MissionTransmission/Intro1PnP_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/Intro1PnP_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="Intro2PnP">
-            <Text Text="UserData/MissionTransmission/Intro2PnP_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/Intro2PnP_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="Intro3PnP">
-            <Text Text="UserData/MissionTransmission/Intro3PnP_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/Intro3PnP_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="FailReminderPnP">
-            <Text Text="UserData/MissionTransmission/FailReminderPnP_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/FailReminderPnP_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="FailWarningPnP">
-            <Text Text="UserData/MissionTransmission/FailWarningPnP_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/FailWarningPnP_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="FailImminentPnP">
-            <Text Text="UserData/MissionTransmission/FailImminentPnP_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/FailImminentPnP_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="PartsHalfPnP">
-            <Text Text="UserData/MissionTransmission/PartsHalfPnP_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/PartsHalfPnP_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="PartsMostPnP">
-            <Text Text="UserData/MissionTransmission/PartsMostPnP_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/PartsMostPnP_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="PartsAllPnP">
-            <Text Text="UserData/MissionTransmission/PartsAllPnP_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/PartsAllPnP_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="PartsStartPnP">
-            <Text Text="UserData/MissionTransmission/PartsStartPnP_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/PartsStartPnP_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="AngelPreparePnP">
-            <Text Text="UserData/MissionTransmission/AngelPreparePnP_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/AngelPreparePnP_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="AngelMovePnP">
-            <Text Text="UserData/MissionTransmission/AngelMovePnP_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/AngelMovePnP_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="AngelBombStartPnP">
-            <Text Text="UserData/MissionTransmission/AngelBombStartPnP_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/AngelBombStartPnP_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="AngelBombEndPnP">
-            <Text Text="UserData/MissionTransmission/AngelBombEndPnP_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/AngelBombEndPnP_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="AngelFightStartPnP">
-            <Text Text="UserData/MissionTransmission/AngelFightStartPnP_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/AngelFightStartPnP_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="AngelFightLosePnP">
-            <Text Text="UserData/MissionTransmission/AngelFightLosePnP_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/AngelFightLosePnP_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BossDefeatAngelPnP">
-            <Text Text="UserData/MissionTransmission/BossDefeatAngelPnP_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BossDefeatAngelPnP_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BossDefeatNoAngelPnP">
-            <Text Text="UserData/MissionTransmission/BossDefeatNoAngelPnP_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BossDefeatNoAngelPnP_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="HybridReleasePnP">
-            <Text Text="UserData/MissionTransmission/HybridReleasePnP_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/HybridReleasePnP_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="HybridTauntPnP">
-            <Text Text="UserData/MissionTransmission/HybridTauntPnP_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/HybridTauntPnP_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="HybridDeathPnP">
-            <Text Text="UserData/MissionTransmission/HybridDeathPnP_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/HybridDeathPnP_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusIntroFirstPnP">
-            <Text Text="UserData/MissionTransmission/BonusIntroFirstPnP_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusIntroFirstPnP_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusIntroSecondPnP">
-            <Text Text="UserData/MissionTransmission/BonusIntroSecondPnP_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusIntroSecondPnP_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusIntroThirdPnP">
-            <Text Text="UserData/MissionTransmission/BonusIntroThirdPnP_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusIntroThirdPnP_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusSpawnPnP">
-            <Text Text="UserData/MissionTransmission/BonusSpawnPnP_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusSpawnPnP_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusSpawnSecondPnP">
-            <Text Text="UserData/MissionTransmission/BonusSpawnSecondPnP_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusSpawnSecondPnP_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusDestroyedPnP">
-            <Text Text="UserData/MissionTransmission/BonusDestroyedPnP_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusDestroyedPnP_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusFailWarningPnP">
-            <Text Text="UserData/MissionTransmission/BonusFailWarningPnP_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusFailWarningPnP_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusFailPnP">
-            <Text Text="UserData/MissionTransmission/BonusFailPnP_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusFailPnP_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusCompletePnP">
-            <Text Text="UserData/MissionTransmission/BonusCompletePnP_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusCompletePnP_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="DefeatPnP">
-            <Text Text="UserData/MissionTransmission/DefeatPnP_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/DefeatPnP_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-        <Instances Id="VictoryPnP">
-            <Text Text="UserData/MissionTransmission/VictoryPnP_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/VictoryPnP_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusChatter01PnP">
-            <Text Text="UserData/MissionTransmission/BonusChatter01PnP_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusChatter01PnP_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-        </Instances>
-        <Instances Id="BonusChatter02PnP">
-            <Text Text="UserData/MissionTransmission/BonusChatter02PnP_Suffix">
-                <Field Id="Suffix"/>
-            </Text>
-            <Text Text="UserData/MissionTransmission/BonusChatter02PnP_Name">
-                <Field Id="Name"/>
-            </Text>
-        </Instances>
-    </CUser>
     <CUser id="MutatorChallenges">
         <Fields>
             <Id value="Mutators"/>
@@ -14524,6 +11060,684 @@
             <Int Int="10">
                 <Field Id="ListOrder"/>
             </Int>
+        </Instances>
+    </CUser>
+
+    <CUser id="MissionObjective">
+        <Fields Id="Progress" Type="Int" GameLinkType="Abil">
+            <Flags index="Modifiable" value="1"/>
+        </Fields>
+        <Fields Id="Complete" Type="Int" GameLinkType="Abil">
+            <Flags index="Modifiable" value="1"/>
+            <Flags index="ConvState" value="1"/>
+        </Fields>
+        <Fields Id="Available" Type="Int" GameLinkType="Abil">
+            <Flags index="Modifiable" value="1"/>
+            <Flags index="ConvState" value="1"/>
+        </Fields>
+        <Fields Id="RewardText" Type="Text"/>
+        <Fields Id="FormatText" Type="Text"/>
+        <Fields Id="XPMultiplier" Type="Fixed"/>
+        <Fields Id="Required Count" Type="Int">
+            <Flags index="Modifiable" value="1"/>
+        </Fields>
+        <Instances Id="[Default]">
+            <Fixed Fixed="1">
+                <Field Id="XPMultiplier"/>
+            </Fixed>
+            <Int Int="-1">
+                <Field Id="Required Count"/>
+            </Int>
+            <Text Text="UserData/MissionObjective/[Default]_FormatText">
+                <Field Id="FormatText"/>
+            </Text>
+        </Instances>
+        <!--        <Instances Id="AC_SkyGuard_Primary02">-->
+        <!--            <Text Text="UserData/MissionObjective/AC_SkyGuard_Primary02_FormatText">-->
+        <!--                <Field Id="FormatText"/>-->
+        <!--            </Text>-->
+        <!--        </Instances>-->
+        <!--        <Instances Id="AC_SkyguardHoldout_Primary01">-->
+        <!--            <Text Text="UserData/MissionObjective/AC_SkyguardHoldout_Primary01_FormatText">-->
+        <!--                <Field Id="FormatText"/>-->
+        <!--            </Text>-->
+        <!--        </Instances>-->
+        <!--        <Instances Id="AC_SkyguardHoldout_Primary02">-->
+        <!--            <Text Text="UserData/MissionObjective/AC_SkyguardHoldout_Primary02_FormatText">-->
+        <!--                <Field Id="FormatText"/>-->
+        <!--            </Text>-->
+        <!--        </Instances>-->
+        <!--        <Instances Id="AC_SkyguardHoldout_Primary03">-->
+        <!--            <Text Text="UserData/MissionObjective/AC_SkyguardHoldout_Primary03_FormatText">-->
+        <!--                <Field Id="FormatText"/>-->
+        <!--            </Text>-->
+        <!--        </Instances>-->
+        <!--        <Instances Id="AC_SkyguardHoldout_Primary04">-->
+        <!--            <Text Text="UserData/MissionObjective/AC_SkyguardHoldout_Primary04_FormatText">-->
+        <!--                <Field Id="FormatText"/>-->
+        <!--            </Text>-->
+        <!--        </Instances>-->
+    </CUser>
+    <CUser id="MissionTransmission">
+        <Fields Id="PlayingNow" Type="Int">
+            <Flags index="Modifiable" value="1"/>
+            <Flags index="ConvState" value="1"/>
+        </Fields>
+        <Fields>
+            <Id value="Name"/>
+            <Type value="Text"/>
+            <EditorColumn value="1"/>
+            <EditorText value="Name"/>
+        </Fields>
+        <Fields>
+            <Id value="Conversation"/>
+            <Type value="GameLink"/>
+            <GameLinkType value="Conversation"/>
+            <EditorColumn value="3"/>
+        </Fields>
+        <Fields>
+            <Id value="Suffix"/>
+            <Type value="Text"/>
+            <EditorColumn value="2"/>
+            <EditorText value="Suffix"/>
+        </Fields>
+        <Fields Id="ResponseChance" Type="Int" EditorColumn="4"/>
+        <Instances Id="[Default]">
+            <GameLink GameLink="acObj">
+                <Field Id="Conversation"/>
+            </GameLink>
+            <Int Int="100">
+                <Field Id="ResponseChance"/>
+            </Int>
+        </Instances>
+        <Instances Id="PrimaryObjectiveRevealed">
+            <Text Text="UserData/MissionTransmission/PrimaryObjectiveRevealed_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="PrimaryObjectiveFinalStage">
+            <Text Text="UserData/MissionTransmission/PrimaryObjectiveFinalStage_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="PrimaryObjectiveDestroyed">
+            <Text Text="UserData/MissionTransmission/PrimaryObjectiveDestroyed_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="ForcesEngagedDestroy">
+            <GameLink GameLink="acResponses">
+                <Field Id="Conversation"/>
+            </GameLink>
+            <Text Text="UserData/MissionTransmission/ForcesEngagedDestroy_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="DestroyedReminder">
+            <Text Text="UserData/MissionTransmission/DestroyedReminder_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="ReverseEscortReady">
+            <Text Text="UserData/MissionTransmission/ReverseEscortReady_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="ReverseEscortEscaping">
+            <Text Text="UserData/MissionTransmission/ReverseEscortEscaping_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="ReverseEscortDestroyed">
+            <Text Text="UserData/MissionTransmission/ReverseEscortDestroyed_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="ForcesEngagedEscape">
+            <GameLink GameLink="acResponses">
+                <Field Id="Conversation"/>
+            </GameLink>
+            <Text Text="UserData/MissionTransmission/ForcesEngagedEscape_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="ReverseEscortReminder">
+            <Text Text="UserData/MissionTransmission/ReverseEscortReminder_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="PrimaryObjectiveDefendReady">
+            <Text Text="UserData/MissionTransmission/PrimaryObjectiveDefendReady_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="MainObjectiveDefendDamaged">
+            <Text Text="UserData/MissionTransmission/MainObjectiveDefendDamaged_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="MainObjectiveDefendCritical">
+            <Text Text="UserData/MissionTransmission/MainObjectiveDefendCritical_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="DefendSucces">
+            <Text Text="UserData/MissionTransmission/DefendSucces_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="ForcesEngagedDefend">
+            <GameLink GameLink="acResponses">
+                <Field Id="Conversation"/>
+            </GameLink>
+            <Text Text="UserData/MissionTransmission/ForcesEngagedDefend_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="DefendReminder">
+            <Text Text="UserData/MissionTransmission/DefendReminder_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="CaptureReady">
+            <Text Text="UserData/MissionTransmission/CaptureReady_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="CaptureEnemyCapturing">
+            <Text Text="UserData/MissionTransmission/CaptureEnemyCapturing_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="CaptureStand">
+            <Text Text="UserData/MissionTransmission/CaptureStand_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="CaptureNeedAlly">
+            <Text Text="UserData/MissionTransmission/CaptureNeedAlly_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="CaptureAllyWaiting">
+            <Text Text="UserData/MissionTransmission/CaptureAllyWaiting_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="CaptureControlLost">
+            <Text Text="UserData/MissionTransmission/CaptureControlLost_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="ControlSuccessful">
+            <Text Text="UserData/MissionTransmission/ControlSuccessful_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="CaptureContested">
+            <Text Text="UserData/MissionTransmission/CaptureContested_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="ForcesEngagedControl">
+            <GameLink GameLink="acResponses">
+                <Field Id="Conversation"/>
+            </GameLink>
+            <Text Text="UserData/MissionTransmission/ForcesEngagedControl_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="CaptureReminder">
+            <Text Text="UserData/MissionTransmission/CaptureReminder_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="CaptureObjectReady">
+            <Text Text="UserData/MissionTransmission/CaptureObjectReady_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="CaptureObjectEnemyControl">
+            <Text Text="UserData/MissionTransmission/CaptureObjectEnemyControl_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="CaptureObjectAlliedControl">
+            <Text Text="UserData/MissionTransmission/CaptureObjectAlliedControl_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="CaptureObjectLost">
+            <Text Text="UserData/MissionTransmission/CaptureObjectLost_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="CaptureObjectComplete">
+            <Text Text="UserData/MissionTransmission/CaptureObjectComplete_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="ForcesEngagedCaptureObject">
+            <GameLink GameLink="acResponses">
+                <Field Id="Conversation"/>
+            </GameLink>
+            <Text Text="UserData/MissionTransmission/ForcesEngagedCaptureObject_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="CaptureObjectReminder">
+            <Text Text="UserData/MissionTransmission/CaptureObjectReminder_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="TransportReady">
+            <Text Text="UserData/MissionTransmission/TransportReady_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="TransportUnderAttack">
+            <Text Text="UserData/MissionTransmission/TransportUnderAttack_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="TransportLost">
+            <Text Text="UserData/MissionTransmission/TransportLost_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="TransportReclaim">
+            <Text Text="UserData/MissionTransmission/TransportReclaim_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="TransportAlmostThere">
+            <Text Text="UserData/MissionTransmission/TransportAlmostThere_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="TransportSuccess">
+            <Text Text="UserData/MissionTransmission/TransportSuccess_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="ForcesEngagedTransport">
+            <GameLink GameLink="acResponses">
+                <Field Id="Conversation"/>
+            </GameLink>
+            <Text Text="UserData/MissionTransmission/ForcesEngagedTransport_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="TransportReminder">
+            <Text Text="UserData/MissionTransmission/TransportReminder_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="EscortReady">
+            <Text Text="UserData/MissionTransmission/EscortReady_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="EscortMoving">
+            <Text Text="UserData/MissionTransmission/EscortMoving_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="EscortStopped">
+            <Text Text="UserData/MissionTransmission/EscortStopped_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="MainObjectiveEscortAlmostThere">
+            <Text Text="UserData/MissionTransmission/MainObjectiveEscortAlmostThere_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="EscortUnderAttack">
+            <Text Text="UserData/MissionTransmission/EscortUnderAttack_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="EscortLowHealth">
+            <Text Text="UserData/MissionTransmission/EscortLowHealth_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="EscortSuccessful">
+            <Text Text="UserData/MissionTransmission/EscortSuccessful_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="ForcesEngagedEscort">
+            <GameLink GameLink="acResponses">
+                <Field Id="Conversation"/>
+            </GameLink>
+            <Text Text="UserData/MissionTransmission/ForcesEngagedEscort_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="EscortReminder">
+            <Text Text="UserData/MissionTransmission/EscortReminder_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="PrimaryObjectiveHoldout">
+            <Text Text="UserData/MissionTransmission/PrimaryObjectiveHoldout_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="PrimaryObjectiveAlmostDone">
+            <Text Text="UserData/MissionTransmission/PrimaryObjectiveAlmostDone_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="HoldoutReminder">
+            <Text Text="UserData/MissionTransmission/HoldoutReminder_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="PrimaryObjectiveUpdated">
+            <Text Text="UserData/MissionTransmission/PrimaryObjectiveUpdated_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="MainObjectiveSingle">
+            <Text Text="UserData/MissionTransmission/MainObjectiveSingle_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="MainObjectiveMultiple">
+            <Text Text="UserData/MissionTransmission/MainObjectiveMultiple_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="PrimaryObjectiveVictory">
+            <Text Text="UserData/MissionTransmission/PrimaryObjectiveVictory_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="BonusObjectiveDestroy">
+            <Text Text="UserData/MissionTransmission/BonusObjectiveDestroy_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="BonusObjectiveReverseEscort">
+            <Text Text="UserData/MissionTransmission/BonusObjectiveReverseEscort_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="BonusObjectiveEscaping">
+            <Text Text="UserData/MissionTransmission/BonusObjectiveEscaping_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="BonusObjectiveDefend">
+            <Text Text="UserData/MissionTransmission/BonusObjectiveDefend_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="BonusObjectiveDefendDamaged">
+            <Text Text="UserData/MissionTransmission/BonusObjectiveDefendDamaged_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="BonusObjectiveDefendCritical">
+            <Text Text="UserData/MissionTransmission/BonusObjectiveDefendCritical_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="BonusObjectiveControl">
+            <Text Text="UserData/MissionTransmission/BonusObjectiveControl_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="BonusObjectiveControlUnderAttack">
+            <Text Text="UserData/MissionTransmission/BonusObjectiveControlUnderAttack_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="BonusObjectiveControlLost">
+            <Text Text="UserData/MissionTransmission/BonusObjectiveControlLost_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="BonusObjectiveControlContested">
+            <Text Text="UserData/MissionTransmission/BonusObjectiveControlContested_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="BonusObjectiveCapture">
+            <Text Text="UserData/MissionTransmission/BonusObjectiveCapture_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="BonusObjectiveCaptureEnemy">
+            <Text Text="UserData/MissionTransmission/BonusObjectiveCaptureEnemy_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="BonusObjectiveCaptureAlly">
+            <Text Text="UserData/MissionTransmission/BonusObjectiveCaptureAlly_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="BonusObjectiveTransport">
+            <Text Text="UserData/MissionTransmission/BonusObjectiveTransport_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="BonusObjectiveTransportAttack">
+            <Text Text="UserData/MissionTransmission/BonusObjectiveTransportAttack_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="BonusObjectiveTransportLost">
+            <Text Text="UserData/MissionTransmission/BonusObjectiveTransportLost_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="BonusObjectiveTransportReclaim">
+            <Text Text="UserData/MissionTransmission/BonusObjectiveTransportReclaim_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="BonusObjectiveTransportNear">
+            <Text Text="UserData/MissionTransmission/BonusObjectiveTransportNear_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="BonusObjectiveTug">
+            <Text Text="UserData/MissionTransmission/BonusObjectiveTug_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="BonusObjectiveTugWaiting">
+            <Text Text="UserData/MissionTransmission/BonusObjectiveTugWaiting_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="BonusObjectiveTugFalling">
+            <Text Text="UserData/MissionTransmission/BonusObjectiveTugFalling_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="BonusObjectiveTugNearComplete">
+            <Text Text="UserData/MissionTransmission/BonusObjectiveTugNearComplete_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="BonusObjectiveTugNearLost">
+            <Text Text="UserData/MissionTransmission/BonusObjectiveTugNearLost_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="BonusObjectiveEscort">
+            <Text Text="UserData/MissionTransmission/BonusObjectiveEscort_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="BonusObjectiveEscortMoving">
+            <Text Text="UserData/MissionTransmission/BonusObjectiveEscortMoving_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="BonusObjectiveEscortStop">
+            <Text Text="UserData/MissionTransmission/BonusObjectiveEscortStop_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="BonusObjectiveEscortNear">
+            <Text Text="UserData/MissionTransmission/BonusObjectiveEscortNear_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="BonusObjectiveEscortDamaged">
+            <Text Text="UserData/MissionTransmission/BonusObjectiveEscortDamaged_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="BonusObjectiveEscortCritical">
+            <Text Text="UserData/MissionTransmission/BonusObjectiveEscortCritical_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="BonusObjectiveHoldout">
+            <Text Text="UserData/MissionTransmission/BonusObjectiveHoldout_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="BonusObjectiveHoldoutNear">
+            <Text Text="UserData/MissionTransmission/BonusObjectiveHoldoutNear_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="BonusObjectiveAdditional">
+            <Text Text="UserData/MissionTransmission/BonusObjectiveAdditional_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="BonusObjectiveExpiring">
+            <Text Text="UserData/MissionTransmission/BonusObjectiveExpiring_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="BonusObjectiveLost">
+            <Text Text="UserData/MissionTransmission/BonusObjectiveLost_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="BonusObjectiveUpdated">
+            <Text Text="UserData/MissionTransmission/BonusObjectiveUpdated_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="BonusObjectiveSuccess">
+            <Text Text="UserData/MissionTransmission/BonusObjectiveSuccess_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="AttackWaveGather">
+            <GameLink GameLink="acAttackWave">
+                <Field Id="Conversation"/>
+            </GameLink>
+            <Text Text="UserData/MissionTransmission/AttackWaveGather_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="AttackWave">
+            <GameLink GameLink="acAttackWave">
+                <Field Id="Conversation"/>
+            </GameLink>
+            <Text Text="UserData/MissionTransmission/AttackWave_Name">
+                <Field Id="Name"/>
+            </Text>
+            <Text Text="UserData/MissionTransmission/AttackWave_Suffix">
+                <Field Id="Suffix"/>
+            </Text>
+        </Instances>
+        <Instances Id="BaseUnderAttackCombined">
+            <GameLink GameLink="acAttackWave">
+                <Field Id="Conversation"/>
+            </GameLink>
+            <Text Text="UserData/MissionTransmission/BaseUnderAttackCombined_Name">
+                <Field Id="Name"/>
+            </Text>
+            <Text Text="UserData/MissionTransmission/BaseUnderAttackCombined_Suffix">
+                <Field Id="Suffix"/>
+            </Text>
+        </Instances>
+        <Instances Id="BaseUnderAttackSeparate">
+            <GameLink GameLink="acAttackWave">
+                <Field Id="Conversation"/>
+            </GameLink>
+            <Text Text="UserData/MissionTransmission/BaseUnderAttackSeparate_Name">
+                <Field Id="Name"/>
+            </Text>
+            <Text Text="UserData/MissionTransmission/BaseUnderAttackSeparate_Suffix">
+                <Field Id="Suffix"/>
+            </Text>
+        </Instances>
+        <Instances Id="HybridDetected">
+            <Text Text="UserData/MissionTransmission/HybridDetected_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="VoidThrasherAppears">
+            <Int Int="100">
+                <Field Id="ResponseChance"/>
+            </Int>
+            <Text Text="UserData/MissionTransmission/VoidThrasherAppears_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="VoidThrasherMultiple">
+            <Text Text="UserData/MissionTransmission/VoidThrasherMultiple_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="VoidThrasherAttacking">
+            <Text Text="UserData/MissionTransmission/VoidThrasherAttacking_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="VoidThrasherDeath">
+            <Text Text="UserData/MissionTransmission/VoidThrasherDeath_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="EnemyWarningWarpIn">
+            <Text Text="UserData/MissionTransmission/EnemyWarningWarpIn_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="EnemyWarningDropPods">
+            <Text Text="UserData/MissionTransmission/EnemyWarningDropPods_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="Enemy Warning - Nydus Worm">
+            <Text Text="UserData/MissionTransmission/Enemy Warning - Nydus Worm_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="Victory">
+            <GameLink GameLink="acVictory">
+                <Field Id="Conversation"/>
+            </GameLink>
+            <Text Text="UserData/MissionTransmission/Victory_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="CloakedUnitsSpotted">
+            <GameLink GameLink="acAttackWave">
+                <Field Id="Conversation"/>
+            </GameLink>
+            <Text Text="UserData/MissionTransmission/CloakedUnitsSpotted_Name">
+                <Field Id="Name"/>
+            </Text>
+            <Text Text="UserData/MissionTransmission/CloakedUnitsSpotted_Suffix">
+                <Field Id="Suffix"/>
+            </Text>
         </Instances>
     </CUser>
     <CUser id="X_GeneralTips">

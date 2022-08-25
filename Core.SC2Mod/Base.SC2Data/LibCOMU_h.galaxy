@@ -162,7 +162,6 @@ void libCOMU_gf_CT_ApplyBoomBotPingCleanup (unit lp_killedUnit);
 void libCOMU_gf_CT_ApplyConcussiveAttacks (unit lp_damagedUnit, unit lp_damagingUnit);
 void libCOMU_gf_MM_ApplyConcussiveAttacks (unit lp_damagedUnit, unit lp_damagingUnit);
 string libCOMU_gf_CT_RandomUnusedCycleMutator ();
-bool libCOMU_gf_UnitMoverExists (string lp_unitType, string lp_mover);
 void libCOMU_gf_MM_DM_CopyBeneficialBehaviors (unit lp_pBehUnit, unit lp_pTargetUnit);
 fixed libCOMU_gf_MM_DM_UnitCost (unit lp_pUnit);
 unitgroup libCOMU_gf_MM_DM_CreateWave (int lp_pPlayer, point lp_pPoint, fixed lp_pCost, string lp_transportType);

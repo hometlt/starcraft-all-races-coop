@@ -8,19 +8,5 @@
     <Catalog path="UserData/Skins.xml"/>
     <Catalog path="UserData/Tech.xml"/>
     <Catalog path="UserData/Mastery.xml"/>
-    <Catalog path="MissionsData/01-ChainOfAscension.xml"/>
-    <Catalog path="MissionsData/02-CradleOfDeath.xml"/>
-    <Catalog path="MissionsData/03-DeadOfNight.xml"/>
-    <Catalog path="MissionsData/04-Malwarfare.xml"/>
-    <Catalog path="MissionsData/05-MinerEvacuation.xml"/>
-    <Catalog path="MissionsData/06-MistOpportunities.xml"/>
-    <Catalog path="MissionsData/07-OblivionExpress.xml"/>
-    <Catalog path="MissionsData/08-PartAndParcel.xml"/>
-    <Catalog path="MissionsData/09-RiftsToKorhal.xml"/>
-    <Catalog path="MissionsData/10-ScytheOfAmon.xml"/>
-    <Catalog path="MissionsData/11-TempleOfThePast.xml"/>
-    <Catalog path="MissionsData/12-UlnarLocks.xml"/>
-    <Catalog path="MissionsData/13-VermillionProblem.xml"/>
-    <Catalog path="MissionsData/14-VoidLaunch.xml"/>
-    <Catalog path="MissionsData/15-VoidThrashing.xml"/>
+    <Catalog path="GameData/11-12-TempleOfThePast-UlnarLocks.xml"/>
 </Includes>
