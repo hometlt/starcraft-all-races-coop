@@ -7603,5 +7603,235 @@
   <Effect value="CARRAirLaunch"/>
   <Period value="1.2"/>
 </CWeaponLegacy>
+<CWeaponLegacy id="RiotShield">
+  <Options index="Melee" value="1"/>
+  <Icon value="Assets\Textures\btn-ability-UPL-ShieldDefense.dds"/>
+  <DisplayEffect value="RiotShieldDamage"/>
+  <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+  <MinScanRange value="1"/>
+  <Range value="0.5"/>
+  <Period value="1"/>
+  <DamagePoint value="0.3"/>
+  <Effect value="RiotShieldDamage"/>
+  <EditorCategories value="Race:UPL"/>
+</CWeaponLegacy>
+<CWeaponLegacy id="UPLPoliceOfficerShield">
+  <EditorCategories value="Race:UPL"/>
+  <Options index="Melee" value="1"/>
+  <Icon value="Assets\Textures\btn-ability-UPL-ShieldDefense.dds"/>
+  <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+  <Range value="0.5"/>
+  <Period value="0.83"/>
+  <DamagePoint value="0.3"/>
+  <DisplayEffect value="UPLPoliceOfficerShieldDamage"/>
+  <Effect value="UPLPoliceOfficerShieldDamage"/>
+</CWeaponLegacy>
+<CWeaponLegacy id="UPLPoliceOfficerPistol">
+  <DisplayEffect value="UPLPoliceOfficerPistolDamage"/>
+  <Range value="6"/>
+  <Period value="1.1"/>
+  <Effect value="UPLPoliceOfficerPistolDamage"/>
+  <Icon value="Assets\Textures\btn-upgrades-upl-infantryweapons-lvl0.dds"/>
+  <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+  <DamagePoint value="0"/>
+  <EditorCategories value="Race:UPL"/>
+</CWeaponLegacy>
+<CWeaponLegacy id="UPLRiotOfficerShotgun">
+  <EditorCategories value="Race:UPL"/>
+  <Icon value="Assets\Textures\btn-upgrades-upl-infantryweapons-lvl0.dds"/>
+  <DisplayEffect value="UPLRiotOfficerShotgunDamage"/>
+  <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+  <Range value="2"/>
+  <Period value="1.23"/>
+  <DamagePoint value="0.05"/>
+  <Backswing value="0.9"/>
+  <Effect value="UPLRiotOfficerShotgunSet"/>
+  <MinScanRange value="4"/>
+</CWeaponLegacy>
+<CWeaponLegacy id="UPLRiotOfficerRifle">
+  <EditorCategories value="Race:UPL"/>
+  <Icon value="Assets\Textures\btn-upgrades-upl-infantryweapons-lvl0.dds"/>
+  <DisplayEffect value="UPLRiotOfficerRifleDamage"/>
+  <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+  <Range value="6"/>
+  <Period value="1"/>
+  <DamagePoint value="0.05"/>
+  <Backswing value="0.75"/>
+  <Effect value="UPLRiotOfficerRiflePersistent"/>
+</CWeaponLegacy>
+<CWeaponLegacy id="UPLPoliceOfficerRifle">
+  <EditorCategories value="Race:UPL"/>
+  <Icon value="Assets\Textures\btn-upgrades-upl-infantryweapons-lvl0.dds"/>
+  <DisplayEffect value="UPLPoliceOfficerRifleDamage"/>
+  <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+  <Range value="6"/>
+  <Period value="1"/>
+  <DamagePoint value="0.05"/>
+  <Backswing value="0.75"/>
+  <Effect value="UPLPoliceOfficerRiflePersistent"/>
+</CWeaponLegacy>
+<CWeaponLegacy id="UPLPoliceOfficerShotgun">
+  <EditorCategories value="Race:UPL"/>
+  <Icon value="Assets\Textures\btn-upgrades-upl-infantryweapons-lvl0.dds"/>
+  <DisplayEffect value="UPLPoliceOfficerShotgunDamage"/>
+  <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+  <Range value="2"/>
+  <Period value="1.23"/>
+  <DamagePoint value="0.05"/>
+  <Backswing value="0.9"/>
+  <Effect value="UPLPoliceOfficerShotgunSet"/>
+  <MinScanRange value="4"/>
+</CWeaponLegacy>
+<CWeaponLegacy id="UPLPoliceOfficer">
+  <EditorCategories value="Race:UPL"/>
+  <Icon value="Assets\Textures\btn-upgrades-upl-infantryweapons-lvl0.dds"/>
+  <DisplayEffect value="UPLPoliceOfficerPistolDamage"/>
+  <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+  <Range value="6"/>
+  <Period value="0.8608"/>
+  <DamagePoint value="0.05"/>
+  <Backswing value="0.75"/>
+  <Effect value="InfantryRifleDamage"/>
+</CWeaponLegacy>
+<CWeaponLegacy id="WilliamGraves">
+  <Icon value="Assets\Textures\btn-upgrades-upl-infantryweapons-lvl0.dds"/>
+  <DisplayEffect value="WilliamGravesDamage"/>
+  <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+  <Range value="6"/>
+  <Period value="1.4"/>
+  <DamagePoint value="0.05"/>
+  <Backswing value="0.75"/>
+  <Effect value="WilliamGravesDamage"/>
+  <EditorCategories value="Race:UPL"/>
+</CWeaponLegacy>
+<CWeaponLegacy id="RichardGideon">
+  <Options index="DisplayCooldown" value="1"/>
+  <Icon value="Assets\Textures\btn-upgrades-upl-infantryweapons-lvl0.dds"/>
+  <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+  <Range value="14"/>
+  <Period value="5"/>
+  <Effect value="RichardGideonDelay"/>
+  <AttackType value="Normal"/>
+  <LegacyOptions index="CanRetargetWhileChanneling" value="1"/>
+  <LegacyOptions index="KeepChanneling" value="1"/>
+  <RangeSlop value="5"/>
+  <EditorCategories value="Race:UPL"/>
+</CWeaponLegacy>
+<CWeaponLegacy id="UPLSpecOpsAttack">
+  <EditorCategories value="Race:UPL"/>
+  <Icon value="Assets\Textures\btn-upgrades-upl-infantryweapons-lvl0.dds"/>
+  <DisplayEffect value="UPLSpecOpsAttackDamage"/>
+  <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+  <Range value="6"/>
+  <Arc value="19.7973"/>
+  <Period value="1"/>
+  <DamagePoint value="0.08"/>
+  <Effect value="UPLSpecOpsAttackPersistent"/>
+  <Backswing value="0.6875"/>
+</CWeaponLegacy>
+<CWeaponLegacy id="MyraDavisPistol">
+  <EditorCategories value="Race:UPL"/>
+  <DisplayEffect value="MyraDavisPistolDamage"/>
+  <Range value="6"/>
+  <Period value="1.1"/>
+  <Effect value="MyraDavisPistolDamage"/>
+  <Icon value="Assets\Textures\btn-upgrades-upl-infantryweapons-lvl0.dds"/>
+  <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+</CWeaponLegacy>
+<CWeaponLegacy id="MyraDavisRifle">
+  <EditorCategories value="Race:UPL"/>
+  <Icon value="Assets\Textures\btn-upgrades-upl-infantryweapons-lvl0.dds"/>
+  <DisplayEffect value="MyraDavisRifleDamage"/>
+  <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+  <Range value="6"/>
+  <Period value="1"/>
+  <DamagePoint value="0.05"/>
+  <Backswing value="0.75"/>
+  <Effect value="MyraDavisRiflePersistent"/>
+</CWeaponLegacy>
+<CWeaponLegacy id="MyraDavisShotgun">
+  <EditorCategories value="Race:UPL"/>
+  <Icon value="Assets\Textures\btn-upgrades-upl-infantryweapons-lvl0.dds"/>
+  <DisplayEffect value="MyraDavisShotgunDamage"/>
+  <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+  <Period value="1.23"/>
+  <DamagePoint value="0.05"/>
+  <Backswing value="0.9"/>
+  <Effect value="MyraDavisShotgunSet"/>
+  <Range value="2"/>
+  <MinScanRange value="4"/>
+</CWeaponLegacy>
+<CWeaponLegacy id="KatherineHalseyPistol">
+  <EditorCategories value="Race:UPL"/>
+  <DisplayEffect value="KatherineHalseyPistolDamage"/>
+  <Range value="6"/>
+  <Period value="1.1"/>
+  <Effect value="KatherineHalseyPistolDamage"/>
+  <Icon value="Assets\Textures\btn-upgrades-upl-infantryweapons-lvl0.dds"/>
+  <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+</CWeaponLegacy>
+<CWeaponLegacy id="AltonPetersZ1">
+  <EditorCategories value="Race:UPL"/>
+  <Icon value="Assets\Textures\btn-upgrades-upl-vehicleweapons-lvl0.dds"/>
+  <DisplayEffect value="AltonPetersZ1Damage"/>
+  <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+  <Period value="1.6"/>
+  <DamagePoint value="0.05"/>
+  <Backswing value="1.2"/>
+</CWeaponLegacy>
+<CWeaponLegacy id="AltonPeters">
+  <EditorCategories value="Race:UPL"/>
+  <DisplayEffect value="AltonPetersDamage"/>
+  <TargetFilters value="Ground,Visible;Missile,Dead,Hidden,Invulnerable"/>
+  <Range value="8"/>
+  <Arc value="29.9926"/>
+  <Period value="1.2"/>
+  <DamagePoint value="0.08"/>
+  <Effect value="AltonPetersPersistent"/>
+  <Icon value="Assets\Textures\btn-upgrades-upl-infantryweapons-lvl0.dds"/>
+  <DisplayAttackCount value="5"/>
+</CWeaponLegacy>
+<CWeaponLegacy id="TrevorRand">
+  <EditorCategories value="Race:UPL"/>
+  <Icon value="Assets\Textures\btn-upgrades-upl-infantryweapons-lvl0.dds"/>
+  <DisplayEffect value="TrevorRandDamage"/>
+  <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+  <Range value="6"/>
+  <Period value="1.1"/>
+  <DamagePoint value="0.05"/>
+  <Backswing value="0.75"/>
+  <Effect value="TrevorRandDamage"/>
+</CWeaponLegacy>
+<CWeaponLegacy id="LillyRollins">
+  <EditorCategories value="Race:UPL"/>
+  <Icon value="Assets\Textures\btn-upgrades-upl-infantryweapons-lvl0.dds"/>
+  <DisplayEffect value="LillyRollinsDamage"/>
+  <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+  <Range value="6"/>
+  <Period value="0.8608"/>
+  <DamagePoint value="0.05"/>
+  <Backswing value="0.75"/>
+  <Effect value="LillyRollinsDamage"/>
+</CWeaponLegacy>
+<CWeaponLegacy id="UPLScout">
+  <EditorCategories value="Race:UPL"/>
+  <Icon value="Assets\Textures\btn-upgrades-upl-infantryweapons-lvl0.dds"/>
+  <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+  <MinScanRange value="6"/>
+  <Period value="1.5"/>
+  <DamagePoint value="0.1"/>
+  <Backswing value="1.167"/>
+  <RandomDelayMin value="-0.063"/>
+</CWeaponLegacy>
+<CWeaponLegacy id="RileyJerico">
+  <EditorCategories value="Race:UPL"/>
+  <Icon value="Assets\Textures\btn-upgrades-upl-vehicleweapons-lvl0.dds"/>
+  <DisplayEffect value="RileyJericoDamage"/>
+  <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+  <Period value="2"/>
+  <DamagePoint value="0.05"/>
+  <Backswing value="2"/>
+  <Range value="7"/>
+</CWeaponLegacy>
 
 </Catalog>

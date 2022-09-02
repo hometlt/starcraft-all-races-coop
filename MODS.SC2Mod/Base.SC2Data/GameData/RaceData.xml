@@ -902,7 +902,6 @@
   <DefeatSound value="UI_MissionFailed"/>
   <Flags index="Selectable" value="1"/>
   <Flags index="TrialAllowed" value="1"/>
-  <Icon value="Assets\Factions\lobby-keiron.dds"/>
 </CRace>
 <CRaceBannerPack id="ued">
   <Default value="1"/>
@@ -1067,7 +1066,7 @@
   <Icon value="Assets\Factions\lobby-dragons.dds"/>
 </CRace>
 <CRace id="UPL">
-  <AttributeId value="Terr"/>
+  <AttributeId value="UPL"/>
   <DefaultConsoleSkin value="ConsoleTerran_Default"/>
   <StartingUnitArray Unit="UPLHeadquarters">
     <Flags index="ResourceSetRally" value="1"/>

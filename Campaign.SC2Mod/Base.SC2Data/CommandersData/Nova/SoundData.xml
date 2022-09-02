@@ -1,5 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+
+
+    <CSound id="NovaCommander_Trade_MineralsGiven" parent="ACVO_Pings">
+        <AssetArray TemplateParam="NovaCommander_Trade_MineralsGiven00"/>
+        <AssetArray TemplateParam="NovaCommander_Trade_MineralsGiven01"/>
+        <AssetArray TemplateParam="NovaCommander_Trade_MineralsGiven02"/>
+        <EditorCategories value="Race:Terran"/>
+    </CSound>
+    <CSound id="NovaCommander_Trade_MineralsNeeded" parent="ACVO_Pings">
+        <AssetArray TemplateParam="NovaCommander_Trade_MineralsNeeded00"/>
+        <AssetArray TemplateParam="NovaCommander_Trade_MineralsNeeded01"/>
+        <AssetArray TemplateParam="NovaCommander_Trade_MineralsNeeded02"/>
+        <EditorCategories value="Race:Terran"/>
+    </CSound>
+    <CSound id="NovaCommander_Trade_MineralsReceived" parent="ACVO_Pings">
+        <AssetArray TemplateParam="NovaCommander_Trade_MineralsReceived00"/>
+        <AssetArray TemplateParam="NovaCommander_Trade_MineralsReceived01"/>
+        <AssetArray TemplateParam="NovaCommander_Trade_MineralsReceived02"/>
+        <EditorCategories value="Race:Terran"/>
+    </CSound>
+    <CSound id="NovaCommander_Trade_ResourcesGiven" parent="ACVO_Pings">
+        <AssetArray TemplateParam="NovaCommander_Trade_ResourcesGiven00"/>
+        <AssetArray TemplateParam="NovaCommander_Trade_ResourcesGiven01"/>
+        <AssetArray TemplateParam="NovaCommander_Trade_ResourcesGiven02"/>
+        <EditorCategories value="Race:Terran"/>
+    </CSound>
+    <CSound id="NovaCommander_Trade_ResourcesNeeded" parent="ACVO_Pings">
+        <AssetArray TemplateParam="NovaCommander_Trade_ResourcesNeeded00"/>
+        <AssetArray TemplateParam="NovaCommander_Trade_ResourcesNeeded01"/>
+        <AssetArray TemplateParam="NovaCommander_Trade_ResourcesNeeded02"/>
+        <EditorCategories value="Race:Terran"/>
+    </CSound>
+    <CSound id="NovaCommander_Trade_ResourcesReceived" parent="ACVO_Pings">
+        <AssetArray TemplateParam="NovaCommander_Trade_ResourcesReceived00"/>
+        <AssetArray TemplateParam="NovaCommander_Trade_ResourcesReceived01"/>
+        <AssetArray TemplateParam="NovaCommander_Trade_ResourcesReceived02"/>
+        <EditorCategories value="Race:Terran"/>
+    </CSound>
+    <CSound id="NovaCommander_Trade_VespeneGiven" parent="ACVO_Pings">
+        <AssetArray TemplateParam="NovaCommander_Trade_VespeneGiven00"/>
+        <AssetArray TemplateParam="NovaCommander_Trade_VespeneGiven01"/>
+        <AssetArray TemplateParam="NovaCommander_Trade_VespeneGiven02"/>
+        <EditorCategories value="Race:Terran"/>
+    </CSound>
+    <CSound id="NovaCommander_Trade_VespeneNeeded" parent="ACVO_Pings">
+        <AssetArray TemplateParam="NovaCommander_Trade_VespeneNeeded00"/>
+        <AssetArray TemplateParam="NovaCommander_Trade_VespeneNeeded01"/>
+        <AssetArray TemplateParam="NovaCommander_Trade_VespeneNeeded02"/>
+        <EditorCategories value="Race:Terran"/>
+    </CSound>
+    <CSound id="NovaCommander_Trade_VespeneReceived" parent="ACVO_Pings">
+        <AssetArray TemplateParam="NovaCommander_Trade_VespeneReceived00"/>
+        <AssetArray TemplateParam="NovaCommander_Trade_VespeneReceived01"/>
+        <AssetArray TemplateParam="NovaCommander_Trade_VespeneReceived02"/>
+        <EditorCategories value="Race:Terran"/>
+    </CSound>
+
+
     <CSound default="1" id="ACVO_NovaCommanderUnit_Ack" parent="TerranAck">
         <AssetArrayTemplate>
             <File value="LocalizedData\Sounds\VO\^TemplateParam2^.ogg"/>

@@ -32,4 +32,24 @@
     <Style name="TimerStatus" template="HeaderTemplate" font="UI\Fonts\bl.ttf" height="32" vjustify="Bottom" hjustify="Left" styleflags="Shadow | HintStyleLight" textcolor="255,255,255,255" highlightcolor="255,255,0,0 - 255,0,0,0" disabledcolor="255,255,0,0 - 255,0,0,0" hotkeycolor="255,255,0,0 - 255,0,0,0" hyperlinkcolor="255,255,0,0 - 255,0,0,0" glowcolor="255,255,0,0" shadowoffset="0" outlinewidth="0"/>
     <Style name="GraphData1" template="InternationalTemplate" font="UI\Fonts\bl.ttf" height="19" vjustify="Middle" hjustify="Center" styleflags="HintStyleLight" textcolor="255,255,255,255" highlightcolor="255,255,0,0 - 255,0,0,0" disabledcolor="255,255,0,0 - 255,0,0,0" hotkeycolor="255,255,0,0 - 255,0,0,0" hyperlinkcolor="255,255,0,0 - 255,0,0,0" glowcolor="255,255,0,0" shadowoffset="2" outlinewidth="0"/>
     <Style name="GraphData2" template="InternationalTemplate" font="UI\Fonts\bl.ttf" height="17" vjustify="Middle" hjustify="Center" styleflags="HintStyleLight" textcolor="255,255,255,255" highlightcolor="255,255,0,0 - 255,0,0,0" disabledcolor="255,255,0,0 - 255,0,0,0" hotkeycolor="255,255,0,0 - 255,0,0,0" hyperlinkcolor="255,255,0,0 - 255,0,0,0" glowcolor="255,255,0,0" shadowoffset="2" outlinewidth="0"/>
+
+
+    <Style name="ObjectivePanelProgress_ProtI" template="ObjectivePanelActive" textColor="84adff" shadowoffset="1"/>
+    <Style name="ObjectivePanelProgress_ProtL" template="ObjectivePanelActive" textColor="84adff" shadowoffset="1"/>
+    <Style name="ObjectivePanelProgress_ProtN" template="ObjectivePanelActive" textColor="84adff" shadowoffset="1"/>
+    <Style name="ObjectivePanelProgress_ProtP" template="ObjectivePanelActive" textColor="84adff" shadowoffset="1"/>
+    <Style name="ObjectivePanelProgress_ProtT" template="ObjectivePanelActive" textColor="84adff" shadowoffset="1"/>
+    <Style name="ObjectivePanelProgress_TerrC" template="ObjectivePanelActive" textColor="52e787" shadowoffset="1"/>
+    <Style name="ObjectivePanelProgress_TerrD" template="ObjectivePanelActive" textColor="52e787" shadowoffset="1"/>
+    <Style name="ObjectivePanelProgress_TerrI" template="ObjectivePanelActive" textColor="52e787" shadowoffset="1"/>
+    <Style name="ObjectivePanelProgress_TerrK" template="ObjectivePanelActive" textColor="52e787" shadowoffset="1"/>
+    <Style name="ObjectivePanelProgress_TerrR" template="ObjectivePanelActive" textColor="52e787" shadowoffset="1"/>
+    <Style name="ObjectivePanelProgress_TerrM" template="ObjectivePanelActive" textColor="52e787" shadowoffset="1"/>
+    <Style name="ObjectivePanelProgress_TerrO" template="ObjectivePanelActive" textColor="52e787" shadowoffset="1"/>
+    <Style name="ObjectivePanelProgress_TerrU" template="ObjectivePanelActive" textColor="52e787" shadowoffset="1"/>
+    <Style name="ObjectivePanelProgress_ZergL" template="ObjectivePanelActive" textColor="ff7900" shadowoffset="1"/>
+    <Style name="ObjectivePanelProgress_ZergP" template="ObjectivePanelActive" textColor="ff7900" shadowoffset="1"/>
+    <Style name="ObjectivePanelProgress_ZergM" template="ObjectivePanelActive" textColor="ff7900" shadowoffset="1"/>
+    <Style name="ObjectivePanelProgress_ZergA" template="ObjectivePanelActive" textColor="ff7900" shadowoffset="1"/>
+
 </StyleFile>

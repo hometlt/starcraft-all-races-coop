@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
-    <CUser id="PlayerCommanders">
+    <CUser id="Commanders">
         <Fields>
             <Id value="Name"/>
             <Type value="Text"/>
@@ -12,12 +12,6 @@
             <Type value="GameLink"/>
             <GameLinkType value="Race"/>
             <EditorColumn value="2"/>
-        </Fields>
-        <Fields>
-            <Id value="SpawnRace"/>
-            <Type value="GameLink"/>
-            <GameLinkType value="Race"/>
-            <EditorColumn value="3"/>
         </Fields>
         <Fields>
             <Id value="AdjutantRace"/>
@@ -35,7 +29,6 @@
             <EditorColumn value="11"/>
         </Fields>
         <Fields Id="ZZ_SelectionScene" Type="String" EditorColumn="11"/>
-        <Fields Id="ZZ_GlobalCastUnit" Type="GameLink" GameLinkType="Unit"/>
         <Fields Id="InThisMission" Type="Int">
             <Flags index="Modifiable" value="1"/>
             <Flags index="ConvState" value="1"/>
@@ -44,8 +37,6 @@
             <Flags index="Modifiable" value="1"/>
             <Flags index="ConvState" value="1"/>
         </Fields>
-        <!--Fields Id="HeroUnitInitialBehavior" Type="GameLink" GameLinkType="Behavior"/>
-        <Fields Id="HeroUnitTimerBehavior" Type="GameLink" GameLinkType="Behavior"/-->
         <Fields>
             <Id value="StandardVO"/>
             <Type value="Sound"/>
@@ -53,6 +44,8 @@
             <EditorColumn value="11"/>
         </Fields>
         <Fields Id="Gender" Type="Int" EditorColumn="11"/>
+        <!--Fields Id="HeroUnitInitialBehavior" Type="GameLink" GameLinkType="Behavior"/>
+        <Fields Id="HeroUnitTimerBehavior" Type="GameLink" GameLinkType="Behavior"/-->
         <Fields>
             <Id value="ZZ_CommanderData"/>
             <Type value="GameLink"/>
@@ -60,19 +53,10 @@
             <EditorColumn value="11"/>
         </Fields>
         <Fields Id="CustomImage" Type="Image" EditorColumn="11"/>
-        <Fields Id="SpawnCreep" Type="Fixed" EditorColumn="11"/>
-        <Fields Id="StartingLarvaCount" Type="Int" EditorColumn="11"/>
-        <Fields Id="ZZ_GlobalCast2D" Type="Int"/>
-        <Fields>
-            <Id value="ZZ_DefaultVoicePack"/>
-            <Type value="GameLink"/>
-            <GameLinkType value="Reward"/>
-            <EditorColumn value="11"/>
-        </Fields>
         <Fields>
             <Id value="Prestige"/>
             <Type value="User"/>
-            <UserType value="PlayerPrestige"/>
+            <UserType value="Prestiges"/>
             <Count value="5"/>
             <EditorColumn value="11"/>
         </Fields>
@@ -98,30 +82,15 @@
         <Fields>
             <Id value="Color"/>
             <Type value="User"/>
-            <UserType value="PlayerColors"/>
+            <UserType value="Colors"/>
             <EditorColumn value="4"/>
         </Fields>
-        <Fields>
-            <Id value="Type"/>
-            <Type value="User"/>
-            <UserType value="CommanderType"/>
-            <EditorColumn value="11"/>
-        </Fields>
         <Fields Id="AlternativeCutscenemessage" Type="Text" EditorColumn="11"/>
-        <Instances Id="[Default]">
-            <User Type="CommanderType" Instance="COOP">
-                <Field Id="Type"/>
-            </User>
-        </Instances>
+        <Fields Id="Standard" Type="Int" EditorColumn="11"/>
+        <Instances Id="[Default]"/>
         <Instances Id="Raynor">
-            <GameLink GameLink="Terr">
+            <GameLink GameLink="TerrR">
                 <Field Id="Race"/>
-            </GameLink>
-            <GameLink GameLink="Terr">
-                <Field Id="SpawnRace"/>
-            </GameLink>
-            <GameLink GameLink="CoopCasterRaynor">
-                <Field Id="ZZ_GlobalCastUnit"/>
             </GameLink>
             <GameLink GameLink="Raynor">
                 <Field Id="ZZ_CommanderData"/>
@@ -180,6 +149,9 @@
             <Int Int="1">
                 <Field Id="ZZ_UniqueIndex"/>
             </Int>
+            <Int Int="1">
+                <Field Id="Standard"/>
+            </Int>
             <Model Model="RaynorMarinePortrait">
                 <Field Id="PortraitModel"/>
             </Model>
@@ -222,25 +194,25 @@
             <String String="COOP_UI_SelectRaynor">
                 <Field Id="ZZ_SelectionScene"/>
             </String>
-            <Text Text="UserData/PlayerCommanders/Raynor_Name">
+            <Text Text="UserData/Commanders/Raynor_Name">
                 <Field Id="Name"/>
             </Text>
-            <Text Text="UserData/PlayerCommanders/Raynor_Description">
+            <Text Text="UserData/Commanders/Raynor_Description">
                 <Field Id="Description"/>
             </Text>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeRaynor">
+            <User Type="Prestiges" Instance="CommanderPrestigeRaynor">
                 <Field Id="Prestige"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeRaynorBio">
+            <User Type="Prestiges" Instance="CommanderPrestigeRaynorBio">
                 <Field Id="Prestige" Index="1"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeRaynorMechAfterburners">
+            <User Type="Prestiges" Instance="CommanderPrestigeRaynorMechAfterburners">
                 <Field Id="Prestige" Index="2"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeRaynorAir">
+            <User Type="Prestiges" Instance="CommanderPrestigeRaynorAir">
                 <Field Id="Prestige" Index="3"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeRaynorHero">
+            <User Type="Prestiges" Instance="CommanderPrestigeRaynorHero">
                 <Field Id="Prestige" Index="4"/>
             </User>
             <User Type="MasteryUpgrades" Instance="RaynorMastery1">
@@ -261,19 +233,13 @@
             <User Type="MasteryUpgrades" Instance="RaynorMastery6">
                 <Field Id="Mastery" Index="5"/>
             </User>
-            <User Type="PlayerColors" Instance="Blue">
+            <User Type="Colors" Instance="Blue">
                 <Field Id="Color"/>
             </User>
         </Instances>
         <Instances Id="Swann">
-            <GameLink GameLink="Terr">
+            <GameLink GameLink="TerrK">
                 <Field Id="Race"/>
-            </GameLink>
-            <GameLink GameLink="Terr">
-                <Field Id="SpawnRace"/>
-            </GameLink>
-            <GameLink GameLink="CoopCasterSwann">
-                <Field Id="ZZ_GlobalCastUnit"/>
             </GameLink>
             <GameLink GameLink="Swann">
                 <Field Id="ZZ_CommanderData"/>
@@ -332,6 +298,9 @@
             <Int Int="2">
                 <Field Id="ZZ_UniqueIndex"/>
             </Int>
+            <Int Int="1">
+                <Field Id="Standard"/>
+            </Int>
             <Model Model="SwannPortrait">
                 <Field Id="PortraitModel"/>
             </Model>
@@ -374,22 +343,22 @@
             <String String="COOP_UI_SelectSwann">
                 <Field Id="ZZ_SelectionScene"/>
             </String>
-            <Text Text="UserData/PlayerCommanders/Swann_Name">
+            <Text Text="UserData/Commanders/Swann_Name">
                 <Field Id="Name"/>
             </Text>
-            <Text Text="UserData/PlayerCommanders/Swann_Description">
+            <Text Text="UserData/Commanders/Swann_Description">
                 <Field Id="Description"/>
             </Text>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeSwann">
+            <User Type="Prestiges" Instance="CommanderPrestigeSwann">
                 <Field Id="Prestige"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeSwannDrill">
+            <User Type="Prestiges" Instance="CommanderPrestigeSwannDrill">
                 <Field Id="Prestige" Index="1"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeSwannTurrets">
+            <User Type="Prestiges" Instance="CommanderPrestigeSwannTurrets">
                 <Field Id="Prestige" Index="2"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeSwannHercules">
+            <User Type="Prestiges" Instance="CommanderPrestigeSwannHercules">
                 <Field Id="Prestige" Index="3"/>
             </User>
             <User Type="MasteryUpgrades" Instance="SwannMastery1">
@@ -410,19 +379,13 @@
             <User Type="MasteryUpgrades" Instance="SwannMastery6">
                 <Field Id="Mastery" Index="5"/>
             </User>
-            <User Type="PlayerColors" Instance="Orange">
+            <User Type="Colors" Instance="Orange">
                 <Field Id="Color"/>
             </User>
         </Instances>
         <Instances Id="Kerrigan">
-            <Fixed Fixed="11">
-                <Field Id="SpawnCreep"/>
-            </Fixed>
-            <GameLink GameLink="Zerg">
+            <GameLink GameLink="ZergK">
                 <Field Id="Race"/>
-            </GameLink>
-            <GameLink GameLink="Zerg">
-                <Field Id="SpawnRace"/>
             </GameLink>
             <GameLink GameLink="KerriganPrimalPortrait3D">
                 <Field Id="PortraitActor"/>
@@ -487,8 +450,8 @@
             <Int Int="1">
                 <Field Id="Gender"/>
             </Int>
-            <Int Int="3">
-                <Field Id="StartingLarvaCount"/>
+            <Int Int="1">
+                <Field Id="Standard"/>
             </Int>
             <Model Model="KerriganPrimalPortrait3D">
                 <Field Id="PortraitModel"/>
@@ -532,22 +495,22 @@
             <String String="COOP_UI_SelectKerrigan">
                 <Field Id="ZZ_SelectionScene"/>
             </String>
-            <Text Text="UserData/PlayerCommanders/Kerrigan_Name">
+            <Text Text="UserData/Commanders/Kerrigan_Name">
                 <Field Id="Name"/>
             </Text>
-            <Text Text="UserData/PlayerCommanders/Kerrigan_Description">
+            <Text Text="UserData/Commanders/Kerrigan_Description">
                 <Field Id="Description"/>
             </Text>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeKerrigan">
+            <User Type="Prestiges" Instance="CommanderPrestigeKerrigan">
                 <Field Id="Prestige"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeKerriganCreep">
+            <User Type="Prestiges" Instance="CommanderPrestigeKerriganCreep">
                 <Field Id="Prestige" Index="1"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeKerriganAbilities">
+            <User Type="Prestiges" Instance="CommanderPrestigeKerriganAbilities">
                 <Field Id="Prestige" Index="2"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeKerriganAssimilationAura">
+            <User Type="Prestiges" Instance="CommanderPrestigeKerriganAssimilationAura">
                 <Field Id="Prestige" Index="3"/>
             </User>
             <User Type="MasteryUpgrades" Instance="KerriganMastery1">
@@ -568,22 +531,13 @@
             <User Type="MasteryUpgrades" Instance="KerriganMastery6">
                 <Field Id="Mastery" Index="5"/>
             </User>
-            <User Type="PlayerColors" Instance="Magenta">
+            <User Type="Colors" Instance="Magenta">
                 <Field Id="Color"/>
             </User>
         </Instances>
         <Instances Id="Abathur">
-            <Fixed Fixed="11">
-                <Field Id="SpawnCreep"/>
-            </Fixed>
-            <GameLink GameLink="Zerg">
+            <GameLink GameLink="ZergA">
                 <Field Id="Race"/>
-            </GameLink>
-            <GameLink GameLink="Zerg">
-                <Field Id="SpawnRace"/>
-            </GameLink>
-            <GameLink GameLink="CoopCasterAbathur">
-                <Field Id="ZZ_GlobalCastUnit"/>
             </GameLink>
             <GameLink GameLink="Abathur">
                 <Field Id="ZZ_CommanderData"/>
@@ -642,8 +596,8 @@
             <Int Int="8">
                 <Field Id="ZZ_UniqueIndex"/>
             </Int>
-            <Int Int="3">
-                <Field Id="StartingLarvaCount"/>
+            <Int Int="1">
+                <Field Id="Standard"/>
             </Int>
             <Model Model="AbathurPortraitEx3">
                 <Field Id="PortraitModel"/>
@@ -687,22 +641,22 @@
             <String String="COOP_UI_SelectAbathur">
                 <Field Id="ZZ_SelectionScene"/>
             </String>
-            <Text Text="UserData/PlayerCommanders/Abathur_Name">
+            <Text Text="UserData/Commanders/Abathur_Name">
                 <Field Id="Name"/>
             </Text>
-            <Text Text="UserData/PlayerCommanders/Abathur_Description">
+            <Text Text="UserData/Commanders/Abathur_Description">
                 <Field Id="Description"/>
             </Text>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeAbathur">
+            <User Type="Prestiges" Instance="CommanderPrestigeAbathur">
                 <Field Id="Prestige"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeAbathurBiomass">
+            <User Type="Prestiges" Instance="CommanderPrestigeAbathurBiomass">
                 <Field Id="Prestige" Index="1"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeAbathurDeepTunnel">
+            <User Type="Prestiges" Instance="CommanderPrestigeAbathurDeepTunnel">
                 <Field Id="Prestige" Index="2"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeAbathurUltimateEvo">
+            <User Type="Prestiges" Instance="CommanderPrestigeAbathurUltimateEvo">
                 <Field Id="Prestige" Index="3"/>
             </User>
             <User Type="MasteryUpgrades" Instance="AbathurMastery1">
@@ -723,22 +677,16 @@
             <User Type="MasteryUpgrades" Instance="AbathurMastery6">
                 <Field Id="Mastery" Index="5"/>
             </User>
-            <User Type="PlayerColors" Instance="Yellow">
+            <User Type="Colors" Instance="Yellow">
                 <Field Id="Color"/>
             </User>
         </Instances>
         <Instances Id="Karax">
-            <GameLink GameLink="Prot">
+            <GameLink GameLink="ProtK">
                 <Field Id="Race"/>
-            </GameLink>
-            <GameLink GameLink="Prot">
-                <Field Id="SpawnRace"/>
             </GameLink>
             <GameLink GameLink="KaraxEx2Portrait">
                 <Field Id="PortraitActor"/>
-            </GameLink>
-            <GameLink GameLink="SoACasterKarax">
-                <Field Id="ZZ_GlobalCastUnit"/>
             </GameLink>
             <GameLink GameLink="Karax">
                 <Field Id="ZZ_CommanderData"/>
@@ -797,6 +745,9 @@
             <Int Int="6">
                 <Field Id="ZZ_UniqueIndex"/>
             </Int>
+            <Int Int="1">
+                <Field Id="Standard"/>
+            </Int>
             <Model Model="KaraxEx2Portrait">
                 <Field Id="PortraitModel"/>
             </Model>
@@ -839,22 +790,22 @@
             <String String="COOP_UI_SelectKarax">
                 <Field Id="ZZ_SelectionScene"/>
             </String>
-            <Text Text="UserData/PlayerCommanders/Karax_Name">
+            <Text Text="UserData/Commanders/Karax_Name">
                 <Field Id="Name"/>
             </Text>
-            <Text Text="UserData/PlayerCommanders/Karax_Description">
+            <Text Text="UserData/Commanders/Karax_Description">
                 <Field Id="Description"/>
             </Text>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeKarax">
+            <User Type="Prestiges" Instance="CommanderPrestigeKarax">
                 <Field Id="Prestige"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeKaraxStructures">
+            <User Type="Prestiges" Instance="CommanderPrestigeKaraxStructures">
                 <Field Id="Prestige" Index="1"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeKaraxArmy">
+            <User Type="Prestiges" Instance="CommanderPrestigeKaraxArmy">
                 <Field Id="Prestige" Index="2"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeKaraxTopBar">
+            <User Type="Prestiges" Instance="CommanderPrestigeKaraxTopBar">
                 <Field Id="Prestige" Index="3"/>
             </User>
             <User Type="MasteryUpgrades" Instance="KaraxMastery1">
@@ -875,25 +826,19 @@
             <User Type="MasteryUpgrades" Instance="KaraxMastery6">
                 <Field Id="Mastery" Index="5"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeKaraxHero">
+            <User Type="Prestiges" Instance="CommanderPrestigeKaraxHero">
                 <Field Id="Prestige" Index="4"/>
             </User>
-            <User Type="PlayerColors" Instance="Yellow">
+            <User Type="Colors" Instance="Yellow">
                 <Field Id="Color"/>
             </User>
         </Instances>
         <Instances Id="Artanis">
-            <GameLink GameLink="Prot">
+            <GameLink GameLink="ProtA">
                 <Field Id="Race"/>
-            </GameLink>
-            <GameLink GameLink="Prot">
-                <Field Id="SpawnRace"/>
             </GameLink>
             <GameLink GameLink="ArtanisEx2Portrait">
                 <Field Id="PortraitActor"/>
-            </GameLink>
-            <GameLink GameLink="SoACasterArtanis">
-                <Field Id="ZZ_GlobalCastUnit"/>
             </GameLink>
             <GameLink GameLink="Artanis">
                 <Field Id="ZZ_CommanderData"/>
@@ -952,6 +897,9 @@
             <Int Int="5">
                 <Field Id="ZZ_UniqueIndex"/>
             </Int>
+            <Int Int="1">
+                <Field Id="Standard"/>
+            </Int>
             <Model Model="ArtanisEx2Portrait">
                 <Field Id="PortraitModel"/>
             </Model>
@@ -994,22 +942,22 @@
             <String String="COOP_UI_SelectArtanis">
                 <Field Id="ZZ_SelectionScene"/>
             </String>
-            <Text Text="UserData/PlayerCommanders/Artanis_Name">
+            <Text Text="UserData/Commanders/Artanis_Name">
                 <Field Id="Name"/>
             </Text>
-            <Text Text="UserData/PlayerCommanders/Artanis_Description">
+            <Text Text="UserData/Commanders/Artanis_Description">
                 <Field Id="Description"/>
             </Text>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeArtanis">
+            <User Type="Prestiges" Instance="CommanderPrestigeArtanis">
                 <Field Id="Prestige"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeArtanisCombatAbilities">
+            <User Type="Prestiges" Instance="CommanderPrestigeArtanisCombatAbilities">
                 <Field Id="Prestige" Index="1"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeArtanisPowerField">
+            <User Type="Prestiges" Instance="CommanderPrestigeArtanisPowerField">
                 <Field Id="Prestige" Index="2"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeArtanisOrbitalStrikes">
+            <User Type="Prestiges" Instance="CommanderPrestigeArtanisOrbitalStrikes">
                 <Field Id="Prestige" Index="3"/>
             </User>
             <User Type="MasteryUpgrades" Instance="ArtanisMastery1">
@@ -1030,25 +978,19 @@
             <User Type="MasteryUpgrades" Instance="ArtanisMastery6">
                 <Field Id="Mastery" Index="5"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeArtanisHero">
+            <User Type="Prestiges" Instance="CommanderPrestigeArtanisHero">
                 <Field Id="Prestige" Index="4"/>
             </User>
-            <User Type="PlayerColors" Instance="Teal">
+            <User Type="Colors" Instance="Teal">
                 <Field Id="Color"/>
             </User>
         </Instances>
         <Instances Id="Nova">
-            <GameLink GameLink="Terr">
+            <GameLink GameLink="TerrC">
                 <Field Id="Race"/>
-            </GameLink>
-            <GameLink GameLink="Terr">
-                <Field Id="SpawnRace"/>
             </GameLink>
             <GameLink GameLink="Nova">
                 <Field Id="ZZ_CommanderData"/>
-            </GameLink>
-            <GameLink GameLink="CoopCasterNova">
-                <Field Id="ZZ_GlobalCastUnit"/>
             </GameLink>
             <GameLink GameLink="CommanderNovaBaseTrait">
                 <Field Id="PerkButton"/>
@@ -1107,6 +1049,9 @@
             <Int Int="1">
                 <Field Id="Gender"/>
             </Int>
+            <Int Int="1">
+                <Field Id="Standard"/>
+            </Int>
             <Model Model="NovaPortrait">
                 <Field Id="PortraitModel"/>
             </Model>
@@ -1149,22 +1094,22 @@
             <String String="COOP_UI_SelectNova">
                 <Field Id="ZZ_SelectionScene"/>
             </String>
-            <Text Text="UserData/PlayerCommanders/Nova_Name">
+            <Text Text="UserData/Commanders/Nova_Name">
                 <Field Id="Name"/>
             </Text>
-            <Text Text="UserData/PlayerCommanders/Nova_Description">
+            <Text Text="UserData/Commanders/Nova_Description">
                 <Field Id="Description"/>
             </Text>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeNova">
+            <User Type="Prestiges" Instance="CommanderPrestigeNova">
                 <Field Id="Prestige"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeNovaBio">
+            <User Type="Prestiges" Instance="CommanderPrestigeNovaBio">
                 <Field Id="Prestige" Index="1"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeNovaAirlift">
+            <User Type="Prestiges" Instance="CommanderPrestigeNovaAirlift">
                 <Field Id="Prestige" Index="2"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeNovaSuperCloak">
+            <User Type="Prestiges" Instance="CommanderPrestigeNovaSuperCloak">
                 <Field Id="Prestige" Index="3"/>
             </User>
             <User Type="MasteryUpgrades" Instance="NovaMastery1">
@@ -1185,22 +1130,16 @@
             <User Type="MasteryUpgrades" Instance="NovaMastery6">
                 <Field Id="Mastery" Index="5"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeNovaArmy">
+            <User Type="Prestiges" Instance="CommanderPrestigeNovaArmy">
                 <Field Id="Prestige" Index="4"/>
             </User>
-            <User Type="PlayerColors" Instance="Teal">
+            <User Type="Colors" Instance="Teal">
                 <Field Id="Color"/>
             </User>
         </Instances>
         <Instances Id="Horner">
             <GameLink GameLink="TerrM">
-                <Field Id="SpawnRace"/>
-            </GameLink>
-            <GameLink GameLink="Terr">
                 <Field Id="Race"/>
-            </GameLink>
-            <GameLink GameLink="CoopCasterHorner">
-                <Field Id="ZZ_GlobalCastUnit"/>
             </GameLink>
             <GameLink GameLink="Horner">
                 <Field Id="ZZ_CommanderData"/>
@@ -1259,6 +1198,9 @@
             <Int Int="14">
                 <Field Id="ZZ_UniqueIndex"/>
             </Int>
+            <Int Int="1">
+                <Field Id="Standard"/>
+            </Int>
             <Model Model="SMX1MiraHanPortrait">
                 <Field Id="PortraitModel"/>
             </Model>
@@ -1283,25 +1225,25 @@
             <String String="COOP_UI_SelectHorner">
                 <Field Id="ZZ_SelectionScene"/>
             </String>
-            <Text Text="UserData/PlayerCommanders/Horner_Name">
+            <Text Text="UserData/Commanders/Horner_Name">
                 <Field Id="Name"/>
             </Text>
-            <Text Text="UserData/PlayerCommanders/Horner_Description">
+            <Text Text="UserData/Commanders/Horner_Description">
                 <Field Id="Description"/>
             </Text>
-            <Text Text="UserData/PlayerCommanders/Horner_AlternativeCutscenemessage">
+            <Text Text="UserData/Commanders/Horner_AlternativeCutscenemessage">
                 <Field Id="AlternativeCutscenemessage"/>
             </Text>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeHorner">
+            <User Type="Prestiges" Instance="CommanderPrestigeHorner">
                 <Field Id="Prestige"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeHornerMagMines">
+            <User Type="Prestiges" Instance="CommanderPrestigeHornerMagMines">
                 <Field Id="Prestige" Index="1"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeHornerStarport">
+            <User Type="Prestiges" Instance="CommanderPrestigeHornerStarport">
                 <Field Id="Prestige" Index="2"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeHornerBombingPlatforms">
+            <User Type="Prestiges" Instance="CommanderPrestigeHornerBombingPlatforms">
                 <Field Id="Prestige" Index="3"/>
             </User>
             <User Type="MasteryUpgrades" Instance="HornerMastery1">
@@ -1322,32 +1264,23 @@
             <User Type="MasteryUpgrades" Instance="HornerMastery6">
                 <Field Id="Mastery" Index="5"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeHornerArmy">
+            <User Type="Prestiges" Instance="CommanderPrestigeHornerArmy">
                 <Field Id="Prestige" Index="4"/>
             </User>
-            <User Type="PlayerColors" Instance="Rose">
+            <User Type="Colors" Instance="Rose">
                 <Field Id="Color"/>
             </User>
         </Instances>
         <Instances Id="Stukov">
-            <Fixed Fixed="11">
-                <Field Id="SpawnCreep"/>
-            </Fixed>
-            <GameLink GameLink="Zerg">
-                <Field Id="Race"/>
-            </GameLink>
             <GameLink GameLink="TerrI">
-                <Field Id="SpawnRace"/>
-            </GameLink>
-            <!--GameLink GameLink="EvolutionMasterPortrait3D">
-                <Field Id="PortraitActor"/>
-            </GameLink-->
-            <GameLink GameLink="CoopCasterStukov">
-                <Field Id="ZZ_GlobalCastUnit"/>
+                <Field Id="Race"/>
             </GameLink>
             <GameLink GameLink="InfestedStukovPortrait3D">
                 <Field Id="PortraitActor"/>
             </GameLink>
+            <!--GameLink GameLink="EvolutionMasterPortrait3D">
+                <Field Id="PortraitActor"/>
+            </GameLink-->
             <GameLink GameLink="Stukov">
                 <Field Id="ZZ_CommanderData"/>
             </GameLink>
@@ -1405,6 +1338,9 @@
             <Int Int="11">
                 <Field Id="ZZ_UniqueIndex"/>
             </Int>
+            <Int Int="1">
+                <Field Id="Standard"/>
+            </Int>
             <Model Model="StukovInfestedTerranPortrait">
                 <Field Id="PortraitModel"/>
             </Model>
@@ -1447,22 +1383,22 @@
             <String String="COOP_UI_SelectStukov">
                 <Field Id="ZZ_SelectionScene"/>
             </String>
-            <Text Text="UserData/PlayerCommanders/Stukov_Name">
+            <Text Text="UserData/Commanders/Stukov_Name">
                 <Field Id="Name"/>
             </Text>
-            <Text Text="UserData/PlayerCommanders/Stukov_Description">
+            <Text Text="UserData/Commanders/Stukov_Description">
                 <Field Id="Description"/>
             </Text>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeStukov">
+            <User Type="Prestiges" Instance="CommanderPrestigeStukov">
                 <Field Id="Prestige"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeStukovMech">
+            <User Type="Prestiges" Instance="CommanderPrestigeStukovMech">
                 <Field Id="Prestige" Index="1"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeStukovBanshees">
+            <User Type="Prestiges" Instance="CommanderPrestigeStukovBanshees">
                 <Field Id="Prestige" Index="2"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeStukovBunkers">
+            <User Type="Prestiges" Instance="CommanderPrestigeStukovBunkers">
                 <Field Id="Prestige" Index="3"/>
             </User>
             <User Type="MasteryUpgrades" Instance="StukovMastery1">
@@ -1483,19 +1419,13 @@
             <User Type="MasteryUpgrades" Instance="StukovMastery6">
                 <Field Id="Mastery" Index="5"/>
             </User>
-            <User Type="PlayerColors" Instance="Lavender">
+            <User Type="Colors" Instance="Lavender">
                 <Field Id="Color"/>
             </User>
         </Instances>
         <Instances Id="Zagara">
-            <Fixed Fixed="11">
-                <Field Id="SpawnCreep"/>
-            </Fixed>
-            <GameLink GameLink="Zerg">
+            <GameLink GameLink="ZergL">
                 <Field Id="Race"/>
-            </GameLink>
-            <GameLink GameLink="Zerg">
-                <Field Id="SpawnRace"/>
             </GameLink>
             <GameLink GameLink="ZagaraPortrait3D">
                 <Field Id="PortraitActor"/>
@@ -1560,8 +1490,8 @@
             <Int Int="1">
                 <Field Id="Gender"/>
             </Int>
-            <Int Int="3">
-                <Field Id="StartingLarvaCount"/>
+            <Int Int="1">
+                <Field Id="Standard"/>
             </Int>
             <Model Model="ZagaraPortrait">
                 <Field Id="PortraitModel"/>
@@ -1605,22 +1535,22 @@
             <String String="COOP_UI_SelectZagara">
                 <Field Id="ZZ_SelectionScene"/>
             </String>
-            <Text Text="UserData/PlayerCommanders/Zagara_Name">
+            <Text Text="UserData/Commanders/Zagara_Name">
                 <Field Id="Name"/>
             </Text>
-            <Text Text="UserData/PlayerCommanders/Zagara_Description">
+            <Text Text="UserData/Commanders/Zagara_Description">
                 <Field Id="Description"/>
             </Text>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeZagara">
+            <User Type="Prestiges" Instance="CommanderPrestigeZagara">
                 <Field Id="Prestige"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeZagaraMaxSupply">
+            <User Type="Prestiges" Instance="CommanderPrestigeZagaraMaxSupply">
                 <Field Id="Prestige" Index="1"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeZagaraCorruptorsAberrations">
+            <User Type="Prestiges" Instance="CommanderPrestigeZagaraCorruptorsAberrations">
                 <Field Id="Prestige" Index="2"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeZagaraZagara">
+            <User Type="Prestiges" Instance="CommanderPrestigeZagaraZagara">
                 <Field Id="Prestige" Index="3"/>
             </User>
             <User Type="MasteryUpgrades" Instance="ZagaraMastery1">
@@ -1641,22 +1571,16 @@
             <User Type="MasteryUpgrades" Instance="ZagaraMastery6">
                 <Field Id="Mastery" Index="5"/>
             </User>
-            <User Type="PlayerColors" Instance="Navy">
+            <User Type="Colors" Instance="Navy">
                 <Field Id="Color"/>
             </User>
         </Instances>
         <Instances Id="Vorazun">
-            <GameLink GameLink="Prot">
+            <GameLink GameLink="ProtN">
                 <Field Id="Race"/>
-            </GameLink>
-            <GameLink GameLink="Prot">
-                <Field Id="SpawnRace"/>
             </GameLink>
             <GameLink GameLink="VorazunEx2Portrait">
                 <Field Id="PortraitActor"/>
-            </GameLink>
-            <GameLink GameLink="SoACasterVorazun">
-                <Field Id="ZZ_GlobalCastUnit"/>
             </GameLink>
             <GameLink GameLink="Vorazun">
                 <Field Id="ZZ_CommanderData"/>
@@ -1718,6 +1642,9 @@
             <Int Int="1">
                 <Field Id="Gender"/>
             </Int>
+            <Int Int="1">
+                <Field Id="Standard"/>
+            </Int>
             <Model Model="VorazunEx2Portrait">
                 <Field Id="PortraitModel"/>
             </Model>
@@ -1760,22 +1687,22 @@
             <String String="COOP_UI_SelectVorazun">
                 <Field Id="ZZ_SelectionScene"/>
             </String>
-            <Text Text="UserData/PlayerCommanders/Vorazun_Name">
+            <Text Text="UserData/Commanders/Vorazun_Name">
                 <Field Id="Name"/>
             </Text>
-            <Text Text="UserData/PlayerCommanders/Vorazun_Description">
+            <Text Text="UserData/Commanders/Vorazun_Description">
                 <Field Id="Description"/>
             </Text>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeVorazun">
+            <User Type="Prestiges" Instance="CommanderPrestigeVorazun">
                 <Field Id="Prestige"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeVorazunEmergencyRecall">
+            <User Type="Prestiges" Instance="CommanderPrestigeVorazunEmergencyRecall">
                 <Field Id="Prestige" Index="1"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeVorazunStasis">
+            <User Type="Prestiges" Instance="CommanderPrestigeVorazunStasis">
                 <Field Id="Prestige" Index="2"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeVorazunTimeStop">
+            <User Type="Prestiges" Instance="CommanderPrestigeVorazunTimeStop">
                 <Field Id="Prestige" Index="3"/>
             </User>
             <User Type="MasteryUpgrades" Instance="VorazunMastery1">
@@ -1796,25 +1723,19 @@
             <User Type="MasteryUpgrades" Instance="VorazunMastery6">
                 <Field Id="Mastery" Index="5"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeVorazunHero">
+            <User Type="Prestiges" Instance="CommanderPrestigeVorazunHero">
                 <Field Id="Prestige" Index="4"/>
             </User>
-            <User Type="PlayerColors" Instance="Purple">
+            <User Type="Colors" Instance="Purple">
                 <Field Id="Color"/>
             </User>
         </Instances>
         <Instances Id="Alarak">
-            <GameLink GameLink="Prot">
+            <GameLink GameLink="ProtT">
                 <Field Id="Race"/>
-            </GameLink>
-            <GameLink GameLink="Prot">
-                <Field Id="SpawnRace"/>
             </GameLink>
             <GameLink GameLink="Alarak">
                 <Field Id="ZZ_CommanderData"/>
-            </GameLink>
-            <GameLink GameLink="CoopCasterAlarak">
-                <Field Id="ZZ_GlobalCastUnit"/>
             </GameLink>
             <GameLink GameLink="AlarakEx2Portrait">
                 <Field Id="PortraitActor"/>
@@ -1873,6 +1794,9 @@
             <Int Int="10">
                 <Field Id="ZZ_UniqueIndex"/>
             </Int>
+            <Int Int="1">
+                <Field Id="Standard"/>
+            </Int>
             <Model Model="AlarakEx2Portrait">
                 <Field Id="PortraitModel"/>
             </Model>
@@ -1912,22 +1836,22 @@
             <Sound Sound="acAttackWave_Alarak_204">
                 <Field Id="StandardVO" Index="10"/>
             </Sound>
-            <Text Text="UserData/PlayerCommanders/Alarak_Name">
+            <Text Text="UserData/Commanders/Alarak_Name">
                 <Field Id="Name"/>
             </Text>
-            <Text Text="UserData/PlayerCommanders/Alarak_Description">
+            <Text Text="UserData/Commanders/Alarak_Description">
                 <Field Id="Description"/>
             </Text>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeAlarak">
+            <User Type="Prestiges" Instance="CommanderPrestigeAlarak">
                 <Field Id="Prestige"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeAlarakMech">
+            <User Type="Prestiges" Instance="CommanderPrestigeAlarakMech">
                 <Field Id="Prestige" Index="1"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeAlarakEmpowerMe">
+            <User Type="Prestiges" Instance="CommanderPrestigeAlarakEmpowerMe">
                 <Field Id="Prestige" Index="2"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeAlarakDeathFleet">
+            <User Type="Prestiges" Instance="CommanderPrestigeAlarakDeathFleet">
                 <Field Id="Prestige" Index="3"/>
             </User>
             <User Type="MasteryUpgrades" Instance="AlarakMastery1">
@@ -1948,22 +1872,16 @@
             <User Type="MasteryUpgrades" Instance="AlarakMastery6">
                 <Field Id="Mastery" Index="5"/>
             </User>
-            <User Type="PlayerColors" Instance="Sangria">
+            <User Type="Colors" Instance="Sangria">
                 <Field Id="Color"/>
             </User>
         </Instances>
         <Instances Id="Tychus">
-            <GameLink GameLink="Terr">
-                <Field Id="Race"/>
-            </GameLink>
             <GameLink GameLink="TerrO">
-                <Field Id="SpawnRace"/>
+                <Field Id="Race"/>
             </GameLink>
             <GameLink GameLink="Tychus">
                 <Field Id="ZZ_CommanderData"/>
-            </GameLink>
-            <GameLink GameLink="CoopCasterTychus">
-                <Field Id="ZZ_GlobalCastUnit"/>
             </GameLink>
             <GameLink GameLink="CommanderTychusLevel01">
                 <Field Id="PerkButton"/>
@@ -2020,7 +1938,7 @@
                 <Field Id="ZZ_UniqueIndex"/>
             </Int>
             <Int Int="1">
-                <Field Id="ZZ_GlobalCast2D"/>
+                <Field Id="Standard"/>
             </Int>
             <Model Model="TychusPortrait">
                 <Field Id="PortraitModel"/>
@@ -2046,22 +1964,22 @@
             <String String="COOP_UI_SelectTychus">
                 <Field Id="ZZ_SelectionScene"/>
             </String>
-            <Text Text="UserData/PlayerCommanders/Tychus_Name">
+            <Text Text="UserData/Commanders/Tychus_Name">
                 <Field Id="Name"/>
             </Text>
-            <Text Text="UserData/PlayerCommanders/Tychus_Description">
+            <Text Text="UserData/Commanders/Tychus_Description">
                 <Field Id="Description"/>
             </Text>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeTychus">
+            <User Type="Prestiges" Instance="CommanderPrestigeTychus">
                 <Field Id="Prestige"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeTychusSquadAbilities">
+            <User Type="Prestiges" Instance="CommanderPrestigeTychusSquadAbilities">
                 <Field Id="Prestige" Index="1"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeTychusLoneWolf">
+            <User Type="Prestiges" Instance="CommanderPrestigeTychusLoneWolf">
                 <Field Id="Prestige" Index="2"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeTychusOdin">
+            <User Type="Prestiges" Instance="CommanderPrestigeTychusOdin">
                 <Field Id="Prestige" Index="3"/>
             </User>
             <User Type="MasteryUpgrades" Instance="TychusMastery1">
@@ -2082,28 +2000,19 @@
             <User Type="MasteryUpgrades" Instance="TychusMastery6">
                 <Field Id="Mastery" Index="5"/>
             </User>
-            <User Type="PlayerColors" Instance="Tuscary">
+            <User Type="Colors" Instance="Tuscary">
                 <Field Id="Color"/>
             </User>
         </Instances>
         <Instances Id="Mengsk">
-            <GameLink GameLink="CoopCasterMengsk">
-                <Field Id="ZZ_GlobalCastUnit"/>
-            </GameLink>
             <GameLink GameLink="Terr">
                 <Field Id="AdjutantRace"/>
             </GameLink>
-            <GameLink GameLink="Terr">
-                <Field Id="Race"/>
-            </GameLink>
             <GameLink GameLink="TerrD">
-                <Field Id="SpawnRace"/>
+                <Field Id="Race"/>
             </GameLink>
             <GameLink GameLink="Mengsk">
                 <Field Id="ZZ_CommanderData"/>
-            </GameLink>
-            <GameLink GameLink="MengskCommanderVoicePack">
-                <Field Id="ZZ_DefaultVoicePack"/>
             </GameLink>
             <GameLink GameLink="CommanderMengskLevel01">
                 <Field Id="PerkButton"/>
@@ -2160,7 +2069,7 @@
                 <Field Id="ZZ_UniqueIndex"/>
             </Int>
             <Int Int="1">
-                <Field Id="ZZ_GlobalCast2D"/>
+                <Field Id="Standard"/>
             </Int>
             <Model Model="ArcturusPortrait">
                 <Field Id="PortraitModel"/>
@@ -2180,22 +2089,22 @@
             <Sound Sound="MengskCommander_Auto_UnitsLost">
                 <Field Id="StandardVO" Index="11"/>
             </Sound>
-            <Text Text="UserData/PlayerCommanders/Mengsk_Name">
+            <Text Text="UserData/Commanders/Mengsk_Name">
                 <Field Id="Name"/>
             </Text>
-            <Text Text="UserData/PlayerCommanders/Mengsk_Description">
+            <Text Text="UserData/Commanders/Mengsk_Description">
                 <Field Id="Description"/>
             </Text>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeMengsk">
+            <User Type="Prestiges" Instance="CommanderPrestigeMengsk">
                 <Field Id="Prestige"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeMengskArtillery">
+            <User Type="Prestiges" Instance="CommanderPrestigeMengskArtillery">
                 <Field Id="Prestige" Index="1"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeMengskRoyalGuard">
+            <User Type="Prestiges" Instance="CommanderPrestigeMengskRoyalGuard">
                 <Field Id="Prestige" Index="2"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeMengskTroopers">
+            <User Type="Prestiges" Instance="CommanderPrestigeMengskTroopers">
                 <Field Id="Prestige" Index="3"/>
             </User>
             <User Type="MasteryUpgrades" Instance="MengskMastery1">
@@ -2216,28 +2125,19 @@
             <User Type="MasteryUpgrades" Instance="MengskMastery6">
                 <Field Id="Mastery" Index="5"/>
             </User>
-            <User Type="PlayerColors" Instance="Mengsk">
+            <User Type="Colors" Instance="Mengsk">
                 <Field Id="Color"/>
             </User>
         </Instances>
         <Instances Id="Stetmann">
-            <GameLink GameLink="Zerg">
+            <GameLink GameLink="ZergM">
                 <Field Id="Race"/>
             </GameLink>
             <GameLink GameLink="Terr">
                 <Field Id="AdjutantRace"/>
             </GameLink>
-            <GameLink GameLink="ZergM">
-                <Field Id="SpawnRace"/>
-            </GameLink>
             <GameLink GameLink="Stetmann">
                 <Field Id="ZZ_CommanderData"/>
-            </GameLink>
-            <GameLink GameLink="CoopCasterStetmann">
-                <Field Id="ZZ_GlobalCastUnit"/>
-            </GameLink>
-            <GameLink GameLink="StetmannCommanderVoicePack">
-                <Field Id="ZZ_DefaultVoicePack"/>
             </GameLink>
             <GameLink GameLink="CommanderStetmannLevel01">
                 <Field Id="PerkButton"/>
@@ -2293,11 +2193,8 @@
             <Int Int="17">
                 <Field Id="ZZ_UniqueIndex"/>
             </Int>
-            <Int Int="3">
-                <Field Id="StartingLarvaCount"/>
-            </Int>
             <Int Int="1">
-                <Field Id="ZZ_GlobalCast2D"/>
+                <Field Id="Standard"/>
             </Int>
             <Model Model="StetmannCommanderPortrait">
                 <Field Id="PortraitModel"/>
@@ -2317,19 +2214,19 @@
             <Sound Sound="StetmannCommander_Auto_UnitsLost">
                 <Field Id="StandardVO" Index="11"/>
             </Sound>
-            <Text Text="UserData/PlayerCommanders/Stetmann_Name">
+            <Text Text="UserData/Commanders/Stetmann_Name">
                 <Field Id="Name"/>
             </Text>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeStetmann">
+            <User Type="Prestiges" Instance="CommanderPrestigeStetmann">
                 <Field Id="Prestige"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeStetmannStetellites">
+            <User Type="Prestiges" Instance="CommanderPrestigeStetmannStetellites">
                 <Field Id="Prestige" Index="1"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeStetmannGary">
+            <User Type="Prestiges" Instance="CommanderPrestigeStetmannGary">
                 <Field Id="Prestige" Index="2"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeStetmannCombatBuff">
+            <User Type="Prestiges" Instance="CommanderPrestigeStetmannCombatBuff">
                 <Field Id="Prestige" Index="3"/>
             </User>
             <User Type="MasteryUpgrades" Instance="StetmannMastery1">
@@ -2350,22 +2247,16 @@
             <User Type="MasteryUpgrades" Instance="StetmannMastery6">
                 <Field Id="Mastery" Index="5"/>
             </User>
-            <User Type="PlayerColors" Instance="Orange">
+            <User Type="Colors" Instance="Orange">
                 <Field Id="Color"/>
             </User>
         </Instances>
         <Instances Id="Dehaka">
-            <GameLink GameLink="Zerg">
-                <Field Id="Race"/>
-            </GameLink>
             <GameLink GameLink="ZergP">
-                <Field Id="SpawnRace"/>
+                <Field Id="Race"/>
             </GameLink>
             <GameLink GameLink="Dehaka">
                 <Field Id="ZZ_CommanderData"/>
-            </GameLink>
-            <GameLink GameLink="CoopCasterDehaka">
-                <Field Id="ZZ_GlobalCastUnit"/>
             </GameLink>
             <GameLink GameLink="DehakaCoopPortrait">
                 <Field Id="PortraitActor"/>
@@ -2424,6 +2315,9 @@
             <Int Int="13">
                 <Field Id="ZZ_UniqueIndex"/>
             </Int>
+            <Int Int="1">
+                <Field Id="Standard"/>
+            </Int>
             <Model Model="DehakaCoopPortrait">
                 <Field Id="PortraitModel"/>
             </Model>
@@ -2448,22 +2342,22 @@
             <String String="COOP_UI_SelectDehaka">
                 <Field Id="ZZ_SelectionScene"/>
             </String>
-            <Text Text="UserData/PlayerCommanders/Dehaka_Name">
+            <Text Text="UserData/Commanders/Dehaka_Name">
                 <Field Id="Name"/>
             </Text>
-            <Text Text="UserData/PlayerCommanders/Dehaka_Description">
+            <Text Text="UserData/Commanders/Dehaka_Description">
                 <Field Id="Description"/>
             </Text>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeDehaka">
+            <User Type="Prestiges" Instance="CommanderPrestigeDehaka">
                 <Field Id="Prestige"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeDehakaDevour">
+            <User Type="Prestiges" Instance="CommanderPrestigeDehakaDevour">
                 <Field Id="Prestige" Index="1"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeDehakaPackLeaders">
+            <User Type="Prestiges" Instance="CommanderPrestigeDehakaPackLeaders">
                 <Field Id="Prestige" Index="2"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeDehakaClone">
+            <User Type="Prestiges" Instance="CommanderPrestigeDehakaClone">
                 <Field Id="Prestige" Index="3"/>
             </User>
             <User Type="MasteryUpgrades" Instance="DehakaMastery1">
@@ -2484,22 +2378,16 @@
             <User Type="MasteryUpgrades" Instance="DehakaMastery6">
                 <Field Id="Mastery" Index="5"/>
             </User>
-            <User Type="PlayerColors" Instance="Silver">
+            <User Type="Colors" Instance="Silver">
                 <Field Id="Color"/>
             </User>
         </Instances>
         <Instances Id="Fenix">
-            <GameLink GameLink="Prot">
+            <GameLink GameLink="ProtP">
                 <Field Id="Race"/>
-            </GameLink>
-            <GameLink GameLink="Prot">
-                <Field Id="SpawnRace"/>
             </GameLink>
             <GameLink GameLink="FenixEx2Portrait">
                 <Field Id="PortraitActor"/>
-            </GameLink>
-            <GameLink GameLink="SoACasterFenix">
-                <Field Id="ZZ_GlobalCastUnit"/>
             </GameLink>
             <GameLink GameLink="Fenix">
                 <Field Id="ZZ_CommanderData"/>
@@ -2558,6 +2446,9 @@
             <Int Int="12">
                 <Field Id="ZZ_UniqueIndex"/>
             </Int>
+            <Int Int="1">
+                <Field Id="Standard"/>
+            </Int>
             <Model Model="FenixEx2Portrait">
                 <Field Id="PortraitModel"/>
             </Model>
@@ -2576,22 +2467,22 @@
             <Sound Sound="FenixCommander_Thanks">
                 <Field Id="StandardVO" Index="6"/>
             </Sound>
-            <Text Text="UserData/PlayerCommanders/Fenix_Name">
+            <Text Text="UserData/Commanders/Fenix_Name">
                 <Field Id="Name"/>
             </Text>
-            <Text Text="UserData/PlayerCommanders/Fenix_Description">
+            <Text Text="UserData/Commanders/Fenix_Description">
                 <Field Id="Description"/>
             </Text>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeFenix">
+            <User Type="Prestiges" Instance="CommanderPrestigeFenix">
                 <Field Id="Prestige"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeFenixSuitSwap">
+            <User Type="Prestiges" Instance="CommanderPrestigeFenixSuitSwap">
                 <Field Id="Prestige" Index="1"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeFenixDataWeb">
+            <User Type="Prestiges" Instance="CommanderPrestigeFenixDataWeb">
                 <Field Id="Prestige" Index="2"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeFenixAvenger">
+            <User Type="Prestiges" Instance="CommanderPrestigeFenixAvenger">
                 <Field Id="Prestige" Index="3"/>
             </User>
             <User Type="MasteryUpgrades" Instance="FenixMastery1">
@@ -2612,22 +2503,16 @@
             <User Type="MasteryUpgrades" Instance="FenixMastery6">
                 <Field Id="Mastery" Index="5"/>
             </User>
-            <User Type="PlayerColors" Instance="Orange">
+            <User Type="Colors" Instance="Orange">
                 <Field Id="Color"/>
             </User>
         </Instances>
         <Instances Id="Zeratul">
-            <GameLink GameLink="Prot">
-                <Field Id="Race"/>
-            </GameLink>
             <GameLink GameLink="ProtI">
-                <Field Id="SpawnRace"/>
+                <Field Id="Race"/>
             </GameLink>
             <GameLink GameLink="Zeratul">
                 <Field Id="ZZ_CommanderData"/>
-            </GameLink>
-            <GameLink GameLink="CoopCasterZeratul">
-                <Field Id="ZZ_GlobalCastUnit"/>
             </GameLink>
             <GameLink GameLink="CommanderZeratulLevel01">
                 <Field Id="PerkButton"/>
@@ -2684,7 +2569,7 @@
                 <Field Id="ZZ_UniqueIndex"/>
             </Int>
             <Int Int="1">
-                <Field Id="ZZ_GlobalCast2D"/>
+                <Field Id="Standard"/>
             </Int>
             <Model Model="ZeratulVoidPortrait">
                 <Field Id="PortraitModel"/>
@@ -2710,22 +2595,22 @@
             <String String="COOP_UI_SelectZeratul">
                 <Field Id="ZZ_SelectionScene"/>
             </String>
-            <Text Text="UserData/PlayerCommanders/Zeratul_Name">
+            <Text Text="UserData/Commanders/Zeratul_Name">
                 <Field Id="Name"/>
             </Text>
-            <Text Text="UserData/PlayerCommanders/Zeratul_Description">
+            <Text Text="UserData/Commanders/Zeratul_Description">
                 <Field Id="Description"/>
             </Text>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeZeratul">
+            <User Type="Prestiges" Instance="CommanderPrestigeZeratul">
                 <Field Id="Prestige"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeZeratulVoidSeeker">
+            <User Type="Prestiges" Instance="CommanderPrestigeZeratulVoidSeeker">
                 <Field Id="Prestige" Index="1"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeZeratulArtifactFragments">
+            <User Type="Prestiges" Instance="CommanderPrestigeZeratulArtifactFragments">
                 <Field Id="Prestige" Index="2"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeZeratulTornadoes">
+            <User Type="Prestiges" Instance="CommanderPrestigeZeratulTornadoes">
                 <Field Id="Prestige" Index="3"/>
             </User>
             <User Type="MasteryUpgrades" Instance="ZeratulMastery1">
@@ -2746,19 +2631,16 @@
             <User Type="MasteryUpgrades" Instance="ZeratulMastery6">
                 <Field Id="Mastery" Index="5"/>
             </User>
-            <User Type="PlayerPrestige" Instance="CommanderPrestigeZeratulUnits">
+            <User Type="Prestiges" Instance="CommanderPrestigeZeratulUnits">
                 <Field Id="Prestige" Index="4"/>
             </User>
-            <User Type="PlayerColors" Instance="Aquamarine">
+            <User Type="Colors" Instance="Aquamarine">
                 <Field Id="Color"/>
             </User>
         </Instances>
         <Instances Id="Terran">
             <GameLink GameLink="Terr">
                 <Field Id="Race"/>
-            </GameLink>
-            <GameLink GameLink="Terr">
-                <Field Id="SpawnRace"/>
             </GameLink>
             <GameLink GameLink="ButtonTerranLevel01">
                 <Field Id="PerkButton"/>
@@ -2814,49 +2696,40 @@
             <Model Model="AdjutantPortrait">
                 <Field Id="PortraitModel"/>
             </Model>
-            <Text Text="UserData/PlayerCommanders/Terran_Description">
+            <Text Text="UserData/Commanders/Terran_Description">
                 <Field Id="Description"/>
             </Text>
-            <Text Text="UserData/PlayerCommanders/Terran_Name">
+            <Text Text="UserData/Commanders/Terran_Name">
                 <Field Id="Name"/>
             </Text>
-            <Text Text="UserData/PlayerCommanders/Terran_AlternativeCutscenemessage">
+            <Text Text="UserData/Commanders/Terran_AlternativeCutscenemessage">
                 <Field Id="AlternativeCutscenemessage"/>
             </Text>
-            <User Type="PlayerPrestige" Instance="Terran">
+            <User Type="Prestiges" Instance="Terran">
                 <Field Id="Prestige"/>
             </User>
-            <User Type="PlayerPrestige" Instance="TerranJunkers">
+            <User Type="Prestiges" Instance="TerranJunkers">
                 <Field Id="Prestige" Index="1"/>
             </User>
-            <User Type="PlayerPrestige" Instance="TerranTyrador">
+            <User Type="Prestiges" Instance="TerranTyrador">
                 <Field Id="Prestige" Index="2"/>
             </User>
-            <User Type="PlayerPrestige" Instance="TerranUmojan">
+            <User Type="Prestiges" Instance="TerranUmojan">
                 <Field Id="Prestige" Index="3"/>
             </User>
-            <User Type="PlayerPrestige" Instance="TerranSpecOps">
+            <User Type="Prestiges" Instance="TerranSpecOps">
                 <Field Id="Prestige" Index="4"/>
             </User>
-            <User Type="PlayerColors" Instance="Blue">
+            <User Type="Colors" Instance="Blue">
                 <Field Id="Color"/>
-            </User>
-            <User Type="CommanderType" Instance="MELEE">
-                <Field Id="Type"/>
             </User>
         </Instances>
         <Instances Id="Zerg">
-            <Fixed Fixed="11">
-                <Field Id="SpawnCreep"/>
-            </Fixed>
             <GameLink GameLink="ZergCommander">
                 <Field Id="ZZ_CommanderData"/>
             </GameLink>
             <GameLink GameLink="Zerg">
                 <Field Id="Race"/>
-            </GameLink>
-            <GameLink GameLink="Zerg">
-                <Field Id="SpawnRace"/>
             </GameLink>
             <GameLink GameLink="ZergAdjutantPortrait">
                 <Field Id="PortraitActor"/>
@@ -2909,38 +2782,32 @@
             <Image Image="Assets\Textures\ui_battlenet_glues_multiplayer_racebutton_raceicon_normal_zerg.dds">
                 <Field Id="Icon"/>
             </Image>
-            <Int Int="3">
-                <Field Id="StartingLarvaCount"/>
-            </Int>
-            <Text Text="UserData/PlayerCommanders/Zerg_Description">
+            <Text Text="UserData/Commanders/Zerg_Description">
                 <Field Id="Description"/>
             </Text>
-            <Text Text="UserData/PlayerCommanders/Zerg_Name">
+            <Text Text="UserData/Commanders/Zerg_Name">
                 <Field Id="Name"/>
             </Text>
-            <Text Text="UserData/PlayerCommanders/Zerg_AlternativeCutscenemessage">
+            <Text Text="UserData/Commanders/Zerg_AlternativeCutscenemessage">
                 <Field Id="AlternativeCutscenemessage"/>
             </Text>
-            <User Type="PlayerPrestige" Instance="Zerg">
+            <User Type="Prestiges" Instance="Zerg">
                 <Field Id="Prestige"/>
             </User>
-            <User Type="PlayerPrestige" Instance="ZergSimulant">
+            <User Type="Prestiges" Instance="ZergSimulant">
                 <Field Id="Prestige" Index="1"/>
             </User>
-            <User Type="PlayerPrestige" Instance="ZergCerberus">
+            <User Type="Prestiges" Instance="ZergCerberus">
                 <Field Id="Prestige" Index="2"/>
             </User>
-            <User Type="PlayerPrestige" Instance="ZergLeviathan">
+            <User Type="Prestiges" Instance="ZergLeviathan">
                 <Field Id="Prestige" Index="3"/>
             </User>
-            <User Type="PlayerPrestige" Instance="ZergPrimal">
+            <User Type="Prestiges" Instance="ZergPrimal">
                 <Field Id="Prestige" Index="4"/>
             </User>
-            <User Type="PlayerColors" Instance="Purple">
+            <User Type="Colors" Instance="Purple">
                 <Field Id="Color"/>
-            </User>
-            <User Type="CommanderType" Instance="MELEE">
-                <Field Id="Type"/>
             </User>
         </Instances>
         <Instances Id="Protoss">
@@ -2949,9 +2816,6 @@
             </GameLink>
             <GameLink GameLink="Prot">
                 <Field Id="Race"/>
-            </GameLink>
-            <GameLink GameLink="Prot">
-                <Field Id="SpawnRace"/>
             </GameLink>
             <GameLink GameLink="ButtonProtossLevel01">
                 <Field Id="PerkButton"/>
@@ -3004,35 +2868,32 @@
             <Model Model="ExecutorPortrait">
                 <Field Id="PortraitModel"/>
             </Model>
-            <Text Text="UserData/PlayerCommanders/Protoss_Description">
+            <Text Text="UserData/Commanders/Protoss_Description">
                 <Field Id="Description"/>
             </Text>
-            <Text Text="UserData/PlayerCommanders/Protoss_Name">
+            <Text Text="UserData/Commanders/Protoss_Name">
                 <Field Id="Name"/>
             </Text>
-            <Text Text="UserData/PlayerCommanders/Protoss_AlternativeCutscenemessage">
+            <Text Text="UserData/Commanders/Protoss_AlternativeCutscenemessage">
                 <Field Id="AlternativeCutscenemessage"/>
             </Text>
-            <User Type="PlayerPrestige" Instance="ProtossDelaam">
+            <User Type="Prestiges" Instance="ProtossDelaam">
                 <Field Id="Prestige"/>
             </User>
-            <User Type="PlayerPrestige" Instance="ProtossGolden">
+            <User Type="Prestiges" Instance="ProtossGolden">
                 <Field Id="Prestige" Index="1"/>
             </User>
-            <User Type="PlayerPrestige" Instance="ProtossTaldarim">
+            <User Type="Prestiges" Instance="ProtossTaldarim">
                 <Field Id="Prestige" Index="2"/>
             </User>
-            <User Type="PlayerPrestige" Instance="ProtossPurifiers">
+            <User Type="Prestiges" Instance="ProtossPurifiers">
                 <Field Id="Prestige" Index="3"/>
             </User>
-            <User Type="PlayerPrestige" Instance="ProtossIhanRii">
+            <User Type="Prestiges" Instance="ProtossIhanRii">
                 <Field Id="Prestige" Index="4"/>
             </User>
-            <User Type="PlayerColors" Instance="Orange">
+            <User Type="Colors" Instance="Orange">
                 <Field Id="Color"/>
-            </User>
-            <User Type="CommanderType" Instance="MELEE">
-                <Field Id="Type"/>
             </User>
         </Instances>
         <Instances Id="UED">
@@ -3042,37 +2903,25 @@
             <GameLink GameLink="UED">
                 <Field Id="Race"/>
             </GameLink>
-            <GameLink GameLink="UED">
-                <Field Id="SpawnRace"/>
-            </GameLink>
-            <GameLink GameLink="UED">
-                <Field Id="CommanderData"/>
-            </GameLink>
-            <Image>
-                <Field Id="PrestigeIcon"/>
-            </Image>
             <Int>
                 <Field Id="hidden"/>
             </Int>
             <Model Model="WarfieldPortrait">
                 <Field Id="PortraitModel"/>
             </Model>
-            <Text Text="UserData/PlayerCommanders/UED_Name">
+            <Text Text="UserData/Commanders/UED_Name">
                 <Field Id="Name"/>
             </Text>
-            <Text Text="UserData/PlayerCommanders/UED_Description">
+            <Text Text="UserData/Commanders/UED_Description">
                 <Field Id="Description"/>
             </Text>
-            <Upgrade Upgrade="UEDCommander">
-                <Field Id="DefaultUpgrades"/>
-            </Upgrade>
+            <User Type="Colors" Instance="Yellow">
+                <Field Id="Color"/>
+            </User>
         </Instances>
         <Instances Id="NetworkHybrids">
             <GameLink GameLink="NHbr">
                 <Field Id="Race"/>
-            </GameLink>
-            <GameLink GameLink="NHbr">
-                <Field Id="SpawnRace"/>
             </GameLink>
             <GameLink GameLink="NHbr">
                 <Field Id="AdjutantRace"/>
@@ -3134,25 +2983,19 @@
             <Model Model="NHbrPollinator@Portrait">
                 <Field Id="PortraitModel"/>
             </Model>
-            <Text Text="UserData/PlayerCommanders/NetworkHybrids_Description">
+            <Text Text="UserData/Commanders/NetworkHybrids_Description">
                 <Field Id="Description"/>
             </Text>
-            <Text Text="UserData/PlayerCommanders/NetworkHybrids_Name">
+            <Text Text="UserData/Commanders/NetworkHybrids_Name">
                 <Field Id="Name"/>
             </Text>
-            <Upgrade Upgrade="NetworkCommander">
-                <Field Id="DefaultUpgrades"/>
-            </Upgrade>
+            <User Type="Colors" Instance="Lavender">
+                <Field Id="Color"/>
+            </User>
         </Instances>
         <Instances Id="Genetron">
             <GameLink GameLink="Gen">
                 <Field Id="Race"/>
-            </GameLink>
-            <GameLink GameLink="Gen">
-                <Field Id="SpawnRace"/>
-            </GameLink>
-            <GameLink GameLink="GenetronCommander">
-                <Field Id="CommanderData"/>
             </GameLink>
             <GameLink GameLink="ButtonGenetronLevel01">
                 <Field Id="PerkButton"/>
@@ -3208,25 +3051,19 @@
             <Model Model="GenetronAdjutantPortrait">
                 <Field Id="PortraitModel"/>
             </Model>
-            <Text Text="UserData/PlayerCommanders/Genetron_Description">
+            <Text Text="UserData/Commanders/Genetron_Description">
                 <Field Id="Description"/>
             </Text>
-            <Text Text="UserData/PlayerCommanders/Genetron_Name">
+            <Text Text="UserData/Commanders/Genetron_Name">
                 <Field Id="Name"/>
             </Text>
-            <Upgrade Upgrade="GenetronCommander">
-                <Field Id="DefaultUpgrades"/>
-            </Upgrade>
+            <User Type="Colors" Instance="Aquamarine">
+                <Field Id="Color"/>
+            </User>
         </Instances>
         <Instances Id="Xayid">
             <GameLink GameLink="Xayi">
-                <Field Id="SpawnRace"/>
-            </GameLink>
-            <GameLink GameLink="Xayi">
                 <Field Id="Race"/>
-            </GameLink>
-            <GameLink GameLink="XayidCommander">
-                <Field Id="CommanderData"/>
             </GameLink>
             <GameLink GameLink="ButtonXayidLevel01">
                 <Field Id="PerkButton"/>
@@ -3282,28 +3119,19 @@
             <Model Model="PortraitEroder">
                 <Field Id="PortraitModel"/>
             </Model>
-            <Text Text="UserData/PlayerCommanders/Xayid_Description">
+            <Text Text="UserData/Commanders/Xayid_Description">
                 <Field Id="Description"/>
             </Text>
-            <Text Text="UserData/PlayerCommanders/Xayid_Name">
+            <Text Text="UserData/Commanders/Xayid_Name">
                 <Field Id="Name"/>
             </Text>
-            <Upgrade Upgrade="XayidCommander">
-                <Field Id="DefaultUpgrades"/>
-            </Upgrade>
+            <User Type="Colors" Instance="Navy">
+                <Field Id="Color"/>
+            </User>
         </Instances>
         <Instances Id="Dragon">
             <GameLink GameLink="Dragon">
-                <Field Id="SpawnRace"/>
-            </GameLink>
-            <GameLink GameLink="Dragon">
                 <Field Id="Race"/>
-            </GameLink>
-            <GameLink GameLink="DragonCommander">
-                <Field Id="CommanderData"/>
-            </GameLink>
-            <GameLink GameLink="Aquifer">
-                <Field Id="HeroReviveUnit"/>
             </GameLink>
             <GameLink GameLink="Zerg">
                 <Field Id="AdjutantRace"/>
@@ -3354,36 +3182,24 @@
                 <Field Id="PerkButton" Index="14"/>
             </GameLink>
             <Image>
-                <Field Id="PrestigeIcon"/>
-            </Image>
-            <Image>
                 <Field Id="CustomImage"/>
             </Image>
             <Model Model="DragonBuildingPortrait">
                 <Field Id="PortraitModel"/>
             </Model>
-            <Text Text="UserData/PlayerCommanders/Dragon_Description">
+            <Text Text="UserData/Commanders/Dragon_Description">
                 <Field Id="Description"/>
             </Text>
-            <Text Text="UserData/PlayerCommanders/Dragon_Name">
+            <Text Text="UserData/Commanders/Dragon_Name">
                 <Field Id="Name"/>
             </Text>
-            <Upgrade Upgrade="DragonCommander">
-                <Field Id="DefaultUpgrades"/>
-            </Upgrade>
+            <User Type="Colors" Instance="Lavender">
+                <Field Id="Color"/>
+            </User>
         </Instances>
         <Instances Id="Keiron">
             <GameLink GameLink="Keir">
-                <Field Id="SpawnRace"/>
-            </GameLink>
-            <GameLink GameLink="Keir">
                 <Field Id="Race"/>
-            </GameLink>
-            <GameLink GameLink="KeironCommander">
-                <Field Id="CommanderData"/>
-            </GameLink>
-            <GameLink GameLink="Aquifer">
-                <Field Id="HeroReviveUnit"/>
             </GameLink>
             <GameLink GameLink="ButtonKeironLevel01">
                 <Field Id="PerkButton"/>
@@ -3431,33 +3247,24 @@
                 <Field Id="PerkButton" Index="14"/>
             </GameLink>
             <Image>
-                <Field Id="PrestigeIcon"/>
-            </Image>
-            <Image>
                 <Field Id="CustomImage"/>
             </Image>
             <Model Model="HybridDominatorVoidPortrait">
                 <Field Id="PortraitModel"/>
             </Model>
-            <Text Text="UserData/PlayerCommanders/Keiron_Description">
+            <Text Text="UserData/Commanders/Keiron_Description">
                 <Field Id="Description"/>
             </Text>
-            <Text Text="UserData/PlayerCommanders/Keiron_Name">
+            <Text Text="UserData/Commanders/Keiron_Name">
                 <Field Id="Name"/>
             </Text>
-            <Upgrade Upgrade="KeironCommander">
-                <Field Id="DefaultUpgrades"/>
-            </Upgrade>
+            <User Type="Colors" Instance="Yellow">
+                <Field Id="Color"/>
+            </User>
         </Instances>
         <Instances Id="UPL">
-            <GameLink GameLink="MyraDavisPortrait">
-                <Field Id="PortraitActor"/>
-            </GameLink>
             <GameLink GameLink="UPL">
                 <Field Id="Race"/>
-            </GameLink>
-            <GameLink GameLink="UPL">
-                <Field Id="SpawnRace"/>
             </GameLink>
             <Image>
                 <Field Id="CustomImage"/>
@@ -3465,47 +3272,26 @@
             <Image Image="Assets\Factions\lobby-upl.dds">
                 <Field Id="Icon"/>
             </Image>
-            <Text Text="UserData/PlayerCommanders/UPL_Description">
+            <Model Model="MiningDronePortrait">
+                <Field Id="PortraitModel"/>
+            </Model>
+            <Text Text="UserData/Commanders/UPL_Description">
                 <Field Id="Description"/>
             </Text>
-            <Text Text="UserData/PlayerCommanders/UPL_Name">
+            <Text Text="UserData/Commanders/UPL_Name">
                 <Field Id="Name"/>
             </Text>
-            <User Type="PlayerColors" Instance="Silver">
+            <User Type="Colors" Instance="Silver">
                 <Field Id="Color"/>
             </User>
-            <User Type="CommanderType" Instance="MELEE">
-                <Field Id="Type"/>
-            </User>
         </Instances>
-        <Instances Id="ProtossVolchron">
+        <Instances Id="Talon">
             <GameLink GameLink="Prot">
                 <Field Id="AdjutantRace"/>
-            </GameLink>
-            <GameLink GameLink="ProtossTalon">
-                <Field Id="CommanderSkin"/>
-            </GameLink>
-            <GameLink GameLink="AlarakReviveBeacon">
-                <Field Id="HeroReviveUnit"/>
-            </GameLink>
-            <GameLink GameLink="VolchrontheHunter">
-                <Field Id="HeroUnit"/>
-            </GameLink>
-            <GameLink GameLink="KerriganFirstReviveTimer">
-                <Field Id="HeroUnitFirstReviveBehavior"/>
-            </GameLink>
-            <GameLink GameLink="KerriganNormalReviveTimer">
-                <Field Id="HeroUnitNormalReviveBehavior"/>
-            </GameLink>
-            <GameLink GameLink="Prot">
-                <Field Id="SpawnRace"/>
             </GameLink>
             <GameLink GameLink="Prot">
                 <Field Id="Race"/>
             </GameLink>
-            <Image>
-                <Field Id="PrestigeIcon"/>
-            </Image>
             <Image>
                 <Field Id="CustomImage"/>
             </Image>
@@ -3518,16 +3304,13 @@
             <Model Model="Carrier_AmonBrood_Collection_Portrait">
                 <Field Id="PortraitModel"/>
             </Model>
-            <String String="Abil/KerriganRevive">
-                <Field Id="HeroReviveLink"/>
-            </String>
-            <Text Text="UserData/PlayerCommanders/ProtossVolchron_Description">
+            <Text Text="UserData/Commanders/Talon_Description">
                 <Field Id="Description"/>
             </Text>
-            <Text Text="UserData/PlayerCommanders/ProtossVolchron_Name">
+            <Text Text="UserData/Commanders/Talon_Name">
                 <Field Id="Name"/>
             </Text>
-            <User Type="PlayerColors" Instance="[Default]">
+            <User Type="Colors" Instance="Purple">
                 <Field Id="Color"/>
             </User>
         </Instances>

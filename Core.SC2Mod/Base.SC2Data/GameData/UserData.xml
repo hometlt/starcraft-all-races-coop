@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
-    <CUser id="CommanderType">
-        <Instances Id="[Default]"/>
-        <Instances Id="COOP"/>
-        <Instances Id="MELEE"/>
-    </CUser>
     <CUser id="UpgradeLevel">
         <Instances Id="[Default]"/>
         <Instances Id="CHEAT"/>
@@ -13,11 +8,6 @@
         <Instances Id="SET50"/>
         <Instances Id="SET100"/>
         <Instances Id="SET200"/>
-    </CUser>
-    <CUser id="Boolean">
-        <Instances Id="[Default]"/>
-        <Instances Id="True"/>
-        <Instances Id="False"/>
     </CUser>
     <CUser id="CoopAIStock">
         <Fields Id="Unit" Type="Unit" EditorColumn="1"/>
@@ -347,7 +337,7 @@
         <Fields>
             <Id value="Commander"/>
             <Type value="User"/>
-            <UserType value="PlayerCommanders"/>
+            <UserType value="Commanders"/>
             <EditorColumn value="1"/>
         </Fields>
         <Fields Id="InternalIndex" Type="Int">
@@ -374,7 +364,7 @@
             <Upgrade Upgrade="MasteryRaynorResearchCost">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Raynor">
+            <User Type="Commanders" Instance="Raynor">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -397,7 +387,7 @@
             <Upgrade Upgrade="MasteryRaynorDropPodHaste">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Raynor">
+            <User Type="Commanders" Instance="Raynor">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -420,7 +410,7 @@
             <Upgrade Upgrade="MasteryRaynorHyperionCooldown">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Raynor">
+            <User Type="Commanders" Instance="Raynor">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -443,7 +433,7 @@
             <Upgrade Upgrade="MasteryRaynorDuskWingCooldown">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Raynor">
+            <User Type="Commanders" Instance="Raynor">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -466,7 +456,7 @@
             <Upgrade Upgrade="MasteryRaynorMedicSecondaryHeal">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Raynor">
+            <User Type="Commanders" Instance="Raynor">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -489,7 +479,7 @@
             <Upgrade Upgrade="MasteryRaynorMechAttackSpeed">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Raynor">
+            <User Type="Commanders" Instance="Raynor">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -515,7 +505,7 @@
             <Upgrade Upgrade="MasterySwannConcentratedBeam">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Swann">
+            <User Type="Commanders" Instance="Swann">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -541,7 +531,7 @@
             <Upgrade Upgrade="MasterySwannCombatDrop">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Swann">
+            <User Type="Commanders" Instance="Swann">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -564,7 +554,7 @@
             <Upgrade Upgrade="MasterySwannImmortalityProtocol">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Swann">
+            <User Type="Commanders" Instance="Swann">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -587,7 +577,7 @@
             <Upgrade Upgrade="MasterySwannBuildingHealth">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Swann">
+            <User Type="Commanders" Instance="Swann">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -610,7 +600,7 @@
             <Upgrade Upgrade="MasterySwannVespeneHarvesterCost">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Swann">
+            <User Type="Commanders" Instance="Swann">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -636,7 +626,7 @@
             <Upgrade Upgrade="MasterySwannLaserDrillBuildTime">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Swann">
+            <User Type="Commanders" Instance="Swann">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -659,7 +649,7 @@
             <Upgrade Upgrade="MasteryKerriganEnergyRegen">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Kerrigan">
+            <User Type="Commanders" Instance="Kerrigan">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -682,7 +672,7 @@
             <Upgrade Upgrade="MasteryKerriganAutoAttackDamage">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Kerrigan">
+            <User Type="Commanders" Instance="Kerrigan">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -705,7 +695,7 @@
             <Upgrade Upgrade="MasteryKerriganArmyGasCost">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Kerrigan">
+            <User Type="Commanders" Instance="Kerrigan">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -728,7 +718,7 @@
             <Upgrade Upgrade="MasteryKerriganImmobilizationWaveDamage">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Kerrigan">
+            <User Type="Commanders" Instance="Kerrigan">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -751,7 +741,7 @@
             <Upgrade Upgrade="MasteryKerriganResearchSpeedandCost">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Kerrigan">
+            <User Type="Commanders" Instance="Kerrigan">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -774,7 +764,7 @@
             <Upgrade Upgrade="MasteryKerriganPrimarySpeedDamage">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Kerrigan">
+            <User Type="Commanders" Instance="Kerrigan">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -797,7 +787,7 @@
             <Upgrade Upgrade="MasteryZagaraHealthAndEnergyRegen">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Zagara">
+            <User Type="Commanders" Instance="Zagara">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -820,7 +810,7 @@
             <Upgrade Upgrade="MasteryZagaraAutoAttackDamage">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Zagara">
+            <User Type="Commanders" Instance="Zagara">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -843,7 +833,7 @@
             <Upgrade Upgrade="MasteryZagaraMassFrenzySpeedBoost">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Zagara">
+            <User Type="Commanders" Instance="Zagara">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -866,7 +856,7 @@
             <Upgrade Upgrade="MasteryZagaraZerglingDodgeChance">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Zagara">
+            <User Type="Commanders" Instance="Zagara">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -889,7 +879,7 @@
             <Upgrade Upgrade="MasteryZagaraRoachDropDamageAndHealth">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Zagara">
+            <User Type="Commanders" Instance="Zagara">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -912,7 +902,7 @@
             <Upgrade Upgrade="MasteryZagaraBanelingsDamage">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Zagara">
+            <User Type="Commanders" Instance="Zagara">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -935,7 +925,7 @@
             <Upgrade Upgrade="MasteryAbathurToxicNestDamageAndRespawn">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Abathur">
+            <User Type="Commanders" Instance="Abathur">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -958,7 +948,7 @@
             <Upgrade Upgrade="MasteryAbathurMendHeal">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Abathur">
+            <User Type="Commanders" Instance="Abathur">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -981,7 +971,7 @@
             <Upgrade Upgrade="MasteryAbathurSymbioteCarapace">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Abathur">
+            <User Type="Commanders" Instance="Abathur">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -1004,7 +994,7 @@
             <Upgrade Upgrade="MasteryAbathurDoubleBiomass">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Abathur">
+            <User Type="Commanders" Instance="Abathur">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -1027,7 +1017,7 @@
             <Upgrade Upgrade="MasteryAbathurToxicNestCharge">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Abathur">
+            <User Type="Commanders" Instance="Abathur">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -1050,7 +1040,7 @@
             <Upgrade Upgrade="MasteryAbathurTechFastBuild">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Abathur">
+            <User Type="Commanders" Instance="Abathur">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -1073,7 +1063,7 @@
             <Upgrade Upgrade="MasteryArtanisShieldOvercharge">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Artanis">
+            <User Type="Commanders" Instance="Artanis">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -1096,7 +1086,7 @@
             <Upgrade Upgrade="MasteryArtanisGuardianShellHeal">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Artanis">
+            <User Type="Commanders" Instance="Artanis">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -1119,7 +1109,7 @@
             <Upgrade Upgrade="MasteryArtanisEnergyRegenCooldown">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Artanis">
+            <User Type="Commanders" Instance="Artanis">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -1142,7 +1132,7 @@
             <Upgrade Upgrade="MasteryArtanisSoAPowerFieldHaste">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Artanis">
+            <User Type="Commanders" Instance="Artanis">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -1165,7 +1155,7 @@
             <Upgrade Upgrade="MasteryArtanisChronoBoost">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Artanis">
+            <User Type="Commanders" Instance="Artanis">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -1188,7 +1178,7 @@
             <Upgrade Upgrade="MasteryArtanisStartingAndMaxSoAEnergy">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Artanis">
+            <User Type="Commanders" Instance="Artanis">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -1211,7 +1201,7 @@
             <Upgrade Upgrade="MasteryVorazunDarkPylonRadius">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Vorazun">
+            <User Type="Commanders" Instance="Vorazun">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -1234,7 +1224,7 @@
             <Upgrade Upgrade="MasteryVorazunBlackHoleDuration">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Vorazun">
+            <User Type="Commanders" Instance="Vorazun">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -1257,7 +1247,7 @@
             <Upgrade Upgrade="MasteryVorazunShadowGuardDuration">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Vorazun">
+            <User Type="Commanders" Instance="Vorazun">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -1280,7 +1270,7 @@
             <Upgrade Upgrade="MasteryVorazunTimeStopHaste">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Vorazun">
+            <User Type="Commanders" Instance="Vorazun">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -1303,7 +1293,7 @@
             <Upgrade Upgrade="MasteryVorazunChronoBoostSpeed">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Vorazun">
+            <User Type="Commanders" Instance="Vorazun">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -1326,7 +1316,7 @@
             <Upgrade Upgrade="MasteryVorazunStartingAndMaxSoAEnergy">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Vorazun">
+            <User Type="Commanders" Instance="Vorazun">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -1349,7 +1339,7 @@
             <Upgrade Upgrade="MasteryKaraxUnitVital">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Karax">
+            <User Type="Commanders" Instance="Karax">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -1372,7 +1362,7 @@
             <Upgrade Upgrade="MasteryKaraxBuildingVital">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Karax">
+            <User Type="Commanders" Instance="Karax">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -1395,7 +1385,7 @@
             <Upgrade Upgrade="MasteryKaraxRepairBeamHeal">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Karax">
+            <User Type="Commanders" Instance="Karax">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -1418,7 +1408,7 @@
             <Upgrade Upgrade="MasteryKaraxSoAChronoRegen">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Karax">
+            <User Type="Commanders" Instance="Karax">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -1441,7 +1431,7 @@
             <Upgrade Upgrade="MasteryKaraxChronoBoostSpeed">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Karax">
+            <User Type="Commanders" Instance="Karax">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -1464,7 +1454,7 @@
             <Upgrade Upgrade="MasteryKaraxStartingAndMaxSoAEnergy">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Karax">
+            <User Type="Commanders" Instance="Karax">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -1487,7 +1477,7 @@
             <Upgrade Upgrade="MasteryAlarakAutoAttackDamage">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Alarak">
+            <User Type="Commanders" Instance="Alarak">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -1510,7 +1500,7 @@
             <Upgrade Upgrade="MasteryAlarakUnitAttackSpeed">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Alarak">
+            <User Type="Commanders" Instance="Alarak">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -1533,7 +1523,7 @@
             <Upgrade Upgrade="MasteryAlarakEmpowerMeSlavesDuration">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Alarak">
+            <User Type="Commanders" Instance="Alarak">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -1556,7 +1546,7 @@
             <Upgrade Upgrade="MasteryAlarakDeathFleetCDR">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Alarak">
+            <User Type="Commanders" Instance="Alarak">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -1579,7 +1569,7 @@
             <Upgrade Upgrade="MasteryAlarakOverchargeShieldsDamage">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Alarak">
+            <User Type="Commanders" Instance="Alarak">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -1602,7 +1592,7 @@
             <Upgrade Upgrade="MasteryAlarakChronoBoost">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Alarak">
+            <User Type="Commanders" Instance="Alarak">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -1625,7 +1615,7 @@
             <Upgrade Upgrade="MasteryNovaNukeAndHoloDecoyCooldown">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Nova">
+            <User Type="Commanders" Instance="Nova">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -1648,7 +1638,7 @@
             <Upgrade Upgrade="MasteryNovaGriffinCost">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Nova">
+            <User Type="Commanders" Instance="Nova">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -1671,7 +1661,7 @@
             <Upgrade Upgrade="MasteryNovaPrimaryAbilityImprovement">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Nova">
+            <User Type="Commanders" Instance="Nova">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -1694,7 +1684,7 @@
             <Upgrade Upgrade="MasteryNovaArmyAttackSpeed">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Nova">
+            <User Type="Commanders" Instance="Nova">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -1717,7 +1707,7 @@
             <Upgrade Upgrade="MasteryNovaEnergyRegen">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Nova">
+            <User Type="Commanders" Instance="Nova">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -1740,7 +1730,7 @@
             <Upgrade Upgrade="MasteryNovaArmyOOCRegenSpeed">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Nova">
+            <User Type="Commanders" Instance="Nova">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -1763,7 +1753,7 @@
             <Upgrade Upgrade="MasteryStukovVolatileChance">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Stukov">
+            <User Type="Commanders" Instance="Stukov">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -1786,7 +1776,7 @@
             <Upgrade Upgrade="MasteryStukovInfestStructureCDR">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Stukov">
+            <User Type="Commanders" Instance="Stukov">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -1809,7 +1799,7 @@
             <Upgrade Upgrade="MasteryStukovAleksanderCDR">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Stukov">
+            <User Type="Commanders" Instance="Stukov">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -1832,7 +1822,7 @@
             <Upgrade Upgrade="MasteryStukovApocaliskCDR">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Stukov">
+            <User Type="Commanders" Instance="Stukov">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -1855,7 +1845,7 @@
             <Upgrade Upgrade="MasteryStukovTimedLife">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Stukov">
+            <User Type="Commanders" Instance="Stukov">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -1878,7 +1868,7 @@
             <Upgrade Upgrade="MasteryStukovMechAttackSpeed">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Stukov">
+            <User Type="Commanders" Instance="Stukov">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -1901,7 +1891,7 @@
             <Upgrade Upgrade="MasteryFenixSuitAttackSpeed">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Fenix">
+            <User Type="Commanders" Instance="Fenix">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -1924,7 +1914,7 @@
             <Upgrade Upgrade="MasteryFenixSuitEnergyRegen">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Fenix">
+            <User Type="Commanders" Instance="Fenix">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -1947,7 +1937,7 @@
             <Upgrade Upgrade="MasteryFenixChampionAttackSpeed">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Fenix">
+            <User Type="Commanders" Instance="Fenix">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -1970,7 +1960,7 @@
             <Upgrade Upgrade="MasteryFenixChampionLifeShieldBuff">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Fenix">
+            <User Type="Commanders" Instance="Fenix">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -1993,7 +1983,7 @@
             <Upgrade Upgrade="MasteryFenixChronoBoostExtra">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Fenix">
+            <User Type="Commanders" Instance="Fenix">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -2016,7 +2006,7 @@
             <Upgrade Upgrade="MasteryFenixExtraStartingSupply">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Fenix">
+            <User Type="Commanders" Instance="Fenix">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -2039,7 +2029,7 @@
             <Upgrade Upgrade="MasteryDehakaConsumeHealing">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Dehaka">
+            <User Type="Commanders" Instance="Dehaka">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -2062,7 +2052,7 @@
             <Upgrade Upgrade="MasteryDehakaConsumeDuration">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Dehaka">
+            <User Type="Commanders" Instance="Dehaka">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -2085,7 +2075,7 @@
             <Upgrade Upgrade="MasteryDehakaPrimalWurmCDR">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Dehaka">
+            <User Type="Commanders" Instance="Dehaka">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -2108,7 +2098,7 @@
             <Upgrade Upgrade="MasteryDehakaBossTimedLife">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Dehaka">
+            <User Type="Commanders" Instance="Dehaka">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -2131,7 +2121,7 @@
             <Upgrade Upgrade="MasteryDehakaGeneMutation">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Dehaka">
+            <User Type="Commanders" Instance="Dehaka">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -2154,7 +2144,7 @@
             <Upgrade Upgrade="MasteryDehakaAttackSpeed">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Dehaka">
+            <User Type="Commanders" Instance="Dehaka">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -2177,7 +2167,7 @@
             <Upgrade Upgrade="MasteryHornerBomberRadius">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Horner">
+            <User Type="Commanders" Instance="Horner">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -2200,7 +2190,7 @@
             <Upgrade Upgrade="MasteryHornerBetterDeathRattle">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Horner">
+            <User Type="Commanders" Instance="Horner">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -2223,7 +2213,7 @@
             <Upgrade Upgrade="MasteryHornerMSOBonus">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Horner">
+            <User Type="Commanders" Instance="Horner">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -2246,7 +2236,7 @@
             <Upgrade Upgrade="MasteryHornerDoubleSalvageChance">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Horner">
+            <User Type="Commanders" Instance="Horner">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -2269,7 +2259,7 @@
             <Upgrade Upgrade="MasteryHornerAirStrikeDistance">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Horner">
+            <User Type="Commanders" Instance="Horner">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -2292,7 +2282,7 @@
             <Upgrade Upgrade="MasteryHornerMagMineUpgrades">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Horner">
+            <User Type="Commanders" Instance="Horner">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -2315,7 +2305,7 @@
             <Upgrade Upgrade="MasteryTychusCommanderAttackSpeed">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Tychus">
+            <User Type="Commanders" Instance="Tychus">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -2338,7 +2328,7 @@
             <Upgrade Upgrade="MasteryTychusGrenadeCooldown">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Tychus">
+            <User Type="Commanders" Instance="Tychus">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -2361,7 +2351,7 @@
             <Upgrade Upgrade="MasteryTychusUpgradesIncrease">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Tychus">
+            <User Type="Commanders" Instance="Tychus">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -2384,7 +2374,7 @@
             <Upgrade Upgrade="MasteryTychusHeroCooldown">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Tychus">
+            <User Type="Commanders" Instance="Tychus">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -2407,7 +2397,7 @@
             <Upgrade Upgrade="MasteryTychusMedivacBuff">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Tychus">
+            <User Type="Commanders" Instance="Tychus">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -2430,7 +2420,7 @@
             <Upgrade Upgrade="MasteryTychusOdinCooldown">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Tychus">
+            <User Type="Commanders" Instance="Tychus">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -2453,7 +2443,7 @@
             <Upgrade Upgrade="MasteryZeratulZeratulAttackSpeed">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Zeratul">
+            <User Type="Commanders" Instance="Zeratul">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -2476,7 +2466,7 @@
             <Upgrade Upgrade="MasteryZeratulCombatUnitAttackSpeed">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Zeratul">
+            <User Type="Commanders" Instance="Zeratul">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -2499,7 +2489,7 @@
             <Upgrade Upgrade="MasteryZeratulArtifactFragmentSpawnRate">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Zeratul">
+            <User Type="Commanders" Instance="Zeratul">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -2522,7 +2512,7 @@
             <Upgrade Upgrade="MasteryZeratulSupportCalldownCooldownReduction">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Zeratul">
+            <User Type="Commanders" Instance="Zeratul">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -2545,7 +2535,7 @@
             <Upgrade Upgrade="MasteryZeratulLegendaryLegionCost">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Zeratul">
+            <User Type="Commanders" Instance="Zeratul">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -2568,7 +2558,7 @@
             <Upgrade Upgrade="MasteryZeratulAvatarCooldown">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Zeratul">
+            <User Type="Commanders" Instance="Zeratul">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -2591,7 +2581,7 @@
             <Upgrade Upgrade="MasteryMengskTrooperImperialMandateRegeneration">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Mengsk">
+            <User Type="Commanders" Instance="Mengsk">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -2614,7 +2604,7 @@
             <Upgrade Upgrade="MasteryMengskRoyalGuardImperialMandateRegeneration">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Mengsk">
+            <User Type="Commanders" Instance="Mengsk">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -2637,7 +2627,7 @@
             <Upgrade Upgrade="MasteryMengskTopPanelPower">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Mengsk">
+            <User Type="Commanders" Instance="Mengsk">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -2660,7 +2650,7 @@
             <Upgrade Upgrade="MasteryMengskRoyalGuardCost">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Mengsk">
+            <User Type="Commanders" Instance="Mengsk">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -2683,7 +2673,7 @@
             <Upgrade Upgrade="MasteryMengskStartingImperialMandate">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Mengsk">
+            <User Type="Commanders" Instance="Mengsk">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -2706,7 +2696,7 @@
             <Upgrade Upgrade="MasteryMengskRoyalGuardExperienceGainRate">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Mengsk">
+            <User Type="Commanders" Instance="Mengsk">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -2729,7 +2719,7 @@
             <Upgrade Upgrade="MasteryStetmannUpgradeResearchCost">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Stetmann">
+            <User Type="Commanders" Instance="Stetmann">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -2752,7 +2742,7 @@
             <Upgrade Upgrade="MasteryStetmannGaryAbilityCooldown">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Stetmann">
+            <User Type="Commanders" Instance="Stetmann">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -2775,7 +2765,7 @@
             <Upgrade Upgrade="MasteryStetmannStetzoneBonuses">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Stetmann">
+            <User Type="Commanders" Instance="Stetmann">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -2798,7 +2788,7 @@
             <Upgrade Upgrade="MasteryStetmannMaximumEgonergyPool">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Stetmann">
+            <User Type="Commanders" Instance="Stetmann">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -2821,7 +2811,7 @@
             <Upgrade Upgrade="MasteryStetmannDeployStetelliteCooldown">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Stetmann">
+            <User Type="Commanders" Instance="Stetmann">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -2844,12 +2834,12 @@
             <Upgrade Upgrade="MasteryStetmannStructureMorphRate">
                 <Field Id="Upgrade"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="Stetmann">
+            <User Type="Commanders" Instance="Stetmann">
                 <Field Id="Commander"/>
             </User>
         </Instances>
     </CUser>
-    <CUser id="PlayerPrestige">
+    <CUser id="Prestiges">
         <Fields>
             <Id value="ZZ_UpgradeSupplements"/>
             <Type value="User"/>
@@ -4019,7 +4009,7 @@
             </GameLink>
         </Instances>
     </CUser>
-    <CUser id="PlayerColors">
+    <CUser id="Colors">
         <Instances Id="[Default]"/>
         <Instances Id="White"/>
         <Instances Id="Red"/>
@@ -4038,86 +4028,6 @@
         <Instances Id="Sangria"/>
         <Instances Id="Magenta"/>
         <Instances Id="Mengsk"/>
-    </CUser>
-    <CUser id="Waves">
-        <Fields>
-            <Id value="AIPersonality"/>
-            <Type value="User"/>
-            <UserType value="CoopAICommanders"/>
-            <EditorColumn value="1"/>
-        </Fields>
-        <Fields Id="Unit" Type="Unit" EditorColumn="2"/>
-        <Fields Id="Cost" Type="Int" EditorColumn="3"/>
-        <Fields>
-            <Id value="Limit (Difficulty)"/>
-            <Type value="Int"/>
-            <Count value="4"/>
-            <EditorColumn value="4"/>
-        </Fields>
-        <Fields>
-            <Id value="Priority (Tech Level)"/>
-            <Type value="Int"/>
-            <Count value="7"/>
-            <EditorColumn value="7"/>
-        </Fields>
-        <Fields>
-            <Id value="Priority (Difficulty)"/>
-            <Type value="Int"/>
-            <Count value="4"/>
-            <EditorColumn value="6"/>
-        </Fields>
-        <Fields>
-            <Id value="Limit (Tech Level)"/>
-            <Type value="Int"/>
-            <Count value="7"/>
-            <EditorColumn value="4"/>
-        </Fields>
-        <Instances Id="[Default]">
-            <User Type="CoopAICommanders" Instance="[Default]">
-                <Field Id="AIPersonality"/>
-            </User>
-        </Instances>
-        <Instances Id="Zealot">
-            <Int Int="100">
-                <Field Id="Priority (Tech Level)"/>
-            </Int>
-            <Int Int="50">
-                <Field Id="Priority (Tech Level)" Index="1"/>
-            </Int>
-            <Int Int="30">
-                <Field Id="Priority (Tech Level)" Index="2"/>
-            </Int>
-            <Int Int="20">
-                <Field Id="Priority (Tech Level)" Index="3"/>
-            </Int>
-            <Int Int="15">
-                <Field Id="Priority (Tech Level)" Index="4"/>
-            </Int>
-            <Int Int="10">
-                <Field Id="Priority (Tech Level)" Index="5"/>
-            </Int>
-            <Int Int="10">
-                <Field Id="Priority (Tech Level)" Index="6"/>
-            </Int>
-            <Int Int="50">
-                <Field Id="Priority (Difficulty)"/>
-            </Int>
-            <Int Int="25">
-                <Field Id="Priority (Difficulty)" Index="1"/>
-            </Int>
-            <Int Int="20">
-                <Field Id="Priority (Difficulty)" Index="2"/>
-            </Int>
-            <Int Int="15">
-                <Field Id="Priority (Difficulty)" Index="3"/>
-            </Int>
-            <Unit Unit="Zealot">
-                <Field Id="Unit"/>
-            </Unit>
-            <User Type="CoopAICommanders" Instance="ProtossBuildGateway">
-                <Field Id="AIPersonality"/>
-            </User>
-        </Instances>
     </CUser>
     <CUser id="XMM_MutationAbominations">
         <Fields>
@@ -11062,7 +10972,6 @@
             </Int>
         </Instances>
     </CUser>
-
     <CUser id="MissionObjective">
         <Fields Id="Progress" Type="Int" GameLinkType="Abil">
             <Flags index="Modifiable" value="1"/>
@@ -12146,7 +12055,7 @@
         <Fields>
             <Id value="Comp"/>
             <Type value="User"/>
-            <UserType value="CoopAICommanders"/>
+            <UserType value="Compositions"/>
             <EditorColumn value="1"/>
         </Fields>
         <Fields Id="Race" Type="Int" EditorColumn="2"/>
@@ -12173,7 +12082,7 @@
             <Int Int="1">
                 <Field Id="Race"/>
             </Int>
-            <User Type="CoopAICommanders" Instance="ProtossBuildSkytossTempest">
+            <User Type="Compositions" Instance="Protoss-Standard-Air-Tempest">
                 <Field Id="Comp"/>
             </User>
         </Instances>
@@ -12199,7 +12108,7 @@
             <Int Int="1">
                 <Field Id="Race"/>
             </Int>
-            <User Type="CoopAICommanders" Instance="ProtossBuildTechy">
+            <User Type="Compositions" Instance="Protoss-Standard-Techy">
                 <Field Id="Comp"/>
             </User>
         </Instances>
@@ -12225,7 +12134,7 @@
             <Int Int="1">
                 <Field Id="Race"/>
             </Int>
-            <User Type="CoopAICommanders" Instance="ProtossBuildRoboReaver">
+            <User Type="Compositions" Instance="Protoss-Standard-RoboReaver">
                 <Field Id="Comp"/>
             </User>
         </Instances>
@@ -12251,9 +12160,6 @@
             <Int Int="1">
                 <Field Id="Race"/>
             </Int>
-            <User Type="CoopAICommanders" Instance="ProtossBuildGateway">
-                <Field Id="Comp"/>
-            </User>
         </Instances>
         <Instances Id="SkytossCarrier">
             <Int Int="13">
@@ -12277,7 +12183,7 @@
             <Int Int="1">
                 <Field Id="Race"/>
             </Int>
-            <User Type="CoopAICommanders" Instance="ProtossBuildSkytossCarrier">
+            <User Type="Compositions" Instance="Protoss-Standard-Air-Carrier">
                 <Field Id="Comp"/>
             </User>
         </Instances>
@@ -12300,7 +12206,7 @@
             <Int Int="1">
                 <Field Id="Race"/>
             </Int>
-            <User Type="CoopAICommanders" Instance="ProtossBuildRoboColossus">
+            <User Type="Compositions" Instance="Protoss-Standard-RoboColossus">
                 <Field Id="Comp"/>
             </User>
         </Instances>
@@ -12326,7 +12232,7 @@
             <Int Int="1">
                 <Field Id="Race"/>
             </Int>
-            <User Type="CoopAICommanders" Instance="ProtossBuildGroundClassic">
+            <User Type="Compositions" Instance="Protoss-Standard-Ground-Classic">
                 <Field Id="Comp"/>
             </User>
         </Instances>
@@ -12349,7 +12255,7 @@
             <Int Int="1">
                 <Field Id="Race"/>
             </Int>
-            <User Type="CoopAICommanders" Instance="ProtossBuildAirClassic">
+            <User Type="Compositions" Instance="Protoss-Standard-Air-Classic">
                 <Field Id="Comp"/>
             </User>
         </Instances>
@@ -12375,7 +12281,7 @@
             <Int Int="2">
                 <Field Id="Race"/>
             </Int>
-            <User Type="CoopAICommanders" Instance="TerranBuildSkyTerran">
+            <User Type="Compositions" Instance="Terran-Standard-Air">
                 <Field Id="Comp"/>
             </User>
         </Instances>
@@ -12401,7 +12307,7 @@
             <Int Int="2">
                 <Field Id="Race"/>
             </Int>
-            <User Type="CoopAICommanders" Instance="TerranBuildShadowTech">
+            <User Type="Compositions" Instance="Terran-Standard-ShadowTech">
                 <Field Id="Comp"/>
             </User>
         </Instances>
@@ -12436,7 +12342,7 @@
             <Int Int="2">
                 <Field Id="Race"/>
             </Int>
-            <User Type="CoopAICommanders" Instance="TerranBuildBioMechStar">
+            <User Type="Compositions" Instance="Terran-Standard-BioMechStar">
                 <Field Id="Comp"/>
             </User>
         </Instances>
@@ -12468,7 +12374,7 @@
             <Int Int="2">
                 <Field Id="Race"/>
             </Int>
-            <User Type="CoopAICommanders" Instance="TerranBuildMechStarport">
+            <User Type="Compositions" Instance="Terran-Standard-MechStarport">
                 <Field Id="Comp"/>
             </User>
         </Instances>
@@ -12494,7 +12400,7 @@
             <Int Int="2">
                 <Field Id="Race"/>
             </Int>
-            <User Type="CoopAICommanders" Instance="TerranBuildBioClassic">
+            <User Type="Compositions" Instance="Terran-Standard-Bio-Classic">
                 <Field Id="Comp"/>
             </User>
         </Instances>
@@ -12520,7 +12426,7 @@
             <Int Int="2">
                 <Field Id="Race"/>
             </Int>
-            <User Type="CoopAICommanders" Instance="TerranBuildMechClassic">
+            <User Type="Compositions" Instance="Terran-Standard-Mech-Classic">
                 <Field Id="Comp"/>
             </User>
         </Instances>
@@ -12546,7 +12452,7 @@
             <Int Int="3">
                 <Field Id="Race"/>
             </Int>
-            <User Type="CoopAICommanders" Instance="ZergBuildMutaLing">
+            <User Type="Compositions" Instance="Zerg-Standard-MutaLing">
                 <Field Id="Comp"/>
             </User>
         </Instances>
@@ -12575,7 +12481,7 @@
             <Int Int="3">
                 <Field Id="Race"/>
             </Int>
-            <User Type="CoopAICommanders" Instance="ZergBuildSwarmy">
+            <User Type="Compositions" Instance="Zerg-Standard-Swarmy">
                 <Field Id="Comp"/>
             </User>
         </Instances>
@@ -12604,7 +12510,7 @@
             <Int Int="3">
                 <Field Id="Race"/>
             </Int>
-            <User Type="CoopAICommanders" Instance="ZergBuildGround">
+            <User Type="Compositions" Instance="Zerg-Standard-Ground">
                 <Field Id="Comp"/>
             </User>
         </Instances>
@@ -12627,7 +12533,7 @@
             <Int Int="3">
                 <Field Id="Race"/>
             </Int>
-            <User Type="CoopAICommanders" Instance="ZergBuildGroundClassic">
+            <User Type="Compositions" Instance="Zerg-Standard-Ground-Classic">
                 <Field Id="Comp"/>
             </User>
         </Instances>
@@ -12653,7 +12559,7 @@
             <Int Int="3">
                 <Field Id="Race"/>
             </Int>
-            <User Type="CoopAICommanders" Instance="ZergBuildAirClassic">
+            <User Type="Compositions" Instance="Zerg-Standard-Air-Classic">
                 <Field Id="Comp"/>
             </User>
         </Instances>

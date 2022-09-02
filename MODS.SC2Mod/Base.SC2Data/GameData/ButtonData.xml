@@ -18357,6 +18357,204 @@
   <AlertIcon value="Assets\Textures\btn-progression-hornerhan-5-fleetcalldown.dds"/>
   <EditorCategories value="Race:UPL"/>
 </CButton>
+<CButton id="SwatVan">
+  <Icon value="Assets\Textures\btn-unit-upl-swatvan.dds"/>
+  <AlertIcon value="Assets\Textures\btn-unit-upl-swatvan.dds"/>
+  <EditorCategories value="Race:UPL"/>
+</CButton>
+<CButton id="UPLPoliceOfficer">
+  <Icon value="Assets\Textures\btn-unit-UPL-InfantryAssaultRifle.dds"/>
+  <AlertIcon value="Assets\Textures\btn-unit-UPL-InfantryAssaultRifle.dds"/>
+  <EditorCategories value="Race:UPL"/>
+</CButton>
+<CButton id="KatherineHalseyMedkit">
+  <Icon value="Assets\Textures\btn-ability-upl-medkit.dds"/>
+  <AlertIcon value="Assets\Textures\btn-ability-upl-medkit.dds"/>
+  <EditorCategories value="Race:UPL"/>
+</CButton>
+<CButton id="KatherineHalseyMedkit@Research">
+  <Icon value="Assets\Textures\btn-ability-upl-medkit.dds"/>
+  <AlertIcon value="Assets\Textures\btn-ability-upl-medkit.dds"/>
+  <EditorCategories value="Race:UPL"/>
+</CButton>
+<CButton id="WilliamGravesMedkit">
+  <Icon value="Assets\Textures\btn-ability-upl-medkit.dds"/>
+  <AlertIcon value="Assets\Textures\btn-ability-upl-medkit.dds"/>
+  <EditorCategories value="Race:UPL"/>
+</CButton>
+<CButton id="WilliamGravesMedkit@Research">
+  <Icon value="Assets\Textures\btn-ability-upl-medkit.dds"/>
+  <AlertIcon value="Assets\Textures\btn-ability-upl-medkit.dds"/>
+  <EditorCategories value="Race:UPL"/>
+</CButton>
+<CButton id="DarrenRodgersSwapToShield">
+  <Icon value="Assets\Textures\btn-ability-UPL-ShieldDefense.dds"/>
+  <AlertIcon value="Assets\Textures\btn-ability-UPL-AssaultRifle.dds"/>
+  <EditorCategories value="Race:UPL"/>
+</CButton>
+<CButton id="WilliamGravesCharge" parent="InfantryOfficerCharge">
+  <Tooltip value="Button/Tooltip/WilliamGravesCharge"/>
+  <AlertName value="Button/Name/WilliamGravesCharge"/>
+  <AlertTooltip value="Button/Tooltip/WilliamGravesCharge"/>
+</CButton>
+<CButton id="UPLArtilleryStrike">
+  <Icon value="Assets\Textures\btn-ability-upl-artillerystrike.dds"/>
+  <AlertIcon value="Assets\Textures\btn-ability-upl-artillerystrike.dds"/>
+  <EditorCategories value="Race:UPL"/>
+</CButton>
+<CButton id="MyraDavisSwapToRifle">
+  <Icon value="Assets\Textures\btn-ability-UPL-AssaultRifle.dds"/>
+  <AlertIcon value="Assets\Textures\btn-ability-UPL-AssaultRifle.dds"/>
+  <EditorCategories value="Race:UPL"/>
+</CButton>
+<CButton id="MyraDavisSwapToShotgun">
+  <Icon value="Assets\Textures\btn-ability-UPL-ShotgunSwitch.dds"/>
+  <AlertIcon value="Assets\Textures\btn-ability-UPL-ShotgunSwitch.dds"/>
+  <HotkeyAlias value="MyraDavisSwapToRifle"/>
+  <EditorCategories value="Race:UPL"/>
+</CButton>
+<CButton id="MyraDavisHeadshot">
+  <Icon value="Assets\Textures\btn-ability-upl-headshot-zergling.dds"/>
+  <AlertIcon value="Assets\Textures\btn-ability-upl-headshot-zergling.dds"/>
+  <EditorCategories value="Race:UPL"/>
+  <HidesForSimpleText value="0"/>
+</CButton>
+<CButton id="RileyJericoLorna">
+  <Icon value="Assets\Textures\btn-ability-UPL-Jerico-Lorna.dds"/>
+  <AlertIcon value="Assets\Textures\btn-ability-UPL-Jerico-Lorna.dds"/>
+  <EditorCategories value="Race:UPL"/>
+</CButton>
+<CButton id="RileyJericoJumpJet">
+  <Icon value="Assets\Textures\btn-ability-UPL-Jerico-Jetpack.dds"/>
+  <AlertIcon value="Assets\Textures\btn-ability-UPL-Jerico-Jetpack.dds"/>
+  <EditorCategories value="Race:UPL"/>
+</CButton>
+<CButton id="UPLScoutGrenade">
+  <Icon value="Assets\Textures\btn-ability-UPL-FragGrenade.dds"/>
+  <AlertIcon value="Assets\Textures\btn-ability-UPL-FragGrenade.dds"/>
+  <EditorCategories value="Race:UPL"/>
+</CButton>
+<CButton id="MyraDavisHealingPatch">
+  <Icon value="Assets\Textures\btn-ability-UPL-FirstAid.dds"/>
+  <AlertIcon value="Assets\Textures\btn-ability-UPL-FirstAid.dds"/>
+  <EditorCategories value="Race:UPL"/>
+</CButton>
+<CButton id="MyraDavisFlameGrenade">
+  <Icon value="Assets\Textures\btn-ability-upl-firebomb.dds"/>
+  <AlertIcon value="Assets\Textures\btn-ability-upl-firebomb.dds"/>
+  <EditorCategories value="Race:UPL"/>
+</CButton>
+<CButton id="MyraDavisFlashBangGrenade">
+  <Icon value="Assets\Textures\btn-ability-UPL-FlashGrenade.dds"/>
+  <AlertIcon value="Assets\Textures\btn-ability-UPL-FlashGrenade.dds"/>
+  <EditorCategories value="Race:UPL"/>
+</CButton>
+<CButton id="RichardGideon">
+  <Icon value="Assets\Textures\btn-unit-upl-richardgideon.dds"/>
+  <AlertIcon value="Assets\Textures\btn-unit-upl-richardgideon.dds"/>
+  <EditorCategories value="Race:UPL"/>
+</CButton>
+<CButton id="UPLScoutFlameGrenade">
+  <Icon value="Assets\Textures\btn-ability-upl-firebomb.dds"/>
+  <AlertIcon value="Assets\Textures\btn-ability-upl-firebomb.dds"/>
+  <EditorCategories value="Race:UPL"/>
+</CButton>
+<CButton id="TrevorRandGrenade">
+  <Icon value="Assets\Textures\btn-ability-UPL-FragGrenade.dds"/>
+  <AlertIcon value="Assets\Textures\btn-ability-UPL-FragGrenade.dds"/>
+  <EditorCategories value="Race:UPL"/>
+</CButton>
+<CButton id="KatherineHalseyBreatheOn">
+  <Icon value="Assets\Textures\btn-ability-upl-holdbreath.dds"/>
+  <EditorCategories value="Race:UPL"/>
+</CButton>
+<CButton id="KatherineHalseyBreatheOff">
+  <Icon value="Assets\Textures\btn-ability-terran-weaponsfree.dds"/>
+  <EditorCategories value="Race:UPL"/>
+</CButton>
+<CButton id="LillyRollinsHeal">
+  <Icon value="Assets\Textures\btn-ability-UPL-FirstAid.dds"/>
+  <AlertIcon value="Assets\Textures\btn-ability-UPL-FirstAid.dds"/>
+  <EditorCategories value="Race:UPL"/>
+</CButton>
+<CButton id="AltonPetersDestroyArmor">
+  <Icon value="Assets\Textures\btn-ability-UPL-DestroyArmor.dds"/>
+  <AlertIcon value="Assets\Textures\btn-ability-UPL-DestroyArmor.dds"/>
+  <EditorCategories value="Race:UPL"/>
+</CButton>
+<CButton id="LillyRollinsHealAlt" parent="LillyRollinsHeal">
+  <Hotkey value="Button/Hotkey/LillyRollinsHealAlt"/>
+  <HotkeyAlias value="LillyRollinsHealAlt"/>
+</CButton>
+<CButton id="TrevorRandGrenadeAlt" parent="TrevorRandGrenade">
+  <Hotkey value="Button/Hotkey/TrevorRandGrenadeAlt"/>
+  <HotkeyAlias value="TrevorRandGrenadeAlt"/>
+</CButton>
+<CButton id="WearZ1BattleArmor">
+  <Icon value="Assets\Textures\btn-unit-UPL-Z1.dds"/>
+  <AlertIcon value="Assets\Textures\btn-unit-UPL-Z1.dds"/>
+  <EditorCategories value="Race:UPL"/>
+  <HotkeyAlias value="AssaultMode"/>
+  <HotkeySet value="WearZ1BattleArmor"/>
+  <Universal value="1"/>
+</CButton>
+<CButton id="AltonPetersZ1Adrenaline">
+  <Icon value="Assets\Textures\btn-ability-UPL-Adrenaline.dds"/>
+  <AlertIcon value="Assets\Textures\btn-ability-UPL-Adrenaline.dds"/>
+  <EditorCategories value="Race:UPL"/>
+  <Universal value="1"/>
+</CButton>
+<CButton id="AltonPetersZ1ImprovedHeal">
+  <Icon value="Assets\Textures\btn-ability-UPL-NaniteRegeneration.dds"/>
+  <AlertIcon value="Assets\Textures\btn-ability-UPL-NaniteRegeneration.dds"/>
+  <EditorCategories value="Race:UPL"/>
+</CButton>
+<CButton id="AltonPetersZ1">
+  <Icon value="Assets\Textures\ui-heroicon-jerico.dds"/>
+  <AlertIcon value="Assets\Textures\ui-heroicon-jerico.dds"/>
+  <EditorCategories value="Race:UPL"/>
+</CButton>
+<CButton id="AltonPeters">
+  <Icon value="Assets\Textures\ui-heroicon-peters.dds"/>
+  <AlertIcon value="Assets\Textures\ui-heroicon-peters.dds"/>
+  <EditorCategories value="Race:UPL"/>
+</CButton>
+<CButton id="LillyRollins">
+  <Icon value="Assets\Textures\ui-heroicon-rollins.dds"/>
+  <AlertIcon value="Assets\Textures\ui-heroicon-rollins.dds"/>
+  <EditorCategories value="Race:UPL"/>
+</CButton>
+<CButton id="TrevorRand">
+  <Icon value="Assets\Textures\ui-heroicon-rand.dds"/>
+  <AlertIcon value="Assets\Textures\ui-heroicon-rand.dds"/>
+  <EditorCategories value="Race:UPL"/>
+</CButton>
+<CButton id="UPLSpecOps">
+  <Icon value="Assets\Textures\btn-unit-upl-uplspecops.dds"/>
+  <AlertIcon value="Assets\Textures\btn-unit-upl-uplspecops.dds"/>
+  <EditorCategories value="Race:UPL"/>
+</CButton>
+<CButton id="UPLScout">
+  <Icon value="Assets\Textures\btn-unit-upl-uplscout.dds"/>
+  <AlertIcon value="Assets\Textures\btn-unit-upl-uplscout.dds"/>
+  <EditorCategories value="Race:UPL"/>
+  <HotkeyAlias value="RileyJerico"/>
+</CButton>
+<CButton id="RileyJerico">
+  <Icon value="Assets\Textures\ui-heroicon-jerico.dds"/>
+  <AlertIcon value="Assets\Textures\ui-heroicon-jerico.dds"/>
+  <EditorCategories value="Race:UPL"/>
+</CButton>
+<CButton id="KatherineHalsey">
+  <Icon value="Assets\Textures\btn-unit-upl-katherinehalsey.dds"/>
+  <AlertIcon value="Assets\Textures\btn-unit-upl-katherinehalsey.dds"/>
+  <EditorCategories value="Race:UPL"/>
+</CButton>
+<CButton id="WilliamGraves">
+  <Icon value="Assets\Textures\ui-heroicon-williamgraves.dds"/>
+  <AlertIcon value="Assets\Textures\ui-heroicon-williamgraves.dds"/>
+  <EditorCategories value="Race:UPL"/>
+</CButton>
 <CButton id="MyraDavisHealingPatch2">
   <Icon value="Assets\Textures\btn-ability-UPL-FirstAid.dds"/>
   <AlertIcon value="Assets\Textures\btn-ability-UPL-FirstAid.dds"/>
@@ -18545,96 +18743,30 @@
   <Icon value="Assets\Textures\btn-building-keiron-zenith.dds"/>
   <EditorCategories value="Race:UED"/>
 </CButton>
-<CButton id="ButtonKeironMastery01">
-  <EditorCategories value="Race:Keiron"/>
-</CButton>
-<CButton id="ButtonKeironMastery02">
-  <EditorCategories value="Race:Keiron"/>
-</CButton>
-<CButton id="ButtonKeironMastery03">
-  <EditorCategories value="Race:Keiron"/>
-</CButton>
-<CButton id="ButtonKeironMastery04">
-  <EditorCategories value="Race:Keiron"/>
-</CButton>
-<CButton id="ButtonKeironMastery05">
-  <EditorCategories value="Race:Keiron"/>
-</CButton>
-<CButton id="ButtonKeironMastery06">
-  <EditorCategories value="Race:Keiron"/>
-</CButton>
-<CButton id="ButtonKeironLevel01">
-  <Icon value="Assets\Textures\btn-unit-keiron-aegis.dds"/>
-  <EditorCategories value="Race:Keiron"/>
-</CButton>
-<CButton id="ButtonKeironLevel02">
-  <Icon value="Assets\Textures\btn-building-keiron-citadel.dds"/>
-  <EditorCategories value="Race:Keiron"/>
-</CButton>
-<CButton id="ButtonKeironLevel03">
-  <Icon value="Assets\Textures\btn-building-keiron-formulator.dds"/>
-  <EditorCategories value="Race:Keiron"/>
-</CButton>
-<CButton id="ButtonKeironLevel04">
-  <Icon value="Assets\Textures\btn-building-keiron-edifice.dds"/>
-  <EditorCategories value="Race:Keiron"/>
-</CButton>
-<CButton id="ButtonKeironLevel05">
-  <Icon value="Assets\Textures\btn-building-keiron-sanctum.dds"/>
-  <EditorCategories value="Race:Keiron"/>
-</CButton>
-<CButton id="ButtonKeironLevel06">
-  <Icon value="Assets\Textures\btn-building-keiron-reliquary.dds"/>
-  <EditorCategories value="Race:Keiron"/>
-</CButton>
-<CButton id="ButtonKeironLevel07">
-  <Icon value="Assets\Textures\btn-building-keiron-conduit.dds"/>
-  <EditorCategories value="Race:Keiron"/>
-</CButton>
-<CButton id="ButtonKeironLevel08">
-  <Icon value="Assets\Textures\btn-building-keiron-foundry.dds"/>
-  <EditorCategories value="Race:Keiron"/>
-</CButton>
-<CButton id="ButtonKeironLevel09">
-  <Icon value="Assets\Textures\btn-building-keiron-outlet.dds"/>
-  <EditorCategories value="Race:Keiron"/>
-</CButton>
-<CButton id="ButtonKeironLevel10">
-  <Icon value="Assets\Textures\btn-building-keiron-elysium.dds"/>
-  <EditorCategories value="Race:Keiron"/>
-</CButton>
-<CButton id="ButtonKeironLevel11">
-  <Icon value="Assets\Textures\btn-building-keiron-atrium.dds"/>
-  <EditorCategories value="Race:Keiron"/>
-</CButton>
-<CButton id="ButtonKeironLevel12">
-  <Icon value="Assets\Textures\btn-building-keiron-empyrean.dds"/>
-  <EditorCategories value="Race:Keiron"/>
-</CButton>
-<CButton id="ButtonKeironLevel13">
-  <Icon value="Assets\Textures\btn-building-keiron-pantheon.dds"/>
-  <EditorCategories value="Race:Keiron"/>
-</CButton>
-<CButton id="ButtonKeironLevel14">
-  <Icon value="Assets\Textures\btn-building-keiron-zenith.dds"/>
-  <EditorCategories value="Race:Keiron"/>
-</CButton>
-<CButton id="ButtonKeironLevel15">
-  <Icon value="Assets\Textures\btn-ability-keiron-citadelcharge.dds"/>
-  <EditorCategories value="Race:Keiron"/>
-</CButton>
-<CButton id="CommanderPrestigeKeiron1">
-  <Icon value="Assets\Textures\btn-building-keiron-edifice.dds"/>
-  <EditorCategories value="Race:Keiron"/>
-</CButton>
-<CButton id="CommanderPrestigeKeiron2">
-  <Icon value="Assets\Textures\btn-unit-keiron-aegis.dds"/>
-  <EditorCategories value="Race:Keiron"/>
-</CButton>
-<CButton id="CommanderPrestigeKeiron3">
-  <Icon value="Assets\Textures\btn-building-keiron-zenith.dds"/>
-  <EditorCategories value="Race:Keiron"/>
-</CButton>
+<CButton id="ButtonKeironMastery01"/>
+<CButton id="ButtonKeironMastery02"/>
+<CButton id="ButtonKeironMastery03"/>
+<CButton id="ButtonKeironMastery04"/>
+<CButton id="ButtonKeironMastery05"/>
+<CButton id="ButtonKeironMastery06"/>
+<CButton id="ButtonKeironLevel01"/>
+<CButton id="ButtonKeironLevel02"/>
+<CButton id="ButtonKeironLevel03"/>
+<CButton id="ButtonKeironLevel04"/>
+<CButton id="ButtonKeironLevel05"/>
+<CButton id="ButtonKeironLevel06"/>
+<CButton id="ButtonKeironLevel07"/>
+<CButton id="ButtonKeironLevel08"/>
+<CButton id="ButtonKeironLevel09"/>
+<CButton id="ButtonKeironLevel10"/>
+<CButton id="ButtonKeironLevel11"/>
+<CButton id="ButtonKeironLevel12"/>
+<CButton id="ButtonKeironLevel13"/>
+<CButton id="ButtonKeironLevel14"/>
+<CButton id="ButtonKeironLevel15"/>
+<CButton id="CommanderPrestigeKeiron1"/>
+<CButton id="CommanderPrestigeKeiron2"/>
+<CButton id="CommanderPrestigeKeiron3"/>
 <CButton id="ButtonNetworkMastery01">
   <EditorCategories value="Race:NHbr"/>
 </CButton>

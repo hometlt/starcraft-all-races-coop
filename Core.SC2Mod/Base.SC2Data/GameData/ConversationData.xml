@@ -1,5 +1,187 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CConversation id="acAttackWave">
+        <Groups index="0">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="3">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="6">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="9">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="12">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="15">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="18">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="35">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="36">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="37">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="38">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="39">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="40">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="41">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="42">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="43">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="45">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="47">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="48">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="50">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="51">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="53">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="54">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="56">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="57">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="59">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="60">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="62">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="63">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="64">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="66">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="68">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="69">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="71">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="72">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="74">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+    </CConversation>
     <CConversation id="acObj">
         <EditorCategories value="ConversationType:Mission"/>
         <ProductionLevel value="3"/>
@@ -12465,114 +12647,6 @@
             <Variations index="Camera" value=""/>
         </Lines>
         <Lines>
-            <Id value="Line00837"/>
-            <Text value="Conversation/acObj/Line00837"/>
-            <FacialBlend value="100"/>
-            <Sound value="acObj_ShakurasAlly_837"/>
-            <OverlapPrevious value="500"/>
-            <AnimProps value="Talk"/>
-            <AnimBlendIn value="-1"/>
-            <AnimBlendOut value="-1"/>
-            <LookAtAttach value="Head"/>
-            <SpeakerCharacter value="ShakurasAlly"/>
-            <Objects index="Speaker" value=""/>
-            <Objects index="Listener" value=""/>
-            <Objects index="Camera" value=""/>
-            <Variations index="Speaker" value=""/>
-            <Variations index="Listener" value=""/>
-            <Variations index="Camera" value=""/>
-        </Lines>
-        <Lines>
-            <Id value="Line00838"/>
-            <Text value="Conversation/acObj/Line00838"/>
-            <FacialBlend value="100"/>
-            <Sound value="acObj_ShakurasAlly_838"/>
-            <OverlapPrevious value="500"/>
-            <AnimProps value="Talk"/>
-            <AnimBlendIn value="-1"/>
-            <AnimBlendOut value="-1"/>
-            <LookAtAttach value="Head"/>
-            <SpeakerCharacter value="ShakurasAlly"/>
-            <Objects index="Speaker" value=""/>
-            <Objects index="Listener" value=""/>
-            <Objects index="Camera" value=""/>
-            <Variations index="Speaker" value=""/>
-            <Variations index="Listener" value=""/>
-            <Variations index="Camera" value=""/>
-        </Lines>
-        <Lines>
-            <Id value="Line00839"/>
-            <Text value="Conversation/acObj/Line00839"/>
-            <FacialBlend value="100"/>
-            <Sound value="acObj_ShakurasAlly_839"/>
-            <OverlapPrevious value="500"/>
-            <AnimProps value="Talk"/>
-            <AnimBlendIn value="-1"/>
-            <AnimBlendOut value="-1"/>
-            <LookAtAttach value="Head"/>
-            <SpeakerCharacter value="ShakurasAlly"/>
-            <Objects index="Speaker" value=""/>
-            <Objects index="Listener" value=""/>
-            <Objects index="Camera" value=""/>
-            <Variations index="Speaker" value=""/>
-            <Variations index="Listener" value=""/>
-            <Variations index="Camera" value=""/>
-        </Lines>
-        <Lines>
-            <Id value="Line00840"/>
-            <Text value="Conversation/acObj/Line00840"/>
-            <FacialBlend value="100"/>
-            <Sound value="acObj_ShakurasAlly_840"/>
-            <OverlapPrevious value="500"/>
-            <AnimProps value="Talk"/>
-            <AnimBlendIn value="-1"/>
-            <AnimBlendOut value="-1"/>
-            <LookAtAttach value="Head"/>
-            <SpeakerCharacter value="ShakurasAlly"/>
-            <Objects index="Speaker" value=""/>
-            <Objects index="Listener" value=""/>
-            <Objects index="Camera" value=""/>
-            <Variations index="Speaker" value=""/>
-            <Variations index="Listener" value=""/>
-            <Variations index="Camera" value=""/>
-        </Lines>
-        <Lines>
-            <Id value="Line00841"/>
-            <Text value="Conversation/acObj/Line00841"/>
-            <FacialBlend value="100"/>
-            <Sound value="acObj_ShakurasAlly_841"/>
-            <OverlapPrevious value="500"/>
-            <AnimProps value="Talk"/>
-            <AnimBlendIn value="-1"/>
-            <AnimBlendOut value="-1"/>
-            <LookAtAttach value="Head"/>
-            <SpeakerCharacter value="ShakurasAlly"/>
-            <Objects index="Speaker" value=""/>
-            <Objects index="Listener" value=""/>
-            <Objects index="Camera" value=""/>
-            <Variations index="Speaker" value=""/>
-            <Variations index="Listener" value=""/>
-            <Variations index="Camera" value=""/>
-        </Lines>
-        <Lines>
-            <Id value="Line00842"/>
-            <Text value="Conversation/acObj/Line00842"/>
-            <FacialBlend value="100"/>
-            <Sound value="acObj_ShakurasAlly_842"/>
-            <OverlapPrevious value="500"/>
-            <AnimProps value="Talk"/>
-            <AnimBlendIn value="-1"/>
-            <AnimBlendOut value="-1"/>
-            <LookAtAttach value="Head"/>
-            <SpeakerCharacter value="ShakurasAlly"/>
-            <Objects index="Speaker" value=""/>
-            <Objects index="Listener" value=""/>
-            <Objects index="Camera" value=""/>
-            <Variations index="Speaker" value=""/>
-            <Variations index="Listener" value=""/>
-            <Variations index="Camera" value=""/>
-        </Lines>
-        <Lines>
             <Id value="Line00843"/>
             <Text value="Conversation/acObj/Line00843"/>
             <FacialBlend value="100"/>
@@ -12717,24 +12791,6 @@
             <Variations index="Camera" value=""/>
         </Lines>
         <Lines>
-            <Id value="Line00852"/>
-            <Text value="Conversation/acObj/Line00852"/>
-            <FacialBlend value="100"/>
-            <Sound value="acObj_ShakurasAlly_852"/>
-            <OverlapPrevious value="500"/>
-            <AnimProps value="Talk"/>
-            <AnimBlendIn value="-1"/>
-            <AnimBlendOut value="-1"/>
-            <LookAtAttach value="Head"/>
-            <SpeakerCharacter value="ShakurasAlly"/>
-            <Objects index="Speaker" value=""/>
-            <Objects index="Listener" value=""/>
-            <Objects index="Camera" value=""/>
-            <Variations index="Speaker" value=""/>
-            <Variations index="Listener" value=""/>
-            <Variations index="Camera" value=""/>
-        </Lines>
-        <Lines>
             <Id value="Line00853"/>
             <Text value="Conversation/acObj/Line00853"/>
             <FacialBlend value="100"/>
@@ -12763,42 +12819,6 @@
             <AnimBlendOut value="-1"/>
             <LookAtAttach value="Head"/>
             <SpeakerCharacter value="ProtossExecutor"/>
-            <Objects index="Speaker" value=""/>
-            <Objects index="Listener" value=""/>
-            <Objects index="Camera" value=""/>
-            <Variations index="Speaker" value=""/>
-            <Variations index="Listener" value=""/>
-            <Variations index="Camera" value=""/>
-        </Lines>
-        <Lines>
-            <Id value="Line00855"/>
-            <Text value="Conversation/acObj/Line00855"/>
-            <FacialBlend value="100"/>
-            <Sound value="acObj_ShakurasAlly_855"/>
-            <OverlapPrevious value="500"/>
-            <AnimProps value="Talk"/>
-            <AnimBlendIn value="-1"/>
-            <AnimBlendOut value="-1"/>
-            <LookAtAttach value="Head"/>
-            <SpeakerCharacter value="ShakurasAlly"/>
-            <Objects index="Speaker" value=""/>
-            <Objects index="Listener" value=""/>
-            <Objects index="Camera" value=""/>
-            <Variations index="Speaker" value=""/>
-            <Variations index="Listener" value=""/>
-            <Variations index="Camera" value=""/>
-        </Lines>
-        <Lines>
-            <Id value="Line00856"/>
-            <Text value="Conversation/acObj/Line00856"/>
-            <FacialBlend value="100"/>
-            <Sound value="acObj_ShakurasAlly_856"/>
-            <OverlapPrevious value="500"/>
-            <AnimProps value="Talk"/>
-            <AnimBlendIn value="-1"/>
-            <AnimBlendOut value="-1"/>
-            <LookAtAttach value="Head"/>
-            <SpeakerCharacter value="ShakurasAlly"/>
             <Objects index="Speaker" value=""/>
             <Objects index="Listener" value=""/>
             <Objects index="Camera" value=""/>
@@ -13689,96 +13709,6 @@
             <Variations index="Camera" value=""/>
         </Lines>
         <Lines>
-            <Id value="Line00973"/>
-            <Text value="Conversation/acObj/Line00973"/>
-            <FacialBlend value="100"/>
-            <Sound value="acObj_ShakurasAlly_973"/>
-            <OverlapPrevious value="500"/>
-            <AnimProps value="Talk"/>
-            <AnimBlendIn value="-1"/>
-            <AnimBlendOut value="-1"/>
-            <LookAtAttach value="Head"/>
-            <SpeakerCharacter value="ShakurasAlly"/>
-            <Objects index="Speaker" value=""/>
-            <Objects index="Listener" value=""/>
-            <Objects index="Camera" value=""/>
-            <Variations index="Speaker" value=""/>
-            <Variations index="Listener" value=""/>
-            <Variations index="Camera" value=""/>
-        </Lines>
-        <Lines>
-            <Id value="Line00974"/>
-            <Text value="Conversation/acObj/Line00974"/>
-            <FacialBlend value="100"/>
-            <Sound value="acObj_ShakurasAlly_974"/>
-            <OverlapPrevious value="500"/>
-            <AnimProps value="Talk"/>
-            <AnimBlendIn value="-1"/>
-            <AnimBlendOut value="-1"/>
-            <LookAtAttach value="Head"/>
-            <SpeakerCharacter value="ShakurasAlly"/>
-            <Objects index="Speaker" value=""/>
-            <Objects index="Listener" value=""/>
-            <Objects index="Camera" value=""/>
-            <Variations index="Speaker" value=""/>
-            <Variations index="Listener" value=""/>
-            <Variations index="Camera" value=""/>
-        </Lines>
-        <Lines>
-            <Id value="Line00975"/>
-            <Text value="Conversation/acObj/Line00975"/>
-            <FacialBlend value="100"/>
-            <Sound value="acObj_ShakurasAlly_975"/>
-            <OverlapPrevious value="500"/>
-            <AnimProps value="Talk"/>
-            <AnimBlendIn value="-1"/>
-            <AnimBlendOut value="-1"/>
-            <LookAtAttach value="Head"/>
-            <SpeakerCharacter value="ShakurasAlly"/>
-            <Objects index="Speaker" value=""/>
-            <Objects index="Listener" value=""/>
-            <Objects index="Camera" value=""/>
-            <Variations index="Speaker" value=""/>
-            <Variations index="Listener" value=""/>
-            <Variations index="Camera" value=""/>
-        </Lines>
-        <Lines>
-            <Id value="Line00976"/>
-            <Text value="Conversation/acObj/Line00976"/>
-            <FacialBlend value="100"/>
-            <Sound value="acObj_ShakurasAlly_976"/>
-            <OverlapPrevious value="500"/>
-            <AnimProps value="Talk"/>
-            <AnimBlendIn value="-1"/>
-            <AnimBlendOut value="-1"/>
-            <LookAtAttach value="Head"/>
-            <SpeakerCharacter value="ShakurasAlly"/>
-            <Objects index="Speaker" value=""/>
-            <Objects index="Listener" value=""/>
-            <Objects index="Camera" value=""/>
-            <Variations index="Speaker" value=""/>
-            <Variations index="Listener" value=""/>
-            <Variations index="Camera" value=""/>
-        </Lines>
-        <Lines>
-            <Id value="Line00977"/>
-            <Text value="Conversation/acObj/Line00977"/>
-            <FacialBlend value="100"/>
-            <Sound value="acObj_ShakurasAlly_977"/>
-            <OverlapPrevious value="500"/>
-            <AnimProps value="Talk"/>
-            <AnimBlendIn value="-1"/>
-            <AnimBlendOut value="-1"/>
-            <LookAtAttach value="Head"/>
-            <SpeakerCharacter value="ShakurasAlly"/>
-            <Objects index="Speaker" value=""/>
-            <Objects index="Listener" value=""/>
-            <Objects index="Camera" value=""/>
-            <Variations index="Speaker" value=""/>
-            <Variations index="Listener" value=""/>
-            <Variations index="Camera" value=""/>
-        </Lines>
-        <Lines>
             <Id value="Line00987"/>
             <Text value="Conversation/acObj/Line00987"/>
             <FacialBlend value="100"/>
@@ -13869,42 +13799,6 @@
             <Variations index="Camera" value=""/>
         </Lines>
         <Lines>
-            <Id value="Line01092"/>
-            <Text value="Conversation/acObj/Line01092"/>
-            <FacialBlend value="100"/>
-            <Sound value="acObj_ShakurasAlly_1092"/>
-            <OverlapPrevious value="500"/>
-            <AnimProps value="Talk"/>
-            <AnimBlendIn value="-1"/>
-            <AnimBlendOut value="-1"/>
-            <LookAtAttach value="Head"/>
-            <SpeakerCharacter value="ShakurasAlly"/>
-            <Objects index="Speaker" value=""/>
-            <Objects index="Listener" value=""/>
-            <Objects index="Camera" value=""/>
-            <Variations index="Speaker" value=""/>
-            <Variations index="Listener" value=""/>
-            <Variations index="Camera" value=""/>
-        </Lines>
-        <Lines>
-            <Id value="Line01093"/>
-            <Text value="Conversation/acObj/Line01093"/>
-            <FacialBlend value="100"/>
-            <Sound value="acObj_ShakurasAlly_1093"/>
-            <OverlapPrevious value="500"/>
-            <AnimProps value="Talk"/>
-            <AnimBlendIn value="-1"/>
-            <AnimBlendOut value="-1"/>
-            <LookAtAttach value="Head"/>
-            <SpeakerCharacter value="ShakurasAlly"/>
-            <Objects index="Speaker" value=""/>
-            <Objects index="Listener" value=""/>
-            <Objects index="Camera" value=""/>
-            <Variations index="Speaker" value=""/>
-            <Variations index="Listener" value=""/>
-            <Variations index="Camera" value=""/>
-        </Lines>
-        <Lines>
             <Id value="Line01094"/>
             <Text value="Conversation/acObj/Line01094"/>
             <FacialBlend value="100"/>
@@ -13941,24 +13835,6 @@
             <Variations index="Camera" value=""/>
         </Lines>
         <Lines>
-            <Id value="Line01096"/>
-            <Text value="Conversation/acObj/Line01096"/>
-            <FacialBlend value="100"/>
-            <Sound value="acObj_ShakurasAlly_1096"/>
-            <OverlapPrevious value="500"/>
-            <AnimProps value="Talk"/>
-            <AnimBlendIn value="-1"/>
-            <AnimBlendOut value="-1"/>
-            <LookAtAttach value="Head"/>
-            <SpeakerCharacter value="ShakurasAlly"/>
-            <Objects index="Speaker" value=""/>
-            <Objects index="Listener" value=""/>
-            <Objects index="Camera" value=""/>
-            <Variations index="Speaker" value=""/>
-            <Variations index="Listener" value=""/>
-            <Variations index="Camera" value=""/>
-        </Lines>
-        <Lines>
             <Id value="Line01097"/>
             <Text value="Conversation/acObj/Line01097"/>
             <FacialBlend value="100"/>
@@ -13981,42 +13857,6 @@
             <Text value="Conversation/acObj/Line01098"/>
             <FacialBlend value="100"/>
             <Sound value="acObj_ShakurasAlly_1098"/>
-            <OverlapPrevious value="500"/>
-            <AnimProps value="Talk"/>
-            <AnimBlendIn value="-1"/>
-            <AnimBlendOut value="-1"/>
-            <LookAtAttach value="Head"/>
-            <SpeakerCharacter value="ShakurasAlly"/>
-            <Objects index="Speaker" value=""/>
-            <Objects index="Listener" value=""/>
-            <Objects index="Camera" value=""/>
-            <Variations index="Speaker" value=""/>
-            <Variations index="Listener" value=""/>
-            <Variations index="Camera" value=""/>
-        </Lines>
-        <Lines>
-            <Id value="Line01099"/>
-            <Text value="Conversation/acObj/Line01099"/>
-            <FacialBlend value="100"/>
-            <Sound value="acObj_ShakurasAlly_1099"/>
-            <OverlapPrevious value="500"/>
-            <AnimProps value="Talk"/>
-            <AnimBlendIn value="-1"/>
-            <AnimBlendOut value="-1"/>
-            <LookAtAttach value="Head"/>
-            <SpeakerCharacter value="ShakurasAlly"/>
-            <Objects index="Speaker" value=""/>
-            <Objects index="Listener" value=""/>
-            <Objects index="Camera" value=""/>
-            <Variations index="Speaker" value=""/>
-            <Variations index="Listener" value=""/>
-            <Variations index="Camera" value=""/>
-        </Lines>
-        <Lines>
-            <Id value="Line01100"/>
-            <Text value="Conversation/acObj/Line01100"/>
-            <FacialBlend value="100"/>
-            <Sound value="acObj_ShakurasAlly_1100"/>
             <OverlapPrevious value="500"/>
             <AnimProps value="Talk"/>
             <AnimBlendIn value="-1"/>
@@ -17730,6 +17570,18 @@
             <Variations index="Listener" value=""/>
             <Variations index="Camera" value=""/>
         </Lines>
+        <Groups>
+            <Id value="Group00536"/>
+            <Name value="Conversation/acObj/Group00536"/>
+            <LineSelection value="Random"/>
+            <MaxLines value="1"/>
+            <Conditions FixedId="TransmissionPlayingNow" Operation="NotEqual">
+                <User Type="MissionTransmission" Field="PlayingNow" Instance="VictoryLnL"/>
+            </Conditions>
+            <Children value="Line00950"/>
+            <Children value="Line01163"/>
+            <Children value="Line01164"/>
+        </Groups>
         <Groups Id="Group00001" Name="Conversation/acObj/Group00001" NoWait="1">
             <Children value="Group00002"/>
             <Children value="Group00208"/>
@@ -22538,22 +22390,6 @@
             <Children value="Group00561"/>
             <Children value="Group00523"/>
         </Groups>
-        <Groups Id="Group00468" Name="Conversation/acObj/Group00468">
-            <Children value="Group00533"/>
-            <Children value="Group00541"/>
-            <Children value="Group00548"/>
-            <Children value="Group00534"/>
-            <Children value="Group00538"/>
-            <Children value="Group00539"/>
-            <Children value="Group00540"/>
-            <Children value="Group00544"/>
-            <Children value="Group00537"/>
-            <Children value="Group00625"/>
-            <Children value="Group00607"/>
-            <Children value="Group00542"/>
-            <Children value="Group00582"/>
-            <Children value="Group00543"/>
-        </Groups>
         <Groups Id="Group00469" Name="Conversation/acObj/Group00469">
             <Children value="Group00508"/>
             <Children value="Group00509"/>
@@ -22591,18 +22427,6 @@
             <Children value="Group00894"/>
             <Children value="Group00918"/>
             <Children value="Group00986"/>
-        </Groups>
-        <Groups>
-            <Id value="Group00472"/>
-            <Name value="Conversation/acObj/Group00472"/>
-            <LineSelection value="Random"/>
-            <MaxLines value="1"/>
-            <Conditions FixedId="TransmissionPlayingNow" Operation="NotEqual">
-                <User Type="MissionTransmission" Field="PlayingNow" Instance="HalfwayCompleteST"/>
-            </Conditions>
-            <Children value="Line00850"/>
-            <Children value="Line01095"/>
-            <Children value="Line01096"/>
         </Groups>
         <Groups Id="Group00473" Name="Conversation/acObj/Group00473">
             <Children value="Group00481"/>
@@ -23358,182 +23182,12 @@
             <Children value="Line01082"/>
             <Children value="Line01083"/>
         </Groups>
-        <Groups Id="Group00533" Name="Conversation/acObj/Group00533">
-            <Children value="Group00604"/>
-            <Children value="Group00605"/>
-            <Children value="Group00606"/>
-        </Groups>
-        <Groups>
-            <Id value="Group00534"/>
-            <Name value="Conversation/acObj/Group00534"/>
-            <LineSelection value="Random"/>
-            <MaxLines value="1"/>
-            <Conditions FixedId="TransmissionPlayingNow" Operation="NotEqual">
-                <User Type="MissionTransmission" Field="PlayingNow" Instance="TempleUnderAttackST"/>
-            </Conditions>
-            <Children value="Line00839"/>
-            <Children value="Line00840"/>
-            <Children value="Line00977"/>
-        </Groups>
-        <Groups>
-            <Id value="Group00535"/>
-            <Name value="Conversation/acObj/Group00535"/>
-            <LineSelection value="Random"/>
-            <MaxLines value="1"/>
-            <Conditions FixedId="TransmissionPlayingNow" Operation="NotEqual">
-                <User Type="MissionTransmission" Field="PlayingNow" Instance="OverloadImminent"/>
-            </Conditions>
-            <Children value="Line00949"/>
-            <Children value="Line01159"/>
-            <Children value="Line01160"/>
-        </Groups>
-        <Groups>
-            <Id value="Group00536"/>
-            <Name value="Conversation/acObj/Group00536"/>
-            <LineSelection value="Random"/>
-            <MaxLines value="1"/>
-            <Conditions FixedId="TransmissionPlayingNow" Operation="NotEqual">
-                <User Type="MissionTransmission" Field="PlayingNow" Instance="VictoryLnL"/>
-            </Conditions>
-            <Children value="Line00950"/>
-            <Children value="Line01163"/>
-            <Children value="Line01164"/>
-        </Groups>
-        <Groups>
-            <Id value="Group00537"/>
-            <Name value="Conversation/acObj/Group00537"/>
-            <LineSelection value="Random"/>
-            <MaxLines value="1"/>
-            <Conditions FixedId="TransmissionPlayingNow" Operation="NotEqual">
-                <User Type="MissionTransmission" Field="PlayingNow" Instance="BonusObjectiveST"/>
-            </Conditions>
-            <Children value="Line00836"/>
-            <Children value="Line01101"/>
-            <Children value="Line01102"/>
-        </Groups>
-        <Groups>
-            <Id value="Group00538"/>
-            <Name value="Conversation/acObj/Group00538"/>
-            <LineSelection value="Random"/>
-            <MaxLines value="1"/>
-            <Conditions FixedId="TransmissionPlayingNow" Operation="NotEqual">
-                <User Type="MissionTransmission" Field="PlayingNow" Instance="TempleHalfHealthST"/>
-            </Conditions>
-            <Children value="Line00841"/>
-            <Children value="Line01092"/>
-        </Groups>
-        <Groups>
-            <Id value="Group00539"/>
-            <Name value="Conversation/acObj/Group00539"/>
-            <LineSelection value="Random"/>
-            <MaxLines value="1"/>
-            <Conditions FixedId="TransmissionPlayingNow" Operation="NotEqual">
-                <User Type="MissionTransmission" Field="PlayingNow" Instance="TempleLowHealthST"/>
-            </Conditions>
-            <Children value="Line00842"/>
-            <Children value="Line01093"/>
-        </Groups>
-        <Groups>
-            <Id value="Group00540"/>
-            <Name value="Conversation/acObj/Group00540"/>
-            <LineSelection value="Random"/>
-            <MaxLines value="1"/>
-            <Conditions FixedId="TransmissionPlayingNow" Operation="NotEqual">
-                <User Type="MissionTransmission" Field="PlayingNow" Instance="TempleCriticalHealthST"/>
-            </Conditions>
-            <Children value="Line00843"/>
-            <Children value="Line01094"/>
-        </Groups>
-        <Groups>
-            <Id value="Group00541"/>
-            <Name value="Conversation/acObj/Group00541"/>
-            <LineSelection value="Random"/>
-            <MaxLines value="1"/>
-            <Conditions FixedId="TransmissionPlayingNow" Operation="NotEqual">
-                <User Type="MissionTransmission" Field="PlayingNow" Instance="VoidThrasherAttackST"/>
-            </Conditions>
-            <Children value="Line00837"/>
-            <Children value="Line00838"/>
-            <Children value="Line00973"/>
-            <Children value="Line00974"/>
-        </Groups>
-        <Groups>
-            <Id value="Group00542"/>
-            <Name value="Conversation/acObj/Group00542"/>
-            <LineSelection value="Random"/>
-            <MaxLines value="1"/>
-            <Conditions FixedId="TransmissionPlayingNow" Operation="NotEqual">
-                <User Type="MissionTransmission" Field="PlayingNow" Instance="BonusCompleteST"/>
-            </Conditions>
-            <Children value="Line00844"/>
-            <Children value="Line00845"/>
-            <Children value="Line00846"/>
-        </Groups>
-        <Groups>
-            <Id value="Group00543"/>
-            <Name value="Conversation/acObj/Group00543"/>
-            <LineSelection value="Random"/>
-            <MaxLines value="1"/>
-            <Conditions FixedId="TransmissionPlayingNow" Operation="NotEqual">
-                <User Type="MissionTransmission" Field="PlayingNow" Instance="VictoryST"/>
-            </Conditions>
-            <Children value="Line00847"/>
-            <Children value="Line01107"/>
-            <Children value="Line01108"/>
-            <Children value="Comment00005"/>
-        </Groups>
-        <Groups>
-            <Id value="Group00544"/>
-            <Name value="Conversation/acObj/Group00544"/>
-            <LineSelection value="Random"/>
-            <MaxLines value="1"/>
-            <Children value="Group00472"/>
-            <Children value="Group00545"/>
-            <Children value="Group00546"/>
-        </Groups>
-        <Groups>
-            <Id value="Group00545"/>
-            <Name value="Conversation/acObj/Group00545"/>
-            <LineSelection value="Random"/>
-            <MaxLines value="1"/>
-            <Conditions FixedId="TransmissionPlayingNow" Operation="NotEqual">
-                <User Type="MissionTransmission" Field="PlayingNow" Instance="NearCompleteST"/>
-            </Conditions>
-            <Children value="Line00851"/>
-            <Children value="Line01097"/>
-            <Children value="Line01098"/>
-        </Groups>
-        <Groups>
-            <Id value="Group00546"/>
-            <Name value="Conversation/acObj/Group00546"/>
-            <LineSelection value="Random"/>
-            <MaxLines value="1"/>
-            <Conditions FixedId="TransmissionPlayingNow" Operation="NotEqual">
-                <User Type="MissionTransmission" Field="PlayingNow" Instance="FinalCompleteST"/>
-            </Conditions>
-            <Children value="Line00852"/>
-            <Children value="Line01099"/>
-            <Children value="Line01100"/>
-        </Groups>
         <Groups Id="Group00547" Name="Conversation/acObj/Group00547">
             <Conditions FixedId="DoNotPlay" Operation="NotEqual">
                 <User Type="X_StoryStates" Field="Value" Instance="NeverTrue"/>
             </Conditions>
             <Children value="Line00853"/>
             <Children value="Line00854"/>
-        </Groups>
-        <Groups>
-            <Id value="Group00548"/>
-            <Name value="Conversation/acObj/Group00548"/>
-            <LineSelection value="Random"/>
-            <MaxLines value="1"/>
-            <Conditions FixedId="TransmissionPlayingNow" Operation="NotEqual">
-                <User Type="MissionTransmission" Field="PlayingNow" Instance="VoidThrasherSummonST"/>
-            </Conditions>
-            <Children value="Line00855"/>
-            <Children value="Line00856"/>
-            <Children value="Line00975"/>
-            <Children value="Line00976"/>
         </Groups>
         <Groups Id="Group00549" Name="Conversation/acObj/Group00549">
             <Children value="Group00608"/>
@@ -23817,6 +23471,18 @@
             <Children value="Line01156"/>
         </Groups>
         <Groups>
+            <Id value="Group00535"/>
+            <Name value="Conversation/acObj/Group00535"/>
+            <LineSelection value="Random"/>
+            <MaxLines value="1"/>
+            <Conditions FixedId="TransmissionPlayingNow" Operation="NotEqual">
+                <User Type="MissionTransmission" Field="PlayingNow" Instance="OverloadImminent"/>
+            </Conditions>
+            <Children value="Line00949"/>
+            <Children value="Line01159"/>
+            <Children value="Line01160"/>
+        </Groups>
+        <Groups>
             <Id value="Group00571"/>
             <Name value="Conversation/acObj/Group00571"/>
             <LineSelection value="Random"/>
@@ -23953,17 +23619,6 @@
             <Children value="Line01269"/>
             <Children value="Line01270"/>
             <Children value="Line01271"/>
-        </Groups>
-        <Groups>
-            <Id value="Group00582"/>
-            <Name value="Conversation/acObj/Group00582"/>
-            <LineSelection value="Random"/>
-            <MaxLines value="1"/>
-            <Conditions FixedId="TransmissionPlayingNow" Operation="NotEqual">
-                <User Type="MissionTransmission" Field="PlayingNow" Instance="DefeatST"/>
-            </Conditions>
-            <Children value="Line00987"/>
-            <Children value="Line01106"/>
         </Groups>
         <Groups>
             <Id value="Group00583"/>
@@ -24216,51 +23871,6 @@
             <Children value="Line01073"/>
         </Groups>
         <Groups>
-            <Id value="Group00604"/>
-            <Name value="Conversation/acObj/Group00604"/>
-            <LineSelection value="Sequence"/>
-            <MaxLines value="2"/>
-            <Conditions FixedId="TransmissionPlayingNow" Operation="NotEqual">
-                <User Type="MissionTransmission" Field="PlayingNow" Instance="Intro1ST"/>
-            </Conditions>
-            <Children value="Line00849"/>
-            <Children value="Line00887"/>
-        </Groups>
-        <Groups>
-            <Id value="Group00605"/>
-            <Name value="Conversation/acObj/Group00605"/>
-            <LineSelection value="Sequence"/>
-            <MaxLines value="2"/>
-            <Conditions FixedId="TransmissionPlayingNow" Operation="NotEqual">
-                <User Type="MissionTransmission" Field="PlayingNow" Instance="Intro2ST"/>
-            </Conditions>
-            <Children value="Line01088"/>
-            <Children value="Line01089"/>
-        </Groups>
-        <Groups>
-            <Id value="Group00606"/>
-            <Name value="Conversation/acObj/Group00606"/>
-            <LineSelection value="Sequence"/>
-            <MaxLines value="2"/>
-            <Conditions FixedId="TransmissionPlayingNow" Operation="NotEqual">
-                <User Type="MissionTransmission" Field="PlayingNow" Instance="Intro3ST"/>
-            </Conditions>
-            <Children value="Line01090"/>
-            <Children value="Line01091"/>
-        </Groups>
-        <Groups>
-            <Id value="Group00607"/>
-            <Name value="Conversation/acObj/Group00607"/>
-            <LineSelection value="Random"/>
-            <MaxLines value="1"/>
-            <Conditions FixedId="TransmissionPlayingNow" Operation="NotEqual">
-                <User Type="MissionTransmission" Field="PlayingNow" Instance="BonusOneLeftST"/>
-            </Conditions>
-            <Children value="Line01103"/>
-            <Children value="Line01104"/>
-            <Children value="Line01105"/>
-        </Groups>
-        <Groups>
             <Id value="Group00608"/>
             <Name value="Conversation/acObj/Group00608"/>
             <LineSelection value="Sequence"/>
@@ -24461,18 +24071,6 @@
             <Children value="Line01197"/>
         </Groups>
         <Groups>
-            <Id value="Group00625"/>
-            <Name value="Conversation/acObj/Group00625"/>
-            <LineSelection value="Random"/>
-            <MaxLines value="1"/>
-            <Conditions FixedId="TransmissionPlayingNow" Operation="NotEqual">
-                <User Type="MissionTransmission" Field="PlayingNow" Instance="BonusTwoLeftST"/>
-            </Conditions>
-            <Children value="Line01198"/>
-            <Children value="Line01199"/>
-            <Children value="Line01200"/>
-        </Groups>
-        <Groups>
             <Id value="Group00626"/>
             <Name value="Conversation/acObj/Group00626"/>
             <LineSelection value="Random"/>
@@ -24561,7 +24159,7 @@
         </Groups>
         <Groups Id="Group00634" Name="Conversation/acObj/Group00634" NoWait="1">
             <Conditions FixedId="CommanderInMission" Operation="NotEqual">
-                <User Type="PlayerCommanders" Field="InThisMission" Instance="ProtossAlarak"/>
+                <User Type="Commanders" Field="InThisMission" Instance="ProtossAlarak"/>
             </Conditions>
             <Children value="Group00635"/>
             <Children value="Group00639"/>
@@ -27992,11 +27590,6 @@
         <RootItems value="Group00021"/>
         <RootItems value="Group00022"/>
         <RootItems value="Group00349"/>
-
-
-
-
-
         <Comments Id="Comment00001" Text="Conversation/acObj/Comment00001"/>
         <Comments Id="Comment00002" Text="Conversation/acObj/Comment00002"/>
         <Comments Id="Comment00003" Text="Conversation/acObj/Comment00003"/>
@@ -28021,5 +27614,2799 @@
         <Jumps Id="Jump00003"/>
         <DefaultSpeaker1 value="MengskCommander"/>
         <DefaultSpeaker2 value="MengskCommander"/>
+    </CConversation>
+    <CConversation id="acResponses">
+        <Groups index="2">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="3">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="4">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="6">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="7">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="27">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="28">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="30">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="31">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="32">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="36">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="38">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="39">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="40">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="41">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="42">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="43">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="46">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="47">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="48">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="49">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="50">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="51">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="52">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="53">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="54">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="55">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="56">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="57">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="58">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="59">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="60">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="61">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="62">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="63">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="64">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="65">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="66">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="67">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="68">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="69">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="70">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="71">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="72">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="73">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="74">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="75">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="76">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="77">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="78">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="79">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="80">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="81">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="82">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="83">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="84">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="85">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="86">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="87">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="88">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="89">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="90">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="91">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="92">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="93">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="94">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="95">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="96">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="97">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="98">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="99">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="100">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="101">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="102">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="103">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="104">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="105">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="106">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="107">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="108">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="109">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="110">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="111">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="112">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="113">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="114">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="115">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="116">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="117">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="118">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="119">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="120">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="121">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="122">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="123">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="124">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="125">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="126">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="127">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="128">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="129">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="130">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="131">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="132">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="133">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="134">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="135">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="136">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="137">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="138">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="139">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="140">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="141">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="142">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="143">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="144">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="145">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="146">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="147">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="148">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="149">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="150">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="151">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="152">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="153">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="154">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="155">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="156">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="157">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="158">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="159">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="160">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="161">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="162">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="163">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="164">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="165">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="166">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="167">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="168">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="170">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="171">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="172">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="173">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="174">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="175">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="176">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="178">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="179">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="180">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="181">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="182">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="183">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="184">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="187">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="188">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="189">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="190">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="191">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="192">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="193">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="195">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="196">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="197">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="198">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="199">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="200">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="201">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="203">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="204">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="205">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="206">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="207">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="208">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="209">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="212">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="213">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="214">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="215">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="216">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="217">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="218">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="220">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="221">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="222">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="223">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="224">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="225">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="226">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="228">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="229">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="230">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="231">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="232">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="233">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="234">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="236">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="237">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="238">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="239">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="240">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="241">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="242">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="244">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="245">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="246">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="247">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="248">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="249">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="250">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="251">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="252">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="253">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="254">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="255">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="256">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="257">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="258">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="259">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="260">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="261">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="262">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="263">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="264">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="265">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="266">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="267">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="268">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="269">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="270">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="271">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="272">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="273">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="274">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="275">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="276">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="277">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="278">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="279">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="280">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="281">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="282">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="283">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="284">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="285">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="286">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="287">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="288">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="289">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="290">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="291">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="292">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="293">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="294">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="295">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="296">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="297">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="298">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="299">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="300">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="301">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="302">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="303">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="304">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="305">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="306">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="307">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="308">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="309">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="310">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="311">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="312">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="313">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="314">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="315">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="316">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="317">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="318">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="319">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="320">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="321">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="322">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="323">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="324">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="325">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="326">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="327">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="328">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="329">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="330">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="331">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="332">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="333">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="334">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="335">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="336">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="337">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="338">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="339">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="340">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="341">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="342">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="343">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="344">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="345">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="346">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="347">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="348">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="349">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="350">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="351">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="352">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="353">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="354">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="355">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="356">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="357">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="358">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="359">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="360">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="361">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="362">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="363">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="364">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="365">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="366">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="367">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="368">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="369">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="370">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="371">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="372">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="373">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="374">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="375">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="376">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="377">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="378">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="379">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="380">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="381">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="382">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="383">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="384">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="385">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="386">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="387">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="388">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="389">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="390">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="391">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="392">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="393">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="394">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="395">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="396">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="397">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="398">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="399">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="400">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="401">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="402">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="403">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="404">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="405">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="406">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="407">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="408">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="409">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="410">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="411">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="412">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="413">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="414">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="415">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="416">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="417">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="418">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="419">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="420">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="421">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="422">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="423">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="424">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="425">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="426">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="427">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="428">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="429">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="430">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="431">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="432">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="433">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="434">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="435">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="436">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="437">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="438">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="439">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="440">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="441">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="442">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="443">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="444">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="445">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="446">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="447">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="448">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="449">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="450">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="451">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="452">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="453">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="454">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="455">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="456">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="457">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="458">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="459">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="460">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="461">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="462">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="463">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="464">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="465">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="466">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="467">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="468">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="469">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="470">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="471">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="472">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="473">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="474">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="475">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="476">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="477">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="478">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="479">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="480">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="481">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="482">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="483">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="484">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="485">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="486">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="487">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="488">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="489">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="490">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="491">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="492">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="493">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="494">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="495">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="496">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="497">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="498">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="499">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="500">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="501">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="502">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="503">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="504">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="505">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="506">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="507">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="508">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="509">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="510">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="511">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="512">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="513">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="514">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="515">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="516">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="517">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="518">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="519">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="520">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="521">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="522">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="523">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="524">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="525">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="526">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="527">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="528">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="529">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="530">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="531">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="532">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="533">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="534">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="535">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="536">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="537">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="538">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="539">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="540">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="541">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="542">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="543">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="544">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="545">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="546">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="547">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="548">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="549">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="550">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="551">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="552">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="553">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="554">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="555">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="556">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="557">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="558">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="559">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="560">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="561">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="562">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="563">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="564">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="565">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="566">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="567">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="568">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="569">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="570">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="571">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="572">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="573">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="574">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="575">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="576">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="577">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="578">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="579">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="580">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+    </CConversation>
+    <CConversation id="acVictory">
+        <Groups index="1">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="2">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="3">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="4">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="5">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="6">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="7">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="8">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="9">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="10">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="11">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="12">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="13">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="14">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="15">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="16">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="17">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
+        <Groups index="18">
+            <Conditions index="0">
+                <User Type="Commanders"/>
+            </Conditions>
+        </Groups>
     </CConversation>
 </Catalog>

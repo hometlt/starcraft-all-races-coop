@@ -6151,6 +6151,9 @@
 </CUnit>
 <CUnit id="DestructibleSpacePlatformBarrier">
   <EditorCategories value="ObjectType:Destructible,ObjectFamily:Campaign"/>
+  <LifeStart value="15"/>
+  <LifeMax value="15"/>
+  <LifeArmor value="0"/>
 </CUnit>
 <CUnit id="DestructibleSpacePlatformSign">
   <EditorCategories value="ObjectType:Destructible,ObjectFamily:Campaign"/>
@@ -8720,6 +8723,8 @@
   <ScoreMake value="0"/>
   <ScoreKill value="0"/>
   <Speed value="2.5"/>
+  <LifeStart value="60"/>
+  <LifeMax value="60"/>
 </CUnit>
 <CUnit id="SpartanCompanyAWeapon">
   <Race value="Terr"/>
@@ -10505,6 +10510,7 @@
   <ScoreKill value="0"/>
   <DamageDealtXP value="0"/>
   <DamageTakenXP value="0"/>
+  <Height value="4"/>
 </CUnit>
 <CUnit id="SJHyperion">
   <KillXP value="0"/>
@@ -19890,6 +19896,42 @@
   <CostResource index="Vespene" value="50"/>
   <CargoSize value="2"/>
 </CUnit>
+<CUnit id="NydusBeast">
+  <LifeStart value="4000"/>
+  <LifeMax value="4000"/>
+  <ShieldsStart value="2000"/>
+  <ShieldsMax value="2000"/>
+  <AbilArray Link="VoidThrasherGroundMissileVolley"/>
+  <CardLayouts>
+    <LayoutButtons Face="GroundMissileVolley" Type="AbilCmd" AbilCmd="VoidThrasherGroundMissileVolley,Execute" Row="2" Column="3"/>
+  </CardLayouts>
+  <BehaviorArray Link="PreventKnockback"/>
+</CUnit>
+<CUnit id="SJPirateCapitalShip">
+  <Height value="3.75"/>
+  <ScoreMake value="0"/>
+  <ScoreKill value="0"/>
+  <DamageDealtXP value="0"/>
+  <DamageTakenXP value="0"/>
+  <Attributes index="MapBoss" value="1"/>
+  <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+</CUnit>
+<CUnit id="Slivan">
+  <LifeStart value="6000"/>
+  <LifeMax value="6000"/>
+  <ScoreMake value="0"/>
+  <ScoreKill value="0"/>
+  <KillXP value="0"/>
+  <DamageDealtXP value="0"/>
+  <DamageTakenXP value="0"/>
+  <CardLayouts index="0">
+    <LayoutButtons index="5" AbilCmd="MurvarCoopPuke,255"/>
+    <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="SlivanPuke,Cancel" Row="2" Column="4"/>
+    <LayoutButtons Face="CoopMurvarSpawnCreepers" Type="AbilCmd" AbilCmd="CoopMurvarSpawnCreepers,255" Row="2" Column="1"/>
+  </CardLayouts>
+  <AbilArray index="3" Link="MurvarCoopPuke"/>
+  <AbilArray Link="CoopMurvarSpawnCreepers"/>
+</CUnit>
 <CUnit id="DarkArchon">
   <DamageDealtXP value="0"/>
   <DamageTakenXP value="0"/>
@@ -20886,20 +20928,6 @@
   <KillXP value="0"/>
   <DamageDealtXP value="0"/>
   <DamageTakenXP value="0"/>
-</CUnit>
-<CUnit id="Slivan">
-  <ScoreMake value="0"/>
-  <ScoreKill value="0"/>
-  <KillXP value="0"/>
-  <DamageDealtXP value="0"/>
-  <DamageTakenXP value="0"/>
-  <CardLayouts index="0">
-    <LayoutButtons index="5" AbilCmd="MurvarCoopPuke,255"/>
-    <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="SlivanPuke,Cancel" Row="2" Column="4"/>
-    <LayoutButtons Face="CoopMurvarSpawnCreepers" Type="AbilCmd" AbilCmd="CoopMurvarSpawnCreepers,255" Row="2" Column="1"/>
-  </CardLayouts>
-  <AbilArray index="3" Link="MurvarCoopPuke"/>
-  <AbilArray Link="CoopMurvarSpawnCreepers"/>
 </CUnit>
 <CUnit id="DehakaCoopBurrowed">
   <DeathTime value="-1"/>
@@ -50075,14 +50103,6 @@
   <DamageDealtXP value="0"/>
   <DamageTakenXP value="0"/>
 </CUnit>
-<CUnit id="SJPirateCapitalShip">
-  <ScoreMake value="0"/>
-  <ScoreKill value="0"/>
-  <DamageDealtXP value="0"/>
-  <DamageTakenXP value="0"/>
-  <Attributes index="MapBoss" value="1"/>
-  <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
-</CUnit>
 <CUnit id="SlaynElemental">
   <ScoreKill value="0"/>
   <KillXP value="0"/>
@@ -50171,13 +50191,6 @@
   <Race value="Terr"/>
   <Mover value="ThorAA"/>
   <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
-</CUnit>
-<CUnit id="NydusBeast">
-  <AbilArray Link="VoidThrasherGroundMissileVolley"/>
-  <CardLayouts>
-    <LayoutButtons Face="GroundMissileVolley" Type="AbilCmd" AbilCmd="VoidThrasherGroundMissileVolley,Execute" Row="2" Column="3"/>
-  </CardLayouts>
-  <BehaviorArray Link="PreventKnockback"/>
 </CUnit>
 <CUnit id="Virophage">
   <ScoreMake value="0"/>
@@ -54790,7 +54803,6 @@
   <AbilArray index="0" Link="stop"/>
   <AbilArray index="2" removed="1"/>
   <BehaviorArray Link="ChangelingDisable"/>
-  <BehaviorArray Link="AllUnitBehaviorController"/>
   <CardLayouts index="0">
     <LayoutButtons index="0" Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
     <LayoutButtons index="1" Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
@@ -56510,7 +56522,6 @@
   <AbilArray index="2" removed="1"/>
   <AbilArray index="3" removed="1"/>
   <BehaviorArray Link="ChangelingDisable"/>
-  <BehaviorArray Link="AllUnitBehaviorController"/>
   <CardLayouts index="0">
     <LayoutButtons index="3" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
     <LayoutButtons index="4" Face="AcquireMove" Type="AbilCmd" AbilCmd="move,AcquireMove" Row="0" Column="4"/>
@@ -56687,9 +56698,7 @@
   <Radius value="1"/>
   <SeparationRadius value="1"/>
   <Footprint value="Footprint2x2Contour"/>
-  <Footprint value="Footprint2x2CreepNormalContour"/>
   <PlacementFootprint value="Footprint2x2"/>
-  <PlacementFootprint value="Footprint2x2CreepNormal"/>
   <ScoreMake value="150"/>
   <ScoreLost value="150"/>
   <MinimapRadius value="0.75"/>
@@ -56795,11 +56804,6 @@
   <ScoreMake value="500"/>
   <ScoreKill value="500"/>
   <TechTreeUnlockedUnitArray value="Paragon"/>
-  <Collide index="FlyingEscorts" value="1"/>
-  <FlagArray index="ArmySelect" value="1"/>
-  <Speed value="1.1992"/>
-  <Acceleration value="0.5625"/>
-  <Sight value="12"/>
 </CUnit>
 <CUnit id="WeaponStratus" parent="MISSILE">
   <Race value="Keir"/>
@@ -56931,11 +56935,6 @@
   <ScoreKill value="200"/>
   <TechTreeUnlockedUnitArray value="Echo"/>
   <TechTreeUnlockedUnitArray value="Fuse"/>
-  <Collide index="FlyingEscorts" value="1"/>
-  <FlagArray index="ArmySelect" value="1"/>
-  <Speed value="1.1992"/>
-  <Acceleration value="0.5625"/>
-  <Sight value="12"/>
 </CUnit>
 <CUnit id="FormulatorRich" parent="Formulator">
   <BuiltOn index="0" value="RichVespeneGeyser"/>
@@ -57027,8 +57026,6 @@
   <ScoreKill value="400"/>
   <TechTreeUnlockedUnitArray value="Inducer"/>
   <TechTreeUnlockedUnitArray value="Myriad"/>
-  <Footprint value="Footprint3x3CreepNormalContour"/>
-  <PlacementFootprint value="Footprint3x3CreepNormal"/>
 </CUnit>
 <CUnit id="Nullifier" parent="CBuildingKeiron">
   <LifeStart value="175"/>
@@ -57056,9 +57053,7 @@
   <Radius value="1"/>
   <SeparationRadius value="1"/>
   <Footprint value="Footprint2x2Contour"/>
-  <Footprint value="Footprint2x2CreepNormalContour"/>
   <PlacementFootprint value="Footprint2x2"/>
-  <PlacementFootprint value="Footprint2x2CreepNormal"/>
   <ScoreMake value="125"/>
   <ScoreKill value="125"/>
   <MinimapRadius value="1"/>
@@ -57125,8 +57120,6 @@
   <Radius value="0.625"/>
   <MinimapRadius value="0.75"/>
   <BehaviorArray Link="AllUnitBehaviorController"/>
-  <TacticalAI value="meridian"/>
-  <TacticalAIRange value="12"/>
 </CUnit>
 <CUnit id="Elysium" parent="CBuildingKeiron">
   <Facing value="45"/>
@@ -57156,8 +57149,6 @@
   <ScoreMake value="325"/>
   <ScoreKill value="325"/>
   <TechTreeUnlockedUnitArray value="Meridian"/>
-  <Footprint value="Footprint3x3CreepNormalContour"/>
-  <PlacementFootprint value="Footprint3x3CreepNormal"/>
 </CUnit>
 <CUnit id="Stratus" parent="DefaultSettingsKeironBuildingFlyer">
   <LifeStart value="250"/>
@@ -57197,11 +57188,6 @@
   <ScoreMake value="150"/>
   <ScoreKill value="150"/>
   <LifeArmor value="2"/>
-  <Collide index="FlyingEscorts" value="1"/>
-  <FlagArray index="ArmySelect" value="1"/>
-  <Speed value="1.1992"/>
-  <Acceleration value="0.5625"/>
-  <Sight value="12"/>
 </CUnit>
 <CUnit id="Oculus" parent="CBuildingKeiron">
   <Facing value="45"/>
@@ -57224,9 +57210,7 @@
   <Radius value="1"/>
   <SeparationRadius value="1"/>
   <Footprint value="Footprint2x2Contour"/>
-  <Footprint value="Footprint2x2CreepNormalContour"/>
   <PlacementFootprint value="Footprint2x2"/>
-  <PlacementFootprint value="Footprint2x2CreepNormal"/>
   <MinimapRadius value="0.75"/>
   <BehaviorArray Link="Detector12"/>
   <GlossaryPriority value="53"/>
@@ -57328,11 +57312,6 @@
   <ScoreKill value="400"/>
   <TechTreeUnlockedUnitArray value="Harbinger"/>
   <TechTreeUnlockedUnitArray value="Gyre"/>
-  <Collide index="FlyingEscorts" value="1"/>
-  <FlagArray index="ArmySelect" value="1"/>
-  <Speed value="1.1992"/>
-  <Acceleration value="0.5625"/>
-  <Sight value="12"/>
 </CUnit>
 <CUnit id="Pulsar4DMDummy">
   <Race value="Keir"/>
@@ -57482,9 +57461,7 @@
     </LayoutButtons>
   </CardLayouts>
   <Footprint value="Footprint5x5Contour"/>
-  <Footprint value="Footprint5x5NormalCreepContour"/>
   <PlacementFootprint value="Footprint5x5DropOff"/>
-  <PlacementFootprint value="Footprint5x5DropOffCreepNormal"/>
   <ResourceDropOff index="Minerals" value="1"/>
   <ResourceDropOff index="Vespene" value="1"/>
   <MinimapRadius value="2.5"/>
@@ -57561,8 +57538,6 @@
   <EnergyStart value="50"/>
   <AbilArray index="6" Link="CitadelCharge"/>
   <BehaviorArray Link="ChronoBoostTarget"/>
-  <Footprint value="Footprint5x5NormalCreepContour"/>
-  <PlacementFootprint value="Footprint5x5DropOffCreepNormal"/>
 </CUnit>
 <CUnit id="Converter" parent="CUnitKeiron">
   <LifeStart value="20"/>
@@ -57918,8 +57893,6 @@
   <ScoreKill value="200"/>
   <TechTreeUnlockedUnitArray value="Pulsar"/>
   <TechTreeUnlockedUnitArray value="Subjecter"/>
-  <Footprint value="Footprint3x3CreepNormal"/>
-  <PlacementFootprint value="Footprint3x3CreepNormalContour"/>
 </CUnit>
 <CUnit id="MeridianWeapon" parent="MISSILE">
   <Race value="Keir"/>
@@ -57993,8 +57966,6 @@
   <ScoreMake value="450"/>
   <ScoreKill value="450"/>
   <TechTreeUnlockedUnitArray value="Titan"/>
-  <Footprint value="Footprint3x3CreepNormal"/>
-  <PlacementFootprint value="Footprint3x3CreepNormalContour"/>
 </CUnit>
 <CUnit id="Umbra" parent="CUnitKeiron">
   <LifeStart value="80"/>
@@ -58317,8 +58288,6 @@
   <ScoreKill value="200"/>
   <TechTreeUnlockedUnitArray value="Pariah"/>
   <TechTreeUnlockedUnitArray value="Volt"/>
-  <Footprint value="Footprint3x3CreepNormalContour"/>
-  <PlacementFootprint value="Footprint3x3CreepNormal"/>
 </CUnit>
 <CUnit id="Foundry" parent="CBuildingKeiron">
   <Facing value="45"/>
@@ -58349,8 +58318,6 @@
   <ScoreMake value="300"/>
   <ScoreKill value="300"/>
   <TechTreeUnlockedUnitArray value="Umbra"/>
-  <Footprint value="Footprint3x3CreepNormalContour"/>
-  <PlacementFootprint value="Footprint3x3CreepNormal"/>
 </CUnit>
 <CUnit id="Outlet" parent="DefaultSettingsKeironBuildingFlyer">
   <Facing value="45"/>
@@ -58391,11 +58358,6 @@
   <ScoreKill value="325"/>
   <TechTreeUnlockedUnitArray value="Aurora"/>
   <TechTreeUnlockedUnitArray value="Aperture"/>
-  <Collide index="FlyingEscorts" value="1"/>
-  <FlagArray index="ArmySelect" value="1"/>
-  <Speed value="1.1992"/>
-  <Acceleration value="0.5625"/>
-  <Sight value="12"/>
 </CUnit>
 <CUnit id="Volt" parent="CUnitKeiron">
   <Attributes index="Light" value="1"/>
@@ -58452,7 +58414,6 @@
   <AbilArray index="4" removed="1"/>
   <AbilArray index="5" removed="1"/>
   <BehaviorArray Link="ChangelingDisable"/>
-  <BehaviorArray Link="AllUnitBehaviorController"/>
   <EffectArray index="Create" value=""/>
   <CardLayouts index="0">
     <LayoutButtons index="3" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
@@ -58507,8 +58468,6 @@
   <ScoreMake value="150"/>
   <ScoreKill value="150"/>
   <BehaviorArray Link="ChronoBoostTarget"/>
-  <Footprint value="Footprint3x3CreepNormal"/>
-  <PlacementFootprint value="Footprint3x3CreepNormalContour"/>
 </CUnit>
 <CUnit id="ATALaserBatteryLMWeapon2" parent="MISSILE">
   <Race value="UED"/>
@@ -58700,7 +58659,6 @@
   <AbilArray Link="stop"/>
   <AbilArray Link="move"/>
   <BehaviorArray Link="ChangelingDisable"/>
-  <BehaviorArray Link="AllUnitBehaviorController"/>
   <WeaponArray Link="StrikeTrooperRifle"/>
   <CardLayouts>
     <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -62907,7 +62865,6 @@
   <Sight value="9"/>
   <CostCategory value="Army"/>
   <BehaviorArray Link="ChangelingDisable"/>
-  <BehaviorArray Link="AllUnitBehaviorController"/>
   <WeaponArray Link="NHbrWarriorWeapon"/>
   <SeparationRadius value="0.375"/>
   <InnerRadius value="0.375"/>
@@ -64756,7 +64713,6 @@
   <AbilArray index="5" removed="1"/>
   <AbilArray index="6" removed="1"/>
   <BehaviorArray index="1" Link="ChangelingDisable"/>
-  <BehaviorArray Link="AllUnitBehaviorController"/>
   <ScoreMake value="0"/>
   <ScoreKill value="0"/>
   <TacticalAIThink value="AIThinkChangelingMarine"/>
@@ -65076,6 +65032,7 @@
   <RepairTime value="10"/>
   <AttackTargetPriority value="19"/>
   <BehaviorArray Link="ClaymoreMineSearch"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
   <Radius value="0.125"/>
   <SeparationRadius value="0"/>
   <SubgroupPriority value="15"/>
@@ -65208,6 +65165,7 @@
     <LayoutButtons Face="UPLNukeCalldown" Type="AbilCmd" AbilCmd="UPLNuclearStrike,Execute" Row="0" Column="0"/>
   </CardLayouts>
   <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+  <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
 </CUnit>
 <CUnit id="MiningDroneWeapon" parent="MISSILE_INVULNERABLE">
   <Race value="UPL"/>
@@ -65295,6 +65253,7 @@
   </Fidget>
   <BehaviorArray Link="APCnotmovingflag"/>
   <BehaviorArray Link="SuppressFidget"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
   <AlliedPushPriority value="15"/>
   <GlossaryCategory value="Unit/Category/1UPLNeutral"/>
 </CUnit>
@@ -65370,26 +65329,6 @@
   <AlliedPushPriority value="20"/>
   <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
 </CUnit>
-<CUnit id="GordonTrenchard" parent="UPLInfantryBase">
-  <UserTag value="Unit/ShortName/GordonTrenchard"/>
-  <Attributes index="Armored" value="1"/>
-  <Attributes index="Biological" value="1"/>
-  <LifeStart value="175"/>
-  <LifeMax value="175"/>
-  <LifeArmor value="2"/>
-  <Food value="0"/>
-  <CostResource index="Minerals" value="55"/>
-  <WeaponArray Link="InfantryHeavy"/>
-  <CardLayouts index="0">
-    <LayoutButtons Face="InfantryHeavyNanoweaveBodyArmor" Type="Passive" Row="1" Column="0"/>
-  </CardLayouts>
-  <SubgroupPriority value="90"/>
-  <GlossaryCategory value=""/>
-  <GlossaryPriority value="22"/>
-  <HotkeyCategory value=""/>
-  <AlliedPushPriority value="20"/>
-  <EditorCategories value="ObjectType:Hero,ObjectFamily:Campaign"/>
-</CUnit>
 <CUnit id="InfantryMortarMissile" parent="MISSILE_INVULNERABLE">
   <Race value="UPL"/>
   <Mover value="InfantryMortarMissileMover"/>
@@ -65409,6 +65348,7 @@
   <BehaviorArray Link="InfantryMedkit@Handler"/>
   <BehaviorArray Link="InfantryOfficerAura"/>
   <BehaviorArray Link="Detector10"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
   <WeaponArray Link="InfantryOfficer"/>
   <CardLayouts index="0">
     <LayoutButtons Face="InfantryMedkit" Type="Passive" Requirements="InfantryMedkit@ChargeAvailable" Row="2" Column="2"/>
@@ -65443,6 +65383,7 @@
   <CostResource index="Minerals" value="45"/>
   <BehaviorArray Link="InfantryMedkit"/>
   <BehaviorArray Link="InfantryMedkit@Handler"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
   <WeaponArray Link="InfantryRifle"/>
   <CardLayouts index="0">
     <LayoutButtons Face="InfantryMedkit" Type="Passive" Requirements="InfantryMedkit@ChargeAvailable" Row="2" Column="2"/>
@@ -65478,6 +65419,7 @@
   <AlliedPushPriority value="0"/>
   <BehaviorArray index="0" removed="1"/>
   <BehaviorArray index="1" removed="1"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
   <CardLayouts index="0">
     <LayoutButtons index="6">
       <Face value="InfantryMedkit"/>
@@ -65512,7 +65454,9 @@
   <Attributes index="Light" value="1"/>
   <Attributes index="Mechanical" value="1"/>
   <LifeStart value="60"/>
+  <LifeStart value="50"/>
   <LifeMax value="60"/>
+  <LifeMax value="50"/>
   <LifeArmorName value="Unit/LifeArmorName/UPLVehiclePlating"/>
   <Speed value="2.8125"/>
   <Acceleration value="2.5"/>
@@ -65523,7 +65467,7 @@
   <Food value="-1"/>
   <CostCategory value="Economy"/>
   <CostResource index="Minerals" value="55"/>
-  <CostResource index="Minerals" value="75"/>
+  <CostResource index="Minerals" value="50"/>
   <RepairTime value="16.667"/>
   <AttackTargetPriority value="20"/>
   <AIOverideTargetPriority value="10"/>
@@ -65537,6 +65481,12 @@
   <AbilArray Link="UPLBuild"/>
   <AbilArray Link="MiningDroneSwitchMode"/>
   <AbilArray Link="UPLMiningDroneRepair"/>
+  <AbilArray index="3" Link="UPLBuild"/>
+  <AbilArray index="4" Link="MiningDroneSwitchMode"/>
+  <AbilArray index="5" Link="UPLMiningDroneRepair"/>
+  <AbilArray index="6" Link="SCVHarvest"/>
+  <AbilArray Link="MapObjectInteract"/>
+  <AbilArray Link="MutatorRemoveWorkerSleep"/>
   <CardLayouts>
     <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
     <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
@@ -65566,6 +65516,9 @@
     <LayoutButtons Face="UPLRnDFacility" Type="AbilCmd" AbilCmd="UPLBuild,Build5" Row="1" Column="3"/>
     <LayoutButtons Face="UPLSolitaire" Type="AbilCmd" AbilCmd="UPLBuild,Build14" Row="2" Column="3"/>
   </CardLayouts>
+  <CardLayouts index="0">
+    <LayoutButtons index="6" AbilCmd="SCVHarvest,Gather"/>
+  </CardLayouts>
   <Radius value="0.375"/>
   <SeparationRadius value="0.375"/>
   <InnerRadius value="0.375"/>
@@ -65587,6 +65540,7 @@
   <KillDisplay value="Always"/>
   <RankDisplay value="Always"/>
   <AlliedPushPriority value="8"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
 </CUnit>
 <CUnit id="InfantryRocket" parent="UPLInfantryBase">
   <Food value="-1"/>
@@ -65595,6 +65549,7 @@
   <WeaponArray Link="InfantryRocket"/>
   <BehaviorArray Link="InfantryMedkit"/>
   <BehaviorArray Link="InfantryMedkit@Handler"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
   <CardLayouts index="0">
     <LayoutButtons Face="InfantryRocketAOEResearched" Type="Passive" Requirements="InfantryRocketAOEResearched" Row="2" Column="4"/>
     <LayoutButtons Face="InfantryRocket1Range" Type="Passive" Requirements="InfantryRocket1RangeResearched" Row="2" Column="3"/>
@@ -65656,6 +65611,7 @@
   <AlliedPushPriority value="6"/>
   <BehaviorArray Link="InfantryMedkit"/>
   <BehaviorArray Link="InfantryMedkit@Handler"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
   <GlossaryAlias value="InfantryFlamethrower"/>
   <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
 </CUnit>
@@ -65710,6 +65666,7 @@
   <BehaviorArray Link="InfantryMedkit"/>
   <BehaviorArray Link="InfantryMedkit@Handler"/>
   <BehaviorArray Link="InfantryMortarAttackTarget"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
   <LifeStart value="45"/>
   <LifeMax value="45"/>
   <AlliedPushPriority value="5"/>
@@ -65726,6 +65683,7 @@
   <WeaponArray Link="InfantryHeavy"/>
   <BehaviorArray Link="InfantryMedkit"/>
   <BehaviorArray Link="InfantryMedkit@Handler"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
   <CardLayouts index="0">
     <LayoutButtons Face="InfantryHeavyNanoweaveBodyArmor" Type="Passive" Row="1" Column="0"/>
     <LayoutButtons Face="InfantryMedkit" Type="Passive" Requirements="InfantryMedkit@ChargeAvailable" Row="2" Column="2"/>
@@ -65834,6 +65792,7 @@
   <KillDisplay value="Never"/>
   <AlliedPushPriority value="15"/>
   <ScoreLost value="250"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
 </CUnit>
 <CUnit id="OspreyLanded">
   <DeathRevealRadius value="3"/>
@@ -65892,8 +65851,10 @@
     <LayoutButtons Face="SetRallyPointTransport" Type="AbilCmd" AbilCmd="Rally,Rally1" Row="1" Column="4"/>
   </CardLayouts>
   <Radius value="1"/>
+  <Radius value="0.875"/>
   <SeparationRadius value="0.8"/>
   <InnerRadius value="1"/>
+  <InnerRadius value="0.875"/>
   <ScoreKill value="200"/>
   <SubgroupPriority value="17"/>
   <MinimapRadius value="0.75"/>
@@ -65914,6 +65875,7 @@
   <RankDisplay value="Always"/>
   <AlliedPushPriority value="15"/>
   <LifeArmor value="1"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
 </CUnit>
 <CUnit id="CSVDeployed">
   <Name value="Unit/Name/CSV"/>
@@ -65960,6 +65922,7 @@
   <BehaviorArray Link="CSVTransportHealer"/>
   <BehaviorArray Link="CSVInjuredInfantryNearby"/>
   <BehaviorArray Link="Detector12"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
   <WeaponArray Link="CSV" Turret="CSVTurret"/>
   <EffectArray index="Create" value="CSVDeployedAB"/>
   <EffectArray index="Death" value="TransportDeathIterate"/>
@@ -66107,6 +66070,7 @@
   <BehaviorArray Link="CSVSupplyLineManagement"/>
   <BehaviorArray Link="CSVTransportHealer"/>
   <BehaviorArray Link="CSVInjuredInfantryNearby"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
   <WeaponArray Link="CSV" Turret="CSVTurret"/>
   <CardLayouts>
     <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -66263,6 +66227,7 @@
   <AbilArray Link="CondorLandCinematic"/>
   <AbilArray Link="CondorLandCinematicInstantMorph"/>
   <BehaviorArray Link="CondorFlying"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
   <CardLayouts>
     <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
     <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
@@ -66347,6 +66312,7 @@
   <AbilArray Link="attack"/>
   <AbilArray Link="move"/>
   <BehaviorArray Link="RoutheTankDust"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
   <WeaponArray Link="RoutheTank" Turret="RoutheTank"/>
   <CardLayouts>
     <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -66365,8 +66331,10 @@
     </LayoutButtons>
   </CardLayouts>
   <Radius value="1.125"/>
+  <Radius value="0.875"/>
   <SeparationRadius value="1"/>
   <InnerRadius value="1.125"/>
+  <InnerRadius value="0.875"/>
   <CargoSize value="4"/>
   <ScoreMake value="275"/>
   <ScoreKill value="275"/>
@@ -66431,8 +66399,10 @@
     </LayoutButtons>
   </CardLayouts>
   <Radius value="1"/>
+  <Radius value="0.875"/>
   <SeparationRadius value="1"/>
   <InnerRadius value="1"/>
+  <InnerRadius value="0.875"/>
   <CargoSize value="4"/>
   <ScoreMake value="275"/>
   <ScoreKill value="275"/>
@@ -66451,6 +66421,7 @@
   <GlossaryWeakArray value="Immortal"/>
   <HotkeyCategory value="Unit/Category/UPLUnits"/>
   <AlliedPushPriority value="15"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
 </CUnit>
 <CUnit id="Osprey">
   <DeathRevealRadius value="3"/>
@@ -66510,6 +66481,7 @@
     </LayoutButtons>
   </CardLayouts>
   <Radius value="0.8125"/>
+  <Radius value="0.875"/>
   <SeparationRadius value="0.8"/>
   <ScoreMake value="200"/>
   <ScoreKill value="200"/>
@@ -66523,6 +66495,7 @@
   <StationaryTurningRate value="999.8437"/>
   <Height value="4"/>
   <BehaviorArray Link="OspreyFlying"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
   <TechAliasArray value="Alias_Osprey"/>
   <KillDisplay value="Always"/>
   <RankDisplay value="Always"/>
@@ -66578,8 +66551,10 @@
     <LayoutButtons Face="TR17Unsiege" Type="AbilCmd" AbilCmd="TR17Unsiege,Execute" Row="2" Column="1"/>
   </CardLayouts>
   <Radius value="1.125"/>
+  <Radius value="0.875"/>
   <SeparationRadius value="1"/>
   <InnerRadius value="1.125"/>
+  <InnerRadius value="0.875"/>
   <CargoSize value="4"/>
   <ScoreMake value="275"/>
   <ScoreKill value="275"/>
@@ -66591,6 +66566,7 @@
   <GlossaryPriority value="42"/>
   <HotkeyCategory value="Unit/Category/UPLUnits"/>
   <AlliedPushPriority value="15"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
 </CUnit>
 <CUnit id="RaptorJet">
   <DeathRevealRadius value="3"/>
@@ -66666,6 +66642,7 @@
   <GlossaryWeakArray value="CARRier"/>
   <GlossaryWeakArray value="Corruptor"/>
   <HotkeyCategory value="Unit/Category/UPLUnits"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
 </CUnit>
 <CUnit id="Z1">
   <DeathRevealRadius value="3"/>
@@ -66684,6 +66661,7 @@
   <LifeArmor value="1"/>
   <LifeArmorName value="Unit/LifeArmorName/UPLVehiclePlating"/>
   <Speed value="3"/>
+  <Speed value="2.25"/>
   <Acceleration value="1000"/>
   <LateralAcceleration value="69.125"/>
   <StationaryTurningRate value="999.8437"/>
@@ -66693,6 +66671,8 @@
   <CostCategory value="Army"/>
   <CostResource index="Minerals" value="100"/>
   <CostResource index="Vespene" value="50"/>
+  <CostResource index="Minerals" value="75"/>
+  <CostResource index="Vespene" value="125"/>
   <RepairTime value="25"/>
   <AttackTargetPriority value="20"/>
   <DamageDealtXP value="1"/>
@@ -66745,6 +66725,7 @@
   <EnergyMax value="100"/>
   <EnergyRegenRate value="0.5"/>
   <AlliedPushPriority value="6"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
 </CUnit>
 <CUnit default="1" id="UPLBuildingBase">
   <DeathRevealRadius value="3"/>
@@ -66863,6 +66844,7 @@
   <DeathTime value="0.5"/>
   <DeadFootprint value="Footprint3x3Contour"/>
   <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
+  <BehaviorArray Link="ChronoBoostTarget"/>
 </CUnit>
 <CUnit id="UPLAirstrip" parent="UPLBuildingBase">
   <Facing value="315"/>
@@ -66904,6 +66886,7 @@
   <DeathTime value="0.5"/>
   <DeadFootprint value="Footprint3x3Contour"/>
   <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
+  <BehaviorArray Link="ChronoBoostTarget"/>
 </CUnit>
 <CUnit id="UPLElectrostaticDefenseTower" parent="UPLBuildingBase">
   <FlagArray index="AIDefense" value="1"/>
@@ -66971,6 +66954,7 @@
   <LifeArmor value="1"/>
   <CostCategory value="Economy"/>
   <CostResource index="Minerals" value="200"/>
+  <CostResource index="Minerals" value="75"/>
   <RepairTime value="60"/>
   <BehaviorArray Link="HarvestableVespeneGeyserGasUPL"/>
   <BehaviorArray Link="ExhumerDeathPrevention"/>
@@ -67011,6 +66995,7 @@
   <LifeArmor value="1"/>
   <CostCategory value="Economy"/>
   <CostResource index="Minerals" value="200"/>
+  <CostResource index="Minerals" value="75"/>
   <RepairTime value="60"/>
   <BehaviorArray index="0" Link="HarvestableRichVespeneGeyserGas"/>
   <BehaviorArray Link="ExhumerDeathPrevention"/>
@@ -67071,6 +67056,7 @@
   <LifeArmor value="1"/>
   <Sight value="11"/>
   <Food value="11"/>
+  <Food value="15"/>
   <CostCategory value="Economy"/>
   <CostResource index="Minerals" value="400"/>
   <RepairTime value="60"/>
@@ -67103,6 +67089,7 @@
   <DataCollection value="UPLHeadquarters"/>
   <DeathTime value="1"/>
   <DeadFootprint value="Footprint5x5Contour"/>
+  <BehaviorArray Link="ChronoBoostTarget"/>
 </CUnit>
 <CUnit id="UPLForwardOperatingBase" parent="UPLBuildingBase">
   <Facing value="315"/>
@@ -67139,6 +67126,7 @@
   <DeathTime value="1"/>
   <DeadFootprint value="Footprint4x4Contour"/>
   <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
+  <BehaviorArray Link="ChronoBoostTarget"/>
 </CUnit>
 <CUnit id="UPLNightjar" parent="UPLBuildingBase">
   <FlagArray index="HiddenCargoUI" value="1"/>
@@ -67217,6 +67205,7 @@
   <DeathTime value="1"/>
   <DeadFootprint value="Footprint3x3Contour"/>
   <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
+  <BehaviorArray Link="ChronoBoostTarget"/>
 </CUnit>
 <CUnit id="UPLManufacturingFacility" parent="UPLBuildingBase">
   <Facing value="315"/>
@@ -67259,6 +67248,7 @@
   <DeathTime value="0.5"/>
   <DeadFootprint value="Footprint3x3Contour"/>
   <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
+  <BehaviorArray Link="ChronoBoostTarget"/>
 </CUnit>
 <CUnit id="CARRGrenadeLauncherMissile" parent="MISSILE_INVULNERABLE">
   <Race value="UPL"/>
@@ -67290,6 +67280,7 @@
   <AbilArray Link="CARRGrenadeLauncher"/>
   <AbilArray Link="CARRIllumination"/>
   <BehaviorArray Link="CARRTracker"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
   <WeaponArray Link="CARRGround"/>
   <WeaponArray Link="CARRAir"/>
   <CardLayouts index="0">
@@ -67394,8 +67385,1012 @@
   <MinimapRadius value="0"/>
   <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
 </CUnit>
+<CUnit default="1" id="UPLCivilianBase">
+  <DeathRevealRadius value="3"/>
+  <Race value="UPL"/>
+  <Mob value="Campaign"/>
+  <FlagArray index="PreventDestroy" value="1"/>
+  <FlagArray index="UseLineOfSight" value="1"/>
+  <FlagArray index="ShowResources" value="0"/>
+  <RankDisplay value="Never"/>
+  <PlaneArray index="Ground" value="1"/>
+  <Collide index="Ground" value="1"/>
+  <Collide index="ForceField" value="1"/>
+  <Attributes index="Light" value="1"/>
+  <Attributes index="Biological" value="1"/>
+  <LifeStart value="40"/>
+  <LifeMax value="40"/>
+  <LifeArmorName value="Unit/LifeArmorName/TerranInfantryArmor"/>
+  <Speed value="2.5"/>
+  <Acceleration value="1000"/>
+  <LateralAcceleration value="69.125"/>
+  <StationaryTurningRate value="999.8437"/>
+  <TurningRate value="999.8437"/>
+  <Sight value="7"/>
+  <Food value="-1"/>
+  <RepairTime value="25"/>
+  <AttackTargetPriority value="18"/>
+  <DamageDealtXP value="1"/>
+  <DamageTakenXP value="1"/>
+  <KillXP value="15"/>
+  <AbilArray Link="stop"/>
+  <AbilArray Link="attack"/>
+  <AbilArray Link="move"/>
+  <CardLayouts>
+    <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+    <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+    <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+    <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+    <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+  </CardLayouts>
+  <Radius value="0.375"/>
+  <InnerRadius value="0.3125"/>
+  <CargoSize value="1"/>
+  <ScoreMake value="50"/>
+  <ScoreKill value="50"/>
+  <SubgroupPriority value="14"/>
+  <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
+  <GlossaryCategory value="Unit/Category/1UPLNeutral"/>
+  <Fidget>
+    <ChanceArray index="Anim" value="33"/>
+    <ChanceArray index="Idle" value="33"/>
+    <ChanceArray index="Turn" value="33"/>
+  </Fidget>
+  <TauntDuration index="Cheer" value="5"/>
+  <TauntDuration index="Dance" value="5"/>
+  <ResourceType value="Terrazine"/>
+  <TechAliasArray value="UPLCivilian"/>
+  <ResourceState value="Harvestable"/>
+  <KillDisplay value="Never"/>
+</CUnit>
+<CUnit id="MilesJenkins" parent="UPLInfantryBase">
+  <Attributes index="Armored" value="1"/>
+  <Attributes index="Biological" value="1"/>
+  <LifeStart value="95"/>
+  <LifeMax value="95"/>
+  <LifeArmor value="1"/>
+  <CostResource index="Minerals" value="50"/>
+  <BehaviorArray Link="UPLRiotOfficerShotgun"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
+  <SubgroupPriority value="15"/>
+  <GlossaryCategory value="Unit/Category/0UPLHeroes"/>
+  <GlossaryPriority value="11"/>
+  <HotkeyCategory value=""/>
+  <AlliedPushPriority value="20"/>
+  <UserTag value="Unit/ShortName/MilesJenkins"/>
+  <EditorCategories value="ObjectType:Hero,ObjectFamily:Campaign"/>
+</CUnit>
+<CUnit id="RusellPeters" parent="UPLInfantryBase">
+  <UserTag value="Unit/ShortName/RusellPeters"/>
+  <Attributes index="Armored" value="1"/>
+  <Attributes index="Biological" value="1"/>
+  <LifeStart value="180"/>
+  <LifeMax value="180"/>
+  <LifeArmor value="1"/>
+  <CostResource index="Minerals" value="50"/>
+  <AbilArray Link="MyraDavisSwapToRifle"/>
+  <AbilArray Link="MyraDavisSwapToShotgun"/>
+  <AbilArray Link="MyraDavisHealingPatch"/>
+  <AbilArray Link="MyraDavisHeadshot"/>
+  <BehaviorArray Link="MyraDavisShotgun"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
+  <CardLayouts index="0">
+    <LayoutButtons Face="MyraDavisHealingPatch" Type="AbilCmd" AbilCmd="MyraDavisHealingPatch,Execute" Row="2" Column="0"/>
+    <LayoutButtons Face="MyraDavisHeadshot" Type="AbilCmd" AbilCmd="MyraDavisHeadshot,Execute" Row="2" Column="3"/>
+    <LayoutButtons Face="MyraDavisSwapToRifle" Type="AbilCmd" AbilCmd="MyraDavisSwapToRifle,Execute" Row="2" Column="4"/>
+    <LayoutButtons Face="MyraDavisSwapToShotgun" Type="AbilCmd" AbilCmd="MyraDavisSwapToShotgun,Execute" Row="2" Column="4"/>
+  </CardLayouts>
+  <SubgroupPriority value="98"/>
+  <GlossaryCategory value="Unit/Category/0UPLHeroes"/>
+  <GlossaryPriority value="13"/>
+  <HotkeyCategory value=""/>
+  <AlliedPushPriority value="20"/>
+  <EditorCategories value="ObjectType:Hero,ObjectFamily:Campaign"/>
+</CUnit>
+<CUnit id="DarrenRodgers" parent="UPLInfantryBase">
+  <Attributes index="Armored" value="1"/>
+  <Attributes index="Biological" value="1"/>
+  <LifeStart value="95"/>
+  <LifeMax value="95"/>
+  <LifeArmor value="1"/>
+  <CostResource index="Minerals" value="50"/>
+  <AbilArray Link="DarrenRodgersSwapToShotgun"/>
+  <AbilArray Link="DarrenRodgersSwapToShield"/>
+  <BehaviorArray Link="UPLRiotOfficerShotgun"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
+  <CardLayouts index="0">
+    <LayoutButtons Face="DarrenRodgersShield" Type="AbilCmd" AbilCmd="DarrenRodgersSwapToShield,Execute" Row="2" Column="4"/>
+    <LayoutButtons Face="MyraDavisSwapToShotgun" Type="AbilCmd" AbilCmd="DarrenRodgersSwapToShotgun,Execute" Row="2" Column="4"/>
+  </CardLayouts>
+  <SubgroupPriority value="97"/>
+  <GlossaryCategory value="Unit/Category/0UPLHeroes"/>
+  <GlossaryPriority value="12"/>
+  <HotkeyCategory value=""/>
+  <AlliedPushPriority value="20"/>
+  <UserTag value="Unit/ShortName/DarrenRodgers"/>
+  <FlagArray index="AlwaysThreatens" value="1"/>
+  <EditorCategories value="ObjectType:Hero,ObjectFamily:Campaign"/>
+</CUnit>
 <CUnit id="NewsHelicopter">
+  <FlagArray index="PreventDestroy" value="1"/>
+  <FlagArray index="UseLineOfSight" value="1"/>
+  <PlaneArray index="Air" value="1"/>
+  <Collide index="Flying" value="1"/>
+  <Attributes index="Light" value="1"/>
+  <Attributes index="Mechanical" value="1"/>
+  <LifeStart value="100"/>
+  <LifeMax value="100"/>
+  <Mover value="Fly"/>
+  <Speed value="2"/>
+  <Acceleration value="1.5"/>
+  <StationaryTurningRate value="149.9414"/>
+  <TurningRate value="149.9414"/>
+  <Sight value="9"/>
+  <Height value="3.75"/>
+  <VisionHeight value="4"/>
+  <RepairTime value="30"/>
+  <AbilArray Link="stop"/>
+  <AbilArray Link="attack"/>
+  <AbilArray Link="move"/>
+  <BehaviorArray Link="NewsHelicopterSpotlight"/>
   <BehaviorArray Link="Detector12"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
+  <CardLayouts>
+    <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+    <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+    <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+    <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+    <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+  </CardLayouts>
+  <Radius value="0.75"/>
+  <SeparationRadius value="0.75"/>
+  <MinimapRadius value="0.75"/>
+  <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+  <Race value="UPL"/>
+</CUnit>
+<CUnit id="UPLPoliceCruiser">
+  <DeathRevealRadius value="3"/>
+  <Race value="UPL"/>
+  <FlagArray index="UseLineOfSight" value="1"/>
+  <FlagArray index="TurnBeforeMove" value="1"/>
+  <FlagArray index="ArmySelect" value="1"/>
+  <PlaneArray index="Ground" value="1"/>
+  <Collide index="Ground" value="1"/>
+  <Collide index="ForceField" value="1"/>
+  <Collide index="Locust" value="1"/>
+  <Collide index="Small" value="1"/>
+  <Attributes index="Armored" value="1"/>
+  <Attributes index="Mechanical" value="1"/>
+  <LifeStart value="100"/>
+  <LifeMax value="100"/>
+  <LifeArmor value="1"/>
+  <LifeArmorName value="Unit/LifeArmorName/UPLVehiclePlating"/>
+  <Speed value="2.5"/>
+  <Acceleration value="1000"/>
+  <LateralAcceleration value="10"/>
+  <StationaryTurningRate value="360"/>
+  <TurningRate value="180"/>
+  <Sight value="10"/>
+  <CostResource index="Minerals" value="200"/>
+  <RepairTime value="50"/>
+  <AttackTargetPriority value="11"/>
+  <AbilArray Link="stop"/>
+  <AbilArray Link="move"/>
+  <AbilArray Link="Rally"/>
+  <AbilArray Link="UPLPoliceCruiserTransport"/>
+  <CardLayouts>
+    <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+    <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+    <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+    <LayoutButtons Face="UPLPoliceCruiserTransportLoad" Type="AbilCmd" AbilCmd="UPLPoliceCruiserTransport,LoadAll" Row="2" Column="0"/>
+    <LayoutButtons Face="UPLPoliceCruiserTransportUnloadAll" Type="AbilCmd" AbilCmd="UPLPoliceCruiserTransport,UnloadAll" Row="2" Column="1"/>
+    <LayoutButtons Face="AcquireMove" Type="AbilCmd" AbilCmd="move,AcquireMove" Row="0" Column="4"/>
+  </CardLayouts>
+  <Radius value="1.125"/>
+  <SeparationRadius value="1.1"/>
+  <InnerRadius value="1.125"/>
+  <CargoSize value="4"/>
+  <SubgroupPriority value="16"/>
+  <MinimapRadius value="1"/>
+  <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+  <LeaderAlias value=""/>
+  <BehaviorArray Link="UPLPoliceCruiserTransportEmpty"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
+  <AlliedPushPriority value="8"/>
+</CUnit>
+<CUnit id="SwatVan">
+  <DeathRevealRadius value="3"/>
+  <Race value="UPL"/>
+  <Mob value="Multiplayer"/>
+  <FlagArray index="PreventDestroy" value="1"/>
+  <FlagArray index="UseLineOfSight" value="1"/>
+  <FlagArray index="TurnBeforeMove" value="1"/>
+  <FlagArray index="AIPressForwardDisabled" value="1"/>
+  <FlagArray index="ArmySelect" value="1"/>
+  <PlaneArray index="Ground" value="1"/>
+  <Collide index="Ground" value="1"/>
+  <Collide index="ForceField" value="1"/>
+  <Attributes index="Armored" value="1"/>
+  <Attributes index="Mechanical" value="1"/>
+  <LifeStart value="150"/>
+  <LifeMax value="150"/>
+  <LifeArmor value="1"/>
+  <LifeArmorName value="Unit/LifeArmorName/UPLVehiclePlating"/>
+  <Speed value="1.75"/>
+  <Acceleration value="1000"/>
+  <LateralAcceleration value="64"/>
+  <TurningRate value="360"/>
+  <Sight value="11"/>
+  <Food value="-3"/>
+  <CostCategory value="Army"/>
+  <CostResource index="Minerals" value="150"/>
+  <CostResource index="Vespene" value="125"/>
+  <RepairTime value="45"/>
+  <AttackTargetPriority value="20"/>
+  <DamageDealtXP value="1"/>
+  <DamageTakenXP value="1"/>
+  <KillXP value="50"/>
+  <AbilArray Link="stop"/>
+  <AbilArray Link="move"/>
+  <CardLayouts>
+    <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+    <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+    <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+    <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+  </CardLayouts>
+  <Radius value="1.5"/>
+  <SeparationRadius value="1.5"/>
+  <InnerRadius value="1.5"/>
+  <CargoSize value="4"/>
+  <ScoreMake value="275"/>
+  <ScoreKill value="275"/>
+  <ScoreResult value="BuildOrder"/>
+  <SubgroupPriority value="13"/>
+  <MinimapRadius value="1"/>
+  <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+  <AIEvalFactor value="1.5"/>
+  <GlossaryPriority value="130"/>
+  <Fidget>
+    <ChanceArray index="Anim" value="33"/>
+    <ChanceArray index="Idle" value="33"/>
+    <ChanceArray index="Turn" value="33"/>
+  </Fidget>
+  <AlliedPushPriority value="9"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
+</CUnit>
+<CUnit id="AnimalControl">
+  <DeathRevealRadius value="3"/>
+  <Race value="UPL"/>
+  <FlagArray index="UseLineOfSight" value="1"/>
+  <FlagArray index="TurnBeforeMove" value="1"/>
+  <PlaneArray index="Ground" value="1"/>
+  <Collide index="Ground" value="1"/>
+  <Collide index="ForceField" value="1"/>
+  <Collide index="Locust" value="1"/>
+  <Collide index="Small" value="1"/>
+  <Attributes index="Armored" value="1"/>
+  <Attributes index="Mechanical" value="1"/>
+  <LifeStart value="100"/>
+  <LifeMax value="100"/>
+  <LifeArmor value="1"/>
+  <LifeArmorName value="Unit/LifeArmorName/TerranVehiclePlating"/>
+  <Speed value="1.25"/>
+  <Acceleration value="1000"/>
+  <LateralAcceleration value="10"/>
+  <StationaryTurningRate value="360"/>
+  <TurningRate value="180"/>
+  <Sight value="8"/>
+  <CostResource index="Minerals" value="200"/>
+  <RepairTime value="50"/>
+  <AttackTargetPriority value="11"/>
+  <AbilArray Link="stop"/>
+  <AbilArray Link="move"/>
+  <AbilArray Link="Rally"/>
+  <AbilArray Link="TransportTruckTransport"/>
+  <CardLayouts>
+    <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+    <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+    <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+    <LayoutButtons Face="TransportTruckLoad" Type="AbilCmd" AbilCmd="TransportTruckTransport,Load" Row="2" Column="0"/>
+    <LayoutButtons Face="TransportTruckUnloadAll" Type="AbilCmd" AbilCmd="TransportTruckTransport,UnloadAll" Row="2" Column="1"/>
+    <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="Rally,Rally1" Row="2" Column="4"/>
+  </CardLayouts>
+  <Radius value="1.125"/>
+  <SeparationRadius value="1.1"/>
+  <InnerRadius value="1.125"/>
+  <CargoSize value="4"/>
+  <SubgroupPriority value="16"/>
+  <MinimapRadius value="1"/>
+  <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+  <LeaderAlias value=""/>
+  <AlliedPushPriority value="9"/>
+</CUnit>
+<CUnit id="Ambulance">
+  <DeathRevealRadius value="3"/>
+  <Race value="UPL"/>
+  <FlagArray index="UseLineOfSight" value="1"/>
+  <FlagArray index="TurnBeforeMove" value="1"/>
+  <PlaneArray index="Ground" value="1"/>
+  <Collide index="Ground" value="1"/>
+  <Collide index="ForceField" value="1"/>
+  <Collide index="Locust" value="1"/>
+  <Collide index="Small" value="1"/>
+  <Attributes index="Armored" value="1"/>
+  <Attributes index="Mechanical" value="1"/>
+  <LifeStart value="100"/>
+  <LifeMax value="100"/>
+  <LifeArmor value="1"/>
+  <LifeArmorName value="Unit/LifeArmorName/TerranVehiclePlating"/>
+  <Speed value="1.25"/>
+  <Acceleration value="1000"/>
+  <LateralAcceleration value="10"/>
+  <StationaryTurningRate value="360"/>
+  <TurningRate value="180"/>
+  <Sight value="8"/>
+  <CostResource index="Minerals" value="200"/>
+  <RepairTime value="50"/>
+  <AttackTargetPriority value="11"/>
+  <AbilArray Link="stop"/>
+  <AbilArray Link="move"/>
+  <AbilArray Link="Rally"/>
+  <AbilArray Link="TransportTruckTransport"/>
+  <CardLayouts>
+    <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+    <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+    <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+    <LayoutButtons Face="TransportTruckLoad" Type="AbilCmd" AbilCmd="TransportTruckTransport,Load" Row="2" Column="0"/>
+    <LayoutButtons Face="TransportTruckUnloadAll" Type="AbilCmd" AbilCmd="TransportTruckTransport,UnloadAll" Row="2" Column="1"/>
+    <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="Rally,Rally1" Row="2" Column="4"/>
+  </CardLayouts>
+  <Radius value="1.125"/>
+  <SeparationRadius value="1.1"/>
+  <InnerRadius value="1.125"/>
+  <CargoSize value="4"/>
+  <SubgroupPriority value="16"/>
+  <MinimapRadius value="1"/>
+  <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+  <LeaderAlias value=""/>
+  <AlliedPushPriority value="9"/>
+</CUnit>
+<CUnit id="HazmatTechnician">
+  <DeathRevealRadius value="3"/>
+  <Race value="UPL"/>
+  <FlagArray index="UseLineOfSight" value="1"/>
+  <PlaneArray index="Ground" value="1"/>
+  <Collide index="Ground" value="1"/>
+  <Collide index="ForceField" value="1"/>
+  <Collide index="Locust" value="1"/>
+  <Collide index="Small" value="1"/>
+  <Attributes index="Light" value="1"/>
+  <Attributes index="Biological" value="1"/>
+  <LifeStart value="50"/>
+  <LifeMax value="50"/>
+  <LifeArmorName value="Unit/LifeArmorName/TerranInfantryArmor"/>
+  <Speed value="1.75"/>
+  <Acceleration value="1000"/>
+  <LateralAcceleration value="46.0625"/>
+  <Sight value="7"/>
+  <Food value="-1"/>
+  <CostResource index="Minerals" value="50"/>
+  <CostResource index="Vespene" value="25"/>
+  <RepairTime value="25"/>
+  <AttackTargetPriority value="20"/>
+  <AbilArray Link="stop"/>
+  <AbilArray Link="move"/>
+  <AbilArray Link="HazmatRepair"/>
+  <CardLayouts>
+    <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+    <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+    <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+    <LayoutButtons Face="AcquireMove" Type="AbilCmd" AbilCmd="move,AcquireMove" Row="0" Column="4"/>
+    <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+    <LayoutButtons Face="HazmatTechnicianHEVSuit" Type="Passive" Row="2" Column="0"/>
+    <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="HazmatRepair,Cancel" Row="2" Column="4"/>
+  </CardLayouts>
+  <Radius value="0.4375"/>
+  <SeparationRadius value="0.375"/>
+  <CargoSize value="1"/>
+  <SubgroupPriority value="4"/>
+  <MinimapRadius value="0.375"/>
+  <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+  <LeaderAlias value=""/>
+  <Fidget>
+    <ChanceArray index="Anim" value="33"/>
+    <ChanceArray index="Idle" value="33"/>
+    <ChanceArray index="Turn" value="33"/>
+  </Fidget>
+  <AlliedPushPriority value="8"/>
+  <GlossaryCategory value="Unit/Category/1UPLNeutral"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
+</CUnit>
+<CUnit id="UPLEngineer" parent="UPLCivilianBase">
+  <LifeStart value="45"/>
+  <LifeMax value="45"/>
+  <CostResource index="Minerals" value="50"/>
+  <GlossaryPriority value="14"/>
+  <AlliedPushPriority value="3"/>
+  <GlossaryCategory value="Unit/Category/0UPLHeroes"/>
+  <EditorCategories value="ObjectType:Hero,ObjectFamily:Campaign"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
+</CUnit>
+<CUnit id="UPLPoliceOfficer" parent="UPLInfantryBase">
+  <LifeStart value="30"/>
+  <LifeMax value="30"/>
+  <CostResource index="Minerals" value="50"/>
+  <BehaviorArray Link="UPLPoliceOfficerShotgun"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
+  <GlossaryCategory value="Unit/Category/1UPLNeutral"/>
+  <GlossaryPriority value="20"/>
+  <HotkeyCategory value=""/>
+  <Attributes index="Light" value="1"/>
+  <Attributes index="Biological" value="1"/>
+  <AlliedPushPriority value="5"/>
+  <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+</CUnit>
+<CUnit id="UPLRiotOfficer" parent="UPLInfantryBase">
+  <Attributes index="Armored" value="1"/>
+  <Attributes index="Biological" value="1"/>
+  <LifeStart value="75"/>
+  <LifeMax value="75"/>
+  <LifeArmor value="1"/>
+  <CostResource index="Minerals" value="50"/>
+  <BehaviorArray Link="UPLRiotOfficerShotgun"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
+  <GlossaryCategory value="Unit/Category/1UPLNeutral"/>
+  <GlossaryPriority value="20"/>
+  <HotkeyCategory value=""/>
+  <SubgroupPriority value="15"/>
+  <AlliedPushPriority value="5"/>
+  <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+</CUnit>
+<CUnit id="UPLAnimalControlOfficer" parent="UPLCivilianBase">
+  <LifeStart value="45"/>
+  <LifeMax value="45"/>
+  <LifeArmor value="1"/>
+  <CostResource index="Minerals" value="50"/>
+  <GlossaryPriority value="20"/>
+  <GlossaryCategory value=""/>
+  <AlliedPushPriority value="4"/>
+  <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
+</CUnit>
+<CUnit id="UPLCivilianMale" parent="UPLCivilianBase">
+  <LifeStart value="45"/>
+  <LifeMax value="45"/>
+  <CostResource index="Minerals" value="50"/>
+  <GlossaryPriority value="20"/>
+  <PushPriority value="1"/>
+  <AlliedPushPriority value="1"/>
+  <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
+</CUnit>
+<CUnit id="UPLCivilianFemale" parent="UPLCivilianBase">
+  <LifeStart value="45"/>
+  <LifeMax value="45"/>
+  <LifeArmor value="1"/>
+  <CostResource index="Minerals" value="50"/>
+  <GlossaryPriority value="20"/>
+  <PushPriority value="1"/>
+  <AlliedPushPriority value="1"/>
+  <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
+</CUnit>
+<CUnit id="UPLDetectiveFemale" parent="UPLCivilianBase">
+  <LifeStart value="45"/>
+  <LifeMax value="45"/>
+  <LifeArmor value="1"/>
+  <CostResource index="Minerals" value="50"/>
+  <GlossaryPriority value="20"/>
+  <AlliedPushPriority value="4"/>
+  <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
+</CUnit>
+<CUnit id="UPLDetectiveMale" parent="UPLCivilianBase">
+  <LifeStart value="45"/>
+  <LifeMax value="45"/>
+  <LifeArmor value="1"/>
+  <CostResource index="Minerals" value="50"/>
+  <GlossaryPriority value="20"/>
+  <AlliedPushPriority value="4"/>
+  <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
+</CUnit>
+<CUnit id="UPLCivilianOldMan" parent="UPLCivilianBase">
+  <LifeStart value="45"/>
+  <LifeMax value="45"/>
+  <LifeArmorName value="Unit/LifeArmorName/None"/>
+  <Speed value="0.3515"/>
+  <GlossaryCategory value=""/>
+  <PushPriority value="11"/>
+  <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
+</CUnit>
+<CUnit id="MyraDavisFlameGrenadeMissile" parent="MISSILE_INVULNERABLE">
+  <Race value="UPL"/>
+  <Mover value="MyraDavisFlameGrenadeMissileMover"/>
+  <EditorCategories value="ObjectType:Projectile,ObjectFamily:Campaign"/>
+</CUnit>
+<CUnit id="MyraDavisFlashBangGrenadeMissile" parent="MISSILE_INVULNERABLE">
+  <Race value="UPL"/>
+  <Mover value="MyraDavisFlashBangGrenadeMissileMover"/>
+  <EditorCategories value="ObjectType:Projectile,ObjectFamily:Campaign"/>
+</CUnit>
+<CUnit id="TrevorRandGrenadeMissile" parent="MISSILE_INVULNERABLE">
+  <Race value="UPL"/>
+  <Mover value="TrevorRandGrenadeMissileMover"/>
+  <EditorCategories value="ObjectType:Projectile,ObjectFamily:Campaign"/>
+</CUnit>
+<CUnit id="UPLScoutFlameGrenadeMissile" parent="MISSILE_INVULNERABLE">
+  <Race value="UPL"/>
+  <Mover value="UPLScoutFlameGrenadeMissileMover"/>
+  <EditorCategories value="ObjectType:Projectile,ObjectFamily:Campaign"/>
+</CUnit>
+<CUnit id="UPLScoutGrenadeMissile" parent="MISSILE_INVULNERABLE">
+  <Race value="UPL"/>
+  <Mover value="UPLScoutGrenadeMissileMover"/>
+  <EditorCategories value="ObjectType:Projectile,ObjectFamily:Campaign"/>
+</CUnit>
+<CUnit id="GordonTrenchard" parent="UPLHeroBase">
+  <UserTag value="Unit/ShortName/GordonTrenchard"/>
+  <Attributes index="Armored" value="1"/>
+  <Attributes index="Biological" value="1"/>
+  <LifeStart value="175"/>
+  <LifeMax value="175"/>
+  <LifeArmor value="2"/>
+  <Food value="0"/>
+  <CostResource index="Minerals" value="55"/>
+  <WeaponArray Link="InfantryHeavy"/>
+  <CardLayouts index="0">
+    <LayoutButtons Face="InfantryHeavyNanoweaveBodyArmor" Type="Passive" Row="1" Column="0"/>
+  </CardLayouts>
+  <SubgroupPriority value="90"/>
+  <GlossaryCategory value=""/>
+  <GlossaryPriority value="22"/>
+  <HotkeyCategory value=""/>
+  <AlliedPushPriority value="20"/>
+  <EditorCategories value="ObjectType:Hero,ObjectFamily:Campaign"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
+</CUnit>
+<CUnit id="LillyRollins" parent="UPLHeroBase">
+  <Subtitle value="Unit/Subtitle/LillyRollins"/>
+  <Gender value="Female"/>
+  <LifeStart value="150"/>
+  <LifeMax value="150"/>
+  <LifeArmor value="2"/>
+  <Food value="0"/>
+  <AbilArray Link="LillyRollinsHeal"/>
+  <WeaponArray Link="LillyRollins"/>
+  <CardLayouts index="0">
+    <LayoutButtons Face="LillyRollinsHeal" Type="AbilCmd" AbilCmd="LillyRollinsHeal,Execute" Row="2" Column="1"/>
+  </CardLayouts>
+  <SubgroupPriority value="93"/>
+  <EditorCategories value="ObjectType:Hero,ObjectFamily:Campaign"/>
+  <GlossaryPriority value="6"/>
+  <HotkeyCategory value="Unit/Category/UPLStory"/>
+  <Attributes index="Light" value="1"/>
+  <Attributes index="Biological" value="1"/>
+  <UserTag value="Unit/ShortName/LillyRollins"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
+</CUnit>
+<CUnit id="MyraDavisOfficer" parent="UPLHeroBase">
+  <UserTag value="Unit/ShortName/MyraDavis"/>
+  <Gender value="Female"/>
+  <Attributes index="Light" value="1"/>
+  <Attributes index="Biological" value="1"/>
+  <LifeStart value="130"/>
+  <LifeMax value="130"/>
+  <CostResource index="Minerals" value="50"/>
+  <AbilArray Link="MyraDavisFlashBangGrenade"/>
+  <AbilArray Link="MyraDavisHealingPatch"/>
+  <BehaviorArray Link="MyraDavisShotgun"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
+  <CardLayouts index="0">
+    <LayoutButtons Face="MyraDavisHealingPatch" Type="AbilCmd" AbilCmd="MyraDavisHealingPatch,Execute" Row="2" Column="0"/>
+    <LayoutButtons Face="MyraDavisFlashBangGrenade" Type="AbilCmd" AbilCmd="MyraDavisFlashBangGrenade,Execute" Row="2" Column="1"/>
+  </CardLayouts>
+  <SubgroupPriority value="99"/>
+  <EditorCategories value="ObjectType:Hero,ObjectFamily:Campaign"/>
+  <GlossaryPriority value="9"/>
+  <HotkeyCategory value="Unit/Category/UPLStory"/>
+</CUnit>
+<CUnit id="MyraDavisRiotOfficer" parent="UPLHeroBase">
+  <UserTag value="Unit/ShortName/MyraDavis"/>
+  <Gender value="Female"/>
+  <Attributes index="Armored" value="1"/>
+  <Attributes index="Biological" value="1"/>
+  <LifeStart value="200"/>
+  <LifeMax value="200"/>
+  <LifeArmor value="1"/>
+  <CostResource index="Minerals" value="50"/>
+  <AbilArray Link="MyraDavisHealingPatch"/>
+  <AbilArray Link="MyraDavisFlameGrenade"/>
+  <AbilArray Link="MyraDavisFlashBangGrenade"/>
+  <AbilArray Link="MyraDavisSwapToRifle"/>
+  <AbilArray Link="MyraDavisSwapToShotgun"/>
+  <AbilArray Link="MyraDavisHeadshot"/>
+  <BehaviorArray Link="MyraDavisRifle"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
+  <CardLayouts index="0">
+    <LayoutButtons Face="MyraDavisFlashBangGrenade" Type="AbilCmd" AbilCmd="MyraDavisFlashBangGrenade,Execute" Row="2" Column="1"/>
+    <LayoutButtons Face="MyraDavisHealingPatch" Type="AbilCmd" AbilCmd="MyraDavisHealingPatch,Execute" Row="2" Column="0"/>
+    <LayoutButtons Face="MyraDavisFlameGrenade" Type="AbilCmd" AbilCmd="MyraDavisFlameGrenade,Execute" Row="2" Column="2"/>
+    <LayoutButtons Face="MyraDavisHeadshot" Type="AbilCmd" AbilCmd="MyraDavisHeadshot,Execute" Row="2" Column="3"/>
+    <LayoutButtons>
+      <Face value="CARRGrenadeLauncherAlt"/>
+      <Type value="AbilCmd"/>
+      <AbilCmd value="CARRGrenadeLauncher,Execute"/>
+      <ShowInGlossary value="0"/>
+      <Row value="1"/>
+      <Column value="0"/>
+    </LayoutButtons>
+    <LayoutButtons>
+      <Face value="CARRIlluminationAlt"/>
+      <Type value="AbilCmd"/>
+      <AbilCmd value="CARRIllumination,Execute"/>
+      <ShowInGlossary value="0"/>
+      <Row value="1"/>
+      <Column value="1"/>
+    </LayoutButtons>
+    <LayoutButtons Face="MyraDavisSwapToRifle" Type="AbilCmd" AbilCmd="MyraDavisSwapToRifle,Execute" Row="2" Column="4"/>
+    <LayoutButtons Face="MyraDavisSwapToShotgun" Type="AbilCmd" AbilCmd="MyraDavisSwapToShotgun,Execute" Row="2" Column="4"/>
+  </CardLayouts>
+  <SubgroupPriority value="99"/>
+  <EditorCategories value="ObjectType:Hero,ObjectFamily:Campaign"/>
+  <HotkeyAlias value="MyraDavisOfficer"/>
+  <GlossaryPriority value="9"/>
+  <HotkeyCategory value="Unit/Category/UPLStory"/>
+</CUnit>
+<CUnit id="DeniseAllisterRiotOfficer" parent="UPLHeroBase">
+  <UserTag value="Unit/ShortName/DeniseAlistair"/>
+  <Gender value="Female"/>
+  <Attributes index="Armored" value="1"/>
+  <Attributes index="Biological" value="1"/>
+  <Attributes index="Heroic" value="0"/>
+  <LifeStart value="130"/>
+  <LifeMax value="130"/>
+  <LifeArmor value="1"/>
+  <CostResource index="Minerals" value="50"/>
+  <AbilArray Link="MyraDavisFlashBangGrenade"/>
+  <BehaviorArray Link="UPLRiotOfficerRifle"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
+  <WeaponArray Link="UPLRiotOfficerRifle"/>
+  <CardLayouts index="0">
+    <LayoutButtons Face="MyraDavisFlashBangGrenade" Type="AbilCmd" AbilCmd="MyraDavisFlashBangGrenade,Execute" Row="2" Column="0"/>
+  </CardLayouts>
+  <SubgroupPriority value="98"/>
+  <EditorCategories value="ObjectType:Hero,ObjectFamily:Campaign"/>
+  <GlossaryPriority value="10"/>
+  <HotkeyCategory value=""/>
+</CUnit>
+<CUnit id="RichardGideon" parent="UPLHeroBase">
+  <Subtitle value="Unit/Subtitle/RichardGideon"/>
+  <LifeArmor value="2"/>
+  <LifeStart value="200"/>
+  <LifeMax value="200"/>
+  <Food value="0"/>
+  <AbilArray Link="ClaymoreMineDummy"/>
+  <AbilArray Link="ClaymoreMineExecute"/>
+  <AbilArray Link="ClaymoreMinePlace"/>
+  <WeaponArray Link="RichardGideon"/>
+  <CardLayouts index="0">
+    <LayoutButtons Face="ClaymoreMinePlace" Type="AbilCmd" AbilCmd="ClaymoreMineDummy,Execute" Row="2" Column="0"/>
+  </CardLayouts>
+  <SubgroupPriority value="94"/>
+  <EditorCategories value="ObjectType:Hero,ObjectFamily:Campaign"/>
+  <GlossaryPriority value="17"/>
+  <HotkeyCategory value="Unit/Category/UPLStory"/>
+  <BehaviorArray Link="ClaymoreMineHaveCharges"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
+  <Attributes index="Armored" value="1"/>
+  <Attributes index="Biological" value="1"/>
+  <UserTag value="Unit/ShortName/RichardGideon"/>
+</CUnit>
+<CUnit id="TrevorRand" parent="UPLHeroBase">
+  <Subtitle value="Unit/Subtitle/TrevorRand"/>
+  <Attributes index="Armored" value="1"/>
+  <Attributes index="Biological" value="1"/>
+  <LifeStart value="150"/>
+  <LifeMax value="150"/>
+  <LifeArmor value="2"/>
+  <Food value="0"/>
+  <AbilArray Link="TrevorRandGrenade"/>
+  <WeaponArray Link="TrevorRand"/>
+  <CardLayouts index="0">
+    <LayoutButtons Face="TrevorRandGrenade" Type="AbilCmd" AbilCmd="TrevorRandGrenade,Execute" Row="2" Column="0"/>
+  </CardLayouts>
+  <SubgroupPriority value="93"/>
+  <EditorCategories value="ObjectType:Hero,ObjectFamily:Campaign"/>
+  <GlossaryPriority value="7"/>
+  <HotkeyCategory value="Unit/Category/UPLStory"/>
+  <UserTag value="Unit/ShortName/TrevorRand"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
+</CUnit>
+<CUnit id="UPLScout" parent="UPLHeroBase">
+  <Collide index="Locust" value="1"/>
+  <Collide index="Small" value="1"/>
+  <Attributes index="Armored" value="1"/>
+  <Attributes index="Biological" value="1"/>
+  <LifeStart value="250"/>
+  <LifeMax value="250"/>
+  <LifeArmor value="2"/>
+  <ShieldArmorName value="Unit/ShieldArmorName/UPLScoutShields"/>
+  <Speed value="2.8007"/>
+  <LateralAcceleration value="46.0625"/>
+  <RepairTime value="41.667"/>
+  <AbilArray Link="UPLScoutFlameGrenade"/>
+  <AbilArray Link="UPLScoutGrenade"/>
+  <BehaviorArray Link="ClaymoreMineHaveCharges"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
+  <WeaponArray Link="UPLScout"/>
+  <CardLayouts index="0">
+    <LayoutButtons Face="UPLScoutGrenade" Type="AbilCmd" AbilCmd="UPLScoutGrenade,Execute" Row="2" Column="0"/>
+    <LayoutButtons Face="UPLScoutFlameGrenade" Type="AbilCmd" AbilCmd="UPLScoutFlameGrenade,Execute" Row="2" Column="1"/>
+    <LayoutButtons>
+      <Face value="CARRGrenadeLauncherAlt"/>
+      <Type value="AbilCmd"/>
+      <AbilCmd value="CARRGrenadeLauncher,Execute"/>
+      <ShowInGlossary value="0"/>
+      <Row value="1"/>
+      <Column value="0"/>
+    </LayoutButtons>
+    <LayoutButtons>
+      <Face value="CARRIlluminationAlt"/>
+      <Type value="AbilCmd"/>
+      <AbilCmd value="CARRIllumination,Execute"/>
+      <ShowInGlossary value="0"/>
+      <Row value="1"/>
+      <Column value="1"/>
+    </LayoutButtons>
+  </CardLayouts>
+  <SeparationRadius value="0.375"/>
+  <SubgroupPriority value="93"/>
+  <EditorCategories value="ObjectType:Hero,ObjectFamily:Campaign"/>
+  <LeaderAlias value="Spectre"/>
+  <GlossaryPriority value="350"/>
+  <HotkeyCategory value="Unit/Category/UPLStory"/>
+  <RankDisplay value="Always"/>
+  <GlossaryCategory value="Unit/Category/0UPLUnits"/>
+  <KillDisplay value="Always"/>
+</CUnit>
+<CUnit id="UPLSpecOps" parent="UPLHeroBase">
+  <Subtitle value="Unit/Subtitle/UPLSpecOps"/>
+  <AbilArray Link="ClaymoreMineDummy"/>
+  <AbilArray Link="ClaymoreMineExecute"/>
+  <AbilArray Link="ClaymoreMinePlace"/>
+  <WeaponArray Link="UPLSpecOpsAttack"/>
+  <CardLayouts index="0">
+    <LayoutButtons Face="ClaymoreMinePlace" Type="AbilCmd" AbilCmd="ClaymoreMineDummy,Execute" Row="2" Column="0"/>
+  </CardLayouts>
+  <EditorCategories value="ObjectType:Hero,ObjectFamily:Campaign"/>
+  <GlossaryPriority value="350"/>
+  <Food value="0"/>
+  <LifeStart value="120"/>
+  <LifeMax value="120"/>
+  <SubgroupPriority value="93"/>
+  <Speed value="2.8007"/>
+  <HotkeyCategory value="Unit/Category/UPLStory"/>
+  <BehaviorArray Link="ClaymoreMineHaveCharges"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
+  <Attributes index="Armored" value="1"/>
+  <Attributes index="Biological" value="1"/>
+  <AlliedPushPriority value="5"/>
+  <GlossaryCategory value="Unit/Category/0UPLUnits"/>
+</CUnit>
+<CUnit id="WilliamGraves" parent="UPLHeroBase">
+  <Subtitle value="Unit/Subtitle/WilliamGraves"/>
+  <AbilArray Link="WilliamGravesCharge"/>
+  <AbilArray Link="WillliamGravesArtilleryStrike"/>
+  <BehaviorArray Link="WilliamGravesMedkit"/>
+  <BehaviorArray Link="WilliamGravesMedkit@Handler"/>
+  <BehaviorArray Link="InfantryOfficerAura"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
+  <WeaponArray Link="WilliamGraves"/>
+  <CardLayouts index="0">
+    <LayoutButtons Face="WilliamGravesMedkit" Type="Passive" Requirements="WilliamGravesMedkit@ChargeAvailable" Row="2" Column="2"/>
+    <LayoutButtons>
+      <Face value="WilliamGravesMedkit"/>
+      <Type value="Passive"/>
+      <Behavior value="WilliamGravesMedkit@Supressed"/>
+      <Requirements value="WilliamGravesMedkit@Have"/>
+      <Row value="2"/>
+      <Column value="2"/>
+    </LayoutButtons>
+    <LayoutButtons Face="WillliamGravesArtilleryStrike" Type="AbilCmd" AbilCmd="WillliamGravesArtilleryStrike,Execute" Row="2" Column="0"/>
+    <LayoutButtons>
+      <Face value="InfantryOfficerInspiration"/>
+      <Type value="Passive"/>
+      <AbilCmd value="WilliamGravesCharge,Execute"/>
+      <Behavior value="InfantryOfficerAura"/>
+      <Row value="1"/>
+      <Column value="0"/>
+    </LayoutButtons>
+  </CardLayouts>
+  <EditorCategories value="ObjectType:Hero,ObjectFamily:Campaign"/>
+  <GlossaryPriority value="15"/>
+  <LifeStart value="200"/>
+  <LifeMax value="200"/>
+  <Food value="0"/>
+  <SubgroupPriority value="99"/>
+  <HotkeyCategory value="Unit/Category/UPLStory"/>
+  <Attributes index="Armored" value="1"/>
+  <Attributes index="Biological" value="1"/>
+  <UserTag value="Unit/ShortName/WilliamGraves"/>
+</CUnit>
+<CUnit id="AltonPeters" parent="UPLHeroBase">
+  <Subtitle value="Unit/Subtitle/AltonPeters"/>
+  <Attributes index="Armored" value="1"/>
+  <Attributes index="Biological" value="1"/>
+  <LifeStart value="200"/>
+  <LifeMax value="200"/>
+  <LifeArmor value="1"/>
+  <Food value="0"/>
+  <AbilArray Link="AltonPetersArmorDecayLaunch"/>
+  <AbilArray Link="AltonPetersDestroyArmor"/>
+  <WeaponArray Link="AltonPeters"/>
+  <CardLayouts index="0">
+    <LayoutButtons Face="InfantryHeavyNanoweaveBodyArmor" Type="Passive" Row="1" Column="0"/>
+    <LayoutButtons Face="AltonPetersArmorDecayLaunch" Type="AbilCmd" AbilCmd="AltonPetersArmorDecayLaunch,Execute" Row="2" Column="2"/>
+  </CardLayouts>
+  <SubgroupPriority value="93"/>
+  <EditorCategories value="ObjectType:Hero,ObjectFamily:Campaign"/>
+  <GlossaryPriority value="7"/>
+  <HotkeyCategory value="Unit/Category/UPLStory"/>
+  <UserTag value="Unit/ShortName/AltonPeters"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
+</CUnit>
+<CUnit id="AltonPetersZ1" parent="UPLHeroBase">
+  <Subtitle value="Unit/Subtitle/AltonPetersZ1"/>
+  <Attributes index="Light" value="1"/>
+  <Attributes index="Mechanical" value="1"/>
+  <LifeStart value="400"/>
+  <LifeMax value="400"/>
+  <LifeArmor value="2"/>
+  <LifeRegenRate value="3"/>
+  <EnergyStart value="100"/>
+  <EnergyMax value="100"/>
+  <EnergyRegenRate value="3"/>
+  <Speed value="3.5"/>
+  <AbilArray Link="AltonPetersZ1ImprovedHeal"/>
+  <AbilArray Link="AltonPetersZ1Adrenaline"/>
+  <AbilArray Link="Z1Freeze"/>
+  <WeaponArray Link="AltonPetersZ1"/>
+  <CardLayouts index="0">
+    <LayoutButtons Face="Z1LiquidNitrogen" Type="AbilCmd" AbilCmd="Z1Freeze,Execute" Row="2" Column="0"/>
+    <LayoutButtons Face="AltonPetersZ1Adrenaline" Type="AbilCmd" AbilCmd="AltonPetersZ1Adrenaline,Execute" Row="2" Column="1"/>
+    <LayoutButtons Face="AltonPetersZ1ImprovedHeal" Type="AbilCmd" AbilCmd="AltonPetersZ1ImprovedHeal,Execute" Row="2" Column="2"/>
+  </CardLayouts>
+  <Radius value="0.625"/>
+  <CargoSize value="2"/>
+  <SubgroupPriority value="94"/>
+  <EditorCategories value="ObjectType:Hero,ObjectFamily:Campaign"/>
+  <GlossaryPriority value="8"/>
+  <HotkeyCategory value="Unit/Category/UPLStory"/>
+  <HotkeyAlias value="AltonPeters"/>
+  <InnerRadius value="0.5"/>
+  <LifeArmorName value="Unit/LifeArmorName/UPLVehiclePlating"/>
+  <UserTag value="Unit/ShortName/AltonPeters"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
+</CUnit>
+<CUnit id="RileyJerico" parent="UPLHeroBase">
+  <Subtitle value="Unit/Subtitle/RileyJerico"/>
+  <Gender value="Female"/>
+  <Attributes index="Light" value="1"/>
+  <Attributes index="Mechanical" value="1"/>
+  <LifeStart value="500"/>
+  <LifeMax value="500"/>
+  <LifeArmor value="1"/>
+  <LifeArmorName value="Unit/LifeArmorName/UPLVehiclePlating"/>
+  <EnergyStart value="150"/>
+  <EnergyMax value="150"/>
+  <EnergyRegenRate value="1"/>
+  <Speed value="3.5"/>
+  <AbilArray Link="RileyJericoJumpJet"/>
+  <AbilArray Link="RileyJericoLorna"/>
+  <AbilArray Link="RileyJericoBadgerBomb"/>
+  <WeaponArray Link="RileyJerico"/>
+  <WeaponArray Link="Z1DummyWeapon"/>
+  <CardLayouts index="0">
+    <LayoutButtons Face="RileyJericoJumpJet" Type="AbilCmd" AbilCmd="RileyJericoJumpJet,Execute" Row="2" Column="0"/>
+    <LayoutButtons Face="RileyJericoLorna" Type="AbilCmd" AbilCmd="RileyJericoLorna,Execute" Row="2" Column="1"/>
+    <LayoutButtons Face="RileyJericoBadgerBomb" Type="AbilCmd" AbilCmd="RileyJericoBadgerBomb,Execute" Row="2" Column="2"/>
+  </CardLayouts>
+  <Radius value="0.625"/>
+  <InnerRadius value="0.5"/>
+  <CargoSize value="2"/>
+  <SubgroupPriority value="94"/>
+  <EditorCategories value="ObjectType:Hero,ObjectFamily:Campaign"/>
+  <GlossaryPriority value="16"/>
+  <HotkeyCategory value="Unit/Category/UPLStory"/>
+  <UserTag value="Unit/ShortName/RileyJerico"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
+</CUnit>
+<CUnit id="KatherineHalsey" parent="UPLHeroBase">
+  <Subtitle value="Unit/Subtitle/KatherineHalsey"/>
+  <Gender value="Female"/>
+  <FlagArray index="Untargetable" value="1"/>
+  <Collide index="Locust" value="1"/>
+  <Collide index="Small" value="1"/>
+  <LifeStart value="90"/>
+  <LifeMax value="90"/>
+  <LateralAcceleration value="46.0625"/>
+  <Sight value="5"/>
+  <AbilArray Link="KatherineHalseyBreathe"/>
+  <CardLayouts index="0">
+    <LayoutButtons index="4" Face="AcquireMove" Type="AbilCmd" AbilCmd="move,AcquireMove" Row="0" Column="4"/>
+    <LayoutButtons Face="KatherineHalseyBreatheOn" Type="AbilCmd" AbilCmd="KatherineHalseyBreathe,On" Row="2" Column="0"/>
+    <LayoutButtons Face="KatherineHalseyBreatheOff" Type="AbilCmd" AbilCmd="KatherineHalseyBreathe,Off" Row="2" Column="1"/>
+  </CardLayouts>
+  <Radius value="0.25"/>
+  <SeparationRadius value="0.25"/>
+  <SubgroupPriority value="94"/>
+  <MinimapRadius value="0.25"/>
+  <EditorCategories value="ObjectType:Hero,ObjectFamily:Campaign"/>
+  <HotkeyCategory value=""/>
+  <KillDisplay value="Never"/>
+  <RankDisplay value="Never"/>
+  <Attributes index="Light" value="1"/>
+  <Attributes index="Biological" value="1"/>
+  <UserTag value="Unit/ShortName/KatherineHalsey"/>
+  <GlossaryPriority value="20"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
+</CUnit>
+<CUnit id="KatherineHalseyPistol" parent="UPLHeroBase">
+  <Name value="Unit/Name/KatherineHalsey"/>
+  <UserTag value="Unit/ShortName/KatherineHalsey"/>
+  <Subtitle value="Unit/Subtitle/KatherineHalsey"/>
+  <Gender value="Female"/>
+  <Collide index="Locust" value="1"/>
+  <Collide index="Small" value="1"/>
+  <Attributes index="Light" value="1"/>
+  <Attributes index="Biological" value="1"/>
+  <LifeStart value="90"/>
+  <LifeMax value="90"/>
+  <LateralAcceleration value="46.0625"/>
+  <Sight value="5"/>
+  <WeaponArray Link="KatherineHalseyPistol"/>
+  <BehaviorArray Link="KatherineHalseyMedkit"/>
+  <BehaviorArray Link="KatherineHalseyMedkit@Handler"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
+  <CardLayouts index="0">
+    <LayoutButtons Face="KatherineHalseyMedkit" Type="Passive" Requirements="KatherineHalseyMedkit@ChargeAvailable" Row="2" Column="2"/>
+    <LayoutButtons>
+      <Face value="KatherineHalseyMedkit"/>
+      <Type value="Passive"/>
+      <Behavior value="KatherineHalseyMedkit@Supressed"/>
+      <Requirements value="KatherineHalseyMedkit@Have"/>
+      <Row value="2"/>
+      <Column value="2"/>
+    </LayoutButtons>
+  </CardLayouts>
+  <Radius value="0.25"/>
+  <SeparationRadius value="0.25"/>
+  <SubgroupPriority value="94"/>
+  <MinimapRadius value="0.25"/>
+  <EditorCategories value="ObjectType:Hero,ObjectFamily:Campaign"/>
+  <HotkeyCategory value=""/>
+  <KillDisplay value="Never"/>
+  <RankDisplay value="Never"/>
+  <GlossaryPriority value="20"/>
+</CUnit>
+<CUnit id="RileyJericoJumpJetPH">
+  <Race value="UPL"/>
+  <FlagArray index="Unselectable" value="1"/>
+  <FlagArray index="Untargetable" value="1"/>
+  <FlagArray index="NoDraw" value="1"/>
+  <FlagArray index="Undetectable" value="1"/>
+  <FlagArray index="Unradarable" value="1"/>
+  <FlagArray index="Invulnerable" value="1"/>
+  <FlagArray index="NoScore" value="1"/>
+  <FlagArray index="NoDeathEvent" value="1"/>
+  <Collide index="Structure" value="1"/>
+  <LifeStart value="10000"/>
+  <LifeMax value="10000"/>
+  <Radius value="0.625"/>
+  <InnerRadius value="0.5"/>
+  <MinimapRadius value="0"/>
+  <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
+  <LeaderAlias value=""/>
+  <HotkeyAlias value=""/>
 </CUnit>
 <CUnit id="Z2" parent="UPLInfantryBase">
   <Subtitle value="Unit/Subtitle/Z2"/>
@@ -67428,6 +68423,7 @@
   <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
   <GlossaryPriority value="40"/>
   <HotkeyCategory value="Unit/Category/UPLStory"/>
+  <BehaviorArray Link="AllUnitBehaviorController"/>
 </CUnit>
 <CUnit id="VolchrontheHunter">
   <DeathTime value="-1"/>

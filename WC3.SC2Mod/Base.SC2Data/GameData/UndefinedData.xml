@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Catalog>
+<ModelFlags index="AllowHitTest" value="0"/>
+<ModelFlags index="AutomateGlobalLoops" value="1"/>
+<Inherits index="CloakEffect" value="1"/>
+<ModelFlags index="AllowHitTest" value="0"/>
+<ModelFlags index="AutomateGlobalLoops" value="1"/>
+<Inherits index="CloakEffect" value="1"/>
+<ModelFlags index="AllowHitTest" value="0"/>
+<ModelFlags index="AutomateGlobalLoops" value="1"/>
+<Inherits index="CloakEffect" value="1"/>
+<ModelFlags index="AllowHitTest" value="0"/>
+<ModelFlags index="AutomateGlobalLoops" value="1"/>
+<Inherits index="CloakEffect" value="1"/>
+<ModelFlags index="AllowHitTest" value="0"/>
+<ModelFlags index="AutomateGlobalLoops" value="1"/>
+<Inherits index="CloakEffect" value="1"/>
+
+</Catalog>

@@ -1422,7 +1422,7 @@
         <GroupIcon>
             <Image value="Assets\Textures\wireframe-protoss-monolithcannon-zeratul.dds"/>
         </GroupIcon>
-        <HeroIcon value="Assets\Textures\btn-building-protoss-ship-photoncannon.dds"/>
+        <HeroIcon value="Assets\Textures\btn-building-protoss-zeratulmonolith.dds"/>
         <LifeArmorIcon value="Assets\Textures\btn-armor-protoss-buildingplating.dds"/>
         <SoundArray index="Ready" value="KhaydarinMonolith_Ready"/>
         <SoundArray index="What" value="KhaydarinMonolith_What"/>

@@ -4786,8 +4786,6 @@
         <CombineArray value="IsSISCV"/>
         <CombineArray value="IsTychusSCV"/>
         <CombineArray value="isHHSCV"/>
-        <CombineArray value="isGenetronACR"/>
-        <CombineArray value="IsSalvager"/>
     </CValidatorCombine>
     <CValidatorCombine id="isWorker">
         <CombineArray index="0" value="IsMULE"/>
@@ -4800,14 +4798,9 @@
         <CombineArray value="IsSIDrone"/>
         <CombineArray value="IsDehakaDrone"/>
         <CombineArray value="IsDroneFull"/>
-        <CombineArray value="isXayedScavenger"/>
-        <CombineArray value="isDragonPlodder"/>
-        <CombineArray value="isDragonAscendedPlodder"/>
     </CValidatorCombine>
     <CValidatorCombine id="isProtossInteractWorker">
         <CombineArray value="IsProbe"/>
-        <CombineArray value="isKeironConverter"/>
-        <CombineArray value="NHbrCommon@IsMinion"/>
     </CValidatorCombine>
     <CValidatorUnitCompareBehaviorCount id="noDevour">
         <Behavior value="noDevour"/>

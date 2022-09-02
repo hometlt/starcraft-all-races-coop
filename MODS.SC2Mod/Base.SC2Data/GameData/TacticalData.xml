@@ -188,9 +188,6 @@
   <Abil value="XayidlingDash"/>
   <TargetFind value="AttackOrderTarget"/>
 </CTacticalOrder>
-<CTacticalOrder id="meridian">
-  <Abil value="MeridianConvergence"/>
-  <TargetFind value="PsiStorm"/>
-</CTacticalOrder>
+<CTacticalOrder id="meridian"/>
 
 </Catalog>

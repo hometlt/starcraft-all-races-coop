@@ -34008,6 +34008,7 @@
   <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
   <CmdButtonArray index="On" DefaultButtonFace="MiningDroneSwitchMode"/>
   <CmdButtonArray index="Off" DefaultButtonFace="MiningDroneSwitchModeOff"/>
+  <CmdButtonArray index="On" Requirements="HaveUPLBillet"/>
   <Flags index="Toggle" value="1"/>
   <Flags index="Transient" value="1"/>
   <BehaviorArray value="MiningDroneSwitchMode"/>
@@ -34016,13 +34017,10 @@
     <Cooldown TimeUse="5"/>
   </Cost>
   <Cost index="0">
-    <Resource index="Minerals" value="0"/>
+    <Resource index="Minerals" value="25"/>
   </Cost>
   <OffCost>
     <Cooldown TimeUse="5"/>
-  </OffCost>
-  <OffCost index="0">
-    <Resource index="Minerals" value="15"/>
   </OffCost>
 </CAbilBehavior>
 <CAbilEffectInstant id="InfantryOfficerCharge">
@@ -34452,6 +34450,8 @@
   <TargetFilters value="Visible;Ally,Neutral,Enemy,Missile,Buried,UnderConstruction,Dead,Hidden"/>
   <UnloadValidatorArray value="OspreyLanded"/>
   <DeathUnloadEffect value="TransportUnloadDeath"/>
+  <LoadCargoEffect value="UPLOspreyTransportCargoLoad"/>
+  <UnloadTransportEffect value="UPLOspreyTransportCargoUnload"/>
 </CAbilTransport>
 <CAbilEffectTarget id="RaptorJetScatterBombs">
   <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
@@ -34766,6 +34766,7 @@
     <Button DefaultButtonFace="CARR" Requirements="CARRRequirements"/>
     <Unit value="CARR"/>
   </InfoArray>
+  <InfoArray index="Train1" Time="17"/>
   <Alert value="TrainWorkerComplete"/>
 </CAbilTrain>
 <CAbilTrain id="UPLManufacturingFacilityTrain">
@@ -34897,96 +34898,445 @@
     <Cooldown TimeUse="0.25"/>
   </Cost>
 </CAbilEffectTarget>
-<CAbilMove id="AegisMove">
-  <CmdButtonArray index="Move" State="Restricted" Requirements="KeironLevel01"/>
-  <CmdButtonArray index="Patrol" State="Restricted" Requirements="KeironLevel01"/>
-  <CmdButtonArray index="HoldPos" State="Restricted" Requirements="KeironLevel01"/>
-  <CmdButtonArray index="AcquireMove" State="Restricted" Requirements="KeironLevel01"/>
-  <CmdButtonArray index="Turn" State="Restricted" Requirements="KeironLevel01"/>
-</CAbilMove>
-<CAbilMove id="StratusMove">
-  <CmdButtonArray index="Move" State="Restricted" Requirements="KeironLevel06"/>
-  <CmdButtonArray index="Patrol" State="Restricted" Requirements="KeironLevel06"/>
-  <CmdButtonArray index="HoldPos" State="Restricted" Requirements="KeironLevel06"/>
-  <CmdButtonArray index="AcquireMove" State="Restricted" Requirements="KeironLevel06"/>
-  <CmdButtonArray index="Turn" State="Restricted" Requirements="KeironLevel06"/>
-</CAbilMove>
-<CAbilMove id="ConduitMove">
-  <CmdButtonArray index="Move" State="Restricted" Requirements="KeironLevel07"/>
-  <CmdButtonArray index="Patrol" State="Restricted" Requirements="KeironLevel07"/>
-  <CmdButtonArray index="HoldPos" State="Restricted" Requirements="KeironLevel07"/>
-  <CmdButtonArray index="AcquireMove" State="Restricted" Requirements="KeironLevel07"/>
-  <CmdButtonArray index="Turn" State="Restricted" Requirements="KeironLevel07"/>
-</CAbilMove>
-<CAbilMove id="OutletMove">
-  <CmdButtonArray index="Move" State="Restricted" Requirements="KeironLevel09"/>
-  <CmdButtonArray index="Patrol" State="Restricted" Requirements="KeironLevel09"/>
-  <CmdButtonArray index="HoldPos" State="Restricted" Requirements="KeironLevel09"/>
-  <CmdButtonArray index="AcquireMove" State="Restricted" Requirements="KeironLevel09"/>
-  <CmdButtonArray index="Turn" State="Restricted" Requirements="KeironLevel09"/>
-</CAbilMove>
-<CAbilMove id="EmpyreanMove">
-  <CmdButtonArray index="Move" State="Restricted" Requirements="KeironLevel12"/>
-  <CmdButtonArray index="Patrol" State="Restricted" Requirements="KeironLevel12"/>
-  <CmdButtonArray index="HoldPos" State="Restricted" Requirements="KeironLevel12"/>
-  <CmdButtonArray index="AcquireMove" State="Restricted" Requirements="KeironLevel12"/>
-  <CmdButtonArray index="Turn" State="Restricted" Requirements="KeironLevel12"/>
-</CAbilMove>
-<CAbilMove id="ZenithMove">
-  <CmdButtonArray index="Move" State="Restricted" Requirements="KeironLevel14"/>
-  <CmdButtonArray index="Patrol" State="Restricted" Requirements="KeironLevel14"/>
-  <CmdButtonArray index="HoldPos" State="Restricted" Requirements="KeironLevel14"/>
-  <CmdButtonArray index="AcquireMove" State="Restricted" Requirements="KeironLevel14"/>
-  <CmdButtonArray index="Turn" State="Restricted" Requirements="KeironLevel14"/>
-</CAbilMove>
-<CAbilEffectInstant id="AutoBeholder">
-  <EditorCategories value="AbilityorEffectType:Units,Race:Keiron"/>
-  <DataCollection value="Beholder"/>
-  <Effect index="0" value="Beholder"/>
-  <Flags index="AutoCast" value="1"/>
-  <Flags index="AutoCastOn" value="1"/>
+<CAbilEffectInstant id="DarrenRodgersSwapToShield">
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <Flags index="Transient" value="1"/>
+  <Cost>
+    <Cooldown Link="Abil/DarrenRodgersWeaponSwitch" Location="Unit" TimeUse="1"/>
+  </Cost>
+  <CmdButtonArray index="Execute" DefaultButtonFace="DarrenRodgersSwapToShield" Requirements="HasNotDarrenRodgersShield"/>
+  <CmdButtonArray index="Cancel" DefaultButtonFace="Cancel"/>
+</CAbilEffectInstant>
+<CAbilEffectInstant id="DarrenRodgersSwapToShotgun">
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <Flags index="Transient" value="1"/>
+  <Cost>
+    <Cooldown Link="Abil/DarrenRodgersWeaponSwitch" Location="Unit" TimeUse="1"/>
+  </Cost>
+  <CmdButtonArray index="Execute" DefaultButtonFace="MyraDavisSwapToShotgun" Requirements="HasNotDarrenRodgersShotgun"/>
+  <CmdButtonArray index="Cancel" DefaultButtonFace="Cancel"/>
+</CAbilEffectInstant>
+<CAbilEffectInstant id="DarrenRodgersShield">
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <Effect index="0" value="DarrenRodgersShield@Set"/>
+  <Flags index="Transient" value="1"/>
+  <Cost>
+    <Cooldown TimeUse="10"/>
+  </Cost>
+  <CmdButtonArray index="Execute" DefaultButtonFace="DarrenRodgersShield">
+    <Flags index="ToSelection" value="1"/>
+  </CmdButtonArray>
+</CAbilEffectInstant>
+<CAbilTransport id="UPLPoliceCruiserTransport">
+  <AbilSetId value="ULdM"/>
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <CmdButtonArray index="UnloadAll" DefaultButtonFace="UPLPoliceCruiserTransportUnloadAll">
+    <Flags index="ToSelection" value="1"/>
+  </CmdButtonArray>
+  <CmdButtonArray index="UnloadAt">
+    <Flags index="Hidden" value="1"/>
+  </CmdButtonArray>
+  <CmdButtonArray index="UnloadUnit">
+    <Flags index="Hidden" value="1"/>
+  </CmdButtonArray>
+  <CmdButtonArray index="LoadAll" DefaultButtonFace="UPLPoliceCruiserTransportLoad"/>
+  <Flags index="AllowSmartCmd" value="0"/>
+  <Flags index="CargoDeath" value="1"/>
+  <Range value="3"/>
+  <MaxCargoCount value="4"/>
+  <MaxCargoSize value="2"/>
+  <TotalCargoSpace value="4"/>
+  <SearchRadius value="2"/>
+  <LoadCargoEffect value="UPLPoliceCruiserTransportCargoLoad"/>
+  <UnloadTransportEffect value="UPLPoliceCruiserTransportCargoUnload"/>
+  <LoadValidatorArray value="TargetIsTransportable"/>
+  <LoadValidatorArray value="TargetNotRooted"/>
+  <LoadValidatorArray value="TargetNotStunnedCombine"/>
+  <LoadValidatorArray value="TargetNotStasis"/>
+  <TargetFilters value="Visible;Ally,Neutral,Enemy,Missile,Buried,UnderConstruction,Dead,Hidden"/>
+</CAbilTransport>
+<CAbilTransport id="APCTransport">
+  <AbilSetId value="ULdM"/>
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <CmdButtonArray index="Load" Requirements="APCdoormustbeopened">
+    <Flags index="ToSelection" value="1"/>
+  </CmdButtonArray>
+  <CmdButtonArray index="UnloadAll" DefaultButtonFace="APCUnloadAll" Requirements="APCdoormustbeopened">
+    <Flags index="ToSelection" value="1"/>
+  </CmdButtonArray>
+  <CmdButtonArray index="UnloadAt" Requirements="APCdoormustbeopened">
+    <Flags index="Hidden" value="1"/>
+  </CmdButtonArray>
+  <CmdButtonArray index="UnloadUnit" Requirements="APCdoormustbeopened">
+    <Flags index="Hidden" value="1"/>
+  </CmdButtonArray>
+  <CmdButtonArray index="LoadAll" DefaultButtonFace="APCLoad" Requirements="APCdoormustbeopened"/>
+  <Flags index="AllowSmartCmd" value="0"/>
+  <Flags index="CargoDeath" value="1"/>
+  <Range value="2"/>
+  <MaxCargoCount value="8"/>
+  <MaxCargoSize value="8"/>
+  <TotalCargoSpace value="8"/>
+  <SearchRadius value="3"/>
+  <LoadValidatorArray value="APCdooropened"/>
+  <LoadValidatorArray value="TargetIsTransportable"/>
+  <LoadValidatorArray value="TargetNotRooted"/>
+  <LoadValidatorArray value="TargetNotStunnedCombine"/>
+  <LoadValidatorArray value="TargetNotStasis"/>
+  <UnloadValidatorArray value="APCdooropened"/>
+  <TargetFilters value="Biological,Visible;Ally,Neutral,Enemy,Buried,UnderConstruction,Dead,Hidden"/>
+</CAbilTransport>
+<CAbilEffectInstant id="APCOpenDoor">
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <Effect index="0" value="APCdooropenedApply"/>
+  <CmdButtonArray index="Execute" DefaultButtonFace="APCOpenDoor" Requirements="APCdoorclosedandnotmoving">
+    <Flags index="ToSelection" value="1"/>
+  </CmdButtonArray>
+</CAbilEffectInstant>
+<CAbilEffectInstant id="APCCloseDoor">
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <Effect index="0" value="APCopendoorRemove"/>
+  <CmdButtonArray index="Execute" DefaultButtonFace="APCCloseDoor" Requirements="APCdoormustbeopened">
+    <Flags index="ToSelection" value="1"/>
+  </CmdButtonArray>
+</CAbilEffectInstant>
+<CAbilEffectTarget id="APCSmokeGrenade">
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <Effect index="0" value="APCSmokeGrenadeLaunch"/>
+  <Range value="6"/>
+  <Arc value="360"/>
+  <CmdButtonArray index="Execute" DefaultButtonFace="APCSmokeGrenade"/>
+  <Cost>
+    <Cooldown TimeUse="9"/>
+  </Cost>
+</CAbilEffectTarget>
+<CAbilEffectInstant id="WilliamGravesCharge">
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <Effect index="0" value="WilliamGravesChargeAura"/>
+  <Flags index="AllowMovement" value="1"/>
   <Flags index="BestUnit" value="1"/>
   <Flags index="Transient" value="1"/>
   <Cost>
-    <Vital index="Energy" value="75"/>
-    <Cooldown TimeUse="22.4"/>
+    <Cooldown TimeUse="30"/>
   </Cost>
-  <AINotifyEffect value="Beholder"/>
-  <CmdButtonArray index="Execute" DefaultButtonFace="Beholder" State="Restricted"/>
+  <CmdButtonArray index="Execute" DefaultButtonFace="WilliamGravesCharge">
+    <Flags index="ToSelection" value="1"/>
+  </CmdButtonArray>
+  <AbilSetId value="InfantryOfficerCharge"/>
+</CAbilEffectInstant>
+<CAbilEffectTarget id="MyraDavisHeadshot">
+  <Alignment value="Negative"/>
+  <CastIntroTime value="0.3332"/>
+  <FinishTime value="0.45"/>
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <Cost>
+    <Cooldown TimeUse="15"/>
+  </Cost>
+  <TargetFilters value="Light,Biological,Visible;Self,Player,Ally,Structure,Destructible,Stasis,Dead,Hidden,Invulnerable"/>
+  <Range value="10"/>
+  <Marker>
+    <MatchFlags index="Link" value="0"/>
+    <MatchFlags index="CasterUnit" value="1"/>
+  </Marker>
+  <CmdButtonArray index="Execute" DefaultButtonFace="MyraDavisHeadshot" Requirements="MyraDavisHeadshot">
+    <Flags index="ToSelection" value="1"/>
+  </CmdButtonArray>
+  <PrepTime value="0.0625"/>
+  <UninterruptibleArray index="Cast" value="1"/>
+  <UninterruptibleArray index="Channel" value="1"/>
+  <UninterruptibleArray index="Finish" value="1"/>
+</CAbilEffectTarget>
+<CAbilEffectInstant id="MyraDavisSwapToShotgun">
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <CmdButtonArray index="Execute" DefaultButtonFace="MyraDavisSwapToShotgun" Requirements="HasNotMyraDavisShotgun"/>
+  <CmdButtonArray index="Cancel" DefaultButtonFace="Cancel"/>
+  <Flags index="Transient" value="1"/>
+  <Cost>
+    <Cooldown Link="Abil/MyraDavisWeaponSwitch" Location="Unit" TimeUse="1"/>
+  </Cost>
+</CAbilEffectInstant>
+<CAbilEffectInstant id="MyraDavisSwapToRifle">
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <AINotifyEffect value="MyraDavisSwapToShotgun"/>
+  <CmdButtonArray index="Execute" DefaultButtonFace="MyraDavisSwapToRifle" Requirements="HasNotMyraDavisRifle"/>
+  <CmdButtonArray index="Cancel" DefaultButtonFace="Cancel"/>
+  <Flags index="Transient" value="1"/>
+  <Cost>
+    <Cooldown Link="Abil/MyraDavisWeaponSwitch" Location="Unit" TimeUse="1"/>
+  </Cost>
+</CAbilEffectInstant>
+<CAbilEffectTarget id="MyraDavisFlameGrenade">
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <Effect index="0" value="MyraDavisFlameGrenadeLaunch"/>
+  <Cost>
+    <Charge CountMax="5" CountStart="5" CountUse="1"/>
+    <Cooldown TimeUse="5"/>
+  </Cost>
+  <Range value="5"/>
+  <CursorEffect value="MyraDavisFlameGrenadeSearch"/>
+  <AINotifyEffect value="MyraDavisFlameGrenadeSearch"/>
+  <CmdButtonArray index="Execute" DefaultButtonFace="MyraDavisFlameGrenade">
+    <Flags index="AllowSelfCast" value="1"/>
+    <Flags index="ToSelection" value="1"/>
+  </CmdButtonArray>
+  <CastIntroTime value="0.4"/>
+  <FinishTime value="0.75"/>
+  <UninterruptibleArray index="Cast" value="1"/>
+  <UninterruptibleArray index="Channel" value="1"/>
+</CAbilEffectTarget>
+<CAbilEffectTarget id="MyraDavisFlashBangGrenade">
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <Effect index="0" value="MyraDavisFlashBangGrenadeLaunch"/>
+  <Cost>
+    <Charge CountMax="3" CountStart="3" CountUse="1"/>
+    <Cooldown TimeUse="5"/>
+  </Cost>
+  <Range value="5"/>
+  <CursorEffect value="MyraDavisFlashBangGrenadeSearch"/>
+  <AINotifyEffect value="CARRGrenadeLauncherSearch"/>
+  <CmdButtonArray index="Execute" DefaultButtonFace="MyraDavisFlashBangGrenade">
+    <Flags index="AllowSelfCast" value="1"/>
+    <Flags index="ToSelection" value="1"/>
+  </CmdButtonArray>
+  <CastIntroTime value="0.4"/>
+  <FinishTime value="0.75"/>
+  <UninterruptibleArray index="Cast" value="1"/>
+  <UninterruptibleArray index="Channel" value="1"/>
+</CAbilEffectTarget>
+<CAbilEffectTarget id="TrevorRandGrenade">
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <Effect index="0" value="TrevorRandGrenadeLaunch"/>
+  <Cost>
+    <Charge CountMax="3" CountStart="3" CountUse="1"/>
+    <Cooldown TimeUse="5"/>
+  </Cost>
+  <Range value="5"/>
+  <CursorEffect value="TrevorRandGrenadeSearch"/>
+  <AINotifyEffect value="CARRGrenadeLauncherSearch"/>
+  <CmdButtonArray index="Execute" DefaultButtonFace="TrevorRandGrenade">
+    <Flags index="ToSelection" value="1"/>
+  </CmdButtonArray>
+  <CastIntroTime value="0.4"/>
+  <FinishTime value="0.75"/>
+  <UninterruptibleArray index="Cast" value="1"/>
+  <UninterruptibleArray index="Channel" value="1"/>
+</CAbilEffectTarget>
+<CAbilEffectTarget id="AltonPetersArmorDecayLaunch">
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <Cost>
+    <Charge Link="Abil/GrenadeLauncher"/>
+    <Cooldown Link="Abil/GrenadeLauncher" TimeUse="5"/>
+  </Cost>
+  <InterruptCost>
+    <Charge Link="Abil/GrenadeLauncher"/>
+    <Cooldown Link="Abil/GrenadeLauncher"/>
+  </InterruptCost>
+  <Range value="8"/>
+  <Marker Link="Abil/GrenadeLauncher"/>
+  <CursorEffect value="AltonPetersArmorDecaySearch"/>
+  <AINotifyEffect value="CARRGrenadeLauncherSearch"/>
+  <CmdButtonArray index="Execute" DefaultButtonFace="AltonPetersArmorDecayLaunch"/>
+</CAbilEffectTarget>
+<CAbilEffectTarget id="UPLScoutFlameGrenade">
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <Effect index="0" value="UPLScoutFlameGrenadeLaunch"/>
+  <Cost>
+    <Charge CountMax="2" CountStart="2" CountUse="1"/>
+    <Cooldown TimeUse="5"/>
+  </Cost>
+  <Range value="5"/>
+  <CursorEffect value="UPLScoutFlameGrenadeSearch"/>
+  <AINotifyEffect value="CARRGrenadeLauncherSearch"/>
+  <CmdButtonArray index="Execute" DefaultButtonFace="UPLScoutFlameGrenade">
+    <Flags index="ToSelection" value="1"/>
+  </CmdButtonArray>
+  <CastIntroTime value="0.4"/>
+  <FinishTime value="0.75"/>
+  <UninterruptibleArray index="Cast" value="1"/>
+  <UninterruptibleArray index="Channel" value="1"/>
+</CAbilEffectTarget>
+<CAbilEffectTarget id="UPLScoutGrenade">
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <Effect index="0" value="UPLScoutGrenadeLaunch"/>
+  <Cost>
+    <Charge CountMax="2" CountStart="2" CountUse="1"/>
+    <Cooldown TimeUse="5"/>
+  </Cost>
+  <Range value="5"/>
+  <CastIntroTime value="0.4"/>
+  <FinishTime value="0.75"/>
+  <CursorEffect value="UPLScoutGrenadeSearch"/>
+  <AINotifyEffect value="UPLScoutGrenadeSearch"/>
+  <CmdButtonArray index="Execute" DefaultButtonFace="UPLScoutGrenade">
+    <Flags index="ToSelection" value="1"/>
+  </CmdButtonArray>
+  <UninterruptibleArray index="Cast" value="1"/>
+  <UninterruptibleArray index="Channel" value="1"/>
+</CAbilEffectTarget>
+<CAbilEffectInstant id="RaptorCloak">
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <InfoTooltipPriority value="1"/>
+  <Flags index="AutoCast" value="1"/>
+  <Flags index="AutoCastOn" value="1"/>
+  <Flags index="RequireTargetVision" value="0"/>
+  <Flags index="Transient" value="1"/>
+  <Cost>
+    <Vital index="Energy" value="25"/>
+    <Cooldown TimeUse="15"/>
+  </Cost>
+  <AutoCastAcquireLevel value="Defensive"/>
+  <AutoCastRange value="5"/>
+  <AutoCastValidatorArray value="RaptorJetCloakAutoCast"/>
+  <CmdButtonArray index="Execute" DefaultButtonFace="RaptorCloak" Requirements="HaveRaptorCloakAbilUpgrade">
+    <Flags index="ToSelection" value="1"/>
+  </CmdButtonArray>
+</CAbilEffectInstant>
+<CAbilEffectInstant id="RileyJericoLorna">
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <Flags index="BestUnit" value="1"/>
+  <PrepTime value="0.0625"/>
+  <CastIntroTime value="0.5"/>
+  <UninterruptibleArray index="Prep" value="1"/>
+  <UninterruptibleArray index="Cast" value="1"/>
+  <UninterruptibleArray index="Channel" value="1"/>
+  <UninterruptibleArray index="Finish" value="1"/>
+  <CastOutroTime value="0.85"/>
+  <CmdButtonArray index="Execute" DefaultButtonFace="RileyJericoLorna">
+    <Flags index="AllowMinimap" value="0"/>
+  </CmdButtonArray>
+  <Cost>
+    <Vital index="Energy" value="75"/>
+  </Cost>
+  <PreEffectBehavior Behavior="RileyJericoLornaSuppressMovement"/>
+</CAbilEffectInstant>
+<CAbilEffectTarget id="RileyJericoJumpJet">
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <Effect index="0" value="RileyJericoJumpJetPHCreate"/>
+  <Flags index="DeferCooldown" value="1"/>
+  <Range value="18"/>
+  <PrepTime value="0.125"/>
+  <CastIntroTime value="2.5"/>
+  <CancelableArray index="Cast" value="1"/>
+  <CmdButtonArray index="Execute" DefaultButtonFace="RileyJericoJumpJet"/>
+  <CmdButtonArray index="Cancel" DefaultButtonFace="Cancel">
+    <Flags index="UseDefaultButton" value="1"/>
+    <Flags index="CreateDefaultButton" value="1"/>
+  </CmdButtonArray>
+  <Cost>
+    <Charge TimeStart="5"/>
+    <Cooldown TimeUse="15"/>
+  </Cost>
+  <UninterruptibleArray index="Prep" value="1"/>
+  <UninterruptibleArray index="Cast" value="1"/>
+  <UninterruptibleArray index="Channel" value="1"/>
+  <UninterruptibleArray index="Finish" value="1"/>
+  <PlaceUnit value="RileyJericoJumpJetPH"/>
+  <CursorEffect value="RileyJericoJumpJetImpactEnum"/>
+  <CancelDelay index="Cast" value="0.125"/>
+</CAbilEffectTarget>
+<CAbilEffectTarget id="MyraDavisHealingPatch">
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <TargetFilters value="Biological,Visible;Enemy,Missile,Stasis,UnderConstruction,Dead,Hidden,Invulnerable"/>
+  <Effect index="0" value="MyraDavisHealingPatchHeal"/>
+  <Cost>
+    <Cooldown TimeUse="7"/>
+  </Cost>
+  <Range value="1.1"/>
+  <CmdButtonArray index="Execute" DefaultButtonFace="MyraDavisHealingPatch">
+    <Flags index="AllowSelfCast" value="1"/>
+    <Flags index="ToSelection" value="1"/>
+  </CmdButtonArray>
+  <CmdButtonArray index="Cancel" DefaultButtonFace="Cancel"/>
+  <Flags index="AllowMovement" value="1"/>
+  <Flags index="NoDeceleration" value="1"/>
+  <Flags index="RangeUsePathing" value="1"/>
+</CAbilEffectTarget>
+<CAbilEffectInstant id="LillyRollinsHeal">
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <Flags index="Transient" value="1"/>
+  <Cost>
+    <Cooldown Link="LillyRollinsHeal" Location="Unit" TimeUse="10"/>
+  </Cost>
+  <CmdButtonArray index="Execute" DefaultButtonFace="LillyRollinsHeal">
+    <Flags index="ToSelection" value="1"/>
+  </CmdButtonArray>
+</CAbilEffectInstant>
+<CAbilMorph id="AltonPetersEnterZ1">
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <CmdButtonArray index="Execute" DefaultButtonFace="WearZ1BattleArmor"/>
+  <InfoArray Unit="AltonPetersZ1"/>
+</CAbilMorph>
+<CAbilEffectTarget id="AltonPetersDestroyArmor">
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <Cost>
+    <Cooldown TimeUse="10"/>
+  </Cost>
+  <TargetFilters value="Visible;Self,Player,Ally,Stasis,Dead,Hidden,Invulnerable"/>
+  <Range value="7"/>
+  <CmdButtonArray index="Execute" DefaultButtonFace="AltonPetersDestroyArmor"/>
+</CAbilEffectTarget>
+<CAbilEffectInstant id="AltonPetersZ1Adrenaline">
+  <AbilSetId value="Stimpack"/>
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <InfoTooltipPriority value="1"/>
+  <DataCollection value="Stimpack"/>
+  <Effect index="0" value="AltonPetersZ1AdrenalineApplyBuff"/>
+  <Flags index="Transient" value="1"/>
+  <Cost>
+    <Vital index="Energy" value="25"/>
+    <Cooldown TimeUse="3"/>
+  </Cost>
+  <CmdButtonArray index="Execute" DefaultButtonFace="AltonPetersZ1Adrenaline">
+    <Flags index="ToSelection" value="1"/>
+  </CmdButtonArray>
+</CAbilEffectInstant>
+<CAbilEffectInstant id="AltonPetersZ1ImprovedHeal">
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <Flags index="Transient" value="1"/>
+  <Cost>
+    <Vital index="Energy" value="25"/>
+    <Cooldown Link="ImprovedHealAltonPetersZ1ImprovedHeal" Location="Unit" TimeUse="3"/>
+  </Cost>
+  <CmdButtonArray index="Execute" DefaultButtonFace="AltonPetersZ1ImprovedHeal"/>
+</CAbilEffectInstant>
+<CAbilBehavior id="KatherineHalseyBreathe">
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <SharedFlags index="RegisterCooldownEvent" value="1"/>
+  <Flags index="Toggle" value="1"/>
+  <Flags index="Transient" value="1"/>
+  <CmdButtonArray index="On" DefaultButtonFace="KatherineHalseyBreatheOn"/>
+  <CmdButtonArray index="Off" DefaultButtonFace="KatherineHalseyBreatheOff"/>
+  <Cost>
+    <Cooldown TimeStart="5" TimeUse="20"/>
+  </Cost>
+  <BehaviorArray value="KatherineHalseyBreathe"/>
+</CAbilBehavior>
+<CAbilMove id="AegisMove"/>
+<CAbilMove id="StratusMove"/>
+<CAbilMove id="ConduitMove"/>
+<CAbilMove id="OutletMove"/>
+<CAbilMove id="EmpyreanMove"/>
+<CAbilMove id="ZenithMove"/>
+<CAbilEffectInstant id="AutoBeholder">
+  <Cost>
+    <Vital index="Energy" value="75"/>
+    <Charge Link="Abil/AutoBeholder"/>
+    <Cooldown Link="Abil/AutoBeholder" TimeUse="22.4"/>
+  </Cost>
   <AutoCastValidatorArray value="UndetectedEnemyCloakedUnitsNearby"/>
-  <AutoCastRange value="12"/>
-  <AutoCastFilters value="Visible;Player,Ally,Neutral"/>
 </CAbilEffectInstant>
 <CAbilEffectTarget id="AutoConvergence">
-  <EditorCategories value="AbilityorEffectType:Units,Race:Keiron"/>
-  <DataCollection value="MeridianConvergence"/>
-  <Effect index="0" value="MeridianConvergenceCP"/>
   <Cost>
     <Vital index="Energy" value="150"/>
+    <Charge Link="Abil/AutoConvergence"/>
+    <Cooldown Link="Abil/AutoConvergence"/>
   </Cost>
   <Range value="11"/>
   <FinishTime value="0.25"/>
-  <UninterruptibleArray index="Channel" value="1"/>
-  <UninterruptibleArray index="Finish" value="1"/>
   <CursorEffect value="MeridianConvergenceSA"/>
-  <AINotifyEffect value="MeridianConvergenceCP"/>
-  <CmdButtonArray index="Execute" DefaultButtonFace="MeridianConvergence" State="Restricted" Requirements="UseConvergence"/>
-  <Flags index="AutoCast" value="1"/>
-  <Flags index="AutoCastOn" value="1"/>
-  <AutoCastRange value="14"/>
   <AutoCastValidatorArray value="TargetHasCurrentHealthGTE100"/>
-  <AutoCastFilters value="Mechanical,Visible;Player,Ally,Neutral,Structure,Dead"/>
 </CAbilEffectTarget>
 <CAbilMorph id="AutoDiscordMode">
-  <EditorCategories value="AbilityorEffectType:Units,Race:Keiron"/>
-  <DataCollection value="EchoDiscordMode"/>
-  <CmdButtonArray index="Execute" DefaultButtonFace="DiscordMode" State="Restricted"/>
-  <ActorKey value="EchoDiscordMode"/>
-  <Flags index="AutoCast" value="1"/>
-  <Flags index="AutoCastOn" value="1"/>
-  <Flags index="BestUnit" value="1"/>
-  <Flags index="IgnoreFacing" value="1"/>
-  <Flags index="WaitUntilStopped" value="0"/>
   <InfoArray Unit="EchoDM">
     <SectionArray index="Actor">
       <DurationArray index="Duration" value="1"/>
@@ -34995,20 +35345,9 @@
       <DurationArray index="Delay" value="1"/>
     </SectionArray>
   </InfoArray>
-  <AutoCastRange value="1"/>
   <AutoCastValidatorArray value="UndetectedEnemyCloakedUnitsNearby"/>
-  <AutoCastFilters value="-;Player,Ally,Neutral"/>
 </CAbilMorph>
 <CAbilMorph id="AutoEchoFighterMode">
-  <EditorCategories value="AbilityorEffectType:Units,Race:Keiron"/>
-  <DataCollection value="EchoFighterMode"/>
-  <CmdButtonArray index="Execute" DefaultButtonFace="FighterModeEcho" State="Restricted"/>
-  <ActorKey value="EchoFighterMode"/>
-  <Flags index="AutoCast" value="1"/>
-  <Flags index="AutoCastOn" value="1"/>
-  <Flags index="BestUnit" value="1"/>
-  <Flags index="IgnoreFacing" value="1"/>
-  <Flags index="WaitUntilStopped" value="0"/>
   <InfoArray Unit="Echo">
     <SectionArray index="Actor">
       <DurationArray index="Duration" value="1"/>
@@ -35017,438 +35356,110 @@
       <DurationArray index="Duration" value="1"/>
     </SectionArray>
   </InfoArray>
-  <AutoCastRange value="1"/>
   <AutoCastValidatorArray value="NoEnemyCloakedUnitsNearby"/>
 </CAbilMorph>
 <CAbilEffectTarget id="AutoEmanator">
-  <EditorCategories value="AbilityorEffectType:Units,Race:Keiron"/>
-  <DataCollection value="Emanator"/>
-  <Effect index="0" value="Emanator"/>
-  <Flags index="AllowMovement" value="1"/>
-  <Flags index="AutoCast" value="1"/>
-  <Flags index="AutoCastOn" value="1"/>
   <Cost>
-    <Cooldown TimeUse="94.5"/>
+    <Charge Link="Abil/AutoEmanator"/>
+    <Cooldown Link="Abil/AutoEmanator" TimeUse="94.5"/>
   </Cost>
-  <Placeholder value="Emanator"/>
   <Range value="4"/>
-  <AINotifyEffect value="EmanatorLM"/>
   <ProducedUnitArray value="Emanator"/>
-  <CmdButtonArray index="Execute" DefaultButtonFace="PlaceEmanator" State="Restricted"/>
-  <PlaceUnit value="Emanator"/>
-  <AutoCastFilters value="-;Player,Ally,Neutral"/>
-  <AutoCastRange value="12"/>
   <AutoCastValidatorArray value="UndetectedEnemyCloakedUnitsNearby"/>
 </CAbilEffectTarget>
 <CAbilEffectTarget id="AutoEmissaryOrb">
-  <EditorCategories value="AbilityorEffectType:Units,Race:Keiron"/>
-  <DataCollection value="EmissaryOrb"/>
-  <Effect index="0" value="EmissaryOrb"/>
-  <Flags index="AllowMovement" value="1"/>
-  <Flags index="AutoCast" value="1"/>
-  <Flags index="AutoCastOn" value="1"/>
   <Cost>
     <Vital index="Energy" value="100"/>
+    <Charge Link="Abil/AutoEmissaryOrb"/>
+    <Cooldown Link="Abil/AutoEmissaryOrb"/>
   </Cost>
   <TargetFilters value="-;Self,Missile,Stasis,Dead,Hidden,Invulnerable"/>
   <Range value="10"/>
-  <RangeSlop value="100"/>
   <CastIntroTime value="2"/>
   <CastOutroTime value="0.25"/>
-  <UninterruptibleArray index="Cast" value="1"/>
-  <UninterruptibleArray index="Channel" value="1"/>
-  <UninterruptibleArray index="Finish" value="1"/>
-  <AINotifyEffect value="EmissaryOrb"/>
-  <CmdButtonArray index="Execute" DefaultButtonFace="EmissaryOrb" State="Restricted"/>
-  <AutoCastRange value="10"/>
   <AutoCastValidatorArray value="TargetHasCurrentHealthGTE100"/>
 </CAbilEffectTarget>
 <CAbilEffectInstant id="AutoExitJudgementMode">
-  <EditorCategories value="AbilityorEffectType:Units,Race:Keiron"/>
-  <DataCollection value="HarbingerExitJudgementMode"/>
-  <Effect index="0" value="HarbingerExitJudgementMode"/>
-  <Flags index="Transient" value="1"/>
-  <AINotifyEffect value="HarbingerExitJudgementMode"/>
-  <CmdButtonArray index="Execute" DefaultButtonFace="HarbingerExitJudgementMode" State="Restricted" Requirements="HarbingerExitJudgementMode"/>
   <AutoCastValidatorArray value="NoAirHostilesNearby7"/>
-  <AutoCastRange value="1"/>
-  <AutoCastFilters value="Air,Visible;Player,Ally,Neutral"/>
 </CAbilEffectInstant>
 <CAbilEffectInstant id="AutoJudgementMode">
-  <EditorCategories value="AbilityorEffectType:Units,Race:Keiron"/>
-  <DataCollection value="HarbingerJudgementModeStart"/>
-  <Effect index="0" value="HarbingerJudgementModeStart"/>
-  <Flags index="AutoCast" value="1"/>
-  <Flags index="AutoCastOn" value="1"/>
-  <Flags index="Transient" value="1"/>
-  <AINotifyEffect value="HarbingerJudgementModeStart"/>
-  <AutoCastRange value="1"/>
   <AutoCastValidatorArray value="MultipleAirHostilesNearby7"/>
-  <CmdButtonArray index="Execute" DefaultButtonFace="HarbingerJudgementMode" State="Restricted" Requirements="HarbingerJudgementMode"/>
-  <AutoCastFilters value="Air,Visible;Player,Ally,Neutral"/>
 </CAbilEffectInstant>
 <CAbilEffectTarget id="AutoKeyhole">
-  <EditorCategories value="AbilityorEffectType:Units,Race:Keiron"/>
-  <DataCollection value="ApertureKeyhole"/>
-  <Effect index="0" value="ApertureTeleportSwitch"/>
-  <Flags index="AutoCast" value="1"/>
-  <Flags index="AutoCastOn" value="1"/>
-  <Flags index="Transient" value="1"/>
   <TargetFilters value="-;Ally,Neutral,Enemy,Structure,Missile,Stasis,Dead,Hidden"/>
-  <AutoCastRange value="500"/>
   <Range value="500"/>
-  <Arc value="360"/>
-  <AINotifyEffect value="ApertureTeleportTP"/>
-  <CmdButtonArray index="Execute" DefaultButtonFace="ApertureTeleport" State="Restricted" Requirements="UseKeyhole"/>
-  <AutoCastFilters value="Visible;Neutral,Enemy"/>
   <AutoCastValidatorArray value="TargetLifeLT0"/>
 </CAbilEffectTarget>
 <CAbilEffectTarget id="AutoLightningBolt">
-  <EditorCategories value="AbilityorEffectType:Units,Race:Keiron"/>
-  <DataCollection value="MeridianLightningBolt"/>
-  <Effect index="0" value="MeridianLightningBoltInit"/>
   <Cost>
     <Vital index="Energy" value="125"/>
+    <Charge Link="Abil/AutoLightningBolt"/>
+    <Cooldown Link="Abil/AutoLightningBolt"/>
   </Cost>
   <TargetFilters value="-;Self,Missile,Stasis,Dead,Hidden,Invulnerable"/>
   <Range value="10"/>
   <CastIntroTime value="0.25"/>
   <FinishTime value="0.25"/>
-  <UninterruptibleArray index="Cast" value="1"/>
-  <UninterruptibleArray index="Finish" value="1"/>
-  <AINotifyEffect value="MeridianLightningBoltInit"/>
-  <CmdButtonArray index="Execute" DefaultButtonFace="MeridianLightningBolt" State="Restricted"/>
-  <Flags index="AutoCast" value="1"/>
-  <Flags index="AutoCastOn" value="1"/>
-  <AutoCastRange value="10"/>
   <AutoCastValidatorArray value="TargetHasCurrentHealthGTE100"/>
-  <AutoCastFilters value="Biological,Visible;Player,Ally,Neutral,Structure,Dead"/>
 </CAbilEffectTarget>
 <CAbilEffectTarget id="AutoParadoxTrap">
-  <EditorCategories value="AbilityorEffectType:Units,Race:Keiron"/>
-  <DataCollection value="InvertFField"/>
-  <Effect index="0" value="InvertFFieldCP"/>
   <Cost>
     <Vital index="Energy" value="100"/>
+    <Charge Link="Abil/AutoParadoxTrap"/>
+    <Cooldown Link="Abil/AutoParadoxTrap"/>
   </Cost>
   <Range value="11"/>
-  <Arc value="360"/>
-  <CancelableArray index="Channel" value="1"/>
-  <UninterruptibleArray index="Channel" value="1"/>
   <CursorEffect value="InvertFFieldSA"/>
-  <AINotifyEffect value="InvertFField"/>
-  <CmdButtonArray index="Execute" DefaultButtonFace="Prison" State="Restricted"/>
-  <CmdButtonArray index="Cancel" DefaultButtonFace="Cancel"/>
-  <Flags index="AutoCast" value="1"/>
-  <Flags index="AutoCastOn" value="1"/>
-  <AutoCastRange value="11"/>
   <AutoCastValidatorArray value="TargetHasMaxHealthGTE200"/>
-  <AutoCastFilters value="Visible;Player,Ally,Neutral,Massive,Structure,Dead,Hallucination"/>
 </CAbilEffectTarget>
 <CAbilEffectTarget id="AutoProjection">
-  <EditorCategories value="AbilityorEffectType:Units,Race:Keiron"/>
-  <DataCollection value="Projection"/>
-  <Effect index="0" value="ProjectionCP"/>
-  <Flags index="AutoCast" value="1"/>
-  <Flags index="AutoCastOn" value="1"/>
-  <Flags index="BestUnit" value="0"/>
-  <Flags index="RequireTargetVision" value="0"/>
   <Cost>
-    <Cooldown TimeUse="9.8"/>
+    <Charge Link="Abil/AutoProjection"/>
+    <Cooldown Link="Abil/AutoProjection" TimeUse="9.8"/>
   </Cost>
   <Range value="500"/>
-  <AINotifyEffect value="Projection"/>
-  <AutoCastFilters value="Visible;Player,Ally,Neutral,Air,Structure,Item,Stasis,Dead,Invulnerable,AirUnit"/>
-  <AutoCastRange value="9"/>
-  <CmdButtonArray index="Execute" DefaultButtonFace="Projection" State="Restricted"/>
 </CAbilEffectTarget>
 <CAbilEffectInstant id="AutoDampener">
-  <EditorCategories value="AbilityorEffectType:Units,Race:Keiron"/>
-  <DataCollection value="PulsarDampener"/>
-  <Effect index="0" value="PulsarDampener"/>
-  <Flags index="AutoCast" value="1"/>
-  <Flags index="AutoCastOn" value="1"/>
-  <Flags index="Transient" value="1"/>
   <Cost>
-    <Cooldown TimeUse="20"/>
+    <Charge Link="Abil/AutoDampener"/>
+    <Cooldown Link="Abil/AutoDampener" TimeUse="20"/>
   </Cost>
-  <AINotifyEffect value="PulsarDampener"/>
-  <CmdButtonArray index="Execute" DefaultButtonFace="PulsarDampener" State="Restricted" Requirements="UseDampener"/>
-  <AutoCastRange value="1"/>
   <AutoCastValidatorArray value="CasterShieldsLT1"/>
 </CAbilEffectInstant>
 <CAbilEffectTarget id="AutoShieldBoost">
-  <EditorCategories value="AbilityorEffectType:Units,Race:Keiron"/>
-  <DataCollection value="ParadoxShield"/>
-  <Effect index="0" value="ParadoxShieldAB"/>
   <Cost>
     <Vital index="Energy" value="75"/>
+    <Charge Link="Abil/AutoShieldBoost"/>
+    <Cooldown Link="Abil/AutoShieldBoost"/>
   </Cost>
   <TargetFilters value="-;Neutral,Enemy,Missile,Stasis,Dead,Hidden"/>
   <Range value="8"/>
-  <Arc value="360"/>
-  <AINotifyEffect value="ParadoxShield"/>
-  <CmdButtonArray index="Execute" DefaultButtonFace="ParadoxShield" State="Restricted"/>
-  <Flags index="AutoCast" value="1"/>
-  <Flags index="AutoCastOn" value="1"/>
-  <AutoCastRange value="8"/>
   <AutoCastValidatorArray value="TargetShieldsLT0"/>
-  <AutoCastFilters value="Visible,HasShields;Neutral,Enemy"/>
 </CAbilEffectTarget>
 <CAbilEffectInstant id="AutoShieldCompulsion">
-  <EditorCategories value="AbilityorEffectType:Units,Race:Keiron"/>
-  <DataCollection value="UmbraShieldCompulsion"/>
-  <Effect index="0" value="UmbraShieldCompulsion"/>
-  <Flags index="AutoCast" value="1"/>
-  <Flags index="AutoCastOn" value="1"/>
-  <Flags index="Transient" value="1"/>
   <Cost>
     <Vital index="Life" value="15"/>
-    <Cooldown TimeUse="1.4"/>
+    <Charge Link="Abil/AutoShieldCompulsion"/>
+    <Cooldown Link="Abil/AutoShieldCompulsion" TimeUse="1.4"/>
   </Cost>
-  <AINotifyEffect value="UmbraShieldCompulsion"/>
-  <AutoCastRange value="1"/>
   <AutoCastValidatorArray value="CasterShieldsLT1"/>
-  <CmdButtonArray index="Execute" DefaultButtonFace="UmbraShieldCompulsion" State="Restricted" Requirements="UseShieldCompulsion"/>
 </CAbilEffectInstant>
 <CAbilEffectInstant id="AutoReverb">
-  <EditorCategories value="AbilityorEffectType:Units,Race:Keiron"/>
-  <DataCollection value="ReverbRB"/>
-  <Effect index="0" value="ReverbRB"/>
-  <Flags index="AutoCast" value="1"/>
-  <Flags index="AutoCastOn" value="1"/>
-  <Flags index="Transient" value="1"/>
-  <AINotifyEffect value="ReverbTeleport"/>
-  <CmdButtonArray index="Execute" DefaultButtonFace="Reverb" State="Restricted" Requirements="ActiveReverb"/>
-  <AutoCastRange value="1"/>
   <AutoCastValidatorArray value="CasterShieldsLT1"/>
 </CAbilEffectInstant>
 <CAbilEffectInstant id="AutoSonicImage">
-  <EditorCategories value="AbilityorEffectType:Units,Race:Keiron"/>
-  <DataCollection value="SonicImage"/>
-  <Effect index="0" value="CreateReverb"/>
-  <Flags index="AutoCast" value="1"/>
-  <Flags index="AutoCastOn" value="1"/>
-  <Flags index="Transient" value="1"/>
   <Cost>
-    <Cooldown TimeUse="7"/>
+    <Charge Link="Abil/AutoSonicImage"/>
+    <Cooldown Link="Abil/AutoSonicImage" TimeUse="7"/>
   </Cost>
-  <AINotifyEffect value="CreateReverbCU"/>
-  <CmdButtonArray index="Execute" DefaultButtonFace="SonicImage" State="Restricted"/>
-  <AutoCastRange value="14"/>
   <AutoCastValidatorArray value="EnemiesWithin14"/>
 </CAbilEffectInstant>
 <CAbilTrain id="KeironCitadelAegisTrainHero">
-  <EditorCategories value="AbilityorEffectType:Units,Race:Keiron"/>
-  <DataCollection value="KeironCitadelAegisTrain"/>
-  <Activity value="UI/Materializing"/>
   <Offset value="0,0"/>
   <InfoArray index="Train1">
-    <Charge Link="Abil/KeironCitadelAegisTrain2"/>
-    <Cooldown>
-      <Link value="Abil/KeironCitadelAegisTrain2"/>
-      <Location value="Player"/>
-      <TimeStart value="300"/>
-      <TimeUse value="300"/>
-    </Cooldown>
-    <Button DefaultButtonFace="Aegis" Requirements="KeironCommanderAegisRequirements"/>
     <Unit value="Aegis"/>
   </InfoArray>
 </CAbilTrain>
-<CAbilWarpTrain id="KeironCitadelMaterializeCurrent">
-  <EditorCategories value="AbilityorEffectType:Units,Race:Keiron"/>
-  <InfoArray index="Train1" Time="5" Unit="Pariah">
-    <Charge>
-      <CountMax value="500000"/>
-      <CountUse value="1"/>
-      <Link value="Abil/KeironMaterializeParVol"/>
-      <Location value="Player"/>
-    </Charge>
-    <Cooldown Link="Abil/KeironMaterializeParVol" Location="Player"/>
-    <Button DefaultButtonFace="MaterializePariah">
-      <Flags index="AllowMinimap" value="1"/>
-    </Button>
-  </InfoArray>
-  <InfoArray index="Train2" Time="5" Unit="Volt">
-    <Charge>
-      <CountMax value="500000"/>
-      <CountUse value="1"/>
-      <Link value="Abil/KeironMaterializeParVol"/>
-      <Location value="Player"/>
-    </Charge>
-    <Cooldown Link="Abil/KeironMaterializeParVol" Location="Player"/>
-    <Button DefaultButtonFace="MaterializeVolt">
-      <Flags index="AllowMinimap" value="1"/>
-    </Button>
-  </InfoArray>
-  <InfoArray index="Train3" Time="5" Unit="Pulsar">
-    <Charge>
-      <CountMax value="500000"/>
-      <CountUse value="1"/>
-      <Link value="Abil/KeironMaterializePulSub"/>
-      <Location value="Player"/>
-    </Charge>
-    <Cooldown Link="Abil/KeironMaterializePulSub" Location="Player"/>
-    <Button DefaultButtonFace="MaterializePulsar">
-      <Flags index="AllowMinimap" value="1"/>
-    </Button>
-  </InfoArray>
-  <InfoArray index="Train4" Time="5" Unit="Subjecter">
-    <Charge>
-      <CountMax value="500000"/>
-      <CountUse value="1"/>
-      <Link value="Abil/KeironMaterializePulSub"/>
-      <Location value="Player"/>
-    </Charge>
-    <Cooldown Link="Abil/KeironMaterializePulSub" Location="Player"/>
-    <Button DefaultButtonFace="MaterializeSubjecter">
-      <Flags index="AllowMinimap" value="1"/>
-    </Button>
-  </InfoArray>
-  <InfoArray index="Train5" Time="5" Unit="Meridian">
-    <Charge>
-      <CountMax value="500000"/>
-      <CountUse value="1"/>
-      <Link value="Abil/KeironMaterializeMeridian"/>
-      <Location value="Player"/>
-    </Charge>
-    <Cooldown Link="Abil/KeironMaterializeMeridian" Location="Player"/>
-    <Button DefaultButtonFace="MaterializeMeridian">
-      <Flags index="AllowMinimap" value="1"/>
-    </Button>
-  </InfoArray>
-  <InfoArray index="Train6" Time="5" Unit="Umbra">
-    <Charge>
-      <CountMax value="500000"/>
-      <CountUse value="1"/>
-      <Link value="Abil/KeironCitadelMaterializeUmbra"/>
-      <Location value="Player"/>
-    </Charge>
-    <Cooldown Link="Abil/KeironCitadelMaterializeUmbra" Location="Player"/>
-    <Button DefaultButtonFace="MaterializeUmbra">
-      <Flags index="AllowMinimap" value="1"/>
-    </Button>
-  </InfoArray>
-  <InfoArray index="Train7" Time="5" Unit="Inducer">
-    <Charge>
-      <CountMax value="500000"/>
-      <CountUse value="1"/>
-      <Link value="Abil/KeironCitadelMaterializeIndMyr"/>
-      <Location value="Player"/>
-    </Charge>
-    <Cooldown Link="Abil/KeironCitadelMaterializeIndMyr" Location="Player"/>
-    <Button DefaultButtonFace="MaterializeInducer">
-      <Flags index="AllowMinimap" value="1"/>
-    </Button>
-  </InfoArray>
-  <InfoArray index="Train8" Time="5" Unit="Myriad">
-    <Charge>
-      <CountMax value="500000"/>
-      <CountUse value="1"/>
-      <Link value="Abil/KeironCitadelMaterializeIndMyr"/>
-      <Location value="Player"/>
-    </Charge>
-    <Cooldown Link="Abil/KeironCitadelMaterializeIndMyr" Location="Player"/>
-    <Button DefaultButtonFace="MaterializeMyriad">
-      <Flags index="AllowMinimap" value="1"/>
-    </Button>
-  </InfoArray>
-  <InfoArray index="Train9" Time="10" Unit="Titan">
-    <Charge>
-      <CountMax value="500000"/>
-      <CountUse value="1"/>
-      <Link value="Abil/KeironCitadelMaterializeTitan"/>
-      <Location value="Player"/>
-    </Charge>
-    <Cooldown Link="Abil/KeironCitadelMaterializeTitan" Location="Player"/>
-    <Button DefaultButtonFace="MaterializeTitan">
-      <Flags index="AllowMinimap" value="1"/>
-    </Button>
-  </InfoArray>
-  <InfoArray index="Train10" Time="5" Unit="Echo">
-    <Charge>
-      <CountMax value="500000"/>
-      <CountUse value="1"/>
-      <Link value="Abil/KeironCitadelMaterializeEcho"/>
-      <Location value="Player"/>
-    </Charge>
-    <Cooldown Link="Abil/KeironCitadelMaterializeEcho" Location="Player"/>
-    <Button DefaultButtonFace="MaterializeEcho">
-      <Flags index="AllowMinimap" value="1"/>
-    </Button>
-  </InfoArray>
-  <InfoArray index="Train11" Time="5" Unit="Aurora">
-    <Charge>
-      <CountMax value="500000"/>
-      <CountUse value="1"/>
-      <Link value="Abil/KeironCitadelMaterializeAurApe"/>
-      <Location value="Player"/>
-    </Charge>
-    <Cooldown Link="Abil/KeironCitadelMaterializeAurApe" Location="Player"/>
-    <Button DefaultButtonFace="MaterializeAurora">
-      <Flags index="AllowMinimap" value="1"/>
-    </Button>
-  </InfoArray>
-  <InfoArray index="Train12" Time="5" Unit="Aperture">
-    <Charge>
-      <CountMax value="500000"/>
-      <CountUse value="1"/>
-      <Link value="Abil/KeironCitadelMaterializeAurApe"/>
-      <Location value="Player"/>
-    </Charge>
-    <Cooldown Link="Abil/KeironCitadelMaterializeAurApe" Location="Player"/>
-    <Button DefaultButtonFace="MaterializeAperture">
-      <Flags index="AllowMinimap" value="1"/>
-    </Button>
-  </InfoArray>
-  <InfoArray index="Train13" Time="5" Unit="Harbinger">
-    <Charge>
-      <CountMax value="500000"/>
-      <CountUse value="1"/>
-      <Link value="Abil/KeironCitadelMaterializeHarPar"/>
-      <Location value="Player"/>
-    </Charge>
-    <Cooldown Link="Abil/KeironCitadelMaterializeHarPar" Location="Player"/>
-    <Button DefaultButtonFace="MaterializeHarbinger">
-      <Flags index="AllowMinimap" value="1"/>
-    </Button>
-  </InfoArray>
-  <InfoArray index="Train14" Time="5" Unit="Gyre">
-    <Charge>
-      <CountMax value="500000"/>
-      <CountUse value="1"/>
-      <Link value="Abil/KeironCitadelMaterializeHarPar"/>
-      <Location value="Player"/>
-    </Charge>
-    <Button DefaultButtonFace="MaterializeGyre">
-      <Flags index="AllowMinimap" value="1"/>
-    </Button>
-  </InfoArray>
-  <InfoArray index="Train15" Time="10" Unit="Paragon">
-    <Charge>
-      <CountMax value="500000"/>
-      <CountUse value="1"/>
-      <Link value="Abil/KeironCitadelMaterializeParagon"/>
-      <Location value="Player"/>
-    </Charge>
-    <Cooldown Link="Abil/KeironCitadelMaterializeParagon" Location="Player"/>
-    <Button DefaultButtonFace="MaterializeParagon">
-      <Flags index="AllowMinimap" value="1"/>
-    </Button>
-  </InfoArray>
-  <InfoArray index="Train17" Time="5" Unit="Fuse">
-    <Charge>
-      <CountMax value="500000"/>
-      <CountUse value="1"/>
-      <Link value="Abil/KeironCitadelMaterializeEcho"/>
-      <Location value="Player"/>
-    </Charge>
-    <Cooldown Link="Abil/KeironCitadelMaterializeEcho" Location="Player"/>
-    <Button DefaultButtonFace="MaterializeFuse">
-      <Flags index="AllowMinimap" value="1"/>
-    </Button>
-  </InfoArray>
-  <Flags index="WarpTrainersButton" value="0"/>
-</CAbilWarpTrain>
+<CAbilWarpTrain id="KeironCitadelMaterializeCurrent"/>
 
 </Catalog>

@@ -7330,7 +7330,7 @@ bool libCOMU_gt_InitializeMutators_Func (bool testConds, bool runActions) {
 //--------------------------------------------------------------------------------------------------
 void libCOMU_gt_InitializeMutators_Init () {
     libCOMU_gt_InitializeMutators = TriggerCreate("libCOMU_gt_InitializeMutators_Func");
-    TriggerAddEventGeneric(libCOMU_gt_InitializeMutators, libCOMI_gv_iNIT_COOP_MISSION);
+    TriggerAddEventGeneric(libCOMU_gt_InitializeMutators, libCOMI_gv_iNIT_COOP_MISSION_STAGE2);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -8998,7 +8998,7 @@ bool libCOMU_gt_CT_DropPodSpawn_Func (bool testConds, bool runActions) {
                 for (;; autoA95181C3_u -= 1) {
                     lv_dropTarget = UnitGroupUnitFromEnd(autoA95181C3_g, autoA95181C3_u);
                     if (lv_dropTarget == null) { break; }
-                    if (((UnitWeaponCount(lv_dropTarget) == 0) || (UnitGetPropertyFixed(lv_dropTarget, c_unitPropSuppliesUsed, c_unitPropCurrent) <= 0.0) || (libCOMI_gf_CC_UnitIsInternal(lv_dropTarget) == true) || (UnitGetType(lv_dropTarget) == "QueenCoop") || (UnitGetType(lv_dropTarget) == "QueenCoopBurrowed") || (libCOMI_gf_IsDistantFromAlliedCommandersStartPositions(UnitGetPosition(lv_dropTarget), 15.0) == false))) {
+                    if (((UnitWeaponCount(lv_dropTarget) == 0) || (UnitGetPropertyFixed(lv_dropTarget, c_unitPropSuppliesUsed, c_unitPropCurrent) <= 0.0) || (UnitGetType(lv_dropTarget) == "QueenCoop") || (UnitGetType(lv_dropTarget) == "QueenCoopBurrowed") || (libCOMI_gf_IsDistantFromAlliedCommandersStartPositions(UnitGetPosition(lv_dropTarget), 15.0) == false))) {
                         UnitGroupRemove(lv_targetCandidates, lv_dropTarget);
                     }
 

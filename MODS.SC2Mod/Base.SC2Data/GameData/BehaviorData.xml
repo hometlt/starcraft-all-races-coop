@@ -19731,7 +19731,6 @@
   <EditorCategories value="Race:Keiron,AbilityorEffectType:Units"/>
   <Duration value="1"/>
   <FinalEffect value="ProjectionIME"/>
-  <FinalEffect value="PariahProjectionImpactSet"/>
   <Modification MoveSpeedMultiplier="3"/>
   <InfoFlags index="Hidden" value="1"/>
 </CBehaviorBuff>
@@ -23301,61 +23300,414 @@
   <Period value="0.167"/>
   <EditorCategories value="Race:UPL,AbilityorEffectType:Units"/>
 </CBehaviorBuff>
-<CBehaviorBuff id="PariahProjectionImpactSlow">
-  <Alignment value="Negative"/>
-  <EditorCategories value="Race:Keiron,AbilityorEffectType:Units"/>
-  <Duration value="2.5"/>
-  <Modification MoveSpeedMultiplier="0.5" AttackSpeedMultiplier="0.5"/>
-  <InfoIcon value="Assets\Textures\btn-ability-terran-ultrasonicpulse.dds"/>
+<CBehaviorBuff default="1" id="UPLPoliceOfficerWeaponBase">
+  <Modification>
+    <WeaponArray Link="##id##"/>
+  </Modification>
+  <InfoFlags index="Hidden" value="1"/>
+  <EditorCategories value="Race:UPL,AbilityorEffectType:Units"/>
 </CBehaviorBuff>
-<CBehaviorBuff id="PariahProjectionImpactStun">
+<CBehaviorBuff id="DarrenRodgersShield" parent="UPLPoliceOfficerWeaponBase">
+  <InfoFlags index="Hidden" value="0"/>
+  <InfoIcon value="Assets\Textures\btn-ability-UPL-ShieldDefense.dds"/>
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <Modification MoveSpeedMultiplier="0.7">
+    <StateFlags index="SuppressPassenger" value="1"/>
+    <LifeArmorBonus value="4"/>
+    <WeaponArray index="0" Link="RiotShield"/>
+  </Modification>
+</CBehaviorBuff>
+<CBehaviorBuff id="UPLPoliceCruiserTransportEmpty">
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <DisableValidatorArray value="UPLPoliceCruiserTransportHasCargo"/>
+  <Modification>
+    <AbilClassDisableArray index="CAbilAttack" value="1"/>
+  </Modification>
+  <InfoFlags index="Hidden" value="1"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="UPLPoliceCruiserTransportHasDavisCargo">
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <InfoFlags index="Hidden" value="1"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="UPLPoliceCruiserOpenLeft">
+  <InfoIcon value="Assets\Textures\btn-building-protoss-zeratulbeacon.dds"/>
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <InfoFlags index="Hidden" value="1"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="UPLPoliceCruiserSirenLights">
+  <InfoIcon value="Assets\Textures\btn-building-protoss-zeratulbeacon.dds"/>
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <InfoFlags index="Hidden" value="1"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="UPLPoliceCruiserOpenRight">
+  <InfoIcon value="Assets\Textures\btn-building-protoss-zeratulbeacon.dds"/>
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <InfoFlags index="Hidden" value="1"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="UPLRiotOfficerRifle" parent="UPLPoliceOfficerWeaponBase">
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="UPLRiotOfficerShotgun" parent="UPLPoliceOfficerWeaponBase">
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="UPLPoliceOfficerPistol" parent="UPLPoliceOfficerWeaponBase">
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="UPLPoliceOfficerRifle" parent="UPLPoliceOfficerWeaponBase">
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="UPLPoliceOfficerShotgun" parent="UPLPoliceOfficerWeaponBase">
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="UPLPoliceOfficerShield" parent="UPLPoliceOfficerWeaponBase">
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="APCChangeownership">
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <Period value="0.5"/>
+  <PeriodicEffect value="APCcheckownershipset"/>
+  <PeriodicDisplayEffect value="APCbecomeNeutral"/>
+  <InfoFlags index="Hidden" value="1"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="APCdooropened">
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <Modification>
+    <ModifyFlags index="SuppressMoving" value="1"/>
+    <ModifyFlags index="SuppressTurning" value="1"/>
+    <AbilClassDisableArray index="CAbilMove" value="1"/>
+  </Modification>
+  <InfoFlags index="Hidden" value="1"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="APCisnotNeutral">
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <InfoFlags index="Hidden" value="1"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="APCnotmovingflag">
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <DisableValidatorArray value="APCcasternotmoving"/>
+  <InfoFlags index="Hidden" value="1"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="APCSmokeGrenadeProtection">
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <Duration value="0.6"/>
+  <DamageResponse ModifyFraction="0">
+    <ValidatorArray value="APCSmokeGrenadedistantAttacker"/>
+    <Chance value="1"/>
+  </DamageResponse>
+  <InfoIcon value="Assets\Textures\btn-ability-upl-smokegrenade.dds"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="KatherineHalseyMedkit">
+  <InfoFlags index="Hidden" value="1"/>
+  <InfoIcon value="Assets\Textures\btn-ability-upl-medkit.dds"/>
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <Requirements value="KatherineHalseyMedkit@Have"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="KatherineHalseyMedkit@Disable">
   <Alignment value="Negative"/>
-  <EditorCategories value="Race:Keiron,AbilityorEffectType:Units"/>
-  <Duration value="2.5"/>
+  <InfoFlags index="Hidden" value="1"/>
+  <InfoIcon value="Assets\Textures\btn-ability-upl-medkit.dds"/>
+  <Duration value="60"/>
+  <Modification>
+    <BehaviorLinkDisableArray value="KatherineHalseyMedkit"/>
+  </Modification>
+  <EditorCategories value="Race:UPL,AbilityorEffectType:Units"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="KatherineHalseyMedkit@Handler">
+  <InfoFlags index="Hidden" value="1"/>
+  <InfoIcon value="Assets\Textures\btn-ability-upl-medkit.dds"/>
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <DisableValidatorArray value="KatherineHalseyMedkit"/>
+  <DisableValidatorArray value="KatherineHalseyMedkit@HaveBaseBehavior"/>
+  <PeriodicEffect value="KatherineHalseyMedkit"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="KatherineHalseyMedkit@Healing">
+  <InfoIcon value="Assets\Textures\btn-ability-upl-medkit.dds"/>
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <Period value="0.25"/>
+  <PeriodCount value="20"/>
+  <PeriodicDisplayEffect value="KatherineHalseyMedkit@Heal"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="KatherineHalseyMedkit@Supressed">
+  <Alignment value="Negative"/>
+  <Cost>
+    <Cooldown TimeStart="60"/>
+  </Cost>
+  <InfoFlags index="Hidden" value="1"/>
+  <InfoIcon value="Assets\Textures\btn-ability-upl-medkit.dds"/>
+  <EditorCategories value="Race:UPL,AbilityorEffectType:Units"/>
+  <Duration value="60"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="WilliamGravesMedkit">
+  <InfoFlags index="Hidden" value="1"/>
+  <InfoIcon value="Assets\Textures\btn-ability-upl-medkit.dds"/>
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <Requirements value="WilliamGravesMedkit@Have"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="WilliamGravesMedkit@Disable">
+  <Alignment value="Negative"/>
+  <InfoFlags index="Hidden" value="1"/>
+  <InfoIcon value="Assets\Textures\btn-ability-upl-medkit.dds"/>
+  <Duration value="60"/>
+  <Modification>
+    <BehaviorLinkDisableArray value="WilliamGravesMedkit"/>
+  </Modification>
+  <EditorCategories value="Race:UPL,AbilityorEffectType:Units"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="WilliamGravesMedkit@Handler">
+  <InfoFlags index="Hidden" value="1"/>
+  <InfoIcon value="Assets\Textures\btn-ability-upl-medkit.dds"/>
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <DisableValidatorArray value="WilliamGravesMedkit"/>
+  <DisableValidatorArray value="WilliamGravesMedkit@HaveBaseBehavior"/>
+  <PeriodicEffect value="WilliamGravesMedkit"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="WilliamGravesMedkit@Healing">
+  <InfoIcon value="Assets\Textures\btn-ability-upl-medkit.dds"/>
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <Period value="0.25"/>
+  <PeriodCount value="20"/>
+  <PeriodicDisplayEffect value="WilliamGravesMedkit@Heal"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="WilliamGravesMedkit@Supressed">
+  <Alignment value="Negative"/>
+  <Cost>
+    <Cooldown TimeStart="60"/>
+  </Cost>
+  <InfoFlags index="Hidden" value="1"/>
+  <InfoIcon value="Assets\Textures\btn-ability-upl-medkit.dds"/>
+  <EditorCategories value="Race:UPL,AbilityorEffectType:Units"/>
+  <Duration value="60"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="RileyJericoLornaSuppressMovement">
+  <InfoFlags index="Hidden" value="1"/>
+  <EditorCategories value="Race:UPL,AbilityorEffectType:Units"/>
+  <Duration value="0.5"/>
+  <Modification>
+    <ModifyFlags index="SuppressMoving" value="1"/>
+  </Modification>
+</CBehaviorBuff>
+<CBehaviorBuff id="WilliamGravesChargeAura">
+  <InfoIcon value="Assets\Textures\btn-ability-UPL-InfantryOfficerCharge.dds"/>
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <Duration value="10"/>
+  <Period value="0.5"/>
+  <PeriodicEffect value="WilliamGravesChargeSearch"/>
+  <Tooltip value="Behavior/Tooltip/InfantryOfficerChargeAura"/>
+  <DisableValidatorArray value="NotHidden"/>
+  <BuffFlags index="UpdateDurationWhileDisabled" value="1"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="WilliamGravesCharge">
+  <InfoIcon value="Assets\Textures\btn-ability-UPL-InfantryOfficerCharge.dds"/>
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <Duration value="0.5625"/>
+  <Modification>
+    <DamageDealtUnscaled index="Melee" value="0">
+      <AccumulatorArray value="WilliamGravesCharge"/>
+    </DamageDealtUnscaled>
+    <DamageDealtUnscaled index="Ranged" value="0">
+      <AccumulatorArray value="WilliamGravesCharge"/>
+    </DamageDealtUnscaled>
+    <DamageDealtUnscaled index="Splash" value="0">
+      <AccumulatorArray value="WilliamGravesCharge"/>
+    </DamageDealtUnscaled>
+  </Modification>
+</CBehaviorBuff>
+<CBehaviorBuff id="MyraDavisArmorBonus">
+  <BehaviorFlags index="Permanent" value="1"/>
+  <InfoFlags index="Hidden" value="1"/>
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <MaxStackCount value="5"/>
+  <Modification>
+    <LifeArmorBonus value="1"/>
+  </Modification>
+</CBehaviorBuff>
+<CBehaviorBuff id="MyraDavisPistol" parent="UPLPoliceOfficerWeaponBase">
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="MyraDavisRifle" parent="UPLPoliceOfficerWeaponBase">
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="MyraDavisShotgun" parent="UPLPoliceOfficerWeaponBase">
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="MyraDavisFlameGrenadeDoTDamage">
+  <InfoIcon value="Assets\Textures\btn-ability-upl-firebomb.dds"/>
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <DisplayDuration index="Self" value="1"/>
+  <Duration value="4"/>
+  <Period value="1"/>
+  <PeriodicEffect value="MyraDavisFlameGrenadeDoTDamage"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="MyraDavisFlashBangGrenadeStun">
+  <BehaviorCategories index="Stun" value="1"/>
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <DisplayDuration index="Self" value="1"/>
+  <Duration value="7"/>
   <Modification>
     <StateFlags index="Stun" value="1"/>
   </Modification>
-  <InfoIcon value="Assets\Textures\btn-ability-terran-ultrasonicpulse.dds"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="UPLScoutFlameGrenadeDoTDamage">
+  <InfoIcon value="Assets\Textures\btn-ability-upl-firebomb.dds"/>
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <DisplayDuration index="Self" value="1"/>
+  <Duration value="4"/>
+  <Period value="1"/>
+  <PeriodicEffect value="UPLScoutFlameGrenadeDoTDamage"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="AltonPetersArmorDecay">
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <Duration value="7"/>
+  <DamageResponse ModifyFraction="2">
+    <Chance value="1"/>
+  </DamageResponse>
+</CBehaviorBuff>
+<CBehaviorBuff id="RichardGideonCharging">
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <InfoFlags index="Hidden" value="1"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="RileyJericoLornaStun">
+  <InfoIcon value="Assets\Textures\btn-upgrade-protoss-alarak-stunnonheroicenemies.dds"/>
+  <BehaviorCategories index="Stun" value="1"/>
+  <EditorCategories value="Race:UPL,AbilityorEffectType:Units"/>
+  <Duration value="5"/>
+  <Modification>
+    <StateFlags index="Stun" value="1"/>
+  </Modification>
+</CBehaviorBuff>
+<CBehaviorBuff id="RileyJericoLornaToken">
+  <InfoFlags index="Hidden" value="1"/>
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <MaxStackCount value="12"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="RileyJericoJumpJetFinishStun">
+  <InfoFlags index="Hidden" value="1"/>
+  <EditorCategories value="Race:UPL,AbilityorEffectType:Units"/>
+  <Duration value="0.3"/>
+  <Modification>
+    <StateFlags index="Stun" value="1"/>
+  </Modification>
   <BehaviorCategories index="Stun" value="1"/>
 </CBehaviorBuff>
-<CBehaviorPowerSource id="AegisPowerSource">
+<CBehaviorBuff id="RileyJericoJumpJetStun">
+  <InfoIcon value="Assets\Textures\btn-upgrade-protoss-alarak-stunnonheroicenemies.dds"/>
+  <BehaviorCategories index="Stun" value="1"/>
+  <EditorCategories value="Race:UPL,AbilityorEffectType:Units"/>
+  <DisplayDuration index="Self" value="1"/>
+  <Duration value="10"/>
+  <Modification>
+    <StateFlags index="Stun" value="1"/>
+  </Modification>
+</CBehaviorBuff>
+<CBehaviorBuff id="RileyJericoJumpJet">
+  <InfoIcon value="Assets\Textures\btn-upgrade-terran-jumpjets.dds"/>
+  <BehaviorCategories index="Fast" value="1"/>
+  <BehaviorCategories index="User4" value="1"/>
+  <EditorCategories value="Race:UPL,AbilityorEffectType:Units"/>
+  <Modification>
+    <StateFlags index="SuppressCollision" value="1"/>
+    <StateFlags index="Unstoppable" value="1"/>
+  </Modification>
+</CBehaviorBuff>
+<CBehaviorBuff id="LillyRollinsHealBig">
+  <InfoIcon value="Assets\Textures\btn-ability-terran-heal-color.dds"/>
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <Duration value="15"/>
+  <Modification>
+    <VitalRegenArray index="Life" value="5"/>
+  </Modification>
+</CBehaviorBuff>
+<CBehaviorBuff id="LillyRollinsHealSmall">
+  <InfoIcon value="Assets\Textures\btn-ability-terran-heal-color.dds"/>
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <Duration value="15"/>
+  <Modification>
+    <VitalRegenArray index="Life" value="1.668"/>
+  </Modification>
+</CBehaviorBuff>
+<CBehaviorBuff id="AltonPetersDestroyArmor">
+  <Alignment value="Negative"/>
+  <Cost>
+    <Charge Link="Behavior/DamageTakenDouble"/>
+    <Cooldown Link="Behavior/DamageTakenDouble"/>
+  </Cost>
+  <InfoIcon value="Assets\Textures\btn-ability-terran-ignorearmor.dds"/>
+  <Duration value="20"/>
+  <DamageResponse ModifyFraction="2">
+    <Chance value="1"/>
+    <Cost>
+      <Charge Link="Behavior/DamageTakenDouble"/>
+      <Cooldown Link="Behavior/DamageTakenDouble"/>
+    </Cost>
+  </DamageResponse>
+  <EditorCategories value="Race:UPL,AbilityorEffectType:Units"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="AltonPetersZ1Adrenaline">
+  <Alignment value="Positive"/>
+  <InfoIcon value="Assets\Textures\btn-ability-terran-stimpack.dds"/>
+  <EditorCategories value="Race:UPL,AbilityorEffectType:Units"/>
+  <Duration value="10"/>
+  <Modification AttackSpeedMultiplier="3"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="AltonPetersZ1ImprovedHealBig">
+  <InfoIcon value="Assets\Textures\btn-ability-terran-heal-color.dds"/>
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <Duration value="15"/>
+  <Modification>
+    <VitalRegenArray index="Life" value="5"/>
+  </Modification>
+</CBehaviorBuff>
+<CBehaviorBuff id="AltonPetersZ1ImprovedHealSmall">
+  <InfoIcon value="Assets\Textures\btn-ability-terran-heal-color.dds"/>
+  <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+  <Duration value="15"/>
+  <Modification>
+    <VitalRegenArray index="Life" value="1.668"/>
+  </Modification>
+</CBehaviorBuff>
+<CBehaviorBuff id="KatherineHalseyBreathe">
+  <DisplayDuration index="Self" value="1"/>
+  <DisplayDuration index="Ally" value="1"/>
+  <Duration value="15"/>
+  <Modification>
+    <AbilClassDisableArray index="CAbilAttack" value="1"/>
+    <AbilClassDisableArray index="CAbilMove" value="1"/>
+  </Modification>
+  <InfoIcon value="Assets\Textures\btn-ability-upl-holdbreath.dds"/>
+  <EditorCategories value="Race:UPL,AbilityorEffectType:Units"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="RileyJericoJumpJetTimeOut">
+  <EditorCategories value="Race:UPL,AbilityorEffectType:Units"/>
+  <Duration value="1.75"/>
+  <FinalEffect value="SuicideRemove"/>
   <InfoFlags index="Hidden" value="1"/>
-  <InfoIcon value="Assets\Textures\btn-building-keiron-citadel.dds"/>
-  <EditorCategories value="AbilityorEffectType:Structures,Race:Keiron"/>
-  <Requirements value="KeironLevel01"/>
-  <Radius value="10"/>
-  <PowerLink value="PowerSource"/>
-  <CliffLevelFlags index="Higher" value="0"/>
-</CBehaviorPowerSource>
+</CBehaviorBuff>
+<CBehaviorBuff id="PariahProjectionImpactSlow"/>
+<CBehaviorBuff id="PariahProjectionImpactStun"/>
+<CBehaviorPowerSource id="AegisPowerSource"/>
 <CBehaviorBuff id="KeironChargeProductionChronoBoosted0">
   <DisableValidatorArray value="IsChronoBoostedFinal0"/>
   <RemoveValidatorArray value="CasterNotDead"/>
-  <Modification TimeScale="0.01"/>
 </CBehaviorBuff>
 <CBehaviorBuff id="KeironChargeProductionChronoBoosted115">
   <DisableValidatorArray value="IsChronoBoostedFinal115"/>
   <RemoveValidatorArray value="CasterNotDead"/>
-  <Modification TimeScale="1.15"/>
 </CBehaviorBuff>
 <CBehaviorBuff id="KeironChargeProductionChronoBoosted122">
   <DisableValidatorArray value="IsChronoBoostedFinal122"/>
   <RemoveValidatorArray value="CasterNotDead"/>
-  <Modification TimeScale="1.225"/>
 </CBehaviorBuff>
 <CBehaviorBuff id="KeironChargeProductionChronoBoosted150">
   <DisableValidatorArray value="IsChronoBoostedFinal150"/>
   <RemoveValidatorArray value="CasterNotDead"/>
-  <Modification TimeScale="1.5"/>
 </CBehaviorBuff>
 <CBehaviorBuff id="KeironChargeProductionChronoBoosted200">
   <DisableValidatorArray value="IsChronoBoostedFinal200"/>
   <RemoveValidatorArray value="CasterNotDead"/>
-  <Modification TimeScale="2"/>
 </CBehaviorBuff>
 <CBehaviorBuff id="KeironChargeProductionChronoBoosted999">
   <DisableValidatorArray value="IsChronoBoostedFinal999"/>
   <RemoveValidatorArray value="CasterNotDead"/>
-  <Modification TimeScale="10"/>
 </CBehaviorBuff>
 
 </Catalog>

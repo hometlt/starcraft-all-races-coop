@@ -1,5 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+
+
+    <CSound id="SwannCommander_Trade_MineralsGiven" parent="ACVO_Pings">
+        <AssetArray TemplateParam="SwannCommander_Trade_MineralsGiven00"/>
+        <AssetArray TemplateParam="SwannCommander_Trade_MineralsGiven01"/>
+        <AssetArray TemplateParam="SwannCommander_Trade_MineralsGiven02"/><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/><Volume value="2.000000,2.000000"/>
+    </CSound>
+    <CSound id="SwannCommander_Trade_MineralsNeeded" parent="ACVO_Pings">
+        <AssetArray TemplateParam="SwannCommander_Trade_MineralsNeeded00"/>
+        <AssetArray TemplateParam="SwannCommander_Trade_MineralsNeeded01"/>
+        <AssetArray TemplateParam="SwannCommander_Trade_MineralsNeeded02"/><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/><Volume value="2.000000,2.000000"/>
+    </CSound>
+    <CSound id="SwannCommander_Trade_MineralsReceived" parent="ACVO_Pings">
+        <AssetArray TemplateParam="SwannCommander_Trade_MineralsReceived00"/>
+        <AssetArray TemplateParam="SwannCommander_Trade_MineralsReceived01"/>
+        <AssetArray TemplateParam="SwannCommander_Trade_MineralsReceived02"/><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/><Volume value="2.000000,2.000000"/>
+    </CSound>
+    <CSound id="SwannCommander_Trade_ResourcesGiven" parent="ACVO_Pings">
+        <AssetArray TemplateParam="SwannCommander_Trade_ResourcesGiven00"/>
+        <AssetArray TemplateParam="SwannCommander_Trade_ResourcesGiven01"/>
+        <AssetArray TemplateParam="SwannCommander_Trade_ResourcesGiven02"/><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/><Volume value="2.000000,2.000000"/>
+    </CSound>
+    <CSound id="SwannCommander_Trade_ResourcesNeeded" parent="ACVO_Pings">
+        <AssetArray TemplateParam="SwannCommander_Trade_ResourcesNeeded00"/>
+        <AssetArray TemplateParam="SwannCommander_Trade_ResourcesNeeded01"/>
+        <AssetArray TemplateParam="SwannCommander_Trade_ResourcesNeeded02"/><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/><Volume value="2.000000,2.000000"/>
+    </CSound>
+    <CSound id="SwannCommander_Trade_ResourcesReceived" parent="ACVO_Pings">
+        <AssetArray TemplateParam="SwannCommander_Trade_ResourcesReceived00"/>
+        <AssetArray TemplateParam="SwannCommander_Trade_ResourcesReceived01"/>
+        <AssetArray TemplateParam="SwannCommander_Trade_ResourcesReceived02"/><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/><Volume value="2.000000,2.000000"/>
+    </CSound>
+    <CSound id="SwannCommander_Trade_VespeneGiven" parent="ACVO_Pings">
+        <AssetArray TemplateParam="SwannCommander_Trade_VespeneGiven00"/>
+        <AssetArray TemplateParam="SwannCommander_Trade_VespeneGiven01"/>
+        <AssetArray TemplateParam="SwannCommander_Trade_VespeneGiven02"/><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/><Volume value="2.000000,2.000000"/>
+    </CSound>
+    <CSound id="SwannCommander_Trade_VespeneNeeded" parent="ACVO_Pings">
+        <AssetArray TemplateParam="SwannCommander_Trade_VespeneNeeded00"/>
+        <AssetArray TemplateParam="SwannCommander_Trade_VespeneNeeded01"/>
+        <AssetArray TemplateParam="SwannCommander_Trade_VespeneNeeded02"/><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/><Volume value="2.000000,2.000000"/>
+    </CSound>
+    <CSound id="SwannCommander_Trade_VespeneReceived" parent="ACVO_Pings">
+        <AssetArray TemplateParam="SwannCommander_Trade_VespeneReceived00"/>
+        <AssetArray TemplateParam="SwannCommander_Trade_VespeneReceived01"/>
+        <AssetArray TemplateParam="SwannCommander_Trade_VespeneReceived02"/><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/><Volume value="2.000000,2.000000"/>
+    </CSound>
+
+
     <CSound id="AdjutantAlert_SwannCombatDropReady" parent="ACVO_Pings">
         <AssetArray TemplateParam="AdjutantAlert_SwannCombatDropReady00"/>
         <AssetArray TemplateParam="AdjutantAlert_SwannCombatDropReady01"/><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>

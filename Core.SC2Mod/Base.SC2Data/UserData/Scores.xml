@@ -1,11 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
     <CUser id="Scores">
-        <Fields Id="commander" Type="User" UserType="PlayerCommanders" EditorColumn="1"/>
+        <Fields>
+            <Id value="commander"/>
+            <Type value="User"/>
+            <UserType value="Commanders"/>
+            <EditorColumn value="1"/>
+        </Fields>
         <Fields Id="unit" Type="Unit" EditorColumn="3"/>
         <Fields Id="upgrade" Type="Upgrade" EditorColumn="4"/>
         <Fields Id="ability" Type="AbilCmd" EditorColumn="6"/>
-
+        <Instances Id="[Default]">
+            <Unit Unit="NONE">
+                <Field Id="unit"/>
+            </Unit>
+            <Upgrade Upgrade="NONE">
+                <Field Id="upgrade"/>
+            </Upgrade>
+            <User Type="Commanders" Instance="[Default]">
+                <Field Id="commander"/>
+            </User>
+        </Instances>
         <Instances Id="KerriganDamage">
             <GameLink GameLink="KerriganDamage">
                 <Field Id="score"/>
@@ -13,7 +28,7 @@
             <Unit Unit="K5Kerrigan">
                 <Field Id="unit"/>
             </Unit>
-            <User Type="PlayerCommanders" Instance="ZergKerrigan">
+            <User Type="Commanders" Instance="ZergKerrigan">
                 <Field Id="commander"/>
             </User>
         </Instances>
@@ -24,7 +39,7 @@
             <GameLink GameLink="KerriganAssimilationResources">
                 <Field Id="score"/>
             </GameLink>
-            <User Type="PlayerCommanders" Instance="ZergKerrigan">
+            <User Type="Commanders" Instance="ZergKerrigan">
                 <Field Id="commander"/>
             </User>
         </Instances>
@@ -35,18 +50,18 @@
             <Unit Unit="NovaCoop">
                 <Field Id="unit"/>
             </Unit>
-            <User Type="PlayerCommanders" Instance="TerranNova">
+            <User Type="Commanders" Instance="TerranNova">
                 <Field Id="commander"/>
             </User>
         </Instances>
         <Instances Id="ZagaraFrenzyDamage">
-            <GameLink GameLink="ZagaraFrenzyDamage">
-                <Field Id="score"/>
-            </GameLink>
             <AbilCmd Abil="ZagaraVoidCoopMassFrenzy">
                 <Field Id="ability"/>
             </AbilCmd>
-            <User Type="PlayerCommanders" Instance="ZergZagara">
+            <GameLink GameLink="ZagaraFrenzyDamage">
+                <Field Id="score"/>
+            </GameLink>
+            <User Type="Commanders" Instance="ZergZagara">
                 <Field Id="commander"/>
             </User>
         </Instances>
@@ -57,18 +72,18 @@
             <Unit Unit="AlarakChampion">
                 <Field Id="unit"/>
             </Unit>
-            <User Type="PlayerCommanders" Instance="ProtossAlarak">
+            <User Type="Commanders" Instance="ProtossAlarak">
                 <Field Id="commander"/>
             </User>
         </Instances>
         <Instances Id="AlarakSelfHeals">
-            <Upgrade Upgrade="AlarakTheStrongestSurvive">
-                <Field Id="upgrade"/>
-            </Upgrade>
             <GameLink GameLink="AlarakSelfHeals">
                 <Field Id="score"/>
             </GameLink>
-            <User Type="PlayerCommanders" Instance="ProtossAlarak">
+            <Upgrade Upgrade="AlarakTheStrongestSurvive">
+                <Field Id="upgrade"/>
+            </Upgrade>
+            <User Type="Commanders" Instance="ProtossAlarak">
                 <Field Id="commander"/>
             </User>
         </Instances>
@@ -79,87 +94,95 @@
             <Unit Unit="ZeratulCoop">
                 <Field Id="unit"/>
             </Unit>
-            <User Type="PlayerCommanders" Instance="ProtossZeratul">
+            <User Type="Commanders" Instance="ProtossZeratul">
                 <Field Id="commander"/>
             </User>
         </Instances>
         <Instances Id="RaynorHyperionDamage">
-            <GameLink GameLink="RaynorHyperionDamage">
-                <Field Id="score"/>
-            </GameLink>
             <AbilCmd Abil="VoidCoopSummonHyperion">
                 <Field Id="ability"/>
             </AbilCmd>
-            <User Type="PlayerCommanders" Instance="TerranRaynor">
+            <GameLink GameLink="RaynorHyperionDamage">
+                <Field Id="score"/>
+            </GameLink>
+            <User Type="Commanders" Instance="TerranRaynor">
                 <Field Id="commander"/>
             </User>
         </Instances>
         <Instances Id="AbathurHealingReceived">
-            <GameLink GameLink="AbathurHealingReceived">
-                <Field Id="score"/>
-            </GameLink>
             <AbilCmd Abil="AbathurMend">
                 <Field Id="ability"/>
             </AbilCmd>
-            <User Type="PlayerCommanders" Instance="ZergAbathur">
+            <GameLink GameLink="AbathurHealingReceived">
+                <Field Id="score"/>
+            </GameLink>
+            <User Type="Commanders" Instance="ZergAbathur">
                 <Field Id="commander"/>
             </User>
         </Instances>
         <Instances Id="ProtossKarax_SOAMapWideChrono">
-            <GameLink GameLink="KaraxChronoCoop">
-                <Field Id="score"/>
-            </GameLink>
             <AbilCmd Abil="SOAMapWideChrono">
                 <Field Id="ability"/>
             </AbilCmd>
-            <User Type="PlayerCommanders" Instance="ProtossKarax">
+            <GameLink GameLink="KaraxChronoCoop">
+                <Field Id="score"/>
+            </GameLink>
+            <User Type="Commanders" Instance="ProtossKarax">
                 <Field Id="commander"/>
             </User>
         </Instances>
         <Instances Id="ProtossArtanis_SoASuperShield">
-            <GameLink GameLink="ArtanisShieldAbsorb">
-                <Field Id="score"/>
-            </GameLink>
             <AbilCmd Abil="SoASuperShield">
                 <Field Id="ability"/>
             </AbilCmd>
-            <User Type="PlayerCommanders" Instance="ProtossArtanis">
+            <GameLink GameLink="ArtanisShieldAbsorb">
+                <Field Id="score"/>
+            </GameLink>
+            <User Type="Commanders" Instance="ProtossArtanis">
                 <Field Id="commander"/>
             </User>
         </Instances>
         <Instances Id="NovaDamageAbsorb">
+            <AbilCmd Abil="NovaDefensiveMatrixDrone">
+                <Field Id="ability"/>
+            </AbilCmd>
             <GameLink GameLink="NovaHealandAbsorb">
                 <Field Id="score"/>
             </GameLink>
-            <AbilCmd Abil="NovaDefensiveMatrixDrone"><Field Id="ability"/></AbilCmd>
-            <User Type="PlayerCommanders" Instance="TerranNova">
+            <User Type="Commanders" Instance="TerranNova">
                 <Field Id="commander"/>
             </User>
         </Instances>
         <Instances Id="NovaHeal">
+            <AbilCmd Abil="PlaceHealingDrone">
+                <Field Id="ability"/>
+            </AbilCmd>
             <GameLink GameLink="NovaHealandAbsorb">
                 <Field Id="score"/>
             </GameLink>
-            <AbilCmd Abil="PlaceHealingDrone"><Field Id="ability"/></AbilCmd>
-            <User Type="PlayerCommanders" Instance="TerranNova">
+            <User Type="Commanders" Instance="TerranNova">
                 <Field Id="commander"/>
             </User>
         </Instances>
         <Instances Id="TerranHorner_HornerCaster">
+            <AbilCmd Abil="HHTrainTopBar">
+                <Field Id="ability"/>
+            </AbilCmd>
             <GameLink GameLink="HornerMagMineDamage">
                 <Field Id="score"/>
             </GameLink>
-            <AbilCmd Abil="HHTrainTopBar"><Field Id="ability"/></AbilCmd>
-            <User Type="PlayerCommanders" Instance="TerranHorner">
+            <User Type="Commanders" Instance="TerranHorner">
                 <Field Id="commander"/>
             </User>
         </Instances>
         <Instances Id="ProtossVorazun_VorazunCaster">
+            <AbilCmd Abil="VoidSentryBlackHole">
+                <Field Id="ability"/>
+            </AbilCmd>
             <GameLink GameLink="VorazunBlackHoleDamage">
                 <Field Id="score"/>
             </GameLink>
-            <AbilCmd Abil="VoidSentryBlackHole"><Field Id="ability"/></AbilCmd>
-            <User Type="PlayerCommanders" Instance="ProtossVorazun">
+            <User Type="Commanders" Instance="ProtossVorazun">
                 <Field Id="commander"/>
             </User>
         </Instances>
@@ -170,7 +193,7 @@
             <Unit Unit="SoACasterFenix">
                 <Field Id="unit"/>
             </Unit>
-            <User Type="PlayerCommanders" Instance="ProtossFenix">
+            <User Type="Commanders" Instance="ProtossFenix">
                 <Field Id="commander"/>
             </User>
         </Instances>
@@ -181,7 +204,7 @@
             <Unit Unit="CoopCasterStetmann">
                 <Field Id="unit"/>
             </Unit>
-            <User Type="PlayerCommanders" Instance="ZergStetmann">
+            <User Type="Commanders" Instance="ZergStetmann">
                 <Field Id="commander"/>
             </User>
         </Instances>
@@ -192,7 +215,7 @@
             <Unit Unit="UnfinishedDrakkenLaserDrillCoop">
                 <Field Id="unit"/>
             </Unit>
-            <User Type="PlayerCommanders" Instance="TerranSwann">
+            <User Type="Commanders" Instance="TerranSwann">
                 <Field Id="commander"/>
             </User>
         </Instances>
@@ -206,7 +229,7 @@
             <Unit Unit="FenixAltarOfPsiStorms">
                 <Field Id="unit"/>
             </Unit>
-            <User Type="PlayerCommanders" Instance="ProtossFenix">
+            <User Type="Commanders" Instance="ProtossFenix">
                 <Field Id="commander"/>
             </User>
         </Instances>
@@ -217,7 +240,7 @@
             <Unit Unit="GarysDen">
                 <Field Id="unit"/>
             </Unit>
-            <User Type="PlayerCommanders" Instance="ZergStetmann">
+            <User Type="Commanders" Instance="ZergStetmann">
                 <Field Id="commander"/>
             </User>
         </Instances>
@@ -228,7 +251,7 @@
             <Unit Unit="DehakaCoopReviveCocoon">
                 <Field Id="unit"/>
             </Unit>
-            <User Type="PlayerCommanders" Instance="ZergDehaka">
+            <User Type="Commanders" Instance="ZergDehaka">
                 <Field Id="commander"/>
             </User>
         </Instances>
@@ -239,7 +262,7 @@
             <GameLink GameLink="DehakaConsume">
                 <Field Id="score"/>
             </GameLink>
-            <User Type="PlayerCommanders" Instance="ZergDehaka">
+            <User Type="Commanders" Instance="ZergDehaka">
                 <Field Id="commander"/>
             </User>
         </Instances>
@@ -250,7 +273,7 @@
             <Unit Unit="Baneling">
                 <Field Id="unit"/>
             </Unit>
-            <User Type="PlayerCommanders" Instance="ZergZagara">
+            <User Type="Commanders" Instance="ZergZagara">
                 <Field Id="commander"/>
             </User>
         </Instances>
@@ -261,7 +284,7 @@
             <Unit Unit="Scourge">
                 <Field Id="unit"/>
             </Unit>
-            <User Type="PlayerCommanders" Instance="ZergZagara">
+            <User Type="Commanders" Instance="ZergZagara">
                 <Field Id="commander"/>
             </User>
         </Instances>
@@ -272,7 +295,7 @@
             <Unit Unit="HotSLeviathan">
                 <Field Id="unit"/>
             </Unit>
-            <User Type="PlayerCommanders" Instance="ZergAbathur">
+            <User Type="Commanders" Instance="ZergAbathur">
                 <Field Id="commander"/>
             </User>
         </Instances>
@@ -286,7 +309,7 @@
             <Unit Unit="Brutalisk">
                 <Field Id="unit"/>
             </Unit>
-            <User Type="PlayerCommanders" Instance="ZergAbathur">
+            <User Type="Commanders" Instance="ZergAbathur">
                 <Field Id="commander"/>
             </User>
         </Instances>
@@ -297,54 +320,54 @@
             <Unit Unit="Medic">
                 <Field Id="unit"/>
             </Unit>
-            <User Type="PlayerCommanders" Instance="TerranRaynor">
+            <User Type="Commanders" Instance="TerranRaynor">
                 <Field Id="commander"/>
             </User>
         </Instances>
         <Instances Id="TerranSwann_ScienceVessel">
-            <GameLink GameLink="SwannMechHealing">
-                <Field Id="score"/>
-            </GameLink>
             <AbilCmd Abil="NanoRepair">
                 <Field Id="ability"/>
             </AbilCmd>
-            <User Type="PlayerCommanders" Instance="TerranSwann">
+            <GameLink GameLink="SwannMechHealing">
+                <Field Id="score"/>
+            </GameLink>
+            <User Type="Commanders" Instance="TerranSwann">
                 <Field Id="commander"/>
             </User>
         </Instances>
         <Instances Id="ProtossKaraxArtanis_SOAOrbitalStrikeExecute">
-            <GameLink GameLink="ArtanisSoADamage">
-                <Field Id="score"/>
-            </GameLink>
             <AbilCmd Abil="SOAOrbitalStrikeExecute">
                 <Field Id="ability"/>
             </AbilCmd>
+            <GameLink GameLink="ArtanisSoADamage">
+                <Field Id="score"/>
+            </GameLink>
             <Int Int="1">
                 <Field Id="level"/>
             </Int>
-            <User Type="PlayerCommanders" Instance="ProtossArtanis">
+            <User Type="Commanders" Instance="ProtossArtanis">
                 <Field Id="commander"/>
             </User>
         </Instances>
         <Instances Id="ZergStukov_StukovSummonAleksander">
-            <GameLink GameLink="StukovMonstrosityDamage">
-                <Field Id="score"/>
-            </GameLink>
             <AbilCmd Abil="StukovSummonAleksander">
                 <Field Id="ability"/>
             </AbilCmd>
-            <User Type="PlayerCommanders" Instance="ZergStukov">
+            <GameLink GameLink="StukovMonstrosityDamage">
+                <Field Id="score"/>
+            </GameLink>
+            <User Type="Commanders" Instance="ZergStukov">
                 <Field Id="commander"/>
             </User>
         </Instances>
         <Instances Id="ZergStukov_StukovSummonApocalisk">
-            <GameLink GameLink="StukovMonstrosityDamage">
-                <Field Id="score"/>
-            </GameLink>
             <AbilCmd Abil="StukovSummonApocalisk">
                 <Field Id="ability"/>
             </AbilCmd>
-            <User Type="PlayerCommanders" Instance="ZergStukov">
+            <GameLink GameLink="StukovMonstrosityDamage">
+                <Field Id="score"/>
+            </GameLink>
+            <User Type="Commanders" Instance="ZergStukov">
                 <Field Id="commander"/>
             </User>
         </Instances>
@@ -355,7 +378,7 @@
             <Upgrade Upgrade="StukovCommander">
                 <Field Id="cheat"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="ZergStukov">
+            <User Type="Commanders" Instance="ZergStukov">
                 <Field Id="commander"/>
             </User>
         </Instances>
@@ -369,55 +392,65 @@
             <Upgrade Upgrade="HornerCommander">
                 <Field Id="cheat"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="TerranHorner">
+            <User Type="Commanders" Instance="TerranHorner">
                 <Field Id="commander"/>
             </User>
         </Instances>
         <Instances Id="TychusGrenadeDamage">
-            <AbilCmd Abil="TychusGrenadeDamage"><Field Id="ability"/></AbilCmd>
+            <AbilCmd Abil="TychusGrenadeDamage">
+                <Field Id="ability"/>
+            </AbilCmd>
             <GameLink GameLink="TychusGrenadeDamage">
                 <Field Id="score"/>
             </GameLink>
-            <User Type="PlayerCommanders" Instance="TerranTychus">
+            <User Type="Commanders" Instance="TerranTychus">
                 <Field Id="commander"/>
             </User>
         </Instances>
         <Instances Id="TychusReaperBombDamage">
-            <AbilCmd Abil="TychusReaperBomb"><Field Id="ability"/></AbilCmd>
+            <AbilCmd Abil="TychusReaperBomb">
+                <Field Id="ability"/>
+            </AbilCmd>
             <GameLink GameLink="TychusReaperBombDamage">
                 <Field Id="score"/>
             </GameLink>
-            <User Type="PlayerCommanders" Instance="TerranTychus">
+            <User Type="Commanders" Instance="TerranTychus">
                 <Field Id="commander"/>
             </User>
         </Instances>
         <Instances Id="TychusFirebatOilDamage">
+            <AbilCmd Abil="TychusFirebatOilBomb">
+                <Field Id="ability"/>
+            </AbilCmd>
             <GameLink GameLink="TychusFirebatOilDamage">
                 <Field Id="score"/>
             </GameLink>
-            <AbilCmd Abil="TychusFirebatOilBomb"><Field Id="ability"/></AbilCmd>
             <Unit Unit="TychusFirebat">
                 <Field Id="unit"/>
             </Unit>
-            <User Type="PlayerCommanders" Instance="TerranTychus">
+            <User Type="Commanders" Instance="TerranTychus">
                 <Field Id="commander"/>
             </User>
         </Instances>
         <Instances Id="TychusMarauderHeal">
-            <AbilCmd Abil="TychusMarauderBuildHealingWard"><Field Id="ability"/></AbilCmd>
+            <AbilCmd Abil="TychusMarauderBuildHealingWard">
+                <Field Id="ability"/>
+            </AbilCmd>
             <GameLink GameLink="TychusMarauderHeal">
                 <Field Id="score"/>
             </GameLink>
-            <User Type="PlayerCommanders" Instance="TerranTychus">
+            <User Type="Commanders" Instance="TerranTychus">
                 <Field Id="commander"/>
             </User>
         </Instances>
         <Instances Id="TychusSpectrePulseDamage">
-            <AbilCmd Abil="TychusSpectreUltrasonicPulse"><Field Id="ability"/></AbilCmd>
+            <AbilCmd Abil="TychusSpectreUltrasonicPulse">
+                <Field Id="ability"/>
+            </AbilCmd>
             <GameLink GameLink="TychusSpectrePulseDamage">
                 <Field Id="score"/>
             </GameLink>
-            <User Type="PlayerCommanders" Instance="TerranTychus">
+            <User Type="Commanders" Instance="TerranTychus">
                 <Field Id="commander"/>
             </User>
         </Instances>
@@ -428,7 +461,7 @@
             <Unit Unit="TychusMedic">
                 <Field Id="unit"/>
             </Unit>
-            <User Type="PlayerCommanders" Instance="TerranTychus">
+            <User Type="Commanders" Instance="TerranTychus">
                 <Field Id="commander"/>
             </User>
         </Instances>
@@ -439,43 +472,51 @@
             <GameLink GameLink="TychusOdinDamage">
                 <Field Id="score"/>
             </GameLink>
-            <User Type="PlayerCommanders" Instance="TerranTychus">
+            <User Type="Commanders" Instance="TerranTychus">
                 <Field Id="commander"/>
             </User>
         </Instances>
         <Instances Id="TychusWarhoundTurretDamage">
-            <AbilCmd Abil="TychusWarhoundBuildAutoTurret"><Field Id="ability"/></AbilCmd>
+            <AbilCmd Abil="TychusWarhoundBuildAutoTurret">
+                <Field Id="ability"/>
+            </AbilCmd>
             <GameLink GameLink="TychusWarhoundTurretDamage">
                 <Field Id="score"/>
             </GameLink>
-            <User Type="PlayerCommanders" Instance="TerranTychus">
+            <User Type="Commanders" Instance="TerranTychus">
                 <Field Id="commander"/>
             </User>
         </Instances>
         <Instances Id="TerranTychus_TychusFactoryTrain_Cannonball">
-            <AbilCmd Abil="TychusHercGrapple"><Field Id="ability"/></AbilCmd>
+            <AbilCmd Abil="TychusHercGrapple">
+                <Field Id="ability"/>
+            </AbilCmd>
             <GameLink GameLink="TychusHERCImpactDuration">
                 <Field Id="score"/>
             </GameLink>
-            <User Type="PlayerCommanders" Instance="TerranTychus">
+            <User Type="Commanders" Instance="TerranTychus">
                 <Field Id="commander"/>
             </User>
         </Instances>
         <Instances Id="TerranTychus_TychusBarracksTrain_Vega">
-            <AbilCmd Abil="TychusGhostDominate"><Field Id="ability"/></AbilCmd>
+            <AbilCmd Abil="TychusGhostDominate">
+                <Field Id="ability"/>
+            </AbilCmd>
             <GameLink GameLink="TychusGhostDominatedDamage">
                 <Field Id="score"/>
             </GameLink>
-            <User Type="PlayerCommanders" Instance="TerranTychus">
+            <User Type="Commanders" Instance="TerranTychus">
                 <Field Id="commander"/>
             </User>
         </Instances>
         <Instances Id="ProtossZeratul_ZeratulSentry">
+            <AbilCmd Abil="ZeratulSentryShieldRepair">
+                <Field Id="ability"/>
+            </AbilCmd>
             <GameLink GameLink="ZeratulShieldRestore">
                 <Field Id="score"/>
             </GameLink>
-            <AbilCmd Abil="ZeratulSentryShieldRepair"><Field Id="ability"/></AbilCmd>
-            <User Type="PlayerCommanders" Instance="ProtossZeratul">
+            <User Type="Commanders" Instance="ProtossZeratul">
                 <Field Id="commander"/>
             </User>
         </Instances>
@@ -486,7 +527,7 @@
             <Upgrade Upgrade="MengskCommander">
                 <Field Id="cheat"/>
             </Upgrade>
-            <User Type="PlayerCommanders" Instance="TerranMengsk">
+            <User Type="Commanders" Instance="TerranMengsk">
                 <Field Id="commander"/>
             </User>
         </Instances>
@@ -497,14 +538,9 @@
             <Unit Unit="TrooperMengsk">
                 <Field Id="unit"/>
             </Unit>
-            <User Type="PlayerCommanders" Instance="TerranMengsk">
+            <User Type="Commanders" Instance="TerranMengsk">
                 <Field Id="commander"/>
             </User>
         </Instances>
     </CUser>
 </Catalog>
-
-
-
-
-

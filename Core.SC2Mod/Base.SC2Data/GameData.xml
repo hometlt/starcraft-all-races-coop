@@ -8,5 +8,6 @@
     <Catalog path="UserData/Skins.xml"/>
     <Catalog path="UserData/Tech.xml"/>
     <Catalog path="UserData/Mastery.xml"/>
-    <Catalog path="GameData/11-12-TempleOfThePast-UlnarLocks.xml"/>
+    <Catalog path="UserData/Waves.xml"/>
+    <Catalog path="UserData/Compositions.xml"/>
 </Includes>

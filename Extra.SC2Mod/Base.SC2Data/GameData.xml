@@ -9,5 +9,4 @@
     <Catalog path="CommandersData/Hybrids/Hybrids.xml"/>
     <Catalog path="CommandersData/Dragons/Dragons.xml"/>
     <Catalog path="CommandersData/Genetron/Genetron.xml"/>
-    <Catalog path="CommandersData/Zerg/UnitData.xml"/>
 </Includes>

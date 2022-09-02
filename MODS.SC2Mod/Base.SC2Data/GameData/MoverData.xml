@@ -4301,5 +4301,74 @@
   </MotionPhases>
   <MotionPhases YawPitchRoll="MAX"/>
 </CMoverMissile>
+<CMoverMissile id="MyraDavisFlameGrenadeMissileMover">
+  <MotionPhases Driver="Ballistic" Gravity="12" FlightTime="0.75"/>
+</CMoverMissile>
+<CMoverMissile id="MyraDavisFlashBangGrenadeMissileMover">
+  <MotionPhases>
+    <Driver value="Ballistic"/>
+    <Speed value="10"/>
+    <MinSpeed value="10"/>
+    <Gravity value="12"/>
+    <FlightTime value="0.75"/>
+  </MotionPhases>
+</CMoverMissile>
+<CMoverMissile id="TrevorRandGrenadeMissileMover">
+  <MotionPhases>
+    <Driver value="Ballistic"/>
+    <Speed value="40"/>
+    <MaxSpeed value="10"/>
+    <Gravity value="5"/>
+    <ThrowBandYaw value="-360,-360,-360,-360"/>
+    <ThrowBandPitch value="-360,-360,-360,-360"/>
+    <YawPitchRoll value="5759.6484"/>
+  </MotionPhases>
+  <MotionPhases YawPitchRoll="MAX"/>
+</CMoverMissile>
+<CMoverMissile id="UPLScoutFlameGrenadeMissileMover">
+  <MotionPhases>
+    <Driver value="Ballistic"/>
+    <Speed value="40"/>
+    <MaxSpeed value="10"/>
+    <Gravity value="5"/>
+    <ThrowBandYaw value="-360,-360,-360,-360"/>
+    <ThrowBandPitch value="-360,-360,-360,-360"/>
+    <YawPitchRoll value="5759.6484"/>
+  </MotionPhases>
+  <MotionPhases YawPitchRoll="MAX"/>
+</CMoverMissile>
+<CMoverMissile id="UPLScoutGrenadeMissileMover">
+  <MotionPhases>
+    <Driver value="Ballistic"/>
+    <Speed value="40"/>
+    <MaxSpeed value="10"/>
+    <Gravity value="5"/>
+    <ThrowBandYaw value="-360,-360,-360,-360"/>
+    <ThrowBandPitch value="-360,-360,-360,-360"/>
+    <YawPitchRoll value="5759.6484"/>
+  </MotionPhases>
+  <MotionPhases YawPitchRoll="MAX"/>
+</CMoverMissile>
+<CMoverMissile id="RileyJericoJumpJet">
+  <PathMode value="Flying"/>
+  <MotionPhases>
+    <Driver value="AdaptableParabola"/>
+    <MinSpeed value="3"/>
+    <MaxSpeed value="15"/>
+    <ActorTracking value="Actual"/>
+    <AdaptableParabolaIsUpright value="1"/>
+    <AdaptableParabolaClearance value="2.2,0.5"/>
+    <AdaptableParabolaDistances index="Launch" value="3"/>
+    <AdaptableParabolaDistances index="PreApex" value="2.5"/>
+    <AdaptableParabolaDistances index="PostApex" value="0"/>
+    <AdaptableParabolaDistances index="Land" value="2.5"/>
+    <AdaptableParabolaAccels index="Launch" value="25"/>
+    <AdaptableParabolaAccels index="Ascent" value="20"/>
+    <AdaptableParabolaAccels index="Apex" value="15"/>
+    <AdaptableParabolaAccels index="Descent" value="10"/>
+    <AdaptableParabolaAccels index="Land" value="-10"/>
+  </MotionPhases>
+  <RespectUnitHeightAtDestination value="1"/>
+</CMoverMissile>
 
 </Catalog>

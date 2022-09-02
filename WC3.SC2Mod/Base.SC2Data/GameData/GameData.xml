@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Catalog>
+<CGame id="Dflt">
+  <TriggerLibs Id="LOTV"/>
+  <TriggerLibs Id="GAw3"/>
+</CGame>
+<CGameUI id="Dflt">
+  <DisplayScaledTime value="1"/>
+</CGameUI>
+
+</Catalog>

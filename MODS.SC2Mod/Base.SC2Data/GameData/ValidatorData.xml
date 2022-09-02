@@ -5494,6 +5494,7 @@
   <CombineArray value="isHHSCV"/>
   <CombineArray value="isGenetronACR"/>
   <CombineArray value="IsSalvager"/>
+  <CombineArray value="IsMiningDrone"/>
 </CValidatorCombine>
 <CValidatorCombine id="isWorker">
   <CombineArray index="0" value="IsMULE"/>
@@ -13877,6 +13878,65 @@
   <CombineArray value="UPLTurrets"/>
   <CombineArray value="UPLMechanical"/>
 </CValidatorCombine>
+<CValidatorCombine id="KatherineHalseyMedkit">
+  <CombineArray value="KatherineHalseyMedkit@HealthCheck"/>
+</CValidatorCombine>
+<CValidatorUnitCompareBehaviorCount id="KatherineHalseyMedkit@HaveBaseBehavior">
+  <Compare value="GT"/>
+  <Behavior value="KatherineHalseyMedkit"/>
+</CValidatorUnitCompareBehaviorCount>
+<CValidatorUnitCompareVitality id="KatherineHalseyMedkit@HealthCheck">
+  <Compare value="LE"/>
+  <Type value="Fraction"/>
+  <Value value="0.25"/>
+</CValidatorUnitCompareVitality>
+<CValidatorCombine id="WilliamGravesMedkit">
+  <CombineArray value="WilliamGravesMedkit@HealthCheck"/>
+</CValidatorCombine>
+<CValidatorUnitCompareBehaviorCount id="WilliamGravesMedkit@HaveBaseBehavior">
+  <Compare value="GT"/>
+  <Behavior value="WilliamGravesMedkit"/>
+</CValidatorUnitCompareBehaviorCount>
+<CValidatorUnitCompareVitality id="WilliamGravesMedkit@HealthCheck">
+  <Compare value="LE"/>
+  <Type value="Fraction"/>
+  <Value value="0.25"/>
+</CValidatorUnitCompareVitality>
+<CValidatorUnitCompareBehaviorCount id="HasWilliamGravesChargeAura">
+  <Compare value="GT"/>
+  <Behavior value="WilliamGravesChargeAura"/>
+</CValidatorUnitCompareBehaviorCount>
+<CValidatorUnitCompareBehaviorCount id="RichardGideonCharging">
+  <WhichUnit Value="Caster"/>
+  <Compare value="GT"/>
+  <Behavior value="RichardGideonCharging"/>
+</CValidatorUnitCompareBehaviorCount>
+<CValidatorUnitCompareBehaviorCount id="RileyJericoLornaTokenCount1">
+  <WhichUnit Value="Caster"/>
+  <Value value="1"/>
+  <Behavior value="RileyJericoLornaToken"/>
+</CValidatorUnitCompareBehaviorCount>
+<CValidatorUnitCompareBehaviorCount id="RileyJericoLornaTokenCount2" parent="RileyJericoLornaTokenCount1">
+  <Value value="2"/>
+</CValidatorUnitCompareBehaviorCount>
+<CValidatorUnitCompareBehaviorCount id="RileyJericoLornaTokenCount3" parent="RileyJericoLornaTokenCount1">
+  <Value value="3"/>
+</CValidatorUnitCompareBehaviorCount>
+<CValidatorUnitCompareBehaviorCount id="RileyJericoLornaTokenCount4" parent="RileyJericoLornaTokenCount1">
+  <Value value="4"/>
+</CValidatorUnitCompareBehaviorCount>
+<CValidatorUnitCompareBehaviorCount id="RileyJericoLornaTokenCount5" parent="RileyJericoLornaTokenCount1">
+  <Value value="5"/>
+</CValidatorUnitCompareBehaviorCount>
+<CValidatorUnitCompareBehaviorCount id="RileyJericoLornaTokenCount6" parent="RileyJericoLornaTokenCount1">
+  <Value value="6"/>
+</CValidatorUnitCompareBehaviorCount>
+<CValidatorCombine id="RileyJericoJumpJetValidator">
+  <Type value="And"/>
+  <CombineArray value="HasVision"/>
+  <CombineArray value="CasterNotDead"/>
+  <CombineArray value="CasterNotStunnedNotStasis"/>
+</CValidatorCombine>
 <CValidatorLocationEnumArea id="EnemiesInRange8">
   <AreaArray Compare="GT" Count="0" Radius="8"/>
   <SearchFilters value="Visible;Self,Player,Ally,Neutral,Missile,Stasis,Dead,Hidden,Invulnerable"/>
@@ -13885,6 +13945,16 @@
   <AreaArray Compare="LT" Count="1" Radius="8"/>
   <SearchFilters value="Visible;Self,Player,Ally,Neutral,Missile,Stasis,Dead,Hidden"/>
 </CValidatorLocationEnumArea>
+<CValidatorCombine id="UPLOspreyTransportCargoIsOfficer">
+  <CombineArray value="UPLOspreyTransportCargoIsInfantryOfficer"/>
+  <CombineArray value="UPLOspreyTransportCargoIsWilliamGraves"/>
+</CValidatorCombine>
+<CValidatorUnitType id="UPLOspreyTransportCargoIsInfantryOfficer">
+  <Value value="InfantryOfficer"/>
+</CValidatorUnitType>
+<CValidatorUnitType id="UPLOspreyTransportCargoIsWilliamGraves">
+  <Value value="WilliamGraves"/>
+</CValidatorUnitType>
 <CValidatorUnitType id="isXayedScavenger">
   <Value value="Scavenger"/>
 </CValidatorUnitType>
@@ -13941,43 +14011,15 @@
   <CombineArray value="IsZenith"/>
   <CombineArray value="IsReliquary"/>
 </CValidatorCombine>
-<CValidatorUnitType id="isKeironConverter">
-  <Value value="Converter"/>
-</CValidatorUnitType>
-<CValidatorUnitCompareBehaviorCount id="IsDisabledSOAMapWideChronoPassiveTarget">
-  <Compare value="LT"/>
-  <Value value="1"/>
-  <Behavior value="SOAMapWideChronoPassiveTarget"/>
-</CValidatorUnitCompareBehaviorCount>
-<CValidatorUnitCompareBehaviorCount id="IsDisabledMapWideChrono">
-  <Compare value="LT"/>
-  <Value value="1"/>
-  <Behavior value="SOAMapWideChrono"/>
-</CValidatorUnitCompareBehaviorCount>
-<CValidatorUnitCompareBehaviorCount id="IsDisabledChronoBoostEnergyCost">
-  <Compare value="LT"/>
-  <Value value="1"/>
-  <Behavior value="ChronoBoostEnergyCost"/>
-</CValidatorUnitCompareBehaviorCount>
-<CValidatorUnitCompareBehaviorCount id="IsDisabledSOASuperChrono">
-  <Compare value="LT"/>
-  <Value value="1"/>
-  <Behavior value="SOASuperChrono"/>
-</CValidatorUnitCompareBehaviorCount>
-<CValidatorUnitCompareBehaviorCount id="IsDisabledTimeWarpProduction">
-  <Compare value="LT"/>
-  <Value value="1"/>
-  <Behavior value="TimeWarpProduction"/>
-</CValidatorUnitCompareBehaviorCount>
-<CValidatorPlayerRequirement id="KeironLevel01">
-  <Value value="KeironLevel01"/>
-</CValidatorPlayerRequirement>
-<CValidatorUnitType id="IsAquifer">
-  <Value value="Aquifer"/>
-</CValidatorUnitType>
-<CValidatorUnitType id="IsReliquary">
-  <Value value="Reliquary"/>
-</CValidatorUnitType>
+<CValidatorUnitType id="isKeironConverter"/>
+<CValidatorUnitCompareBehaviorCount id="IsDisabledSOAMapWideChronoPassiveTarget"/>
+<CValidatorUnitCompareBehaviorCount id="IsDisabledMapWideChrono"/>
+<CValidatorUnitCompareBehaviorCount id="IsDisabledChronoBoostEnergyCost"/>
+<CValidatorUnitCompareBehaviorCount id="IsDisabledSOASuperChrono"/>
+<CValidatorUnitCompareBehaviorCount id="IsDisabledTimeWarpProduction"/>
+<CValidatorPlayerRequirement id="KeironLevel01"/>
+<CValidatorUnitType id="IsAquifer"/>
+<CValidatorUnitType id="IsReliquary"/>
 <CValidatorUnitType id="isDragonPlodder">
   <Value value="Plodder"/>
 </CValidatorUnitType>

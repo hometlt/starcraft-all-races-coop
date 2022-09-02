@@ -387,12 +387,6 @@
   <Color value="255,92,128,0"/>
 </CCommander>
 <CCommander id="KeironCommander">
-  <AttributeId value="Keir"/>
-  <LevelAchievementId value="91475321586896"/>
-  <Race value="Keir"/>
-  <Description value="Commander/Details/KeironCommanderDescription"/>
-  <CutsceneFilterSelf value="Keiron"/>
-  <CutsceneFilterAlly value="KeironAlly"/>
   <UnitArray Unit="Converter"/>
   <UnitArray Unit="Pariah"/>
   <UnitArray Unit="Volt"/>
@@ -467,14 +461,9 @@
     <Type value="Percent"/>
     <Bucket value="2"/>
   </MasteryTalentArray>
-  <LoadingImage value="Assets\Textures\ui_loading_coop_hero_Jorik.dds"/>
-  <LoadingImageAlly value="Assets\Textures\ui_loading_coop_hero_Jorik.dds"/>
-  <TraitIcon value="Assets\Textures\SC2_UI_Coop_Detail_Background_Jorik.dds"/>
   <CommanderAbilArray Button="CitadelEnergize"/>
   <CommanderAbilArray Button="EmissaryOrb"/>
   <CommanderAbilArray Button="ActivateShield"/>
-  <RequiredRewardArray index="0" removed="1"/>
-  <Color value="255,92,128,0"/>
 </CCommander>
 <CCommander id="GenetronCommander">
   <AttributeId value="Gen1"/>

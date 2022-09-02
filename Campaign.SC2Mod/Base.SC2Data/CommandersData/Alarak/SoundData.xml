@@ -413,6 +413,44 @@
         <Pitch value="-2.000000,0.000000"/>
     </CSound>
 
+    <CSound id="AlarakCommander_Trade_MineralsGiven" parent="ACVO_Pings">
+        <AssetArray TemplateParam="AlarakCommander_Trade_MineralsGiven00"/>
+        <AssetArray TemplateParam="AlarakCommander_Trade_MineralsGiven01"/>
+        <AssetArray TemplateParam="AlarakCommander_Trade_MineralsGiven02"/><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="AlarakCommander_Trade_MineralsNeeded" parent="ACVO_Pings">
+        <AssetArray TemplateParam="AlarakCommander_Trade_MineralsNeeded00"/>
+        <AssetArray TemplateParam="AlarakCommander_Trade_MineralsNeeded01"/>
+        <AssetArray TemplateParam="AlarakCommander_Trade_MineralsNeeded02"/><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="AlarakCommander_Trade_MineralsReceived" parent="ACVO_Pings">
+        <AssetArray TemplateParam="AlarakCommander_Trade_MineralsReceived00"/>
+        <AssetArray TemplateParam="AlarakCommander_Trade_MineralsReceived01"/>
+        <AssetArray TemplateParam="AlarakCommander_Trade_MineralsReceived02"/><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="AlarakCommander_Trade_ResourcesGiven" parent="ACVO_Pings">
+        <AssetArray TemplateParam="AlarakCommander_Trade_ResourcesGiven00"/>
+        <AssetArray TemplateParam="AlarakCommander_Trade_ResourcesGiven01"/>
+        <AssetArray TemplateParam="AlarakCommander_Trade_ResourcesGiven02"/><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="AlarakCommander_Trade_ResourcesNeeded" parent="ACVO_Pings">
+        <AssetArray TemplateParam="AlarakCommander_Trade_ResourcesNeeded00"/>
+        <AssetArray TemplateParam="AlarakCommander_Trade_ResourcesNeeded01"/>
+        <AssetArray TemplateParam="AlarakCommander_Trade_ResourcesNeeded02"/><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="AlarakCommander_Trade_ResourcesReceived" parent="ACVO_Pings">
+        <AssetArray TemplateParam="AlarakCommander_Trade_ResourcesReceived00"/>
+        <AssetArray TemplateParam="AlarakCommander_Trade_ResourcesReceived01"/>
+        <AssetArray TemplateParam="AlarakCommander_Trade_ResourcesReceived02"/><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="AlarakCommander_Trade_VespeneGiven" parent="ACVO_Pings">
+        <AssetArray TemplateParam="AlarakCommander_Trade_VespeneGiven00"/>
+        <AssetArray TemplateParam="AlarakCommander_Trade_VespeneGiven01"/>
+        <AssetArray TemplateParam="AlarakCommander_Trade_VespeneGiven02"/><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="AlarakCommander_Trade_VespeneNeeded" parent="ACVO_Pings">
+        <AssetArray TemplateParam="AlarakCommander_Trade_VespeneNeeded00"/>
+        <AssetArray TemplateParam="AlarakCommander_Trade_VespeneNeeded01"/>
+        <AssetArray TemplateParam="AlarakCommander_Trade_VespeneNeeded02"/><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+    <CSound id="AlarakCommander_Trade_VespeneReceived" parent="ACVO_Pings">
+        <AssetArray TemplateParam="AlarakCommander_Trade_VespeneReceived00"/>
+        <AssetArray TemplateParam="AlarakCommander_Trade_VespeneReceived01"/>
+        <AssetArray TemplateParam="AlarakCommander_Trade_VespeneReceived02"/><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+
+
     <CSound id="acAttackWave_Alarak_199" parent="ACVO_Priority" Portrait="AlarakEx2Portrait" Subtitle="acAttackWave" Speaker="Alarak" Actor="AlarakEx2Portrait" Line="00199"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
     <CSound id="acAttackWave_Alarak_200" parent="ACVO_Priority" Portrait="AlarakEx2Portrait" Subtitle="acAttackWave" Speaker="Alarak" Actor="AlarakEx2Portrait" Line="00200"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
     <CSound id="acAttackWave_Alarak_201" parent="ACVO_Priority" Portrait="AlarakEx2Portrait" Subtitle="acAttackWave" Speaker="Alarak" Actor="AlarakEx2Portrait" Line="00201"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CValidatorCombine id="isProtossInteractWorker">
+        <CombineArray value="IsZeratulProbe"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="isTerranInteractWorker">
+        <CombineArray index="1" value="IsTychusSCV"/>
+        <CombineArray index="2" value="isHHSCV"/>
+        <CombineArray index="3" value="isGenetronACR"/>
+        <CombineArray index="4" value="IsSalvager"/>
+        <CombineArray index="5" value="IsMiningDrone"/>
+        <CombineArray index="6" value="IsDroneStetmann"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="isZergInteractWorker">
+        <CombineArray value="IsSISCV"/>
+    </CValidatorCombine>
+</Catalog>

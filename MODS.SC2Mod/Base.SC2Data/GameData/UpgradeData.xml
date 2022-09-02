@@ -2185,6 +2185,7 @@
 </CUpgrade>
 <CUpgrade id="SuppliesMade">
   <Icon value="Assets\Textures\btn-building-hornerhan-supplydepot.dds"/>
+  <MaxLevel value="40"/>
 </CUpgrade>
 <CUpgrade id="TerranBuildingArmorRaynor">
   <Flags index="UpgradeCheat" value="0"/>
@@ -2395,7 +2396,7 @@
   <EditorCategories value="Race:Neutral"/>
 </CUpgrade>
 <CUpgrade id="SuppliesMax">
-  <LeaderAlias value="MaxSupply25"/>
+  <MaxLevel value="40"/>
   <Icon value="Assets\Textures\btn-building-hornerhan-supplydepot.dds"/>
 </CUpgrade>
 <CUpgrade id="ProtossMultiplayerTech">
@@ -23399,6 +23400,14 @@
   <AffectedUnitArray value="CSVDeployed"/>
   <LeaderAlias value="CSVSupplyLineManagement"/>
 </CUpgrade>
+<CUpgrade id="KatherineHalseyMedkit">
+  <DataCollection value="InfantryMedkit"/>
+  <EditorCategories value="Race:UPL"/>
+</CUpgrade>
+<CUpgrade id="WilliamGravesMedkit">
+  <DataCollection value="InfantryMedkit"/>
+  <EditorCategories value="Race:UPL"/>
+</CUpgrade>
 <CUpgrade id="XayidCommander">
   <Flags index="UpgradeCheat" value="0"/>
   <EditorCategories value="Race:Xayid"/>
@@ -23571,10 +23580,7 @@
   <EditorCategories value="Race:UED,UpgradeType:Talents"/>
   <MaxLevel value="30"/>
 </CUpgrade>
-<CUpgrade id="KeironCommander">
-  <Flags index="UpgradeCheat" value="0"/>
-  <EditorCategories value="Race:Keiron"/>
-</CUpgrade>
+<CUpgrade id="KeironCommander"/>
 <CUpgrade id="CommanderPrestigeKeironBio" parent="CommanderPrestige">
   <EditorCategories value="Race:Keiron"/>
 </CUpgrade>
@@ -23585,22 +23591,15 @@
   <EditorCategories value="Race:Keiron"/>
 </CUpgrade>
 <CUpgrade id="UpgradeKeironLevel01">
-  <EditorCategories value="Race:Keiron,UpgradeType:Talents"/>
   <EffectArray Operation="Set" Reference="Unit,Aegis,CostResource[Vespene]" Value="0"/>
   <EffectArray Operation="Set" Reference="Unit,Aegis,CostResource[Minerals]" Value="0"/>
   <EffectArray Operation="Set" Reference="Unit,AegisShielded,CostResource[Vespene]" Value="0"/>
   <EffectArray Operation="Set" Reference="Unit,AegisShielded,CostResource[Minerals]" Value="0"/>
   <EffectArray Operation="Set" Reference="Abil,KeironCitadelAegisTrain,InfoArray[Train1].Button.Flags[UseDefaultButton]" Value="0"/>
-  <LeaderAlias value=""/>
 </CUpgrade>
-<CUpgrade id="UpgradeKeironLevel02">
-  <EditorCategories value="Race:Keiron,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeKeironLevel03">
-  <EditorCategories value="Race:Keiron,UpgradeType:Talents"/>
-</CUpgrade>
+<CUpgrade id="UpgradeKeironLevel02"/>
+<CUpgrade id="UpgradeKeironLevel03"/>
 <CUpgrade id="UpgradeKeironLevel04">
-  <EditorCategories value="Race:Keiron,UpgradeType:Talents"/>
   <EffectArray Operation="Set" Reference="Unit,Pariah,LifeStart" Value="90"/>
   <EffectArray Operation="Set" Reference="Unit,Pariah,LifeMax" Value="90"/>
   <EffectArray Operation="Set" Reference="Unit,Pariah,ShieldsMax" Value="70"/>
@@ -23613,50 +23612,19 @@
   <EffectArray Operation="Set" Reference="Unit,Volt,ShieldsStart" Value="40"/>
   <EffectArray Operation="Set" Reference="Actor,Volt,Scale" Value="1.200000"/>
 </CUpgrade>
-<CUpgrade id="UpgradeKeironLevel05">
-  <EditorCategories value="Race:Keiron,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeKeironLevel06">
-  <EditorCategories value="Race:Keiron,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeKeironLevel07">
-  <EditorCategories value="Race:Keiron,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeKeironLevel08">
-  <EditorCategories value="Race:Keiron,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeKeironLevel09">
-  <EditorCategories value="Race:Keiron,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeKeironLevel10">
-  <EditorCategories value="Race:Keiron,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeKeironLevel11">
-  <EditorCategories value="Race:Keiron,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeKeironLevel12">
-  <EditorCategories value="Race:Keiron,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeKeironLevel13">
-  <EditorCategories value="Race:Keiron,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeKeironLevel14">
-  <EditorCategories value="Race:Keiron,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeKeironLevel15">
-  <EditorCategories value="Race:Keiron,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeKeironMastery1">
-  <Flags index="UpgradeCheat" value="0"/>
-  <EditorCategories value="Race:Keiron,UpgradeType:Talents"/>
-  <LeaderAlias value=""/>
-  <MaxLevel value="30"/>
-</CUpgrade>
+<CUpgrade id="UpgradeKeironLevel05"/>
+<CUpgrade id="UpgradeKeironLevel06"/>
+<CUpgrade id="UpgradeKeironLevel07"/>
+<CUpgrade id="UpgradeKeironLevel08"/>
+<CUpgrade id="UpgradeKeironLevel09"/>
+<CUpgrade id="UpgradeKeironLevel10"/>
+<CUpgrade id="UpgradeKeironLevel11"/>
+<CUpgrade id="UpgradeKeironLevel12"/>
+<CUpgrade id="UpgradeKeironLevel13"/>
+<CUpgrade id="UpgradeKeironLevel14"/>
+<CUpgrade id="UpgradeKeironLevel15"/>
+<CUpgrade id="UpgradeKeironMastery1"/>
 <CUpgrade id="UpgradeKeironMastery2">
-  <Flags index="UpgradeCheat" value="0"/>
-  <EditorCategories value="Race:Keiron,UpgradeType:Talents"/>
-  <LeaderAlias value=""/>
-  <MaxLevel value="30"/>
   <EffectArray Operation="Subtract" Reference="Abil,KeironCitadelMaterialize,InfoArray[Train1].Time" Value="2.500000"/>
   <EffectArray Operation="Subtract" Reference="Abil,KeironCitadelMaterialize,InfoArray[Train2].Time" Value="2.500000"/>
   <EffectArray Operation="Subtract" Reference="Abil,KeironCitadelMaterialize,InfoArray[Train3].Time" Value="2.500000"/>
@@ -23697,30 +23665,10 @@
   <EffectArray Operation="Subtract" Reference="Abil,EdificeResearch,InfoArray[Research1].Time" Value="2.000000"/>
   <EffectArray Operation="Subtract" Reference="Abil,EdificeResearch,InfoArray[Research1].Resource[Minerals]" Value="2"/>
 </CUpgrade>
-<CUpgrade id="UpgradeKeironMastery3">
-  <Flags index="UpgradeCheat" value="0"/>
-  <EditorCategories value="Race:Keiron,UpgradeType:Talents"/>
-  <LeaderAlias value=""/>
-  <MaxLevel value="30"/>
-</CUpgrade>
-<CUpgrade id="UpgradeKeironMastery4">
-  <Flags index="UpgradeCheat" value="0"/>
-  <EditorCategories value="Race:Keiron,UpgradeType:Talents"/>
-  <LeaderAlias value=""/>
-  <MaxLevel value="30"/>
-</CUpgrade>
-<CUpgrade id="UpgradeKeironMastery5">
-  <Flags index="UpgradeCheat" value="0"/>
-  <EditorCategories value="Race:Keiron,UpgradeType:Talents"/>
-  <LeaderAlias value=""/>
-  <MaxLevel value="30"/>
-</CUpgrade>
-<CUpgrade id="UpgradeKeironMastery6">
-  <Flags index="UpgradeCheat" value="0"/>
-  <EditorCategories value="Race:Keiron,UpgradeType:Talents"/>
-  <LeaderAlias value=""/>
-  <MaxLevel value="30"/>
-</CUpgrade>
+<CUpgrade id="UpgradeKeironMastery3"/>
+<CUpgrade id="UpgradeKeironMastery4"/>
+<CUpgrade id="UpgradeKeironMastery5"/>
+<CUpgrade id="UpgradeKeironMastery6"/>
 <CUpgrade id="NetworkCommander">
   <Flags index="UpgradeCheat" value="0"/>
   <EditorCategories value="Race:NHbr"/>

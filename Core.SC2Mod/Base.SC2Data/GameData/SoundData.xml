@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
 
-    <CSound id="IzshaCommander_LockFirst" parent="ACVO_Pings">
-        <AssetArray TemplateParam="IzshaCommander_LockFirst00"/><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
-    <CSound id="ValerianCommander_LockFirst" parent="ACVO_Pings">
-        <AssetArray TemplateParam="ValerianCommander_LockFirst00"/><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
+<!--    <CSound id="IzshaCommander_LockFirst" parent="ACVO_Pings"><AssetArray TemplateParam="IzshaCommander_LockFirst00"/><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>-->
+<!--    <CSound id="ValerianCommander_LockFirst" parent="ACVO_Pings"><AssetArray TemplateParam="ValerianCommander_LockFirst00"/><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>-->
 
     <CSound id="acAttackWave__263" parent="ACVO_Priority" Subtitle="acAttackWave" Line="00263"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
     <CSound id="acAttackWave__264" parent="ACVO_Priority" Subtitle="acAttackWave" Line="00264"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
@@ -754,21 +752,6 @@
     <CSound id="acObj_ZergQueen_903" parent="ACVO_Priority" Portrait="QueenPortrait" Subtitle="acObj" Speaker="ZergQueen" Actor="" Line="00903"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
     <CSound id="acObj_Izsha_917" parent="ACVO_Priority" Portrait="ZergAdjutantPortrait" Subtitle="acObj" Speaker="Izsha" Actor="ZergAdjutantPortrait" Line="00917"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
     <CSound id="acObj_Izsha_918" parent="ACVO_Priority" Portrait="ZergAdjutantPortrait" Subtitle="acObj" Speaker="Izsha" Actor="ZergAdjutantPortrait" Line="00918"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
-    <CSound id="acObj_Aberration_1853" parent="ACVO_Priority" Portrait="" Subtitle="acObj" Speaker="Aberration" Line="01853"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
-    <CSound id="acObj_CrazedDriver_1854" parent="ACVO_Priority" Subtitle="acObj" Speaker="CrazedDriver" Line="01854"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
-    <CSound id="acObj_Scientist1_2234" parent="ACVO_Priority" Portrait="Scientist1Portrait" Subtitle="acObj" Speaker="Scientist1" Line="02234">
-        <Flags index="HideSubtitle" value="1"/><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
-    <CSound id="acObj_Scientist2_2235" parent="ACVO_Priority" Portrait="ScientistFemalePortrait" Subtitle="acObj" Speaker="Scientist2" Line="02235">
-        <Flags index="HideSubtitle" value="1"/><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
-    <CSound id="acObj_Scientist2_2236" parent="ACVO_Priority" Portrait="ScientistFemalePortrait" Subtitle="acObj" Speaker="Scientist2" Line="02236">
-        <Flags index="HideSubtitle" value="1"/><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
-    <CSound id="acObj_Scientist1_2237" parent="ACVO_Priority" Portrait="Scientist1Portrait" Subtitle="acObj" Speaker="Scientist1" Line="02237">
-        <Flags index="HideSubtitle" value="1"/><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
-    <CSound id="acObj_Hybrid01_2192" parent="ACVO_Priority" Portrait="HybridZergPortrait" Subtitle="acObj" Speaker="Hybrid01" Line="02192">
-        <Flags index="NeedsUpdate" value="1"/>
-    </CSound>
-    <CSound id="acObj_Hybrid01_2193" parent="ACVO_Priority" Portrait="HybridZergPortrait" Subtitle="acObj" Speaker="Hybrid01" Line="02193"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
-    <CSound id="acObj_Hybrid01_2194" parent="ACVO_Priority" Portrait="HybridZergPortrait" Subtitle="acObj" Speaker="Hybrid01" Line="02194"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
 
 
 
@@ -1101,14 +1084,24 @@
     <CSound id="acObj_Zerg_ZergQueen_053" parent="ACVO_Priority" Portrait="QueenPortrait" Subtitle="acObj_Zerg" Speaker="ZergQueen" Actor="" Line="00053"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
 
 
+<!--    <CSound                id="e_cmdNotEnoughFood_ZergM"                 parent="e_cmdNotEnoughFood_Zerg"      />-->
+<!--    <CSound          id="e_cmdFoodUsageImpossible_ZergM"           parent="e_cmdFoodUsageImpossible_Zerg"      />-->
+<!--    <CSound                id="e_cmdNotEnoughFood_TerrI"                 parent="e_cmdNotEnoughFood_Zerg"      />-->
+<!--    <CSound          id="e_cmdFoodUsageImpossible_TerrI"           parent="e_cmdFoodUsageImpossible_Zerg"      />-->
+
+<!--    <CSound         id="Alert_TerranAddOnComplete_ZergM"          parent="Alert_TerranAddOnComplete_Zerg"      />-->
+<!--    <CSound     id="e_cmdCantBuildLocationInvalid_ZergM"      parent="e_cmdCantBuildLocationInvalid_Zerg"      />-->
+<!--    <CSound           id="e_cmdCouldntReachTarget_ZergM"            parent="e_cmdCouldntReachTarget_Zerg"      />-->
+<!--    <CSound id="e_cmdCantBuildTooCloseToResources_ZergM"  parent="e_cmdCantBuildTooCloseToResources_Zerg"      />-->
+<!--    <CSound                  id="Alert_GamePaused_ZergM"                   parent="Alert_GamePaused_Zerg"      />-->
+<!--    <CSound                 id="Alert_GameResumed_ZergM"                  parent="Alert_GameResumed_Zerg"      />-->
+<!--    <CSound      id="e_cmdCantLandLocationInvalid_ZergM"       parent="e_cmdCantLandLocationInvalid_Zerg"      />-->
+<!--    <CSound              id="e_cmdCantBuildOnThat_ZergM"               parent="e_cmdCantBuildOnThat_Zerg"      />-->
+<!--    <CSound             id="e_cmdNotEnoughVespene_ZergM"              parent="e_cmdNotEnoughVespene_Zerg"      />-->
+<!--    <CSound            id="e_cmdNotEnoughMinerals_ZergM"             parent="e_cmdNotEnoughMinerals_Zerg"      />-->
+<!--    <CSound              id="e_cmdNotEnoughEnergy_ZergM"               parent="e_cmdNotEnoughEnergy_Zerg"      />-->
+
+
+
+
 </Catalog>
-
-
-
-
-
-
-
-
-
-
