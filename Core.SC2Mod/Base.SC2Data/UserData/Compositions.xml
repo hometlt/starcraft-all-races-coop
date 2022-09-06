@@ -1267,9 +1267,6 @@
                 <Field Id="X_Race"/>
             </GameLink>
             <Int Int="1">
-                <Field Id="AllowedOnMap"/>
-            </Int>
-            <Int Int="1">
                 <Field Id="WavesTier" Index="1"/>
             </Int>
             <Int Int="2">
@@ -1308,14 +1305,14 @@
             <Int Int="5">
                 <Field Id="WavesTier" Index="8"/>
             </Int>
-            <Text Text="UserData/Compositions/Terran-Combined_Subtitle">
-                <Field Id="Subtitle"/>
-            </Text>
             <Text Text="UserData/Compositions/Terran-Combined_Description">
                 <Field Id="Description"/>
             </Text>
             <Text Text="UserData/Compositions/Terran-Combined_Title">
                 <Field Id="Title"/>
+            </Text>
+            <Text Text="UserData/Compositions/Terran-Combined_Subtitle">
+                <Field Id="Subtitle"/>
             </Text>
             <Unit Unit="Marine">
                 <Field Id="WavesUnits"/>
@@ -1376,9 +1373,6 @@
             <GameLink GameLink="Zerg">
                 <Field Id="X_Race"/>
             </GameLink>
-            <Int Int="1">
-                <Field Id="AllowedOnMap"/>
-            </Int>
             <Int Int="2">
                 <Field Id="WavesTier" Index="2"/>
             </Int>
@@ -1470,87 +1464,10 @@
                 <Field Id="Faction"/>
             </User>
         </Instances>
-        <Instances Id="UPL-Combined">
-            <Int Int="1">
-                <Field Id="AllowedOnMap"/>
-            </Int>
-            <Int Int="1">
-                <Field Id="WavesTier" Index="1"/>
-            </Int>
-            <Int Int="2">
-                <Field Id="WavesTier" Index="2"/>
-            </Int>
-            <Int Int="2">
-                <Field Id="WavesTier" Index="3"/>
-            </Int>
-            <Int Int="4">
-                <Field Id="WavesTier" Index="4"/>
-            </Int>
-            <Int Int="3">
-                <Field Id="WavesTier" Index="5"/>
-            </Int>
-            <Int Int="3">
-                <Field Id="WavesTier" Index="6"/>
-            </Int>
-            <Int Int="5">
-                <Field Id="WavesTier" Index="7"/>
-            </Int>
-            <Int Int="5">
-                <Field Id="WavesTier" Index="8"/>
-            </Int>
-            <Text Text="UserData/Compositions/UPL-Combined_Description">
-                <Field Id="Description"/>
-            </Text>
-            <Text Text="UserData/Compositions/UPL-Combined_Title">
-                <Field Id="Title"/>
-            </Text>
-            <Unit Unit="InfantryRifle">
-                <Field Id="WavesUnits"/>
-            </Unit>
-            <Unit Unit="InfantryFlamethrower">
-                <Field Id="WavesUnits" Index="1"/>
-            </Unit>
-            <Unit Unit="InfantryOfficer">
-                <Field Id="WavesUnits" Index="2"/>
-            </Unit>
-            <Unit Unit="RoutheTank">
-                <Field Id="WavesUnits" Index="3"/>
-            </Unit>
-            <Unit Unit="Z1">
-                <Field Id="WavesUnits" Index="4"/>
-            </Unit>
-            <Unit Unit="A6">
-                <Field Id="WavesUnits" Index="5"/>
-            </Unit>
-            <Unit Unit="TR17">
-                <Field Id="WavesUnits" Index="6"/>
-            </Unit>
-            <Unit Unit="Osprey">
-                <Field Id="WavesUnits" Index="7"/>
-            </Unit>
-            <Unit Unit="RaptorJet">
-                <Field Id="WavesUnits" Index="8"/>
-            </Unit>
-            <User Type="Commanders" Instance="UPL">
-                <Field Id="Commander"/>
-            </User>
-            <User Type="Factions" Instance="UPL">
-                <Field Id="Faction"/>
-            </User>
-            <User Type="Prestiges" Instance="[Default]">
-                <Field Id="Prestige"/>
-            </User>
-            <User Type="CoopAIUnitCategories" Instance="UPL">
-                <Field Id="unitCategories"/>
-            </User>
-        </Instances>
         <Instances Id="Protoss-Combined">
             <GameLink GameLink="Prot">
                 <Field Id="X_Race"/>
             </GameLink>
-            <Int Int="1">
-                <Field Id="AllowedOnMap"/>
-            </Int>
             <Int Int="2">
                 <Field Id="WavesTier" Index="2"/>
             </Int>
@@ -1742,7 +1659,7 @@
             <Unit Unit="BattlecruiserMengsk">
                 <Field Id="WavesUnits" Index="10"/>
             </Unit>
-            <User Type="Commanders" Instance="TerranMengsk">
+            <User Type="Commanders" Instance="[Default]">
                 <Field Id="Commander"/>
             </User>
             <User Type="CoopAIUnitCategories" Instance="Dominion">
@@ -1961,7 +1878,7 @@
             <User Type="Factions" Instance="CovertOps">
                 <Field Id="Faction"/>
             </User>
-            <User Type="Commanders" Instance="TerranNova">
+            <User Type="Commanders" Instance="[Default]">
                 <Field Id="Commander"/>
             </User>
             <User Type="CoopAIUnitCategories" Instance="CovertOps">
@@ -3098,6 +3015,83 @@
                 <Field Id="Faction"/>
             </User>
             <User Type="CoopAIUnitCategories" Instance="Network">
+                <Field Id="unitCategories"/>
+            </User>
+        </Instances>
+        <Instances Id="UPL-Combined">
+            <Int Int="1">
+                <Field Id="AllowedOnMap"/>
+            </Int>
+            <Int Int="1">
+                <Field Id="WavesTier" Index="1"/>
+            </Int>
+            <Int Int="2">
+                <Field Id="WavesTier" Index="2"/>
+            </Int>
+            <Int Int="2">
+                <Field Id="WavesTier" Index="3"/>
+            </Int>
+            <Int Int="4">
+                <Field Id="WavesTier" Index="4"/>
+            </Int>
+            <Int Int="3">
+                <Field Id="WavesTier" Index="5"/>
+            </Int>
+            <Int Int="3">
+                <Field Id="WavesTier" Index="6"/>
+            </Int>
+            <Int Int="5">
+                <Field Id="WavesTier" Index="7"/>
+            </Int>
+            <Int Int="5">
+                <Field Id="WavesTier" Index="8"/>
+            </Int>
+            <Text Text="UserData/Compositions/UPL-Combined_Description">
+                <Field Id="Description"/>
+            </Text>
+            <Text Text="UserData/Compositions/UPL-Combined_Title">
+                <Field Id="Title"/>
+            </Text>
+            <Text Text="UserData/Compositions/UPL-Combined_Subtitle">
+                <Field Id="Subtitle"/>
+            </Text>
+            <Unit Unit="InfantryRifle">
+                <Field Id="WavesUnits"/>
+            </Unit>
+            <Unit Unit="InfantryFlamethrower">
+                <Field Id="WavesUnits" Index="1"/>
+            </Unit>
+            <Unit Unit="InfantryOfficer">
+                <Field Id="WavesUnits" Index="2"/>
+            </Unit>
+            <Unit Unit="RoutheTank">
+                <Field Id="WavesUnits" Index="3"/>
+            </Unit>
+            <Unit Unit="Z1">
+                <Field Id="WavesUnits" Index="4"/>
+            </Unit>
+            <Unit Unit="A6">
+                <Field Id="WavesUnits" Index="5"/>
+            </Unit>
+            <Unit Unit="TR17">
+                <Field Id="WavesUnits" Index="6"/>
+            </Unit>
+            <Unit Unit="Osprey">
+                <Field Id="WavesUnits" Index="7"/>
+            </Unit>
+            <Unit Unit="RaptorJet">
+                <Field Id="WavesUnits" Index="8"/>
+            </Unit>
+            <User Type="Commanders" Instance="UPL">
+                <Field Id="Commander"/>
+            </User>
+            <User Type="Factions" Instance="UPL">
+                <Field Id="Faction"/>
+            </User>
+            <User Type="Prestiges" Instance="[Default]">
+                <Field Id="Prestige"/>
+            </User>
+            <User Type="CoopAIUnitCategories" Instance="UPL">
                 <Field Id="unitCategories"/>
             </User>
         </Instances>

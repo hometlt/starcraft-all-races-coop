@@ -10,4 +10,5 @@
     <Catalog path="UserData/Mastery.xml"/>
     <Catalog path="UserData/Waves.xml"/>
     <Catalog path="UserData/Compositions.xml"/>
+    <Catalog path="UserData/Factions.xml"/>
 </Includes>

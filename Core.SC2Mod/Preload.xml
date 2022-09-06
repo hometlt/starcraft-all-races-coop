@@ -62,10 +62,6 @@
 <Abil id="TychusSpectreUltrasonicPulse"/>
 <Abil id="TychusOdinBarrage"/>
 <Abil id="TychusReaperBomb"/>
-<Achievement id="DifficultyRecruit1"/>
-<Achievement id="DifficultySoldier1"/>
-<Achievement id="DifficultyVeteran1"/>
-<Achievement id="DifficultyCommander1"/>
 <Achievement id="CommanderFenixAllChampions"/>
 <Achievement id="CommanderFenixCarrier"/>
 <Achievement id="CommanderDehakaLevelUp"/>
@@ -406,6 +402,7 @@
 <Sound id="Changeling_Disguise"/>
 <Sound id="Medivac_Unload" Variations="0"/>
 <Sound id="UI_MissionComplete" Variations="3"/>
+<Sound id="UI_MissionFailed" Variations="2"/>
 <Sound id="Music_MuleParty"/>
 <Sound id="ChaosStudio"/>
 <Sound id="AC_CM_UI_Select"/>

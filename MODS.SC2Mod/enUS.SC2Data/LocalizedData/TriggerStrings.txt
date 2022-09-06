@@ -708,3 +708,6 @@ Variable/Name/lib_UPLR_F35336CF=KhalaPerceptionTimeScale
 Variable/Name/lib_UPLR_F67B8E22=caster
 Variable/Name/lib_UPLR_F94A3A08=player
 Variable/Name/lib_UPLR_FC662ECE=player
+﻿Trigger/Name/03202A07=Melee Initialization
+Variable/Name/CEA2CE5A=group
+﻿Library/Name/1FF51CC9=ALL-RACES

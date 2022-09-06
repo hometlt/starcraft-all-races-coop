@@ -1713,24 +1713,26 @@ void libCOMM_gf_AF_TopBarNotificationsInitialization (int lp_player) {
 
     // Implementation
     Wait(1.0, c_timeGame);
+    if ((libCOMI_gv_cU_GPCmdPanel[lp_player] != c_invalidDialogControlId)) {
+        lv_vButton = 0;
+        for ( ; ( (auto99B9520A_ai >= 0 && lv_vButton <= auto99B9520A_ae) || (auto99B9520A_ai < 0 && lv_vButton >= auto99B9520A_ae) ) ; lv_vButton += auto99B9520A_ai ) {
+            DialogControlHookup(libCOMI_gv_cU_GPCmdPanel[lp_player], c_triggerControlTypeButton, "CommandButton0" + IntToString(lv_vButton));
+            libCOMM_gv_aF_TopbarButton[lv_vButton][lp_player] = DialogControlLastCreated();
+        }
+    }
+
+    if ((libCOMI_gf_ActiveCommanderForPlayer3(lp_player) == "Nova")) {
+        DialogControlHookupStandard(c_triggerControlTypeButton, "UIContainer/ConsoleUIContainer/CommandPanel/CommandButton13");
+        libCOMM_gv_aF_TopbarButton[4][lp_player] = DialogControlLastCreated();
+    }
+
     if (((libCOMI_gf_ActiveCommanderForPlayer3(lp_player) == "Zagara") || (libCOMI_gf_ActiveCommanderForPlayer3(lp_player) == "Kerrigan"))) {
         DialogControlHookupStandard(c_triggerControlTypeButton, "UIContainer/ConsoleUIContainer/CommandPanel/CommandButton12");
         libCOMM_gv_aF_TopbarButton[0][lp_player] = DialogControlLastCreated();
         DialogControlHookupStandard(c_triggerControlTypeButton, "UIContainer/ConsoleUIContainer/CommandPanel/CommandButton13");
         libCOMM_gv_aF_TopbarButton[1][lp_player] = DialogControlLastCreated();
     }
-    else {
-        lv_vButton = 0;
-        for ( ; ( (auto99B9520A_ai >= 0 && lv_vButton <= auto99B9520A_ae) || (auto99B9520A_ai < 0 && lv_vButton >= auto99B9520A_ae) ) ; lv_vButton += auto99B9520A_ai ) {
-            DialogControlHookup(libCOMI_gv_cU_GPCmdPanel[lp_player], c_triggerControlTypeButton, "CommandButton0" + IntToString(lv_vButton));
-            libCOMM_gv_aF_TopbarButton[lv_vButton][lp_player] = DialogControlLastCreated();
-        }
-        if ((libCOMI_gf_ActiveCommanderForPlayer3(lp_player) == "Nova")) {
-            DialogControlHookupStandard(c_triggerControlTypeButton, "UIContainer/ConsoleUIContainer/CommandPanel/CommandButton13");
-            libCOMM_gv_aF_TopbarButton[4][lp_player] = DialogControlLastCreated();
-        }
 
-    }
 }
 
 void libCOMM_gf_CM_SoATargetingModeEnter (int lp_player) {
@@ -6198,7 +6200,7 @@ void libCOMM_gf_CM_Zeratul_GiveProphecyHint (int lp_hintLevel) {
         lv_r1 = UnitGetCustomValue(libCOMM_gv_cM_ZeratulProphecyHintUnit, 0);
     }
     else if (true) {
-        lv_p1 = libCOMI_gf_GetPlayerStartPosition(libCOMM_gf_CM_ZeratulProphecyEventGetPlayer());
+        lv_p1 = libCOMI_gf_GetPlayerBasePosition(libCOMM_gf_CM_ZeratulProphecyEventGetPlayer());
         lv_r1 = 150.0;
     }
     lv_p2 = UnitGetPosition(libCOMM_gv_cM_ZeratulProphecyArtifact);
@@ -12374,14 +12376,19 @@ bool libCOMM_gt_CM_Dehaka_PrestigeClone_Func (bool testConds, bool runActions) {
         return true;
     }
 
+    if ((lv_rallyPoint != null)) {
+        lv_order = OrderTargetingPoint(AbilityCommand("move", 0), lv_rallyPoint);
+    }
+
     if ((UnitIsValid(lv_rallyUnit) == true)) {
         lv_order = OrderTargetingUnit(AbilityCommand("move", 0), lv_rallyUnit);
     }
-    else {
-        lv_order = OrderTargetingPoint(AbilityCommand("move", 0), lv_rallyPoint);
+
+    if ((lv_order != null)) {
+        OrderSetFlag(lv_order, c_cmdSmartRally, true);
+        UnitIssueOrder(lv_dehakaclone, lv_order, c_orderQueueReplace);
     }
-    OrderSetFlag(lv_order, c_cmdSmartRally, true);
-    UnitIssueOrder(lv_dehakaclone, lv_order, c_orderQueueReplace);
+
     UnitBehaviorAdd(lv_dehakaclone, libCOMM_gv_cM_DehakaVeterencyBehavior[lv_dehakaplayer], lv_dehakaclone, 1);
     if ((TechTreeUpgradeCount(lv_dehakaplayer, "MasteryDehakaAttackSpeed", c_techCountCompleteOnly) >= 1)) {
         UnitBehaviorAdd(lv_dehakaclone, "DehakaAttEssenceMastery", lv_dehakaclone, 1);
@@ -28796,7 +28803,7 @@ bool libCOMM_gt_CM_Zeratul_AutomatedAssimilatorAutoBuild_Func (bool testConds, b
         return true;
     }
 
-    auto960A0F35_g = UnitGroupSearch(null, 0, UnitGetPosition(lv_nexus), 10.0, UnitFilter((1 << c_targetFilterRawResource), 0, (1 << c_targetFilterAlly) | (1 << c_targetFilterNeutral) | (1 << c_targetFilterEnemy) | (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+    auto960A0F35_g = UnitGroupSearch(null, 0, UnitGetPosition(lv_nexus), 14.0, UnitFilter((1 << c_targetFilterRawResource), 0, (1 << c_targetFilterAlly) | (1 << c_targetFilterNeutral) | (1 << c_targetFilterEnemy) | (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
     auto960A0F35_u = UnitGroupCount(auto960A0F35_g, c_unitCountAll);
     for (;; auto960A0F35_u -= 1) {
         lv_itGeyser = UnitGroupUnitFromEnd(auto960A0F35_g, auto960A0F35_u);
@@ -29407,16 +29414,14 @@ void libCOMM_gt_CM_Zeratul_RallySetToZeratul_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: Starting Creep And Larva
+// Trigger: Starting Larva
 //--------------------------------------------------------------------------------------------------
-bool libCOMM_gt_StartingCreepAndLarva_Func (bool testConds, bool runActions) {
+bool libCOMM_gt_StartingLarva_Func (bool testConds, bool runActions) {
     // Variable Declarations
-    int lv_player;
     unit lv_unit;
 
     // Automatic Variable Declarations
     // Variable Initialization
-    lv_player = EventPlayer();
     lv_unit = EventPlayerEffectUsedUnit(c_effectUnitCaster);
 
     // Actions
@@ -29424,22 +29429,16 @@ bool libCOMM_gt_StartingCreepAndLarva_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    CreepModify(UnitGetPosition(lv_unit), 11.0, true, false);
-    if ((UnitGetType(lv_unit) != "SICommandCenter")) {
-        UnitBehaviorAdd(lv_unit, "SpawnLarvaInstant", lv_unit, 3);
-    }
-
+    UnitBehaviorAdd(lv_unit, "SpawnLarvaInstant", lv_unit, 3);
     return true;
 }
 
 //--------------------------------------------------------------------------------------------------
-void libCOMM_gt_StartingCreepAndLarva_Init () {
-    libCOMM_gt_StartingCreepAndLarva = TriggerCreate("libCOMM_gt_StartingCreepAndLarva_Func");
-    TriggerEnable(libCOMM_gt_StartingCreepAndLarva, false);
-    TriggerAddEventPlayerEffectUsed(libCOMM_gt_StartingCreepAndLarva, c_playerAny, "HatcheryBirthSet");
-    TriggerAddEventPlayerEffectUsed(libCOMM_gt_StartingCreepAndLarva, c_playerAny, "HatcheryCreateSet");
-    TriggerAddEventPlayerEffectUsed(libCOMM_gt_StartingCreepAndLarva, c_playerAny, "SICommandCenterCreateSet");
-    TriggerAddEventPlayerEffectUsed(libCOMM_gt_StartingCreepAndLarva, c_playerAny, "SICommandCenterBirthSet");
+void libCOMM_gt_StartingLarva_Init () {
+    libCOMM_gt_StartingLarva = TriggerCreate("libCOMM_gt_StartingLarva_Func");
+    TriggerEnable(libCOMM_gt_StartingLarva, false);
+    TriggerAddEventPlayerEffectUsed(libCOMM_gt_StartingLarva, c_playerAny, "HatcheryBirthSet");
+    TriggerAddEventPlayerEffectUsed(libCOMM_gt_StartingLarva, c_playerAny, "HatcheryCreateSet");
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -29452,7 +29451,7 @@ bool libCOMM_gt_StartingCreepAndLarva1_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    TriggerEnable(libCOMM_gt_StartingCreepAndLarva, true);
+    TriggerEnable(libCOMM_gt_StartingLarva, true);
     TriggerEnable(TriggerGetCurrent(), true);
     return true;
 }
@@ -29473,7 +29472,7 @@ bool libCOMM_gt_StartingCreepAndLarva2_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    TriggerEnable(libCOMM_gt_StartingCreepAndLarva, false);
+    TriggerEnable(libCOMM_gt_StartingLarva, false);
     TriggerEnable(TriggerGetCurrent(), false);
     return true;
 }
@@ -29502,12 +29501,6 @@ bool libCOMM_gt_InitializeUED_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    TriggerExecute(libUEDC_gt_InitializeUEDRace, true, false);
     return true;
 }
 
@@ -30350,7 +30343,7 @@ void libCOMM_InitTriggers () {
     libCOMM_gt_CM_ZeratulAvatarMinimapIcon_Init();
     libCOMM_gt_CM_Zeratul_StasisDuration_Init();
     libCOMM_gt_CM_Zeratul_RallySetToZeratul_Init();
-    libCOMM_gt_StartingCreepAndLarva_Init();
+    libCOMM_gt_StartingLarva_Init();
     libCOMM_gt_StartingCreepAndLarva1_Init();
     libCOMM_gt_StartingCreepAndLarva2_Init();
     libCOMM_gt_InitializeUED_Init();

@@ -336,6 +336,7 @@
 </CRace>
 <CRace id="ProtL">
   <Icon value="Assets\Factions\FistOfUlrezajLogo.dds"/>
+  <Icon value="Assets\Textures\Talon_Decal_(First-Assault-Armada).dds"/>
 </CRace>
 <CRace id="TerrM">
   <AttributeId value="Mara"/>

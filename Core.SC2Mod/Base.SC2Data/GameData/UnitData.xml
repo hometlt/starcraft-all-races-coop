@@ -1,7 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <!-- 0-15 are used for land based units, any bit used will cause the unit to walk on the ground -->
+    <!-- 16-31 are used for air based units -->
+    <CUnit default="1">
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Melee"/>
+    </CUnit>
+    <CUnit id="ArtanisVoid">
+        <FlagArray index="ArmySelect" value="1"/>
+    </CUnit>
+    <CUnit id="BansheeAirstrikePlaceholder">
+        <Race value="Terr"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
+    </CUnit>
+    <CUnit id="CODXelNagaConstructChaseBeamUnit">
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
+    </CUnit>
+    <CUnit id="CarrierHyperjumping">
+        <Race value="Prot"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
+    </CUnit>
+    <CUnit id="CommanderPrestigeZeratulTornadoesTornado">
+        <Race value="ProtI"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Coop"/>
+    </CUnit>
+    <CUnit id="Dummy">
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
+    </CUnit>
+    <CUnit id="DummyArmored">
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
+    </CUnit>
+    <CUnit id="DummyLight">
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
+    </CUnit>
+    <CUnit id="DummyStructure">
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
+    </CUnit>
+    <CUnit id="DummyUnit">
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
+    </CUnit>
     <CUnit id="ExtractorStetmann">
         <BehaviorArray index="0" Link="HarvestableVespeneGeyserGas"/>
+    </CUnit>
+    <CUnit id="GWDummy">
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="Gateway">
         <CardLayouts index="0">
@@ -11,6 +52,73 @@
             <LayoutButtons index="16" Face="WarpInTalonPredator" AbilCmd="GatewayTrainTalon,255"/>
             <LayoutButtons index="17" Face="WarpInCyberHunter" Type="Undefined" AbilCmd="GatewayTrainTalon,255"/>
         </CardLayouts>
+    </CUnit>
+    <CUnit id="Hatchery">
+        <BehaviorArray index="3" Link="makeCreep8x6Enhanced"/>
+        <BehaviorArray index="4" Link="GameTime5Seconds"/>
+        <BehaviorArray index="5" Link="HatcheryLarvaDeath"/>
+        <BehaviorArray index="6" Link="ChronoBoostTarget"/>
+        <BehaviorArray index="7" Link="HatcheryDoubleQueue"/>
+        <BehaviorArray index="8" removed="1"/>
+    </CUnit>
+    <CUnit id="HornerAirFleetStrafer">
+        <Race value="TerrM"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Coop"/>
+    </CUnit>
+    <CUnit id="HornerAirFleetTargeter">
+        <Race value="TerrM"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Coop"/>
+    </CUnit>
+    <CUnit id="InfestedCivilianPlaceholder">
+        <Race value="TerrI"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Coop"/>
+    </CUnit>
+    <CUnit id="KaraxChampion">
+        <FlagArray index="ArmySelect" value="1"/>
+        <EditorCategories value="ObjectType:Hero,ObjectFamily:Coop"/>
+    </CUnit>
+    <CUnit id="Medivac_BlackOps">
+        <Race value="TerrC"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+    </CUnit>
+    <CUnit id="MutatorAmonKaraxInvisiblePylon">
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Coop"/>
+    </CUnit>
+    <CUnit id="NHbrConstruct@AntiAirPlacement">
+        <Race value="Hybr"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Melee"/>
+    </CUnit>
+    <CUnit id="NHbrConstruct@AntiGroundPlacement">
+        <Race value="Hybr"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Melee"/>
+    </CUnit>
+    <CUnit id="NHbrConstruct@Universal">
+        <Race value="Hybr"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Melee"/>
+    </CUnit>
+    <CUnit id="NovaStunDrone">
+        <Race value="TerrC"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+    </CUnit>
+    <CUnit id="PhaseCannonDummy">
+        <Race value="Prot"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
+    </CUnit>
+    <CUnit id="PhaseMonolithDummy">
+        <Race value="Prot"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
+    </CUnit>
+    <CUnit id="PhaseShieldBatteryDummy">
+        <Race value="Prot"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
+    </CUnit>
+    <CUnit id="PointDefenseDrone_BlackOps">
+        <Race value="TerrC"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+    </CUnit>
+    <CUnit id="PowerRadius_Stetmann_Terrain">
+        <Race value="ZergM"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Coop"/>
     </CUnit>
     <CUnit id="RoboticsBay">
         <CardLayouts index="0">
@@ -58,5 +166,36 @@
             <LayoutButtons index="24" Face="WarpInVaporizer" Type="AbilCmd" AbilCmd="RoboticsFacilityTrainTalon,255" Requirements="" Row="0"/>
             <LayoutButtons Face="ColossusTaldarim" Type="AbilCmd" AbilCmd="RoboticsFacilityTrain,Train10" Row="0" Column="1"/>
         </CardLayouts>
+    </CUnit>
+    <CUnit id="SIWraith">
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+    </CUnit>
+    <CUnit id="SiegeTankJumpJetPlaceholder">
+        <Race value="Terr"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
+    </CUnit>
+    <CUnit id="SiegeTankSiegedJumpJetPlaceholder">
+        <Race value="Terr"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
+    </CUnit>
+    <CUnit id="SoloDummy">
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
+    </CUnit>
+    <CUnit id="StukovInfestedSiegeTankDeepTunnelPlacementUnit">
+        <Race value="TerrI"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Coop"/>
+    </CUnit>
+    <CUnit id="SwannSpecialDeliveryDropship">
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Coop"/>
+    </CUnit>
+    <CUnit id="TemporalAnchorCaster">
+        <Race value="Prot"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Coop"/>
+    </CUnit>
+    <CUnit id="TerrazineNodeOff">
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
+    </CUnit>
+    <CUnit id="VorazunChampion">
+        <EditorCategories value="ObjectType:Hero,ObjectFamily:Coop"/>
     </CUnit>
 </Catalog>

@@ -7,7 +7,7 @@
         <EditorCategories value="ObjectType:Other,ObjectFamily:Melee"/>
     </CUnit>
     <CUnit default="1" id="BEACON">
-        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit default="1" id="BroodlingDefault">
         <KillXP value="0"/>
@@ -18,7 +18,7 @@
     <!-- 0-15 are used for land based units, any bit used will cause the unit to walk on the ground -->
     <!-- 16-31 are used for air based units -->
     <CUnit default="1">
-        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit default="1" id="Critter">
         <DamageDealtXP value="0"/>
@@ -61,10 +61,10 @@
         <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit default="1" id="PLACEHOLDER">
-        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit default="1" id="PLACEHOLDER_AIR">
-        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit default="1" id="POWERUP">
         <EditorCategories value="ObjectType:Item,ObjectFamily:Campaign"/>
@@ -81,18 +81,12 @@
     <CUnit default="1" id="SMCAMERA">
         <EditorCategories value="ObjectType:PropStory,ObjectFamily:Campaign"/>
     </CUnit>
-    <CUnit default="1" id="SMCHARACTER">
-        <EditorCategories value="ObjectType:CharacterStory,ObjectFamily:Storymode"/>
-    </CUnit>
-    <CUnit default="1" id="SMSET">
-        <EditorCategories value="ObjectType:SetStory,ObjectFamily:Storymode"/>
-    </CUnit>
+    <CUnit default="1" id="SMCHARACTER"/>
+    <CUnit default="1" id="SMSET"/>
     <CUnit default="1" id="SS_Plane">
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
-    <CUnit default="1" id="STARMAP">
-        <EditorCategories value="ObjectType:Campaign,ObjectFamily:Storymode"/>
-    </CUnit>
+    <CUnit default="1" id="STARMAP"/>
     <CUnit default="1" id="SecurityGate">
         <EditorCategories value="ObjectType:Destructible,ObjectFamily:Campaign"/>
     </CUnit>
@@ -153,6 +147,7 @@
     <CUnit id="ATSLaserBatteryLMWeapon">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
+    <CUnit id="AberrationACGluescreenDummy"/>
     <CUnit id="AcidSalivaWeapon">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
@@ -162,6 +157,7 @@
     <CUnit id="AcidSporesMissile">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
+    <CUnit id="AdeptFenixACGluescreenDummy"/>
     <CUnit id="AiurChefEnergyDrinkSwarm">
         <EditorCategories value="ObjectType:Item,ObjectFamily:Campaign"/>
     </CUnit>
@@ -260,6 +256,8 @@
     <CUnit id="AiurRockDebris4x4">
         <EditorCategories value="ObjectType:Destructible,ObjectFamily:Campaign"/>
     </CUnit>
+    <CUnit id="ArchonACGluescreenDummy"/>
+    <CUnit id="ArtilleryMengskACGluescreenDummy"/>
     <!--CUnit id="ZealotHallucination">-->
     <!--        <DeathRevealRadius value="3"/>-->
     <!--        <ReviveType value="Zealot"/>-->
@@ -350,8 +348,11 @@
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
     <CUnit id="Ball">
-        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
     </CUnit>
+    <CUnit id="BanelingACGluescreenDummy"/>
+    <CUnit id="BansheeACGluescreenDummy"/>
+    <CUnit id="BattlecruiserACGluescreenDummy"/>
     <CUnit id="BattlecruiserHelios">
         <AbilArray index="1" Link="Yamato"/>
         <AbilArray index="2" Link="que1"/>
@@ -369,18 +370,23 @@
         <GlossaryCategory value=""/>
         <HotkeyCategory value=""/>
     </CUnit>
+    <CUnit id="BattlecruiserMengskACGluescreenDummy"/>
     <CUnit id="BeaconCustom1">
-        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="BeaconCustom2">
-        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="BeaconCustom3">
-        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="BeaconCustom4">
-        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
     </CUnit>
+    <CUnit id="BileLauncherACGluescreenDummy"/>
+    <CUnit id="BlackOpsMissileTurretACGluescreenDummy"/>
+    <CUnit id="BlasterBillyACGluescreenDummy"/>
+    <CUnit id="BlimpMengskACGluescreenDummy"/>
     <CUnit id="Blocker16x16">
         <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
     </CUnit>
@@ -396,6 +402,7 @@
     <CUnit id="BridgeBlocker4x12">
         <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
     </CUnit>
+    <CUnit id="BroodLordACGluescreenDummy"/>
     <!-- BroodLordAWeapon does not actually get used by the BroodLord attack.   Left in for backwards compatability with modder maps. -->
     <CUnit id="BroodLordAWeapon">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
@@ -403,6 +410,13 @@
     <CUnit id="BroodLordBWeapon">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
+    <CUnit id="BrutaliskACGluescreenDummy"/>
+    <CUnit id="BunkerACGluescreenDummy"/>
+    <CUnit id="BunkerDepotMengskACGluescreenDummy"/>
+    <CUnit id="BunkerUpgradedACGluescreenDummy"/>
+    <CUnit id="CarrierACGluescreenDummy"/>
+    <CUnit id="CarrierAiurACGluescreenDummy"/>
+    <CUnit id="CarrierFenixACGluescreenDummy"/>
     <CUnit id="CharDestructibleRockCover">
         <EditorCategories value="ObjectType:Destructible,ObjectFamily:Campaign"/>
     </CUnit>
@@ -463,6 +477,10 @@
     <CUnit id="CollapsibleTerranTowerPushUnit">
         <EditorCategories value="ObjectType:Destructible,ObjectFamily:Campaign"/>
     </CUnit>
+    <CUnit id="ColossusACGluescreenDummy"/>
+    <CUnit id="ColossusFenixACGluescreenDummy"/>
+    <CUnit id="ColossusPurifierACGluescreenDummy"/>
+    <CUnit id="ColossusTaldarimACGluescreenDummy"/>
     <CUnit id="ConsumeDNAFeedbackWeapon">
         <Race value="ZergP"/>
     </CUnit>
@@ -475,6 +493,9 @@
     <CUnit id="CorruptionWeapon">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
+    <CUnit id="CorruptorACGluescreenDummy"/>
+    <CUnit id="CorsairACGluescreenDummy"/>
+    <CUnit id="CovertBansheeACGluescreenDummy"/>
     <CUnit id="CreepBlocker13x13">
         <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
     </CUnit>
@@ -503,6 +524,7 @@
     <CUnit id="CreepTumorZagara">
         <EditorCategories value="ObjectType:Structure,ObjectFamily:Coop"/>
     </CUnit>
+    <CUnit id="CreeperHostACGluescreenDummy"/>
     <CUnit id="Cyclone">
         <DamageDealtXP value="0"/>
         <DamageTakenXP value="0"/>
@@ -520,6 +542,7 @@
         <ScoreKill value="0"/>
         <SubgroupPriority value="118"/>
     </CUnit>
+    <CUnit id="CycloneACGluescreenDummy"/>
     <CUnit id="D8Charge">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
@@ -535,6 +558,8 @@
     <CUnit id="DRBattlecruiserGLMWeapon">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
+    <CUnit id="DarkArchonACGluescreenDummy"/>
+    <CUnit id="DarkPylonACGluescreenDummy"/>
     <CUnit id="DarkShrine">
         <Attributes index="Mechanical" value="1"/>
         <RepairTime value="25"/>
@@ -581,6 +606,7 @@
         <SubgroupPriority value="29"/>
         <HotkeyCategory value="Unit/Category/ProtossStory"/>
     </CUnit>
+    <CUnit id="DarkTemplarShakurasACGluescreenDummy"/>
     <!--For use in place of Neutral Raised Supply Depots. Will *not* destroy other destructibles in the area when it dies.-->
     <CUnit id="Debris2x2NonConjoined">
         <EditorCategories value="ObjectType:Destructible,ObjectFamily:Campaign"/>
@@ -771,9 +797,15 @@
     <CUnit id="DestructibleZergInfestation3x3">
         <EditorCategories value="ObjectType:Destructible,ObjectFamily:Campaign"/>
     </CUnit>
+    <CUnit id="DevastationTurretACGluescreenDummy"/>
     <CUnit id="DevourTongueMissile">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
+    <CUnit id="DevourerACGluescreenDummy"/>
+    <CUnit id="DisruptorACGluescreenDummy"/>
+    <CUnit id="DragoonACGluescreenDummy"/>
+    <!--Nova's ACGlueScreenDummy Units-->
+    <CUnit id="EliteMarineACGluescreenDummy"/>
     <CUnit id="EnemyPathingBlocker16x16">
         <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
     </CUnit>
@@ -799,6 +831,9 @@
     <CUnit id="EyeStalkWeapon">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
+    <CUnit id="FireRoachACGluescreenDummy"/>
+    <CUnit id="FirebatACGluescreenDummy"/>
+    <CUnit id="FlamingBettyACGluescreenDummy"/>
     <CUnit id="FlyoverUnit">
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
@@ -808,6 +843,7 @@
     <CUnit id="G4ChargeWeapon">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
+    <CUnit id="GhostMengskACGluescreenDummy"/>
     <CUnit id="GlaiveWurmBounceWeapon">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
@@ -829,18 +865,35 @@
     <CUnit id="GlaiveWurmWeapon">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
+    <CUnit id="GoliathACGluescreenDummy"/>
     <CUnit id="GorgonCruiserMissile">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
     <CUnit id="GrappleWeapon">
         <EditorCategories value="ObjectFamily:Coop,ObjectType:Projectile"/>
     </CUnit>
+    <CUnit id="GuardianACGluescreenDummy"/>
+    <CUnit id="HHBattlecruiserACGluescreenDummy"/>
+    <CUnit id="HHBomberPlatformACGluescreenDummy"/>
+    <CUnit id="HHHellionTankACGluescreenDummy"/>
+    <CUnit id="HHMercStarportACGluescreenDummy"/>
+    <CUnit id="HHMissileTurretACGluescreenDummy"/>
+    <CUnit id="HHRavenACGluescreenDummy"/>
+    <!--Horner ACGlueScreenDummy Units-->
+    <CUnit id="HHReaperACGluescreenDummy"/>
+    <CUnit id="HHVikingACGluescreenDummy"/>
+    <CUnit id="HHWidowMineACGluescreenDummy"/>
+    <CUnit id="HHWraithACGluescreenDummy"/>
+    <CUnit id="HeavySiegeTankACGluescreenDummy"/>
+    <CUnit id="HellbatACGluescreenDummy"/>
+    <CUnit id="HellbatRangerACGluescreenDummy"/>
+    <CUnit id="HerculesACGluescreenDummy"/>
     <CUnit id="HeroNuke">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
-    <CUnit id="HighTemplarSkinPreview">
-        <EditorCategories value="ObjectType:Unit,ObjectFamily:Storymode"/>
-    </CUnit>
+    <CUnit id="HighTemplarACGluescreenDummy"/>
+    <CUnit id="HighTemplarSkinPreview"/>
+    <CUnit id="HighTemplarTaldarimACGluescreenDummy"/>
     <CUnit id="HunterSeekerWeapon">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
@@ -850,10 +903,16 @@
     <CUnit id="HurricaneMissileRight">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
+    <CUnit id="HydraliskACGluescreenDummy"/>
+    <CUnit id="HydraliskLurkerACGluescreenDummy"/>
     <!--For use in place of Neutral Raised Supply Depots. Will *not* destroy other destructibles in the area when it dies.-->
     <CUnit id="Ice2x2NonConjoined">
         <EditorCategories value="ObjectType:Destructible,ObjectFamily:Campaign"/>
     </CUnit>
+    <CUnit id="ImmortalACGluescreenDummy"/>
+    <CUnit id="ImmortalFenixACGluescreenDummy"/>
+    <CUnit id="ImmortalKaraxACGluescreenDummy"/>
+    <CUnit id="ImmortalTaldarimACGluescreenDummy"/>
     <CUnit id="InfestedAcidSpinesWeapon">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
@@ -899,9 +958,11 @@
     <CUnit id="KaraxRepairDroneReleaseWeapon">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
+    <CUnit id="KhaydarinMonolithACGluescreenDummy"/>
     <CUnit id="LarvaReleaseMissile">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
+    <CUnit id="LeviathanACGluescreenDummy"/>
     <CUnit id="LocustEggAMissileWeapon">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
@@ -968,6 +1029,24 @@
     <CUnit id="LongboltMissileWeapon">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
+    <CUnit id="LurkerACGluescreenDummy"/>
+    <CUnit id="MarauderACGluescreenDummy"/>
+    <CUnit id="MarauderCommandoACGluescreenDummy"/>
+    <CUnit id="MarauderMengskACGluescreenDummy"/>
+    <CUnit id="MarineACGluescreenDummy"/>
+    <CUnit id="MechaBanelingACGluescreenDummy"/>
+    <CUnit id="MechaBattlecarrierLordACGluescreenDummy"/>
+    <CUnit id="MechaCorruptorACGluescreenDummy"/>
+    <CUnit id="MechaHydraliskACGluescreenDummy"/>
+    <CUnit id="MechaInfestorACGluescreenDummy"/>
+    <CUnit id="MechaLurkerACGluescreenDummy"/>
+    <CUnit id="MechaOverseerACGluescreenDummy"/>
+    <CUnit id="MechaSpineCrawlerACGluescreenDummy"/>
+    <CUnit id="MechaSporeCrawlerACGluescreenDummy"/>
+    <CUnit id="MechaUltraliskACGluescreenDummy"/>
+    <CUnit id="MechaZerglingACGluescreenDummy"/>
+    <CUnit id="MedicACGluescreenDummy"/>
+    <CUnit id="MedivacMengskACGluescreenDummy"/>
     <CUnit id="MetalGateDiagonalBLUR">
         <EditorCategories value="ObjectType:Destructible,ObjectFamily:Campaign"/>
     </CUnit>
@@ -1052,6 +1131,8 @@
     <CUnit id="MissileShooterChannel8Weapon">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Campaign"/>
     </CUnit>
+    <CUnit id="MissileTurretACGluescreenDummy"/>
+    <CUnit id="MissileTurretMengskACGluescreenDummy"/>
     <CUnit id="MitosaurusASplitWeapon">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
@@ -1073,6 +1154,8 @@
     <CUnit id="MultiKillObject">
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
+    <CUnit id="MutaliskACGluescreenDummy"/>
+    <CUnit id="MutaliskBroodlordACGluescreenDummy"/>
     <CUnit id="MutaliskGlaveWurmAttack1Missile">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
@@ -1112,17 +1195,25 @@
     <CUnit id="NydusCanalAttackerWeapon">
         <EditorCategories value="ObjectFamily:Coop,ObjectType:Projectile"/>
     </CUnit>
+    <CUnit id="NydusNetworkACGluescreenDummy"/>
+    <CUnit id="ObserverACGluescreenDummy"/>
+    <CUnit id="ObserverFenixACGluescreenDummy"/>
     <CUnit id="OdinAAWeapon">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
+    <CUnit id="OmegaNetworkACGluescreenDummy"/>
+    <CUnit id="OracleACGluescreenDummy"/>
     <CUnit id="OracleStasisTrap">
         <Attributes index="Summoned" value="1"/>
         <AttackTargetPriority value="30"/>
         <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
     </CUnit>
+    <CUnit id="OrbitalCommandACGluescreenDummy"/>
     <CUnit id="OverlordGenerateCreepKeybind">
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
+    <CUnit id="OverseerACGluescreenDummy"/>
+    <CUnit id="OverseerZagaraACGluescreenDummy"/>
     <CUnit id="ParasiteSporeWeapon">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
@@ -1161,9 +1252,15 @@
     <CUnit id="PathingBlockerRadius1">
         <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
     </CUnit>
+    <CUnit id="PerditionTurretACGluescreenDummy"/>
     <CUnit id="PermanentCreepBlocker1x1">
         <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
     </CUnit>
+    <CUnit id="PhoenixAiurACGluescreenDummy"/>
+    <CUnit id="PhoenixPurifierACGluescreenDummy"/>
+    <CUnit id="PhotonCannonACGluescreenDummy"/>
+    <CUnit id="PhotonCannonFenixACGluescreenDummy"/>
+    <CUnit id="PhotonCannonTaldarimACGluescreenDummy"/>
     <CUnit id="PickupMineralsAir">
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
@@ -1188,6 +1285,16 @@
     <CUnit id="PointDefenseDroneReleaseWeapon">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
+    <CUnit id="PrimalGuardianACGluescreenDummy"/>
+    <CUnit id="PrimalHydraliskACGluescreenDummy"/>
+    <CUnit id="PrimalImpalerACGluescreenDummy"/>
+    <CUnit id="PrimalMutaliskACGluescreenDummy"/>
+    <CUnit id="PrimalRoachACGluescreenDummy"/>
+    <CUnit id="PrimalSwarmHostACGluescreenDummy"/>
+    <CUnit id="PrimalUltraliskACGluescreenDummy"/>
+    <CUnit id="PrimalWurmACGluescreenDummy"/>
+    <!--Dehaka ACGlueScreenDummy Units-->
+    <CUnit id="PrimalZerglingACGluescreenDummy"/>
     <CUnit id="ProgressBarDummy">
         <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
     </CUnit>
@@ -1198,7 +1305,6 @@
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
     <CUnit id="ProtossSnakeSegmentDemo">
-        <Race value="Prot"/>
         <DamageDealtXP value="0"/>
         <DamageTakenXP value="0"/>
         <KillXP value="0"/>
@@ -1218,6 +1324,7 @@
     <CUnit id="Purifier_Destructible_Rock_Huge_BLUR">
         <EditorCategories value="ObjectType:Destructible,ObjectFamily:Campaign"/>
     </CUnit>
+    <CUnit id="QueenCoopACGluescreenDummy"/>
     <!--                                                                                         -->
     <!--  Brood Queen ............................................................................... -->
     <!--                                                                                         -->
@@ -1230,12 +1337,18 @@
     <CUnit id="QueenMPSpawnBroodlingsMissile">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
+    <CUnit id="QueenZagaraACGluescreenDummy"/>
+    <CUnit id="RaidLiberatorACGluescreenDummy"/>
+    <CUnit id="RailgunTurretACGluescreenDummy"/>
+    <CUnit id="RaptorACGluescreenDummy"/>
+    <CUnit id="RavagerACGluescreenDummy"/>
     <CUnit id="RavagerCorrosiveBileMissile">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
     <CUnit id="RavagerWeaponMissile">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
+    <CUnit id="RavasaurACGluescreenDummy"/>
     <CUnit id="RavenRepairDrone">
         <Race value="TerrC"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Coop"/>
@@ -1244,6 +1357,8 @@
     <CUnit id="RavenRepairDroneReleaseWeapon">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
+    <CUnit id="RavenTypeIIACGluescreenDummy"/>
+    <CUnit id="ReaverACGluescreenDummy"/>
     <CUnit id="RenegadeLongboltMissileWeapon">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
@@ -1265,19 +1380,25 @@
     <CUnit id="RepulserField8">
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
+    <CUnit id="RoachACGluescreenDummy"/>
     <CUnit id="RoachCorpserAcidSalivaWeapon">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
+    <CUnit id="RoachVileACGluescreenDummy"/>
     <!--For use in place of Neutral Raised Supply Depots. Will *not* destroy other destructibles in the area when it dies.-->
     <CUnit id="Rocks2x2NonConjoined">
         <EditorCategories value="ObjectType:Destructible,ObjectFamily:Campaign"/>
     </CUnit>
+    <CUnit id="SILiberatorACGluescreenDummy"/>
     <CUnit id="SJCloakedMineWeapon">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
     <CUnit id="SJMineralFormation1">
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
+    <CUnit id="ScienceVesselACGluescreenDummy"/>
+    <CUnit id="ScourgeACGluescreenDummy"/>
+    <CUnit id="ScoutACGluescreenDummy"/>
     <CUnit id="SecurityGateDiagonalBLUR">
         <EditorCategories value="ObjectType:Destructible,ObjectFamily:Campaign"/>
     </CUnit>
@@ -1388,9 +1509,11 @@
     <!--        </ReviveInfoBase>-->
     <!--        <BehaviorArray Link="Revelation"/>-->
     <!--    </CUnit-->
-    <CUnit id="SeekerMissile">
-        <EditorCategories value="ObjectType:Projectile,ObjectFamily:Melee"/>
-    </CUnit>
+    <CUnit id="SeekerMissile"/>
+    <CUnit id="SentryACGluescreenDummy"/>
+    <CUnit id="SentryFenixACGluescreenDummy"/>
+    <CUnit id="SentryPurifierACGluescreenDummy"/>
+    <CUnit id="SentryTaldarimACGluescreenDummy"/>
     <CUnit id="ShadowYamatoMissile">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
@@ -1616,39 +1739,63 @@
     <CUnit id="ShapeYenSign">
         <EditorCategories value="ObjectType:Shape,ObjectFamily:Campaign"/>
     </CUnit>
-    <CUnit id="SiegeTankSkinPreview">
-        <EditorCategories value="ObjectType:Unit,ObjectFamily:Storymode"/>
-    </CUnit>
+    <CUnit id="ShieldBatteryACGluescreenDummy"/>
+    <CUnit id="SiegeTankACGluescreenDummy"/>
+    <CUnit id="SiegeTankMengskACGluescreenDummy"/>
+    <CUnit id="SiegeTankSkinPreview"/>
     <CUnit id="SlivanCollisionDummy">
         <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="SnowGlazeStarterMP">
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
+    <CUnit id="SpecOpsGhostACGluescreenDummy"/>
     <CUnit id="SpikeBurstWeapon">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
+    <CUnit id="SpineCrawlerACGluescreenDummy"/>
     <CUnit id="SpineCrawlerWeapon">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
+    <CUnit id="SpinningDizzyACGluescreenDummy"/>
+    <CUnit id="SplitterlingACGluescreenDummy"/>
+    <CUnit id="SporeCrawlerACGluescreenDummy"/>
     <CUnit id="SporeCrawlerWeapon">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
+    <CUnit id="StalkerShakurasACGluescreenDummy"/>
+    <CUnit id="StalkerTaldarimACGluescreenDummy"/>
     <CUnit id="StereoscopicOptionsUnit">
         <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="StranglerBeastWeaponMissile">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
+    <CUnit id="StrikeGoliathACGluescreenDummy"/>
+    <CUnit id="StukovBroodQueenACGluescreenDummy"/>
+    <CUnit id="StukovInfestedBansheeACGluescreenDummy"/>
+    <CUnit id="StukovInfestedBunkerACGluescreenDummy"/>
+    <!--Stukov's ACGlueScreenDummy Units-->
+    <CUnit id="StukovInfestedCivilianACGluescreenDummy"/>
+    <CUnit id="StukovInfestedDiamondbackACGluescreenDummy"/>
+    <CUnit id="StukovInfestedMarineACGluescreenDummy"/>
+    <CUnit id="StukovInfestedMissileTurretACGluescreenDummy"/>
+    <CUnit id="StukovInfestedSiegeTankACGluescreenDummy"/>
+    <CUnit id="StukovInfestedTrooperACGluescreenDummy"/>
+    <CUnit id="SupplicantACGluescreenDummy"/>
+    <CUnit id="SwarmHostACGluescreenDummy"/>
     <CUnit id="SwarmHostSplitBPlacement">
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
+    <CUnit id="SwarmQueenACGluescreenDummy"/>
+    <CUnit id="SwarmlingACGluescreenDummy"/>
     <CUnit id="System_Snapshot_Dummy">
         <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="TalonsMissileWeapon">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
+    <CUnit id="TempestACGluescreenDummy"/>
     <CUnit id="TestHeroDebugMissileAbility1Weapon">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Campaign"/>
     </CUnit>
@@ -1658,18 +1805,33 @@
     <CUnit id="TestHeroThrowMissile">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Campaign"/>
     </CUnit>
+    <CUnit id="ThorACGluescreenDummy"/>
+    <CUnit id="ThorMengskACGluescreenDummy"/>
     <CUnit id="TornadoMissileDummyWeapon">
         <EditorCategories value="ObjectType:Other,ObjectFamily:Coop"/>
     </CUnit>
     <CUnit id="TornadoMissileWeapon">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
+    <CUnit id="TorrasqueACGluescreenDummy"/>
     <CUnit id="TowerMine">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
     <CUnit id="TrafficSignal">
         <EditorCategories value="ObjectType:Destructible,ObjectFamily:Campaign"/>
     </CUnit>
+    <CUnit id="TrooperMengskACGluescreenDummy"/>
+    <CUnit id="TychusFirebatACGluescreenDummy"/>
+    <CUnit id="TychusGhostACGluescreenDummy"/>
+    <CUnit id="TychusHERCACGluescreenDummy"/>
+    <CUnit id="TychusMarauderACGluescreenDummy"/>
+    <CUnit id="TychusMedicACGluescreenDummy"/>
+    <CUnit id="TychusReaperACGluescreenDummy"/>
+    <CUnit id="TychusSCVAutoTurretACGluescreenDummy"/>
+    <CUnit id="TychusSpectreACGluescreenDummy"/>
+    <CUnit id="TychusWarhoundACGluescreenDummy"/>
+    <CUnit id="TyrannozorACGluescreenDummy"/>
+    <CUnit id="UltraliskACGluescreenDummy"/>
     <CUnit id="UltrasonicPulseEnhancedWeapon">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
@@ -1728,7 +1890,9 @@
     <CUnit id="PlaceWormholeUnit">
         <BehaviorArray Link="ARESTimedLife"/>
     </CUnit>
-    <CUnit id="NONE"/>
+    <CUnit id="NONE">
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+    </CUnit>
     <CUnit id="AdeptPhaseShift">
         <DamageDealtXP value="0"/>
         <DamageTakenXP value="0"/>
@@ -1946,9 +2110,7 @@
     <CUnit id="PoisonGasCloud">
         <Race value="Terr"/>
     </CUnit>
-    <CUnit id="PreviewBunkerUpgraded">
-        <EditorCategories value="ObjectType:Unit,ObjectFamily:Storymode"/>
-    </CUnit>
+    <CUnit id="PreviewBunkerUpgraded"/>
     <CUnit id="Queen">
         <DamageDealtXP value="0"/>
         <DamageTakenXP value="0"/>
@@ -2244,47 +2406,47 @@
     </CUnit>
     <CUnit id="BeaconArmy">
         <BehaviorArray Link="PreventKnockback"/>
-        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="BeaconAttack">
         <BehaviorArray Link="PreventKnockback"/>
-        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="BeaconAuto">
         <BehaviorArray Link="PreventKnockback"/>
-        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="BeaconClaim">
         <BehaviorArray Link="PreventKnockback"/>
-        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="BeaconDefend">
         <BehaviorArray Link="PreventKnockback"/>
-        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="BeaconDetect">
         <BehaviorArray Link="PreventKnockback"/>
-        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="BeaconExpand">
         <BehaviorArray Link="PreventKnockback"/>
-        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="BeaconHarass">
         <BehaviorArray Link="PreventKnockback"/>
-        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="BeaconIdle">
         <BehaviorArray Link="PreventKnockback"/>
-        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="BeaconRally">
         <BehaviorArray Link="PreventKnockback"/>
-        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="BeaconScout">
         <BehaviorArray Link="PreventKnockback"/>
-        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="Beacon_Protoss">
         <BehaviorArray Link="PreventKnockback"/>
@@ -2367,6 +2529,7 @@
         <MinimapRadius value="0"/>
         <LeaderAlias value=""/>
         <HotkeyAlias value=""/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="CommanderPrestigeArtanisOrbitalStrikesArchonEnergy" parent="MISSILE">
         <Race value="Terr"/>
@@ -2585,11 +2748,7 @@
     </CUnit>
     <CUnit id="LiberatorSkinPreview">
         <SubgroupPriority value="100"/>
-        <EditorCategories value="ObjectType:Unit,ObjectFamily:Storymode"/>
     </CUnit>
-
-
-
     <CUnit id="Ravasaur">
         <SubgroupPriority value="100"/>
         <Race value="ZergP"/>
@@ -3169,7 +3328,6 @@
         <Radius value="1"/>
         <SeparationRadius value="0"/>
         <MinimapRadius value="0"/>
-        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
         <LeaderAlias value=""/>
     </CUnit>
     <CUnit id="MutatorAmonKaraxServitorWeaponA">
@@ -3209,6 +3367,7 @@
         </CardLayouts>
         <ScoreResult value="BuildOrder"/>
         <SubgroupPriority value="4"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="PerditionTurret">
         <RepairTime value="23"/>
@@ -3399,6 +3558,7 @@
         <SeparationRadius value="0.75"/>
         <MinimapRadius value="0"/>
         <AIEvalFactor value="0.3"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="MutatorGift" parent="DESTRUCTIBLE">
         <FlagArray index="Unselectable" value="1"/>
@@ -3731,21 +3891,29 @@
         <LifeArmor value="0"/>
         <EditorCategories value="ObjectType:Destructible,ObjectFamily:Campaign"/>
     </CUnit>
+    <CUnit id="VikingACGluescreenDummy"/>
+    <CUnit id="VikingMengskACGluescreenDummy"/>
+    <CUnit id="ViperACGluescreenDummy"/>
     <CUnit id="ViperAirWeapon">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
     <CUnit id="ViperConsumeStructureWeapon">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
+    <CUnit id="VoidRayACGluescreenDummy"/>
+    <CUnit id="VoidRayShakurasACGluescreenDummy"/>
+    <CUnit id="VultureACGluescreenDummy"/>
     <CUnit id="WarHoundWeapon">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
     <CUnit id="WarPig">
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Coop"/>
     </CUnit>
+    <CUnit id="WarpPrismTaldarimACGluescreenDummy"/>
     <CUnit id="Weapon">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
+    <CUnit id="WraithACGluescreenDummy"/>
     <CUnit id="XelNagaDestructibleBlocker6E">
         <EditorCategories value="ObjectType:Destructible,ObjectFamily:Campaign"/>
     </CUnit>
@@ -4002,6 +4170,7 @@
             <Charge Link="DamagedDrakkenLaserDrillCoop/Revive"/>
             <Cooldown Link="DamagedDrakkenLaserDrillCoop/Revive"/>
         </ReviveInfoBase>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="ScienceVessel">
         <RepairTime value="60"/>
@@ -4257,6 +4426,7 @@
         <BehaviorArray Link="TimeStopImmune"/>
         <BehaviorArray Link="PreventKnockback"/>
         <MinimapRadius value="0"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="LavaHeightUnit28Search">
         <FlagArray index="Invulnerable" value="1"/>
@@ -4268,6 +4438,7 @@
         <PlaneArray index="Air" value="1"/>
         <Mover value="Fly"/>
         <MinimapRadius value="0"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="LavaHeightUnit24Search">
         <FlagArray index="Invulnerable" value="1"/>
@@ -4279,6 +4450,7 @@
         <PlaneArray index="Air" value="1"/>
         <Mover value="Fly"/>
         <MinimapRadius value="0"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="LavaHeightUnit20Search">
         <FlagArray index="Invulnerable" value="1"/>
@@ -4290,6 +4462,7 @@
         <PlaneArray index="Air" value="1"/>
         <Mover value="Fly"/>
         <MinimapRadius value="0"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="LavaHeightUnit16Search">
         <FlagArray index="Invulnerable" value="1"/>
@@ -4301,6 +4474,7 @@
         <PlaneArray index="Air" value="1"/>
         <Mover value="Fly"/>
         <MinimapRadius value="0"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="LavaHeightUnit12Search">
         <FlagArray index="Invulnerable" value="1"/>
@@ -4312,6 +4486,7 @@
         <PlaneArray index="Air" value="1"/>
         <Mover value="Fly"/>
         <MinimapRadius value="0"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="LavaHeightUnit8Search">
         <FlagArray index="Invulnerable" value="1"/>
@@ -4323,6 +4498,7 @@
         <PlaneArray index="Air" value="1"/>
         <Mover value="Fly"/>
         <MinimapRadius value="0"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="MutatorMineralCrystal" parent="ITEM">
         <Facing value="19.995"/>
@@ -4521,6 +4697,7 @@
         </CardLayouts>
         <Radius value="0"/>
         <MinimapRadius value="2"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="MutatorStormCloud">
         <FlagArray index="Turnable" value="0"/>
@@ -4547,6 +4724,7 @@
         <SeparationRadius value="5"/>
         <MinimapRadius value="1"/>
         <FogVisibility value="Visible"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="MutatorPurifierBeam">
         <FlagArray index="Turnable" value="0"/>
@@ -4569,6 +4747,7 @@
         </ReviveInfoBase>
         <Mover value="Fly"/>
         <FogVisibility value="Dimmed"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="MutatorVoidReanimator">
         <PlaneArray index="Ground" value="1"/>
@@ -4752,6 +4931,7 @@
         <FlagArray index="Unstoppable" value="1"/>
         <FlagArray index="PlayerRevivable" value="0"/>
         <BehaviorArray Link="DelayedRemove"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="ALEKSANDERCRASH_PLACEHOLDER" parent="PLACEHOLDER">
         <Collide index="Ground" value="1"/>
@@ -4764,6 +4944,7 @@
         <FlagArray index="Unstoppable" value="1"/>
         <FlagArray index="PlayerRevivable" value="0"/>
         <BehaviorArray Link="DelayedRemove"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="SymbioteStabWeapon" parent="MISSILE_INVULNERABLE">
         <Race value="Zerg"/>
@@ -4827,7 +5008,9 @@
     <CUnit id="ArtanisAreaStunAirPlaceholder">
         <BehaviorArray Link="AbilityTargetExclusionBehavior"/>
     </CUnit>
-    <CUnit id="ArtanisVoidAiur6"/>
+    <CUnit id="ArtanisVoidAiur6">
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+    </CUnit>
     <CUnit id="ArtifactVault">
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
@@ -5194,12 +5377,15 @@
     </CUnit>
     <CUnit id="DarkArchonChampion">
         <SubgroupPriority value="100"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="DarkTemplarChampion">
         <SubgroupPriority value="100"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="DarkTemplarChampionShadowClone">
         <SubgroupPriority value="100"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <!-- Placeholder unit for ShadowFury placement on opposite sides of targets -->
     <CUnit id="DarkTemplarShadowFuryLaunchPlaceholder">
@@ -5487,6 +5673,7 @@
         <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="SOASummonSelendisPlanetCracker"/>
         <EquipmentArray Weapon="InterceptorsDummy"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="Flagship">
         <ScoreMake value="0"/>
@@ -5528,7 +5715,9 @@
     <CUnit id="GlaciusDefenseCannon">
         <ScoreKill value="0"/>
     </CUnit>
-    <CUnit id="GreaterBeast"/>
+    <CUnit id="GreaterBeast">
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+    </CUnit>
     <CUnit id="GuardianCocoonMP">
         <ScoreKill value="0"/>
         <KillXP value="0"/>
@@ -5696,7 +5885,9 @@
         <ScoreKill value="0"/>
     </CUnit>
     <!-- Older ImmortalShakuras -->
-    <CUnit id="ImmortalMelee"/>
+    <CUnit id="ImmortalMelee">
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+    </CUnit>
     <CUnit id="ImpalerEgg">
         <KillXP value="0"/>
         <DamageDealtXP value="0"/>
@@ -5749,8 +5940,12 @@
         <DamageTakenXP value="0"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
-    <CUnit id="KaraxMicroBotActivated"/>
-    <CUnit id="KaraxMicroBotDeactivated"/>
+    <CUnit id="KaraxMicroBotActivated">
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+    </CUnit>
+    <CUnit id="KaraxMicroBotDeactivated">
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+    </CUnit>
     <CUnit id="Kerrigan">
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
@@ -5784,7 +5979,9 @@
         <DamageDealtXP value="0"/>
         <DamageTakenXP value="0"/>
     </CUnit>
-    <CUnit id="KerriganEpilogue03Burrowed"/>
+    <CUnit id="KerriganEpilogue03Burrowed">
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+    </CUnit>
     <CUnit id="KerriganGhostLab">
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
@@ -6731,6 +6928,7 @@
         <!--Attributes index="User1" value="1"/-->
         <Attributes index="MapBoss" value="1"/>
         <LeaderAlias value=""/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="SOAPylonPowerUnit">
         <BehaviorArray Link="MatrixOverload"/>
@@ -6875,8 +7073,12 @@
         <DamageTakenXP value="0"/>
         <BehaviorArray Link="TriggerInheritsParentBuffs"/>
     </CUnit>
-    <CUnit id="SelendisPossessed"/>
-    <CUnit id="SelendisVoid"/>
+    <CUnit id="SelendisPossessed">
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+    </CUnit>
+    <CUnit id="SelendisVoid">
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+    </CUnit>
     <CUnit id="SentryGun">
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
@@ -6885,9 +7087,12 @@
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
     </CUnit>
-    <CUnit id="ShadeofNarud"/>
+    <CUnit id="ShadeofNarud">
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+    </CUnit>
     <CUnit id="ShadowArchon">
         <SubgroupPriority value="100"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="ShadowBattlecruiser">
         <ScoreMake value="0"/>
@@ -7318,6 +7523,7 @@
         <SeparationRadius value="1"/>
         <InnerRadius value="1"/>
         <BehaviorArray Link="ImpalerPlacementRemove"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="InfestedAbomination">
         <!--BehaviorArray Link="Supply3"/-->
@@ -7640,6 +7846,7 @@
         <Mover value="MissileDefault"/>
     </CUnit>
     <CUnit id="ArchonAdvanced">
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
         <!--BehaviorArray Link="WarpInAttackSpeedBehavior"/-->
     </CUnit>
     <CUnit id="Armory">
@@ -7947,7 +8154,9 @@
         <DamageDealtXP value="0"/>
         <DamageTakenXP value="0"/>
     </CUnit>
-    <CUnit id="StranglerTentacle"/>
+    <CUnit id="StranglerTentacle">
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+    </CUnit>
     <CUnit id="SuperWarpGate">
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
@@ -8205,7 +8414,9 @@
         <ScoreKill value="0"/>
         <EditorCategories value="ObjectType:Structure,ObjectFamily:Campaign"/>
     </CUnit>
-    <CUnit id="TheBridgeAlpha01"/>
+    <CUnit id="TheBridgeAlpha01">
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+    </CUnit>
     <CUnit id="Thor">
         <AbilArray index="0" Link="ThorWreckageSwann"/>
         <AbilArray Link="SelfRepair"/>
@@ -8402,6 +8613,7 @@
         <AlliedPushPriority value="12"/>
         <BehaviorArray Link="Detector11"/>
         <PushPriority value="12"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="MutatorMurderBot">
         <DeathRevealRadius value="3"/>
@@ -8453,6 +8665,7 @@
         <AlliedPushPriority value="12"/>
         <BehaviorArray Link="Detector11"/>
         <PushPriority value="12"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="MutatorDeathBot">
         <DeathRevealRadius value="3"/>
@@ -8504,6 +8717,7 @@
         <AlliedPushPriority value="12"/>
         <BehaviorArray Link="Detector11"/>
         <PushPriority value="12"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="UrsadakCalf">
         <DamageDealtXP value="0"/>
@@ -8586,6 +8800,7 @@
         <BehaviorArray Link="MutatorSilentDetector11"/>
         <BehaviorArray Link="MutatorBoomBotSpeedUp"/>
         <WeaponArray Link="MutatorBoomBot"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="ValhallaBaseDestructibleDoor">
         <Race value="Terr"/>
@@ -8906,6 +9121,7 @@
         <CardLayouts>
             <LayoutButtons Face="StimMarauder" Type="AbilCmd" AbilCmd="StimpackHERC,Execute" Row="2" Column="1"/>
         </CardLayouts>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="CyberneticsCore">
         <Footprint value="Footprint3x3CreepNormalContour"/>
@@ -10318,6 +10534,7 @@
             <ChanceArray index="Turn" value="33"/>
         </Fidget>
         <BehaviorArray Link="KelMorianWorkerCloak"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="Lair">
         <CardLayouts index="0">
@@ -10769,6 +10986,7 @@
     </CUnit>
     <CUnit id="PhoenixBomber">
         <BehaviorArray Link="VorazunCommanderCloak"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="PhotonCannon">
         <Footprint value="Footprint2x2CreepNormalContour"/>
@@ -10846,6 +11064,7 @@
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
         <AIEvaluateAlias value="PointDefenseDrone"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="Probe">
         <AbilArray Link="MapObjectInteract"/>
@@ -10940,8 +11159,8 @@
     <CUnit id="PylonOvercharged" parent="Pylon">
         <AttackTargetPriority value="20"/>
         <AbilArray index="2" Link="PhotonOverchargeMorphPylonBack"/>
-<!--        <AbilArray Link="attack"/>-->
-<!--        <AbilArray Link="stop"/>-->
+        <!--        <AbilArray Link="attack"/>-->
+        <!--        <AbilArray Link="stop"/>-->
         <WeaponArray Link="MothershipCoreWeapon"/>
         <CardLayouts index="0">
             <LayoutButtons index="1">
@@ -11491,6 +11710,7 @@
         <Radius value="1"/>
         <SeparationRadius value="1"/>
         <Sight value="4"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <!--<CUnit id="CommandCenter">
         <AbilArray index="7" Link="ScannerSweep"/>
@@ -13111,7 +13331,9 @@
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
         <Race value="ProtT"/>
     </CUnit>
-    <CUnit id="VoidImmortalReviveCorpse"/>
+    <CUnit id="VoidImmortalReviveCorpse">
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+    </CUnit>
     <CUnit id="VoidMPImmortalReviveCorpse">
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
@@ -13224,8 +13446,12 @@
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
     </CUnit>
-    <CUnit id="VoidSpearofAdun"/>
-    <CUnit id="VulcanChampion"/>
+    <CUnit id="VoidSpearofAdun">
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+    </CUnit>
+    <CUnit id="VulcanChampion">
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+    </CUnit>
     <CUnit id="Vulture">
         <RepairTime value="23"/>
         <DamageDealtXP value="0"/>
@@ -13362,9 +13588,7 @@
         <DamageTakenXP value="0"/>
         <SubgroupPriority value="113"/>
     </CUnit>
-    <CUnit id="WarpPrismSkinPreview">
-        <EditorCategories value="ObjectType:Unit,ObjectFamily:Storymode"/>
-    </CUnit>
+    <CUnit id="WarpPrismSkinPreview"/>
     <CUnit id="WarpPrismGiant">
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
@@ -13392,7 +13616,6 @@
         <RepairTime value="40"/>
         <BehaviorArray Link="AllUnitBehaviorController"/>
         <SubgroupPriority value="104"/>
-        <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
     </CUnit>
     <CUnit id="WidowMineBurrowed">
         <!--AbilArray Link="WidowMineMakeAttackCharges"/>
@@ -13413,7 +13636,6 @@
         <ScoreKill value="0"/>
         <BehaviorArray Link="AllUnitBehaviorController"/>
         <SubgroupPriority value="104"/>
-        <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
     </CUnit>
     <CUnit id="DrakkenLaserDrillCoop">
         <DeathRevealRadius value="3"/>
@@ -14089,6 +14311,7 @@
         <Collide index="Small" value="1"/>
         <Radius value="2.75"/>
         <InnerRadius value="2.25"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <!--CUnit id="ZagaraVoidCoopReviveCocoon">-->
     <!--        <DeathRevealRadius value="3"/>-->
@@ -14165,6 +14388,8 @@
         <!--BehaviorArray Link="WarpInAttackSpeedBehavior"/-->
         <!--BehaviorArray Link="SOACheatDeathSupply2"/-->
     </CUnit>
+    <!-- Dummy Units for the AC Gluescreen Begin -->
+    <CUnit id="ZealotACGluescreenDummy"/>
     <CUnit id="ZealotAiur">
         <BehaviorArray index="1" Link=""/>
         <!--BehaviorArray Link="Supply2"/-->
@@ -14179,8 +14404,12 @@
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Coop"/>
         <!--BehaviorArray Link="WarpInAttackSpeedBehavior"/-->
     </CUnit>
+    <CUnit id="ZealotAiurACGluescreenDummy"/>
+    <!--Fenix ACGlueScreenDummy Units-->
+    <CUnit id="ZealotFenixACGluescreenDummy"/>
     <CUnit id="ZealotHallucination">
         <SubgroupPriority value="100"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <!--  Swann Commander Mech Rebirth  -->
     <CUnit id="Hellion">
@@ -14293,6 +14522,7 @@
     <CUnit id="Truck">
         <AbilArray Link="CycloneWreckage"/>
         <BehaviorArray Link="SwannCommanderMechRebirth"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="CycloneWreckage" parent="Cyclone">
         <!--SubgroupPriority value="2"/-->
@@ -14879,6 +15109,7 @@
         <PlacementFootprint value="Footprint3x3Creep"/>
         <SubgroupPriority value="2"/>
         <MinimapRadius value="1.5"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <!-- Sentinel, tank, shields -->
     <CUnit id="ZealotPurifier">
@@ -14902,6 +15133,7 @@
         <Race value="ProtP"/>
         <!--BehaviorArray Link="WarpInAttackSpeedBehavior"/-->
     </CUnit>
+    <CUnit id="ZealotPurifierACGluescreenDummy"/>
     <CUnit id="ZealotPurifierReviveCorpse">
         <DamageDealtXP value="0"/>
         <DamageTakenXP value="0"/>
@@ -14929,6 +15161,8 @@
         <Race value="ProtN"/>
         <!--HotkeyCategory value="Unit/Category/ProtossNerazim"/-->
     </CUnit>
+    <CUnit id="ZealotShakurasACGluescreenDummy"/>
+    <CUnit id="ZealotVorazunACGluescreenDummy"/>
     <CUnit id="ZenithStone">
         <PlaneArray index="Air" value="1"/>
         <FlagArray index="CreateVisible" value="0"/>
@@ -14936,6 +15170,14 @@
         <BehaviorArray Link="Unmoved"/>
         <BehaviorArray Link="Unrepairable"/>
     </CUnit>
+    <CUnit id="ZeratulDarkTemplarACGluescreenDummy"/>
+    <CUnit id="ZeratulDisruptorACGluescreenDummy"/>
+    <CUnit id="ZeratulImmortalACGluescreenDummy"/>
+    <CUnit id="ZeratulObserverACGluescreenDummy"/>
+    <CUnit id="ZeratulPhotonCannonACGluescreenDummy"/>
+    <CUnit id="ZeratulSentryACGluescreenDummy"/>
+    <CUnit id="ZeratulStalkerACGluescreenDummy"/>
+    <CUnit id="ZeratulWarpPrismACGluescreenDummy"/>
     <CUnit id="ZergTowerArtillery">
         <DeathTime value="0"/>
         <DeadFootprint value=""/>
@@ -15099,7 +15341,6 @@
         <SeparationRadius value="0.75"/>
         <SubgroupPriority value="10"/>
         <MinimapRadius value="0.75"/>
-        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
         <LeaderAlias value=""/>
     </CUnit>
     <CUnit id="MercVulture">
@@ -15162,6 +15403,7 @@
         <GlossaryWeakArray value="Colossus"/>
         <GlossaryWeakArray value="SiegeTank"/>
         <HotkeyCategory value="Unit/Category/TerranRaider"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="MercVultureWeapon" parent="MISSILE">
         <Race value="Terr"/>
@@ -15484,6 +15726,7 @@
         <GlossaryWeakArray value="Archon"/>
         <KillDisplay value="Always"/>
         <RankDisplay value="Always"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="VespeneDrone">
         <Race value="Terr"/>
@@ -15742,6 +15985,7 @@
         <DamageTakenXP value="0"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
+    <CUnit id="ZerglingKerriganACGluescreenDummy"/>
     <CUnit id="ZerglingRespawnWeapon">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
@@ -15767,6 +16011,7 @@
         <LifeMax value="1000"/>
         <MinimapRadius value="0"/>
         <Footprint value="CocoonBlocker"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="ZagarasInitialCocoonBlocker">
         <DeathRevealRadius value="0"/>
@@ -15790,6 +16035,7 @@
         <LifeMax value="1000"/>
         <MinimapRadius value="0"/>
         <Footprint value="CocoonBlocker"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="ACGriffon">
         <DeathRevealRadius value="3"/>
@@ -15835,6 +16081,7 @@
         <GlossaryPriority value="160"/>
         <GlossaryStrongArray value="SJViking"/>
         <GlossaryWeakArray value="SJFighter1"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="ACHeroSpawnPlacement">
         <FlagArray index="Turnable" value="0"/>
@@ -15860,6 +16107,7 @@
         <PlacementFootprint value="ACHeroSpawnPlacement"/>
         <MinimapRadius value="0"/>
         <LeaderAlias value=""/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="BansheeAirstrikePlaceholder">
         <EditorFlags index="NoPlacement" value="1"/>
@@ -16436,6 +16684,7 @@
         <KillDisplay value="Always"/>
         <RankDisplay value="Always"/>
         <AIEvaluateAlias value="Hydralisk"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="SiegeTankJumpJetPlaceholder">
         <LifeStart value="10000"/>
@@ -16444,7 +16693,6 @@
         <InnerRadius value="0.4375"/>
         <SeparationRadius value="0.4375"/>
         <MinimapRadius value="0"/>
-        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
         <FlagArray index="Unselectable" value="1"/>
         <FlagArray index="Untargetable" value="1"/>
         <FlagArray index="Undetectable" value="1"/>
@@ -16465,7 +16713,6 @@
         <InnerRadius value="0.4375"/>
         <SeparationRadius value="0.4375"/>
         <MinimapRadius value="0"/>
-        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
         <FlagArray index="Turnable" value="0"/>
         <FlagArray index="Unselectable" value="1"/>
         <FlagArray index="Untargetable" value="1"/>
@@ -16536,6 +16783,7 @@
             <ChanceArray index="Idle" value="70"/>
             <ChanceArray index="Turn" value="10"/>
         </Fidget>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="MutatorCloakedMine">
         <DeathRevealRadius value="3"/>
@@ -16589,6 +16837,7 @@
         <GlossaryStrongArray value="SJHyperion"/>
         <GlossaryWeakArray value="SJFighter1"/>
         <FogVisibility value="Dimmed"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="MutatorCloakedMineWeapon" parent="MISSILE">
         <Race value="Terr"/>
@@ -16798,6 +17047,7 @@
         <MinimapRadius value="0.25"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="MutatorSpiderMineBurrowed">
         <DeathRevealRadius value="3"/>
@@ -16831,6 +17081,7 @@
         <MinimapRadius value="0.25"/>
         <EquipmentArray Weapon="VultureSpiderMines"/>
         <Description value="Button/Tooltip/MutatorSpiderMine"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="MutatorHybridImmortal">
         <FlagArray index="UseLineOfSight" value="1"/>
@@ -16880,6 +17131,7 @@
         <SubgroupPriority value="15"/>
         <Food value="-8"/>
         <Race value="Hybr"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="MutatorHybridImmortalDead">
         <FlagArray index="Untargetable" value="1"/>
@@ -16907,6 +17159,7 @@
         <PlacementFootprint value="Footprint2x2PlacementOnly"/>
         <Food value="-8"/>
         <Race value="Hybr"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="MutatorPropagator">
         <DeathRevealRadius value="3"/>
@@ -16943,6 +17196,7 @@
         <WeaponArray Link="MutatorPropagate"/>
         <BehaviorArray Link="MutatorSilentDetector11"/>
         <LifeArmorName value="Unit/LifeArmorName/ZergGroundArmor"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="MutatorPropagateDummyWeapon" parent="MISSILE_INVULNERABLE">
         <Mover value="MissileDefault"/>
@@ -17014,6 +17268,7 @@
         <KillDisplay value="Always"/>
         <RankDisplay value="Always"/>
         <HotkeyAlias value="WidowMine"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="MutatorWidowMineBurrowed">
         <Description value="Button/Tooltip/WidowMine"/>
@@ -17076,6 +17331,7 @@
         <GlossaryWeakArray value="Observer"/>
         <KillDisplay value="Always"/>
         <RankDisplay value="Always"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="MutatorWidowMineAirWeapon" parent="MISSILE_INVULNERABLE">
         <Race value="Terr"/>
@@ -17155,6 +17411,7 @@
     </CUnit>
     <CUnit id="EMPTower">
         <Race value="Terr"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="MutatorAmonZagara">
         <DeathRevealRadius value="3"/>
@@ -17865,6 +18122,7 @@
         <BehaviorArray Link="CoopPVPRepulserField"/>
         <BehaviorArray Link="CoopPVPRepulserFieldAlly"/>
         <MinimapRadius value="0"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="RavenShredderMissileWeapon" parent="MISSILE_INVULNERABLE">
         <Race value="Terr"/>
@@ -18012,6 +18270,7 @@
         <ScoreResult value="BuildOrder"/>
         <SubgroupPriority value="4"/>
         <MinimapRadius value="0"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="PhaseShieldBatteryDummy">
         <FlagArray index="Unselectable" value="1"/>
@@ -18032,7 +18291,6 @@
         <BehaviorArray Link="PowerUserBaseDefenseSmall"/>
         <Footprint value="Footprint2x2CreepNormalContour"/>
         <PlacementFootprint value="Footprint2x2CreepNormal"/>
-        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="PhaseMonolithDummy">
         <FlagArray index="Unselectable" value="1"/>
@@ -18053,7 +18311,6 @@
         <BehaviorArray Link="PowerUserBaseDefenseSmall"/>
         <Footprint value="Footprint3x3CreepNormalContour"/>
         <PlacementFootprint value="Footprint3x3CreepNormal"/>
-        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="PhaseCannonDummy">
         <FlagArray index="Unselectable" value="1"/>
@@ -18074,7 +18331,6 @@
         <BehaviorArray Link="PowerUserBaseDefenseSmall"/>
         <Footprint value="Footprint2x2CreepNormalContour"/>
         <PlacementFootprint value="Footprint2x2CreepNormal"/>
-        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="Shapeshifter">
         <WeaponArray Link="ShapeshifterBile"/>
@@ -18109,6 +18365,7 @@
         <Sight value="8"/>
         <Food value="-6"/>
         <InnerRadius value="0.5"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="SoloDummy">
         <FlagArray index="Unselectable" value="1"/>
@@ -18125,7 +18382,6 @@
         <LifeMax value="10000"/>
         <LifeArmor value="10000"/>
         <LifeRegenRate value="10000"/>
-        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="GWDummy">
         <FlagArray index="Uncommandable" value="1"/>
@@ -18143,7 +18399,6 @@
         <AbilArray Link="move"/>
         <Radius value="1.1875"/>
         <InnerRadius value="1.1875"/>
-        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="DummyArmored">
         <DeathTime value="-1"/>
@@ -18173,7 +18428,6 @@
         <HotkeyAlias value=""/>
         <Fidget DelayMax="0" DelayMin="0"/>
         <BehaviorArray Link="PreventKnockback"/>
-        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="DummyLight">
         <DeathTime value="-1"/>
@@ -18203,7 +18457,6 @@
         <HotkeyAlias value=""/>
         <Fidget DelayMax="0" DelayMin="0"/>
         <BehaviorArray Link="PreventKnockback"/>
-        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="DummyStructure">
         <DeathTime value="-1"/>
@@ -18233,7 +18486,6 @@
         <HotkeyAlias value=""/>
         <Fidget DelayMax="0" DelayMin="0"/>
         <BehaviorArray Link="PreventKnockback"/>
-        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="KorhalSporeCannon">
         <LifeStart value="500"/>
@@ -18301,6 +18553,7 @@
         <TacticalAIThink value="AIThinkHybridBehemoth"/>
         <GlossaryCategory value="Unit/Category/HybridUnits"/>
         <GlossaryPriority value="390"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="Dummy">
         <DeathTime value="-1"/>
@@ -18329,7 +18582,6 @@
         <Fidget DelayMax="0" DelayMin="0"/>
         <Attributes index="Heroic" value="1"/>
         <BehaviorArray Link="PreventKnockback"/>
-        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="DummyUnit">
         <FlagArray index="Invulnerable" value="1"/>
@@ -18337,7 +18589,6 @@
         <LifeMax value="10000"/>
         <Height value="0.5"/>
         <AttackTargetPriority value="1"/>
-        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="MothershipAiur06">
         <Attributes index="MapBoss" value="1"/>
@@ -18989,21 +19240,12 @@
     <CUnit id="ChangelingZerglingWings">
         <BehaviorArray Link="AllUnitBehaviorController"/>
     </CUnit>
-
-
-    <CUnit id="DestructibleSpacePlatformBarrier">
-        <LifeStart value="15"/>
-        <LifeMax value="15"/>
-        <LifeArmor value="0"/>
-    </CUnit>
     <CUnit id="NydusBeast">
         <LifeStart value="4000"/>
         <LifeMax value="4000"/>
         <ShieldsStart value="2000"/>
         <ShieldsMax value="2000"/>
-    </CUnit>
-    <CUnit id="SJGriffon">
-        <Height value="4"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="SJPirateCapitalShip">
         <Height value="3.75"/>
@@ -19012,8 +19254,5 @@
         <LifeStart value="6000"/>
         <LifeMax value="6000"/>
     </CUnit>
-    <CUnit id="SlivanCreep">
-        <LifeStart value="60"/>
-        <LifeMax value="60"/>
-    </CUnit>
+    <CUnit id="ZerglingZagaraACGluescreenDummy"/>
 </Catalog>

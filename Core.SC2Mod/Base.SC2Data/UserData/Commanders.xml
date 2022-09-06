@@ -87,6 +87,12 @@
         </Fields>
         <Fields Id="AlternativeCutscenemessage" Type="Text" EditorColumn="11"/>
         <Fields Id="Standard" Type="Int" EditorColumn="11"/>
+        <Fields>
+            <Id value="Faction"/>
+            <Type value="User"/>
+            <UserType value="Factions"/>
+            <EditorColumn value="2"/>
+        </Fields>
         <Instances Id="[Default]"/>
         <Instances Id="Raynor">
             <GameLink GameLink="TerrR">
@@ -236,6 +242,9 @@
             <User Type="Colors" Instance="Blue">
                 <Field Id="Color"/>
             </User>
+            <User Type="Factions" Instance="Terran">
+                <Field Id="Faction"/>
+            </User>
         </Instances>
         <Instances Id="Swann">
             <GameLink GameLink="TerrK">
@@ -381,6 +390,9 @@
             </User>
             <User Type="Colors" Instance="Orange">
                 <Field Id="Color"/>
+            </User>
+            <User Type="Factions" Instance="Terran">
+                <Field Id="Faction"/>
             </User>
         </Instances>
         <Instances Id="Kerrigan">
@@ -534,6 +546,9 @@
             <User Type="Colors" Instance="Magenta">
                 <Field Id="Color"/>
             </User>
+            <User Type="Factions" Instance="Zerg">
+                <Field Id="Faction"/>
+            </User>
         </Instances>
         <Instances Id="Abathur">
             <GameLink GameLink="ZergA">
@@ -679,6 +694,9 @@
             </User>
             <User Type="Colors" Instance="Yellow">
                 <Field Id="Color"/>
+            </User>
+            <User Type="Factions" Instance="Zerg">
+                <Field Id="Faction"/>
             </User>
         </Instances>
         <Instances Id="Karax">
@@ -832,6 +850,9 @@
             <User Type="Colors" Instance="Yellow">
                 <Field Id="Color"/>
             </User>
+            <User Type="Factions" Instance="Protoss">
+                <Field Id="Faction"/>
+            </User>
         </Instances>
         <Instances Id="Artanis">
             <GameLink GameLink="ProtA">
@@ -983,6 +1004,9 @@
             </User>
             <User Type="Colors" Instance="Teal">
                 <Field Id="Color"/>
+            </User>
+            <User Type="Factions" Instance="Protoss">
+                <Field Id="Faction"/>
             </User>
         </Instances>
         <Instances Id="Nova">
@@ -1136,6 +1160,9 @@
             <User Type="Colors" Instance="Teal">
                 <Field Id="Color"/>
             </User>
+            <User Type="Factions" Instance="CovertOps">
+                <Field Id="Faction"/>
+            </User>
         </Instances>
         <Instances Id="Horner">
             <GameLink GameLink="TerrM">
@@ -1269,6 +1296,9 @@
             </User>
             <User Type="Colors" Instance="Rose">
                 <Field Id="Color"/>
+            </User>
+            <User Type="Factions" Instance="Marauders">
+                <Field Id="Faction"/>
             </User>
         </Instances>
         <Instances Id="Stukov">
@@ -1422,6 +1452,9 @@
             <User Type="Colors" Instance="Lavender">
                 <Field Id="Color"/>
             </User>
+            <User Type="Factions" Instance="Infested">
+                <Field Id="Faction"/>
+            </User>
         </Instances>
         <Instances Id="Zagara">
             <GameLink GameLink="ZergL">
@@ -1573,6 +1606,9 @@
             </User>
             <User Type="Colors" Instance="Navy">
                 <Field Id="Color"/>
+            </User>
+            <User Type="Factions" Instance="Leviathan">
+                <Field Id="Faction"/>
             </User>
         </Instances>
         <Instances Id="Vorazun">
@@ -1729,6 +1765,9 @@
             <User Type="Colors" Instance="Purple">
                 <Field Id="Color"/>
             </User>
+            <User Type="Factions" Instance="Protoss">
+                <Field Id="Faction"/>
+            </User>
         </Instances>
         <Instances Id="Alarak">
             <GameLink GameLink="ProtT">
@@ -1875,6 +1914,9 @@
             <User Type="Colors" Instance="Sangria">
                 <Field Id="Color"/>
             </User>
+            <User Type="Factions" Instance="Taldarim">
+                <Field Id="Faction"/>
+            </User>
         </Instances>
         <Instances Id="Tychus">
             <GameLink GameLink="TerrO">
@@ -2003,6 +2045,9 @@
             <User Type="Colors" Instance="Tuscary">
                 <Field Id="Color"/>
             </User>
+            <User Type="Factions" Instance="Outlaws">
+                <Field Id="Faction"/>
+            </User>
         </Instances>
         <Instances Id="Mengsk">
             <GameLink GameLink="Terr">
@@ -2128,6 +2173,9 @@
             <User Type="Colors" Instance="Mengsk">
                 <Field Id="Color"/>
             </User>
+            <User Type="Factions" Instance="Dominion">
+                <Field Id="Faction"/>
+            </User>
         </Instances>
         <Instances Id="Stetmann">
             <GameLink GameLink="ZergM">
@@ -2249,6 +2297,9 @@
             </User>
             <User Type="Colors" Instance="Orange">
                 <Field Id="Color"/>
+            </User>
+            <User Type="Factions" Instance="Simulant">
+                <Field Id="Faction"/>
             </User>
         </Instances>
         <Instances Id="Dehaka">
@@ -2381,6 +2432,9 @@
             <User Type="Colors" Instance="Silver">
                 <Field Id="Color"/>
             </User>
+            <User Type="Factions" Instance="Primal">
+                <Field Id="Faction"/>
+            </User>
         </Instances>
         <Instances Id="Fenix">
             <GameLink GameLink="ProtP">
@@ -2505,6 +2559,9 @@
             </User>
             <User Type="Colors" Instance="Orange">
                 <Field Id="Color"/>
+            </User>
+            <User Type="Factions" Instance="Purifiers">
+                <Field Id="Faction"/>
             </User>
         </Instances>
         <Instances Id="Zeratul">
@@ -2637,6 +2694,9 @@
             <User Type="Colors" Instance="Aquamarine">
                 <Field Id="Color"/>
             </User>
+            <User Type="Factions" Instance="IhanRii">
+                <Field Id="Faction"/>
+            </User>
         </Instances>
         <Instances Id="Terran">
             <GameLink GameLink="Terr">
@@ -2722,6 +2782,9 @@
             </User>
             <User Type="Colors" Instance="Blue">
                 <Field Id="Color"/>
+            </User>
+            <User Type="Factions" Instance="Terran">
+                <Field Id="Faction"/>
             </User>
         </Instances>
         <Instances Id="Zerg">
@@ -2809,6 +2872,9 @@
             <User Type="Colors" Instance="Purple">
                 <Field Id="Color"/>
             </User>
+            <User Type="Factions" Instance="Zerg">
+                <Field Id="Faction"/>
+            </User>
         </Instances>
         <Instances Id="Protoss">
             <GameLink GameLink="ProtossCommander">
@@ -2877,7 +2943,7 @@
             <Text Text="UserData/Commanders/Protoss_AlternativeCutscenemessage">
                 <Field Id="AlternativeCutscenemessage"/>
             </Text>
-            <User Type="Prestiges" Instance="ProtossDelaam">
+            <User Type="Prestiges" Instance="Protoss">
                 <Field Id="Prestige"/>
             </User>
             <User Type="Prestiges" Instance="ProtossGolden">
@@ -2895,6 +2961,9 @@
             <User Type="Colors" Instance="Orange">
                 <Field Id="Color"/>
             </User>
+            <User Type="Factions" Instance="Protoss">
+                <Field Id="Faction"/>
+            </User>
         </Instances>
         <Instances Id="UED">
             <GameLink GameLink="UED">
@@ -2903,9 +2972,6 @@
             <GameLink GameLink="UED">
                 <Field Id="Race"/>
             </GameLink>
-            <Int>
-                <Field Id="hidden"/>
-            </Int>
             <Model Model="WarfieldPortrait">
                 <Field Id="PortraitModel"/>
             </Model>
@@ -2917,6 +2983,12 @@
             </Text>
             <User Type="Colors" Instance="Yellow">
                 <Field Id="Color"/>
+            </User>
+            <User Type="Factions" Instance="UED">
+                <Field Id="Faction"/>
+            </User>
+            <User Type="Prestiges" Instance="UED">
+                <Field Id="Prestige"/>
             </User>
         </Instances>
         <Instances Id="NetworkHybrids">
@@ -2992,6 +3064,12 @@
             <User Type="Colors" Instance="Lavender">
                 <Field Id="Color"/>
             </User>
+            <User Type="Factions" Instance="Hybrids">
+                <Field Id="Faction"/>
+            </User>
+            <User Type="Prestiges" Instance="Hybrid">
+                <Field Id="Prestige"/>
+            </User>
         </Instances>
         <Instances Id="Genetron">
             <GameLink GameLink="Gen">
@@ -3059,6 +3137,12 @@
             </Text>
             <User Type="Colors" Instance="Aquamarine">
                 <Field Id="Color"/>
+            </User>
+            <User Type="Factions" Instance="Genetron">
+                <Field Id="Faction"/>
+            </User>
+            <User Type="Prestiges" Instance="Genetron">
+                <Field Id="Prestige"/>
             </User>
         </Instances>
         <Instances Id="Xayid">
@@ -3128,6 +3212,12 @@
             <User Type="Colors" Instance="Navy">
                 <Field Id="Color"/>
             </User>
+            <User Type="Factions" Instance="Xayid">
+                <Field Id="Faction"/>
+            </User>
+            <User Type="Prestiges" Instance="Xayid">
+                <Field Id="Prestige"/>
+            </User>
         </Instances>
         <Instances Id="Dragon">
             <GameLink GameLink="Dragon">
@@ -3196,6 +3286,12 @@
             <User Type="Colors" Instance="Lavender">
                 <Field Id="Color"/>
             </User>
+            <User Type="Factions" Instance="Dragon">
+                <Field Id="Faction"/>
+            </User>
+            <User Type="Prestiges" Instance="Dragon">
+                <Field Id="Prestige"/>
+            </User>
         </Instances>
         <Instances Id="Keiron">
             <GameLink GameLink="Keir">
@@ -3261,6 +3357,12 @@
             <User Type="Colors" Instance="Yellow">
                 <Field Id="Color"/>
             </User>
+            <User Type="Factions" Instance="Keiron">
+                <Field Id="Faction"/>
+            </User>
+            <User Type="Prestiges" Instance="Keiron">
+                <Field Id="Prestige"/>
+            </User>
         </Instances>
         <Instances Id="UPL">
             <GameLink GameLink="UPL">
@@ -3283,6 +3385,12 @@
             </Text>
             <User Type="Colors" Instance="Silver">
                 <Field Id="Color"/>
+            </User>
+            <User Type="Factions" Instance="UPL">
+                <Field Id="Faction"/>
+            </User>
+            <User Type="Prestiges" Instance="UPL">
+                <Field Id="Prestige"/>
             </User>
         </Instances>
         <Instances Id="Talon">
@@ -3312,6 +3420,15 @@
             </Text>
             <User Type="Colors" Instance="Purple">
                 <Field Id="Color"/>
+            </User>
+            <User Type="Factions" Instance="Protoss">
+                <Field Id="Faction"/>
+            </User>
+            <User Type="Prestiges" Instance="Talon">
+                <Field Id="Prestige"/>
+            </User>
+            <User Type="Prestiges" Instance="[Default]">
+                <Field Id="Prestige" Index="1"/>
             </User>
         </Instances>
     </CUser>

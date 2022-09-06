@@ -110,6 +110,11 @@
         <GlossaryPriority value="4"/>
         <TauntDuration index="Dance" value="5"/>
     </CUnit>
+    <CUnit id="PrimalSunkenColony">
+        <LifeArmorName value="Unit/LifeArmorName/PrimalZergArmor"/>
+        <ScoreMake value="0"/>
+        <ScoreKill value="0"/>
+    </CUnit>
     <CUnit id="DehakaAirWeapon">
         <Race value="ZergP"/>
     </CUnit>
@@ -231,12 +236,6 @@
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
         <SubgroupPriority value="115"/>
     </CUnit>
-    <CUnit id="PrimalSunkenColony">
-        <Race value="ZergP"/>
-        <LifeArmorName value="Unit/LifeArmorName/PrimalZergArmor"/>
-        <ScoreMake value="0"/>
-        <ScoreKill value="0"/>
-    </CUnit>
     <CUnit id="PrimalTownHall">
         <Race value="ZergP"/>
         <LifeArmorName value="Unit/LifeArmorName/PrimalZergArmor"/>
@@ -306,20 +305,6 @@
         <KillXP value="0"/>
         <DamageDealtXP value="0"/>
         <DamageTakenXP value="0"/>
-    </CUnit>
-    <CUnit id="Slivan">
-        <ScoreMake value="0"/>
-        <ScoreKill value="0"/>
-        <KillXP value="0"/>
-        <DamageDealtXP value="0"/>
-        <DamageTakenXP value="0"/>
-        <CardLayouts index="0">
-            <LayoutButtons index="5" AbilCmd="MurvarCoopPuke,255"/>
-            <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="SlivanPuke,Cancel" Row="2" Column="4"/>
-            <LayoutButtons Face="CoopMurvarSpawnCreepers" Type="AbilCmd" AbilCmd="CoopMurvarSpawnCreepers,255" Row="2" Column="1"/>
-        </CardLayouts>
-        <AbilArray index="3" Link="MurvarCoopPuke"/>
-        <AbilArray Link="CoopMurvarSpawnCreepers"/>
     </CUnit>
     <CUnit id="DehakaCoopBurrowed">
         <DeathTime value="-1"/>
@@ -1258,6 +1243,7 @@
         <InnerRadius value="1"/>
         <BehaviorArray Link="NydusDestroyerDeepTunnelPlacementRemove"/>
         <LeaderAlias value=""/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="GreaterNydusDestroyerDeepTunnelPlacement">
         <EditorFlags index="NoPlacement" value="1"/>
@@ -1279,6 +1265,7 @@
         <InnerRadius value="1.5"/>
         <BehaviorArray Link="NydusDestroyerDeepTunnelPlacementRemove"/>
         <LeaderAlias value=""/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="DehakaNydusDestroyerWeapon" parent="MISSILE">
         <Race value="ZergP"/>
@@ -1735,6 +1722,7 @@
             <ChanceArray index="Idle" value="33"/>
             <ChanceArray index="Turn" value="33"/>
         </Fidget>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Coop"/>
     </CUnit>
     <CUnit id="DehakaRoachBurrowed">
         <DeathRevealRadius value="3"/>
@@ -1784,6 +1772,7 @@
         <KillDisplay value="Always"/>
         <RankDisplay value="Always"/>
         <AIEvaluateAlias value="DehakaRoach"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Coop"/>
     </CUnit>
     <CUnit id="DehakaRoachLevel2">
         <Description value="Button/Tooltip/DehakaRoach"/>
@@ -3836,6 +3825,7 @@
         <MinimapRadius value="0.375"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="DehakaCreeperFlying">
         <DeathRevealRadius value="3"/>
@@ -4144,6 +4134,7 @@
         </Fidget>
         <GlossaryCategory value="Unit/Category/ZergUnits"/>
         <GlossaryPriority value="310"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="MurvarCreepFlying">
         <DeathRevealRadius value="3"/>
@@ -4205,5 +4196,6 @@
         </Fidget>
         <GlossaryCategory value="Unit/Category/ZergUnits"/>
         <GlossaryPriority value="310"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
 </Catalog>

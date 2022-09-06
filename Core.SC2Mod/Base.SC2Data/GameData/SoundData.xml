@@ -1082,26 +1082,4 @@
     <CSound id="acObj_Zerg_ZergQueen_051" parent="ACVO_Priority" Portrait="QueenPortrait" Subtitle="acObj_Zerg" Speaker="ZergQueen" Actor="" Line="00051"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
     <CSound id="acObj_Zerg_ZergQueen_052" parent="ACVO_Priority" Portrait="QueenPortrait" Subtitle="acObj_Zerg" Speaker="ZergQueen" Actor="" Line="00052"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
     <CSound id="acObj_Zerg_ZergQueen_053" parent="ACVO_Priority" Portrait="QueenPortrait" Subtitle="acObj_Zerg" Speaker="ZergQueen" Actor="" Line="00053"><Flags index="NeedsUpdate" value="1"/><Flags index="NeedsTTS" value="1"/></CSound>
-
-
-<!--    <CSound                id="e_cmdNotEnoughFood_ZergM"                 parent="e_cmdNotEnoughFood_Zerg"      />-->
-<!--    <CSound          id="e_cmdFoodUsageImpossible_ZergM"           parent="e_cmdFoodUsageImpossible_Zerg"      />-->
-<!--    <CSound                id="e_cmdNotEnoughFood_TerrI"                 parent="e_cmdNotEnoughFood_Zerg"      />-->
-<!--    <CSound          id="e_cmdFoodUsageImpossible_TerrI"           parent="e_cmdFoodUsageImpossible_Zerg"      />-->
-
-<!--    <CSound         id="Alert_TerranAddOnComplete_ZergM"          parent="Alert_TerranAddOnComplete_Zerg"      />-->
-<!--    <CSound     id="e_cmdCantBuildLocationInvalid_ZergM"      parent="e_cmdCantBuildLocationInvalid_Zerg"      />-->
-<!--    <CSound           id="e_cmdCouldntReachTarget_ZergM"            parent="e_cmdCouldntReachTarget_Zerg"      />-->
-<!--    <CSound id="e_cmdCantBuildTooCloseToResources_ZergM"  parent="e_cmdCantBuildTooCloseToResources_Zerg"      />-->
-<!--    <CSound                  id="Alert_GamePaused_ZergM"                   parent="Alert_GamePaused_Zerg"      />-->
-<!--    <CSound                 id="Alert_GameResumed_ZergM"                  parent="Alert_GameResumed_Zerg"      />-->
-<!--    <CSound      id="e_cmdCantLandLocationInvalid_ZergM"       parent="e_cmdCantLandLocationInvalid_Zerg"      />-->
-<!--    <CSound              id="e_cmdCantBuildOnThat_ZergM"               parent="e_cmdCantBuildOnThat_Zerg"      />-->
-<!--    <CSound             id="e_cmdNotEnoughVespene_ZergM"              parent="e_cmdNotEnoughVespene_Zerg"      />-->
-<!--    <CSound            id="e_cmdNotEnoughMinerals_ZergM"             parent="e_cmdNotEnoughMinerals_Zerg"      />-->
-<!--    <CSound              id="e_cmdNotEnoughEnergy_ZergM"               parent="e_cmdNotEnoughEnergy_Zerg"      />-->
-
-
-
-
 </Catalog>

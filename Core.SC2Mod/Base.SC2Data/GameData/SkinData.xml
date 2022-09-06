@@ -9,12 +9,12 @@
         <ReplacementArray Catalog="Sound" From="e_cmdCantBuildTooCloseToResources"       To="e_cmdCantBuildTooCloseToResources_##suffix##"/>
 <!--        <ReplacementArray Catalog="Sound"                  From="Alert_GamePaused"                        To="Alert_GamePaused_##suffix##"/>-->
 <!--        <ReplacementArray Catalog="Sound"                 From="Alert_GameResumed"                       To="Alert_GameResumed_##suffix##"/>-->
-        <ReplacementArray Catalog="Sound"      From="e_cmdCantLandLocationInvalid"                To="e_cmdFoodUsageImpossible_##suffix##"/>
-        <ReplacementArray Catalog="Sound"          From="e_cmdFoodUsageImpossible"                    To="e_cmdCantBuildOnThat_##suffix##"/>
-        <ReplacementArray Catalog="Sound"              From="e_cmdCantBuildOnThat"                      To="e_cmdNotEnoughFood_##suffix##"/>
-        <ReplacementArray Catalog="Sound"                From="e_cmdNotEnoughFood"                   To="e_cmdNotEnoughVespene_##suffix##"/>
-        <ReplacementArray Catalog="Sound"             From="e_cmdNotEnoughVespene"                  To="e_cmdNotEnoughMinerals_##suffix##"/>
-        <ReplacementArray Catalog="Sound"            From="e_cmdNotEnoughMinerals"                    To="e_cmdNotEnoughEnergy_##suffix##"/>
+        <ReplacementArray Catalog="Sound"      From="e_cmdCantLandLocationInvalid"                    To="e_cmdCantBuildOnThat_##suffix##"/>
+        <ReplacementArray Catalog="Sound"          From="e_cmdFoodUsageImpossible"                To="e_cmdFoodUsageImpossible_##suffix##"/>
+        <ReplacementArray Catalog="Sound"              From="e_cmdCantBuildOnThat"                   To="e_cmdCantBuildOnThat_##suffix##" />
+        <ReplacementArray Catalog="Sound"                From="e_cmdNotEnoughFood"                      To="e_cmdNotEnoughFood_##suffix##"/>
+        <ReplacementArray Catalog="Sound"             From="e_cmdNotEnoughVespene"                   To="e_cmdNotEnoughVespene_##suffix##"/>
+        <ReplacementArray Catalog="Sound"            From="e_cmdNotEnoughMinerals"                  To="e_cmdNotEnoughMinerals_##suffix##"/>
 
         <ReplacementArray Catalog="Sound"         From="Alert_TerranAddOnComplete_Zerg"          To="Alert_TerranAddOnComplete_##suffix##"/>
         <ReplacementArray Catalog="Sound"     From="e_cmdCantBuildLocationInvalid_Zerg"      To="e_cmdCantBuildLocationInvalid_##suffix##"/>
@@ -22,13 +22,13 @@
         <ReplacementArray Catalog="Sound" From="e_cmdCantBuildTooCloseToResources_Zerg"  To="e_cmdCantBuildTooCloseToResources_##suffix##"/>
         <ReplacementArray Catalog="Sound"                  From="Alert_GamePaused_Zerg"                   To="Alert_GamePaused_##suffix##"/>
         <ReplacementArray Catalog="Sound"                 From="Alert_GameResumed_Zerg"                  To="Alert_GameResumed_##suffix##"/>
-        <ReplacementArray Catalog="Sound"      From="e_cmdCantLandLocationInvalid_Zerg"           To="e_cmdFoodUsageImpossible_##suffix##"/>
-        <ReplacementArray Catalog="Sound"          From="e_cmdFoodUsageImpossible_Zerg"               To="e_cmdCantBuildOnThat_##suffix##"/>
-        <ReplacementArray Catalog="Sound"              From="e_cmdCantBuildOnThat_Zerg"                 To="e_cmdNotEnoughFood_##suffix##"/>
-        <ReplacementArray Catalog="Sound"                From="e_cmdNotEnoughFood_Zerg"              To="e_cmdNotEnoughVespene_##suffix##"/>
-        <ReplacementArray Catalog="Sound"             From="e_cmdNotEnoughVespene_Zerg"             To="e_cmdNotEnoughMinerals_##suffix##"/>
-        <ReplacementArray Catalog="Sound"            From="e_cmdNotEnoughMinerals_Zerg"               To="e_cmdNotEnoughEnergy_##suffix##"/>
-
+        <ReplacementArray Catalog="Sound"      From="e_cmdCantLandLocationInvalid_Zerg"       To="e_cmdCantLandLocationInvalid_##suffix##"/>
+        <ReplacementArray Catalog="Sound"              From="e_cmdCantBuildOnThat_Zerg"               To="e_cmdCantBuildOnThat_##suffix##"/>
+        <ReplacementArray Catalog="Sound"          From="e_cmdFoodUsageImpossible_Zerg"           To="e_cmdFoodUsageImpossible_##suffix##"/>
+        <ReplacementArray Catalog="Sound"                From="e_cmdNotEnoughFood_Zerg"                 To="e_cmdNotEnoughFood_##suffix##"/>
+        <ReplacementArray Catalog="Sound"             From="e_cmdNotEnoughVespene_Zerg"              To="e_cmdNotEnoughVespene_##suffix##"/>
+        <ReplacementArray Catalog="Sound"            From="e_cmdNotEnoughMinerals_Zerg"             To="e_cmdNotEnoughMinerals_##suffix##"/>
+        e_cmdNotEnoughEnergy_
         <ReplacementArray Catalog="Sound"         From="Alert_TerranAddOnComplete_Terr"          To="Alert_TerranAddOnComplete_##suffix##"/>
 <!--        <ReplacementArray Catalog="Sound"     From="e_cmdCantBuildLocationInvalid_Terr"      To="e_cmdCantBuildLocationInvalid_##suffix##"/>-->
         <ReplacementArray Catalog="Sound"           From="e_cmdCouldntReachTarget_Terr"            To="e_cmdCouldntReachTarget_##suffix##"/>
@@ -43,17 +43,17 @@
 <!--        <ReplacementArray Catalog="Sound"            From="e_cmdNotEnoughMinerals_Terr"               To="e_cmdNotEnoughEnergy_##suffix##"/>-->
 
         <ReplacementArray Catalog="Sound"         From="Alert_TerranAddOnComplete_Prot"          To="Alert_TerranAddOnComplete_##suffix##"/>
-<!--        <ReplacementArray Catalog="Sound"     From="e_cmdCantBuildLocationInvalid_Prot"      To="e_cmdCantBuildLocationInvalid_##suffix##"/>-->
+<!--    <ReplacementArray Catalog="Sound"     From="e_cmdCantBuildLocationInvalid_Prot"      To="e_cmdCantBuildLocationInvalid_##suffix##"/>-->
         <ReplacementArray Catalog="Sound"           From="e_cmdCouldntReachTarget_Prot"            To="e_cmdCouldntReachTarget_##suffix##"/>
         <ReplacementArray Catalog="Sound" From="e_cmdCantBuildTooCloseToResources_Prot"  To="e_cmdCantBuildTooCloseToResources_##suffix##"/>
         <ReplacementArray Catalog="Sound"                  From="Alert_GamePaused_Prot"                   To="Alert_GamePaused_##suffix##"/>
         <ReplacementArray Catalog="Sound"                 From="Alert_GameResumed_Prot"                  To="Alert_GameResumed_##suffix##"/>
-<!--        <ReplacementArray Catalog="Sound"      From="e_cmdCantLandLocationInvalid_Prot"           To="e_cmdFoodUsageImpossible_##suffix##"/>-->
-        <ReplacementArray Catalog="Sound"          From="e_cmdFoodUsageImpossible_Prot"               To="e_cmdCantBuildOnThat_##suffix##"/>
-        <ReplacementArray Catalog="Sound"              From="e_cmdCantBuildOnThat_Prot"                 To="e_cmdNotEnoughFood_##suffix##"/>
-        <ReplacementArray Catalog="Sound"                From="e_cmdNotEnoughFood_Prot"              To="e_cmdNotEnoughVespene_##suffix##"/>
-        <ReplacementArray Catalog="Sound"             From="e_cmdNotEnoughVespene_Prot"             To="e_cmdNotEnoughMinerals_##suffix##"/>
-        <ReplacementArray Catalog="Sound"            From="e_cmdNotEnoughMinerals_Prot"               To="e_cmdNotEnoughEnergy_##suffix##"/>
+<!--    <ReplacementArray Catalog="Sound"      From="e_cmdCantLandLocationInvalid_Prot"       To="e_cmdCantLandLocationInvalid_##suffix##"/>-->
+        <ReplacementArray Catalog="Sound"          From="e_cmdFoodUsageImpossible_Prot"           To="e_cmdFoodUsageImpossible_##suffix##"/>
+        <ReplacementArray Catalog="Sound"              From="e_cmdCantBuildOnThat_Prot"               To="e_cmdCantBuildOnThat_##suffix##"/>
+        <ReplacementArray Catalog="Sound"                From="e_cmdNotEnoughFood_Prot"                 To="e_cmdNotEnoughFood_##suffix##"/>
+        <ReplacementArray Catalog="Sound"             From="e_cmdNotEnoughVespene_Prot"              To="e_cmdNotEnoughVespene_##suffix##"/>
+        <ReplacementArray Catalog="Sound"            From="e_cmdNotEnoughMinerals_Prot"              To="e_cmdNotEnoughMinerals_##suffix##"/>
     </CSkin>
     <CSkin default="1" id="VoicePackCommanderBase">
         <?token id="prefix" value="Prefix"?>
@@ -66,8 +66,8 @@
 
         <ReplacementArray Catalog="Sound" From="e_cmdCantLandLocationInvalid"           To="##prefix##_LandingInterrupt"/>
         <ReplacementArray Catalog="Sound" From="e_cmdCantLandLocationInvalid_Zerg"      To="##prefix##_LandingInterrupt"/>
-        <ReplacementArray Catalog="Sound" From="e_cmdCantLandLocationInvalid_Terr"      To="##prefix##_LandingInterrupt"/>
-        <ReplacementArray Catalog="Sound" From="e_cmdCantLandLocationInvalid_Prot"      To="##prefix##_LandingInterrupt"/>
+<!--        <ReplacementArray Catalog="Sound" From="e_cmdCantLandLocationInvalid_Terr"      To="##prefix##_LandingInterrupt"/>-->
+<!--        <ReplacementArray Catalog="Sound" From="e_cmdCantLandLocationInvalid_Prot"      To="##prefix##_LandingInterrupt"/>-->
 
         <ReplacementArray Catalog="Sound" From="e_cmdCantBuildTooCloseToResources"      To="##prefix##_BuildError##suffix##"/>
 <!--        <ReplacementArray Catalog="Sound" From="e_cmdCantBuildTooCloseToResources_Terr" To="##prefix##_BuildError##suffix##"/>-->

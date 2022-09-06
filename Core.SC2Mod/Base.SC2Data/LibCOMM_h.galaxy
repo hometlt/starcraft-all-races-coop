@@ -1116,7 +1116,7 @@ trigger libCOMM_gt_CM_Zeratul_ArtifactRush;
 trigger libCOMM_gt_CM_ZeratulAvatarMinimapIcon;
 trigger libCOMM_gt_CM_Zeratul_StasisDuration;
 trigger libCOMM_gt_CM_Zeratul_RallySetToZeratul;
-trigger libCOMM_gt_StartingCreepAndLarva;
+trigger libCOMM_gt_StartingLarva;
 trigger libCOMM_gt_StartingCreepAndLarva1;
 trigger libCOMM_gt_StartingCreepAndLarva2;
 trigger libCOMM_gt_InitializeUED;

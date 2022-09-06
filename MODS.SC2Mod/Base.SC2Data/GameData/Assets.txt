@@ -615,3 +615,5 @@ UI/ResourceFrameSupplyIcon_Dragon=Assets\Textures\btn-unit-zerg-quillgore.dds
 UI/ResourceFrameArmyIcon_UPL=Assets\Textures\btn-unit-upl-infantryrifle.dds
 UI/ResourceFrameWorkerIcon_UPL=Assets\Textures\btn-unit-upl-miningdrone.dds
 UI/ResourceFrameSupplyIcon_UPL=Assets\Textures\btn-building-upl-uplgenerator.dds
+UI/ArmyButtonIcon_UPL=Assets\Textures\ui_console_helperbutton_icon_army_UED.dds
+UI/IdleButtonIcon_UPL=Assets\Textures\ui_console_helperbutton_icon_worker_UED.dds

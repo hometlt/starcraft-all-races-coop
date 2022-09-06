@@ -235,8 +235,6 @@
     <Catalog path="CommandersData/Hologram/ActorData.xml"/>
     <Catalog path="CommandersData/Hologram/ModelData.xml"/>
     <Catalog path="CommandersData/Hologram/SkinData.xml"/>
-
-
     <Catalog path="MissionsData/AbilData.xml"/>
     <Catalog path="MissionsData/ActorData.xml"/>
     <Catalog path="MissionsData/AttachMethodData.xml"/>

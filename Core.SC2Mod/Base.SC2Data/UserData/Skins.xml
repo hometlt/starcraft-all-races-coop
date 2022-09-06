@@ -1296,5 +1296,13 @@
                 <Field Id="Supplement"/>
             </GameLink>
         </Instances>
+        <Instances Id="Artanis">
+            <GameLink GameLink="ArtanisCommander">
+                <Field Id="Upgrade"/>
+            </GameLink>
+            <GameLink GameLink="VoicePackProtossArtanis">
+                <Field Id="Supplement"/>
+            </GameLink>
+        </Instances>
     </CUser>
 </Catalog>

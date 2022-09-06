@@ -1605,7 +1605,6 @@
         <AttackTargetPriority value="11"/>
         <BehaviorArray Link="SpawnLarvaStetmann"/>
         <BehaviorArray Link="ZergBuildingStetmannDies9"/>
-        <BehaviorArray Link="QueenofVenomHatcherySearch"/>
         <BehaviorArray Link="HatcheryLarvaDeath"/>
         <BehaviorArray Link="ChronoBoostTarget"/>
         <BehaviorArray Link="PowerSourceStetmann"/>
@@ -2219,7 +2218,6 @@
         <AttackTargetPriority value="11"/>
         <BehaviorArray Link="SpawnLarvaStetmann"/>
         <BehaviorArray Link="ZergBuildingStetmannDies9"/>
-        <BehaviorArray Link="QueenofVenomHatcherySearch"/>
         <BehaviorArray Link="HatcheryLarvaDeath"/>
         <BehaviorArray Link="ChronoBoostTarget"/>
         <BehaviorArray Link="PowerSourceStetmann"/>

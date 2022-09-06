@@ -24,6 +24,19 @@ void libARRA_InitVariables () {
 }
 
 // Functions
+int libARRA_gf_HookUpDialogItemandshowforplayers (string lp_name, int lp_type, int lp_parent, playergroup lp_players) {
+    // Automatic Variable Declarations
+    // Implementation
+    DialogControlHookup(lp_parent, lp_type, lp_name);
+    if ((lp_players == PlayerGroupEmpty())) {
+        DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
+    }
+    else {
+        DialogControlSetVisible(DialogControlLastCreated(), lp_players, true);
+    }
+    return DialogControlLastCreated();
+}
+
 void libARRA_gf_LOGString (string lp_value) {
     // Automatic Variable Declarations
     // Implementation
@@ -55,6 +68,61 @@ void libARRA_gf_LOGUnit (string lp_lOG) {
     libARRA_gf_LOGString((lp_lOG));
 }
 
+point libARRA_gf_IIF7 (point lp_iF, point lp_eLSE) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_iF != null)) {
+        return lp_iF;
+    }
+    else {
+        return lp_eLSE;
+    }
+}
+
+int libARRA_gf_IIF8 (int lp_iF, int lp_eLSE) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_iF != 0)) {
+        return lp_iF;
+    }
+    else {
+        return lp_eLSE;
+    }
+}
+
+string libARRA_gf_IIF4 (string lp_iF, string lp_eLSE) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_iF != null)) {
+        return lp_iF;
+    }
+    else {
+        return lp_eLSE;
+    }
+}
+
+unit libARRA_gf_IIF6 (unit lp_iF, unit lp_eLSE) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_iF != null)) {
+        return lp_iF;
+    }
+    else {
+        return lp_eLSE;
+    }
+}
+
+string libARRA_gf_IIF5 (string lp_iF, string lp_iF2) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_iF != null)) {
+        return lp_iF;
+    }
+    else {
+        return lp_iF2;
+    }
+}
+
 string libARRA_gf_IIF (bool lp_condition, string lp_iF, string lp_eLSE) {
     // Automatic Variable Declarations
     // Implementation
@@ -66,14 +134,14 @@ string libARRA_gf_IIF (bool lp_condition, string lp_iF, string lp_eLSE) {
     }
 }
 
-bool libARRA_gf_IIF2 (bool lp_condition) {
+int libARRA_gf_IIF2 (bool lp_condition, int lp_iF, int lp_eLSE) {
     // Automatic Variable Declarations
     // Implementation
     if ((lp_condition == true)) {
-        return true;
+        return lp_iF;
     }
     else {
-        return false;
+        return lp_eLSE;
     }
 }
 
@@ -88,15 +156,13 @@ string libARRA_gf_IIF3 (bool lp_condition, string lp_iF, string lp_eLSE) {
     }
 }
 
-void libARRA_gf_DynamicArrayCreate (string lp_arrayName) {
+void libARRA_gf_DynamicArrayCreate (string lp_list) {
     // Automatic Variable Declarations
     // Implementation
-    if ((DataTableValueExists(true, lp_arrayName) == false)) {
-        DataTableSetInt(true, lp_arrayName, 0);
+    if ((DataTableValueExists(true, lp_list) == false)) {
+        DataTableSetInt(true, lp_list, 0);
     }
-    else {
-        libNtve_gf_UIErrorMessage(PlayerGroupAll(), (StringExternal("Param/Value/lib_ARRA_3F48C1B8") + StringToText(lp_arrayName) + StringExternal("Param/Value/lib_ARRA_3F2D2FDD")), SoundLink("UI_GenericError", 0));
-    }
+
 }
 
 void libARRA_gf_DynamicArrayDestroy (string lp_arrayName) {
@@ -109,6 +175,14 @@ void libARRA_gf_DynamicArrayDestroy (string lp_arrayName) {
     autoDF55B283_var = 0;
     for ( ; autoDF55B283_var <= autoDF55B283_ae; autoDF55B283_var += 1 ) {
         DataTableValueRemove(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_arrayName, autoDF55B283_var));
+    }
+}
+
+void libARRA_gf_DynamicArrayClear (string lp_arrayName) {
+    // Automatic Variable Declarations
+    // Implementation
+    while ((libARRA_gf_DynamicArraySize(lp_arrayName) > 0)) {
+        libARRA_gf_DynamicArrayPopBack(lp_arrayName);
     }
 }
 
@@ -128,12 +202,6 @@ int libARRA_gf_DynamicArraySize (string lp_arrayName) {
     // Automatic Variable Declarations
     // Implementation
     return DataTableGetInt(true, lp_arrayName);
-}
-
-int libARRA_gf_DynamicArrayLastElement (string lp_arrayName) {
-    // Automatic Variable Declarations
-    // Implementation
-    return (DataTableGetInt(true, lp_arrayName) - 1);
 }
 
 bool libARRA_gf_DynamicArrayIsEmpty (string lp_arrayName) {
@@ -157,100 +225,7 @@ string libARRA_gf_DynamicArrayGetDatabaseName (string lp_arrayName, int lp_index
     return (lp_arrayName + "[" + IntToString(lp_index) + "]");
 }
 
-void libARRA_gf_DynamicPointArraySet (string lp_arrayName, int lp_index, point lp_value) {
-    // Automatic Variable Declarations
-    // Implementation
-    if ((lp_index < libARRA_gf_DynamicArraySize(lp_arrayName))) {
-        DataTableSetPoint(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_arrayName, lp_index), lp_value);
-    }
-    else {
-        libNtve_gf_UIErrorMessage(PlayerGroupAll(), (StringExternal("Param/Value/lib_ARRA_D7A229D0") + IntToText(lp_index) + StringExternal("Param/Value/lib_ARRA_1B574511") + IntToText(libARRA_gf_DynamicArraySize(lp_arrayName))), SoundLink("UI_GenericError", 0));
-    }
-}
-
-point libARRA_gf_DynamicPointArrayGet (string lp_arrayName, int lp_index) {
-    // Variable Declarations
-    point lv_returnvalue;
-
-    // Automatic Variable Declarations
-    // Variable Initialization
-
-    // Implementation
-    if ((lp_index < libARRA_gf_DynamicArraySize(lp_arrayName))) {
-        lv_returnvalue = DataTableGetPoint(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_arrayName, lp_index));
-    }
-    else {
-        libNtve_gf_UIErrorMessage(PlayerGroupAll(), (StringExternal("Param/Value/lib_ARRA_1F62FEC0") + IntToText(lp_index) + StringExternal("Param/Value/lib_ARRA_8DE2D371") + IntToText(libARRA_gf_DynamicArraySize(lp_arrayName))), SoundLink("UI_GenericError", 0));
-    }
-    return lv_returnvalue;
-}
-
-void libARRA_gf_DynamicPointArrayPushBack (string lp_arrayName, point lp_addedValue) {
-    // Automatic Variable Declarations
-    // Implementation
-    DataTableSetPoint(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_arrayName, libARRA_gf_DynamicArraySize(lp_arrayName)), lp_addedValue);
-    DataTableSetInt(true, lp_arrayName, (DataTableGetInt(true, lp_arrayName) + 1));
-}
-
-void libARRA_gf_DynamicPointArrayRemove (string lp_arrayName, int lp_index) {
-    // Automatic Variable Declarations
-    int auto519727D7_ae;
-    int auto519727D7_var;
-
-    // Implementation
-    if ((lp_index < libARRA_gf_DynamicArraySize(lp_arrayName))) {
-        auto519727D7_ae = (libARRA_gf_DynamicArraySize(lp_arrayName) - 2);
-        auto519727D7_var = lp_index;
-        for ( ; auto519727D7_var <= auto519727D7_ae; auto519727D7_var += 1 ) {
-            DataTableSetPoint(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_arrayName, auto519727D7_var), DataTableGetPoint(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_arrayName, (auto519727D7_var + 1))));
-        }
-        libARRA_gf_DynamicArrayPopBack(lp_arrayName);
-    }
-    else {
-        libNtve_gf_UIErrorMessage(PlayerGroupAll(), (StringExternal("Param/Value/lib_ARRA_7318B37C") + IntToText(lp_index) + StringExternal("Param/Value/lib_ARRA_9A7EA85B") + IntToText(libARRA_gf_DynamicArraySize(lp_arrayName))), SoundLink("UI_GenericError", 0));
-    }
-}
-
-void libARRA_gf_DynamicPointArrayAdd (string lp_arrayName, int lp_index, point lp_value) {
-    // Variable Declarations
-    int lv_start;
-    int lv_end;
-
-    // Automatic Variable Declarations
-    int auto4C40B01B_ae;
-    int auto4C40B01B_var;
-
-    // Variable Initialization
-
-    // Implementation
-    if ((lp_index < libARRA_gf_DynamicArraySize(lp_arrayName))) {
-        libARRA_gf_DynamicPointArrayPushBack(lp_arrayName, libARRA_gf_DynamicPointArrayGet(lp_arrayName, (libARRA_gf_DynamicArraySize(lp_arrayName) - 1)));
-        lv_start = (libARRA_gf_DynamicArraySize(lp_arrayName) - 2);
-        lv_end = (lp_index + 1);
-        auto4C40B01B_ae = (lv_start - lv_end);
-        auto4C40B01B_var = 0;
-        for ( ; auto4C40B01B_var <= auto4C40B01B_ae; auto4C40B01B_var += 1 ) {
-            DataTableSetPoint(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_arrayName, (lv_start - auto4C40B01B_var)), DataTableGetPoint(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_arrayName, (lv_start - auto4C40B01B_var - 1))));
-        }
-        libARRA_gf_DynamicPointArraySet(lp_arrayName, lp_index, lp_value);
-    }
-    else {
-        libNtve_gf_UIErrorMessage(PlayerGroupAll(), (StringExternal("Param/Value/lib_ARRA_5349D4ED") + IntToText(lp_index) + StringExternal("Param/Value/lib_ARRA_669B8E17") + IntToText(libARRA_gf_DynamicArraySize(lp_arrayName))), SoundLink("UI_GenericError", 0));
-    }
-}
-
-void libARRA_gf_DynamicIntArraySet (string lp_arrayName, int lp_index, int lp_value) {
-    // Automatic Variable Declarations
-    // Implementation
-    if ((lp_index < libARRA_gf_DynamicArraySize(lp_arrayName))) {
-        DataTableSetInt(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_arrayName, lp_index), lp_value);
-    }
-    else {
-        libNtve_gf_UIErrorMessage(PlayerGroupAll(), (StringExternal("Param/Value/lib_ARRA_0D5C8ADE") + IntToText(lp_value) + StringExternal("Param/Value/lib_ARRA_E96DE815") + IntToText(lp_index) + StringExternal("Param/Value/lib_ARRA_ED2C25F4") + IntToText(libARRA_gf_DynamicArraySize(lp_arrayName))), SoundLink("UI_GenericError", 0));
-    }
-}
-
-int libARRA_gf_DynamicIntArrayGet (string lp_arrayName, int lp_index) {
+int libARRA_gf_ListIntGet (string lp_list, int lp_index) {
     // Variable Declarations
     int lv_returnvalue;
 
@@ -259,42 +234,74 @@ int libARRA_gf_DynamicIntArrayGet (string lp_arrayName, int lp_index) {
     lv_returnvalue = -1;
 
     // Implementation
-    if ((lp_index < libARRA_gf_DynamicArraySize(lp_arrayName))) {
-        lv_returnvalue = DataTableGetInt(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_arrayName, lp_index));
+    if ((lp_index <= libARRA_gf_DynamicArraySize(lp_list)) && (lp_index > 0)) {
+        lv_returnvalue = DataTableGetInt(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_list, (lp_index - 1)));
     }
     else {
-        libNtve_gf_UIErrorMessage(PlayerGroupAll(), (StringExternal("Param/Value/lib_ARRA_4E66DCA4") + IntToText(lp_index) + StringExternal("Param/Value/lib_ARRA_09F3147F") + IntToText(libARRA_gf_DynamicArraySize(lp_arrayName))), SoundLink("UI_GenericError", 0));
+        libNtve_gf_UIErrorMessage(PlayerGroupAll(), (StringExternal("Param/Value/lib_ARRA_4E66DCA4") + IntToText(lp_index) + StringExternal("Param/Value/lib_ARRA_09F3147F") + IntToText(libARRA_gf_DynamicArraySize(lp_list))), SoundLink("UI_GenericError", 0));
     }
     return lv_returnvalue;
 }
 
-void libARRA_gf_DynamicIntArrayPushBack (string lp_arrayName, int lp_addedValue) {
+int libARRA_gf_ListIntIndexOf (string lp_list, int lp_value) {
     // Automatic Variable Declarations
+    int autoE0A8D760_ae;
+    int autoE0A8D760_var;
+
     // Implementation
-    DataTableSetInt(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_arrayName, libARRA_gf_DynamicArraySize(lp_arrayName)), lp_addedValue);
-    DataTableSetInt(true, lp_arrayName, (DataTableGetInt(true, lp_arrayName) + 1));
+    if ((libARRA_gf_DynamicArrayIsEmpty(lp_list) == false)) {
+        autoE0A8D760_ae = libARRA_gf_DynamicArraySize(lp_list);
+        autoE0A8D760_var = 1;
+        for ( ; autoE0A8D760_var <= autoE0A8D760_ae; autoE0A8D760_var += 1 ) {
+            if ((libARRA_gf_ListIntGet(lp_list, autoE0A8D760_var) == lp_value)) {
+                return autoE0A8D760_var;
+            }
+
+        }
+    }
+
+    return -1;
 }
 
-void libARRA_gf_DynamicIntArrayRemove (string lp_arrayName, int lp_index) {
+bool libARRA_gf_ListIntIncludes (string lp_list, int lp_value) {
     // Automatic Variable Declarations
-    int auto477B3C43_ae;
-    int auto477B3C43_var;
-
     // Implementation
-    if ((lp_index < libARRA_gf_DynamicArraySize(lp_arrayName))) {
-        auto477B3C43_ae = (libARRA_gf_DynamicArraySize(lp_arrayName) - 2);
-        auto477B3C43_var = lp_index;
-        for ( ; auto477B3C43_var <= auto477B3C43_ae; auto477B3C43_var += 1 ) {
-            DataTableSetInt(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_arrayName, auto477B3C43_var), DataTableGetInt(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_arrayName, (auto477B3C43_var + 1))));
-        }
-        libARRA_gf_DynamicArrayPopBack(lp_arrayName);
+    if ((libARRA_gf_ListIntIndexOf(lp_list, lp_value) > 0)) {
+        return true;
     }
     else {
-        libNtve_gf_UIErrorMessage(PlayerGroupAll(), (StringExternal("Param/Value/lib_ARRA_72875DCA") + IntToText(lp_index) + StringExternal("Param/Value/lib_ARRA_851C0843") + IntToText(libARRA_gf_DynamicArraySize(lp_arrayName))), SoundLink("UI_GenericError", 0));
+        return false;
     }
 }
 
-void libARRA_gf_DynamicIntArrayAdd (string lp_arrayName, int lp_index, int lp_value) {
+void libARRA_gf_ListIntSet (string lp_list, int lp_index, int lp_value) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_index <= libARRA_gf_DynamicArraySize(lp_list)) && (lp_index > 0)) {
+        DataTableSetInt(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_list, (lp_index - 1)), lp_value);
+    }
+    else {
+        libNtve_gf_UIErrorMessage(PlayerGroupAll(), (StringExternal("Param/Value/lib_ARRA_0D5C8ADE") + IntToText(lp_value) + StringExternal("Param/Value/lib_ARRA_E96DE815") + IntToText(lp_index) + StringExternal("Param/Value/lib_ARRA_ED2C25F4") + IntToText(libARRA_gf_DynamicArraySize(lp_list))), SoundLink("UI_GenericError", 0));
+    }
+}
+
+void libARRA_gf_ListIntPush (string lp_list, int lp_value) {
+    // Automatic Variable Declarations
+    // Implementation
+    DataTableSetInt(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_list, libARRA_gf_DynamicArraySize(lp_list)), lp_value);
+    DataTableSetInt(true, lp_list, (DataTableGetInt(true, lp_list) + 1));
+}
+
+void libARRA_gf_ListIntInclude (string lp_list, int lp_value) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((libARRA_gf_ListIntIncludes(lp_list, lp_value) == false)) {
+        libARRA_gf_ListIntPush(lp_list, lp_value);
+    }
+
+}
+
+void libARRA_gf_ListIntInsertAt (string lp_list, int lp_index, int lp_value) {
     // Variable Declarations
     int lv_start;
     int lv_end;
@@ -306,172 +313,93 @@ void libARRA_gf_DynamicIntArrayAdd (string lp_arrayName, int lp_index, int lp_va
     // Variable Initialization
 
     // Implementation
-    if ((lp_index < libARRA_gf_DynamicArraySize(lp_arrayName))) {
-        libARRA_gf_DynamicIntArrayPushBack(lp_arrayName, libARRA_gf_DynamicIntArrayGet(lp_arrayName, (libARRA_gf_DynamicArraySize(lp_arrayName) - 1)));
-        lv_start = (libARRA_gf_DynamicArraySize(lp_arrayName) - 2);
+    if ((lp_index <= libARRA_gf_DynamicArraySize(lp_list)) && (lp_index > 0)) {
+        libARRA_gf_ListIntPush(lp_list, libARRA_gf_ListIntGet(lp_list, libARRA_gf_DynamicArraySize(lp_list)));
+        lv_start = (libARRA_gf_DynamicArraySize(lp_list) - 2);
         lv_end = (lp_index + 1);
         auto712E3838_ae = (lv_start - lv_end);
         auto712E3838_var = 0;
         for ( ; auto712E3838_var <= auto712E3838_ae; auto712E3838_var += 1 ) {
-            DataTableSetInt(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_arrayName, (lv_start - auto712E3838_var)), DataTableGetInt(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_arrayName, (lv_start - auto712E3838_var - 1))));
+            DataTableSetInt(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_list, (lv_start - auto712E3838_var)), DataTableGetInt(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_list, (lv_start - auto712E3838_var - 1))));
         }
-        libARRA_gf_DynamicIntArraySet(lp_arrayName, lp_index, lp_value);
+        libARRA_gf_ListIntSet(lp_list, lp_index, lp_value);
     }
     else {
-        libNtve_gf_UIErrorMessage(PlayerGroupAll(), (StringExternal("Param/Value/lib_ARRA_ED8C56C7") + IntToText(lp_value) + StringExternal("Param/Value/lib_ARRA_467C97C3") + IntToText(lp_index) + StringExternal("Param/Value/lib_ARRA_6E0A9BA2") + IntToText(libARRA_gf_DynamicArraySize(lp_arrayName))), SoundLink("UI_GenericError", 0));
+        libNtve_gf_UIErrorMessage(PlayerGroupAll(), (StringExternal("Param/Value/lib_ARRA_ED8C56C7") + IntToText(lp_value) + StringExternal("Param/Value/lib_ARRA_467C97C3") + IntToText(lp_index) + StringExternal("Param/Value/lib_ARRA_6E0A9BA2") + IntToText(libARRA_gf_DynamicArraySize(lp_list))), SoundLink("UI_GenericError", 0));
     }
 }
 
-void libARRA_gf_DynamicAbilCmdArraySet (string lp_arrayName, int lp_index, abilcmd lp_value) {
-    // Automatic Variable Declarations
-    // Implementation
-    if ((lp_index < libARRA_gf_DynamicArraySize(lp_arrayName))) {
-        DataTableSetAbilCmd(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_arrayName, lp_index), lp_value);
-    }
-    else {
-        libNtve_gf_UIErrorMessage(PlayerGroupAll(), (StringExternal("Param/Value/lib_ARRA_939C4604") + StringToText((AbilityCommandGetAbility(lp_value))) + StringExternal("Param/Value/lib_ARRA_94958194") + IntToText(lp_index) + StringExternal("Param/Value/lib_ARRA_4299E4F8") + IntToText(libARRA_gf_DynamicArraySize(lp_arrayName))), SoundLink("UI_GenericError", 0));
-    }
-}
-
-void libARRA_gf_DynamicAbilCmdArrayPush (string lp_arrayName, abilcmd lp_value) {
-    // Automatic Variable Declarations
-    // Implementation
-    DataTableSetAbilCmd(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_arrayName, libARRA_gf_DynamicArraySize(lp_arrayName)), lp_value);
-    DataTableSetInt(true, lp_arrayName, (DataTableGetInt(true, lp_arrayName) + 1));
-}
-
-void libARRA_gf_DynamicAbilCmdArrayAddUnique (string lp_arrayName, abilcmd lp_value) {
-    // Automatic Variable Declarations
-    // Implementation
-    if ((libARRA_gf_DynamicAbilCmdArrayIncludes(lp_arrayName, lp_value) == true)) {
-        return ;
-    }
-
-    DataTableSetAbilCmd(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_arrayName, libARRA_gf_DynamicArraySize(lp_arrayName)), lp_value);
-    DataTableSetInt(true, lp_arrayName, (DataTableGetInt(true, lp_arrayName) + 1));
-}
-
-abilcmd libARRA_gf_DynamicAbilCmdArrayGet (string lp_arrayName, int lp_index) {
+void libARRA_gf_ListIntRemoveAt (string lp_list, int lp_index) {
     // Variable Declarations
-    abilcmd lv_returnvalue;
+    int lv_index;
 
     // Automatic Variable Declarations
-    // Variable Initialization
-
-    // Implementation
-    if ((lp_index < libARRA_gf_DynamicArraySize(lp_arrayName))) {
-        lv_returnvalue = DataTableGetAbilCmd(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_arrayName, lp_index));
-    }
-    else {
-        libNtve_gf_UIErrorMessage(PlayerGroupAll(), (StringExternal("Param/Value/lib_ARRA_371E33BA") + IntToText(lp_index) + StringExternal("Param/Value/lib_ARRA_5ECB4179") + IntToText(libARRA_gf_DynamicArraySize(lp_arrayName))), SoundLink("UI_GenericError", 0));
-    }
-    return lv_returnvalue;
-}
-
-void libARRA_gf_DynamicAbilCmdArrayRemoveAt (string lp_arrayName, int lp_index) {
-    // Automatic Variable Declarations
-    int auto0D330D5C_ae;
-    int auto0D330D5C_var;
-
-    // Implementation
-    if ((lp_index < libARRA_gf_DynamicArraySize(lp_arrayName))) {
-        auto0D330D5C_ae = (libARRA_gf_DynamicArraySize(lp_arrayName) - 2);
-        auto0D330D5C_var = lp_index;
-        for ( ; auto0D330D5C_var <= auto0D330D5C_ae; auto0D330D5C_var += 1 ) {
-            DataTableSetAbilCmd(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_arrayName, auto0D330D5C_var), DataTableGetAbilCmd(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_arrayName, (auto0D330D5C_var + 1))));
-        }
-        libARRA_gf_DynamicArrayPopBack(lp_arrayName);
-    }
-    else {
-        libNtve_gf_UIErrorMessage(PlayerGroupAll(), (StringExternal("Param/Value/lib_ARRA_760DA2B3") + IntToText(lp_index) + StringExternal("Param/Value/lib_ARRA_40A3062F") + IntToText(libARRA_gf_DynamicArraySize(lp_arrayName))), SoundLink("UI_GenericError", 0));
-    }
-}
-
-void libARRA_gf_DynamicAbilCmdArrayInsert (string lp_arrayName, int lp_index, abilcmd lp_value) {
-    // Variable Declarations
-    int lv_start;
-    int lv_end;
-
-    // Automatic Variable Declarations
-    int autoE9F96D46_ae;
-    int autoE9F96D46_var;
+    int auto477B3C43_ae;
+    int auto477B3C43_var;
 
     // Variable Initialization
+    lv_index = (lp_index - 1);
 
     // Implementation
-    if ((lp_index < libARRA_gf_DynamicArraySize(lp_arrayName))) {
-        libARRA_gf_DynamicAbilCmdArrayPush(lp_arrayName, lp_value);
-        lv_start = (libARRA_gf_DynamicArraySize(lp_arrayName) - 2);
-        lv_end = (lp_index + 1);
-        autoE9F96D46_ae = (lv_start - lv_end);
-        autoE9F96D46_var = 0;
-        for ( ; autoE9F96D46_var <= autoE9F96D46_ae; autoE9F96D46_var += 1 ) {
-            DataTableSetAbilCmd(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_arrayName, (lv_start - autoE9F96D46_var)), DataTableGetAbilCmd(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_arrayName, (lv_start - autoE9F96D46_var - 1))));
+    if ((lp_index <= libARRA_gf_DynamicArraySize(lp_list)) && (lp_index > 0)) {
+        auto477B3C43_ae = (libARRA_gf_DynamicArraySize(lp_list) - 2);
+        auto477B3C43_var = (lp_index - 1);
+        for ( ; auto477B3C43_var <= auto477B3C43_ae; auto477B3C43_var += 1 ) {
+            DataTableSetInt(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_list, auto477B3C43_var), DataTableGetInt(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_list, (auto477B3C43_var + 1))));
         }
-        libARRA_gf_DynamicAbilCmdArraySet(lp_arrayName, lp_index, lp_value);
+        libARRA_gf_DynamicArrayPopBack(lp_list);
     }
     else {
-        libNtve_gf_UIErrorMessage(PlayerGroupAll(), (StringExternal("Param/Value/lib_ARRA_2170CCF4") + StringToText((AbilityCommandGetAbility(lp_value))) + StringExternal("Param/Value/lib_ARRA_10B428F6") + IntToText(lp_index) + StringExternal("Param/Value/lib_ARRA_88401337") + IntToText(libARRA_gf_DynamicArraySize(lp_arrayName))), SoundLink("UI_GenericError", 0));
+        libNtve_gf_UIErrorMessage(PlayerGroupAll(), (StringExternal("Param/Value/lib_ARRA_72875DCA") + IntToText(lp_index) + StringExternal("Param/Value/lib_ARRA_851C0843") + IntToText(libARRA_gf_DynamicArraySize(lp_list))), SoundLink("UI_GenericError", 0));
     }
 }
 
-int libARRA_gf_DynamicAbilCmdArrayIndexOf (string lp_arrayName, abilcmd lp_value) {
-    // Automatic Variable Declarations
-    int auto58E39CC4_ae;
-    int auto58E39CC4_var;
-
-    // Implementation
-    if ((libARRA_gf_DynamicArrayIsEmpty(lp_arrayName) == false)) {
-        auto58E39CC4_ae = (libARRA_gf_DynamicArraySize(lp_arrayName) - 1);
-        auto58E39CC4_var = 0;
-        for ( ; auto58E39CC4_var <= auto58E39CC4_ae; auto58E39CC4_var += 1 ) {
-            if ((libARRA_gf_DynamicAbilCmdArrayGet(lp_arrayName, auto58E39CC4_var) == lp_value)) {
-                return auto58E39CC4_var;
-            }
-
-        }
-    }
-
-    return -1;
-}
-
-bool libARRA_gf_DynamicAbilCmdArrayIncludes (string lp_arrayName, abilcmd lp_value) {
-    // Automatic Variable Declarations
-    // Implementation
-    if ((libARRA_gf_DynamicAbilCmdArrayIndexOf(lp_arrayName, lp_value) >= 0)) {
-        return true;
-    }
-    else {
-        return false;
-    }
-}
-
-void libARRA_gf_DynamicAbilCmdArrayRemove (string lp_arrayName, abilcmd lp_value) {
+void libARRA_gf_ListIntExclude (string lp_list, int lp_value) {
     // Variable Declarations
     int lv_index;
 
     // Automatic Variable Declarations
     // Variable Initialization
+    lv_index = libARRA_gf_ListIntIndexOf(lp_list, lp_value);
 
     // Implementation
-    if ((lv_index >= 0)) {
-        libARRA_gf_DynamicAbilCmdArrayRemoveAt(lp_arrayName, lv_index);
+    while ((lv_index > 0)) {
+        libARRA_gf_ListIntRemoveAt(lp_list, lv_index);
+        lv_index = libARRA_gf_ListIntIndexOf(lp_list, lp_value);
     }
-
 }
 
-void libARRA_gf_DynamicStringArraySet (string lp_arrayName, int lp_index, string lp_value) {
+void libARRA_gf_LOGListInt (string lp_list) {
+    // Variable Declarations
+    string lv_log_string;
+
     // Automatic Variable Declarations
+    int auto575E083B_ae;
+    int auto575E083B_var;
+
+    // Variable Initialization
+    lv_log_string = "[";
+
     // Implementation
-    if ((lp_index < libARRA_gf_DynamicArraySize(lp_arrayName))) {
-        DataTableSetString(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_arrayName, lp_index), lp_value);
+    if ((DataTableValueExists(true, lp_list) == false)) {
+        libARRA_gf_LOGString("-");
     }
     else {
-        libNtve_gf_UIErrorMessage(PlayerGroupAll(), (StringExternal("Param/Value/lib_ARRA_D86EAB1E") + StringToText(lp_value) + StringExternal("Param/Value/lib_ARRA_CC549D16") + IntToText(lp_index) + StringExternal("Param/Value/lib_ARRA_1843B1D2") + IntToText(libARRA_gf_DynamicArraySize(lp_arrayName))), SoundLink("UI_GenericError", 0));
+        auto575E083B_ae = libARRA_gf_DynamicArraySize(lp_list);
+        auto575E083B_var = 1;
+        for ( ; auto575E083B_var <= auto575E083B_ae; auto575E083B_var += 1 ) {
+            if ((auto575E083B_var > 1)) {
+                lv_log_string = (lv_log_string + ",");
+            }
+
+            lv_log_string = (lv_log_string + IntToString(libARRA_gf_ListIntGet(lp_list, auto575E083B_var)));
+        }
+        lv_log_string = (lv_log_string + "]");
+        libARRA_gf_LOGString(lv_log_string);
     }
 }
 
-string libARRA_gf_DynamicStringArrayGet (string lp_arrayName, int lp_index) {
+string libARRA_gf_ListStringGet (string lp_list, int lp_index) {
     // Variable Declarations
     string lv_returnvalue;
 
@@ -480,53 +408,74 @@ string libARRA_gf_DynamicStringArrayGet (string lp_arrayName, int lp_index) {
     lv_returnvalue = "";
 
     // Implementation
-    if ((lp_index < libARRA_gf_DynamicArraySize(lp_arrayName))) {
-        lv_returnvalue = DataTableGetString(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_arrayName, lp_index));
+    if ((lp_index <= libARRA_gf_DynamicArraySize(lp_list)) && (lp_index > 0)) {
+        lv_returnvalue = DataTableGetString(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_list, (lp_index - 1)));
     }
     else {
-        libNtve_gf_UIErrorMessage(PlayerGroupAll(), (StringExternal("Param/Value/lib_ARRA_45F7EF4B") + IntToText(lp_index) + StringExternal("Param/Value/lib_ARRA_6B918C7F") + IntToText(libARRA_gf_DynamicArraySize(lp_arrayName))), SoundLink("UI_GenericError", 0));
+        libNtve_gf_UIErrorMessage(PlayerGroupAll(), (StringExternal("Param/Value/lib_ARRA_45F7EF4B") + IntToText(lp_index) + StringExternal("Param/Value/lib_ARRA_6B918C7F") + IntToText(libARRA_gf_DynamicArraySize(lp_list))), SoundLink("UI_GenericError", 0));
     }
     return lv_returnvalue;
 }
 
-void libARRA_gf_DynamicStringArrayPush (string lp_arrayName, string lp_addedValue) {
+int libARRA_gf_ListStringIndexOf (string lp_list, string lp_value) {
     // Automatic Variable Declarations
-    // Implementation
-    DataTableSetString(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_arrayName, libARRA_gf_DynamicArraySize(lp_arrayName)), lp_addedValue);
-    DataTableSetInt(true, lp_arrayName, (DataTableGetInt(true, lp_arrayName) + 1));
-}
+    int auto3FD63E5F_ae;
+    int auto3FD63E5F_var;
 
-void libARRA_gf_DynamicStringArrayAddUnique (string lp_arrayName, string lp_addedValue) {
-    // Automatic Variable Declarations
     // Implementation
-    if ((libARRA_gf_DynamicStringArrayIncludes(lp_arrayName, lp_addedValue) == true)) {
-        return ;
+    if ((libARRA_gf_DynamicArrayIsEmpty(lp_list) == false)) {
+        auto3FD63E5F_ae = libARRA_gf_DynamicArraySize(lp_list);
+        auto3FD63E5F_var = 1;
+        for ( ; auto3FD63E5F_var <= auto3FD63E5F_ae; auto3FD63E5F_var += 1 ) {
+            if ((libARRA_gf_ListStringGet(lp_list, auto3FD63E5F_var) == lp_value)) {
+                return auto3FD63E5F_var;
+            }
+
+        }
     }
 
-    DataTableSetString(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_arrayName, libARRA_gf_DynamicArraySize(lp_arrayName)), lp_addedValue);
-    DataTableSetInt(true, lp_arrayName, (DataTableGetInt(true, lp_arrayName) + 1));
+    return -1;
 }
 
-void libARRA_gf_DynamicStringArrayRemoveAt (string lp_arrayName, int lp_index) {
+bool libARRA_gf_ListStringIncludes (string lp_list, string lp_value) {
     // Automatic Variable Declarations
-    int auto1C35D031_ae;
-    int auto1C35D031_var;
-
     // Implementation
-    if ((lp_index < libARRA_gf_DynamicArraySize(lp_arrayName))) {
-        auto1C35D031_ae = (libARRA_gf_DynamicArraySize(lp_arrayName) - 2);
-        auto1C35D031_var = lp_index;
-        for ( ; auto1C35D031_var <= auto1C35D031_ae; auto1C35D031_var += 1 ) {
-            DataTableSetString(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_arrayName, auto1C35D031_var), DataTableGetString(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_arrayName, (auto1C35D031_var + 1))));
-        }
-        libARRA_gf_DynamicArrayPopBack(lp_arrayName);
+    if ((libARRA_gf_ListStringIndexOf(lp_list, lp_value) > 0)) {
+        return true;
     }
     else {
-        libNtve_gf_UIErrorMessage(PlayerGroupAll(), (StringExternal("Param/Value/lib_ARRA_6026870B") + IntToText(lp_index) + StringExternal("Param/Value/lib_ARRA_E0736642") + IntToText(libARRA_gf_DynamicArraySize(lp_arrayName))), SoundLink("UI_GenericError", 0));
+        return false;
     }
 }
 
-void libARRA_gf_DynamicStringArrayInsert (string lp_arrayName, int lp_index, string lp_value) {
+void libARRA_gf_ListStringSet (string lp_list, int lp_index, string lp_value) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_index <= libARRA_gf_DynamicArraySize(lp_list)) && (lp_index > 0)) {
+        DataTableSetString(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_list, (lp_index - 1)), lp_value);
+    }
+    else {
+        libNtve_gf_UIErrorMessage(PlayerGroupAll(), (StringExternal("Param/Value/lib_ARRA_D86EAB1E") + StringToText(lp_value) + StringExternal("Param/Value/lib_ARRA_CC549D16") + IntToText(lp_index) + StringExternal("Param/Value/lib_ARRA_1843B1D2") + IntToText(libARRA_gf_DynamicArraySize(lp_list))), SoundLink("UI_GenericError", 0));
+    }
+}
+
+void libARRA_gf_ListStringPush (string lp_list, string lp_addedValue) {
+    // Automatic Variable Declarations
+    // Implementation
+    DataTableSetString(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_list, libARRA_gf_DynamicArraySize(lp_list)), lp_addedValue);
+    DataTableSetInt(true, lp_list, (DataTableGetInt(true, lp_list) + 1));
+}
+
+void libARRA_gf_ListStringInclude (string lp_list, string lp_addedValue) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((libARRA_gf_ListStringIncludes(lp_list, lp_addedValue) == false)) {
+        libARRA_gf_ListStringPush(lp_list, lp_addedValue);
+    }
+
+}
+
+void libARRA_gf_ListStringInsertAt (string lp_list, int lp_index, string lp_value) {
     // Variable Declarations
     int lv_start;
     int lv_end;
@@ -538,34 +487,115 @@ void libARRA_gf_DynamicStringArrayInsert (string lp_arrayName, int lp_index, str
     // Variable Initialization
 
     // Implementation
-    if ((lp_index < libARRA_gf_DynamicArraySize(lp_arrayName))) {
-        libARRA_gf_DynamicStringArrayPush(lp_arrayName, libARRA_gf_DynamicStringArrayGet(lp_arrayName, (libARRA_gf_DynamicArraySize(lp_arrayName) - 1)));
-        lv_start = (libARRA_gf_DynamicArraySize(lp_arrayName) - 2);
+    if ((lp_index <= libARRA_gf_DynamicArraySize(lp_list)) && (lp_index > 0)) {
+        libARRA_gf_ListStringPush(lp_list, libARRA_gf_ListStringGet(lp_list, libARRA_gf_DynamicArraySize(lp_list)));
+        lv_start = (libARRA_gf_DynamicArraySize(lp_list) - 2);
         lv_end = (lp_index + 1);
         auto8A1CD68B_ae = (lv_start - lv_end);
         auto8A1CD68B_var = 0;
         for ( ; auto8A1CD68B_var <= auto8A1CD68B_ae; auto8A1CD68B_var += 1 ) {
-            DataTableSetString(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_arrayName, (lv_start - auto8A1CD68B_var)), DataTableGetString(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_arrayName, (lv_start - auto8A1CD68B_var - 1))));
+            DataTableSetString(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_list, (lv_start - auto8A1CD68B_var)), DataTableGetString(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_list, (lv_start - auto8A1CD68B_var - 1))));
         }
-        libARRA_gf_DynamicStringArraySet(lp_arrayName, lp_index, lp_value);
+        libARRA_gf_ListStringSet(lp_list, lp_index, lp_value);
     }
     else {
-        libNtve_gf_UIErrorMessage(PlayerGroupAll(), (StringExternal("Param/Value/lib_ARRA_BB8573E8") + StringToText(lp_value) + StringExternal("Param/Value/lib_ARRA_5780FD89") + IntToText(lp_index) + StringExternal("Param/Value/lib_ARRA_4BFA7B9B") + IntToText(libARRA_gf_DynamicArraySize(lp_arrayName))), SoundLink("UI_GenericError", 0));
+        libNtve_gf_UIErrorMessage(PlayerGroupAll(), (StringExternal("Param/Value/lib_ARRA_BB8573E8") + StringToText(lp_value) + StringExternal("Param/Value/lib_ARRA_5780FD89") + IntToText(lp_index) + StringExternal("Param/Value/lib_ARRA_4BFA7B9B") + IntToText(libARRA_gf_DynamicArraySize(lp_list))), SoundLink("UI_GenericError", 0));
     }
 }
 
-int libARRA_gf_DynamicStringArrayIndexOf (string lp_arrayName, string lp_value) {
+void libARRA_gf_ListStringRemoveAt (string lp_list, int lp_index) {
     // Automatic Variable Declarations
-    int auto3FD63E5F_ae;
-    int auto3FD63E5F_var;
+    int auto1C35D031_ae;
+    int auto1C35D031_var;
 
     // Implementation
-    if ((libARRA_gf_DynamicArrayIsEmpty(lp_arrayName) == false)) {
-        auto3FD63E5F_ae = (libARRA_gf_DynamicArraySize(lp_arrayName) - 1);
-        auto3FD63E5F_var = 0;
-        for ( ; auto3FD63E5F_var <= auto3FD63E5F_ae; auto3FD63E5F_var += 1 ) {
-            if ((libARRA_gf_DynamicStringArrayGet(lp_arrayName, auto3FD63E5F_var) == lp_value)) {
-                return auto3FD63E5F_var;
+    if ((lp_index <= libARRA_gf_DynamicArraySize(lp_list)) && (lp_index > 0)) {
+        auto1C35D031_ae = (libARRA_gf_DynamicArraySize(lp_list) - 2);
+        auto1C35D031_var = (lp_index - 1);
+        for ( ; auto1C35D031_var <= auto1C35D031_ae; auto1C35D031_var += 1 ) {
+            DataTableSetString(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_list, auto1C35D031_var), DataTableGetString(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_list, (auto1C35D031_var + 1))));
+        }
+        libARRA_gf_DynamicArrayPopBack(lp_list);
+    }
+    else {
+        libNtve_gf_UIErrorMessage(PlayerGroupAll(), (StringExternal("Param/Value/lib_ARRA_6026870B") + IntToText(lp_index) + StringExternal("Param/Value/lib_ARRA_E0736642") + IntToText(libARRA_gf_DynamicArraySize(lp_list))), SoundLink("UI_GenericError", 0));
+    }
+}
+
+void libARRA_gf_ListStringExclude (string lp_list, string lp_value) {
+    // Variable Declarations
+    int lv_index;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_index = libARRA_gf_ListStringIndexOf(lp_list, lp_value);
+
+    // Implementation
+    while ((lv_index > 0)) {
+        libARRA_gf_ListStringRemoveAt(lp_list, lv_index);
+        lv_index = libARRA_gf_ListStringIndexOf(lp_list, lp_value);
+    }
+}
+
+void libARRA_gf_LOGListString (string lp_list) {
+    // Variable Declarations
+    string lv_log_string;
+
+    // Automatic Variable Declarations
+    int auto63FC1DFA_ae;
+    int auto63FC1DFA_var;
+
+    // Variable Initialization
+    lv_log_string = "[";
+
+    // Implementation
+    if ((DataTableValueExists(true, lp_list) == false)) {
+        libARRA_gf_LOGString("-");
+    }
+    else {
+        auto63FC1DFA_ae = libARRA_gf_DynamicArraySize(lp_list);
+        auto63FC1DFA_var = 1;
+        for ( ; auto63FC1DFA_var <= auto63FC1DFA_ae; auto63FC1DFA_var += 1 ) {
+            if ((auto63FC1DFA_var > 1)) {
+                lv_log_string = (lv_log_string + ",");
+            }
+
+            lv_log_string = (lv_log_string + libARRA_gf_ListStringGet(lp_list, auto63FC1DFA_var));
+        }
+        lv_log_string = (lv_log_string + "]");
+        libARRA_gf_LOGString(lv_log_string);
+    }
+}
+
+abilcmd libARRA_gf_ListAbilCmdGet (string lp_list, int lp_index) {
+    // Variable Declarations
+    abilcmd lv_returnvalue;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Implementation
+    if ((lp_index <= libARRA_gf_DynamicArraySize(lp_list)) && (lp_index > 0)) {
+        lv_returnvalue = DataTableGetAbilCmd(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_list, (lp_index - 1)));
+    }
+    else {
+        libNtve_gf_UIErrorMessage(PlayerGroupAll(), (StringExternal("Param/Value/lib_ARRA_371E33BA") + IntToText(lp_index) + StringExternal("Param/Value/lib_ARRA_5ECB4179") + IntToText(libARRA_gf_DynamicArraySize(lp_list))), SoundLink("UI_GenericError", 0));
+    }
+    return lv_returnvalue;
+}
+
+int libARRA_gf_ListAbilCmdIndexOf (string lp_list, abilcmd lp_value) {
+    // Automatic Variable Declarations
+    int auto58E39CC4_ae;
+    int auto58E39CC4_var;
+
+    // Implementation
+    if ((libARRA_gf_DynamicArrayIsEmpty(lp_list) == false)) {
+        auto58E39CC4_ae = libARRA_gf_DynamicArraySize(lp_list);
+        auto58E39CC4_var = 1;
+        for ( ; auto58E39CC4_var <= auto58E39CC4_ae; auto58E39CC4_var += 1 ) {
+            if ((libARRA_gf_ListAbilCmdGet(lp_list, auto58E39CC4_var) == lp_value)) {
+                return auto58E39CC4_var;
             }
 
         }
@@ -574,10 +604,10 @@ int libARRA_gf_DynamicStringArrayIndexOf (string lp_arrayName, string lp_value) 
     return -1;
 }
 
-bool libARRA_gf_DynamicStringArrayIncludes (string lp_arrayName, string lp_value) {
+bool libARRA_gf_ListAbilCmdIncludes (string lp_list, abilcmd lp_value) {
     // Automatic Variable Declarations
     // Implementation
-    if ((libARRA_gf_DynamicStringArrayIndexOf(lp_arrayName, lp_value) >= 0)) {
+    if ((libARRA_gf_ListAbilCmdIndexOf(lp_list, lp_value) > 0)) {
         return true;
     }
     else {
@@ -585,19 +615,294 @@ bool libARRA_gf_DynamicStringArrayIncludes (string lp_arrayName, string lp_value
     }
 }
 
-void libARRA_gf_DynamicStringArrayRemove (string lp_arrayName, string lp_value) {
+void libARRA_gf_ListAbilCmdSet (string lp_list, int lp_index, abilcmd lp_value) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_index <= libARRA_gf_DynamicArraySize(lp_list)) && (lp_index > 0)) {
+        DataTableSetAbilCmd(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_list, (lp_index - 1)), lp_value);
+    }
+    else {
+        libNtve_gf_UIErrorMessage(PlayerGroupAll(), (StringExternal("Param/Value/lib_ARRA_939C4604") + StringToText((AbilityCommandGetAbility(lp_value))) + StringExternal("Param/Value/lib_ARRA_94958194") + IntToText(lp_index) + StringExternal("Param/Value/lib_ARRA_4299E4F8") + IntToText(libARRA_gf_DynamicArraySize(lp_list))), SoundLink("UI_GenericError", 0));
+    }
+}
+
+void libARRA_gf_ListAbilCmdPush (string lp_list, abilcmd lp_value) {
+    // Automatic Variable Declarations
+    // Implementation
+    DataTableSetAbilCmd(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_list, libARRA_gf_DynamicArraySize(lp_list)), lp_value);
+    DataTableSetInt(true, lp_list, (DataTableGetInt(true, lp_list) + 1));
+}
+
+void libARRA_gf_ListAbilCmdInclude (string lp_list, abilcmd lp_value) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((libARRA_gf_ListAbilCmdIncludes(lp_list, lp_value) == false)) {
+        libARRA_gf_ListAbilCmdPush(lp_list, lp_value);
+    }
+
+}
+
+void libARRA_gf_ListAbilCmdInsertAt (string lp_list, int lp_index, abilcmd lp_value) {
+    // Variable Declarations
+    int lv_start;
+    int lv_end;
+
+    // Automatic Variable Declarations
+    int autoE9F96D46_ae;
+    int autoE9F96D46_var;
+
+    // Variable Initialization
+
+    // Implementation
+    if ((lp_index <= libARRA_gf_DynamicArraySize(lp_list)) && (lp_index > 0)) {
+        libARRA_gf_ListAbilCmdPush(lp_list, libARRA_gf_ListAbilCmdGet(lp_list, libARRA_gf_DynamicArraySize(lp_list)));
+        lv_start = (libARRA_gf_DynamicArraySize(lp_list) - 2);
+        lv_end = (lp_index + 1);
+        autoE9F96D46_ae = (lv_start - lv_end);
+        autoE9F96D46_var = 0;
+        for ( ; autoE9F96D46_var <= autoE9F96D46_ae; autoE9F96D46_var += 1 ) {
+            DataTableSetAbilCmd(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_list, (lv_start - autoE9F96D46_var)), DataTableGetAbilCmd(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_list, (lv_start - autoE9F96D46_var - 1))));
+        }
+        libARRA_gf_ListAbilCmdSet(lp_list, lp_index, lp_value);
+    }
+    else {
+        libNtve_gf_UIErrorMessage(PlayerGroupAll(), (StringExternal("Param/Value/lib_ARRA_2170CCF4") + StringToText((AbilityCommandGetAbility(lp_value))) + StringExternal("Param/Value/lib_ARRA_10B428F6") + IntToText(lp_index) + StringExternal("Param/Value/lib_ARRA_88401337") + IntToText(libARRA_gf_DynamicArraySize(lp_list))), SoundLink("UI_GenericError", 0));
+    }
+}
+
+void libARRA_gf_ListAbilCmdRemoveAt (string lp_list, int lp_index) {
+    // Automatic Variable Declarations
+    int auto0D330D5C_ae;
+    int auto0D330D5C_var;
+
+    // Implementation
+    if ((lp_index <= libARRA_gf_DynamicArraySize(lp_list)) && (lp_index > 0)) {
+        auto0D330D5C_ae = (libARRA_gf_DynamicArraySize(lp_list) - 2);
+        auto0D330D5C_var = (lp_index - 1);
+        for ( ; auto0D330D5C_var <= auto0D330D5C_ae; auto0D330D5C_var += 1 ) {
+            DataTableSetAbilCmd(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_list, auto0D330D5C_var), DataTableGetAbilCmd(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_list, (auto0D330D5C_var + 1))));
+        }
+        libARRA_gf_DynamicArrayPopBack(lp_list);
+    }
+    else {
+        libNtve_gf_UIErrorMessage(PlayerGroupAll(), (StringExternal("Param/Value/lib_ARRA_760DA2B3") + IntToText(lp_index) + StringExternal("Param/Value/lib_ARRA_40A3062F") + IntToText(libARRA_gf_DynamicArraySize(lp_list))), SoundLink("UI_GenericError", 0));
+    }
+}
+
+void libARRA_gf_ListAbilCmdExclude (string lp_list, abilcmd lp_value) {
     // Variable Declarations
     int lv_index;
 
     // Automatic Variable Declarations
     // Variable Initialization
-    lv_index = libARRA_gf_DynamicStringArrayIndexOf(lp_arrayName, lp_value);
+    lv_index = libARRA_gf_ListAbilCmdIndexOf(lp_list, lp_value);
 
     // Implementation
-    if ((lv_index >= 0)) {
-        libARRA_gf_DynamicStringArrayRemoveAt(lp_arrayName, lv_index);
+    while ((lv_index > 0)) {
+        libARRA_gf_ListAbilCmdRemoveAt(lp_list, lv_index);
+        lv_index = libARRA_gf_ListAbilCmdIndexOf(lp_list, lp_value);
+    }
+}
+
+void libARRA_gf_LOGListAbilCmd (string lp_list) {
+    // Variable Declarations
+    abilcmd lv_abil;
+    string lv_log_string;
+
+    // Automatic Variable Declarations
+    int auto66736740_ae;
+    int auto66736740_var;
+
+    // Variable Initialization
+    lv_log_string = "[";
+
+    // Implementation
+    if ((DataTableValueExists(true, lp_list) == false)) {
+        libARRA_gf_LOGString("-");
+    }
+    else {
+        auto66736740_ae = libARRA_gf_DynamicArraySize(lp_list);
+        auto66736740_var = 1;
+        for ( ; auto66736740_var <= auto66736740_ae; auto66736740_var += 1 ) {
+            if ((auto66736740_var > 1)) {
+                lv_log_string = (lv_log_string + ",");
+            }
+
+            lv_abil = libARRA_gf_ListAbilCmdGet(lp_list, auto66736740_var);
+            lv_log_string = (lv_log_string + ((AbilityCommandGetAbility(lv_abil)) + "," + IntToString(AbilityCommandGetCommand(lv_abil))));
+        }
+        lv_log_string = (lv_log_string + "]");
+        libARRA_gf_LOGString(lv_log_string);
+    }
+}
+
+point libARRA_gf_ListPointGet (string lp_list, int lp_index) {
+    // Variable Declarations
+    point lv_returnvalue;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Implementation
+    if ((lp_index <= libARRA_gf_DynamicArraySize(lp_list)) && (lp_index > 0)) {
+        lv_returnvalue = DataTableGetPoint(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_list, (lp_index - 1)));
+    }
+    else {
+        libNtve_gf_UIErrorMessage(PlayerGroupAll(), (StringExternal("Param/Value/lib_ARRA_1F62FEC0") + IntToText(lp_index) + StringExternal("Param/Value/lib_ARRA_8DE2D371") + IntToText(libARRA_gf_DynamicArraySize(lp_list))), SoundLink("UI_GenericError", 0));
+    }
+    return lv_returnvalue;
+}
+
+int libARRA_gf_ListPointIndexOf (string lp_list, point lp_value) {
+    // Automatic Variable Declarations
+    int auto329EA2EE_ae;
+    int auto329EA2EE_var;
+
+    // Implementation
+    if ((libARRA_gf_DynamicArrayIsEmpty(lp_list) == false)) {
+        auto329EA2EE_ae = libARRA_gf_DynamicArraySize(lp_list);
+        auto329EA2EE_var = 1;
+        for ( ; auto329EA2EE_var <= auto329EA2EE_ae; auto329EA2EE_var += 1 ) {
+            if ((libARRA_gf_ListPointGet(lp_list, auto329EA2EE_var) == lp_value)) {
+                return auto329EA2EE_var;
+            }
+
+        }
     }
 
+    return -1;
+}
+
+bool libARRA_gf_ListPointIncludes (string lp_list, point lp_value) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((libARRA_gf_ListPointIndexOf(lp_list, lp_value) > 0)) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+void libARRA_gf_ListPointSet (string lp_list, int lp_index, point lp_value) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_index <= libARRA_gf_DynamicArraySize(lp_list)) && (lp_index > 0)) {
+        DataTableSetPoint(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_list, (lp_index - 1)), lp_value);
+    }
+    else {
+        libNtve_gf_UIErrorMessage(PlayerGroupAll(), (StringExternal("Param/Value/lib_ARRA_D7A229D0") + IntToText(lp_index) + StringExternal("Param/Value/lib_ARRA_1B574511") + IntToText(libARRA_gf_DynamicArraySize(lp_list))), SoundLink("UI_GenericError", 0));
+    }
+}
+
+void libARRA_gf_ListPointPush (string lp_list, point lp_addedValue) {
+    // Automatic Variable Declarations
+    // Implementation
+    DataTableSetPoint(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_list, libARRA_gf_DynamicArraySize(lp_list)), lp_addedValue);
+    DataTableSetInt(true, lp_list, (DataTableGetInt(true, lp_list) + 1));
+}
+
+void libARRA_gf_ListPointInclude (string lp_list, point lp_value) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((libARRA_gf_ListPointIncludes(lp_list, lp_value) == false)) {
+        libARRA_gf_ListPointPush(lp_list, lp_value);
+    }
+
+}
+
+void libARRA_gf_ListPointInsertAt (string lp_list, int lp_index, point lp_value) {
+    // Variable Declarations
+    int lv_start;
+    int lv_end;
+
+    // Automatic Variable Declarations
+    int auto4C40B01B_ae;
+    int auto4C40B01B_var;
+
+    // Variable Initialization
+
+    // Implementation
+    if ((lp_index <= libARRA_gf_DynamicArraySize(lp_list)) && (lp_index > 0)) {
+        libARRA_gf_ListPointPush(lp_list, libARRA_gf_ListPointGet(lp_list, libARRA_gf_DynamicArraySize(lp_list)));
+        lv_start = (libARRA_gf_DynamicArraySize(lp_list) - 2);
+        lv_end = (lp_index + 1);
+        auto4C40B01B_ae = (lv_start - lv_end);
+        auto4C40B01B_var = 0;
+        for ( ; auto4C40B01B_var <= auto4C40B01B_ae; auto4C40B01B_var += 1 ) {
+            DataTableSetPoint(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_list, (lv_start - auto4C40B01B_var)), DataTableGetPoint(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_list, (lv_start - auto4C40B01B_var - 1))));
+        }
+        libARRA_gf_ListPointSet(lp_list, lp_index, lp_value);
+    }
+    else {
+        libNtve_gf_UIErrorMessage(PlayerGroupAll(), (StringExternal("Param/Value/lib_ARRA_5349D4ED") + IntToText(lp_index) + StringExternal("Param/Value/lib_ARRA_669B8E17") + IntToText(libARRA_gf_DynamicArraySize(lp_list))), SoundLink("UI_GenericError", 0));
+    }
+}
+
+void libARRA_gf_ListPointRemoveAt (string lp_list, int lp_index) {
+    // Automatic Variable Declarations
+    int auto519727D7_ae;
+    int auto519727D7_var;
+
+    // Implementation
+    if ((lp_index <= libARRA_gf_DynamicArraySize(lp_list)) && (lp_index > 0)) {
+        auto519727D7_ae = (libARRA_gf_DynamicArraySize(lp_list) - 2);
+        auto519727D7_var = (lp_index - 1);
+        for ( ; auto519727D7_var <= auto519727D7_ae; auto519727D7_var += 1 ) {
+            DataTableSetPoint(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_list, auto519727D7_var), DataTableGetPoint(true, libARRA_gf_DynamicArrayGetDatabaseName(lp_list, (auto519727D7_var + 1))));
+        }
+        libARRA_gf_DynamicArrayPopBack(lp_list);
+    }
+    else {
+        libNtve_gf_UIErrorMessage(PlayerGroupAll(), (StringExternal("Param/Value/lib_ARRA_7318B37C") + IntToText(lp_index) + StringExternal("Param/Value/lib_ARRA_9A7EA85B") + IntToText(libARRA_gf_DynamicArraySize(lp_list))), SoundLink("UI_GenericError", 0));
+    }
+}
+
+void libARRA_gf_ListPointExclude (string lp_list, point lp_value) {
+    // Variable Declarations
+    int lv_index;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_index = libARRA_gf_ListPointIndexOf(lp_list, lp_value);
+
+    // Implementation
+    while ((lv_index > 0)) {
+        libARRA_gf_ListPointRemoveAt(lp_list, lv_index);
+        lv_index = libARRA_gf_ListPointIndexOf(lp_list, lp_value);
+    }
+}
+
+void libARRA_gf_LOGListPoint (string lp_list) {
+    // Variable Declarations
+    point lv_point;
+    string lv_log_string;
+
+    // Automatic Variable Declarations
+    int auto8B6885D3_ae;
+    int auto8B6885D3_var;
+
+    // Variable Initialization
+    lv_log_string = "[";
+
+    // Implementation
+    if ((DataTableValueExists(true, lp_list) == false)) {
+        libARRA_gf_LOGString("-");
+    }
+    else {
+        auto8B6885D3_ae = libARRA_gf_DynamicArraySize(lp_list);
+        auto8B6885D3_var = 1;
+        for ( ; auto8B6885D3_var <= auto8B6885D3_ae; auto8B6885D3_var += 1 ) {
+            if ((auto8B6885D3_var > 1)) {
+                lv_log_string = (lv_log_string + ",");
+            }
+
+            lv_point = libARRA_gf_ListPointGet(lp_list, auto8B6885D3_var);
+            lv_log_string = (lv_log_string + libNtve_gf_ConvertPointToString(lv_point));
+        }
+        lv_log_string = (lv_log_string + "]");
+        libARRA_gf_LOGString(lv_log_string);
+    }
 }
 
 //--------------------------------------------------------------------------------------------------
