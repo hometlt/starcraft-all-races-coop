@@ -73,9 +73,30 @@ and Here is my discord server https://discord.gg/UWJJQeJ4
 
 **Tech**: Lowest|Lower|Low|Middle|High|Higher|Highest
 Amon-1 Squad 4 (Largest-Highest-Air)
+
 ```
-🎯<Team>-<Player> Start [(<Teammates>)]
-🎯<Team>-<Player> Expansion [<Index>] [(<Teammates>)]
-📍<Team>-<Player> <Wave> <Index>[-<Waypoint>]
-🌐<Team>-<Player> <Squad> <Index> [([<Difficulty>]-[-<Size>]-[-<Tech>]-[<Collide>])]
+🌐Team-P Reveal Index (Mode)
+🎯Ally-P Start Index (Mode)
+🎯Ally-P Expansion Index (Mode)
+📍Wave N-W
+📍Evil N-W
+⇉Team-P Squad <Index> (Difficulty-Size-Tech-Collide)
+⇉Team-P Outpost <Index> (Difficulty-Size-Tech-Collide)
+⇉Team-P Base <Index> (Difficulty-Size-Tech-Collide)
+```
+
+Belshir Escort
+```
+🌐BE Reveal
+🌐BE Geyser N
+📍BE Park N
+BE Spawn
+BE Path N-W
+BE Spot N
+```
+Belshir Whales
+```
+🌐BW Area N
+🌐BW Reveal N
+BW Spawn
 ```

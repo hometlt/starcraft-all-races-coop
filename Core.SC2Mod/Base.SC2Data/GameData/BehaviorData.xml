@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CBehaviorResource id="HighYieldMineralFieldMinerals">
+        <Capacity value="100000"/>
+    </CBehaviorResource>
+    <CBehaviorResource id="HighYieldMineralFieldMinerals750">
+        <Capacity value="100000"/>
+    </CBehaviorResource>
+    <CBehaviorResource id="MineralFieldMinerals">
+        <Capacity value="100000"/>
+    </CBehaviorResource>
+    <CBehaviorResource id="MineralFieldMinerals450">
+        <Capacity value="100000"/>
+    </CBehaviorResource>
+    <CBehaviorResource id="MineralFieldMinerals750">
+        <Capacity value="100000"/>
+    </CBehaviorResource>
+    <CBehaviorResource id="MineralFieldMineralsNoRemove">
+        <Capacity value="100000"/>
+    </CBehaviorResource>
+    <CBehaviorResource id="MineralFieldMineralsOpaque">
+        <Capacity value="100000"/>
+    </CBehaviorResource>
+    <CBehaviorResource id="MineralFieldMineralsOpaque900">
+        <Capacity value="100000"/>
+    </CBehaviorResource>
+    <CBehaviorResource id="MutatorMineralsLowYield">
+        <Capacity value="100000"/>
+    </CBehaviorResource>
+</Catalog>

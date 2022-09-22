@@ -230,7 +230,9 @@ void libCOMM_InitVariables () {
     for (init_i = 0; init_i <= libCOMM_gv_cUC_ZERATUL_MAX_SELECTIONS; init_i += 1) {
         libCOMM_gv_cU_ZeratulSelectionButtonContainers[init_i] = c_invalidDialogControlId;
     }
-    libCOMM_gv_cM_ArtifactTransmission_SelectAbilityReminder = TimerCreate();
+    for (init_i = 0; init_i <= 15; init_i += 1) {
+        libCOMM_gv_cM_ArtifactTransmission_SelectAbilityReminder[init_i] = TimerCreate();
+    }
     libCOMM_gv_cMC_ZeratulVOTransmissionProphacyCastDelay = 60.0;
     libCOMM_gv_cM_Zeratul_DevolvedUnits = UnitGroupEmpty();
     for (init_i = 0; init_i <= libCOMI_gv_cCC_MAXPLAYERS; init_i += 1) {
@@ -3693,7 +3695,7 @@ void libCOMM_gf_CM_KerriganMalignantCreep () {
 
     // Variable Initialization
     lv_catalog = c_gameCatalogUnit;
-    lv_kerriganplayer = libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Kerrigan", libCOMI_gf_GetAlliedCommandersPlayersCopy());
+    lv_kerriganplayer = PlayerGroupPlayer(libCOMI_gf_GetAlliedCommandersPlayers(), 1);
     lv_attackspeedmultiplier = libNtve_gf_CatalogFieldValueGetAsReal(c_gameCatalogEffect, "KerriganMalignantCreepAttackSpeedDummy", "Amount", lv_kerriganplayer);
     lv_liferegenrate = libNtve_gf_CatalogFieldValueGetAsReal(c_gameCatalogEffect, "KerriganMalignantCreepLifeRegenDummy", "Amount", lv_kerriganplayer);
 
@@ -3906,7 +3908,7 @@ void libCOMM_gf_CM_Mengsk_CheckRoyalGuardSupply () {
     int autoD9763420_u;
 
     // Variable Initialization
-    lv_mengskplayer = libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Mengsk", libCOMI_gf_GetAlliedCommandersPlayersCopy());
+    lv_mengskplayer = PlayerGroupPlayer(libCOMI_gf_GetAlliedCommandersPlayers(), 1);
 
     // Implementation
     if (((libCOMM_gv_cM_Mengsk_CheckRoyalGuardSupply == false) || ((PlayerDifficulty(lv_mengskplayer) >= 3) == false) || (PlayerCommanderLevel(lv_mengskplayer) < 15))) {
@@ -5920,6 +5922,26 @@ bool auto_libCOMM_gf_CU_ZeratulArtifactHintTrack_TriggerFunc (bool testConds, bo
     return true;
 }
 
+void libCOMM_gf_CreateZeratulAssimilators (unit lp_unit) {
+    // Automatic Variable Declarations
+    unitgroup autoF0EED050_g;
+    int autoF0EED050_u;
+    unit autoF0EED050_var;
+
+    // Implementation
+    autoF0EED050_g = UnitGroupSearch(null, 0, UnitGetPosition(lp_unit), 14.0, UnitFilter((1 << c_targetFilterRawResource), 0, (1 << c_targetFilterAlly) | (1 << c_targetFilterNeutral) | (1 << c_targetFilterEnemy) | (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+    autoF0EED050_u = UnitGroupCount(autoF0EED050_g, c_unitCountAll);
+    for (;; autoF0EED050_u -= 1) {
+        autoF0EED050_var = UnitGroupUnitFromEnd(autoF0EED050_g, autoF0EED050_u);
+        if (autoF0EED050_var == null) { break; }
+        if ((UnitHasBehavior2(autoF0EED050_var, "GeyserBlockedByRocks") == false)) {
+            UnitIssueOrder(lp_unit, OrderTargetingUnit(AbilityCommand("NexusBuild", 0), autoF0EED050_var), c_orderQueueAddToEnd);
+            Wait(0.125, c_timeGame);
+        }
+
+    }
+}
+
 void libCOMM_gf_CM_Zeratul_ApplyDevolve (unit lp_targetUnit) {
     // Variable Declarations
     fixed lv_lifePercentage;
@@ -6200,7 +6222,7 @@ void libCOMM_gf_CM_Zeratul_GiveProphecyHint (int lp_hintLevel) {
         lv_r1 = UnitGetCustomValue(libCOMM_gv_cM_ZeratulProphecyHintUnit, 0);
     }
     else if (true) {
-        lv_p1 = libCOMI_gf_GetPlayerBasePosition(libCOMM_gf_CM_ZeratulProphecyEventGetPlayer());
+        lv_p1 = libCOMI_gf_GetAllyStartPosition(libCOMM_gf_CM_ZeratulProphecyEventGetPlayer(), 1, PlayerGroupCount(libCOMI_gf_GetAlliedCommandersPlayers()));
         lv_r1 = 150.0;
     }
     lv_p2 = UnitGetPosition(libCOMM_gv_cM_ZeratulProphecyArtifact);
@@ -6437,7 +6459,7 @@ point libCOMM_gf_CM_Zeratul_FindArtifactPlacementPoint (int lp_player, int lp_ar
     // Variable Initialization
     lv_artifactPlacementData = libCOMM_gf_CM_Zeratul_GetArtifactPlacementDataInstance();
     lv_artifactIndex = libCOMM_gf_CM_Zeratul_GetArtifactDifficultyIndex(lp_player, lp_artifactNumber, lv_artifactPlacementData);
-    lv_artifactOrigin = libCOMM_gf_CM_Zeratul_GetArtifactPlacementOrigin(lv_artifactPlacementData);
+    lv_artifactOrigin = libCOMM_gf_CM_Zeratul_GetArtifactPlacementOrigin(lv_artifactPlacementData, lp_player);
     lv_minSearchRadius = UserDataGetFixed("XAC_ZeratulArtifactPlacement", lv_artifactPlacementData, "minSearchRadius", lv_artifactIndex);
     lv_maxSearchRadius = UserDataGetFixed("XAC_ZeratulArtifactPlacement", lv_artifactPlacementData, "maxSearchRadius", lv_artifactIndex);
     lv_maxWalkingDistance = UserDataGetFixed("XAC_ZeratulArtifactPlacement", lv_artifactPlacementData, "maxWalkingDistance", lv_artifactIndex);
@@ -6518,14 +6540,15 @@ string libCOMM_gf_CM_Zeratul_GetArtifactPlacementDataInstance () {
     return "GlobalDefault";
 }
 
-point libCOMM_gf_CM_Zeratul_GetArtifactPlacementOrigin (string lp_artifactPlacementData) {
+point libCOMM_gf_CM_Zeratul_GetArtifactPlacementOrigin (string lp_artifactPlacementData, int lp_player) {
     // Automatic Variable Declarations
     // Implementation
     if ((UserDataGetInt("XAC_ZeratulArtifactPlacement", lp_artifactPlacementData, "useZeratulArtifactOrigin", 1) != 0)) {
         return PointFromName("ZeratulArtifactOrigin");
     }
-
-    return MidPoint(PlayerStartLocation(1), PlayerStartLocation(2));
+    else {
+        return libCOMI_gf_GetPlayerStartPosition(lp_player);
+    }
 }
 
 int libCOMM_gf_CM_Zeratul_GetArtifactLimit (int lp_zeratulPlayer) {
@@ -6535,78 +6558,6 @@ int libCOMM_gf_CM_Zeratul_GetArtifactLimit (int lp_zeratulPlayer) {
 }
 
 // Triggers
-//--------------------------------------------------------------------------------------------------
-// Trigger: ShieldColorUnitCreate (Alarak/Fenix)
-//--------------------------------------------------------------------------------------------------
-bool libCOMM_gt_ShieldColorUnitCreateAlarakFenix_Func (bool testConds, bool runActions) {
-    // Variable Declarations
-    unit lv_unit;
-    string lv_commander;
-
-    // Automatic Variable Declarations
-    // Variable Initialization
-    lv_unit = EventUnitCreatedUnit();
-    lv_commander = PlayerCommander(UnitGetOwner(lv_unit));
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    if ((lv_commander == "Alarak")) {
-        libNtve_gf_SendActorMessageToUnit(EventUnitCreatedUnit(), "AliasAdd _ShieldRed");
-    }
-
-    if ((lv_commander == "Fenix")) {
-        libNtve_gf_SendActorMessageToUnit(EventUnitCreatedUnit(), "AliasAdd _ShieldYellow");
-    }
-
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMM_gt_ShieldColorUnitCreateAlarakFenix_Init () {
-    libCOMM_gt_ShieldColorUnitCreateAlarakFenix = TriggerCreate("libCOMM_gt_ShieldColorUnitCreateAlarakFenix_Func");
-    TriggerAddEventUnitCreated(libCOMM_gt_ShieldColorUnitCreateAlarakFenix, null, null, null);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: ShieldColorUnitMorph (Alarak/Fenix)
-//--------------------------------------------------------------------------------------------------
-bool libCOMM_gt_ShieldColorUnitMorphAlarakFenix_Func (bool testConds, bool runActions) {
-    // Variable Declarations
-    unit lv_unit;
-    string lv_commander;
-
-    // Automatic Variable Declarations
-    // Variable Initialization
-    lv_unit = EventUnit();
-    lv_commander = PlayerCommander(UnitGetOwner(lv_unit));
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    if ((lv_commander == "Alarak")) {
-        libNtve_gf_SendActorMessageToUnit(lv_unit, "AliasAdd _ShieldRed");
-    }
-
-    if ((lv_commander == "Fenix")) {
-        libNtve_gf_SendActorMessageToUnit(lv_unit, "AliasAdd _ShieldYellow");
-    }
-
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMM_gt_ShieldColorUnitMorphAlarakFenix_Init () {
-    libCOMM_gt_ShieldColorUnitMorphAlarakFenix = TriggerCreate("libCOMM_gt_ShieldColorUnitMorphAlarakFenix_Func");
-    TriggerAddEventUnitAbility(libCOMM_gt_ShieldColorUnitMorphAlarakFenix, null, null, c_abilMorphStageActorEnd, false);
-    TriggerAddEventUnitAbility(libCOMM_gt_ShieldColorUnitMorphAlarakFenix, null, null, c_abilBuildStageFinish, false);
-    TriggerAddEventUnitBehaviorChange(libCOMM_gt_ShieldColorUnitMorphAlarakFenix, null, "PowerUserWarpable", c_unitBehaviorChangeDestroy);
-}
-
 //--------------------------------------------------------------------------------------------------
 // Trigger: AF_TopBar Notifications Enable/Disable
 //--------------------------------------------------------------------------------------------------
@@ -6862,424 +6813,6 @@ void libCOMM_gt_CM_GPReminderAbilityUsed_Init () {
     TriggerAddEventUnitAbility(libCOMM_gt_CM_GPReminderAbilityUsed, null, AbilityCommand("SOAShadowGuardCalldown", 0), c_unitAbilStageExecute, false);
     TriggerAddEventUnitAbility(libCOMM_gt_CM_GPReminderAbilityUsed, null, AbilityCommand("SpawnToxicNest", 0), c_unitAbilStageExecute, false);
     TriggerAddEventUnitAbility(libCOMM_gt_CM_GPReminderAbilityUsed, null, AbilityCommand("HHTrainTopBar", 0), c_unitAbilStageExecute, false);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Creep Tumor Build
-//--------------------------------------------------------------------------------------------------
-bool libCOMM_gt_CreepTumorBuild_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    UnitBehaviorAdd(EventUnit(), "CreepTumorExhausted", EventUnit(), 1);
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMM_gt_CreepTumorBuild_Init () {
-    libCOMM_gt_CreepTumorBuild = TriggerCreate("libCOMM_gt_CreepTumorBuild_Func");
-    TriggerAddEventUnitAbility(libCOMM_gt_CreepTumorBuild, null, AbilityCommand("CreepTumorBuild", 0), c_abilBuildStageFinish, false);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Baneling Scourge Deathrattle Scrap Deaths
-//--------------------------------------------------------------------------------------------------
-bool libCOMM_gt_BanelingScourgeDeathrattleScrapDeaths_Func (bool testConds, bool runActions) {
-    // Variable Declarations
-    int lv_dyingUnitMineralCost;
-    int lv_dyingUnitVespeneCost;
-    int lv_dyingUnitPlayer;
-    int lv_scrapPlayerDivisor;
-    int lv_hornerCommander;
-
-    // Automatic Variable Declarations
-    // Variable Initialization
-    lv_dyingUnitPlayer = UnitGetOwner(EventUnit());
-    lv_scrapPlayerDivisor = 10;
-    lv_hornerCommander = libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Horner", libCOMI_gf_GetAlliedCommandersPlayersCopy());
-
-    // Conditions
-    if (testConds) {
-        if (!((lv_dyingUnitPlayer != c_playerAny))) {
-            return false;
-        }
-
-        if (!((lv_hornerCommander != c_playerAny))) {
-            return false;
-        }
-
-        if (!((UnitTestState(EventUnit(), c_unitStateHallucination) == false))) {
-            return false;
-        }
-
-        if (!((EventUnitDamageDeathCheck(c_deathTypeRemove) == false))) {
-            return false;
-        }
-
-        if (!((TechTreeUpgradeCount(UnitGetOwner(EventUnit()), "HHScrapPickup", c_techCountCompleteOnly) == 1))) {
-            return false;
-        }
-
-        if (!(((UnitGetType(EventUnit()) == "Baneling") || (UnitGetType(EventUnit()) == "BanelingBurrowed") || (UnitGetType(EventUnit()) == "HotSSplitterlingBig") || (UnitGetType(EventUnit()) == "HotSSplitterlingBigBurrowed") || (UnitGetType(EventUnit()) == "Scourge") || (UnitGetType(EventUnit()) == "HHReaper") || (UnitGetType(EventUnit()) == "HHReaperFlying") || (UnitGetType(EventUnit()) == "HHHellion") || (UnitGetType(EventUnit()) == "HHHellionTank") || (UnitGetType(EventUnit()) == "HHWidowMine") || (UnitGetType(EventUnit()) == "HHWidowMineBurrowed") || (UnitGetType(EventUnit()) == "Supplicant")))) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    if ((libCOMI_gf_ActiveCommanderForPlayer(UnitGetOwner(EventUnitCreatedUnit())) == "Horner")) {
-        lv_scrapPlayerDivisor = 5;
-    }
-
-    lv_dyingUnitMineralCost = (FixedToInt(StringToFixed(CatalogFieldValueGet(c_gameCatalogUnit, UnitGetType(EventUnit()), "CostResource[" + IntToString(0) + "]", EventPlayer()))) / lv_scrapPlayerDivisor);
-    lv_dyingUnitVespeneCost = (FixedToInt(StringToFixed(CatalogFieldValueGet(c_gameCatalogUnit, UnitGetType(EventUnit()), "CostResource[" + IntToString(1) + "]", EventPlayer()))) / lv_scrapPlayerDivisor);
-    if ((lv_dyingUnitMineralCost > 0)) {
-        if ((RandomInt(1, 100) <= FixedToInt(CatalogFieldValueGetAsInt(c_gameCatalogEffect, "MasteryHornerDoubleSalvageChanceDisplayDummy", "Amount", libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Horner", libCOMI_gf_GetAlliedCommandersPlayers()))))) {
-            libNtve_gf_CreateUnitsWithDefaultFacing(1, "HHScrapPickup", 0, lv_dyingUnitPlayer, PointWithOffset(UnitGetPosition(EventUnit()), -0.25, 0.0));
-            libCOMM_gf_CM_Horner_ScrapResourceSetStack(UnitLastCreated(), lv_dyingUnitMineralCost, lv_dyingUnitVespeneCost);
-            if ((lv_dyingUnitVespeneCost == 0)) {
-                libNtve_gf_SendActorMessageToUnit(UnitLastCreated(), "ModelSwap HHScrapMineral");
-            }
-
-            libNtve_gf_CreateUnitsWithDefaultFacing(1, "HHScrapPickup", 0, lv_dyingUnitPlayer, PointWithOffset(UnitGetPosition(EventUnit()), 0.25, 0.0));
-            libCOMM_gf_CM_Horner_ScrapResourceSetStack(UnitLastCreated(), lv_dyingUnitMineralCost, lv_dyingUnitVespeneCost);
-            if ((lv_dyingUnitVespeneCost == 0)) {
-                libNtve_gf_SendActorMessageToUnit(UnitLastCreated(), "ModelSwap HHScrapMineral");
-            }
-
-        }
-        else {
-            libNtve_gf_CreateUnitsWithDefaultFacing(1, "HHScrapPickup", 0, lv_dyingUnitPlayer, UnitGetPosition(EventUnit()));
-            libCOMM_gf_CM_Horner_ScrapResourceSetStack(UnitLastCreated(), lv_dyingUnitMineralCost, lv_dyingUnitVespeneCost);
-            if ((lv_dyingUnitVespeneCost == 0)) {
-                libNtve_gf_SendActorMessageToUnit(UnitLastCreated(), "ModelSwap HHScrapMineral");
-            }
-
-        }
-    }
-
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMM_gt_BanelingScourgeDeathrattleScrapDeaths_Init () {
-    libCOMM_gt_BanelingScourgeDeathrattleScrapDeaths = TriggerCreate("libCOMM_gt_BanelingScourgeDeathrattleScrapDeaths_Func");
-    TriggerEnable(libCOMM_gt_BanelingScourgeDeathrattleScrapDeaths, false);
-    TriggerAddEventUnitDied(libCOMM_gt_BanelingScourgeDeathrattleScrapDeaths, null);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Baneling Scourge Econ Drop
-//--------------------------------------------------------------------------------------------------
-bool libCOMM_gt_BanelingScourgeEconDrop_Func (bool testConds, bool runActions) {
-    // Variable Declarations
-    point lv_position;
-    string lv_resource;
-    int lv_itPlayer;
-    int lv_kerriganCommander;
-
-    // Automatic Variable Declarations
-    playergroup auto25916AE3_g;
-
-    // Variable Initialization
-    lv_kerriganCommander = libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Kerrigan", libCOMI_gf_GetAlliedCommandersPlayers());
-
-    // Conditions
-    if (testConds) {
-        if (!((lv_kerriganCommander != c_playerAny))) {
-            return false;
-        }
-
-        if (!((UnitHasBehavior2(EventUnit(), "KerriganVoidCoopEconDrop") == true))) {
-            return false;
-        }
-
-        if (!((EventUnitDamageDeathCheck(c_deathTypeRemove) == false))) {
-            return false;
-        }
-
-        if (!(((UnitGetType(EventUnit()) == "Baneling") || (UnitGetType(EventUnit()) == "BanelingBurrowed") || (UnitGetType(EventUnit()) == "Scourge")))) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    lv_position = UnitGetPosition(EventUnit());
-    lv_resource = "KerriganVoidCoopEconDropLT1";
-    auto25916AE3_g = libCOMI_gf_GetAlliedCommandersPlayersCopy();
-    lv_itPlayer = -1;
-    while (true) {
-        lv_itPlayer = PlayerGroupNextPlayer(auto25916AE3_g, lv_itPlayer);
-        if (lv_itPlayer < 0) { break; }
-        libNtve_gf_CreateUnitsWithDefaultFacing(1, lv_resource, 0, lv_itPlayer, lv_position);
-    }
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMM_gt_BanelingScourgeEconDrop_Init () {
-    libCOMM_gt_BanelingScourgeEconDrop = TriggerCreate("libCOMM_gt_BanelingScourgeEconDrop_Func");
-    TriggerEnable(libCOMM_gt_BanelingScourgeEconDrop, false);
-    TriggerAddEventUnitDied(libCOMM_gt_BanelingScourgeEconDrop, null);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Baneling Scourge Locusts
-//--------------------------------------------------------------------------------------------------
-bool libCOMM_gt_BanelingScourgeLocusts_Func (bool testConds, bool runActions) {
-    // Variable Declarations
-    string lv_locustUnitType;
-    int lv_rand;
-    fixed lv_foodCompare;
-    int lv_abathurCommander;
-
-    // Automatic Variable Declarations
-    // Variable Initialization
-    lv_locustUnitType = "Locust";
-    lv_rand = RandomInt(1, 100);
-    lv_foodCompare = (StringToFixed(CatalogFieldValueGet(c_gameCatalogUnit, UnitGetType(EventUnit()), "Food", 0)) * -16.0);
-    lv_abathurCommander = libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Abathur", libCOMI_gf_GetAlliedCommandersPlayers());
-
-    // Conditions
-    if (testConds) {
-        if (!((UnitFilterMatch(EventUnit(), UnitGetOwner(EventUnit()), UnitFilter(0, (1 << (c_targetFilterSummoned - 32)), 0, 0)) == false))) {
-            return false;
-        }
-
-        if (!((lv_abathurCommander != c_playerAny))) {
-            return false;
-        }
-
-        if (!((EventUnitDamageDeathCheck(c_deathTypeRemove) == false))) {
-            return false;
-        }
-
-        if (!((libNtve_gf_PlayerIsEnemy(lv_abathurCommander, UnitGetOwner(EventUnit()), libNtve_ge_PlayerRelation_Enemy) == true))) {
-            return false;
-        }
-
-        if (!((TechTreeUpgradeCount(lv_abathurCommander, "AbathurEnemyDeathCreateLocusts", c_techCountCompleteOnly) == 1))) {
-            return false;
-        }
-
-        if (!(((UnitGetType(EventUnit()) == "Baneling") || (UnitGetType(EventUnit()) == "BanelingBurrowed") || (UnitGetType(EventUnit()) == "Scourge")))) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    if ((UnitGetHeight(EventUnit()) >= 1)) {
-        lv_locustUnitType = "LocustFlying";
-    }
-
-    if ((UnitHasBehavior2(EventUnit(), "SupplyLT1") == true)) {
-        lv_foodCompare = 8;
-    }
-
-    if (((FixedToInt(lv_foodCompare) + libCOMM_gv_cM_Abathur_Enemy_Death_Create_Locusts_Random_Modifier) >= lv_rand)) {
-        libNtve_gf_CreateUnitsWithDefaultFacing(1, lv_locustUnitType, c_unitCreateIgnorePlacement, lv_abathurCommander, UnitGetPosition(EventUnit()));
-        PlayerCreateEffectUnit(lv_abathurCommander, "AbathurLocustTimedLife", UnitLastCreated());
-    }
-
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMM_gt_BanelingScourgeLocusts_Init () {
-    libCOMM_gt_BanelingScourgeLocusts = TriggerCreate("libCOMM_gt_BanelingScourgeLocusts_Func");
-    TriggerEnable(libCOMM_gt_BanelingScourgeLocusts, false);
-    TriggerAddEventUnitDied(libCOMM_gt_BanelingScourgeLocusts, null);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Baneling Scourge Essence Drop
-//--------------------------------------------------------------------------------------------------
-bool libCOMM_gt_BanelingScourgeEssenceDrop_Func (bool testConds, bool runActions) {
-    // Variable Declarations
-    int lv_essenceUnitCount;
-    int lv_essenceBaseAmount;
-    int lv_essenceCasualMultiplier;
-    int lv_essenceNormalMultiplier;
-    fixed lv_essenceHardMultiplier;
-    int lv_essenceBrutalMultiplier;
-    int lv_dehakaPlayer;
-
-    // Automatic Variable Declarations
-    // Variable Initialization
-    lv_essenceCasualMultiplier = 2;
-    lv_essenceNormalMultiplier = 2;
-    lv_essenceHardMultiplier = 1.5;
-    lv_essenceBrutalMultiplier = 1;
-    lv_dehakaPlayer = libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Dehaka", libCOMI_gf_GetAlliedCommandersPlayers());
-
-    // Conditions
-    if (testConds) {
-        if (!((lv_dehakaPlayer != c_playerAny))) {
-            return false;
-        }
-
-        if (!((libNtve_gf_PlayerIsEnemy(lv_dehakaPlayer, UnitGetOwner(EventUnit()), libNtve_ge_PlayerRelation_Enemy) == true))) {
-            return false;
-        }
-
-        if (!((EventUnitDamageDeathCheck(c_deathTypeRemove) == false))) {
-            return false;
-        }
-
-        if (!((libCOMI_gf_CT_UnitSpawnedByMutator(EventUnit()) == false))) {
-            return false;
-        }
-
-        if (!(((UnitGetType(EventUnit()) == "Baneling") || (UnitGetType(EventUnit()) == "BanelingBurrowed") || (UnitGetType(EventUnit()) == "Scourge")))) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    if ((lv_dehakaPlayer == c_playerAny)) {
-        return true;
-    }
-
-    lv_essenceBaseAmount = 1;
-    lv_essenceUnitCount = libNtve_gf_DifficultyValueInt((lv_essenceBaseAmount * lv_essenceCasualMultiplier), (lv_essenceBaseAmount * lv_essenceNormalMultiplier), FixedToInt(Ceiling((lv_essenceBaseAmount * lv_essenceHardMultiplier))), (lv_essenceBaseAmount * lv_essenceBrutalMultiplier));
-    if ((lv_essenceUnitCount > 0)) {
-        libCOMM_gv_cM_DebugDehakaEssenceDroppedNormal += lv_essenceUnitCount;
-        libNtve_gf_CreateUnitsWithDefaultFacing(1, "EssencePickup", c_unitCreateIgnorePlacement, lv_dehakaPlayer, UnitGetPosition(EventUnit()));
-        libCOMM_gf_CM_Dehaka_EssenceSetStack(UnitLastCreated(), lv_essenceUnitCount);
-        UnitBehaviorRemove(UnitLastCreated(), "EssenceCreated", 1);
-        libCOMM_gf_CM_Dehaka_EssenceScale(UnitLastCreated(), true);
-        libCOMM_gf_CM_Dehaka_EssenceMerge(UnitLastCreated(), lv_essenceUnitCount);
-    }
-
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMM_gt_BanelingScourgeEssenceDrop_Init () {
-    libCOMM_gt_BanelingScourgeEssenceDrop = TriggerCreate("libCOMM_gt_BanelingScourgeEssenceDrop_Func");
-    TriggerEnable(libCOMM_gt_BanelingScourgeEssenceDrop, false);
-    TriggerAddEventUnitDied(libCOMM_gt_BanelingScourgeEssenceDrop, null);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Baneling Scourge Biomass Drop
-//--------------------------------------------------------------------------------------------------
-bool libCOMM_gt_BanelingScourgeBiomassDrop_Func (bool testConds, bool runActions) {
-    // Variable Declarations
-    int lv_biomassUnitCount;
-    int lv_indexPlayer;
-    int lv_biomassBaseAmount;
-    int lv_biomassCasualMultiplier;
-    int lv_biomassNormalMultiplier;
-    fixed lv_biomassHardMultiplier;
-    int lv_biomassBrutalMultiplier;
-    int lv_biomassToxicNestMultiplier;
-    int lv_dyingUnitSupply;
-    int lv_abathurPlayer;
-    fixed lv_doubleBiomassChance;
-
-    // Automatic Variable Declarations
-    playergroup autoC5698030_g;
-
-    // Variable Initialization
-    lv_biomassCasualMultiplier = 2;
-    lv_biomassNormalMultiplier = 2;
-    lv_biomassHardMultiplier = 1.5;
-    lv_biomassBrutalMultiplier = 1;
-    lv_biomassToxicNestMultiplier = 2;
-    lv_abathurPlayer = libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Abathur", libCOMI_gf_GetAlliedCommandersPlayers());
-
-    // Conditions
-    if (testConds) {
-        if (!((lv_abathurPlayer != c_playerAny))) {
-            return false;
-        }
-
-        if (!((UnitGetOwner(EventUnit()) != c_playerAny))) {
-            return false;
-        }
-
-        if (!((libNtve_gf_PlayerIsEnemy(lv_abathurPlayer, UnitGetOwner(EventUnit()), libNtve_ge_PlayerRelation_Enemy) == true))) {
-            return false;
-        }
-
-        if (!((lv_abathurPlayer != c_playerAny))) {
-            return false;
-        }
-
-        if (!((EventUnitDamageDeathCheck(c_deathTypeRemove) == false))) {
-            return false;
-        }
-
-        if (!((libCOMI_gf_CT_UnitSpawnedByMutator(EventUnit()) == false))) {
-            return false;
-        }
-
-        if (!(((UnitGetType(EventUnit()) == "Baneling") || (UnitGetType(EventUnit()) == "BanelingBurrowed") || (UnitGetType(EventUnit()) == "Scourge")))) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    autoC5698030_g = libCOMI_gf_GetAlliedCommandersPlayersCopy();
-    lv_indexPlayer = -1;
-    while (true) {
-        lv_indexPlayer = PlayerGroupNextPlayer(autoC5698030_g, lv_indexPlayer);
-        if (lv_indexPlayer < 0) { break; }
-        if ((libCOMI_gf_ActiveCommanderForPlayer(lv_indexPlayer) == "Abathur") && (libNtve_gf_PlayerIsEnemy(lv_indexPlayer, UnitGetOwner(EventUnit()), libNtve_ge_PlayerRelation_AllyMutual) == false)) {
-            lv_dyingUnitSupply = FixedToInt(StringToFixed(CatalogFieldValueGet(c_gameCatalogUnit, UnitGetType(EventUnit()), "Food", 0)));
-            lv_doubleBiomassChance = libNtve_gf_CatalogFieldValueGetAsReal(c_gameCatalogEffect, "MasteryAbathurDoubleBiomassDisplayDummy", "Amount", lv_indexPlayer);
-            if (((UnitHasBehavior2(EventUnit(), "SupplyLT1") == true) || (UnitHasBehavior2(EventUnit(), "CritterExplode") == true))) {
-                lv_biomassBaseAmount = 1;
-            }
-            if ((((TechTreeUpgradeCount(lv_indexPlayer, "AbathurToxicNestIcreasedBiomass", c_techCountCompleteOnly) == 1) && (UnitHasBehavior2(EventUnit(), "ToxicNestVirulentNest") == true)) || ((TechTreeUpgradeCount(lv_indexPlayer, "MasteryAbathurDoubleBiomass", c_techCountCompleteOnly) > 0) && (RandomFixed(0.0, 100.0) <= lv_doubleBiomassChance)))) {
-                lv_biomassUnitCount = (libNtve_gf_DifficultyValueInt((lv_biomassBaseAmount * lv_biomassCasualMultiplier), (lv_biomassBaseAmount * lv_biomassNormalMultiplier), FixedToInt(Ceiling((lv_biomassBaseAmount * lv_biomassHardMultiplier))), (lv_biomassBaseAmount * lv_biomassBrutalMultiplier)) * lv_biomassToxicNestMultiplier);
-            }
-            else {
-                lv_biomassUnitCount = libNtve_gf_DifficultyValueInt((lv_biomassBaseAmount * lv_biomassCasualMultiplier), (lv_biomassBaseAmount * lv_biomassNormalMultiplier), FixedToInt(Ceiling((lv_biomassBaseAmount * lv_biomassHardMultiplier))), (lv_biomassBaseAmount * lv_biomassBrutalMultiplier));
-            }
-            if ((lv_biomassUnitCount > 0)) {
-                libCOMM_gv_cM_DebugAbathurBiomassDroppedNormal += lv_biomassUnitCount;
-                libNtve_gf_CreateUnitsWithDefaultFacing(1, "BiomassPickup", c_unitCreateIgnorePlacement, lv_abathurPlayer, UnitGetPosition(EventUnit()));
-                libCOMM_gf_CM_Abathur_BiomassSetStack(UnitLastCreated(), lv_biomassUnitCount);
-                UnitBehaviorRemove(UnitLastCreated(), "BiomassCreated", 1);
-                libCOMM_gf_CM_Abathur_BiomassScale(UnitLastCreated(), true);
-                libCOMM_gf_CM_Abathur_BiomassMerge(UnitLastCreated(), lv_biomassUnitCount);
-            }
-
-        }
-
-    }
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMM_gt_BanelingScourgeBiomassDrop_Init () {
-    libCOMM_gt_BanelingScourgeBiomassDrop = TriggerCreate("libCOMM_gt_BanelingScourgeBiomassDrop_Func");
-    TriggerEnable(libCOMM_gt_BanelingScourgeBiomassDrop, false);
-    TriggerAddEventUnitDied(libCOMM_gt_BanelingScourgeBiomassDrop, null);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -8011,6 +7544,78 @@ bool libCOMM_gt_DUT_CommanderAlarak_Func (bool testConds, bool runActions) {
 void libCOMM_gt_DUT_CommanderAlarak_Init () {
     libCOMM_gt_DUT_CommanderAlarak = TriggerCreate("libCOMM_gt_DUT_CommanderAlarak_Func");
     TriggerAddEventGeneric(libCOMM_gt_DUT_CommanderAlarak, libCOMI_gv_iNIT_COOP_MISSION_STAGE2);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: ShieldColorUnitCreate Alarak
+//--------------------------------------------------------------------------------------------------
+bool libCOMM_gt_ShieldColorUnitCreateAlarak_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_unit;
+    string lv_commander;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_unit = EventUnitCreatedUnit();
+    lv_commander = PlayerCommander(UnitGetOwner(lv_unit));
+
+    // Conditions
+    if (testConds) {
+        if (!((lv_commander == "Alarak"))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libNtve_gf_SendActorMessageToUnit(EventUnitCreatedUnit(), "AliasAdd _ShieldRed");
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMM_gt_ShieldColorUnitCreateAlarak_Init () {
+    libCOMM_gt_ShieldColorUnitCreateAlarak = TriggerCreate("libCOMM_gt_ShieldColorUnitCreateAlarak_Func");
+    TriggerAddEventUnitCreated(libCOMM_gt_ShieldColorUnitCreateAlarak, null, null, null);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: ShieldColorUnitMorph Alarak
+//--------------------------------------------------------------------------------------------------
+bool libCOMM_gt_ShieldColorUnitMorphAlarak_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_unit;
+    string lv_commander;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_unit = EventUnit();
+    lv_commander = PlayerCommander(UnitGetOwner(lv_unit));
+
+    // Conditions
+    if (testConds) {
+        if (!((lv_commander == "Alarak"))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libNtve_gf_SendActorMessageToUnit(lv_unit, "AliasAdd _ShieldRed");
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMM_gt_ShieldColorUnitMorphAlarak_Init () {
+    libCOMM_gt_ShieldColorUnitMorphAlarak = TriggerCreate("libCOMM_gt_ShieldColorUnitMorphAlarak_Func");
+    TriggerAddEventUnitAbility(libCOMM_gt_ShieldColorUnitMorphAlarak, null, null, c_abilMorphStageActorEnd, false);
+    TriggerAddEventUnitAbility(libCOMM_gt_ShieldColorUnitMorphAlarak, null, null, c_abilBuildStageFinish, false);
+    TriggerAddEventUnitBehaviorChange(libCOMM_gt_ShieldColorUnitMorphAlarak, null, "PowerUserWarpable", c_unitBehaviorChangeDestroy);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -8769,13 +8374,6 @@ bool libCOMM_gt_CM_Alarak_EmpowerAdd_Func (bool testConds, bool runActions) {
     lv_p = EventPlayerEffectUsedUnitOwner(c_effectPlayerCaster);
     lv_u = EventPlayerEffectUsedUnit(c_effectUnitTarget);
 
-    // Conditions
-    if (testConds) {
-        if (!((libCOMI_gf_PlayerIsCommander(lv_p) == true))) {
-            return false;
-        }
-    }
-
     // Actions
     if (!runActions) {
         return true;
@@ -8808,13 +8406,6 @@ bool libCOMM_gt_CM_Alarak_EmpowerRemove_Func (bool testConds, bool runActions) {
     // Variable Initialization
     lv_p = EventPlayerEffectUsedUnitOwner(c_effectPlayerCaster);
     lv_u = EventPlayerEffectUsedUnit(c_effectUnitTarget);
-
-    // Conditions
-    if (testConds) {
-        if (!((libCOMI_gf_PlayerIsCommander(lv_p) == true))) {
-            return false;
-        }
-    }
 
     // Actions
     if (!runActions) {
@@ -8849,13 +8440,6 @@ bool libCOMM_gt_CM_Alarak_EmpowerWorshiperAdd_Func (bool testConds, bool runActi
     // Variable Initialization
     lv_u = EventUnit();
     lv_p = UnitGetOwner(lv_u);
-
-    // Conditions
-    if (testConds) {
-        if (!((libCOMI_gf_PlayerIsCommander(lv_p) == true))) {
-            return false;
-        }
-    }
 
     // Actions
     if (!runActions) {
@@ -9057,7 +8641,7 @@ bool libCOMM_gt_DUT_CommanderArtanis_Func (bool testConds, bool runActions) {
                 libNtve_gf_SetDialogItemTooltip(libCOMI_gv_cU_GPEnergyTooltip[autoD6AC8091_var], TextExpressionAssemble("Param/Expression/lib_COMM_F66C6704"), PlayerGroupSingle(autoD6AC8091_var));
             }
 
-            UnitCreateEffectPoint(libCOMI_gv_yY_GPCasterUnit[autoD6AC8091_var], "SOAPylonPowerCoop", libCOMI_gf_GetPlayerHeroPosition(autoD6AC8091_var));
+            UnitCreateEffectPoint(libCOMI_gv_yY_GPCasterUnit[autoD6AC8091_var], "SOAPylonPowerCoop", libCOMI_gf_GetAllyHeroPosition(autoD6AC8091_var));
             if (((libCOMI_gf_DifficultyLevelForPlayerCoop(autoD6AC8091_var) == 3) || (libCOMI_gf_DifficultyLevelForPlayerCoop(autoD6AC8091_var) == 4) || (libCOMI_gf_CC_CommanderLevel(autoD6AC8091_var, libCOMI_gf_ActiveCommanderForPlayer(autoD6AC8091_var)) <= 2))) {
                 libCOMI_gv_cM_GPRemindersOn[autoD6AC8091_var] = true;
                 TriggerEnable(libCOMM_gt_CM_GPReminderAbilityUsed, true);
@@ -9302,30 +8886,6 @@ void libCOMM_gt_CC_ScoreArtanisBombardment_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: CM_DebugAbathurBiomassReport
-//--------------------------------------------------------------------------------------------------
-bool libCOMM_gt_CM_DebugAbathurBiomassReport_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    TextExpressionSetToken("Param/Expression/lib_COMM_62173AFF", "A", IntToText(libCOMM_gv_cM_DebugAbathurBiomassCollected));
-    TextExpressionSetToken("Param/Expression/lib_COMM_62173AFF", "B", IntToText(libCOMM_gv_cM_DebugAbathurBiomassDroppedNormal));
-    TextExpressionSetToken("Param/Expression/lib_COMM_62173AFF", "C", IntToText(libCOMM_gv_cM_DebugAbathurBiomassLost));
-    TextExpressionSetToken("Param/Expression/lib_COMM_62173AFF", "D", IntToText(libCOMM_gv_cM_DebugAbathurBiomassDroppedRefund));
-    TriggerDebugOutput(13, TextExpressionAssemble("Param/Expression/lib_COMM_62173AFF"), true);
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMM_gt_CM_DebugAbathurBiomassReport_Init () {
-    libCOMM_gt_CM_DebugAbathurBiomassReport = TriggerCreate("libCOMM_gt_CM_DebugAbathurBiomassReport_Func");
-    TriggerAddEventChatMessage(libCOMM_gt_CM_DebugAbathurBiomassReport, c_playerAny, "-bioreport", true);
-}
-
-//--------------------------------------------------------------------------------------------------
 // Trigger: DUT_CommanderAbathur
 //--------------------------------------------------------------------------------------------------
 bool libCOMM_gt_DUT_CommanderAbathur_Func (bool testConds, bool runActions) {
@@ -9395,6 +8955,30 @@ bool libCOMM_gt_DUT_CommanderAbathur_Func (bool testConds, bool runActions) {
 void libCOMM_gt_DUT_CommanderAbathur_Init () {
     libCOMM_gt_DUT_CommanderAbathur = TriggerCreate("libCOMM_gt_DUT_CommanderAbathur_Func");
     TriggerAddEventGeneric(libCOMM_gt_DUT_CommanderAbathur, libCOMI_gv_iNIT_COOP_MISSION_STAGE2);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: CM_DebugAbathurBiomassReport
+//--------------------------------------------------------------------------------------------------
+bool libCOMM_gt_CM_DebugAbathurBiomassReport_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    TextExpressionSetToken("Param/Expression/lib_COMM_62173AFF", "A", IntToText(libCOMM_gv_cM_DebugAbathurBiomassCollected));
+    TextExpressionSetToken("Param/Expression/lib_COMM_62173AFF", "B", IntToText(libCOMM_gv_cM_DebugAbathurBiomassDroppedNormal));
+    TextExpressionSetToken("Param/Expression/lib_COMM_62173AFF", "C", IntToText(libCOMM_gv_cM_DebugAbathurBiomassLost));
+    TextExpressionSetToken("Param/Expression/lib_COMM_62173AFF", "D", IntToText(libCOMM_gv_cM_DebugAbathurBiomassDroppedRefund));
+    TriggerDebugOutput(13, TextExpressionAssemble("Param/Expression/lib_COMM_62173AFF"), true);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMM_gt_CM_DebugAbathurBiomassReport_Init () {
+    libCOMM_gt_CM_DebugAbathurBiomassReport = TriggerCreate("libCOMM_gt_CM_DebugAbathurBiomassReport_Func");
+    TriggerAddEventChatMessage(libCOMM_gt_CM_DebugAbathurBiomassReport, c_playerAny, "-bioreport", true);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -9570,6 +9154,372 @@ void libCOMM_gt_CC_ScoreAbathurMonsterDmg_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Trigger: Baneling Scourge Locusts
+//--------------------------------------------------------------------------------------------------
+bool libCOMM_gt_BanelingScourgeLocusts_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    string lv_locustUnitType;
+    int lv_rand;
+    fixed lv_foodCompare;
+    int lv_killingPlayer;
+    int lv_abathurPlayer;
+    unitgroup lv_units;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_locustUnitType = "Locust";
+    lv_rand = RandomInt(1, 100);
+    lv_foodCompare = (StringToFixed(CatalogFieldValueGet(c_gameCatalogUnit, UnitGetType(EventUnit()), "Food", 0)) * -16.0);
+    lv_killingPlayer = libNtve_gf_KillingPlayer();
+    lv_abathurPlayer = libCOMI_gf_GetNearestCommanderPlayerInATeam("Abathur", lv_killingPlayer, UnitGetPosition(EventUnit()));
+    lv_units = UnitGroupEmpty();
+
+    // Conditions
+    if (testConds) {
+        if (!((libNtve_gf_PlayerIsEnemy(lv_killingPlayer, UnitGetOwner(EventUnit()), libNtve_ge_PlayerRelation_Enemy) == true))) {
+            return false;
+        }
+
+        if (!((UnitFilterMatch(EventUnit(), UnitGetOwner(EventUnit()), UnitFilter(0, (1 << (c_targetFilterSummoned - 32)), 0, 0)) == false))) {
+            return false;
+        }
+
+        if (!((EventUnitDamageDeathCheck(c_deathTypeRemove) == false))) {
+            return false;
+        }
+
+        if (!((lv_abathurPlayer != c_playerAny))) {
+            return false;
+        }
+
+        if (!(((UnitGetType(EventUnit()) == "Baneling") || (UnitGetType(EventUnit()) == "BanelingBurrowed") || (UnitGetType(EventUnit()) == "Scourge")))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if ((UnitGetHeight(EventUnit()) >= 1)) {
+        lv_locustUnitType = "LocustFlying";
+    }
+
+    if ((UnitHasBehavior2(EventUnit(), "SupplyLT1") == true)) {
+        lv_foodCompare = 8;
+    }
+
+    if (((FixedToInt(lv_foodCompare) + libCOMM_gv_cM_Abathur_Enemy_Death_Create_Locusts_Random_Modifier) >= lv_rand)) {
+        if ((TechTreeUpgradeCount(lv_abathurPlayer, "AbathurEnemyDeathCreateLocusts", c_techCountCompleteOnly) == 1)) {
+            libNtve_gf_CreateUnitsWithDefaultFacing(1, lv_locustUnitType, c_unitCreateIgnorePlacement, lv_abathurPlayer, UnitGetPosition(EventUnit()));
+            PlayerCreateEffectUnit(lv_abathurPlayer, "AbathurLocustTimedLife", UnitLastCreated());
+        }
+
+    }
+
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMM_gt_BanelingScourgeLocusts_Init () {
+    libCOMM_gt_BanelingScourgeLocusts = TriggerCreate("libCOMM_gt_BanelingScourgeLocusts_Func");
+    TriggerEnable(libCOMM_gt_BanelingScourgeLocusts, false);
+    TriggerAddEventUnitDied(libCOMM_gt_BanelingScourgeLocusts, null);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Baneling Scourge Biomass Drop
+//--------------------------------------------------------------------------------------------------
+bool libCOMM_gt_BanelingScourgeBiomassDrop_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_biomassUnitCount;
+    int lv_indexPlayer;
+    int lv_biomassBaseAmount;
+    int lv_biomassCasualMultiplier;
+    int lv_biomassNormalMultiplier;
+    fixed lv_biomassHardMultiplier;
+    int lv_biomassBrutalMultiplier;
+    int lv_biomassToxicNestMultiplier;
+    int lv_dyingUnitSupply;
+    int lv_killingPlayer;
+    int lv_abathurPlayer;
+    playergroup lv_abathurPlayers;
+    fixed lv_doubleBiomassChance;
+
+    // Automatic Variable Declarations
+    playergroup autoC5698030_g;
+
+    // Variable Initialization
+    lv_biomassCasualMultiplier = 2;
+    lv_biomassNormalMultiplier = 2;
+    lv_biomassHardMultiplier = 1.5;
+    lv_biomassBrutalMultiplier = 1;
+    lv_biomassToxicNestMultiplier = 2;
+    lv_killingPlayer = libNtve_gf_KillingPlayer();
+    lv_abathurPlayer = libCOMI_gf_GetNearestCommanderPlayerInATeam("Abathur", lv_killingPlayer, UnitGetPosition(EventUnit()));
+    lv_abathurPlayers = libCOMI_gf_PlayersOfCommanderInaTeam("Abathur", libCOMI_gf_GetPlayerTeam(libNtve_gf_KillingPlayer()));
+
+    // Conditions
+    if (testConds) {
+        if (!((lv_abathurPlayer != c_playerAny))) {
+            return false;
+        }
+
+        if (!((UnitGetOwner(EventUnit()) != c_playerAny))) {
+            return false;
+        }
+
+        if (!((libNtve_gf_PlayerIsEnemy(lv_killingPlayer, UnitGetOwner(EventUnit()), libNtve_ge_PlayerRelation_Enemy) == true))) {
+            return false;
+        }
+
+        if (!((EventUnitDamageDeathCheck(c_deathTypeRemove) == false))) {
+            return false;
+        }
+
+        if (!((libCOMI_gf_CT_UnitSpawnedByMutator(EventUnit()) == false))) {
+            return false;
+        }
+
+        if (!(((UnitGetType(EventUnit()) == "Baneling") || (UnitGetType(EventUnit()) == "BanelingBurrowed") || (UnitGetType(EventUnit()) == "Scourge")))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    autoC5698030_g = lv_abathurPlayers;
+    lv_indexPlayer = -1;
+    while (true) {
+        lv_indexPlayer = PlayerGroupNextPlayer(autoC5698030_g, lv_indexPlayer);
+        if (lv_indexPlayer < 0) { break; }
+        lv_dyingUnitSupply = FixedToInt(StringToFixed(CatalogFieldValueGet(c_gameCatalogUnit, UnitGetType(EventUnit()), "Food", 0)));
+        lv_doubleBiomassChance = libNtve_gf_CatalogFieldValueGetAsReal(c_gameCatalogEffect, "MasteryAbathurDoubleBiomassDisplayDummy", "Amount", lv_indexPlayer);
+        if (((UnitHasBehavior2(EventUnit(), "SupplyLT1") == true) || (UnitHasBehavior2(EventUnit(), "CritterExplode") == true))) {
+            lv_biomassBaseAmount = 1;
+        }
+        if ((((TechTreeUpgradeCount(lv_indexPlayer, "AbathurToxicNestIcreasedBiomass", c_techCountCompleteOnly) == 1) && (UnitHasBehavior2(EventUnit(), "ToxicNestVirulentNest") == true)) || ((TechTreeUpgradeCount(lv_indexPlayer, "MasteryAbathurDoubleBiomass", c_techCountCompleteOnly) > 0) && (RandomFixed(0.0, 100.0) <= lv_doubleBiomassChance)))) {
+            lv_biomassUnitCount = (libNtve_gf_DifficultyValueInt((lv_biomassBaseAmount * lv_biomassCasualMultiplier), (lv_biomassBaseAmount * lv_biomassNormalMultiplier), FixedToInt(Ceiling((lv_biomassBaseAmount * lv_biomassHardMultiplier))), (lv_biomassBaseAmount * lv_biomassBrutalMultiplier)) * lv_biomassToxicNestMultiplier);
+        }
+        else {
+            lv_biomassUnitCount = libNtve_gf_DifficultyValueInt((lv_biomassBaseAmount * lv_biomassCasualMultiplier), (lv_biomassBaseAmount * lv_biomassNormalMultiplier), FixedToInt(Ceiling((lv_biomassBaseAmount * lv_biomassHardMultiplier))), (lv_biomassBaseAmount * lv_biomassBrutalMultiplier));
+        }
+        if ((lv_biomassUnitCount > 0)) {
+            libCOMM_gv_cM_DebugAbathurBiomassDroppedNormal += lv_biomassUnitCount;
+            libNtve_gf_CreateUnitsWithDefaultFacing(1, "BiomassPickup", c_unitCreateIgnorePlacement, lv_abathurPlayer, UnitGetPosition(EventUnit()));
+            libCOMM_gf_CM_Abathur_BiomassSetStack(UnitLastCreated(), lv_biomassUnitCount);
+            UnitBehaviorRemove(UnitLastCreated(), "BiomassCreated", 1);
+            libCOMM_gf_CM_Abathur_BiomassScale(UnitLastCreated(), true);
+            libCOMM_gf_CM_Abathur_BiomassMerge(UnitLastCreated(), lv_biomassUnitCount);
+        }
+
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMM_gt_BanelingScourgeBiomassDrop_Init () {
+    libCOMM_gt_BanelingScourgeBiomassDrop = TriggerCreate("libCOMM_gt_BanelingScourgeBiomassDrop_Func");
+    TriggerEnable(libCOMM_gt_BanelingScourgeBiomassDrop, false);
+    TriggerAddEventUnitDied(libCOMM_gt_BanelingScourgeBiomassDrop, null);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: CM_Abathur_BiomassDrop
+//--------------------------------------------------------------------------------------------------
+bool libCOMM_gt_CM_Abathur_BiomassDrop_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_biomassUnitCount;
+    int lv_indexPlayer;
+    fixed lv_biomassBaseAmount;
+    fixed lv_biomassCasualMultiplier;
+    fixed lv_biomassNormalMultiplier;
+    fixed lv_biomassHardMultiplier;
+    fixed lv_biomassBrutalMultiplier;
+    fixed lv_biomassToxicNestMultiplier;
+    fixed lv_dyingUnitSupply;
+    int lv_abathurPlayer;
+    fixed lv_doubleBiomassChance;
+    fixed lv_expectedDrop;
+    fixed lv_fractionChance;
+
+    // Automatic Variable Declarations
+    playergroup auto35954D48_g;
+
+    // Variable Initialization
+    lv_biomassCasualMultiplier = 2.5;
+    lv_biomassNormalMultiplier = 2.5;
+    lv_biomassHardMultiplier = 2.0;
+    lv_biomassBrutalMultiplier = 1.25;
+    lv_biomassToxicNestMultiplier = 1.0;
+    lv_abathurPlayer = libCOMI_gf_GetNearestCommanderPlayerInATeam("Abathur", libNtve_gf_KillingPlayer(), UnitGetPosition(EventUnit()));
+
+    // Conditions
+    if (testConds) {
+        if (!((lv_abathurPlayer != c_playerAny))) {
+            return false;
+        }
+
+        if (!((libNtve_gf_PlayerIsEnemy(libNtve_gf_KillingPlayer(), UnitGetOwner(EventUnit()), libNtve_ge_PlayerRelation_AllyMutual) == false))) {
+            return false;
+        }
+
+        if (!((UnitGetOwner(EventUnit()) != c_playerAny))) {
+            return false;
+        }
+
+        if (!((UnitHasBehavior2(EventUnit(), "NoBiomassDrop") == false))) {
+            return false;
+        }
+
+        if (!((EventUnitDamageDeathCheck(c_deathTypeRemove) == false))) {
+            return false;
+        }
+
+        if (!((libCOMI_gf_CT_UnitSpawnedByMutator(EventUnit()) == false))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    auto35954D48_g = libCOMI_gf_GetTeamPlayers(libCOMI_gf_GetPlayerTeam(libNtve_gf_KillingPlayer()));
+    lv_indexPlayer = -1;
+    while (true) {
+        lv_indexPlayer = PlayerGroupNextPlayer(auto35954D48_g, lv_indexPlayer);
+        if (lv_indexPlayer < 0) { break; }
+        if ((libCOMI_gf_ActiveCommanderForPlayer(lv_indexPlayer) == "Abathur") && (libNtve_gf_PlayerIsEnemy(lv_indexPlayer, UnitGetOwner(EventUnit()), libNtve_ge_PlayerRelation_AllyMutual) == false)) {
+            lv_dyingUnitSupply = StringToFixed(CatalogFieldValueGet(c_gameCatalogUnit, UnitGetType(EventUnit()), "Food", 0));
+            lv_doubleBiomassChance = libNtve_gf_CatalogFieldValueGetAsReal(c_gameCatalogEffect, "MasteryAbathurDoubleBiomassDisplayDummy", "Amount", lv_indexPlayer);
+            if ((UnitHasBehavior2(EventUnit(), "CritterExplode") == true)) {
+                lv_biomassBaseAmount = 1;
+            }
+            else if ((UnitHasBehavior2(EventUnit(), "HybridUnitDummy") == true)) {
+                lv_biomassBaseAmount = 12;
+            }
+            else if ((lv_dyingUnitSupply < -4)) {
+                lv_biomassBaseAmount = 12;
+            }
+            else if (true) {
+                lv_biomassBaseAmount = (-2*lv_dyingUnitSupply);
+            }
+            if ((TechTreeUpgradeCount(lv_indexPlayer, "AbathurToxicNestIcreasedBiomass", c_techCountCompleteOnly) == 1) && (UnitHasBehavior2(EventUnit(), "ToxicNestVirulentNest") == true)) {
+                lv_biomassToxicNestMultiplier = 1.5;
+            }
+
+            if ((TechTreeUpgradeCount(lv_indexPlayer, "MasteryAbathurDoubleBiomass", c_techCountCompleteOnly) > 0) && (RandomFixed(0.0, 100.0) <= lv_doubleBiomassChance)) {
+                lv_biomassToxicNestMultiplier = 2.0;
+            }
+
+            lv_expectedDrop = (libNtve_gf_DifficultyValueFixed(lv_biomassCasualMultiplier, lv_biomassNormalMultiplier, lv_biomassHardMultiplier, lv_biomassBrutalMultiplier) * lv_biomassBaseAmount * lv_biomassToxicNestMultiplier);
+            lv_biomassUnitCount = CeilingI(lv_expectedDrop);
+            lv_fractionChance = (lv_expectedDrop - lv_biomassUnitCount);
+            if ((RandomFixed(0.0, 1.0) <= lv_fractionChance)) {
+                lv_biomassUnitCount += 1;
+            }
+
+            if ((lv_biomassUnitCount > 0)) {
+                libCOMM_gv_cM_DebugAbathurBiomassDroppedNormal += lv_biomassUnitCount;
+                libNtve_gf_CreateUnitsWithDefaultFacing(1, "BiomassPickup", c_unitCreateIgnorePlacement, lv_abathurPlayer, UnitGetPosition(EventUnit()));
+                libCOMM_gf_CM_Abathur_BiomassSetStack(UnitLastCreated(), lv_biomassUnitCount);
+                UnitBehaviorRemove(UnitLastCreated(), "BiomassCreated", 1);
+                libCOMM_gf_CM_Abathur_BiomassScale(UnitLastCreated(), true);
+                libCOMM_gf_CM_Abathur_BiomassMerge(UnitLastCreated(), lv_biomassUnitCount);
+            }
+
+        }
+
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMM_gt_CM_Abathur_BiomassDrop_Init () {
+    libCOMM_gt_CM_Abathur_BiomassDrop = TriggerCreate("libCOMM_gt_CM_Abathur_BiomassDrop_Func");
+    TriggerEnable(libCOMM_gt_CM_Abathur_BiomassDrop, false);
+    TriggerAddEventUnitDied(libCOMM_gt_CM_Abathur_BiomassDrop, null);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: CM_Abathur_Enemy_Death_Create_Locusts
+//--------------------------------------------------------------------------------------------------
+bool libCOMM_gt_CM_Abathur_Enemy_Death_Create_Locusts_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    string lv_locustUnitType;
+    int lv_rand;
+    fixed lv_foodCompare;
+    int lv_killingPlayer;
+    int lv_abathurPlayer;
+    unitgroup lv_units;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_locustUnitType = "Locust";
+    lv_rand = RandomInt(1, 100);
+    lv_foodCompare = (StringToFixed(CatalogFieldValueGet(c_gameCatalogUnit, UnitGetType(EventUnit()), "Food", 0)) * -16.0);
+    lv_killingPlayer = libNtve_gf_KillingPlayer();
+    lv_abathurPlayer = libCOMI_gf_GetNearestCommanderPlayerInATeam("Abathur", lv_killingPlayer, UnitGetPosition(EventUnit()));
+    lv_units = UnitGroupEmpty();
+
+    // Conditions
+    if (testConds) {
+        if (!((lv_abathurPlayer != c_playerAny))) {
+            return false;
+        }
+
+        if (!((UnitFilterMatch(EventUnit(), UnitGetOwner(EventUnit()), UnitFilter(0, (1 << (c_targetFilterSummoned - 32)), 0, 0)) == false))) {
+            return false;
+        }
+
+        if (!((UnitHasBehavior2(EventUnit(), "NoBiomassDrop") == false))) {
+            return false;
+        }
+
+        if (!((libNtve_gf_PlayerIsEnemy(lv_killingPlayer, UnitGetOwner(EventUnit()), libNtve_ge_PlayerRelation_Enemy) == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if ((UnitGetHeight(EventUnit()) >= 1)) {
+        lv_locustUnitType = "LocustFlying";
+    }
+
+    if ((UnitHasBehavior2(EventUnit(), "SupplyLT1") == true)) {
+        lv_foodCompare = 8;
+    }
+
+    if ((UnitHasBehavior2(EventUnit(), "HybridUnitDummy") == true)) {
+        lv_foodCompare = 96;
+    }
+
+    if (((FixedToInt(lv_foodCompare) + libCOMM_gv_cM_Abathur_Enemy_Death_Create_Locusts_Random_Modifier) >= lv_rand)) {
+        libNtve_gf_CreateUnitsWithDefaultFacing(1, lv_locustUnitType, c_unitCreateIgnorePlacement, lv_abathurPlayer, UnitGetPosition(EventUnit()));
+        PlayerCreateEffectUnit(lv_abathurPlayer, "AbathurLocustTimedLife", UnitLastCreated());
+    }
+
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMM_gt_CM_Abathur_Enemy_Death_Create_Locusts_Init () {
+    libCOMM_gt_CM_Abathur_Enemy_Death_Create_Locusts = TriggerCreate("libCOMM_gt_CM_Abathur_Enemy_Death_Create_Locusts_Func");
+    TriggerEnable(libCOMM_gt_CM_Abathur_Enemy_Death_Create_Locusts, false);
+    TriggerAddEventUnitDied(libCOMM_gt_CM_Abathur_Enemy_Death_Create_Locusts, null);
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger: CM_Abathur_ToxicNestDeathFailsafe
 //--------------------------------------------------------------------------------------------------
 bool libCOMM_gt_CM_Abathur_ToxicNestDeathFailsafe_Func (bool testConds, bool runActions) {
@@ -9633,133 +9583,6 @@ void libCOMM_gt_CM_Abathur_MeleeBonusUpgrade_Init () {
     libCOMM_gt_CM_Abathur_MeleeBonusUpgrade = TriggerCreate("libCOMM_gt_CM_Abathur_MeleeBonusUpgrade_Func");
     TriggerEnable(libCOMM_gt_CM_Abathur_MeleeBonusUpgrade, false);
     TriggerAddEventUnitResearchProgress(libCOMM_gt_CM_Abathur_MeleeBonusUpgrade, null, c_unitProgressStageComplete);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: CM_Abathur_BiomassDrop
-//--------------------------------------------------------------------------------------------------
-bool libCOMM_gt_CM_Abathur_BiomassDrop_Func (bool testConds, bool runActions) {
-    // Variable Declarations
-    int lv_biomassUnitCount;
-    int lv_indexPlayer;
-    fixed lv_biomassBaseAmount;
-    fixed lv_biomassCasualMultiplier;
-    fixed lv_biomassNormalMultiplier;
-    fixed lv_biomassHardMultiplier;
-    fixed lv_biomassBrutalMultiplier;
-    fixed lv_biomassToxicNestMultiplier;
-    fixed lv_dyingUnitSupply;
-    int lv_abathurAllyOfKillingPlayer;
-    fixed lv_doubleBiomassChance;
-    fixed lv_expectedDrop;
-    fixed lv_fractionChance;
-
-    // Automatic Variable Declarations
-    playergroup auto35954D48_g;
-
-    // Variable Initialization
-    lv_biomassCasualMultiplier = 2.5;
-    lv_biomassNormalMultiplier = 2.5;
-    lv_biomassHardMultiplier = 2.0;
-    lv_biomassBrutalMultiplier = 1.25;
-    lv_biomassToxicNestMultiplier = 1.0;
-    lv_abathurAllyOfKillingPlayer = libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Abathur", libCOMI_gf_MutualAlliedCommandersofPlayerCoutInactiveAndSelf(libNtve_gf_KillingPlayer()));
-
-    // Conditions
-    if (testConds) {
-        if (!((libNtve_gf_KillingPlayer() != c_playerAny))) {
-            return false;
-        }
-
-        if (!((libNtve_gf_PlayerIsEnemy(libNtve_gf_KillingPlayer(), UnitGetOwner(EventUnit()), libNtve_ge_PlayerRelation_AllyMutual) == false))) {
-            return false;
-        }
-
-        if (!((UnitGetOwner(EventUnit()) != c_playerAny))) {
-            return false;
-        }
-
-        if (!((UnitHasBehavior2(EventUnit(), "NoBiomassDrop") == false))) {
-            return false;
-        }
-
-        if (!((EventUnitDamageDeathCheck(c_deathTypeRemove) == false))) {
-            return false;
-        }
-
-        if (!((libCOMI_gf_CT_UnitSpawnedByMutator(EventUnit()) == false))) {
-            return false;
-        }
-
-        if (!((PlayerGroupHasPlayer(libCOMI_gf_GetAlliedCommandersPlayersCopy(), libNtve_gf_KillingPlayer()) == true))) {
-            return false;
-        }
-
-        if (!((lv_abathurAllyOfKillingPlayer != c_playerAny))) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    auto35954D48_g = libCOMI_gf_GetAlliedCommandersPlayersCopy();
-    lv_indexPlayer = -1;
-    while (true) {
-        lv_indexPlayer = PlayerGroupNextPlayer(auto35954D48_g, lv_indexPlayer);
-        if (lv_indexPlayer < 0) { break; }
-        if ((libCOMI_gf_ActiveCommanderForPlayer(lv_indexPlayer) == "Abathur") && (libNtve_gf_PlayerIsEnemy(lv_indexPlayer, UnitGetOwner(EventUnit()), libNtve_ge_PlayerRelation_AllyMutual) == false)) {
-            lv_dyingUnitSupply = StringToFixed(CatalogFieldValueGet(c_gameCatalogUnit, UnitGetType(EventUnit()), "Food", 0));
-            lv_doubleBiomassChance = libNtve_gf_CatalogFieldValueGetAsReal(c_gameCatalogEffect, "MasteryAbathurDoubleBiomassDisplayDummy", "Amount", lv_indexPlayer);
-            if ((UnitHasBehavior2(EventUnit(), "CritterExplode") == true)) {
-                lv_biomassBaseAmount = 1;
-            }
-            else if ((UnitHasBehavior2(EventUnit(), "HybridUnitDummy") == true)) {
-                lv_biomassBaseAmount = 12;
-            }
-            else if ((lv_dyingUnitSupply < -4)) {
-                lv_biomassBaseAmount = 12;
-            }
-            else if (true) {
-                lv_biomassBaseAmount = (-2*lv_dyingUnitSupply);
-            }
-            if ((TechTreeUpgradeCount(lv_indexPlayer, "AbathurToxicNestIcreasedBiomass", c_techCountCompleteOnly) == 1) && (UnitHasBehavior2(EventUnit(), "ToxicNestVirulentNest") == true)) {
-                lv_biomassToxicNestMultiplier = 1.5;
-            }
-
-            if ((TechTreeUpgradeCount(lv_indexPlayer, "MasteryAbathurDoubleBiomass", c_techCountCompleteOnly) > 0) && (RandomFixed(0.0, 100.0) <= lv_doubleBiomassChance)) {
-                lv_biomassToxicNestMultiplier = 2.0;
-            }
-
-            lv_expectedDrop = (libNtve_gf_DifficultyValueFixed(lv_biomassCasualMultiplier, lv_biomassNormalMultiplier, lv_biomassHardMultiplier, lv_biomassBrutalMultiplier) * lv_biomassBaseAmount * lv_biomassToxicNestMultiplier);
-            lv_biomassUnitCount = CeilingI(lv_expectedDrop);
-            lv_fractionChance = (lv_expectedDrop - lv_biomassUnitCount);
-            if ((RandomFixed(0.0, 1.0) <= lv_fractionChance)) {
-                lv_biomassUnitCount += 1;
-            }
-
-            if ((lv_biomassUnitCount > 0)) {
-                libCOMM_gv_cM_DebugAbathurBiomassDroppedNormal += lv_biomassUnitCount;
-                libNtve_gf_CreateUnitsWithDefaultFacing(1, "BiomassPickup", c_unitCreateIgnorePlacement, lv_abathurAllyOfKillingPlayer, UnitGetPosition(EventUnit()));
-                libCOMM_gf_CM_Abathur_BiomassSetStack(UnitLastCreated(), lv_biomassUnitCount);
-                UnitBehaviorRemove(UnitLastCreated(), "BiomassCreated", 1);
-                libCOMM_gf_CM_Abathur_BiomassScale(UnitLastCreated(), true);
-                libCOMM_gf_CM_Abathur_BiomassMerge(UnitLastCreated(), lv_biomassUnitCount);
-            }
-
-        }
-
-    }
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMM_gt_CM_Abathur_BiomassDrop_Init () {
-    libCOMM_gt_CM_Abathur_BiomassDrop = TriggerCreate("libCOMM_gt_CM_Abathur_BiomassDrop_Func");
-    TriggerEnable(libCOMM_gt_CM_Abathur_BiomassDrop, false);
-    TriggerAddEventUnitDied(libCOMM_gt_CM_Abathur_BiomassDrop, null);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -9856,7 +9679,7 @@ bool libCOMM_gt_CM_Abathur_BiomassRefund_Func (bool testConds, bool runActions) 
 
     // Conditions
     if (testConds) {
-        if (!(((UnitGetType(EventUnit()) != "Locust") && (libCOMI_gf_GetPlayerCommanderGameLink(lv_killedPlayer) == "Abathur") && ((UnitHasBehavior2(EventUnit(), "BiomassBuff1") == true) || (UnitHasBehavior2(EventUnit(), "BiomassBuff10") == true) || (UnitHasBehavior2(EventUnit(), "BiomassBuff100") == true)) && (UnitFilterMatch(EventUnit(), 1, UnitFilter(0, 0, (1 << c_targetFilterStructure) | (1 << c_targetFilterMissile), 0)) == true) && ((libNtve_gf_UnitIsHidden(EventUnit()) == false) || (EventUnitDamageEffect() == libCOMI_gv_cM_CargoDeathKillEffect)) && (lv_biomassRefundChance > 0.0)))) {
+        if (!(((UnitGetType(EventUnit()) != "Locust") && (libCOMI_gf_GetPlayerCommanderGameLink(lv_killedPlayer) == "Abathur") && (libCOMI_gf_ActiveCommanderForPlayer(lv_killedPlayer) == "Abathur") && ((UnitHasBehavior2(EventUnit(), "BiomassBuff1") == true) || (UnitHasBehavior2(EventUnit(), "BiomassBuff10") == true) || (UnitHasBehavior2(EventUnit(), "BiomassBuff100") == true)) && (UnitFilterMatch(EventUnit(), 1, UnitFilter(0, 0, (1 << c_targetFilterStructure) | (1 << c_targetFilterMissile), 0)) == true) && ((libNtve_gf_UnitIsHidden(EventUnit()) == false) || (EventUnitDamageEffect() == libCOMI_gv_cM_CargoDeathKillEffect)) && (lv_biomassRefundChance > 0.0)))) {
             return false;
         }
     }
@@ -9897,7 +9720,7 @@ bool libCOMM_gt_CM_DebugAbathurBiomassLost_Func (bool testConds, bool runActions
     // Automatic Variable Declarations
     // Conditions
     if (testConds) {
-        if (!(((UnitGetType(EventUnit()) != "Locust") && (libCOMI_gf_GetPlayerCommanderGameLink(UnitGetOwner(EventUnit())) == "Abathur") && (UnitFilterMatch(EventUnit(), 1, UnitFilter(0, 0, (1 << c_targetFilterStructure) | (1 << c_targetFilterMissile), (1 << (c_targetFilterHidden - 32)))) == true)))) {
+        if (!(((UnitGetType(EventUnit()) != "Locust") && (libCOMI_gf_ActiveCommanderForPlayer(UnitGetOwner(EventUnit())) == "Abathur") && (UnitFilterMatch(EventUnit(), 1, UnitFilter(0, 0, (1 << c_targetFilterStructure) | (1 << c_targetFilterMissile), (1 << (c_targetFilterHidden - 32)))) == true)))) {
             return false;
         }
     }
@@ -9948,7 +9771,7 @@ bool libCOMM_gt_CM_Abathur_BiomassTrain_Func (bool testConds, bool runActions) {
 
     // Conditions
     if (testConds) {
-        if (!(((libCOMI_gf_GetPlayerCommanderGameLink(UnitGetOwner(EventUnit())) == "Abathur") && ((UnitHasBehavior2(EventUnit(), "BiomassBuff1") == true) || (UnitHasBehavior2(EventUnit(), "BiomassBuff10") == true) || (UnitHasBehavior2(EventUnit(), "BiomassBuff100") == true)) && ((libNtve_gf_TriggeringProgressUnitType() == "RavagerAbathur") || (libNtve_gf_TriggeringProgressUnitType() == "GuardianMP") || (libNtve_gf_TriggeringProgressUnitType() == "Devourer"))))) {
+        if (!(((libCOMI_gf_ActiveCommanderForPlayer(UnitGetOwner(EventUnit())) == "Abathur") && ((UnitHasBehavior2(EventUnit(), "BiomassBuff1") == true) || (UnitHasBehavior2(EventUnit(), "BiomassBuff10") == true) || (UnitHasBehavior2(EventUnit(), "BiomassBuff100") == true)) && ((libNtve_gf_TriggeringProgressUnitType() == "RavagerAbathur") || (libNtve_gf_TriggeringProgressUnitType() == "GuardianMP") || (libNtve_gf_TriggeringProgressUnitType() == "Devourer"))))) {
             return false;
         }
     }
@@ -10012,7 +9835,7 @@ bool libCOMM_gt_CM_Abathur_BiomassScaler_Func (bool testConds, bool runActions) 
 
     // Conditions
     if (testConds) {
-        if (!(((UnitIsAlive(EventUnit()) == true) && (libCOMI_gf_GetPlayerCommanderGameLink(UnitGetOwner(EventUnit())) == "Abathur") && ((UnitHasBehavior2(EventUnit(), "BiomassBuff1") == true) || (UnitHasBehavior2(EventUnit(), "BiomassBuff10") == true) || (UnitHasBehavior2(EventUnit(), "BiomassBuff100") == true))))) {
+        if (!(((UnitIsAlive(EventUnit()) == true) && (libCOMI_gf_ActiveCommanderForPlayer(UnitGetOwner(EventUnit())) == "Abathur") && ((UnitHasBehavior2(EventUnit(), "BiomassBuff1") == true) || (UnitHasBehavior2(EventUnit(), "BiomassBuff10") == true) || (UnitHasBehavior2(EventUnit(), "BiomassBuff100") == true))))) {
             return false;
         }
     }
@@ -10057,82 +9880,6 @@ void libCOMM_gt_CM_Abathur_BiomassScaler_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: CM_Abathur_Enemy_Death_Create_Locusts
-//--------------------------------------------------------------------------------------------------
-bool libCOMM_gt_CM_Abathur_Enemy_Death_Create_Locusts_Func (bool testConds, bool runActions) {
-    // Variable Declarations
-    string lv_locustUnitType;
-    int lv_rand;
-    fixed lv_foodCompare;
-    int lv_abathurAllyOfKillingPlayer;
-
-    // Automatic Variable Declarations
-    // Variable Initialization
-    lv_locustUnitType = "Locust";
-    lv_rand = RandomInt(1, 100);
-    lv_foodCompare = (StringToFixed(CatalogFieldValueGet(c_gameCatalogUnit, UnitGetType(EventUnit()), "Food", 0)) * -16.0);
-    lv_abathurAllyOfKillingPlayer = libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Abathur", libCOMI_gf_MutualAlliedCommandersofPlayerCoutInactiveAndSelf(libNtve_gf_KillingPlayer()));
-
-    // Conditions
-    if (testConds) {
-        if (!((libNtve_gf_KillingPlayer() != c_playerAny))) {
-            return false;
-        }
-
-        if (!((UnitFilterMatch(EventUnit(), UnitGetOwner(EventUnit()), UnitFilter(0, (1 << (c_targetFilterSummoned - 32)), 0, 0)) == false))) {
-            return false;
-        }
-
-        if (!((UnitHasBehavior2(EventUnit(), "NoBiomassDrop") == false))) {
-            return false;
-        }
-
-        if (!((PlayerGroupHasPlayer(libCOMI_gf_GetAlliedCommandersPlayersCopy(), libNtve_gf_KillingPlayer()) == true))) {
-            return false;
-        }
-
-        if (!((lv_abathurAllyOfKillingPlayer != c_playerAny))) {
-            return false;
-        }
-
-        if (!((libNtve_gf_PlayerIsEnemy(lv_abathurAllyOfKillingPlayer, UnitGetOwner(EventUnit()), libNtve_ge_PlayerRelation_Enemy) == true))) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    if ((UnitGetHeight(EventUnit()) >= 1)) {
-        lv_locustUnitType = "LocustFlying";
-    }
-
-    if ((UnitHasBehavior2(EventUnit(), "SupplyLT1") == true)) {
-        lv_foodCompare = 8;
-    }
-
-    if ((UnitHasBehavior2(EventUnit(), "HybridUnitDummy") == true)) {
-        lv_foodCompare = 96;
-    }
-
-    if (((FixedToInt(lv_foodCompare) + libCOMM_gv_cM_Abathur_Enemy_Death_Create_Locusts_Random_Modifier) >= lv_rand)) {
-        libNtve_gf_CreateUnitsWithDefaultFacing(1, lv_locustUnitType, c_unitCreateIgnorePlacement, lv_abathurAllyOfKillingPlayer, UnitGetPosition(EventUnit()));
-        PlayerCreateEffectUnit(lv_abathurAllyOfKillingPlayer, "AbathurLocustTimedLife", UnitLastCreated());
-    }
-
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMM_gt_CM_Abathur_Enemy_Death_Create_Locusts_Init () {
-    libCOMM_gt_CM_Abathur_Enemy_Death_Create_Locusts = TriggerCreate("libCOMM_gt_CM_Abathur_Enemy_Death_Create_Locusts_Func");
-    TriggerEnable(libCOMM_gt_CM_Abathur_Enemy_Death_Create_Locusts, false);
-    TriggerAddEventUnitDied(libCOMM_gt_CM_Abathur_Enemy_Death_Create_Locusts, null);
-}
-
-//--------------------------------------------------------------------------------------------------
 // Trigger: CM_Abathur_ToxicNest
 //--------------------------------------------------------------------------------------------------
 bool libCOMM_gt_CM_Abathur_ToxicNest_Func (bool testConds, bool runActions) {
@@ -10144,7 +9891,7 @@ bool libCOMM_gt_CM_Abathur_ToxicNest_Func (bool testConds, bool runActions) {
 
     // Conditions
     if (testConds) {
-        if (!((TechTreeUpgradeCount(EventPlayer(), "AbathurCommander", c_techCountCompleteOnly) == 1))) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(EventPlayer()) == "Abathur"))) {
             return false;
         }
     }
@@ -10182,7 +9929,7 @@ bool libCOMM_gt_CM_Abathur_SwarmHostLocustLaunchCast_Func (bool testConds, bool 
 
     // Conditions
     if (testConds) {
-        if (!((TechTreeUpgradeCount(EventPlayer(), "AbathurCommander", c_techCountCompleteOnly) == 1))) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(EventPlayer()) == "Abathur"))) {
             return false;
         }
     }
@@ -10223,7 +9970,7 @@ bool libCOMM_gt_CM_Abathur_RavagerSpellCooldown_Func (bool testConds, bool runAc
 
     // Conditions
     if (testConds) {
-        if (!((TechTreeUpgradeCount(EventPlayer(), "AbathurCommander", c_techCountCompleteOnly) == 1))) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(EventPlayer()) == "Abathur"))) {
             return false;
         }
     }
@@ -11976,6 +11723,78 @@ void libCOMM_gt_CM_DehakaAutocastBossSummonStateAdjust_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Trigger: Baneling Scourge Essence Drop
+//--------------------------------------------------------------------------------------------------
+bool libCOMM_gt_BanelingScourgeEssenceDrop_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_essenceUnitCount;
+    int lv_essenceBaseAmount;
+    int lv_essenceCasualMultiplier;
+    int lv_essenceNormalMultiplier;
+    fixed lv_essenceHardMultiplier;
+    int lv_essenceBrutalMultiplier;
+    int lv_killingPlayer;
+    int lv_dehakaPlayer;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_essenceCasualMultiplier = 2;
+    lv_essenceNormalMultiplier = 2;
+    lv_essenceHardMultiplier = 1.5;
+    lv_essenceBrutalMultiplier = 1;
+    lv_killingPlayer = libNtve_gf_KillingPlayer();
+    lv_dehakaPlayer = libCOMI_gf_GetNearestCommanderPlayerInATeam("Dehaka", libNtve_gf_KillingPlayer(), UnitGetPosition(EventUnit()));
+
+    // Conditions
+    if (testConds) {
+        if (!((lv_dehakaPlayer != c_playerAny))) {
+            return false;
+        }
+
+        if (!((libNtve_gf_PlayerIsEnemy(lv_killingPlayer, UnitGetOwner(EventUnit()), libNtve_ge_PlayerRelation_Enemy) == true))) {
+            return false;
+        }
+
+        if (!((EventUnitDamageDeathCheck(c_deathTypeRemove) == false))) {
+            return false;
+        }
+
+        if (!((libCOMI_gf_CT_UnitSpawnedByMutator(EventUnit()) == false))) {
+            return false;
+        }
+
+        if (!(((UnitGetType(EventUnit()) == "Baneling") || (UnitGetType(EventUnit()) == "BanelingBurrowed") || (UnitGetType(EventUnit()) == "Scourge")))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_essenceBaseAmount = 1;
+    lv_essenceUnitCount = libNtve_gf_DifficultyValueInt((lv_essenceBaseAmount * lv_essenceCasualMultiplier), (lv_essenceBaseAmount * lv_essenceNormalMultiplier), FixedToInt(Ceiling((lv_essenceBaseAmount * lv_essenceHardMultiplier))), (lv_essenceBaseAmount * lv_essenceBrutalMultiplier));
+    if ((lv_essenceUnitCount > 0)) {
+        libCOMM_gv_cM_DebugDehakaEssenceDroppedNormal += lv_essenceUnitCount;
+        libNtve_gf_CreateUnitsWithDefaultFacing(1, "EssencePickup", c_unitCreateIgnorePlacement, lv_dehakaPlayer, UnitGetPosition(EventUnit()));
+        libCOMM_gf_CM_Dehaka_EssenceSetStack(UnitLastCreated(), lv_essenceUnitCount);
+        UnitBehaviorRemove(UnitLastCreated(), "EssenceCreated", 1);
+        libCOMM_gf_CM_Dehaka_EssenceScale(UnitLastCreated(), true);
+        libCOMM_gf_CM_Dehaka_EssenceMerge(UnitLastCreated(), lv_essenceUnitCount);
+    }
+
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMM_gt_BanelingScourgeEssenceDrop_Init () {
+    libCOMM_gt_BanelingScourgeEssenceDrop = TriggerCreate("libCOMM_gt_BanelingScourgeEssenceDrop_Func");
+    TriggerEnable(libCOMM_gt_BanelingScourgeEssenceDrop, false);
+    TriggerAddEventUnitDied(libCOMM_gt_BanelingScourgeEssenceDrop, null);
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger: CM_Dehaka_EssenceDrop
 //--------------------------------------------------------------------------------------------------
 bool libCOMM_gt_CM_Dehaka_EssenceDrop_Func (bool testConds, bool runActions) {
@@ -11995,9 +11814,14 @@ bool libCOMM_gt_CM_Dehaka_EssenceDrop_Func (bool testConds, bool runActions) {
     lv_essenceNormalMultiplier = 2;
     lv_essenceHardMultiplier = 1.5;
     lv_essenceBrutalMultiplier = 1;
+    lv_dehakaPlayer = libCOMI_gf_GetNearestCommanderPlayerInATeam("Dehaka", libNtve_gf_KillingPlayer(), UnitGetPosition(EventUnit()));
 
     // Conditions
     if (testConds) {
+        if (!((lv_dehakaPlayer != c_playerAny))) {
+            return false;
+        }
+
         if (!((libNtve_gf_KillingPlayer() != c_playerAny))) {
             return false;
         }
@@ -12025,11 +11849,6 @@ bool libCOMM_gt_CM_Dehaka_EssenceDrop_Func (bool testConds, bool runActions) {
 
     // Actions
     if (!runActions) {
-        return true;
-    }
-
-    lv_dehakaPlayer = libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Dehaka", libCOMI_gf_MutualAlliedCommandersofPlayerCoutInactiveAndSelf(libNtve_gf_KillingPlayer()));
-    if ((lv_dehakaPlayer == c_playerAny)) {
         return true;
     }
 
@@ -12542,6 +12361,78 @@ bool libCOMM_gt_DUT_CommanderFenix_Func (bool testConds, bool runActions) {
 void libCOMM_gt_DUT_CommanderFenix_Init () {
     libCOMM_gt_DUT_CommanderFenix = TriggerCreate("libCOMM_gt_DUT_CommanderFenix_Func");
     TriggerAddEventGeneric(libCOMM_gt_DUT_CommanderFenix, libCOMI_gv_iNIT_COOP_MISSION_STAGE2);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: ShieldColorUnitCreate Fenix
+//--------------------------------------------------------------------------------------------------
+bool libCOMM_gt_ShieldColorUnitCreateFenix_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_unit;
+    string lv_commander;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_unit = EventUnitCreatedUnit();
+    lv_commander = PlayerCommander(UnitGetOwner(lv_unit));
+
+    // Conditions
+    if (testConds) {
+        if (!((lv_commander == "Fenix"))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libNtve_gf_SendActorMessageToUnit(EventUnitCreatedUnit(), "AliasAdd _ShieldYellow");
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMM_gt_ShieldColorUnitCreateFenix_Init () {
+    libCOMM_gt_ShieldColorUnitCreateFenix = TriggerCreate("libCOMM_gt_ShieldColorUnitCreateFenix_Func");
+    TriggerAddEventUnitCreated(libCOMM_gt_ShieldColorUnitCreateFenix, null, null, null);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: ShieldColorUnitMorph Fenix
+//--------------------------------------------------------------------------------------------------
+bool libCOMM_gt_ShieldColorUnitMorphFenix_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_unit;
+    string lv_commander;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_unit = EventUnit();
+    lv_commander = PlayerCommander(UnitGetOwner(lv_unit));
+
+    // Conditions
+    if (testConds) {
+        if (!((lv_commander == "Fenix"))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libNtve_gf_SendActorMessageToUnit(lv_unit, "AliasAdd _ShieldYellow");
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMM_gt_ShieldColorUnitMorphFenix_Init () {
+    libCOMM_gt_ShieldColorUnitMorphFenix = TriggerCreate("libCOMM_gt_ShieldColorUnitMorphFenix_Func");
+    TriggerAddEventUnitAbility(libCOMM_gt_ShieldColorUnitMorphFenix, null, null, c_abilMorphStageActorEnd, false);
+    TriggerAddEventUnitAbility(libCOMM_gt_ShieldColorUnitMorphFenix, null, null, c_abilBuildStageFinish, false);
+    TriggerAddEventUnitBehaviorChange(libCOMM_gt_ShieldColorUnitMorphFenix, null, "PowerUserWarpable", c_unitBehaviorChangeDestroy);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -13594,7 +13485,7 @@ bool libCOMM_gt_CM_Fenix_RallySetToFenix_Func (bool testConds, bool runActions) 
         return true;
     }
 
-    if ((UnitIsAlive(EventUnitTargetUnit()) == true) && (EventUnitTargetUnit() == libCOMM_gv_cM_Fenix_ActiveHero[libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Fenix", libCOMI_gf_GetAlliedCommandersPlayersCopy())])) {
+    if ((UnitIsAlive(EventUnitTargetUnit()) == true) && (EventUnitTargetUnit() == libCOMM_gv_cM_Fenix_ActiveHero[UnitGetOwner(EventUnitTargetUnit())])) {
         UnitGroupAdd(libCOMM_gv_cM_Fenix_RalliedGroup, EventUnit());
     }
     else {
@@ -14904,6 +14795,10 @@ bool libCOMM_gt_CM_Horner_DeathRattle_Reaper_Func (bool testConds, bool runActio
 
     // Conditions
     if (testConds) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(EventPlayer()) == "Horner"))) {
+            return false;
+        }
+
         if (!(((UnitGetType(lv_reaper) == "HHReaper") || (UnitGetType(lv_reaper) == "HHReaperFlying")))) {
             return false;
         }
@@ -14937,6 +14832,10 @@ bool libCOMM_gt_CM_Horner_DeathRattle_WidowMine_Func (bool testConds, bool runAc
     // Automatic Variable Declarations
     // Conditions
     if (testConds) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(EventPlayer()) == "Horner"))) {
+            return false;
+        }
+
         if (!(((UnitGetType(EventPlayerEffectUsedUnit(c_effectUnitSource)) == "HHWidowMine") || (UnitGetType(EventPlayerEffectUsedUnit(c_effectUnitSource)) == "HHWidowMineBurrowed")))) {
             return false;
         }
@@ -14947,7 +14846,7 @@ bool libCOMM_gt_CM_Horner_DeathRattle_WidowMine_Func (bool testConds, bool runAc
         return true;
     }
 
-    if ((TechTreeUpgradeCount(libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Horner", libCOMI_gf_CC_PlayersOfCommander("Horner")), "MasteryHornerBetterDeathRattle", c_techCountQueuedOrBetter) >= 1) && (RandomInt(1, 100) <= FixedToInt(CatalogFieldValueGetAsInt(c_gameCatalogEffect, "MasteryHornerBetterDeathRattleDisplayDummy", "Amount", libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Horner", libCOMI_gf_CC_PlayersOfCommander("Horner")))))) {
+    if ((TechTreeUpgradeCount(EventPlayer(), "MasteryHornerBetterDeathRattle", c_techCountQueuedOrBetter) >= 1) && (RandomInt(1, 100) <= FixedToInt(CatalogFieldValueGetAsInt(c_gameCatalogEffect, "MasteryHornerBetterDeathRattleDisplayDummy", "Amount", EventPlayer())))) {
         UnitCreateEffectPoint(EventPlayerEffectUsedUnit(c_effectUnitSource), "HHWidowMineBlossomIssueOrderSetUpgrade", UnitGetPosition(EventPlayerEffectUsedUnit(c_effectUnitSource)));
     }
     else {
@@ -14960,7 +14859,7 @@ bool libCOMM_gt_CM_Horner_DeathRattle_WidowMine_Func (bool testConds, bool runAc
 void libCOMM_gt_CM_Horner_DeathRattle_WidowMine_Init () {
     libCOMM_gt_CM_Horner_DeathRattle_WidowMine = TriggerCreate("libCOMM_gt_CM_Horner_DeathRattle_WidowMine_Func");
     TriggerEnable(libCOMM_gt_CM_Horner_DeathRattle_WidowMine, false);
-    TriggerAddEventPlayerEffectUsed(libCOMM_gt_CM_Horner_DeathRattle_WidowMine, libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Horner", libCOMI_gf_CC_PlayersOfCommander("Horner")), "HHWidowMineBlossomIssueOrderSetTrigger");
+    TriggerAddEventPlayerEffectUsed(libCOMM_gt_CM_Horner_DeathRattle_WidowMine, c_playerAny, "HHWidowMineBlossomIssueOrderSetTrigger");
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -14970,6 +14869,10 @@ bool libCOMM_gt_CM_Horner_DeathRattle_Hellion_Func (bool testConds, bool runActi
     // Automatic Variable Declarations
     // Conditions
     if (testConds) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(EventPlayer()) == "Horner"))) {
+            return false;
+        }
+
         if (!(((UnitGetType(EventPlayerEffectUsedUnit(c_effectUnitSource)) == "HHHellion")))) {
             return false;
         }
@@ -14980,7 +14883,7 @@ bool libCOMM_gt_CM_Horner_DeathRattle_Hellion_Func (bool testConds, bool runActi
         return true;
     }
 
-    if ((TechTreeUpgradeCount(libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Horner", libCOMI_gf_CC_PlayersOfCommander("Horner")), "MasteryHornerBetterDeathRattle", c_techCountQueuedOrBetter) >= 1) && (RandomInt(1, 100) <= FixedToInt(CatalogFieldValueGetAsInt(c_gameCatalogEffect, "MasteryHornerBetterDeathRattleDisplayDummy", "Amount", libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Horner", libCOMI_gf_CC_PlayersOfCommander("Horner")))))) {
+    if ((TechTreeUpgradeCount(EventPlayer(), "MasteryHornerBetterDeathRattle", c_techCountQueuedOrBetter) >= 1) && (RandomInt(1, 100) <= FixedToInt(CatalogFieldValueGetAsInt(c_gameCatalogEffect, "MasteryHornerBetterDeathRattleDisplayDummy", "Amount", EventPlayer())))) {
         UnitCreateEffectPoint(EventPlayerEffectUsedUnit(c_effectUnitSource), "HHHellionStimDeathSetUpgrade", UnitGetPosition(EventPlayerEffectUsedUnit(c_effectUnitSource)));
     }
     else {
@@ -14993,7 +14896,7 @@ bool libCOMM_gt_CM_Horner_DeathRattle_Hellion_Func (bool testConds, bool runActi
 void libCOMM_gt_CM_Horner_DeathRattle_Hellion_Init () {
     libCOMM_gt_CM_Horner_DeathRattle_Hellion = TriggerCreate("libCOMM_gt_CM_Horner_DeathRattle_Hellion_Func");
     TriggerEnable(libCOMM_gt_CM_Horner_DeathRattle_Hellion, false);
-    TriggerAddEventPlayerEffectUsed(libCOMM_gt_CM_Horner_DeathRattle_Hellion, libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Horner", libCOMI_gf_CC_PlayersOfCommander("Horner")), "HHHellionStimDeathSetTrigger");
+    TriggerAddEventPlayerEffectUsed(libCOMM_gt_CM_Horner_DeathRattle_Hellion, c_playerAny, "HHHellionStimDeathSetTrigger");
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -15003,6 +14906,10 @@ bool libCOMM_gt_CM_Horner_DeathRattle_Hellbat_Func (bool testConds, bool runActi
     // Automatic Variable Declarations
     // Conditions
     if (testConds) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(EventPlayer()) == "Horner"))) {
+            return false;
+        }
+
         if (!(((UnitGetType(EventPlayerEffectUsedUnit(c_effectUnitSource)) == "HHHellionTank")))) {
             return false;
         }
@@ -15013,7 +14920,7 @@ bool libCOMM_gt_CM_Horner_DeathRattle_Hellbat_Func (bool testConds, bool runActi
         return true;
     }
 
-    if ((TechTreeUpgradeCount(libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Horner", libCOMI_gf_CC_PlayersOfCommander("Horner")), "MasteryHornerBetterDeathRattle", c_techCountQueuedOrBetter) >= 1) && (RandomInt(1, 100) <= FixedToInt(CatalogFieldValueGetAsInt(c_gameCatalogEffect, "MasteryHornerBetterDeathRattleDisplayDummy", "Amount", libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Horner", libCOMI_gf_CC_PlayersOfCommander("Horner")))))) {
+    if ((TechTreeUpgradeCount(EventPlayer(), "MasteryHornerBetterDeathRattle", c_techCountQueuedOrBetter) >= 1) && (RandomInt(1, 100) <= FixedToInt(CatalogFieldValueGetAsInt(c_gameCatalogEffect, "MasteryHornerBetterDeathRattleDisplayDummy", "Amount", EventPlayer())))) {
         UnitCreateEffectPoint(EventPlayerEffectUsedUnit(c_effectUnitSource), "HHHellionTankDeathFearSetUpgrade", UnitGetPosition(EventPlayerEffectUsedUnit(c_effectUnitSource)));
     }
     else {
@@ -15026,7 +14933,7 @@ bool libCOMM_gt_CM_Horner_DeathRattle_Hellbat_Func (bool testConds, bool runActi
 void libCOMM_gt_CM_Horner_DeathRattle_Hellbat_Init () {
     libCOMM_gt_CM_Horner_DeathRattle_Hellbat = TriggerCreate("libCOMM_gt_CM_Horner_DeathRattle_Hellbat_Func");
     TriggerEnable(libCOMM_gt_CM_Horner_DeathRattle_Hellbat, false);
-    TriggerAddEventPlayerEffectUsed(libCOMM_gt_CM_Horner_DeathRattle_Hellbat, libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Horner", libCOMI_gf_CC_PlayersOfCommander("Horner")), "HHHellionTankDeathFearSetTrigger");
+    TriggerAddEventPlayerEffectUsed(libCOMM_gt_CM_Horner_DeathRattle_Hellbat, c_playerAny, "HHHellionTankDeathFearSetTrigger");
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -15185,6 +15092,96 @@ void libCOMM_gt_CM_Horner_HangerFinish_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Trigger: Baneling Scourge Deathrattle Scrap Deaths
+//--------------------------------------------------------------------------------------------------
+bool libCOMM_gt_BanelingScourgeDeathrattleScrapDeaths_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_dyingUnitMineralCost;
+    int lv_dyingUnitVespeneCost;
+    int lv_dyingUnitPlayer;
+    int lv_scrapPlayerDivisor;
+    int lv_hHPlayer;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_dyingUnitPlayer = UnitGetOwner(EventUnit());
+    lv_scrapPlayerDivisor = 10;
+    lv_hHPlayer = libCOMI_gf_GetNearestCommanderPlayerInATeam("Horner", lv_dyingUnitPlayer, UnitGetPosition(EventUnit()));
+
+    // Conditions
+    if (testConds) {
+        if (!((lv_dyingUnitPlayer != c_playerAny))) {
+            return false;
+        }
+
+        if (!((lv_hHPlayer != c_playerAny))) {
+            return false;
+        }
+
+        if (!((UnitTestState(EventUnit(), c_unitStateHallucination) == false))) {
+            return false;
+        }
+
+        if (!((EventUnitDamageDeathCheck(c_deathTypeRemove) == false))) {
+            return false;
+        }
+
+        if (!((TechTreeUpgradeCount(UnitGetOwner(EventUnit()), "HHScrapPickup", c_techCountCompleteOnly) == 1))) {
+            return false;
+        }
+
+        if (!(((UnitGetType(EventUnit()) == "Baneling") || (UnitGetType(EventUnit()) == "BanelingBurrowed") || (UnitGetType(EventUnit()) == "HotSSplitterlingBig") || (UnitGetType(EventUnit()) == "HotSSplitterlingBigBurrowed") || (UnitGetType(EventUnit()) == "Scourge") || (UnitGetType(EventUnit()) == "HHReaper") || (UnitGetType(EventUnit()) == "HHReaperFlying") || (UnitGetType(EventUnit()) == "HHHellion") || (UnitGetType(EventUnit()) == "HHHellionTank") || (UnitGetType(EventUnit()) == "HHWidowMine") || (UnitGetType(EventUnit()) == "HHWidowMineBurrowed") || (UnitGetType(EventUnit()) == "Supplicant")))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if ((libCOMI_gf_ActiveCommanderForPlayer(UnitGetOwner(EventUnitCreatedUnit())) == "Horner")) {
+        lv_scrapPlayerDivisor = 5;
+    }
+
+    lv_dyingUnitMineralCost = (FixedToInt(StringToFixed(CatalogFieldValueGet(c_gameCatalogUnit, UnitGetType(EventUnit()), "CostResource[" + IntToString(0) + "]", EventPlayer()))) / lv_scrapPlayerDivisor);
+    lv_dyingUnitVespeneCost = (FixedToInt(StringToFixed(CatalogFieldValueGet(c_gameCatalogUnit, UnitGetType(EventUnit()), "CostResource[" + IntToString(1) + "]", EventPlayer()))) / lv_scrapPlayerDivisor);
+    if ((lv_dyingUnitMineralCost > 0)) {
+        if ((RandomInt(1, 100) <= FixedToInt(CatalogFieldValueGetAsInt(c_gameCatalogEffect, "MasteryHornerDoubleSalvageChanceDisplayDummy", "Amount", lv_hHPlayer)))) {
+            libNtve_gf_CreateUnitsWithDefaultFacing(1, "HHScrapPickup", 0, lv_dyingUnitPlayer, PointWithOffset(UnitGetPosition(EventUnit()), -0.25, 0.0));
+            libCOMM_gf_CM_Horner_ScrapResourceSetStack(UnitLastCreated(), lv_dyingUnitMineralCost, lv_dyingUnitVespeneCost);
+            if ((lv_dyingUnitVespeneCost == 0)) {
+                libNtve_gf_SendActorMessageToUnit(UnitLastCreated(), "ModelSwap HHScrapMineral");
+            }
+
+            libNtve_gf_CreateUnitsWithDefaultFacing(1, "HHScrapPickup", 0, lv_dyingUnitPlayer, PointWithOffset(UnitGetPosition(EventUnit()), 0.25, 0.0));
+            libCOMM_gf_CM_Horner_ScrapResourceSetStack(UnitLastCreated(), lv_dyingUnitMineralCost, lv_dyingUnitVespeneCost);
+            if ((lv_dyingUnitVespeneCost == 0)) {
+                libNtve_gf_SendActorMessageToUnit(UnitLastCreated(), "ModelSwap HHScrapMineral");
+            }
+
+        }
+        else {
+            libNtve_gf_CreateUnitsWithDefaultFacing(1, "HHScrapPickup", 0, lv_dyingUnitPlayer, UnitGetPosition(EventUnit()));
+            libCOMM_gf_CM_Horner_ScrapResourceSetStack(UnitLastCreated(), lv_dyingUnitMineralCost, lv_dyingUnitVespeneCost);
+            if ((lv_dyingUnitVespeneCost == 0)) {
+                libNtve_gf_SendActorMessageToUnit(UnitLastCreated(), "ModelSwap HHScrapMineral");
+            }
+
+        }
+    }
+
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMM_gt_BanelingScourgeDeathrattleScrapDeaths_Init () {
+    libCOMM_gt_BanelingScourgeDeathrattleScrapDeaths = TriggerCreate("libCOMM_gt_BanelingScourgeDeathrattleScrapDeaths_Func");
+    TriggerEnable(libCOMM_gt_BanelingScourgeDeathrattleScrapDeaths, false);
+    TriggerAddEventUnitDied(libCOMM_gt_BanelingScourgeDeathrattleScrapDeaths, null);
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger: CM_Horner_ScrapDrop
 //--------------------------------------------------------------------------------------------------
 bool libCOMM_gt_CM_Horner_ScrapDrop_Func (bool testConds, bool runActions) {
@@ -15193,18 +15190,20 @@ bool libCOMM_gt_CM_Horner_ScrapDrop_Func (bool testConds, bool runActions) {
     int lv_dyingUnitVespeneCost;
     int lv_dyingUnitPlayer;
     int lv_scrapPlayerDivisor;
+    int lv_hHPlayer;
 
     // Automatic Variable Declarations
     // Variable Initialization
     lv_scrapPlayerDivisor = 10;
+    lv_hHPlayer = libCOMI_gf_GetNearestCommanderPlayerInATeam("Horner", lv_dyingUnitPlayer, UnitGetPosition(EventUnit()));
 
     // Conditions
     if (testConds) {
-        if (!((libNtve_gf_KillingPlayer() != c_playerAny))) {
+        if (!((lv_hHPlayer != c_playerAny))) {
             return false;
         }
 
-        if (!((libCOMI_gf_PlayerIsCommander(UnitGetOwner(EventUnit())) == true))) {
+        if (!((libNtve_gf_KillingPlayer() != c_playerAny))) {
             return false;
         }
 
@@ -15239,7 +15238,7 @@ bool libCOMM_gt_CM_Horner_ScrapDrop_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    if ((libCOMI_gf_GetPlayerCommanderGameLink(lv_dyingUnitPlayer) == "Horner")) {
+    if ((libCOMI_gf_ActiveCommanderForPlayer(lv_dyingUnitPlayer) == "Horner")) {
         lv_scrapPlayerDivisor = 5;
     }
 
@@ -15251,7 +15250,7 @@ bool libCOMM_gt_CM_Horner_ScrapDrop_Func (bool testConds, bool runActions) {
     }
 
     if ((lv_dyingUnitMineralCost > 0)) {
-        if ((RandomInt(1, 100) <= FixedToInt(CatalogFieldValueGetAsInt(c_gameCatalogEffect, "MasteryHornerDoubleSalvageChanceDisplayDummy", "Amount", libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Horner", libCOMI_gf_CC_PlayersOfCommander("Horner")))))) {
+        if ((RandomInt(1, 100) <= FixedToInt(CatalogFieldValueGetAsInt(c_gameCatalogEffect, "MasteryHornerDoubleSalvageChanceDisplayDummy", "Amount", lv_hHPlayer)))) {
             libNtve_gf_CreateUnitsWithDefaultFacing(1, "HHScrapPickup", 0, lv_dyingUnitPlayer, PointWithOffset(UnitGetPosition(EventUnit()), -0.25, 0.0));
             libCOMM_gf_CM_Horner_ScrapResourceSetStack(UnitLastCreated(), lv_dyingUnitMineralCost, lv_dyingUnitVespeneCost);
             if ((lv_dyingUnitVespeneCost == 0)) {
@@ -15294,16 +15293,16 @@ bool libCOMM_gt_CM_Horner_ScrapDropForSwannWreckage_Func (bool testConds, bool r
     int lv_dyingUnitVespeneCost;
     int lv_dyingUnitPlayer;
     int lv_scrapPlayerDivisor;
-    int lv_hornerCommander;
+    int lv_hHPlayer;
 
     // Automatic Variable Declarations
     // Variable Initialization
     lv_scrapPlayerDivisor = 10;
-    lv_hornerCommander = libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Horner", libCOMI_gf_GetAlliedCommandersPlayersCopy());
+    lv_hHPlayer = libCOMI_gf_GetNearestCommanderPlayerInATeam("Horner", lv_dyingUnitPlayer, UnitGetPosition(EventUnit()));
 
     // Conditions
     if (testConds) {
-        if (!((lv_hornerCommander != c_playerAny))) {
+        if (!((lv_hHPlayer != c_playerAny))) {
             return false;
         }
     }
@@ -16533,14 +16532,10 @@ bool libCOMM_gt_CM_KaraxUnitReviveBarrier_Func (bool testConds, bool runActions)
     // Automatic Variable Declarations
     // Variable Initialization
     lv_player = UnitGetOwner(EventUnit());
-    lv_alliedKaraxPlayer = libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Karax", libCOMI_gf_MutualAlliedCommandersofPlayerCoutInactiveAndSelf(lv_player));
+    lv_alliedKaraxPlayer = libCOMI_gf_GetNearestCommanderPlayerInATeam("Karax", UnitGetOwner(EventUnit()), UnitGetPosition(EventUnit()));
 
     // Conditions
     if (testConds) {
-        if (!((libCOMI_gf_PlayerIsCommander(lv_player) == true))) {
-            return false;
-        }
-
         if (!((lv_alliedKaraxPlayer != c_playerAny))) {
             return false;
         }
@@ -16622,6 +16617,63 @@ bool libCOMM_gt_DUT_CommanderKerrigan_Func (bool testConds, bool runActions) {
 void libCOMM_gt_DUT_CommanderKerrigan_Init () {
     libCOMM_gt_DUT_CommanderKerrigan = TriggerCreate("libCOMM_gt_DUT_CommanderKerrigan_Func");
     TriggerAddEventGeneric(libCOMM_gt_DUT_CommanderKerrigan, libCOMI_gv_iNIT_COOP_MISSION_STAGE2);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Baneling Scourge Econ Drop
+//--------------------------------------------------------------------------------------------------
+bool libCOMM_gt_BanelingScourgeEconDrop_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    point lv_position;
+    string lv_resource;
+    int lv_itPlayer;
+
+    // Automatic Variable Declarations
+    playergroup auto25916AE3_g;
+
+    // Variable Initialization
+
+    // Conditions
+    if (testConds) {
+        if (!((PlayerGroupCount(libCOMI_gf_PlayersOfCommander("Kerrigan")) > 0))) {
+            return false;
+        }
+
+        if (!((UnitHasBehavior2(EventUnit(), "KerriganVoidCoopEconDrop") == true))) {
+            return false;
+        }
+
+        if (!((EventUnitDamageDeathCheck(c_deathTypeRemove) == false))) {
+            return false;
+        }
+
+        if (!(((UnitGetType(EventUnit()) == "Baneling") || (UnitGetType(EventUnit()) == "BanelingBurrowed") || (UnitGetType(EventUnit()) == "Scourge")))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_position = UnitGetPosition(EventUnit());
+    lv_resource = "KerriganVoidCoopEconDropLT1";
+    auto25916AE3_g = libCOMI_gf_GetAlliedCommandersPlayersCopy();
+    lv_itPlayer = -1;
+    while (true) {
+        lv_itPlayer = PlayerGroupNextPlayer(auto25916AE3_g, lv_itPlayer);
+        if (lv_itPlayer < 0) { break; }
+        libNtve_gf_CreateUnitsWithDefaultFacing(1, lv_resource, 0, lv_itPlayer, lv_position);
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMM_gt_BanelingScourgeEconDrop_Init () {
+    libCOMM_gt_BanelingScourgeEconDrop = TriggerCreate("libCOMM_gt_BanelingScourgeEconDrop_Func");
+    TriggerEnable(libCOMM_gt_BanelingScourgeEconDrop, false);
+    TriggerAddEventUnitDied(libCOMM_gt_BanelingScourgeEconDrop, null);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -17461,7 +17513,7 @@ bool libCOMM_gt_CM_Mengsk_ArtilleryBuilt_Func (bool testConds, bool runActions) 
     // Automatic Variable Declarations
     // Conditions
     if (testConds) {
-        if (!((libCOMI_gf_PlayerIsCommander(UnitGetOwner(EventUnitProgressUnit())) == true))) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(UnitGetOwner(EventUnitProgressUnit())) == "Mengsk"))) {
             return false;
         }
 
@@ -17494,7 +17546,7 @@ bool libCOMM_gt_CM_Mengsk_ArtilleryStarted_Func (bool testConds, bool runActions
     // Automatic Variable Declarations
     // Conditions
     if (testConds) {
-        if (!((libCOMI_gf_PlayerIsCommander(UnitGetOwner(EventUnitProgressUnit())) == true))) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(UnitGetOwner(EventUnitProgressUnit())) == "Mengsk"))) {
             return false;
         }
 
@@ -18244,6 +18296,7 @@ bool libCOMM_gt_CM_Mengsk_VeterancyEarned_Func (bool testConds, bool runActions)
     fixed lv_xp;
     unitgroup lv_veteranunits;
     int lv_veterancount;
+    int lv_mengskPlayer;
     fixed lv_xppersupplyratio;
     fixed lv_heroicxpoverride;
     fixed lv_minimumearnedxp;
@@ -18257,13 +18310,18 @@ bool libCOMM_gt_CM_Mengsk_VeterancyEarned_Func (bool testConds, bool runActions)
     // Variable Initialization
     lv_dyingunit = EventUnit();
     lv_veteranunits = UnitGroupEmpty();
-    lv_xppersupplyratio = libNtve_gf_CatalogFieldValueGetAsReal(c_gameCatalogEffect, "MengskRoyalGuardExperienceGainDummy", "Amount", libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Mengsk", libCOMI_gf_GetAlliedCommandersPlayersCopy()));
+    lv_mengskPlayer = libCOMI_gf_GetNearestCommanderPlayerInATeam("Mengsk", libNtve_gf_KillingPlayer(), UnitGetPosition(EventUnit()));
+    lv_xppersupplyratio = libNtve_gf_CatalogFieldValueGetAsReal(c_gameCatalogEffect, "MengskRoyalGuardExperienceGainDummy", "Amount", lv_mengskPlayer);
     lv_heroicxpoverride = 800.0;
     lv_minimumearnedxp = 1.0;
     lv_xpradius = 15.0;
 
     // Conditions
     if (testConds) {
+        if (!((lv_mengskPlayer != c_playerAny))) {
+            return false;
+        }
+
         if (!((UnitFilterMatch(lv_dyingunit, libCOMI_gf_GetAlliedPlayer(1), UnitFilter(0, 0, (1 << c_targetFilterPlayer) | (1 << c_targetFilterAlly) | (1 << c_targetFilterNeutral) | (1 << c_targetFilterStructure) | (1 << c_targetFilterRawResource) | (1 << c_targetFilterHarvestableResource) | (1 << c_targetFilterMissile) | (1 << c_targetFilterDestructible) | (1 << c_targetFilterItem) | (1 << c_targetFilterUncommandable), (1 << (c_targetFilterHallucination - 32)))) == true))) {
             return false;
         }
@@ -20463,16 +20521,10 @@ void libCOMM_gt_CM_MasteryStetmannUpgradeCost_Init () {
 // Trigger: CM_Stetmann_EventHook_LairHiveCreated
 //--------------------------------------------------------------------------------------------------
 bool libCOMM_gt_CM_Stetmann_EventHook_LairHiveCreated_Func (bool testConds, bool runActions) {
-    // Variable Declarations
-    int lv_stetmann;
-
     // Automatic Variable Declarations
-    // Variable Initialization
-    lv_stetmann = EventPlayer();
-
     // Conditions
     if (testConds) {
-        if (!((libCOMI_gf_PlayerIsCommander(lv_stetmann) == true))) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(EventPlayer()) == "Stetmann"))) {
             return false;
         }
 
@@ -20505,16 +20557,10 @@ void libCOMM_gt_CM_Stetmann_EventHook_LairHiveCreated_Init () {
 // Trigger: CM_Stetmann_EventHook_LairHiveMorphed
 //--------------------------------------------------------------------------------------------------
 bool libCOMM_gt_CM_Stetmann_EventHook_LairHiveMorphed_Func (bool testConds, bool runActions) {
-    // Variable Declarations
-    int lv_stetmann;
-
     // Automatic Variable Declarations
-    // Variable Initialization
-    lv_stetmann = UnitGetOwner(EventUnit());
-
     // Conditions
     if (testConds) {
-        if (!((libCOMI_gf_PlayerIsCommander(lv_stetmann) == true))) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(UnitGetOwner(EventUnit())) == "Stetmann"))) {
             return false;
         }
 
@@ -20643,11 +20689,11 @@ bool libCOMM_gt_CU_StetelliteMaxChargesChanged_Func (bool testConds, bool runAct
 
     // Conditions
     if (testConds) {
-        if (!((EventUpgradeName() == "DeployPowerTowerTechLevel"))) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(lv_stetmann) == "Stetmann"))) {
             return false;
         }
 
-        if (!((libCOMI_gf_ActiveCommanderForPlayer(lv_stetmann) == "Stetmann"))) {
+        if (!((EventUpgradeName() == "DeployPowerTowerTechLevel"))) {
             return false;
         }
     }
@@ -20682,7 +20728,7 @@ bool libCOMM_gt_CU_StetelliteChargesChanged_Func (bool testConds, bool runAction
 
     // Conditions
     if (testConds) {
-        if (!((libCOMI_gf_PlayerIsCommander(lv_stetmann) == true))) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(UnitGetOwner(EventUnit())) == "Stetmann"))) {
             return false;
         }
 
@@ -27065,7 +27111,6 @@ bool libCOMM_gt_DUT_CommanderZeratul2_Func (bool testConds, bool runActions) {
     TriggerEnable(libCOMM_gt_CM_Zeratul_Trade, true);
     TriggerEnable(libCOMM_gt_CM_Zeratul_Trade_FullEnergyOn, true);
     TriggerEnable(libCOMM_gt_CM_Zeratul_Trade_FullEnergyOff, true);
-    TriggerEnable(libCOMM_gt_CM_Zeratul_AutomatedAssimilatorAutoBuild, true);
     TriggerEnable(libCOMM_gt_CM_Zeratul_ReflectionShield, true);
     TriggerEnable(libCOMM_gt_CM_Zeratul_DarkTemplarRetreat, true);
     TriggerEnable(libCOMM_gt_CM_Zeratul_WarpPrismAutoUnload, true);
@@ -27170,6 +27215,11 @@ bool libCOMM_gt_DUT_CommanderZeratul3_Func (bool testConds, bool runActions) {
     // Automatic Variable Declarations
     playergroup auto04B30044_g;
     int auto04B30044_var;
+    unitgroup autoE66607D2_g;
+    int autoE66607D2_u;
+    unit autoE66607D2_var;
+    playergroup autoB22B9601_g;
+    int autoB22B9601_var;
 
     // Variable Initialization
     lv_players = libCOMI_gf_PlayersOfCommander("Zeratul");
@@ -27192,6 +27242,22 @@ bool libCOMM_gt_DUT_CommanderZeratul3_Func (bool testConds, bool runActions) {
         auto04B30044_var = PlayerGroupNextPlayer(auto04B30044_g, auto04B30044_var);
         if (auto04B30044_var < 0) { break; }
         VisFillArea(auto04B30044_var, RegionEntireMap(), c_fillTypeMasked, false);
+        autoE66607D2_g = UnitGroup("AncientNexus", auto04B30044_var, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+        autoE66607D2_u = UnitGroupCount(autoE66607D2_g, c_unitCountAll);
+        for (;; autoE66607D2_u -= 1) {
+            autoE66607D2_var = UnitGroupUnitFromEnd(autoE66607D2_g, autoE66607D2_u);
+            if (autoE66607D2_var == null) { break; }
+            libCOMM_gf_CreateZeratulAssimilators(autoE66607D2_var);
+        }
+    }
+    TriggerEnable(libCOMM_gt_CM_Zeratul_AutomatedAssimilatorAutoBuild, true);
+    Wait(1.0, c_timeGame);
+    autoB22B9601_g = lv_players;
+    autoB22B9601_var = -1;
+    while (true) {
+        autoB22B9601_var = PlayerGroupNextPlayer(autoB22B9601_g, autoB22B9601_var);
+        if (autoB22B9601_var < 0) { break; }
+        VisFillArea(autoB22B9601_var, RegionEntireMap(), c_fillTypeMasked, false);
     }
     return true;
 }
@@ -27199,7 +27265,7 @@ bool libCOMM_gt_DUT_CommanderZeratul3_Func (bool testConds, bool runActions) {
 //--------------------------------------------------------------------------------------------------
 void libCOMM_gt_DUT_CommanderZeratul3_Init () {
     libCOMM_gt_DUT_CommanderZeratul3 = TriggerCreate("libCOMM_gt_DUT_CommanderZeratul3_Func");
-    TriggerAddEventGeneric(libCOMM_gt_DUT_CommanderZeratul3, libCOMI_gv_iNIT_COOP_MISSION_STAGE3);
+    TriggerAddEventGeneric(libCOMM_gt_DUT_CommanderZeratul3, libCOMI_gv_COOP_MISSION_STARTED_EVENT);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -27388,7 +27454,7 @@ bool libCOMM_gt_CM_ArtifactTransmission_PickedUp_Func (bool testConds, bool runA
         return true;
     }
 
-    TimerStart(libCOMM_gv_cM_ArtifactTransmission_SelectAbilityReminder, 45.0, false, c_timeGame);
+    TimerStart(libCOMM_gv_cM_ArtifactTransmission_SelectAbilityReminder[libCOMM_gf_CM_ZeratulProphecyEventGetPlayer()], 45.0, false, c_timeGame);
     auto8C5A36AD_val = libCOMM_gf_CM_ZeratulProphecyEventGetArtifactNumber();
     if (auto8C5A36AD_val == 3) {
         libCOMI_gf_CM_CommanderVOSend(libCOMM_gf_CM_ZeratulProphecyEventGetPlayer(), SoundLink("ZeratulCommander_CompleteArtifact", -1), libCOMI_gf_CC_PlayersOfCommander("Zeratul"));
@@ -27410,7 +27476,13 @@ void libCOMM_gt_CM_ArtifactTransmission_PickedUp_Init () {
 // Trigger: CM_ArtifactTransmission_ProphecyCast
 //--------------------------------------------------------------------------------------------------
 bool libCOMM_gt_CM_ArtifactTransmission_ProphecyCast_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_player;
+
     // Automatic Variable Declarations
+    // Variable Initialization
+    lv_player = libCOMM_gf_CM_ZeratulProphecyEventGetPlayer();
+
     // Conditions
     if (testConds) {
         if (!((TriggerIsEnabled(TriggerGetCurrent()) == true))) {
@@ -27425,7 +27497,7 @@ bool libCOMM_gt_CM_ArtifactTransmission_ProphecyCast_Func (bool testConds, bool 
 
     TriggerEnable(TriggerGetCurrent(), false);
     if ((libNtve_gf_UnitInRegion(libCOMM_gv_cM_ZeratulProphecyArtifact, RegionCircle(UnitGetPosition(DataTableGetUnit(false, TriggerEventParamName(("ZeratulEvent_ProphecyCastStart"), "ZeratulEventUnit"))), 14.0)) == false)) {
-        libCOMI_gf_CM_CommanderVOSend(libCOMM_gf_CM_ZeratulProphecyEventGetPlayer(), SoundLink("ZeratulCommander_FindArtifact", -1), libCOMI_gf_CC_PlayersOfCommander("Zeratul"));
+        libCOMI_gf_CM_CommanderVOSend(lv_player, SoundLink("ZeratulCommander_FindArtifact", -1), PlayerGroupSingle(lv_player));
         Wait(libCOMM_gv_cMC_ZeratulVOTransmissionProphacyCastDelay, c_timeGame);
     }
 
@@ -27451,7 +27523,7 @@ bool libCOMM_gt_CM_ArtifactTransmission_Upgraded_Func (bool testConds, bool runA
             return false;
         }
 
-        if (!((libCOMI_gf_GetPlayerCommanderGameLink(EventPlayer()) == "Zeratul"))) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(EventPlayer()) == "Zeratul"))) {
             return false;
         }
 
@@ -27465,7 +27537,7 @@ bool libCOMM_gt_CM_ArtifactTransmission_Upgraded_Func (bool testConds, bool runA
         return true;
     }
 
-    TimerPause(libCOMM_gv_cM_ArtifactTransmission_SelectAbilityReminder, true);
+    TimerPause(libCOMM_gv_cM_ArtifactTransmission_SelectAbilityReminder[EventPlayer()], true);
     libCOMI_gf_CM_CommanderVOSend(EventPlayer(), SoundLink("ZeratulCommander_AbilitySelected", -1), libCOMI_gf_CC_PlayersOfCommander("Zeratul"));
     if (((EventUpgradeName() == "ZeratulArtifactUpgradeTier3A") || (EventUpgradeName() == "ZeratulArtifactUpgradeTier3B"))) {
         libCOMI_gf_CM_CommanderVOAbilityWatch(EventPlayer(), SoundLink("ZeratulCommander_AbilityReady", -1), "Abil/ZeratulTopBarUltimateWarpTrain", null, null);
@@ -27486,6 +27558,9 @@ void libCOMM_gt_CM_ArtifactTransmission_Upgraded_Init () {
 //--------------------------------------------------------------------------------------------------
 bool libCOMM_gt_CM_ArtifactTransmission_SelectAbilityReminder_Func (bool testConds, bool runActions) {
     // Automatic Variable Declarations
+    const int auto25D4EA43_ae = 15;
+    int auto25D4EA43_var;
+
     // Conditions
     if (testConds) {
         if (!((TriggerIsEnabled(TriggerGetCurrent()) == true))) {
@@ -27498,7 +27573,14 @@ bool libCOMM_gt_CM_ArtifactTransmission_SelectAbilityReminder_Func (bool testCon
         return true;
     }
 
-    libCOMI_gf_CM_CommanderVOSend(libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Zeratul", libCOMI_gf_GetAlliedCommandersPlayersCopy()), SoundLink("ZeratulCommander_SelectAbility", -1), libCOMI_gf_CC_PlayersOfCommander("Zeratul"));
+    auto25D4EA43_var = 1;
+    for ( ; auto25D4EA43_var <= auto25D4EA43_ae; auto25D4EA43_var += 1 ) {
+        if ((EventTimer() == libCOMM_gv_cM_ArtifactTransmission_SelectAbilityReminder[auto25D4EA43_var])) {
+            libCOMI_gf_CM_CommanderVOSend(auto25D4EA43_var, SoundLink("ZeratulCommander_SelectAbility", -1), PlayerGroupSingle(auto25D4EA43_var));
+            break;
+        }
+
+    }
     return true;
 }
 
@@ -27506,7 +27588,7 @@ bool libCOMM_gt_CM_ArtifactTransmission_SelectAbilityReminder_Func (bool testCon
 void libCOMM_gt_CM_ArtifactTransmission_SelectAbilityReminder_Init () {
     libCOMM_gt_CM_ArtifactTransmission_SelectAbilityReminder = TriggerCreate("libCOMM_gt_CM_ArtifactTransmission_SelectAbilityReminder_Func");
     TriggerEnable(libCOMM_gt_CM_ArtifactTransmission_SelectAbilityReminder, false);
-    TriggerAddEventTimer(libCOMM_gt_CM_ArtifactTransmission_SelectAbilityReminder, libCOMM_gv_cM_ArtifactTransmission_SelectAbilityReminder);
+    TriggerAddEventTimer(libCOMM_gt_CM_ArtifactTransmission_SelectAbilityReminder, libCOMM_gv_cM_ArtifactTransmission_SelectAbilityReminder[1]);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -27535,6 +27617,12 @@ void libCOMM_gt_CU_ZeratulProphecyReady_Init () {
 //--------------------------------------------------------------------------------------------------
 bool libCOMM_gt_CU_ZeratulProphecyNotReady_Func (bool testConds, bool runActions) {
     // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    DialogControlSetAnimationState(libCOMI_gv_cU_GPPanel[libCOMM_gf_CM_ZeratulProphecyEventGetPlayer()], PlayerGroupAll(), "ProphecyState", "NotReady");
     return true;
 }
 
@@ -27640,6 +27728,41 @@ void libCOMM_gt_CU_ZeratulArtifactUsed_Init () {
     libCOMM_gt_CU_ZeratulArtifactUsed = TriggerCreate("libCOMM_gt_CU_ZeratulArtifactUsed_Func");
     TriggerEnable(libCOMM_gt_CU_ZeratulArtifactUsed, false);
     libCOMM_gf_CM_ZeratulProphecyEvent(libCOMM_gt_CU_ZeratulArtifactUsed, "ZeratulEvent_ArtifactUsed");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: CM_Zeratul_AutomatedAssimilatorAutoBuild
+//--------------------------------------------------------------------------------------------------
+bool libCOMM_gt_CM_Zeratul_AutomatedAssimilatorAutoBuild_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_p;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_p = EventPlayer();
+
+    // Conditions
+    if (testConds) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(lv_p) == "Zeratul"))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libCOMM_gf_CreateZeratulAssimilators(EventPlayerEffectUsedUnit(c_effectUnitCaster));
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMM_gt_CM_Zeratul_AutomatedAssimilatorAutoBuild_Init () {
+    libCOMM_gt_CM_Zeratul_AutomatedAssimilatorAutoBuild = TriggerCreate("libCOMM_gt_CM_Zeratul_AutomatedAssimilatorAutoBuild_Func");
+    TriggerEnable(libCOMM_gt_CM_Zeratul_AutomatedAssimilatorAutoBuild, false);
+    TriggerAddEventPlayerEffectUsed(libCOMM_gt_CM_Zeratul_AutomatedAssimilatorAutoBuild, c_playerAny, "NexusCreateSet");
+    TriggerAddEventPlayerEffectUsed(libCOMM_gt_CM_Zeratul_AutomatedAssimilatorAutoBuild, c_playerAny, "NexusBirthSet");
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -28079,24 +28202,11 @@ void libCOMM_gt_CM_ZeratulProphecyEventVision_Init () {
 //--------------------------------------------------------------------------------------------------
 bool libCOMM_gt_CM_ZeratulProphecyEventArtifactMissed_Func (bool testConds, bool runActions) {
     // Variable Declarations
-    unit lv_heroUnit;
     string lv_event;
 
     // Automatic Variable Declarations
     // Variable Initialization
-    lv_heroUnit = libCOMI_gf_GetHeroUnit(EventPlayer(), "Zeratul");
     lv_event = "ZeratulEvent_ArtifactMissed";
-
-    // Conditions
-    if (testConds) {
-        if (!((PlayerCommander(EventPlayer()) == "Zeratul"))) {
-            return false;
-        }
-
-        if (!((EventPlayerEffectUsedUnit(c_effectUnitCaster) == lv_heroUnit))) {
-            return false;
-        }
-    }
 
     // Actions
     if (!runActions) {
@@ -28120,12 +28230,10 @@ void libCOMM_gt_CM_ZeratulProphecyEventArtifactMissed_Init () {
 bool libCOMM_gt_CM_ZeratulProphecyEventArtifactPickedUp_Func (bool testConds, bool runActions) {
     // Variable Declarations
     string lv_event;
-    int lv_zeratulplayer;
 
     // Automatic Variable Declarations
     // Variable Initialization
     lv_event = "ZeratulEvent_ArtifactPickedUp";
-    lv_zeratulplayer = libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Zeratul", libCOMI_gf_GetAlliedCommandersPlayersCopy());
 
     // Conditions
     if (testConds) {
@@ -28139,7 +28247,7 @@ bool libCOMM_gt_CM_ZeratulProphecyEventArtifactPickedUp_Func (bool testConds, bo
         return true;
     }
 
-    libCOMM_gf_CM_SendZeratulProphecyEventArtifact(lv_event, lv_zeratulplayer, EventUnit(), libCOMM_gv_cM_ZeratulProphecyArtifactNumber);
+    libCOMM_gf_CM_SendZeratulProphecyEventArtifact(lv_event, UnitGetOwner(EventUnit()), EventUnit(), libCOMM_gv_cM_ZeratulProphecyArtifactNumber);
     return true;
 }
 
@@ -28156,12 +28264,10 @@ void libCOMM_gt_CM_ZeratulProphecyEventArtifactPickedUp_Init () {
 bool libCOMM_gt_CM_ZeratulProphecyEventArtifactRevealed_Func (bool testConds, bool runActions) {
     // Variable Declarations
     string lv_event;
-    int lv_zeratulplayer;
 
     // Automatic Variable Declarations
     // Variable Initialization
     lv_event = "ZeratulEvent_ArtifactFound";
-    lv_zeratulplayer = libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Zeratul", libCOMI_gf_GetAlliedCommandersPlayersCopy());
 
     // Conditions
     if (testConds) {
@@ -28175,7 +28281,7 @@ bool libCOMM_gt_CM_ZeratulProphecyEventArtifactRevealed_Func (bool testConds, bo
         return true;
     }
 
-    libCOMM_gf_CM_SendZeratulProphecyEventArtifact(lv_event, lv_zeratulplayer, EventUnit(), libCOMM_gv_cM_ZeratulProphecyArtifactNumber);
+    libCOMM_gf_CM_SendZeratulProphecyEventArtifact(lv_event, UnitGetOwner(EventUnit()), EventUnit(), libCOMM_gv_cM_ZeratulProphecyArtifactNumber);
     return true;
 }
 
@@ -28412,18 +28518,20 @@ void libCOMM_gt_CM_Zeratul_ProphecyArtifactPickedUp_Init () {
 //--------------------------------------------------------------------------------------------------
 bool libCOMM_gt_CM_Zeratul_ProphecyArtifactRevealed_Func (bool testConds, bool runActions) {
     // Variable Declarations
+    int lv_player;
     int lv_resourceSpawnCount;
     revealer lv_artifactRevealer;
 
     // Automatic Variable Declarations
     // Variable Initialization
+    lv_player = libCOMM_gf_CM_ZeratulProphecyEventGetPlayer();
 
     // Actions
     if (!runActions) {
         return true;
     }
 
-    libCOMI_gf_CreateRevealerCoop(libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Zeratul", libCOMI_gf_GetAlliedCommandersPlayersCopy()), RegionCircle(UnitGetPosition(libCOMM_gf_CM_ZeratulProphecyEventGetUnit(libCOMM_ge_CM_ZeratulProphecyEventUnits_ArtifactUnit)), 3.0));
+    libCOMI_gf_CreateRevealerCoop(libCOMM_gf_CM_ZeratulProphecyEventGetPlayer(), RegionCircle(UnitGetPosition(libCOMM_gf_CM_ZeratulProphecyEventGetUnit(libCOMM_ge_CM_ZeratulProphecyEventUnits_ArtifactUnit)), 3.0));
     lv_artifactRevealer = VisRevealerLastCreated();
     Wait(5.0, c_timeGame);
     libCOMI_gf_DestroyRevealerCoop(lv_artifactRevealer);
@@ -28772,57 +28880,6 @@ void libCOMM_gt_CM_Zeratul_Trade_FullEnergyOff_Init () {
     libCOMM_gt_CM_Zeratul_Trade_FullEnergyOff = TriggerCreate("libCOMM_gt_CM_Zeratul_Trade_FullEnergyOff_Func");
     TriggerEnable(libCOMM_gt_CM_Zeratul_Trade_FullEnergyOff, false);
     TriggerAddEventUnitBehaviorChange(libCOMM_gt_CM_Zeratul_Trade_FullEnergyOff, null, "ZeratulTopBarFullEnergy", c_unitBehaviorChangeDeactivate);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: CM_Zeratul_AutomatedAssimilatorAutoBuild
-//--------------------------------------------------------------------------------------------------
-bool libCOMM_gt_CM_Zeratul_AutomatedAssimilatorAutoBuild_Func (bool testConds, bool runActions) {
-    // Variable Declarations
-    int lv_p;
-    unit lv_nexus;
-    unit lv_itGeyser;
-
-    // Automatic Variable Declarations
-    unitgroup auto960A0F35_g;
-    int auto960A0F35_u;
-
-    // Variable Initialization
-    lv_p = EventPlayer();
-    lv_nexus = EventPlayerEffectUsedUnit(c_effectUnitCaster);
-
-    // Conditions
-    if (testConds) {
-        if (!((libCOMI_gf_GetPlayerCommanderGameLink(EventPlayer()) == "Zeratul"))) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    auto960A0F35_g = UnitGroupSearch(null, 0, UnitGetPosition(lv_nexus), 14.0, UnitFilter((1 << c_targetFilterRawResource), 0, (1 << c_targetFilterAlly) | (1 << c_targetFilterNeutral) | (1 << c_targetFilterEnemy) | (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto960A0F35_u = UnitGroupCount(auto960A0F35_g, c_unitCountAll);
-    for (;; auto960A0F35_u -= 1) {
-        lv_itGeyser = UnitGroupUnitFromEnd(auto960A0F35_g, auto960A0F35_u);
-        if (lv_itGeyser == null) { break; }
-        if ((UnitHasBehavior2(lv_itGeyser, "GeyserBlockedByRocks") == false)) {
-            UnitIssueOrder(lv_nexus, OrderTargetingUnit(AbilityCommand("NexusBuild", 0), lv_itGeyser), c_orderQueueAddToEnd);
-            Wait(0.125, c_timeGame);
-        }
-
-    }
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMM_gt_CM_Zeratul_AutomatedAssimilatorAutoBuild_Init () {
-    libCOMM_gt_CM_Zeratul_AutomatedAssimilatorAutoBuild = TriggerCreate("libCOMM_gt_CM_Zeratul_AutomatedAssimilatorAutoBuild_Func");
-    TriggerEnable(libCOMM_gt_CM_Zeratul_AutomatedAssimilatorAutoBuild, false);
-    TriggerAddEventPlayerEffectUsed(libCOMM_gt_CM_Zeratul_AutomatedAssimilatorAutoBuild, c_playerAny, "NexusCreateSet");
-    TriggerAddEventPlayerEffectUsed(libCOMM_gt_CM_Zeratul_AutomatedAssimilatorAutoBuild, c_playerAny, "NexusBirthSet");
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -29385,19 +29442,13 @@ void libCOMM_gt_CM_Zeratul_StasisDuration_Init () {
 // Trigger: CM_Zeratul_RallySetToZeratul
 //--------------------------------------------------------------------------------------------------
 bool libCOMM_gt_CM_Zeratul_RallySetToZeratul_Func (bool testConds, bool runActions) {
-    // Variable Declarations
-    unit lv_heroUnit;
-
     // Automatic Variable Declarations
-    // Variable Initialization
-    lv_heroUnit = libCOMI_gf_GetHeroUnit(libCOMI_gf_CC_PlayerOfCommanderInGroupFirst("Zeratul", libCOMI_gf_GetAlliedCommandersPlayersCopy()), "Zeratul");
-
     // Actions
     if (!runActions) {
         return true;
     }
 
-    if ((UnitIsAlive(EventUnitTargetUnit()) == true) && (EventUnitTargetUnit() == lv_heroUnit)) {
+    if ((UnitIsAlive(EventUnitTargetUnit()) == true) && (EventUnitTargetUnit() == libCOMI_gf_GetHeroUnit(UnitGetOwner(EventUnitTargetUnit()), "Zeratul"))) {
         UnitGroupAdd(libCOMM_gv_cM_Zeratul_RalliedGroup, EventUnit());
     }
     else {
@@ -29411,6 +29462,26 @@ void libCOMM_gt_CM_Zeratul_RallySetToZeratul_Init () {
     libCOMM_gt_CM_Zeratul_RallySetToZeratul = TriggerCreate("libCOMM_gt_CM_Zeratul_RallySetToZeratul_Func");
     TriggerEnable(libCOMM_gt_CM_Zeratul_RallySetToZeratul, false);
     TriggerAddEventUnitAbility(libCOMM_gt_CM_Zeratul_RallySetToZeratul, null, AbilityCommand("Rally", 0), c_abilRallyStagePlace, true);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Creep Tumor Build
+//--------------------------------------------------------------------------------------------------
+bool libCOMM_gt_CreepTumorBuild_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    UnitBehaviorAdd(EventUnit(), "CreepTumorExhausted", EventUnit(), 1);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMM_gt_CreepTumorBuild_Init () {
+    libCOMM_gt_CreepTumorBuild = TriggerCreate("libCOMM_gt_CreepTumorBuild_Func");
+    TriggerAddEventUnitAbility(libCOMM_gt_CreepTumorBuild, null, AbilityCommand("CreepTumorBuild", 0), c_abilBuildStageFinish, false);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -29781,19 +29852,11 @@ void libCOMM_gt_AegisCreated_Init () {
 }
 
 void libCOMM_InitTriggers () {
-    libCOMM_gt_ShieldColorUnitCreateAlarakFenix_Init();
-    libCOMM_gt_ShieldColorUnitMorphAlarakFenix_Init();
     libCOMM_gt_AF_TopBarNotificationsEnableDisable_Init();
     libCOMM_gt_AF_TopBarClicked_Init();
     libCOMM_gt_AF_MouseEntersTopBar_Init();
     libCOMM_gt_AF_MouseExitsTopBar_Init();
     libCOMM_gt_CM_GPReminderAbilityUsed_Init();
-    libCOMM_gt_CreepTumorBuild_Init();
-    libCOMM_gt_BanelingScourgeDeathrattleScrapDeaths_Init();
-    libCOMM_gt_BanelingScourgeEconDrop_Init();
-    libCOMM_gt_BanelingScourgeLocusts_Init();
-    libCOMM_gt_BanelingScourgeEssenceDrop_Init();
-    libCOMM_gt_BanelingScourgeBiomassDrop_Init();
     libCOMM_gt_CM_SoAShiftCheatFailSafeThermal_Init();
     libCOMM_gt_CM_SoAShiftCheatFailSafeHHCallFleet_Init();
     libCOMM_gt_CM_SoAShiftCheatFailSafeNovaBombing_Init();
@@ -29812,6 +29875,8 @@ void libCOMM_InitTriggers () {
     libCOMM_gt_CM_SoAOrbitalStrikeActivated_Init();
     libCOMM_gt_CM_SoAOrbitalStrikeActivatedKarax_Init();
     libCOMM_gt_DUT_CommanderAlarak_Init();
+    libCOMM_gt_ShieldColorUnitCreateAlarak_Init();
+    libCOMM_gt_ShieldColorUnitMorphAlarak_Init();
     libCOMM_gt_CU_GPAlarakGemPress_Init();
     libCOMM_gt_CM_AbilityTransmissionAlarakEmpower_Init();
     libCOMM_gt_CM_AbilityTransmissionAlarakDeathFleet_Init();
@@ -29844,23 +29909,25 @@ void libCOMM_InitTriggers () {
     libCOMM_gt_CM_AbilityTransmissionArtanisSuperShields_Init();
     libCOMM_gt_CC_ScoreArtanisAbsorb_Init();
     libCOMM_gt_CC_ScoreArtanisBombardment_Init();
-    libCOMM_gt_CM_DebugAbathurBiomassReport_Init();
     libCOMM_gt_DUT_CommanderAbathur_Init();
+    libCOMM_gt_CM_DebugAbathurBiomassReport_Init();
     libCOMM_gt_MM_AbathurChosen_Init();
     libCOMM_gt_MM_BiomassSizeUpdate_Init();
     libCOMM_gt_CM_AbilityTransmissionAbathurMend_Init();
     libCOMM_gt_CC_ScoreAbathurHealing_Init();
     libCOMM_gt_CC_ScoreAbathurMonsterDmg_Init();
+    libCOMM_gt_BanelingScourgeLocusts_Init();
+    libCOMM_gt_BanelingScourgeBiomassDrop_Init();
+    libCOMM_gt_CM_Abathur_BiomassDrop_Init();
+    libCOMM_gt_CM_Abathur_Enemy_Death_Create_Locusts_Init();
     libCOMM_gt_CM_Abathur_ToxicNestDeathFailsafe_Init();
     libCOMM_gt_CM_Abathur_MeleeBonusUpgrade_Init();
-    libCOMM_gt_CM_Abathur_BiomassDrop_Init();
     libCOMM_gt_CM_Abathur_BiomassPickup_Init();
     libCOMM_gt_CM_Abathur_BiomassRefund_Init();
     libCOMM_gt_CM_DebugAbathurBiomassLost_Init();
     libCOMM_gt_CM_Abathur_BiomassTrain_Init();
     libCOMM_gt_CM_Abathur_BiomassManualUpdate_Init();
     libCOMM_gt_CM_Abathur_BiomassScaler_Init();
-    libCOMM_gt_CM_Abathur_Enemy_Death_Create_Locusts_Init();
     libCOMM_gt_CM_Abathur_ToxicNest_Init();
     libCOMM_gt_CM_Abathur_SwarmHostLocustLaunchCast_Init();
     libCOMM_gt_CM_Abathur_RavagerSpellCooldown_Init();
@@ -29908,6 +29975,7 @@ void libCOMM_InitTriggers () {
     libCOMM_gt_CM_DehakaAutocastSettingsOn_Init();
     libCOMM_gt_CM_DehakaAutocastSettingsOff_Init();
     libCOMM_gt_CM_DehakaAutocastBossSummonStateAdjust_Init();
+    libCOMM_gt_BanelingScourgeEssenceDrop_Init();
     libCOMM_gt_CM_Dehaka_EssenceDrop_Init();
     libCOMM_gt_CM_Dehaka_EssencePickup_Init();
     libCOMM_gt_CM_Dehaka_EssenceManualUpdate_Init();
@@ -29919,6 +29987,8 @@ void libCOMM_InitTriggers () {
     libCOMM_gt_CM_Dehaka_PrestigeClone_Init();
     libCOMM_gt_CM_Dehaka_PrestigeCloneRevive_Init();
     libCOMM_gt_DUT_CommanderFenix_Init();
+    libCOMM_gt_ShieldColorUnitCreateFenix_Init();
+    libCOMM_gt_ShieldColorUnitMorphFenix_Init();
     libCOMM_gt_CM_AbilityTransmissionFenixCreateTalis_Init();
     libCOMM_gt_CM_AbilityTransmissionFenixCreateKaldalis_Init();
     libCOMM_gt_CM_AbilityTransmissionFenixCreateTaldarin_Init();
@@ -29982,6 +30052,7 @@ void libCOMM_InitTriggers () {
     libCOMM_gt_CM_Horner_DoubleSupplyStun_Init();
     libCOMM_gt_CM_Horner_MTO_Upgrade_Init();
     libCOMM_gt_CM_Horner_HangerFinish_Init();
+    libCOMM_gt_BanelingScourgeDeathrattleScrapDeaths_Init();
     libCOMM_gt_CM_Horner_ScrapDrop_Init();
     libCOMM_gt_CM_Horner_ScrapDropForSwannWreckage_Init();
     libCOMM_gt_CM_Horner_ScrapPickup_Init();
@@ -30018,6 +30089,7 @@ void libCOMM_InitTriggers () {
     libCOMM_gt_CM_KaraxRepairBeamLimit_Init();
     libCOMM_gt_CM_KaraxUnitReviveBarrier_Init();
     libCOMM_gt_DUT_CommanderKerrigan_Init();
+    libCOMM_gt_BanelingScourgeEconDrop_Init();
     libCOMM_gt_EnableZerglingReconstruction_Init();
     libCOMM_gt_CM_HatcheryPrimarySearch_Init();
     libCOMM_gt_CM_HatcheryEggModels_Init();
@@ -30297,6 +30369,7 @@ void libCOMM_InitTriggers () {
     libCOMM_gt_CU_ZeratulArtifactCollected_Init();
     libCOMM_gt_CU_ZeratulArtifactUpgraded_Init();
     libCOMM_gt_CU_ZeratulArtifactUsed_Init();
+    libCOMM_gt_CM_Zeratul_AutomatedAssimilatorAutoBuild_Init();
     libCOMM_gt_CM_Zeratul_Entropic_Spawner_Init();
     libCOMM_gt_CM_Zeratul_Devolve_Init();
     libCOMM_gt_CM_Zeratul_TransportDropOff_Init();
@@ -30326,7 +30399,6 @@ void libCOMM_InitTriggers () {
     libCOMM_gt_CM_Zeratul_Trade_Init();
     libCOMM_gt_CM_Zeratul_Trade_FullEnergyOn_Init();
     libCOMM_gt_CM_Zeratul_Trade_FullEnergyOff_Init();
-    libCOMM_gt_CM_Zeratul_AutomatedAssimilatorAutoBuild_Init();
     libCOMM_gt_CM_Zeratul_ReflectionShield_Init();
     libCOMM_gt_CM_Zeratul_DarkTemplarRetreat_Init();
     libCOMM_gt_CM_Zeratul_WarpPrismAutoUnload_Init();
@@ -30343,6 +30415,7 @@ void libCOMM_InitTriggers () {
     libCOMM_gt_CM_ZeratulAvatarMinimapIcon_Init();
     libCOMM_gt_CM_Zeratul_StasisDuration_Init();
     libCOMM_gt_CM_Zeratul_RallySetToZeratul_Init();
+    libCOMM_gt_CreepTumorBuild_Init();
     libCOMM_gt_StartingLarva_Init();
     libCOMM_gt_StartingCreepAndLarva1_Init();
     libCOMM_gt_StartingCreepAndLarva2_Init();

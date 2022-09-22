@@ -23,6 +23,12 @@
         <Race value="ProtI"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Coop"/>
     </CUnit>
+    <CUnit id="CreepTumorBurrowed">
+        <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
+    </CUnit>
+    <CUnit id="CreepTumorQueen">
+        <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
+    </CUnit>
     <CUnit id="Dummy">
         <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
     </CUnit>

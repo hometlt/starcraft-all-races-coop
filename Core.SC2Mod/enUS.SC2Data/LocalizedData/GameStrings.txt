@@ -10454,6 +10454,7 @@ Param/Expression/lib_COMI_1CAFE485=~A~<c val="FFFF8A">(+~B~%)</c>
 Param/Expression/lib_COMI_1CC0375F=~A~%
 Param/Expression/lib_COMI_1DDD924E=~C~<n/>~A~<c val="FFFF8A">(+~B~%)</c>
 Param/Expression/lib_COMI_1E12CE26=~C~<n/>~A~<c val="FFFF8A">(+~B~%)</c>
+Param/Expression/lib_COMI_1F62DCA1=~A~ ~B~
 Param/Expression/lib_COMI_1FCBE922=~A~<Frame type="Label" name="Score~B~_Label" template="ReplayDataLayout/Score_LabelTemplate"><Anchor side="Bottom" relative="$parent/Score~D~_Label" pos="0" offset="0"/> <Text val="~C~"/><Color val="#MissionMutatorColor" /> </Frame> <Frame type="Label" name="Score~B~_Value" template="ReplayDataLayout/Score_ValueTemplate"> <Anchor side="Bottom" relative="$parent/Score~D~_Label" pos="0" offset="0"/><Color val="#MissionMutatorColor" /> <Text val="{$parent/Score~B~_Ref/@RealValue}"/> </Frame> <Frame type="DataRefFrame" name="Score~B~_Ref"> <Argument name="GalaxyVar" val="~E~"/> </Frame> <StateGroup name="Score~B~_SG"> <State name="Invisible"> <When type="Property" frame="$this/Score~B~_Value" Text="0"/> <Action type="SetProperty" frame="$this/Score~B~_Label" Visible="False"/> <Action type="SetProperty" frame="$this/Score~B~_Value" Visible="False"/> </State> </StateGroup>
 Param/Expression/lib_COMI_21481F4B=~A~,~B~
 Param/Expression/lib_COMI_215A334E=~C~<n/>~A~<c val="FFFF8A">(+~B~%)</c>
@@ -10578,6 +10579,7 @@ Param/Expression/lib_COMI_7988C5FC=~B~: ~A~
 Param/Expression/lib_COMI_7A31B91A=~C~<n/>~A~<c val="FFFF8A">(+~B~)</c>
 Param/Expression/lib_COMI_7B047753=~A~ PLAYERS
 Param/Expression/lib_COMI_7B1B3B5D=MASTERY LEVEL <h>~A~</h>
+Param/Expression/lib_COMI_7B5AAEEB=~A~</ignore>
 Param/Expression/lib_COMI_7BC4DCE4=Pathing cost between points: ~B~<n/>Unit can path to point (1-1000): ~C~<n/>AI Pathing Cost Unit: ~G~<n/>Points connected by pathing: ~A~<n/>Point is passable: ~E~<n/>Ground type at point: ~D~<n/>---
 Param/Expression/lib_COMI_7D144A56=DPS (5s): <c val="FF8000">~A~</c><n/>DPS (~B~s): <c val="485AFF ">~C~</c>
 Param/Expression/lib_COMI_7D7F9BF8=<c val="FF9800">Dehaka has died. He will be revived at his den in ~Duration~ seconds.  You can also feed him drones to revive faster</c>
@@ -10613,6 +10615,7 @@ Param/Expression/lib_COMI_8F34D3BF=~C~<n/>~A~<c val="FFFF8A">(+~B~%)</c>
 Param/Expression/lib_COMI_8F40F017=~C~<n/>~A~<c val="FFFF8A">(+~B~%)</c>
 Param/Expression/lib_COMI_9128F2EC=~C~<n/>~A~<c val="FFFF8A">(-~B~%)</c>
 Param/Expression/lib_COMI_913DC549=<s val="@@StandardTooltipHeader">~NAME~</s><n/><s val="@@StandardTooltip">~DESCRIPTION~</s>
+Param/Expression/lib_COMI_91D110D0=~coloredTime~
 Param/Expression/lib_COMI_91FCD7C6=~A~<c val="FFFF8A">(-~B~s)</c>
 Param/Expression/lib_COMI_9205F897=~A~/~B~
 Param/Expression/lib_COMI_94852538=<s val="@@StandardTooltipHeader">~NAME~</s><n/><s val="@@StandardTooltip">~DESCRIPTION~</s>
@@ -10621,6 +10624,7 @@ Param/Expression/lib_COMI_958DABAE=~CurrentLife~/~MaxLife~
 Param/Expression/lib_COMI_95D542DF=~C~<n/>~A~<c val="FFFF8A">(+~B~%)</c>
 Param/Expression/lib_COMI_95E7B9AF=<ignore s="strip" c="strip">~A~</ignore>
 Param/Expression/lib_COMI_98293AF2=~C~<n/>~A~<c val="FFFF8A">(-~B~s)</c>
+Param/Expression/lib_COMI_9923C928=<ignore s="strip" c="strip">~A~
 Param/Expression/lib_COMI_993EAF5A=~C~<n/>~A~<c val="FFFF8A">(-~B~s)</c>
 Param/Expression/lib_COMI_994CE123=<c val="FF8000">Bonus 1:<n/> ~A~<n/>Bonus 2:<n/> ~B~<n/>Time:<n/> ~C~</c>
 Param/Expression/lib_COMI_9A720209=<c val="777777"> (~A~s)</c>
@@ -10820,45 +10824,63 @@ Param/Expression/lib_COMU_F910EDD9=Kills: ~A~/~B~
 Param/Value/lib_ADFU_11033330=New Mutator
 Param/Value/lib_ARRA_09F3147F= while the dynamic array has a size of 
 Param/Value/lib_ARRA_0D5C8ADE=Error in Dynamic Int Array - Set: Trying to set value 
+Param/Value/lib_ARRA_0FF48FAB= while the dynamic array has a size of 
 Param/Value/lib_ARRA_10B428F6= in the index 
 Param/Value/lib_ARRA_1843B1D2= while the dynamic array has a size of 
 Param/Value/lib_ARRA_1B574511= while the dynamic array has a size of 
 Param/Value/lib_ARRA_1F62FEC0=Error in Dynamic Point Array - Get: Trying to get a value in the index 
 Param/Value/lib_ARRA_2170CCF4=Error in Dynamic Int Array - Add: Trying to add value 
+Param/Value/lib_ARRA_362FE075= while the dynamic array has a size of 
 Param/Value/lib_ARRA_371E33BA=Error in Dynamic Int Array - Get: Trying to get a value in the index 
+Param/Value/lib_ARRA_3E582092=Error in Dynamic Int Array - Remove: Trying to remove a value in the index 
 Param/Value/lib_ARRA_3F2D2FDD= because it already exists!
 Param/Value/lib_ARRA_3F48C1B8=Couldn't create the database 
 Param/Value/lib_ARRA_40A3062F= while the dynamic array has a size of 
 Param/Value/lib_ARRA_4299E4F8= while the dynamic array has a size of 
 Param/Value/lib_ARRA_45F7EF4B=Error in Dynamic Int Array - Get: Trying to get a value in the index 
 Param/Value/lib_ARRA_467C97C3= in the index 
+Param/Value/lib_ARRA_4BC5A61B= in the index 
 Param/Value/lib_ARRA_4BFA7B9B= while the dynamic array has a size of 
 Param/Value/lib_ARRA_4E66DCA4=Error in Dynamic Int Array - Get: Trying to get a value in the index 
 Param/Value/lib_ARRA_5349D4ED=Error in Dynamic Point Array - Add: Trying to add a point in the index
 Param/Value/lib_ARRA_5780FD89= in the index 
 Param/Value/lib_ARRA_5ECB4179= while the dynamic array has a size of 
 Param/Value/lib_ARRA_6026870B=Error in Dynamic Int Array - Remove: Trying to remove a value in the index 
+Param/Value/lib_ARRA_6084DCD5= while the dynamic array has a size of 
 Param/Value/lib_ARRA_669B8E17= while the dynamic array has a size of 
 Param/Value/lib_ARRA_6B918C7F= while the dynamic array has a size of 
 Param/Value/lib_ARRA_6E0A9BA2= while the dynamic array has a size of 
 Param/Value/lib_ARRA_72875DCA=Error in Dynamic Int Array - Remove: Trying to remove a value in the index 
 Param/Value/lib_ARRA_7318B37C=Error in Dynamic Point Array - Remove: Trying to remove a value in the index 
+Param/Value/lib_ARRA_73352807=Error in Dynamic Int Array - Get: Trying to get a value in the index 
 Param/Value/lib_ARRA_760DA2B3=Error in Dynamic Int Array - Remove: Trying to remove a value in the index 
 Param/Value/lib_ARRA_78368912=Error at Dynamic Int Array - Pop Back: The array is already empty!
+Param/Value/lib_ARRA_80ACCCBB= while the dynamic array has a size of 
 Param/Value/lib_ARRA_851C0843= while the dynamic array has a size of 
+Param/Value/lib_ARRA_8700B181= because it already exists!
 Param/Value/lib_ARRA_88401337= while the dynamic array has a size of 
 Param/Value/lib_ARRA_8DE2D371= while the dynamic array has a size of 
+Param/Value/lib_ARRA_8DFFFC28= while the dynamic array has a size of 
 Param/Value/lib_ARRA_939C4604=Error in Dynamic Int Array - Set: Trying to set value 
 Param/Value/lib_ARRA_94958194= in the index 
 Param/Value/lib_ARRA_9A7EA85B= while the dynamic array has a size of 
+Param/Value/lib_ARRA_B2F06617=Error in Dynamic Int Array - Set: Trying to set value 
 Param/Value/lib_ARRA_BB8573E8=Error in Dynamic Int Array - Add: Trying to add value 
+Param/Value/lib_ARRA_C92ADCFF=List is not initialized. Creating it
 Param/Value/lib_ARRA_CC549D16= in the index 
 Param/Value/lib_ARRA_D7A229D0=Error in Dynamic Point Array - Set: Trying to set a point in the index
 Param/Value/lib_ARRA_D86EAB1E=Error in Dynamic Int Array - Set: Trying to set value 
+Param/Value/lib_ARRA_D8AFC5D0=Error in Dynamic Int Array - Remove: Trying to remove a value in the index 
 Param/Value/lib_ARRA_E0736642= while the dynamic array has a size of 
+Param/Value/lib_ARRA_E5C0A96B= in the index 
+Param/Value/lib_ARRA_E655C260=Error in Dynamic Int Array - Add: Trying to add value 
 Param/Value/lib_ARRA_E96DE815= in the index 
+Param/Value/lib_ARRA_EBEDA1A0=Error in Dynamic Int Array - Get: Trying to get a value in the index 
 Param/Value/lib_ARRA_ED2C25F4= while the dynamic array has a size of 
 Param/Value/lib_ARRA_ED8C56C7=Error in Dynamic Int Array - Add: Trying to add value 
+Param/Value/lib_ARRA_F512E428= while the dynamic array has a size of 
+Param/Value/lib_ARRA_F6ED52AF=Error in Dynamic Int Array - Remove: Trying to remove a value in the index 
+Param/Value/lib_ARRA_F8D77AE0= while the dynamic array has a size of 
 Param/Value/lib_COMI_0028B203=Placement unit not found, falling back to spawn point based on player start!
 Param/Value/lib_COMI_00836642=ARMY VALUE
 Param/Value/lib_COMI_00AC11D7=<s val="@@WorldTeachingTooltipHeader">Solar Forge</s><n/>Select to upgrade the Spear of Adun
@@ -10874,6 +10896,7 @@ Param/Value/lib_COMI_03ED8FAC=All of your structures have been destroyed.
 Param/Value/lib_COMI_0422D79E=<n/><n/>
 Param/Value/lib_COMI_042D8310=<c val="FF8000">Check pathing from selected unit to camera center with TAB key</c>
 Param/Value/lib_COMI_04BD4F27=Hybrid Dominator
+Param/Value/lib_COMI_04C88D3F=~GOAL~
 Param/Value/lib_COMI_0567C98A=Hellion (26 kills)
 Param/Value/lib_COMI_0667D6EA=<c val="FF8000">PathCheck disabled</c>
 Param/Value/lib_COMI_0738FC84=Heroes spawned (mutator)
@@ -10881,6 +10904,7 @@ Param/Value/lib_COMI_092CF6A6=(DEBUG) No random mutation
 Param/Value/lib_COMI_099C8D0A=(DEBUG) This cheat must be used during commander select.
 Param/Value/lib_COMI_09AE04FD=<c val="FF8000">Ally control lost</c>
 Param/Value/lib_COMI_09E0486D=<c val="FF8000">Speed set to normal</c>
+Param/Value/lib_COMI_0AF5DF3D=)
 Param/Value/lib_COMI_0B346668=Unit type with the most kills:
 Param/Value/lib_COMI_0B8407DD=Activate
 Param/Value/lib_COMI_0D32BA99=<c val="FF8000">Speed set to faster</c>
@@ -10902,6 +10926,7 @@ Param/Value/lib_COMI_1395FEED={Starting Location}
 Param/Value/lib_COMI_14271841=Economy test enabled<n/>
 Param/Value/lib_COMI_14A52DB3=~Hero~
 Param/Value/lib_COMI_15B8BF74=Your ally's base has been destroyed.
+Param/Value/lib_COMI_15DEF116=~TIME~
 Param/Value/lib_COMI_15F390A4=Applying Settings
 Param/Value/lib_COMI_1665482B=<c val="FF8000">SlimUI deactivated</c>
 Param/Value/lib_COMI_175187BA=~Reviver~
@@ -10939,6 +10964,7 @@ Param/Value/lib_COMI_2910AE3F=Select All Armies (F2)
 Param/Value/lib_COMI_29FB674D=Fenix has been revived at your Nexus.
 Param/Value/lib_COMI_2B37AC46=libCOMU_gv_cT_StatVoidRiftUnitsSpawned
 Param/Value/lib_COMI_2B55C7DD=<c val="FF8000">SlimUI activated</c>
+Param/Value/lib_COMI_2B73E725=" width="0"/>
 Param/Value/lib_COMI_2B927792=Unit type with the most kills:
 Param/Value/lib_COMI_2D63374A=Placement unit not found, falling back to spawn point based on player start!
 Param/Value/lib_COMI_3045EA12=HARD
@@ -10953,6 +10979,7 @@ Param/Value/lib_COMI_37F8941A=Type -val for economy value at any time
 Param/Value/lib_COMI_38979E15=Days Taken to Complete Mission:
 Param/Value/lib_COMI_38E8C42E=ERROR: Maximum wave timer windows reached!
 Param/Value/lib_COMI_39232BF7=Avenger Stacks Applied (mutator)
+Param/Value/lib_COMI_39617068=<img path="
 Param/Value/lib_COMI_3AA59240=Movie capture mode disabled.
 Param/Value/lib_COMI_3BB57D52=<c val="FF0000">player 2 is playing!</c>
 Param/Value/lib_COMI_3CD275A3=Days Taken to Complete Mission:
@@ -10960,6 +10987,7 @@ Param/Value/lib_COMI_3E03BDBE=+
 Param/Value/lib_COMI_3E12216D=Numbers hidden
 Param/Value/lib_COMI_3E140B65=<c val="485AFF">Avg: --</c><n/><c val="FF8000">Now: –</c>
 Param/Value/lib_COMI_3E243C84=<c val="FF8000">MISSILE</c>
+Param/Value/lib_COMI_3FA8BE71=(
 Param/Value/lib_COMI_415C5DAE=
 Param/Value/lib_COMI_4313816A=5 Days
 Param/Value/lib_COMI_435B6348=<k val="HeroSelect0"/>
@@ -11026,6 +11054,7 @@ Param/Value/lib_COMI_80A5717F=Broodlings Spawned (mutator)
 Param/Value/lib_COMI_81EF797C=Decrease
 Param/Value/lib_COMI_8209D1EF=<c val="FF8000">Logging stopped</c>
 Param/Value/lib_COMI_82B838AD=<c val="FF8000">Copy-paste disabled.</c>
+Param/Value/lib_COMI_82EBA108=(
 Param/Value/lib_COMI_867DFB12=New Mutator
 Param/Value/lib_COMI_86DFF845=<c val="FF8000">Speed set to slow</c>
 Param/Value/lib_COMI_8710D54D=All of your ally's structures have been destroyed.
@@ -11040,6 +11069,7 @@ Param/Value/lib_COMI_8B3E555D=Ground
 Param/Value/lib_COMI_8B843D5A=Initialize Variables
 Param/Value/lib_COMI_8D72AB6D=<c val="FF8000">Change lighting with "+" or "-" keys</c>
 Param/Value/lib_COMI_8D7D1E1A=Start mission!
+Param/Value/lib_COMI_8DB65074=)
 Param/Value/lib_COMI_8E41D92B=Hellion (26 kills)
 Param/Value/lib_COMI_8E643243=Movie capture mode enabled.
 Param/Value/lib_COMI_8F56BF35=First Wave Location
@@ -11079,6 +11109,7 @@ Param/Value/lib_COMI_A40945FF=Only the party leader can modify game speed.
 Param/Value/lib_COMI_A41BA872=Special Text
 Param/Value/lib_COMI_A4371FB8=<c val="FF8000">Godmode Disabled<n/></c>
 Param/Value/lib_COMI_A59236C2=~TIMER~
+Param/Value/lib_COMI_A881DAC2=~CURRENT~
 Param/Value/lib_COMI_A94DAB54=<c val="00FF40">WAVE</c>
 Param/Value/lib_COMI_AA9476D7=<c val="FF0000">NO WAVE</c>
 Param/Value/lib_COMI_AB66B665={Starting Location}
@@ -11103,6 +11134,7 @@ Param/Value/lib_COMI_B8CE450F=Other emotes
 Param/Value/lib_COMI_B9031494=<c val="B0B0B0">DPS (5s): —<n/>DPS (?s): —</c>
 Param/Value/lib_COMI_B90F2179=Unable to add a wave unit ping group, may need to increase max ping count.
 Param/Value/lib_COMI_B9A66432=Random
+Param/Value/lib_COMI_B9BB5546=<n/><c val="AAAAAA">(Bonus experience)</c>
 Param/Value/lib_COMI_B9CBC084=Starting Base
 Param/Value/lib_COMI_BAEB517D=Quit
 Param/Value/lib_COMI_BB5EEA9B=~Reviver~
@@ -11122,6 +11154,7 @@ Param/Value/lib_COMI_C638D4E6=<c val="FF8000">Camera reset</c>
 Param/Value/lib_COMI_C66A2957=~Hero~
 Param/Value/lib_COMI_C6D86F2C=<c val="FF8000">Units paused</c>
 Param/Value/lib_COMI_C6FA6678=Unpathable
+Param/Value/lib_COMI_C7D64A1E=" width="0"/>
 Param/Value/lib_COMI_C8E43CFE=)</c></s>
 Param/Value/lib_COMI_C9DB7502=
 Param/Value/lib_COMI_CACA57DE=<c val="FF8000">Speed set to slower</c>
@@ -11163,6 +11196,7 @@ Param/Value/lib_COMI_F4C11E4E=Missions
 Param/Value/lib_COMI_F4C70C8D=Init Enemies
 Param/Value/lib_COMI_F57F76EC=5 Days
 Param/Value/lib_COMI_F5967CF5=Unit type with the most kills:
+Param/Value/lib_COMI_F5A2DC84=<img path="
 Param/Value/lib_COMI_F5DB1EC5=Your base has been destroyed.
 Param/Value/lib_COMI_F66AE9FC=<c val="FF8000">Resetting ability ranges.</c>
 Param/Value/lib_COMI_F6C6A9DD=All of your structures have been destroyed.
@@ -11266,6 +11300,16 @@ Param/Value/lib_COMU_F26C56D1=start
 Param/Value/lib_COMU_FC1D56A5=AMON'S GIFT:<n/>Shrink Wave!
 Param/Value/lib_COMU_FC77327E=AMON'S GIFT:<n/>Hidden Threats!
 Param/Value/lib_COMU_FE1BD2F8=Kill Bot
+Param/Value/lib_MISS_0D861F58=Harvesting Bot
+Param/Value/lib_MISS_0EBFC1AE=Extraction Device
+Param/Value/lib_MISS_10BA1E4A=Terrazine Geyser
+Param/Value/lib_MISS_5190C34A=Harvesting Bot
+Param/Value/lib_MISS_694B36E1=Stetmann's Facility
+Param/Value/lib_MISS_A1F4163A=Terrazine Tank destroyed. 
+Param/Value/lib_MISS_B03F2903=Terrazine Geyser
+Param/Value/lib_MISS_BA21FFBF=Extraction Device
+Param/Value/lib_MISS_E06B46F6=Terrazine successfully harvested. 
+Param/Value/lib_MISS_EAAB6452=Terrazine harvesters destroyed. 
 Race/Name/@Amon=@Amon
 Race/Name/@AmonAlly=@Enemy
 Race/Name/@AmonPlayer=@AmonPlayer
@@ -13113,6 +13157,7 @@ Upgrade/Name/ExtraVespene=Extra Vespene
 Upgrade/Name/FASTBanelings=FAST Banelings
 Upgrade/Name/FB2=FB2
 Upgrade/Name/FastBuild=FastBuild
+Upgrade/Name/FastRevive=FastRevive
 Upgrade/Name/FenixArbiterDetection=Observation Protocol
 Upgrade/Name/FenixChampionCarrierBombers=Interdictors
 Upgrade/Name/FenixChampionClolarionCarrier=FenixChampionClolarionCarrier

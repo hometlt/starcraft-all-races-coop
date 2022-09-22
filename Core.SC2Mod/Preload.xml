@@ -94,6 +94,7 @@
 <Behavior id="MULETimedLife"/>
 <Behavior id="RawVespeneGeyserGas"/>
 <Behavior id="Detector11"/>
+<Behavior id="ProgressBar"/>
 <Behavior id="ZergGenericDeath"/>
 <Behavior id="ResourceStun"/>
 <Behavior id="SpawnLarvaInstant"/>
@@ -366,6 +367,7 @@
 <Effect id="ZeratulDarkTemplarRetreatBlinkTrigger"/>
 <Effect id="ZeratulMapWideStasisSet"/>
 <Effect id="ZeratulTradeTarget"/>
+<Effect id="COOPTerrazineTankTimeoutDeath"/>
 <Effect id="HybridNukeDamageSmall"/>
 <Effect id="HybridNukeDamage"/>
 <Light id="MutatorVeryDark"/>
@@ -600,7 +602,6 @@
 <Unit id="Zealot"/>
 <Unit id="Carrier"/>
 <Unit id="Observer"/>
-<Unit id="Immortal"/>
 <Unit id="Probe"/>
 <Unit id="Interceptor"/>
 <Unit id="Drone"/>
@@ -620,6 +621,8 @@
 <Unit id="InfestedCivilian"/>
 <Unit id="Scout"/>
 <Unit id="InfestedAbomination"/>
+<Unit id="Blocker4x4"/>
+<Unit id="ScienceFacility"/>
 <Unit id="ZergDropPodCreep"/>
 <Unit id="Scourge"/>
 <Unit id="HybridDestroyer"/>
@@ -648,7 +651,6 @@
 <Unit id="ZealotPurifier"/>
 <Unit id="PhoenixPurifier"/>
 <Unit id="CarrierAiur"/>
-<Unit id="TempestPurifier"/>
 <Unit id="ImmortalAiur"/>
 <Unit id="ColossusPurifier"/>
 <Unit id="HybridDominatorVoid"/>
@@ -660,13 +662,10 @@
 <Unit id="ZagaraVoidCoop"/>
 <Unit id="FenixAltarOfPsiStorms"/>
 <Unit id="SolarForge"/>
-<Unit id="HHWraith_SpawnerUnit"/>
-<Unit id="HHViking_SpawnerUnit"/>
-<Unit id="HHBattlecruiser_SpawnerUnit"/>
-<Unit id="HHRaven_SpawnerUnit"/>
 <Unit id="GhostAcademyNova"/>
 <Unit id="HHStarport"/>
 <Unit id="MutatorLaserDrill"/>
+<Unit id="TerrazineNodeOff"/>
 <Unit id="HHBomber"/>
 <Unit id="DehakaGlevigStructure"/>
 <Unit id="DehakaMurvarStructure"/>
@@ -684,15 +683,7 @@
 <Unit id="VikingMengskFighter"/>
 <Unit id="SiegeTankMengskSieged"/>
 <Unit id="BattlecruiserMengsk"/>
-<Unit id="Marine_BlackOpsSpawnerUnit"/>
-<Unit id="Marauder_BlackOpsSpawnerUnit"/>
-<Unit id="Ghost_BlackOpsSpawnerUnit"/>
-<Unit id="Goliath_BlackOpsSpawnerUnit"/>
-<Unit id="SiegeTank_BlackOpsSpawnerUnit"/>
-<Unit id="Hellbat_BlackOpsSpawnerUnit"/>
-<Unit id="Banshee_BlackOpsSpawnerUnit"/>
-<Unit id="Raven_BlackOpsSpawnerUnit"/>
-<Unit id="Liberator_BlackOpsSpawnerUnit"/>
+<Unit id="TerrazineHarvester"/>
 <Unit id="SICivilianStructure"/>
 <Unit id="SIInfestedTrooper"/>
 <Unit id="SIVolatileInfested"/>
@@ -781,6 +772,7 @@
 <Unit id="ZeratulArtifactPickup1"/>
 <Unit id="ZeratulArtifactPickup2"/>
 <Unit id="ZeratulArtifactPickup3"/>
+<Unit id="COOPTerrazineTank"/>
 <Upgrade id="MasteryRaynorResearchCost"/>
 <Upgrade id="MasteryFenixReducedResearchCosts"/>
 <User id="Mutators"/>

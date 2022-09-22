@@ -72,7 +72,27 @@
             <UserType value="MissionActors"/>
             <EditorColumn value="11"/>
         </Fields>
+        <Fields Id="ResourcesRadius" Type="Fixed" EditorColumn="14"/>
+        <Fields Id="SafetyRadius" Type="Fixed" EditorColumn="16"/>
+        <Fields Id="ClearResources" Type="Int"/>
+        <Fields Id="ResorucesMinerals" Type="Int"/>
+        <Fields Id="ResourcesVespene" Type="Int"/>
         <Instances Id="[Default]">
+            <Fixed Fixed="13">
+                <Field Id="SafetyRadius"/>
+            </Fixed>
+            <Fixed Fixed="15">
+                <Field Id="ResourcesRadius"/>
+            </Fixed>
+            <Int Int="1">
+                <Field Id="ClearResources"/>
+            </Int>
+            <Int Int="7">
+                <Field Id="ResorucesMinerals"/>
+            </Int>
+            <Int Int="2">
+                <Field Id="ResourcesVespene"/>
+            </Int>
             <String String="08:00:00">
                 <Field Id="Time"/>
             </String>
@@ -82,8 +102,15 @@
             <Unit Unit="NONE">
                 <Field Id="ExpansionBlockerTownHall"/>
             </Unit>
+            <User Type="MissionActors" Instance="[Default]">
+                <Field Id="AllyHeroActor"/>
+            </User>
         </Instances>
-        <Instances Id="CurrentMission"/>
+        <Instances Id="CurrentMission">
+            <Fixed Fixed="10">
+                <Field Id="ResourcesRadius"/>
+            </Fixed>
+        </Instances>
     </CUser>
     <CUser id="UpgradeLevel">
         <Instances Id="[Default]"/>
@@ -5301,10 +5328,14 @@
         <Fields Id="ExperienceDifficultyModifier" Type="Fixed" Count="6"/>
         <Fields Id="ExperienceBonusObjectiveModifier" Type="Int"/>
         <Fields Id="ExperienceLossMaxMultiplier" Type="Fixed"/>
+        <Fields Id="HeroReviveTime" Type="Fixed"/>
         <Instances Id="[Default]"/>
         <Instances Id="GameValues">
             <Fixed Fixed="0.5">
                 <Field Id="ExperienceLossMaxMultiplier"/>
+            </Fixed>
+            <Fixed Fixed="60">
+                <Field Id="HeroReviveTime"/>
             </Fixed>
             <Int Int="20000">
                 <Field Id="ExperienceToLevel" Index="1"/>
@@ -11158,12 +11189,20 @@
         <Fields Id="Required Count" Type="Int">
             <Flags index="Modifiable" value="1"/>
         </Fields>
+        <Fields Id="ScoreValueMax" Type="Int"/>
+        <Fields Id="ScoreDurationMax" Type="Fixed"/>
         <Instances Id="[Default]">
             <Fixed Fixed="1">
                 <Field Id="XPMultiplier"/>
             </Fixed>
+            <Fixed Fixed="30">
+                <Field Id="ScoreDurationMax"/>
+            </Fixed>
             <Int Int="-1">
                 <Field Id="Required Count"/>
+            </Int>
+            <Int Int="75000">
+                <Field Id="ScoreValueMax"/>
             </Int>
             <Text Text="UserData/MissionObjective/[Default]_FormatText">
                 <Field Id="FormatText"/>

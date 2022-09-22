@@ -641,7 +641,7 @@
             <User Type="CoopAIUnitCategories" Instance="Simulant">
                 <Field Id="CategoryUnits"/>
             </User>
-            <User Type="Commanders" Instance="ZergStetmann">
+            <User Type="Commanders" Instance="Stetmann">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -732,6 +732,9 @@
             <Unit Unit="Extractor">
                 <Field Id="UnitRefinery"/>
             </Unit>
+            <Unit Unit="Overlord">
+                <Field Id="UnitSupport"/>
+            </Unit>
             <User Type="Skins" Instance="[Default]">
                 <Field Id="Skins"/>
             </User>
@@ -741,7 +744,7 @@
             <User Type="Factions" Instance="Zerg">
                 <Field Id="ReplacementFaction"/>
             </User>
-            <User Type="Commanders" Instance="Zerg">
+            <User Type="Commanders" Instance="Abathur">
                 <Field Id="Commander"/>
             </User>
         </Instances>
@@ -779,6 +782,9 @@
             <Unit Unit="Extractor">
                 <Field Id="UnitRefinery"/>
             </Unit>
+            <Unit Unit="Overlord">
+                <Field Id="UnitSupport"/>
+            </Unit>
             <User Type="Factions" Instance="Zerg">
                 <Field Id="ReplacementFaction"/>
             </User>
@@ -788,7 +794,7 @@
             <User Type="CoopAIUnitCategories" Instance="ZergLeviathan">
                 <Field Id="CategoryUnits"/>
             </User>
-            <User Type="Commanders" Instance="Zerg">
+            <User Type="Commanders" Instance="Zagara">
                 <Field Id="Commander"/>
             </User>
         </Instances>
