@@ -6349,117 +6349,6 @@ void libCOMM_gt_CM_GPReminderAbilityUsed_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: CM_SoAShiftCheatFailSafeThermal
-//--------------------------------------------------------------------------------------------------
-bool libCOMM_gt_CM_SoAShiftCheatFailSafeThermal_Func (bool testConds, bool runActions) {
-    // Variable Declarations
-    unit lv_caster;
-    abilcmd lv_cmd;
-    string lv_abil;
-
-    // Automatic Variable Declarations
-    // Variable Initialization
-    lv_caster = libCOMI_gv_yY_GPCasterUnit[EventPlayer()];
-    lv_cmd = AbilityCommand("SOAThermalLanceActivate", 0);
-    lv_abil = AbilityCommandGetAbility(lv_cmd);
-
-    // Conditions
-    if (testConds) {
-        if (!((UnitAbilityGetCooldown(lv_caster, lv_abil, CatalogFieldValueGet(c_gameCatalogAbil, lv_abil, "Cost[" + IntToString(0) + "].Cooldown.Link", EventPlayer())) == 0.0))) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    UnitAbilitySpendExplicit(lv_caster, lv_cmd, c_spendLocationAll, 1.0, 1.0, 1.0, 1.0);
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMM_gt_CM_SoAShiftCheatFailSafeThermal_Init () {
-    libCOMM_gt_CM_SoAShiftCheatFailSafeThermal = TriggerCreate("libCOMM_gt_CM_SoAShiftCheatFailSafeThermal_Func");
-    TriggerAddEventPlayerEffectUsed(libCOMM_gt_CM_SoAShiftCheatFailSafeThermal, c_playerAny, "SOAThermalLanceSet");
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: CM_SoAShiftCheatFailSafeHHCallFleet
-//--------------------------------------------------------------------------------------------------
-bool libCOMM_gt_CM_SoAShiftCheatFailSafeHHCallFleet_Func (bool testConds, bool runActions) {
-    // Variable Declarations
-    unit lv_caster;
-    abilcmd lv_cmd;
-    string lv_abil;
-
-    // Automatic Variable Declarations
-    // Variable Initialization
-    lv_caster = libCOMI_gv_yY_GPCasterUnit[EventPlayer()];
-    lv_cmd = AbilityCommand("HornerAirFleetActivate", 0);
-    lv_abil = AbilityCommandGetAbility(lv_cmd);
-
-    // Conditions
-    if (testConds) {
-        if (!((UnitAbilityGetCooldown(lv_caster, lv_abil, CatalogFieldValueGet(c_gameCatalogAbil, lv_abil, "Cost[" + IntToString(0) + "].Cooldown.Link", EventPlayer())) == 0.0))) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    UnitAbilitySpendExplicit(lv_caster, lv_cmd, c_spendLocationAll, 1.0, 1.0, 1.0, 1.0);
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMM_gt_CM_SoAShiftCheatFailSafeHHCallFleet_Init () {
-    libCOMM_gt_CM_SoAShiftCheatFailSafeHHCallFleet = TriggerCreate("libCOMM_gt_CM_SoAShiftCheatFailSafeHHCallFleet_Func");
-    TriggerAddEventPlayerEffectUsed(libCOMM_gt_CM_SoAShiftCheatFailSafeHHCallFleet, c_playerAny, "HornerAirFleetInitialSet");
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: CM_SoAShiftCheatFailSafeNovaBombing
-//--------------------------------------------------------------------------------------------------
-bool libCOMM_gt_CM_SoAShiftCheatFailSafeNovaBombing_Func (bool testConds, bool runActions) {
-    // Variable Declarations
-    unit lv_caster;
-    abilcmd lv_cmd;
-    string lv_abil;
-
-    // Automatic Variable Declarations
-    // Variable Initialization
-    lv_caster = libCOMI_gv_yY_GPCasterUnit[EventPlayer()];
-    lv_cmd = AbilityCommand("NovaGriffinBombingRunActivate", 0);
-    lv_abil = AbilityCommandGetAbility(lv_cmd);
-
-    // Conditions
-    if (testConds) {
-        if (!((UnitAbilityGetCooldown(lv_caster, lv_abil, CatalogFieldValueGet(c_gameCatalogAbil, lv_abil, "Cost[" + IntToString(0) + "].Cooldown.Link", EventPlayer())) == 0.0))) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    UnitAbilitySpendExplicit(lv_caster, lv_cmd, c_spendLocationAll, 1.0, 1.0, 1.0, 1.0);
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMM_gt_CM_SoAShiftCheatFailSafeNovaBombing_Init () {
-    libCOMM_gt_CM_SoAShiftCheatFailSafeNovaBombing = TriggerCreate("libCOMM_gt_CM_SoAShiftCheatFailSafeNovaBombing_Func");
-    TriggerAddEventPlayerEffectUsed(libCOMM_gt_CM_SoAShiftCheatFailSafeNovaBombing, c_playerAny, "NovaGriffinBombingRunInitialSet");
-}
-
-//--------------------------------------------------------------------------------------------------
 // Trigger: AF_TopBar Notifications Enable/Disable
 //--------------------------------------------------------------------------------------------------
 bool libCOMM_gt_AF_TopBarNotificationsEnableDisable_Func (bool testConds, bool runActions) {
@@ -6676,43 +6565,6 @@ void libCOMM_gt_AF_MouseExitsTopBar_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: CM_SoAGravitonBombActivated
-//--------------------------------------------------------------------------------------------------
-bool libCOMM_gt_CM_SoAGravitonBombActivated_Func (bool testConds, bool runActions) {
-    // Variable Declarations
-    int lv_casterPlayer;
-
-    // Automatic Variable Declarations
-    // Variable Initialization
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    lv_casterPlayer = UnitGetOwner(EventUnit());
-    libNtve_gf_StoreUnitSelection(lv_casterPlayer, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection);
-    libCOMI_gv_cM_SoATargetingActivateAbility[lv_casterPlayer] = "SOAGravitonBombActivate";
-    libCOMI_gv_cM_SoATargetingExecuteCommand[lv_casterPlayer] = AbilityCommand("SOAGravitonBombExecute", 0);
-    libCOMI_gv_cM_SoATargetingCooldown[lv_casterPlayer] = "Abil/SOAGravitonBombActivate";
-    libCOMI_gv_cM_SoATargetingBehavior[lv_casterPlayer] = "SOAGravitonBombActivate";
-    libCOMI_gv_cM_SoATargetingModel[lv_casterPlayer] = "SOAGravitonBombTargetModel";
-    libCOMI_gv_cM_SoATargetingOrder[lv_casterPlayer] = OrderTargetingPoint(AbilityCommand("SOAGravitonBomb", 0), UnitGetPosition(libCOMI_gv_yY_GPCasterUnit[lv_casterPlayer]));
-    libCOMI_gv_cM_SoATargetingUnitType[lv_casterPlayer] = null;
-    libCOMI_gv_cM_SoATargetingChargesTotal[lv_casterPlayer] = 3;
-    libCOMI_gv_cM_SoATargetingInstructionsPrimary[lv_casterPlayer] = StringExternal("Param/Value/lib_COMM_19A5CDC1");
-    libCOMI_gv_cM_SoATargetingInstructionsSecondary[lv_casterPlayer] = null;
-    libCOMI_gf_CM_SoATargetingModeEnter(lv_casterPlayer);
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMM_gt_CM_SoAGravitonBombActivated_Init () {
-    libCOMM_gt_CM_SoAGravitonBombActivated = TriggerCreate("libCOMM_gt_CM_SoAGravitonBombActivated_Func");
-    TriggerAddEventUnitBehaviorChange(libCOMM_gt_CM_SoAGravitonBombActivated, null, "SOAGravitonBombActivate", c_unitBehaviorChangeActivate);
-}
-
-//--------------------------------------------------------------------------------------------------
 // Trigger: CC_ScoreArtanisKaraxOrbitalStrike
 //--------------------------------------------------------------------------------------------------
 bool libCOMM_gt_CC_ScoreArtanisKaraxOrbitalStrike_Func (bool testConds, bool runActions) {
@@ -6729,8 +6581,8 @@ bool libCOMM_gt_CC_ScoreArtanisKaraxOrbitalStrike_Func (bool testConds, bool run
         return true;
     }
 
-    libCOMM_gv_cC_ScoreArtanisKaraxSoADmg[EventUnitDamageSourcePlayer()] += EventUnitDamageAmount();
-    PlayerScoreValueSetFromInt(EventUnitDamageSourcePlayer(), "ArtanisSoADamage", FixedToInt(libCOMM_gv_cC_ScoreArtanisKaraxSoADmg[EventUnitDamageSourcePlayer()]));
+    libCOMM_gv_cC_ScoreTopPanelDamage[EventUnitDamageSourcePlayer()] += EventUnitDamageAmount();
+    PlayerScoreValueSetFromInt(EventUnitDamageSourcePlayer(), "ArtanisSoADamage", FixedToInt(libCOMM_gv_cC_ScoreTopPanelDamage[EventUnitDamageSourcePlayer()]));
     return true;
 }
 
@@ -6739,77 +6591,6 @@ void libCOMM_gt_CC_ScoreArtanisKaraxOrbitalStrike_Init () {
     libCOMM_gt_CC_ScoreArtanisKaraxOrbitalStrike = TriggerCreate("libCOMM_gt_CC_ScoreArtanisKaraxOrbitalStrike_Func");
     TriggerEnable(libCOMM_gt_CC_ScoreArtanisKaraxOrbitalStrike, false);
     TriggerAddEventUnitDamaged(libCOMM_gt_CC_ScoreArtanisKaraxOrbitalStrike, null, c_unitDamageTypeAny, c_unitDamageEither, "SOAOrbitalStrikeDamage");
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: CM_SoAOrbitalStrikeActivated
-//--------------------------------------------------------------------------------------------------
-bool libCOMM_gt_CM_SoAOrbitalStrikeActivated_Func (bool testConds, bool runActions) {
-    // Variable Declarations
-    int lv_casterPlayer;
-
-    // Automatic Variable Declarations
-    // Variable Initialization
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    lv_casterPlayer = UnitGetOwner(EventUnit());
-    libNtve_gf_StoreUnitSelection(lv_casterPlayer, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection);
-    libCOMI_gv_cM_SoATargetingActivateAbility[lv_casterPlayer] = "SOAOrbitalStrikeActivate";
-    libCOMI_gv_cM_SoATargetingExecuteCommand[lv_casterPlayer] = AbilityCommand("SOAOrbitalStrikeExecute", 0);
-    libCOMI_gv_cM_SoATargetingCooldown[lv_casterPlayer] = "Abil/SOAOrbitalStrikeActivate";
-    libCOMI_gv_cM_SoATargetingBehavior[lv_casterPlayer] = "SOAOrbitalStrikeActivate";
-    libCOMI_gv_cM_SoATargetingModel[lv_casterPlayer] = "SOAOrbitalStrikeTargetModel";
-    libCOMI_gv_cM_SoATargetingOrder[lv_casterPlayer] = OrderTargetingPoint(AbilityCommand("SOAOrbitalStrikeTargetingDummy", 0), UnitGetPosition(libCOMI_gv_yY_GPCasterUnit[lv_casterPlayer]));
-    libCOMI_gv_cM_SoATargetingUnitType[lv_casterPlayer] = null;
-    libCOMI_gv_cM_SoATargetingChargesTotal[lv_casterPlayer] = 5;
-    libCOMI_gv_cM_SoATargetingInstructionsPrimary[lv_casterPlayer] = StringExternal("Param/Value/lib_COMM_CC25E90D");
-    libCOMI_gv_cM_SoATargetingInstructionsSecondary[lv_casterPlayer] = null;
-    libCOMI_gf_CM_SoATargetingModeEnter(lv_casterPlayer);
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMM_gt_CM_SoAOrbitalStrikeActivated_Init () {
-    libCOMM_gt_CM_SoAOrbitalStrikeActivated = TriggerCreate("libCOMM_gt_CM_SoAOrbitalStrikeActivated_Func");
-    TriggerAddEventUnitBehaviorChange(libCOMM_gt_CM_SoAOrbitalStrikeActivated, null, "SOAOrbitalStrikeActivate", c_unitBehaviorChangeActivate);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: CM_SoAOrbitalStrikeActivatedKarax
-//--------------------------------------------------------------------------------------------------
-bool libCOMM_gt_CM_SoAOrbitalStrikeActivatedKarax_Func (bool testConds, bool runActions) {
-    // Variable Declarations
-    int lv_casterPlayer;
-
-    // Automatic Variable Declarations
-    // Variable Initialization
-
-    // Conditions
-    if (testConds) {
-        if (!((TechTreeUpgradeCount(EventPlayer(), "KaraxCommander", c_techCountCompleteOnly) == 1))) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    lv_casterPlayer = UnitGetOwner(EventPlayerEffectUsedUnit(c_effectUnitCaster));
-    libCOMI_gv_cM_SoATargetingOrder[lv_casterPlayer] = OrderTargetingPoint(AbilityCommand("SOAOrbitalStrikeKarax", 0), UnitGetPosition(libCOMI_gv_yY_GPCasterUnit[lv_casterPlayer]));
-    UISetTargetingOrder(PlayerGroupSingle(lv_casterPlayer), libCOMI_gv_yY_GPCasterGroup[lv_casterPlayer], libCOMI_gv_cM_SoATargetingOrder[lv_casterPlayer], false);
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMM_gt_CM_SoAOrbitalStrikeActivatedKarax_Init () {
-    libCOMM_gt_CM_SoAOrbitalStrikeActivatedKarax = TriggerCreate("libCOMM_gt_CM_SoAOrbitalStrikeActivatedKarax_Func");
-    TriggerAddEventPlayerEffectUsed(libCOMM_gt_CM_SoAOrbitalStrikeActivatedKarax, c_playerAny, "SOAOrbitalStrikeCP");
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -7417,7 +7198,7 @@ bool libCOMM_gt_CM_Alarak_Upgrade_Func (bool testConds, bool runActions) {
 
     // Conditions
     if (testConds) {
-        if (!((libCOMI_gf_GetPlayerCommanderGameLink(EventPlayer()) == "Alarak"))) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(EventPlayer()) == "Alarak"))) {
             return false;
         }
     }
@@ -7470,7 +7251,7 @@ bool libCOMM_gt_CM_Alarak_Sacrific_Scale_Func (bool testConds, bool runActions) 
 
     // Conditions
     if (testConds) {
-        if (!(((UnitIsAlive(EventUnit()) == true) && (libCOMI_gf_GetPlayerCommanderGameLink(UnitGetOwner(EventUnit())) == "Alarak") && (UnitHasBehavior2(EventUnit(), "AscendantSacrificeSelfBuff") == true)))) {
+        if (!(((UnitIsAlive(EventUnit()) == true) && (libCOMI_gf_ActiveCommanderForPlayer(UnitGetOwner(EventUnit())) == "Alarak") && (UnitHasBehavior2(EventUnit(), "AscendantSacrificeSelfBuff") == true)))) {
             return false;
         }
     }
@@ -8015,6 +7796,80 @@ void libCOMM_gt_CM_AchievementArtanisSolarBombardmentUsed_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Trigger: CM_SoAOrbitalStrikeActivated
+//--------------------------------------------------------------------------------------------------
+bool libCOMM_gt_CM_SoAOrbitalStrikeActivated_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_casterPlayer;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_casterPlayer = UnitGetOwner(EventUnit());
+    libNtve_gf_StoreUnitSelection(lv_casterPlayer, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection);
+    libCOMI_gv_cM_SoATargetingActivateAbility[lv_casterPlayer] = "SOAOrbitalStrikeActivate";
+    libCOMI_gv_cM_SoATargetingExecuteCommand[lv_casterPlayer] = AbilityCommand("SOAOrbitalStrikeExecute", 0);
+    libCOMI_gv_cM_SoATargetingCooldown[lv_casterPlayer] = "Abil/SOAOrbitalStrikeActivate";
+    libCOMI_gv_cM_SoATargetingBehavior[lv_casterPlayer] = "SOAOrbitalStrikeActivate";
+    libCOMI_gv_cM_SoATargetingModel[lv_casterPlayer] = "SOAOrbitalStrikeTargetModel";
+    libCOMI_gv_cM_SoATargetingOrder[lv_casterPlayer] = OrderTargetingPoint(AbilityCommand("SOAOrbitalStrikeTargetingDummy", 0), UnitGetPosition(libCOMI_gv_yY_GPCasterUnit[lv_casterPlayer]));
+    libCOMI_gv_cM_SoATargetingUnitType[lv_casterPlayer] = null;
+    libCOMI_gv_cM_SoATargetingChargesTotal[lv_casterPlayer] = 5;
+    libCOMI_gv_cM_SoATargetingInstructionsPrimary[lv_casterPlayer] = StringExternal("Param/Value/lib_COMM_CC25E90D");
+    libCOMI_gv_cM_SoATargetingInstructionsSecondary[lv_casterPlayer] = null;
+    libCOMI_gf_CM_SoATargetingModeEnter(lv_casterPlayer);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMM_gt_CM_SoAOrbitalStrikeActivated_Init () {
+    libCOMM_gt_CM_SoAOrbitalStrikeActivated = TriggerCreate("libCOMM_gt_CM_SoAOrbitalStrikeActivated_Func");
+    TriggerAddEventUnitBehaviorChange(libCOMM_gt_CM_SoAOrbitalStrikeActivated, null, "SOAOrbitalStrikeActivate", c_unitBehaviorChangeActivate);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: CM_SoAGravitonBombActivated
+//--------------------------------------------------------------------------------------------------
+bool libCOMM_gt_CM_SoAGravitonBombActivated_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_casterPlayer;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_casterPlayer = UnitGetOwner(EventUnit());
+    libNtve_gf_StoreUnitSelection(lv_casterPlayer, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection);
+    libCOMI_gv_cM_SoATargetingActivateAbility[lv_casterPlayer] = "SOAGravitonBombActivate";
+    libCOMI_gv_cM_SoATargetingExecuteCommand[lv_casterPlayer] = AbilityCommand("SOAGravitonBombExecute", 0);
+    libCOMI_gv_cM_SoATargetingCooldown[lv_casterPlayer] = "Abil/SOAGravitonBombActivate";
+    libCOMI_gv_cM_SoATargetingBehavior[lv_casterPlayer] = "SOAGravitonBombActivate";
+    libCOMI_gv_cM_SoATargetingModel[lv_casterPlayer] = "SOAGravitonBombTargetModel";
+    libCOMI_gv_cM_SoATargetingOrder[lv_casterPlayer] = OrderTargetingPoint(AbilityCommand("SOAGravitonBomb", 0), UnitGetPosition(libCOMI_gv_yY_GPCasterUnit[lv_casterPlayer]));
+    libCOMI_gv_cM_SoATargetingUnitType[lv_casterPlayer] = null;
+    libCOMI_gv_cM_SoATargetingChargesTotal[lv_casterPlayer] = 3;
+    libCOMI_gv_cM_SoATargetingInstructionsPrimary[lv_casterPlayer] = StringExternal("Param/Value/lib_COMM_19A5CDC1");
+    libCOMI_gv_cM_SoATargetingInstructionsSecondary[lv_casterPlayer] = null;
+    libCOMI_gf_CM_SoATargetingModeEnter(lv_casterPlayer);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMM_gt_CM_SoAGravitonBombActivated_Init () {
+    libCOMM_gt_CM_SoAGravitonBombActivated = TriggerCreate("libCOMM_gt_CM_SoAGravitonBombActivated_Func");
+    TriggerAddEventUnitBehaviorChange(libCOMM_gt_CM_SoAGravitonBombActivated, null, "SOAGravitonBombActivate", c_unitBehaviorChangeActivate);
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger: PM_SoAStrafeActivated
 //--------------------------------------------------------------------------------------------------
 bool libCOMM_gt_PM_SoAStrafeActivated_Func (bool testConds, bool runActions) {
@@ -8207,8 +8062,8 @@ bool libCOMM_gt_CC_ScoreArtanisBombardment_Func (bool testConds, bool runActions
         return true;
     }
 
-    libCOMM_gv_cC_ScoreArtanisKaraxSoADmg[EventUnitDamageSourcePlayer()] += EventUnitDamageAmount();
-    PlayerScoreValueSetFromInt(EventUnitDamageSourcePlayer(), "ArtanisSoADamage", FixedToInt(libCOMM_gv_cC_ScoreArtanisKaraxSoADmg[EventUnitDamageSourcePlayer()]));
+    libCOMM_gv_cC_ScoreTopPanelDamage[EventUnitDamageSourcePlayer()] += EventUnitDamageAmount();
+    PlayerScoreValueSetFromInt(EventUnitDamageSourcePlayer(), "ArtanisSoADamage", FixedToInt(libCOMM_gv_cC_ScoreTopPanelDamage[EventUnitDamageSourcePlayer()]));
     return true;
 }
 
@@ -8510,6 +8365,10 @@ bool libCOMM_gt_BanelingScourgeLocusts_Func (bool testConds, bool runActions) {
 
     // Conditions
     if (testConds) {
+        if (!((libNtve_gf_KillingPlayer() != 16))) {
+            return false;
+        }
+
         if (!((libNtve_gf_PlayerIsEnemy(lv_killingPlayer, UnitGetOwner(EventUnit()), libNtve_ge_PlayerRelation_Enemy) == true))) {
             return false;
         }
@@ -9013,7 +8872,7 @@ bool libCOMM_gt_CM_Abathur_BiomassRefund_Func (bool testConds, bool runActions) 
 
     // Conditions
     if (testConds) {
-        if (!(((UnitGetType(EventUnit()) != "Locust") && (libCOMI_gf_GetPlayerCommanderGameLink(lv_killedPlayer) == "Abathur") && (libCOMI_gf_ActiveCommanderForPlayer(lv_killedPlayer) == "Abathur") && ((UnitHasBehavior2(EventUnit(), "BiomassBuff1") == true) || (UnitHasBehavior2(EventUnit(), "BiomassBuff10") == true) || (UnitHasBehavior2(EventUnit(), "BiomassBuff100") == true)) && (UnitFilterMatch(EventUnit(), 1, UnitFilter(0, 0, (1 << c_targetFilterStructure) | (1 << c_targetFilterMissile), 0)) == true) && ((libNtve_gf_UnitIsHidden(EventUnit()) == false) || (EventUnitDamageEffect() == libCOMI_gv_cM_CargoDeathKillEffect)) && (lv_biomassRefundChance > 0.0)))) {
+        if (!(((UnitGetType(EventUnit()) != "Locust") && (libCOMI_gf_ActiveCommanderForPlayer(lv_killedPlayer) == "Abathur") && ((UnitHasBehavior2(EventUnit(), "BiomassBuff1") == true) || (UnitHasBehavior2(EventUnit(), "BiomassBuff10") == true) || (UnitHasBehavior2(EventUnit(), "BiomassBuff100") == true)) && (UnitFilterMatch(EventUnit(), 1, UnitFilter(0, 0, (1 << c_targetFilterStructure) | (1 << c_targetFilterMissile), 0)) == true) && ((libNtve_gf_UnitIsHidden(EventUnit()) == false) || (EventUnitDamageEffect() == libCOMI_gv_cM_CargoDeathKillEffect)) && (lv_biomassRefundChance > 0.0)))) {
             return false;
         }
     }
@@ -13255,7 +13114,7 @@ bool libCOMM_gt_CM_Fenix_NetworkedUnitDies_Func (bool testConds, bool runActions
 
     // Conditions
     if (testConds) {
-        if (!(((libCOMI_gf_GetPlayerCommanderGameLink(UnitGetOwner(EventUnit())) == "Fenix") && ((UnitGetType(EventUnit()) == libCOMM_gv_cM_Fenix_ChampionUnitReplaceType[1]) || (UnitGetType(EventUnit()) == libCOMM_gv_cM_Fenix_ChampionUnitReplaceType[2]) || (UnitGetType(EventUnit()) == libCOMM_gv_cM_Fenix_ChampionUnitReplaceType[3]) || (UnitGetType(EventUnit()) == libCOMM_gv_cM_Fenix_ChampionUnitReplaceType[4]) || (UnitGetType(EventUnit()) == libCOMM_gv_cM_Fenix_ChampionUnitReplaceType[5]) || (UnitGetType(EventUnit()) == libCOMM_gv_cM_Fenix_ChampionUnitReplaceType[6]))))) {
+        if (!(((libCOMI_gf_ActiveCommanderForPlayer(UnitGetOwner(EventUnit())) == "Fenix") && ((UnitGetType(EventUnit()) == libCOMM_gv_cM_Fenix_ChampionUnitReplaceType[1]) || (UnitGetType(EventUnit()) == libCOMM_gv_cM_Fenix_ChampionUnitReplaceType[2]) || (UnitGetType(EventUnit()) == libCOMM_gv_cM_Fenix_ChampionUnitReplaceType[3]) || (UnitGetType(EventUnit()) == libCOMM_gv_cM_Fenix_ChampionUnitReplaceType[4]) || (UnitGetType(EventUnit()) == libCOMM_gv_cM_Fenix_ChampionUnitReplaceType[5]) || (UnitGetType(EventUnit()) == libCOMM_gv_cM_Fenix_ChampionUnitReplaceType[6]))))) {
             return false;
         }
     }
@@ -13402,7 +13261,7 @@ bool libCOMM_gt_CM_Fenix_AvengingProtocol_BuffExpires_Func (bool testConds, bool
 
     // Conditions
     if (testConds) {
-        if (!(((libCOMI_gf_GetPlayerCommanderGameLink(EventPlayer()) == "Fenix")))) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(EventPlayer()) == "Fenix"))) {
             return false;
         }
     }
@@ -13834,6 +13693,43 @@ bool libCOMM_gt_DUT_CommanderHanHorner_Func (bool testConds, bool runActions) {
 void libCOMM_gt_DUT_CommanderHanHorner_Init () {
     libCOMM_gt_DUT_CommanderHanHorner = TriggerCreate("libCOMM_gt_DUT_CommanderHanHorner_Func");
     TriggerAddEventGeneric(libCOMM_gt_DUT_CommanderHanHorner, libCOMI_gv_iNIT_COOP_MISSION_STAGE2);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: CM_SoAShiftCheatFailSafeHHCallFleet
+//--------------------------------------------------------------------------------------------------
+bool libCOMM_gt_CM_SoAShiftCheatFailSafeHHCallFleet_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_caster;
+    abilcmd lv_cmd;
+    string lv_abil;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_caster = libCOMI_gv_yY_GPCasterUnit[EventPlayer()];
+    lv_cmd = AbilityCommand("HornerAirFleetActivate", 0);
+    lv_abil = AbilityCommandGetAbility(lv_cmd);
+
+    // Conditions
+    if (testConds) {
+        if (!((UnitAbilityGetCooldown(lv_caster, lv_abil, CatalogFieldValueGet(c_gameCatalogAbil, lv_abil, "Cost[" + IntToString(0) + "].Cooldown.Link", EventPlayer())) == 0.0))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    UnitAbilitySpendExplicit(lv_caster, lv_cmd, c_spendLocationAll, 1.0, 1.0, 1.0, 1.0);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMM_gt_CM_SoAShiftCheatFailSafeHHCallFleet_Init () {
+    libCOMM_gt_CM_SoAShiftCheatFailSafeHHCallFleet = TriggerCreate("libCOMM_gt_CM_SoAShiftCheatFailSafeHHCallFleet_Func");
+    TriggerAddEventPlayerEffectUsed(libCOMM_gt_CM_SoAShiftCheatFailSafeHHCallFleet, c_playerAny, "HornerAirFleetInitialSet");
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -14288,7 +14184,7 @@ bool libCOMM_gt_CM_Horner_DoubleSupplyStun_Func (bool testConds, bool runActions
 
     // Conditions
     if (testConds) {
-        if (!((libCOMI_gf_GetPlayerCommanderGameLink(UnitGetOwner(EventUnitProgressUnit())) == "Horner"))) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(UnitGetOwner(EventUnitProgressUnit())) == "Horner"))) {
             return false;
         }
 
@@ -14734,7 +14630,7 @@ bool libCOMM_gt_CM_Horner_SupplyAchievement_Func (bool testConds, bool runAction
 
     // Conditions
     if (testConds) {
-        if (!((libCOMI_gf_GetPlayerCommanderGameLink(EventPlayer()) == "Horner"))) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(EventPlayer()) == "Horner"))) {
             return false;
         }
     }
@@ -15430,6 +15326,77 @@ void libCOMM_gt_DUT_CommanderKarax_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Trigger: CM_SoAShiftCheatFailSafeThermal
+//--------------------------------------------------------------------------------------------------
+bool libCOMM_gt_CM_SoAShiftCheatFailSafeThermal_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_caster;
+    abilcmd lv_cmd;
+    string lv_abil;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_caster = libCOMI_gv_yY_GPCasterUnit[EventPlayer()];
+    lv_cmd = AbilityCommand("SOAThermalLanceActivate", 0);
+    lv_abil = AbilityCommandGetAbility(lv_cmd);
+
+    // Conditions
+    if (testConds) {
+        if (!((UnitAbilityGetCooldown(lv_caster, lv_abil, CatalogFieldValueGet(c_gameCatalogAbil, lv_abil, "Cost[" + IntToString(0) + "].Cooldown.Link", EventPlayer())) == 0.0))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    UnitAbilitySpendExplicit(lv_caster, lv_cmd, c_spendLocationAll, 1.0, 1.0, 1.0, 1.0);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMM_gt_CM_SoAShiftCheatFailSafeThermal_Init () {
+    libCOMM_gt_CM_SoAShiftCheatFailSafeThermal = TriggerCreate("libCOMM_gt_CM_SoAShiftCheatFailSafeThermal_Func");
+    TriggerAddEventPlayerEffectUsed(libCOMM_gt_CM_SoAShiftCheatFailSafeThermal, c_playerAny, "SOAThermalLanceSet");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: CM_SoAOrbitalStrikeActivatedKarax
+//--------------------------------------------------------------------------------------------------
+bool libCOMM_gt_CM_SoAOrbitalStrikeActivatedKarax_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_casterPlayer;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Conditions
+    if (testConds) {
+        if (!((TechTreeUpgradeCount(EventPlayer(), "KaraxCommander", c_techCountCompleteOnly) == 1))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_casterPlayer = UnitGetOwner(EventPlayerEffectUsedUnit(c_effectUnitCaster));
+    libCOMI_gv_cM_SoATargetingOrder[lv_casterPlayer] = OrderTargetingPoint(AbilityCommand("SOAOrbitalStrikeKarax", 0), UnitGetPosition(libCOMI_gv_yY_GPCasterUnit[lv_casterPlayer]));
+    UISetTargetingOrder(PlayerGroupSingle(lv_casterPlayer), libCOMI_gv_yY_GPCasterGroup[lv_casterPlayer], libCOMI_gv_cM_SoATargetingOrder[lv_casterPlayer], false);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMM_gt_CM_SoAOrbitalStrikeActivatedKarax_Init () {
+    libCOMM_gt_CM_SoAOrbitalStrikeActivatedKarax = TriggerCreate("libCOMM_gt_CM_SoAOrbitalStrikeActivatedKarax_Func");
+    TriggerAddEventPlayerEffectUsed(libCOMM_gt_CM_SoAOrbitalStrikeActivatedKarax, c_playerAny, "SOAOrbitalStrikeCP");
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger: CM_SoAThermalLanceActivated
 //--------------------------------------------------------------------------------------------------
 bool libCOMM_gt_CM_SoAThermalLanceActivated_Func (bool testConds, bool runActions) {
@@ -15649,8 +15616,8 @@ bool libCOMM_gt_CC_ScoreKaraxSolarLance_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    libCOMM_gv_cC_ScoreArtanisKaraxSoADmg[EventUnitDamageSourcePlayer()] += EventUnitDamageAmount();
-    PlayerScoreValueSetFromInt(EventUnitDamageSourcePlayer(), "ArtanisSoADamage", FixedToInt(libCOMM_gv_cC_ScoreArtanisKaraxSoADmg[EventUnitDamageSourcePlayer()]));
+    libCOMM_gv_cC_ScoreTopPanelDamage[EventUnitDamageSourcePlayer()] += EventUnitDamageAmount();
+    PlayerScoreValueSetFromInt(EventUnitDamageSourcePlayer(), "ArtanisSoADamage", FixedToInt(libCOMM_gv_cC_ScoreTopPanelDamage[EventUnitDamageSourcePlayer()]));
     return true;
 }
 
@@ -15679,8 +15646,8 @@ bool libCOMM_gt_CC_ScoreKaraxPurifierBeam_Func (bool testConds, bool runActions)
         return true;
     }
 
-    libCOMM_gv_cC_ScoreArtanisKaraxSoADmg[EventUnitDamageSourcePlayer()] += EventUnitDamageAmount();
-    PlayerScoreValueSetFromInt(EventUnitDamageSourcePlayer(), "ArtanisSoADamage", FixedToInt(libCOMM_gv_cC_ScoreArtanisKaraxSoADmg[EventUnitDamageSourcePlayer()]));
+    libCOMM_gv_cC_ScoreTopPanelDamage[EventUnitDamageSourcePlayer()] += EventUnitDamageAmount();
+    PlayerScoreValueSetFromInt(EventUnitDamageSourcePlayer(), "ArtanisSoADamage", FixedToInt(libCOMM_gv_cC_ScoreTopPanelDamage[EventUnitDamageSourcePlayer()]));
     return true;
 }
 
@@ -17029,7 +16996,7 @@ bool libCOMM_gt_CC_ScoreMengskDamage_Func (bool testConds, bool runActions) {
             return false;
         }
 
-        if (!((libCOMI_gf_GetPlayerCommanderGameLink(EventUnitDamageSourcePlayer()) == "Mengsk"))) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(EventUnitDamageSourcePlayer()) == "Mengsk"))) {
             return false;
         }
     }
@@ -17103,11 +17070,11 @@ bool libCOMM_gt_CM_Mengsk_TopBarKills_Func (bool testConds, bool runActions) {
             return false;
         }
 
-        if (!((PlayerGroupHasPlayer(libCOMI_gf_GetAlliedCommandersPlayersCopy(), lv_killingplayer) == true))) {
+        if (!((PlayerGroupHasPlayer(libCOMI_gf_GetAlliedCommandersPlayers(), lv_killingplayer) == true))) {
             return false;
         }
 
-        if (!((libCOMI_gf_GetPlayerCommanderGameLink(lv_killingplayer) == "Mengsk"))) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(lv_killingplayer) == "Mengsk"))) {
             return false;
         }
 
@@ -17382,7 +17349,7 @@ bool libCOMM_gt_CM_Mengsk_RegisterVeteranUnit_Func (bool testConds, bool runActi
     // Automatic Variable Declarations
     // Conditions
     if (testConds) {
-        if (!((libCOMI_gf_GetPlayerCommanderGameLink(UnitGetOwner(EventPlayerEffectUsedUnit(c_effectUnitCaster))) == "Mengsk"))) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(UnitGetOwner(EventPlayerEffectUsedUnit(c_effectUnitCaster))) == "Mengsk"))) {
             return false;
         }
     }
@@ -17421,7 +17388,7 @@ bool libCOMM_gt_CM_Mengsk_RemoveVeteranUnit_Func (bool testConds, bool runAction
 
     // Conditions
     if (testConds) {
-        if (!((libCOMI_gf_GetPlayerCommanderGameLink(UnitGetOwner(EventPlayerEffectUsedUnit(c_effectUnitCaster))) == "Mengsk"))) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(UnitGetOwner(EventPlayerEffectUsedUnit(c_effectUnitCaster))) == "Mengsk"))) {
             return false;
         }
     }
@@ -17454,7 +17421,7 @@ bool libCOMM_gt_CM_Mengsk_VeteranDies_Func (bool testConds, bool runActions) {
     // Automatic Variable Declarations
     // Conditions
     if (testConds) {
-        if (!((libCOMI_gf_GetPlayerCommanderGameLink(UnitGetOwner(EventUnit())) == "Mengsk"))) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(UnitGetOwner(EventUnit())) == "Mengsk"))) {
             return false;
         }
 
@@ -17494,7 +17461,7 @@ bool libCOMM_gt_CM_Mengsk_VeteranDing_Func (bool testConds, bool runActions) {
 
     // Conditions
     if (testConds) {
-        if (!((libCOMI_gf_GetPlayerCommanderGameLink(UnitGetOwner(EventPlayerEffectUsedUnit(c_effectUnitCaster))) == "Mengsk"))) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(UnitGetOwner(EventPlayerEffectUsedUnit(c_effectUnitCaster))) == "Mengsk"))) {
             return false;
         }
     }
@@ -17525,7 +17492,7 @@ bool libCOMM_gt_CM_Mengsk_RegisterPropagandaUnit_Func (bool testConds, bool runA
     // Automatic Variable Declarations
     // Conditions
     if (testConds) {
-        if (!((libCOMI_gf_GetPlayerCommanderGameLink(UnitGetOwner(EventUnit())) == "Mengsk"))) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(UnitGetOwner(EventUnit())) == "Mengsk"))) {
             return false;
         }
 
@@ -17559,7 +17526,7 @@ bool libCOMM_gt_CM_Mengsk_RemovePropagandaUnit_Func (bool testConds, bool runAct
     // Automatic Variable Declarations
     // Conditions
     if (testConds) {
-        if (!((libCOMI_gf_GetPlayerCommanderGameLink(UnitGetOwner(EventUnit())) == "Mengsk"))) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(UnitGetOwner(EventUnit())) == "Mengsk"))) {
             return false;
         }
 
@@ -17597,7 +17564,7 @@ bool libCOMM_gt_CM_Mengsk_PropagandaUpgraded_Func (bool testConds, bool runActio
     // Automatic Variable Declarations
     // Conditions
     if (testConds) {
-        if (!((libCOMI_gf_GetPlayerCommanderGameLink(EventPlayer()) == "Mengsk"))) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(EventPlayer()) == "Mengsk"))) {
             return false;
         }
 
@@ -17740,7 +17707,7 @@ bool libCOMM_gt_CM_Mengsk_MedivacAirlift_Func (bool testConds, bool runActions) 
 
     // Conditions
     if (testConds) {
-        if (!((libCOMI_gf_GetPlayerCommanderGameLink(UnitGetOwner(EventPlayerEffectUsedUnit(c_effectUnitCaster))) == "Mengsk"))) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(UnitGetOwner(EventPlayerEffectUsedUnit(c_effectUnitCaster))) == "Mengsk"))) {
             return false;
         }
     }
@@ -17801,7 +17768,7 @@ bool libCOMM_gt_CM_Mengsk_MedivacAirliftDing_Func (bool testConds, bool runActio
             return false;
         }
 
-        if (!((libCOMI_gf_GetPlayerCommanderGameLink(UnitGetOwner(EventPlayerEffectUsedUnit(c_effectUnitCaster))) == "Mengsk"))) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(UnitGetOwner(EventPlayerEffectUsedUnit(c_effectUnitCaster))) == "Mengsk"))) {
             return false;
         }
     }
@@ -17942,7 +17909,7 @@ bool libCOMM_gt_CM_Mengsk_WeaponPickupRegister_Func (bool testConds, bool runAct
 
     // Conditions
     if (testConds) {
-        if (!((libCOMI_gf_GetPlayerCommanderGameLink(UnitGetOwner(lv_registrant)) == "Mengsk"))) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(UnitGetOwner(lv_registrant)) == "Mengsk"))) {
             return false;
         }
     }
@@ -17976,7 +17943,7 @@ bool libCOMM_gt_CM_Mengsk_WeaponPickerUpperRegister_Func (bool testConds, bool r
 
     // Conditions
     if (testConds) {
-        if (!((libCOMI_gf_GetPlayerCommanderGameLink(UnitGetOwner(EventPlayerEffectUsedUnit(c_effectUnitCaster))) == "Mengsk"))) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(UnitGetOwner(EventPlayerEffectUsedUnit(c_effectUnitCaster))) == "Mengsk"))) {
             return false;
         }
     }
@@ -18010,7 +17977,7 @@ bool libCOMM_gt_CM_Mengsk_WeaponPickerUpperUnregister_Func (bool testConds, bool
 
     // Conditions
     if (testConds) {
-        if (!((libCOMI_gf_GetPlayerCommanderGameLink(UnitGetOwner(EventPlayerEffectUsedUnit(c_effectUnitCaster))) == "Mengsk"))) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(UnitGetOwner(EventPlayerEffectUsedUnit(c_effectUnitCaster))) == "Mengsk"))) {
             return false;
         }
     }
@@ -18102,7 +18069,7 @@ bool libCOMM_gt_CM_Mengsk_ZergSeekDestroy_Func (bool testConds, bool runActions)
     // Automatic Variable Declarations
     // Conditions
     if (testConds) {
-        if (!((libCOMI_gf_GetPlayerCommanderGameLink(UnitGetOwner(EventPlayerEffectUsedUnit(c_effectUnitCaster))) == "Mengsk"))) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(UnitGetOwner(EventPlayerEffectUsedUnit(c_effectUnitCaster))) == "Mengsk"))) {
             return false;
         }
     }
@@ -18130,7 +18097,7 @@ bool libCOMM_gt_CM_Mengsk_ZerglingMengskSpawn_Func (bool testConds, bool runActi
     // Automatic Variable Declarations
     // Conditions
     if (testConds) {
-        if (!((libCOMI_gf_GetPlayerCommanderGameLink(UnitGetOwner(EventPlayerEffectUsedUnit(c_effectUnitCaster))) == "Mengsk"))) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(UnitGetOwner(EventPlayerEffectUsedUnit(c_effectUnitCaster))) == "Mengsk"))) {
             return false;
         }
     }
@@ -18158,7 +18125,7 @@ bool libCOMM_gt_CM_Mengsk_HydraliskMengskSpawn_Func (bool testConds, bool runAct
     // Automatic Variable Declarations
     // Conditions
     if (testConds) {
-        if (!((libCOMI_gf_GetPlayerCommanderGameLink(UnitGetOwner(EventPlayerEffectUsedUnit(c_effectUnitCaster))) == "Mengsk"))) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(UnitGetOwner(EventPlayerEffectUsedUnit(c_effectUnitCaster))) == "Mengsk"))) {
             return false;
         }
     }
@@ -18186,7 +18153,7 @@ bool libCOMM_gt_CM_Mengsk_MutaliskMengskSpawn_Func (bool testConds, bool runActi
     // Automatic Variable Declarations
     // Conditions
     if (testConds) {
-        if (!((libCOMI_gf_GetPlayerCommanderGameLink(UnitGetOwner(EventPlayerEffectUsedUnit(c_effectUnitCaster))) == "Mengsk"))) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(UnitGetOwner(EventPlayerEffectUsedUnit(c_effectUnitCaster))) == "Mengsk"))) {
             return false;
         }
     }
@@ -18214,7 +18181,7 @@ bool libCOMM_gt_CM_Mengsk_UltraliskMengskSpawn_Func (bool testConds, bool runAct
     // Automatic Variable Declarations
     // Conditions
     if (testConds) {
-        if (!((libCOMI_gf_GetPlayerCommanderGameLink(UnitGetOwner(EventPlayerEffectUsedUnit(c_effectUnitCaster))) == "Mengsk"))) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(UnitGetOwner(EventPlayerEffectUsedUnit(c_effectUnitCaster))) == "Mengsk"))) {
             return false;
         }
     }
@@ -18376,6 +18343,43 @@ bool libCOMM_gt_DUT_CommanderNova_Func (bool testConds, bool runActions) {
 void libCOMM_gt_DUT_CommanderNova_Init () {
     libCOMM_gt_DUT_CommanderNova = TriggerCreate("libCOMM_gt_DUT_CommanderNova_Func");
     TriggerAddEventGeneric(libCOMM_gt_DUT_CommanderNova, libCOMI_gv_iNIT_COOP_MISSION_STAGE2);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: CM_SoAShiftCheatFailSafeNovaBombing
+//--------------------------------------------------------------------------------------------------
+bool libCOMM_gt_CM_SoAShiftCheatFailSafeNovaBombing_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_caster;
+    abilcmd lv_cmd;
+    string lv_abil;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_caster = libCOMI_gv_yY_GPCasterUnit[EventPlayer()];
+    lv_cmd = AbilityCommand("NovaGriffinBombingRunActivate", 0);
+    lv_abil = AbilityCommandGetAbility(lv_cmd);
+
+    // Conditions
+    if (testConds) {
+        if (!((UnitAbilityGetCooldown(lv_caster, lv_abil, CatalogFieldValueGet(c_gameCatalogAbil, lv_abil, "Cost[" + IntToString(0) + "].Cooldown.Link", EventPlayer())) == 0.0))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    UnitAbilitySpendExplicit(lv_caster, lv_cmd, c_spendLocationAll, 1.0, 1.0, 1.0, 1.0);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMM_gt_CM_SoAShiftCheatFailSafeNovaBombing_Init () {
+    libCOMM_gt_CM_SoAShiftCheatFailSafeNovaBombing = TriggerCreate("libCOMM_gt_CM_SoAShiftCheatFailSafeNovaBombing_Func");
+    TriggerAddEventPlayerEffectUsed(libCOMM_gt_CM_SoAShiftCheatFailSafeNovaBombing, c_playerAny, "NovaGriffinBombingRunInitialSet");
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -18745,7 +18749,7 @@ bool libCOMM_gt_NovaUnitNames_KillCountUpdate_Func (bool testConds, bool runActi
             return false;
         }
 
-        if (!(((libCOMI_gf_GetPlayerCommanderGameLink(libNtve_gf_KillingPlayer()) == "Nova") || (libCOMI_gf_GetPlayerCommanderGameLink(libNtve_gf_KillingPlayer()) == "Horner")))) {
+        if (!(((libCOMI_gf_ActiveCommanderForPlayer(libNtve_gf_KillingPlayer()) == "Nova") || (libCOMI_gf_ActiveCommanderForPlayer(libNtve_gf_KillingPlayer()) == "Horner")))) {
             return false;
         }
     }
@@ -18785,7 +18789,7 @@ bool libCOMM_gt_NovaUnitNames_KillCountUpdateLaserTurret_Func (bool testConds, b
             return false;
         }
 
-        if (!((libCOMI_gf_GetPlayerCommanderGameLink(libNtve_gf_KillingPlayer()) == "Nova"))) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(libNtve_gf_KillingPlayer()) == "Nova"))) {
             return false;
         }
 
@@ -19941,7 +19945,7 @@ bool libCOMM_gt_CM_Stetmann_GaryTransformAchievement_Func (bool testConds, bool 
 
     // Conditions
     if (testConds) {
-        if (!((libCOMI_gf_GetPlayerCommanderGameLink(lv_owner) == "Stetmann"))) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(lv_owner) == "Stetmann"))) {
             return false;
         }
 
@@ -19985,7 +19989,7 @@ bool libCOMM_gt_CM_Stetmann_StetelliteOverchargeAllyAchievement_Func (bool testC
 
     // Conditions
     if (testConds) {
-        if (!((libCOMI_gf_GetPlayerCommanderGameLink(lv_ownercaster) == "Stetmann"))) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(lv_ownercaster) == "Stetmann"))) {
             return false;
         }
 
@@ -20107,7 +20111,7 @@ bool libCOMM_gt_CM_Stetmann_PowerFieldToggle_Func (bool testConds, bool runActio
 
     // Conditions
     if (testConds) {
-        if (!((libCOMI_gf_GetPlayerCommanderGameLink(EventPlayer()) == "Stetmann"))) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(EventPlayer()) == "Stetmann"))) {
             return false;
         }
     }
@@ -20321,7 +20325,7 @@ bool libCOMM_gt_CM_Stetmann_GaryUpgrade_Func (bool testConds, bool runActions) {
 
     // Conditions
     if (testConds) {
-        if (!((libCOMI_gf_GetPlayerCommanderGameLink(lv_owner) == "Stetmann"))) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(lv_owner) == "Stetmann"))) {
             return false;
         }
     }
@@ -23421,7 +23425,7 @@ bool libCOMM_gt_CU_TychusSquadSpawnCheat_Func (bool testConds, bool runActions) 
             return false;
         }
 
-        if (!((libCOMI_gf_GetPlayerCommanderGameLink(EventPlayer()) == "Tychus"))) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(EventPlayer()) == "Tychus"))) {
             return false;
         }
     }
@@ -23937,7 +23941,7 @@ bool libCOMM_gt__CM_TychusStructureEventHook_Func (bool testConds, bool runActio
 
     // Conditions
     if (testConds) {
-        if (!((libCOMI_gf_GetPlayerCommanderGameLink(EventPlayerEffectUsedUnitOwner(c_effectPlayerCaster)) == "Tychus"))) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(EventPlayerEffectUsedUnitOwner(c_effectPlayerCaster)) == "Tychus"))) {
             return false;
         }
     }
@@ -25200,7 +25204,7 @@ bool libCOMM_gt_CM_Tychus_HealAchievement_Func (bool testConds, bool runActions)
 
     // Conditions
     if (testConds) {
-        if (!((libCOMI_gf_GetPlayerCommanderGameLink(EventUnitHealLaunchPlayer()) == "Tychus"))) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(EventUnitHealLaunchPlayer()) == "Tychus"))) {
             return false;
         }
 
@@ -25271,7 +25275,7 @@ bool libCOMM_gt_CM_Tychus_TriUnitSpeed_Upgrade_Func (bool testConds, bool runAct
 
     // Conditions
     if (testConds) {
-        if (!((libCOMI_gf_GetPlayerCommanderGameLink(EventPlayer()) == "Tychus"))) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(EventPlayer()) == "Tychus"))) {
             return false;
         }
 
@@ -25309,7 +25313,7 @@ bool libCOMM_gt_CM_Tychus_TriUnitHealth_Upgrade_Func (bool testConds, bool runAc
 
     // Conditions
     if (testConds) {
-        if (!((libCOMI_gf_GetPlayerCommanderGameLink(UnitGetOwner(EventUnit())) == "Tychus"))) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(UnitGetOwner(EventUnit())) == "Tychus"))) {
             return false;
         }
 
@@ -25425,7 +25429,7 @@ bool libCOMM_gt_CM_Tychus_Hero_Charge_Timing_Func (bool testConds, bool runActio
     while (true) {
         lv_player = PlayerGroupNextPlayer(auto291C9C4B_g, lv_player);
         if (lv_player < 0) { break; }
-        if ((libCOMI_gf_GetPlayerCommanderGameLink(lv_player) == "Tychus")) {
+        if ((libCOMI_gf_ActiveCommanderForPlayer(lv_player) == "Tychus")) {
             lv_heroCooldown = libCOMM_gf_CalculateTychusRecruitmentChargeCooldown(lv_player);
             libCOMM_gf_ApplyTychusMaxChargesPerk(lv_player);
         }
@@ -26681,7 +26685,7 @@ bool libCOMM_gt_CM_ZeratulArtifactTriggerUpgrades_Func (bool testConds, bool run
 
     // Conditions
     if (testConds) {
-        if (!((libCOMI_gf_GetPlayerCommanderGameLink(EventPlayer()) == "Zeratul"))) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(EventPlayer()) == "Zeratul"))) {
             return false;
         }
 
@@ -27634,7 +27638,7 @@ bool libCOMM_gt_CM_ZeratulProphecyEventArtifactUsed_Func (bool testConds, bool r
 
     // Conditions
     if (testConds) {
-        if (!((libCOMI_gf_GetPlayerCommanderGameLink(EventPlayer()) == "Zeratul"))) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(EventPlayer()) == "Zeratul"))) {
             return false;
         }
     }
@@ -27683,7 +27687,7 @@ bool libCOMM_gt_CM_ZeratulProphecyEventProphecyCast_Func (bool testConds, bool r
 
     // Conditions
     if (testConds) {
-        if (!((libCOMI_gf_GetPlayerCommanderGameLink(UnitGetOwner(EventUnit())) == "Zeratul"))) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(UnitGetOwner(EventUnit())) == "Zeratul"))) {
             return false;
         }
 
@@ -28629,7 +28633,7 @@ bool libCOMM_gt_CM_Zeratul_DevolveKills_Func (bool testConds, bool runActions) {
             return false;
         }
 
-        if (!((libCOMI_gf_GetPlayerCommanderGameLink(UnitGetOwner(libNtve_gf_KillingUnit())) == "Zeratul"))) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(UnitGetOwner(libNtve_gf_KillingUnit())) == "Zeratul"))) {
             return false;
         }
 
@@ -28661,7 +28665,7 @@ bool libCOMM_gt_CM_Zeratul_ArtifactRush_Func (bool testConds, bool runActions) {
     // Automatic Variable Declarations
     // Conditions
     if (testConds) {
-        if (!((libCOMI_gf_GetPlayerCommanderGameLink(EventPlayer()) == "Zeratul"))) {
+        if (!((libCOMI_gf_ActiveCommanderForPlayer(EventPlayer()) == "Zeratul"))) {
             return false;
         }
 
@@ -29182,17 +29186,11 @@ void libCOMM_gt_AegisCreated_Init () {
 
 void libCOMM_InitTriggers () {
     libCOMM_gt_CM_GPReminderAbilityUsed_Init();
-    libCOMM_gt_CM_SoAShiftCheatFailSafeThermal_Init();
-    libCOMM_gt_CM_SoAShiftCheatFailSafeHHCallFleet_Init();
-    libCOMM_gt_CM_SoAShiftCheatFailSafeNovaBombing_Init();
     libCOMM_gt_AF_TopBarNotificationsEnableDisable_Init();
     libCOMM_gt_AF_TopBarClicked_Init();
     libCOMM_gt_AF_MouseEntersTopBar_Init();
     libCOMM_gt_AF_MouseExitsTopBar_Init();
-    libCOMM_gt_CM_SoAGravitonBombActivated_Init();
     libCOMM_gt_CC_ScoreArtanisKaraxOrbitalStrike_Init();
-    libCOMM_gt_CM_SoAOrbitalStrikeActivated_Init();
-    libCOMM_gt_CM_SoAOrbitalStrikeActivatedKarax_Init();
     libCOMM_gt_DUT_CommanderAlarak_Init();
     libCOMM_gt_ShieldColorUnitCreateAlarak_Init();
     libCOMM_gt_ShieldColorUnitMorphAlarak_Init();
@@ -29223,6 +29221,8 @@ void libCOMM_InitTriggers () {
     libCOMM_gt_CM_Alarak_EmpowerUpdate_Init();
     libCOMM_gt_DUT_CommanderArtanis_Init();
     libCOMM_gt_CM_AchievementArtanisSolarBombardmentUsed_Init();
+    libCOMM_gt_CM_SoAOrbitalStrikeActivated_Init();
+    libCOMM_gt_CM_SoAGravitonBombActivated_Init();
     libCOMM_gt_PM_SoAStrafeActivated_Init();
     libCOMM_gt_PM_SoASuperShieldsActivated_Init();
     libCOMM_gt_CM_AbilityTransmissionArtanisSuperShields_Init();
@@ -29355,6 +29355,7 @@ void libCOMM_InitTriggers () {
     libCOMM_gt_CM_AchievementFenixChampionAllExist_Init();
     libCOMM_gt_CM_Fenix_SentryNullShield_Init();
     libCOMM_gt_DUT_CommanderHanHorner_Init();
+    libCOMM_gt_CM_SoAShiftCheatFailSafeHHCallFleet_Init();
     libCOMM_gt_CM_AbilityTransmissionHornerFleet_Init();
     libCOMM_gt_CM_AbilityTransmissionHornerStation_Init();
     libCOMM_gt_CM_UnitTransmissionHornerBomberBuild_Init();
@@ -29392,6 +29393,8 @@ void libCOMM_InitTriggers () {
     libCOMM_gt_CM_Horner_VikingTacticalJumpMorph_Init();
     libCOMM_gt_CM_Horner_MagMines_Init();
     libCOMM_gt_DUT_CommanderKarax_Init();
+    libCOMM_gt_CM_SoAShiftCheatFailSafeThermal_Init();
+    libCOMM_gt_CM_SoAOrbitalStrikeActivatedKarax_Init();
     libCOMM_gt_CM_SoAThermalLanceActivated_Init();
     libCOMM_gt_PM_SoATargetingPurifierBeamOn_Init();
     libCOMM_gt_PM_SoATargetingPurifierBeamOff_Init();
@@ -29469,6 +29472,7 @@ void libCOMM_InitTriggers () {
     libCOMM_gt_CM_Mengsk_BunkerDepotDropFillCargo_Init();
     libCOMM_gt_CM_Mengsk_DirtyBombSweetener_Init();
     libCOMM_gt_DUT_CommanderNova_Init();
+    libCOMM_gt_CM_SoAShiftCheatFailSafeNovaBombing_Init();
     libCOMM_gt_CM_NovaRespawnBuyBackCostAdjustment_Init();
     libCOMM_gt_CM_NovaRespawnBuyBack_Init();
     libCOMM_gt_CM_AbilityTransmissionNovaBombingRun_Init();

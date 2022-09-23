@@ -596,7 +596,6 @@ bool libMISS_gt_BEEscortStart_Func (bool testConds, bool runActions) {
     autoF9DDA3D3_saved_task   = libCOMI_gv_task;
     autoF9DDA3D3_saved_parent = libCOMI_gv_parent;
     autoF9DDA3D3_saved_listener = libCOMI_gv_listener;
-
     Wait(2.0, c_timeReal ); //Async
     libCOMI_gv_task   = autoF9DDA3D3_saved_task;
     libCOMI_gv_parent = autoF9DDA3D3_saved_parent;
@@ -788,7 +787,6 @@ bool libMISS_gt_BEWaveStart_Func (bool testConds, bool runActions) {
     autoA28FE404_saved_task   = libCOMI_gv_task;
     autoA28FE404_saved_parent = libCOMI_gv_parent;
     autoA28FE404_saved_listener = libCOMI_gv_listener;
-
     Wait(20.0, c_timeReal ); //Async
     libCOMI_gv_task   = autoA28FE404_saved_task;
     libCOMI_gv_parent = autoA28FE404_saved_parent;
@@ -798,7 +796,6 @@ bool libMISS_gt_BEWaveStart_Func (bool testConds, bool runActions) {
     autoF534AA33_saved_task   = libCOMI_gv_task;
     autoF534AA33_saved_parent = libCOMI_gv_parent;
     autoF534AA33_saved_listener = libCOMI_gv_listener;
-
     Wait(40.0, c_timeReal ); //Async
     libCOMI_gv_task   = autoF534AA33_saved_task;
     libCOMI_gv_parent = autoF534AA33_saved_parent;
@@ -931,7 +928,6 @@ bool libMISS_gt_BEHarvesterController_Func (bool testConds, bool runActions) {
     auto3CACE34F_saved_task   = libCOMI_gv_task;
     auto3CACE34F_saved_parent = libCOMI_gv_parent;
     auto3CACE34F_saved_listener = libCOMI_gv_listener;
-
     Wait((lv_wAIT_1 + (5.0 * lv_order)), c_timeReal ); //Async
     libCOMI_gv_task   = auto3CACE34F_saved_task;
     libCOMI_gv_parent = auto3CACE34F_saved_parent;
@@ -968,7 +964,6 @@ bool libMISS_gt_BEHarvesterController_Func (bool testConds, bool runActions) {
     auto6362DFEC_saved_task   = libCOMI_gv_task;
     auto6362DFEC_saved_parent = libCOMI_gv_parent;
     auto6362DFEC_saved_listener = libCOMI_gv_listener;
-
     Wait(lv_wAIT_2, c_timeReal ); //Async
     libCOMI_gv_task   = auto6362DFEC_saved_task;
     libCOMI_gv_parent = auto6362DFEC_saved_parent;
@@ -1027,7 +1022,6 @@ bool libMISS_gt_BEHarvesterController_Func (bool testConds, bool runActions) {
     auto80953BE0_saved_task   = libCOMI_gv_task;
     auto80953BE0_saved_parent = libCOMI_gv_parent;
     auto80953BE0_saved_listener = libCOMI_gv_listener;
-
     Wait(lv_wAIT_3, c_timeReal ); //Async
     libCOMI_gv_task   = auto80953BE0_saved_task;
     libCOMI_gv_parent = auto80953BE0_saved_parent;
@@ -1084,7 +1078,6 @@ bool libMISS_gt_BEHarvesterController_Func (bool testConds, bool runActions) {
     auto943E7C30_saved_task   = libCOMI_gv_task;
     auto943E7C30_saved_parent = libCOMI_gv_parent;
     auto943E7C30_saved_listener = libCOMI_gv_listener;
-
     Wait(1.0, c_timeReal ); //Async
     libCOMI_gv_task   = auto943E7C30_saved_task;
     libCOMI_gv_parent = auto943E7C30_saved_parent;
@@ -1177,7 +1170,6 @@ bool libMISS_gt_BEHarvesterOnDestroy_Func (bool testConds, bool runActions) {
     autoDE6EB59D_saved_task   = libCOMI_gv_task;
     autoDE6EB59D_saved_parent = libCOMI_gv_parent;
     autoDE6EB59D_saved_listener = libCOMI_gv_listener;
-
     Wait(3.0, c_timeReal ); //Async
     libCOMI_gv_task   = autoDE6EB59D_saved_task;
     libCOMI_gv_parent = autoDE6EB59D_saved_parent;
@@ -1326,7 +1318,6 @@ bool libMISS_gt_BWPrisonAttacked_Func (bool testConds, bool runActions) {
     auto95B8856A_saved_task   = libCOMI_gv_task;
     auto95B8856A_saved_parent = libCOMI_gv_parent;
     auto95B8856A_saved_listener = libCOMI_gv_listener;
-
     Wait(3.0, c_timeReal ); //Async
     libCOMI_gv_task   = auto95B8856A_saved_task;
     libCOMI_gv_parent = auto95B8856A_saved_parent;

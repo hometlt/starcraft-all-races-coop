@@ -17045,12 +17045,8 @@
 <CButton id="AscendedBrimstoneDemolisher" parent="AscendedDragon"/>
 <CButton id="Berserker">
   <Icon value="Assets\Textures\btn-unit-zerg-primalultralisk.dds"/>
-  <Icon value="Assets\Buttons\btn-ability-protoss-talon-infuse-predator-mutatered.dds"/>
   <AlertIcon value="Assets\Textures\btn-unit-zerg-primalultralisk.dds"/>
-  <AlertIcon value="Assets\Buttons\btn-ability-protoss-talon-infuse-predator-mutatered.dds"/>
   <EditorCategories value="Race:Dragon"/>
-  <EditorCategories value="Race:ProtL"/>
-  <Universal value="1"/>
 </CButton>
 <CButton id="BrimstoneDemolisherAdaptiveArmor">
   <Icon value="Assets\Textures\btn-tips-sellzergbiosamples.dds"/>
@@ -18833,6 +18829,8 @@
   <AlertIcon value="Assets\Buttons\btn-ability-protoss-talon-infuse-predator-mutatered.dds"/>
   <EditorCategories value="Race:ProtL"/>
   <Universal value="1"/>
+  <AlertName value="Button/Name/TalonBerserkerOwn"/>
+  <AlertTooltip value="Button/Tooltip/TalonBerserkerOwn"/>
 </CButton>
 <CButton id="LancerGrey">
   <TooltipFlags index="ShowName" value="0"/>
@@ -19150,6 +19148,12 @@
   <EditorCategories value="Race:ProtL"/>
   <HotkeyAlias value="TalonAnionPulseCrystalsCpl"/>
 </CButton>
+<CButton id="TalonBerserker">
+  <Icon value="Assets\Buttons\btn-ability-protoss-talon-infuse-predator-mutatered.dds"/>
+  <AlertIcon value="Assets\Buttons\btn-ability-protoss-talon-infuse-predator-mutatered.dds"/>
+  <EditorCategories value="Race:ProtL"/>
+  <Universal value="1"/>
+</CButton>
 <CButton id="EnhancedShielding" parent="AdeptShieldUpgrade">
   <Name value="Button/Name/EnhancedShielding"/>
   <Tooltip value="Button/Tooltip/VolchronShielding"/>
@@ -19230,7 +19234,8 @@
   <EditorCategories value="Race:ProtL"/>
   <Universal value="1"/>
   <Tooltip value="Button/Tooltip/Silent"/>
-  <AlertTooltip value="Button/Tooltip/Silent"/>
+  <AlertTooltip value="Button/Tooltip/TalonSilent"/>
+  <AlertName value="Button/Name/WarpInTalonSilent"/>
 </CButton>
 <CButton id="WarpInRoyalCrusader">
   <Icon value="Assets\Buttons\btn-unit-protoss-talon-crusader-royal.dds"/>
@@ -19287,11 +19292,11 @@
   <AlertIcon value="Assets\Buttons\btn-upgrade-protoss-icreasedrange-talon.dds"/>
   <EditorCategories value="Race:ProtL"/>
 </CButton>
-<CButton id="WarpinDisruptorFIX">
-  <Icon value="Assets\Buttons\btn-unit-protoss-talon-disruptor.dds"/>
-  <AlertIcon value="Assets\Buttons\btn-unit-protoss-talon-disruptor.dds"/>
+<CButton id="WarpinTalonDisruptor">
   <Tooltip value="Button/Tooltip/TalonDisruptor"/>
+  <Icon value="Assets\Buttons\btn-unit-protoss-talon-disruptor.dds"/>
   <AlertTooltip value="Button/Tooltip/TalonDisruptor"/>
+  <AlertIcon value="Assets\Buttons\btn-unit-protoss-talon-disruptor.dds"/>
   <EditorCategories value="Race:ProtL"/>
 </CButton>
 <CButton id="WarpinVindicator">

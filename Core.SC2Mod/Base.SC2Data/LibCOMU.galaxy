@@ -56,6 +56,7 @@ void libCOMU_InitVariables () {
     libCOMU_gv_mM_UndeadUG = UnitGroupEmpty();
     libCOMU_gv_mM_OT_PlayerGroup = PlayerGroupEmpty();
     libCOMU_gv_cT_OrderCostImmuneUnits = UnitGroupEmpty();
+    libCOMU_gv_polarityTimer = TimerCreate();
     libCOMU_gv_cT_PolarityPlayer = 1;
     libCOMU_gv_cT_PolarityPlayerTrains = 1;
     libCOMU_gv_cT_PurifierBeamTargets = UnitGroupEmpty();
@@ -116,7 +117,7 @@ void libCOMU_gf_CT_ApplyAfraidOfTheDark (unit lp_orderedUnit, order lp_order) {
     }
 
     lv_orderLocation = OrderGetTargetPosition(lp_order);
-    if (((VisIsVisibleForPlayer(1, lv_orderLocation) == true) || (lv_orderLocation == null))) {
+    if (((VisIsVisibleForPlayer(lv_microPlayer, lv_orderLocation) == true) || (lv_orderLocation == null))) {
     }
     else {
         UnitIssueOrder(lp_orderedUnit, OrderTargetingPoint(OrderGetAbilityCommand(lp_order), UnitGetPosition(lp_orderedUnit)), c_orderQueueReplace);
@@ -1596,6 +1597,10 @@ void libCOMU_gf_CT_ApplyEvolve (unit lp_killingUnit, unit lp_victimUnit) {
     // Variable Initialization
 
     // Implementation
+    if ((RandomInt(0, libCOMI_gf_DifficultyValueInt2(libCOMI_gf_GetMissionDifficulty(), 500, 400, 300, 200, 0, 0)) > FixedToInt(EventUnitDamageAmount()))) {
+        return ;
+    }
+
     if (((libCOMI_gv_cT_MutatorEnabledQuickList[(libCOMI_ge_CT_MutatorQuickList_CT_QuickEvolve)] == false) || (UnitIsAlive(lp_killingUnit) == false) || (UnitGetOwner(lp_killingUnit) == c_playerAny) || (UnitGetOwner(lp_killingUnit) == 0) || (UnitGetOwner(lp_victimUnit) == 0) || (UnitGetType(lp_killingUnit) == "MutatorKillBot") || (UnitGetType(lp_killingUnit) == "MutatorPropagator") || (UnitGetType(lp_killingUnit) == "MutatorBoomBot") || (PlayerGroupHasPlayer(libCOMI_gf_GetEnemyPlayers(), UnitGetOwner(lp_killingUnit)) == false) || (PlayerGroupHasPlayer(libCOMI_gf_GetEnemyPlayers(), UnitGetOwner(lp_victimUnit)) == true) || (UnitHasBehavior2(lp_killingUnit, "MutatorEvolve") == true) || (UnitFilterMatch(lp_killingUnit, 1, UnitFilter(0, 0, (1 << c_targetFilterPlayer) | (1 << c_targetFilterAlly) | (1 << c_targetFilterNeutral) | (1 << c_targetFilterStructure) | (1 << c_targetFilterMissile), (1 << (c_targetFilterHidden - 32)))) == false) || (libCOMI_gf_CT_MutatorUnitIsMapObjective(lp_killingUnit) == true))) {
         return ;
     }
@@ -4588,7 +4593,7 @@ void libCOMU_gf_CT_ApplyOrderCosts (unit lp_orderedUnit, order lp_order) {
 
     // Implementation
     lv_microPlayer = OrderGetPlayer(lp_order);
-    if (((libCOMI_gv_cT_MutatorEnabledQuickList[(libCOMI_ge_CT_MutatorQuickList_CT_QuickOrderCosts)] == false) || (PlayerGroupHasPlayer(libCOMI_gf_GetAlliedCommandersPlayersCopy(), lv_microPlayer) == false) || (OrderGetFlag(lp_order, c_cmdUser) == false) || (UnitGroupHasUnit(libCOMU_gv_cT_OrderCostImmuneUnits, lp_orderedUnit) == true))) {
+    if (((libCOMI_gv_cT_MutatorEnabledQuickList[(libCOMI_ge_CT_MutatorQuickList_CT_QuickOrderCosts)] == false) || (PlayerGroupHasPlayer(libCOMI_gf_GetAlliedCommandersPlayersCopy(), lv_microPlayer) == false) || (OrderGetFlag(lp_order, 8) == false) || (UnitGroupHasUnit(libCOMU_gv_cT_OrderCostImmuneUnits, lp_orderedUnit) == true))) {
         return ;
     }
 
@@ -4742,6 +4747,84 @@ void libCOMU_gf_CT_ApplyPlagueOnDeath (unit lp_killedUnit) {
     }
 }
 
+void libCOMU_gf_MM_ApplyPolarity (unit lp_createdUnit) {
+    // Automatic Variable Declarations
+    // Implementation
+    if (((libCOMI_gf_MutatorIsEnabled("Polarity") == false) || (UnitFilterMatch(lp_createdUnit, 1, UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterInvulnerable - 32)))) == false) || (UnitHasBehavior2(lp_createdUnit, "MutatorImmunetoPlayer1") == true) || (UnitHasBehavior2(lp_createdUnit, "MutatorImmunetoPlayer2") == true))) {
+        return ;
+    }
+
+    if ((libCOMI_gf_CC_CurrentMap() == "AC_TarsonisTrain") && ((UnitGetType(lp_createdUnit) == "Caboose") || (UnitGetType(lp_createdUnit) == "TarsonisEngineFast") || (UnitGetType(lp_createdUnit) == "TarsonisEngine") || (UnitGetType(lp_createdUnit) == "FreightCar"))) {
+        libCOMU_gf_CT_Polarity_TrainApply(lp_createdUnit);
+        return ;
+    }
+
+    if (libCOMU_gv_cT_PolarityPlayer >= 2) {
+        libCOMU_gv_cT_PolarityPlayer = 1;
+    }
+    else {
+        libCOMU_gv_cT_PolarityPlayer = libCOMU_gv_cT_PolarityPlayer + 1;
+    }
+    if ((libCOMU_gv_cT_PolarityCloneTarget[libCOMU_gv_cT_PolarityPlayer] == null)) {
+        libNtve_gf_CreateUnitsWithDefaultFacing(1, "InvisibleTargetDummy", c_unitCreateIgnorePlacement, libCOMU_gv_cT_PolarityEnemies[libCOMU_gv_cT_PolarityPlayer], Point(0.0, 0.0));
+        UnitSetState(UnitLastCreated(), c_unitStateInvulnerable, true);
+        libCOMU_gv_cT_PolarityCloneTarget[libCOMU_gv_cT_PolarityPlayer] = UnitLastCreated();
+    }
+
+    UnitCreateEffectUnit(lp_createdUnit, "MutatorPolarityMimic", libCOMU_gv_cT_PolarityCloneTarget[libCOMU_gv_cT_PolarityPlayer]);
+    if ((libCOMU_gv_cT_PolarityPlayer == 1)) {
+        UnitBehaviorAddPlayer(lp_createdUnit, "MutatorImmunetoPlayer1", UnitGetOwner(lp_createdUnit), 1);
+    }
+    else {
+        UnitBehaviorAddPlayer(lp_createdUnit, "MutatorImmunetoPlayer2", UnitGetOwner(lp_createdUnit), 1);
+    }
+}
+
+void libCOMU_gf_CT_ApplyPolarity (unit lp_createdUnit) {
+    // Automatic Variable Declarations
+    // Implementation
+    if (((libCOMI_gf_MutatorIsEnabled("Polarity") == false) || (UnitGetOwner(lp_createdUnit) == c_playerAny) || (PlayerGroupHasPlayer(libCOMI_gf_GetEnemyPlayers(), UnitGetOwner(lp_createdUnit)) == false) || (UnitFilterMatch(lp_createdUnit, 1, UnitFilter(0, 0, (1 << c_targetFilterPlayer) | (1 << c_targetFilterAlly) | (1 << c_targetFilterNeutral) | (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterInvulnerable - 32)))) == false) || (UnitHasBehavior2(lp_createdUnit, "MutatorImmunetoPlayer1") == true) || (UnitHasBehavior2(lp_createdUnit, "MutatorImmunetoPlayer2") == true))) {
+        return ;
+    }
+
+    if ((libCOMI_gf_CC_CurrentMap() == "AC_TarsonisTrain") && ((UnitGetType(lp_createdUnit) == "Caboose") || (UnitGetType(lp_createdUnit) == "TarsonisEngineFast") || (UnitGetType(lp_createdUnit) == "TarsonisEngine") || (UnitGetType(lp_createdUnit) == "FreightCar"))) {
+        libCOMU_gf_CT_Polarity_TrainApply(lp_createdUnit);
+        return ;
+    }
+
+    if (libCOMU_gv_cT_PolarityPlayer >= 2) {
+        libCOMU_gv_cT_PolarityPlayer = 1;
+    }
+    else {
+        libCOMU_gv_cT_PolarityPlayer = libCOMU_gv_cT_PolarityPlayer + 1;
+    }
+    if ((libCOMU_gv_cT_PolarityCloneTarget[libCOMU_gv_cT_PolarityPlayer] == null)) {
+        libNtve_gf_CreateUnitsWithDefaultFacing(1, "InvisibleTargetDummy", c_unitCreateIgnorePlacement, libCOMU_gv_cT_PolarityEnemies[libCOMU_gv_cT_PolarityPlayer], Point(0.0, 0.0));
+        UnitSetState(UnitLastCreated(), c_unitStateInvulnerable, true);
+        libCOMU_gv_cT_PolarityCloneTarget[libCOMU_gv_cT_PolarityPlayer] = UnitLastCreated();
+    }
+
+    UnitCreateEffectUnit(lp_createdUnit, "MutatorPolarityMimic", libCOMU_gv_cT_PolarityCloneTarget[libCOMU_gv_cT_PolarityPlayer]);
+    if ((libCOMU_gv_cT_PolarityPlayer == 1)) {
+        UnitBehaviorAddPlayer(lp_createdUnit, "MutatorImmunetoPlayer1", UnitGetOwner(lp_createdUnit), 1);
+    }
+    else {
+        UnitBehaviorAddPlayer(lp_createdUnit, "MutatorImmunetoPlayer2", UnitGetOwner(lp_createdUnit), 1);
+    }
+}
+
+void libCOMU_gf_CT_RemovePolarity (unit lp_polarityUnit) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((libCOMI_gf_MutatorIsEnabled("Polarity") == false)) {
+        return ;
+    }
+
+    UnitBehaviorRemove(lp_polarityUnit, "MutatorImmunetoPlayer1", 1);
+    UnitBehaviorRemove(lp_polarityUnit, "MutatorImmunetoPlayer2", 1);
+    UnitCreateEffectUnit(lp_polarityUnit, "MutatorPolarityMimic", lp_polarityUnit);
+}
+
 void libCOMU_gf_CT_NullifyDamage (unit lp_damagedUnit, unit lp_damagingUnit, fixed lp_damageAmount) {
     // Automatic Variable Declarations
     // Implementation
@@ -4825,84 +4908,6 @@ void libCOMU_gf_CT_Polarity_TrainApply (unit lp_createdUnit) {
     else {
         UnitBehaviorAddPlayer(lp_createdUnit, "MutatorImmunetoPlayer2", UnitGetOwner(lp_createdUnit), 1);
     }
-}
-
-void libCOMU_gf_MM_ApplyPolarity (unit lp_createdUnit) {
-    // Automatic Variable Declarations
-    // Implementation
-    if (((libCOMI_gf_MutatorIsEnabled("Polarity") == false) || (UnitFilterMatch(lp_createdUnit, 1, UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterInvulnerable - 32)))) == false) || (UnitHasBehavior2(lp_createdUnit, "MutatorImmunetoPlayer1") == true) || (UnitHasBehavior2(lp_createdUnit, "MutatorImmunetoPlayer2") == true))) {
-        return ;
-    }
-
-    if ((libCOMI_gf_CC_CurrentMap() == "AC_TarsonisTrain") && ((UnitGetType(lp_createdUnit) == "Caboose") || (UnitGetType(lp_createdUnit) == "TarsonisEngineFast") || (UnitGetType(lp_createdUnit) == "TarsonisEngine") || (UnitGetType(lp_createdUnit) == "FreightCar"))) {
-        libCOMU_gf_CT_Polarity_TrainApply(lp_createdUnit);
-        return ;
-    }
-
-    if (libCOMU_gv_cT_PolarityPlayer >= 2) {
-        libCOMU_gv_cT_PolarityPlayer = 1;
-    }
-    else {
-        libCOMU_gv_cT_PolarityPlayer = libCOMU_gv_cT_PolarityPlayer + 1;
-    }
-    if ((libCOMU_gv_cT_PolarityCloneTarget[libCOMU_gv_cT_PolarityPlayer] == null)) {
-        libNtve_gf_CreateUnitsWithDefaultFacing(1, "InvisibleTargetDummy", c_unitCreateIgnorePlacement, libCOMU_gv_cT_PolarityEnemies[libCOMU_gv_cT_PolarityPlayer], Point(0.0, 0.0));
-        UnitSetState(UnitLastCreated(), c_unitStateInvulnerable, true);
-        libCOMU_gv_cT_PolarityCloneTarget[libCOMU_gv_cT_PolarityPlayer] = UnitLastCreated();
-    }
-
-    UnitCreateEffectUnit(lp_createdUnit, "MutatorPolarityMimic", libCOMU_gv_cT_PolarityCloneTarget[libCOMU_gv_cT_PolarityPlayer]);
-    if ((libCOMU_gv_cT_PolarityPlayer == 1)) {
-        UnitBehaviorAddPlayer(lp_createdUnit, "MutatorImmunetoPlayer1", UnitGetOwner(lp_createdUnit), 1);
-    }
-    else {
-        UnitBehaviorAddPlayer(lp_createdUnit, "MutatorImmunetoPlayer2", UnitGetOwner(lp_createdUnit), 1);
-    }
-}
-
-void libCOMU_gf_CT_ApplyPolarity (unit lp_createdUnit) {
-    // Automatic Variable Declarations
-    // Implementation
-    if (((libCOMI_gf_MutatorIsEnabled("Polarity") == false) || (UnitGetOwner(lp_createdUnit) == c_playerAny) || (PlayerGroupHasPlayer(libCOMI_gf_GetEnemyPlayers(), UnitGetOwner(lp_createdUnit)) == false) || (UnitFilterMatch(lp_createdUnit, 1, UnitFilter(0, 0, (1 << c_targetFilterPlayer) | (1 << c_targetFilterAlly) | (1 << c_targetFilterNeutral) | (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterInvulnerable - 32)))) == false) || (UnitHasBehavior2(lp_createdUnit, "MutatorImmunetoPlayer1") == true) || (UnitHasBehavior2(lp_createdUnit, "MutatorImmunetoPlayer2") == true))) {
-        return ;
-    }
-
-    if ((libCOMI_gf_CC_CurrentMap() == "AC_TarsonisTrain") && ((UnitGetType(lp_createdUnit) == "Caboose") || (UnitGetType(lp_createdUnit) == "TarsonisEngineFast") || (UnitGetType(lp_createdUnit) == "TarsonisEngine") || (UnitGetType(lp_createdUnit) == "FreightCar"))) {
-        libCOMU_gf_CT_Polarity_TrainApply(lp_createdUnit);
-        return ;
-    }
-
-    if (libCOMU_gv_cT_PolarityPlayer >= 2) {
-        libCOMU_gv_cT_PolarityPlayer = 1;
-    }
-    else {
-        libCOMU_gv_cT_PolarityPlayer = libCOMU_gv_cT_PolarityPlayer + 1;
-    }
-    if ((libCOMU_gv_cT_PolarityCloneTarget[libCOMU_gv_cT_PolarityPlayer] == null)) {
-        libNtve_gf_CreateUnitsWithDefaultFacing(1, "InvisibleTargetDummy", c_unitCreateIgnorePlacement, libCOMU_gv_cT_PolarityEnemies[libCOMU_gv_cT_PolarityPlayer], Point(0.0, 0.0));
-        UnitSetState(UnitLastCreated(), c_unitStateInvulnerable, true);
-        libCOMU_gv_cT_PolarityCloneTarget[libCOMU_gv_cT_PolarityPlayer] = UnitLastCreated();
-    }
-
-    UnitCreateEffectUnit(lp_createdUnit, "MutatorPolarityMimic", libCOMU_gv_cT_PolarityCloneTarget[libCOMU_gv_cT_PolarityPlayer]);
-    if ((libCOMU_gv_cT_PolarityPlayer == 1)) {
-        UnitBehaviorAddPlayer(lp_createdUnit, "MutatorImmunetoPlayer1", UnitGetOwner(lp_createdUnit), 1);
-    }
-    else {
-        UnitBehaviorAddPlayer(lp_createdUnit, "MutatorImmunetoPlayer2", UnitGetOwner(lp_createdUnit), 1);
-    }
-}
-
-void libCOMU_gf_CT_RemovePolarity (unit lp_polarityUnit) {
-    // Automatic Variable Declarations
-    // Implementation
-    if ((libCOMI_gf_MutatorIsEnabled("Polarity") == false)) {
-        return ;
-    }
-
-    UnitBehaviorRemove(lp_polarityUnit, "MutatorImmunetoPlayer1", 1);
-    UnitBehaviorRemove(lp_polarityUnit, "MutatorImmunetoPlayer2", 1);
-    UnitCreateEffectUnit(lp_polarityUnit, "MutatorPolarityMimic", lp_polarityUnit);
 }
 
 void libCOMU_gf_CT_ApplyPropagatorPing (unit lp_createdUnit) {
@@ -6535,7 +6540,7 @@ void libCOMU_gf_CT_ApplySpawnBroodling (unit lp_killedUnit) {
     lv_broodlingGroup = UnitGroupEmpty();
 
     // Implementation
-    if (((libCOMI_gv_cT_MutatorEnabledQuickList[(libCOMI_ge_CT_MutatorQuickList_CT_QuickAlienIncubation)] == false) || (UnitGetOwner(lp_killedUnit) == c_playerAny) || (PlayerGroupHasPlayer(libCOMI_gf_GetEnemyPlayers(), UnitGetOwner(lp_killedUnit)) == false) || (UnitFilterMatch(lp_killedUnit, 1, UnitFilter(0, 0, (1 << c_targetFilterPlayer) | (1 << c_targetFilterAlly) | (1 << c_targetFilterNeutral) | (1 << c_targetFilterStructure) | (1 << c_targetFilterMissile), (1 << (c_targetFilterHidden - 32)) | (1 << (c_targetFilterSummoned - 32)))) == false) || (UnitGroupHasUnit(libCOMI_gv_cT_OnDeathSpawns, lp_killedUnit) == true) || (UnitGetType(lp_killedUnit) == "TerranDropPod") || (UnitGetType(lp_killedUnit) == "ZergDropPodLarge") || (UnitGetType(lp_killedUnit) == "ZergDropPod"))) {
+    if (((EventUnitDamageDeathCheck(c_deathTypeTimeout) == true) || (libCOMI_gv_cT_MutatorEnabledQuickList[(libCOMI_ge_CT_MutatorQuickList_CT_QuickAlienIncubation)] == false) || (UnitGetOwner(lp_killedUnit) == c_playerAny) || (PlayerGroupHasPlayer(libCOMI_gf_GetEnemyPlayers(), UnitGetOwner(lp_killedUnit)) == false) || (UnitFilterMatch(lp_killedUnit, 1, UnitFilter(0, 0, (1 << c_targetFilterPlayer) | (1 << c_targetFilterAlly) | (1 << c_targetFilterNeutral) | (1 << c_targetFilterStructure) | (1 << c_targetFilterMissile), (1 << (c_targetFilterHidden - 32)) | (1 << (c_targetFilterSummoned - 32)))) == false) || (UnitGroupHasUnit(libCOMI_gv_cT_OnDeathSpawns, lp_killedUnit) == true) || (UnitGetType(lp_killedUnit) == "TerranDropPod") || (UnitGetType(lp_killedUnit) == "ZergDropPodLarge") || (UnitGetType(lp_killedUnit) == "ZergDropPod"))) {
         return ;
     }
 
@@ -6579,7 +6584,7 @@ void libCOMU_gf_CT_ApplySpawnInfested (unit lp_killedUnit) {
     // Variable Initialization
 
     // Implementation
-    if (((libCOMI_gv_cT_MutatorEnabledQuickList[(libCOMI_ge_CT_MutatorQuickList_CT_QuickWalkingInfested)] == false) || (PlayerGroupHasPlayer(libCOMI_gf_GetEnemyPlayers(), UnitGetOwner(lp_killedUnit)) == false) || (UnitGetOwner(lp_killedUnit) == c_playerAny) || (UnitFilterMatch(lp_killedUnit, 1, UnitFilter(0, 0, (1 << c_targetFilterPlayer) | (1 << c_targetFilterAlly) | (1 << c_targetFilterNeutral) | (1 << c_targetFilterStructure) | (1 << c_targetFilterMissile), (1 << (c_targetFilterHidden - 32)) | (1 << (c_targetFilterSummoned - 32)))) == false) || (UnitGroupHasUnit(libCOMI_gv_cT_OnDeathSpawns, lp_killedUnit) == true) || (libNtve_gf_KillingPlayer() == UnitGetOwner(lp_killedUnit)) || (UnitGetType(lp_killedUnit) == "TerranDropPod") || (UnitGetType(lp_killedUnit) == "ZergDropPodLarge") || (UnitGetType(lp_killedUnit) == "ZergDropPod") || (PathingType(UnitGetPosition(lp_killedUnit)) != c_pathingGround))) {
+    if (((EventUnitDamageDeathCheck(c_deathTypeTimeout) == true) || (libCOMI_gv_cT_MutatorEnabledQuickList[(libCOMI_ge_CT_MutatorQuickList_CT_QuickWalkingInfested)] == false) || (PlayerGroupHasPlayer(libCOMI_gf_GetEnemyPlayers(), UnitGetOwner(lp_killedUnit)) == false) || (UnitGetOwner(lp_killedUnit) == c_playerAny) || (UnitFilterMatch(lp_killedUnit, 1, UnitFilter(0, 0, (1 << c_targetFilterPlayer) | (1 << c_targetFilterAlly) | (1 << c_targetFilterNeutral) | (1 << c_targetFilterStructure) | (1 << c_targetFilterMissile), (1 << (c_targetFilterHidden - 32)) | (1 << (c_targetFilterSummoned - 32)))) == false) || (UnitGroupHasUnit(libCOMI_gv_cT_OnDeathSpawns, lp_killedUnit) == true) || (libNtve_gf_KillingPlayer() == UnitGetOwner(lp_killedUnit)) || (UnitGetType(lp_killedUnit) == "TerranDropPod") || (UnitGetType(lp_killedUnit) == "ZergDropPodLarge") || (UnitGetType(lp_killedUnit) == "ZergDropPod") || (PathingType(UnitGetPosition(lp_killedUnit)) != c_pathingGround))) {
         return ;
     }
     else {
@@ -7224,115 +7229,6 @@ unitgroup libCOMU_gf_CT_VoidRiftLastSpawnedUnits () {
 }
 
 // Triggers
-//--------------------------------------------------------------------------------------------------
-// Trigger: Initialize Mutators
-//--------------------------------------------------------------------------------------------------
-bool libCOMU_gt_InitializeMutators_Func (bool testConds, bool runActions) {
-    // Variable Declarations
-    string lv_indexMutator;
-
-    // Automatic Variable Declarations
-    int auto65804F64_ai;
-    int auto65804F64_ae;
-
-    // Variable Initialization
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    libCOMI_gf_CT_RegisterMutator("Avenger", libCOMU_gt_CT_InitializeAvenger, libCOMU_gt_CT_ShutdownAvenger);
-    libCOMI_gf_CT_RegisterMutator("Barrier", libCOMU_gt_CT_InitializeBarrier, libCOMU_gt_CT_ShutdownBarrier);
-    libCOMI_gf_CT_RegisterMutator("BlackFog", libCOMU_gt_CT_InitializeBlackFog, libCOMU_gt_CT_ShutdownBlackFog);
-    libCOMI_gf_CT_RegisterMutator("ConcussiveAttacks", libCOMU_gt_CT_InitializeConcussiveAttacks, libCOMU_gt_CT_ShutdownConcussiveAttacks);
-    libCOMI_gf_CT_RegisterMutator("DeathAOE", libCOMU_gt_CT_InitializeDeathAOE, libCOMU_gt_CT_ShutdownDeathAOE);
-    libCOMI_gf_CT_RegisterMutator("FireFight", libCOMU_gt_CT_InitializeDeathFire, libCOMU_gt_CT_ShutdownDeathFire);
-    libCOMI_gf_CT_RegisterMutator("DropPods", libCOMU_gt_CT_InitializeDropPods, libCOMU_gt_CT_ShutdownDropPods);
-    libCOMI_gf_CT_RegisterMutator("Entomb", libCOMU_gt_CT_InitializeEntomb, libCOMU_gt_CT_ShutdownEntomb);
-    libCOMI_gf_CT_RegisterMutator("HybridNuke", libCOMU_gt_CT_InitializeHybridDeathNuke, libCOMU_gt_CT_ShutdownHybridDeathNuke);
-    libCOMI_gf_CT_RegisterMutator("InfestedTerranSpawner", libCOMU_gt_CT_InitializeOutbreak, libCOMU_gt_CT_ShutdownOutbreak);
-    libCOMI_gf_CT_RegisterMutator("JustDie", libCOMU_gt_CT_InitializeJustDie, libCOMU_gt_CT_ShutdownJustDie);
-    libCOMI_gf_CT_RegisterMutator("LaserDrill", libCOMU_gt_CT_InitializeLaserDrill, libCOMU_gt_CT_ShutdownLaserDrill);
-    libCOMI_gf_CT_RegisterMutator("LavaBurst", libCOMU_gt_CT_InitializeLavaBurst, libCOMU_gt_CT_ShutdownLavaBurst);
-    libCOMI_gf_CT_RegisterMutator("LongRange", libCOMU_gt_CT_InitializeLongRange, libCOMU_gt_CT_ShutdownLongRange);
-    libCOMI_gf_CT_RegisterMutator("Magnificent", libCOMU_gt_CT_InitializeMagMines, libCOMU_gt_CT_ShutdownMagMines);
-    libCOMI_gf_CT_RegisterMutator("NoResources", libCOMU_gt_CT_InitializeMinedOut, libCOMU_gt_CT_ShutdownMinedOut);
-    libCOMI_gf_CT_RegisterMutator("AllEnemiesCloaked", libCOMU_gt_CT_InitializePermaCloak, libCOMU_gt_CT_ShutdownPermaCloak);
-    libCOMI_gf_CT_RegisterMutator("ReducedVision", libCOMU_gt_CT_InitializeShortSighted, libCOMU_gt_CT_ShutdownShortSighted);
-    libCOMI_gf_CT_RegisterMutator("SideStep", libCOMU_gt_CT_InitializeSideStep, libCOMU_gt_CT_ShutdownSideStep);
-    libCOMI_gf_CT_RegisterMutator("Fear", libCOMU_gt_CT_InitializeFear, libCOMU_gt_CT_ShutdownFear);
-    libCOMI_gf_CT_RegisterMutator("WalkingInfested", libCOMU_gt_CT_InitializeSpawnInfested, libCOMU_gt_CT_ShutdownSpawnInfested);
-    libCOMI_gf_CT_RegisterMutator("SpawnBroodlings", libCOMU_gt_CT_InitializeSpawnBroodling, libCOMU_gt_CT_ShutdownSpawnBroodling);
-    libCOMI_gf_CT_RegisterMutator("StoneZealots", libCOMU_gt_CT_InitializeStoneZealots, libCOMU_gt_CT_ShutdownStoneZealots);
-    libCOMI_gf_CT_RegisterMutator("TemporalField", libCOMU_gt_CT_InitializeTemporalField, libCOMU_gt_CT_ShutdownTemporalField);
-    libCOMI_gf_CT_RegisterMutator("TimeWarp", libCOMU_gt_CT_InitializeTimeWarp, libCOMU_gt_CT_ShutdownTimeWarp);
-    libCOMI_gf_CT_RegisterMutator("UnitSpeed", libCOMU_gt_CT_InitializeUnitSpeed, libCOMU_gt_CT_ShutdownUnitSpeed);
-    libCOMI_gf_CT_RegisterMutator("LazyWorkers", libCOMU_gt_CT_InitializeWorkerSleep, libCOMU_gt_CT_ShutdownWorkerSleep);
-    libCOMI_gf_CT_RegisterMutator("VoidRifts", libCOMU_gt_CT_InitializeVoidRifts, libCOMU_gt_CT_ShutdownVoidRifts);
-    libCOMI_gf_CT_RegisterMutator("Tornadoes", libCOMU_gt_CT_InitializeTornadoes, libCOMU_gt_CT_ShutdownTornadoes);
-    libCOMI_gf_CT_RegisterMutator("OrbitalStrike", libCOMU_gt_CT_InitializeOrbitalStrike, libCOMU_gt_CT_ShutdownOrbitalStrike);
-    libCOMI_gf_CT_RegisterMutator("PurifierBeam", libCOMU_gt_CT_InitializePurifierBeam, libCOMU_gt_CT_ShutdownPurifierBeam);
-    libCOMI_gf_CT_RegisterMutator("Blizzard", libCOMU_gt_CT_InitializeBlizzard, libCOMU_gt_CT_ShutdownBlizzard);
-    libCOMI_gf_CT_RegisterMutator("PhotonOverload", libCOMU_gt_CT_InitializePhotonOverload, libCOMU_gt_CT_ShutdownPhotonOverload);
-    libCOMI_gf_CT_RegisterMutator("SpiderMines", libCOMU_gt_CT_InitializeMineFields, libCOMU_gt_CT_ShutdownMineFields);
-    libCOMI_gf_CT_RegisterMutator("CycleRandom", libCOMU_gt_CT_InitializeCycleRandom, libCOMU_gt_CT_ShutdownCycleRandom);
-    libCOMI_gf_CT_RegisterMutator("Reanimators", libCOMU_gt_CT_InitializeReanimators, libCOMU_gt_CT_ShutdownReanimators);
-    libCOMI_gf_CT_RegisterMutator("Nukes", libCOMU_gt_CT_InitializeNukes, libCOMU_gt_CT_ShutdownNukes);
-    libCOMI_gf_CT_RegisterMutator("LifeLeech", libCOMU_gt_CT_InitializeLifeLeech, libCOMU_gt_CT_ShutdownLifeLeech);
-    libCOMI_gf_CT_RegisterMutator("OopsAllCasters", libCOMU_gt_CT_InitializeAllCasters, libCOMU_gt_CT_ShutdownAllCasters);
-    libCOMI_gf_CT_RegisterMutator("OrderCosts", libCOMU_gt_CT_InitializeOrderCosts, libCOMU_gt_CT_ShutdownOrderCosts);
-    libCOMI_gf_CT_RegisterMutator("MissileBarrage", libCOMU_gt_CT_InitializeMissileBarrage, libCOMU_gt_CT_ShutdownMissileBarrage);
-    libCOMI_gf_CT_RegisterMutator("Vertigo", libCOMU_gt_CT_InitializeVertigo, libCOMU_gt_CT_ShutdownVertigo);
-    libCOMI_gf_CT_RegisterMutator("UndyingEvil", libCOMU_gt_CT_InitializeUndyingEvil, libCOMU_gt_CT_ShutdownUndyingEvil);
-    libCOMI_gf_CT_RegisterMutator("Polarity", libCOMU_gt_CT_InitializePolarity, libCOMU_gt_CT_ShutdownPolarity);
-    libCOMI_gf_CT_RegisterMutator("Evolve", libCOMU_gt_CT_InitializeEvolve, libCOMU_gt_CT_ShutdownEvolve);
-    libCOMI_gf_CT_RegisterMutator("UberDarkness", libCOMU_gt_CT_InitializeUberDarkness, libCOMU_gt_CT_ShutdownUberDarkness);
-    libCOMI_gf_CT_RegisterMutator("FoodHunt", libCOMU_gt_CT_InitializeFoodHunt, libCOMU_gt_CT_ShutdownFoodHunt);
-    libCOMI_gf_CT_RegisterMutator("SharedSupply", libCOMU_gt_CT_InitializeSharedSupply, libCOMU_gt_CT_ShutdownSharedSupply);
-    libCOMI_gf_CT_RegisterMutator("TrickOrTreat", libCOMU_gt_CT_InitializeTrickOrTreat, libCOMU_gt_CT_ShutdownTrickOrTreat);
-    libCOMI_gf_CT_RegisterMutator("DamageBounce", libCOMU_gt_CT_InitializeDamageBounce, libCOMU_gt_CT_ShutdownDamageBounce);
-    libCOMI_gf_CT_RegisterMutator("Plague", libCOMU_gt_CT_InitializePlague, libCOMU_gt_CT_ShutdownPlague);
-    libCOMI_gf_CT_RegisterMutator("StructureSteal", libCOMU_gt_CT_InitializeStructureSteal, libCOMU_gt_CT_ShutdownStructureSteal);
-    libCOMI_gf_CT_RegisterMutator("GiftFight", libCOMU_gt_CT_InitializeGiftFight, libCOMU_gt_CT_ShutdownGiftFight);
-    libCOMI_gf_CT_RegisterMutator("KillKarma", libCOMU_gt_CT_InitializeKillKarma, libCOMU_gt_CT_ShutdownKillKarma);
-    libCOMI_gf_CT_RegisterMutator("AfraidOfTheDark", libCOMU_gt_CT_InitializeAfraidOfTheDark, libCOMU_gt_CT_ShutdownAfraidOfTheDark);
-    libCOMI_gf_CT_RegisterMutator("Insubordination", libCOMU_gt_CT_InitializeInsubordination, libCOMU_gt_CT_ShutdownInsubordination);
-    libCOMI_gf_CT_RegisterMutator("HeroesFromTheStorm", libCOMU_gt_CT_InitializeHeroesFromTheStorm, libCOMU_gt_CT_ShutdownHeroesFromTheStorm);
-    libCOMI_gf_CT_RegisterMutator("Inspiration", libCOMU_gt_CT_InitializeInspiration, libCOMU_gt_CT_ShutdownInspiration);
-    libCOMI_gf_CT_RegisterMutator("HardenedWill", libCOMU_gt_CT_InitializeHardenedWill, libCOMU_gt_CT_ShutdownHardenedWill);
-    libCOMI_gf_CT_RegisterMutator("Fireworks", libCOMU_gt_CT_InitializeFireworks, libCOMU_gt_CT_ShutdownFireworks);
-    libCOMI_gf_CT_RegisterMutator("RedEnvelopes", libCOMU_gt_CT_InitializeRedEnvelopes, libCOMU_gt_CT_ShutdownRedEnvelopes);
-    libCOMI_gf_CT_RegisterMutator("Sluggish", libCOMU_gt_CT_InitializeSluggishness, libCOMU_gt_CT_ShutdownSluggishness);
-    libCOMI_gf_CT_RegisterMutator("DamageReflect", libCOMU_gt_CT_InitializeTempDamageReflect, libCOMU_gt_CT_ShutdownTempDamageReflect);
-    libCOMI_gf_CT_RegisterMutator("DeathPull", libCOMU_gt_CT_InitializeDeathPull, libCOMU_gt_CT_ShutdownDeathPull);
-    libCOMI_gf_CT_RegisterMutator("Propagate", libCOMU_gt_CT_InitializePropagate, libCOMU_gt_CT_ShutdownPropagate);
-    libCOMI_gf_CT_RegisterMutator("KillBots", libCOMU_gt_CT_InitializeKillBots, libCOMU_gt_CT_ShutdownKillBots);
-    libCOMI_gf_CT_RegisterMutator("MomentOfSilence", libCOMU_gt_CT_InitializeMomentOfSilence, libCOMU_gt_CT_ShutdownMomentOfSilence);
-    libCOMI_gf_CT_RegisterMutator("BoomBots", libCOMU_gt_CT_InitializeBoomBots, libCOMU_gt_CT_ShutdownBoomBots);
-    if ((libCOMI_gf_MutatorIsEnabled("CycleRandom") == true)) {
-        TriggerExecute(libCOMI_gf_CT_MutatorInitTrigger("CycleRandom"), true, false);
-    }
-
-    auto65804F64_ai = 1;
-    auto65804F64_ae = UserDataInstanceCount("Mutators")+1;
-    while (auto65804F64_ai < auto65804F64_ae) {
-        lv_indexMutator = UserDataInstance("Mutators", auto65804F64_ai);
-        auto65804F64_ai = auto65804F64_ai+1;
-        if ((lv_indexMutator != "CycleRandom") && (libCOMI_gf_MutatorIsEnabled(lv_indexMutator) == true)) {
-            TriggerExecute(libCOMI_gf_CT_MutatorInitTrigger(lv_indexMutator), true, false);
-        }
-
-    }
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMU_gt_InitializeMutators_Init () {
-    libCOMU_gt_InitializeMutators = TriggerCreate("libCOMU_gt_InitializeMutators_Func");
-    TriggerAddEventGeneric(libCOMU_gt_InitializeMutators, libCOMI_gv_iNIT_COOP_MISSION_STAGE2);
-}
-
 //--------------------------------------------------------------------------------------------------
 // Trigger: MM_Random Mutator Fix
 //--------------------------------------------------------------------------------------------------
@@ -8117,19 +8013,6 @@ bool libCOMU_gt_CT_InitializeBlizzard_Func (bool testConds, bool runActions) {
 //--------------------------------------------------------------------------------------------------
 void libCOMU_gt_CT_InitializeBlizzard_Init () {
     libCOMU_gt_CT_InitializeBlizzard = TriggerCreate("libCOMU_gt_CT_InitializeBlizzard_Func");
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: CT_ShutdownBlizzconChallenge
-//--------------------------------------------------------------------------------------------------
-bool libCOMU_gt_CT_ShutdownBlizzconChallenge_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMU_gt_CT_ShutdownBlizzconChallenge_Init () {
-    libCOMU_gt_CT_ShutdownBlizzconChallenge = TriggerCreate("libCOMU_gt_CT_ShutdownBlizzconChallenge_Func");
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -14922,124 +14805,39 @@ void libCOMU_gt_CT_InitializePlague_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: CT_ShutdownPolarity
+// Trigger: PolarityTimer
 //--------------------------------------------------------------------------------------------------
-bool libCOMU_gt_CT_ShutdownPolarity_Func (bool testConds, bool runActions) {
-    // Variable Declarations
-    unit lv_indexUnit;
-
+bool libCOMU_gt_PolarityTimer_Func (bool testConds, bool runActions) {
     // Automatic Variable Declarations
-    unitgroup auto9CFCDD77_g;
-    int auto9CFCDD77_u;
-    unit auto9CFCDD77_var;
-    unitgroup auto216C5FC7_g;
-    int auto216C5FC7_u;
-
-    // Variable Initialization
+    playergroup auto276EAE34_g;
+    int auto276EAE34_var;
 
     // Actions
     if (!runActions) {
         return true;
     }
 
-    if ((PlayerGroupCount(libCOMI_gf_GetAlliedCommandersPlayers()) == 1)) {
-        auto9CFCDD77_g = UnitGroup(null, libCOMU_gv_conjoinedPolarityPlayer, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-        auto9CFCDD77_u = UnitGroupCount(auto9CFCDD77_g, c_unitCountAll);
-        for (;; auto9CFCDD77_u -= 1) {
-            auto9CFCDD77_var = UnitGroupUnitFromEnd(auto9CFCDD77_g, auto9CFCDD77_u);
-            if (auto9CFCDD77_var == null) { break; }
-            UnitSetOwner(auto9CFCDD77_var, libCOMI_gf_GetAlliedPlayer(1), true);
+    auto276EAE34_g = libCOMI_gf_GetAlliedCommandersPlayers();
+    auto276EAE34_var = -1;
+    while (true) {
+        auto276EAE34_var = PlayerGroupNextPlayer(auto276EAE34_g, auto276EAE34_var);
+        if (auto276EAE34_var < 0) { break; }
+        if ((TechTreeUpgradeCount(auto276EAE34_var, "MutatorIsPlayer1", c_techCountQueuedOrBetter) == 1)) {
+            libNtve_gf_SetUpgradeLevelForPlayer(auto276EAE34_var, "MutatorIsPlayer2", 1);
+            libNtve_gf_SetUpgradeLevelForPlayer(auto276EAE34_var, "MutatorIsPlayer1", 0);
         }
-    }
-
-    libCOMI_gv_cT_MutatorEnabledQuickList[(libCOMI_ge_CT_MutatorQuickList_CT_QuickPolarity)] = false;
-    libCOMI_gf_CT_ToggleTrigger(libCOMI_ge_CT_TriggerType_UnitDamage, false);
-    libCOMI_gf_CT_ToggleTrigger(libCOMI_ge_CT_TriggerType_UnitCreation, false);
-    TriggerEnable(libCOMU_gt_PolaritySoloUnits, false);
-    TriggerEnable(libCOMU_gt_PolaritySoloUpgrades, false);
-    auto216C5FC7_g = libNtve_gf_UnitsInRegionWithAllianceToPlayerMatchingCondition(null, "", "", libCOMI_gf_GetAlliedPlayer(0), c_unitAllianceEnemy, null, UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32))), 0);
-    auto216C5FC7_u = UnitGroupCount(auto216C5FC7_g, c_unitCountAll);
-    for (;; auto216C5FC7_u -= 1) {
-        lv_indexUnit = UnitGroupUnitFromEnd(auto216C5FC7_g, auto216C5FC7_u);
-        if (lv_indexUnit == null) { break; }
-        libCOMU_gf_CT_RemovePolarity(lv_indexUnit);
+        else {
+            libNtve_gf_SetUpgradeLevelForPlayer(auto276EAE34_var, "MutatorIsPlayer1", 1);
+            libNtve_gf_SetUpgradeLevelForPlayer(auto276EAE34_var, "MutatorIsPlayer2", 0);
+        }
     }
     return true;
 }
 
 //--------------------------------------------------------------------------------------------------
-void libCOMU_gt_CT_ShutdownPolarity_Init () {
-    libCOMU_gt_CT_ShutdownPolarity = TriggerCreate("libCOMU_gt_CT_ShutdownPolarity_Func");
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Polarity Solo Units
-//--------------------------------------------------------------------------------------------------
-bool libCOMU_gt_PolaritySoloUnits_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Conditions
-    if (testConds) {
-        if (!((UnitGetOwner(EventUnitCreatedUnit()) == libCOMI_gf_GetAlliedPlayer(1)))) {
-            return false;
-        }
-
-        if (!((UnitAbilityExists(EventUnitCreatedUnit(), "attack") == true))) {
-            return false;
-        }
-
-        if (!((UnitAbilityExists(EventUnitCreatedUnit(), "MapObjectInteract") == false))) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    if ((libCOMU_gv_last_Polarity_Owner == 1)) {
-        libCOMU_gv_last_Polarity_Owner = 2;
-        UnitSetOwner(EventUnitCreatedUnit(), libCOMU_gv_conjoinedPolarityPlayer, true);
-    }
-    else {
-        libCOMU_gv_last_Polarity_Owner = 1;
-    }
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMU_gt_PolaritySoloUnits_Init () {
-    libCOMU_gt_PolaritySoloUnits = TriggerCreate("libCOMU_gt_PolaritySoloUnits_Func");
-    TriggerEnable(libCOMU_gt_PolaritySoloUnits, false);
-    TriggerAddEventUnitCreated(libCOMU_gt_PolaritySoloUnits, null, null, null);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Polarity Solo Upgrades
-//--------------------------------------------------------------------------------------------------
-bool libCOMU_gt_PolaritySoloUpgrades_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Conditions
-    if (testConds) {
-        if (!((EventPlayer() == libCOMI_gf_GetAlliedPlayer(1)))) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    TechTreeUpgradeAddLevel(libCOMU_gv_conjoinedPolarityPlayer, EventUpgradeName(), EventUpgradeLevelDelta());
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMU_gt_PolaritySoloUpgrades_Init () {
-    libCOMU_gt_PolaritySoloUpgrades = TriggerCreate("libCOMU_gt_PolaritySoloUpgrades_Func");
-    TriggerEnable(libCOMU_gt_PolaritySoloUpgrades, false);
-    TriggerAddEventUpgradeLevelChanged(libCOMU_gt_PolaritySoloUpgrades, c_playerAny);
+void libCOMU_gt_PolarityTimer_Init () {
+    libCOMU_gt_PolarityTimer = TriggerCreate("libCOMU_gt_PolarityTimer_Func");
+    TriggerAddEventTimer(libCOMU_gt_PolarityTimer, libCOMU_gv_polarityTimer);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -15055,93 +14853,47 @@ bool libCOMU_gt_CT_InitializePolarity_Func (bool testConds, bool runActions) {
     int lv_enemyPlayer;
     string lv_upgrade;
     int lv_mainPlayer;
+    int lv_polarityIndex;
 
     // Automatic Variable Declarations
-    const int autoE0FAF538_ae = 5;
-    int autoE0FAF538_var;
-    unitgroup auto94BE4FCB_g;
-    int auto94BE4FCB_u;
-    unit auto94BE4FCB_var;
-    int auto32F48F26_catalog;
-    int auto32F48F26_i;
-    playergroup auto03003BA8_g;
-    int auto03003BA8_var;
+    playergroup auto8DBED91D_g;
     unitgroup autoDA41741F_g;
     int autoDA41741F_u;
 
     // Variable Initialization
     lv_polarityPlayers = libCOMI_gf_GetAlliedCommandersPlayers();
+    lv_polarityIndex = 1;
 
     // Actions
     if (!runActions) {
         return true;
     }
 
-    if ((PlayerGroupCount(libCOMI_gf_GetAlliedCommandersPlayers()) == 1)) {
-        lv_mainPlayer = libCOMI_gf_GetAlliedPlayer(1);
-        autoE0FAF538_var = 1;
-        for ( ; autoE0FAF538_var <= autoE0FAF538_ae; autoE0FAF538_var += 1 ) {
-            if ((PlayerType(autoE0FAF538_var) == c_playerTypeNone)) {
-                libCOMU_gv_conjoinedPolarityPlayer = autoE0FAF538_var;
-                break;
-            }
-
-        }
-        libCOMI_gf_CC_PlayerCommanderSet(libCOMU_gv_conjoinedPolarityPlayer, libCOMI_gf_ActiveCommanderForPlayer(lv_mainPlayer));
-        PlayerSetRace(libCOMU_gv_conjoinedPolarityPlayer, libCOMI_gf_CC_CommanderRace(libCOMI_gf_ActiveCommanderForPlayer(lv_mainPlayer)));
-        PlayerSetCommanderLevel(libCOMU_gv_conjoinedPolarityPlayer, libCOMI_gv_cC_PlayerLevel[lv_mainPlayer][libCOMI_gf_CC_CommanderInternalIndex(libCOMI_gf_ActiveCommanderForPlayer(lv_mainPlayer))]);
-        libCOMI_gf_CC_ApplyTechNew(libCOMU_gv_conjoinedPolarityPlayer);
-        auto94BE4FCB_g = UnitGroup(null, libCOMI_gf_GetAlliedPlayer(1), RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-        auto94BE4FCB_u = UnitGroupCount(auto94BE4FCB_g, c_unitCountAll);
-        for (;; auto94BE4FCB_u -= 1) {
-            auto94BE4FCB_var = UnitGroupUnitFromEnd(auto94BE4FCB_g, auto94BE4FCB_u);
-            if (auto94BE4FCB_var == null) { break; }
-            if ((libCOMU_gv_last_Polarity_Owner == 1)) {
-                libCOMU_gv_last_Polarity_Owner = 2;
-                UnitSetOwner(EventUnit(), libCOMU_gv_conjoinedPolarityPlayer, true);
-            }
-            else {
-                libCOMU_gv_last_Polarity_Owner = 1;
-            }
-            UnitSetOwner(auto94BE4FCB_var, libCOMI_gf_GetAlliedPlayer(1), true);
-        }
-        auto32F48F26_catalog = c_gameCatalogUpgrade;
-        auto32F48F26_i = 1;
-        for ( ; auto32F48F26_i <= CatalogEntryCount(c_gameCatalogUpgrade) ; auto32F48F26_i += 1 ) {
-            lv_upgrade = CatalogEntryGet(auto32F48F26_catalog, auto32F48F26_i);
-            libNtve_gf_SetUpgradeLevelForPlayer(libCOMU_gv_conjoinedPolarityPlayer, lv_upgrade, TechTreeUpgradeCount(lv_mainPlayer, lv_upgrade, c_techCountCompleteOnly));
-        }
-        PlayerGroupAdd(libCOMI_gv_vU_Allies, libCOMU_gv_conjoinedPolarityPlayer);
-        PlayerGroupAdd(lv_polarityPlayers, libCOMU_gv_conjoinedPolarityPlayer);
-        libCOMI_gf_SetPlayerGroupAlliance(libCOMI_gv_vU_Allies, libNtve_ge_AllianceSetting_AllyWithSharedVisionAndPushable);
-        libNtve_gf_SetAllianceAspectForPlayerGroup(libCOMI_gv_vU_Allies, c_allianceIdPower, true);
-        libNtve_gf_SetAllianceBetweenTwoPlayerGroups(libCOMI_gv_vU_Enemies, libCOMI_gv_vU_Allies, libNtve_ge_AllianceSetting_Enemy);
-        libNtve_gf_SetAllianceBetweenTwoPlayerGroups(libCOMI_gv_vU_Allies, libCOMI_gv_vU_Enemies, libNtve_ge_AllianceSetting_Enemy);
-        libNtve_gf_SetAllianceBetweenTwoPlayerGroups(PlayerGroupSingle(libCOMU_gv_conjoinedPolarityPlayer), libCOMI_gv_vU_BonusNPC, libNtve_ge_AllianceSetting_Enemy);
-        libNtve_gf_SetAllianceBetweenTwoPlayerGroups(libCOMI_gv_vU_BonusNPC, PlayerGroupSingle(libCOMU_gv_conjoinedPolarityPlayer), libNtve_ge_AllianceSetting_Enemy);
-        PlayerSetAlliance(libCOMI_gf_GetAlliedPlayer(1), c_allianceIdControl, libCOMU_gv_conjoinedPolarityPlayer, true);
-        PlayerSetAlliance(libCOMU_gv_conjoinedPolarityPlayer, c_allianceIdControl, libCOMI_gf_GetAlliedPlayer(1), true);
-        PlayerSetAlliance(libCOMI_gf_GetAlliedPlayer(1), c_allianceIdSpend, libCOMU_gv_conjoinedPolarityPlayer, true);
-        PlayerSetAlliance(libCOMU_gv_conjoinedPolarityPlayer, c_allianceIdSpend, libCOMI_gf_GetAlliedPlayer(1), true);
-    }
-
     libCOMI_gv_cT_MutatorEnabledQuickList[(libCOMI_ge_CT_MutatorQuickList_CT_QuickPolarity)] = true;
     libCOMI_gf_CT_ToggleTrigger(libCOMI_ge_CT_TriggerType_UnitDamage, true);
-    lv_polarityPlayer = PlayerGroupPlayer(lv_polarityPlayers, 1);
-    lv_indexPlayer = PlayerGroupPlayer(libCOMI_gf_GetEnemyAIPlayers(), 1);
-    libCOMU_gv_cT_PolarityEnemies[lv_polarityPlayer] = lv_indexPlayer;
-    PlayerSetAlliance(lv_polarityPlayer, c_allianceIdPassive, lv_indexPlayer, true);
-    libNtve_gf_SetUpgradeLevelForPlayer(lv_polarityPlayer, "MutatorIsPlayer1", 1);
-    lv_polarityPlayer = PlayerGroupPlayer(lv_polarityPlayers, 2);
-    lv_indexPlayer = PlayerGroupPlayer(libCOMI_gf_GetEnemyAIPlayers(), 2);
-    libCOMU_gv_cT_PolarityEnemies[lv_polarityPlayer] = lv_indexPlayer;
-    PlayerSetAlliance(lv_polarityPlayer, c_allianceIdPassive, lv_indexPlayer, true);
-    libNtve_gf_SetUpgradeLevelForPlayer(lv_polarityPlayer, "MutatorIsPlayer2", 1);
-    auto03003BA8_g = lv_polarityPlayers;
-    auto03003BA8_var = -1;
+    auto8DBED91D_g = lv_polarityPlayers;
+    lv_polarityPlayer = -1;
     while (true) {
-        auto03003BA8_var = PlayerGroupNextPlayer(auto03003BA8_g, auto03003BA8_var);
-        if (auto03003BA8_var < 0) { break; }
+        lv_polarityPlayer = PlayerGroupNextPlayer(auto8DBED91D_g, lv_polarityPlayer);
+        if (lv_polarityPlayer < 0) { break; }
+        if ((PlayerGroupCount(libCOMI_gf_GetEnemyHumanPlayers()) > 0)) {
+            lv_indexPlayer = PlayerGroupPlayer(libCOMI_gf_GetEnemyHumanPlayers(), lv_polarityIndex);
+            libCOMU_gv_cT_PolarityEnemies[lv_polarityPlayer] = lv_indexPlayer;
+            PlayerSetAlliance(lv_polarityPlayer, c_allianceIdPassive, lv_indexPlayer, true);
+        }
+        else {
+            lv_indexPlayer = PlayerGroupPlayer(libCOMI_gf_GetEnemyAIPlayers(), lv_polarityIndex);
+            libCOMU_gv_cT_PolarityEnemies[lv_polarityPlayer] = lv_indexPlayer;
+            PlayerSetAlliance(lv_polarityPlayer, c_allianceIdPassive, lv_indexPlayer, true);
+        }
+        if ((lv_polarityIndex == 1)) {
+            libNtve_gf_SetUpgradeLevelForPlayer(lv_polarityPlayer, "MutatorIsPlayer1", 1);
+            lv_polarityIndex = 2;
+        }
+        else {
+            libNtve_gf_SetUpgradeLevelForPlayer(lv_polarityPlayer, "MutatorIsPlayer2", 1);
+            lv_polarityIndex = 1;
+        }
     }
     libCOMI_gf_CT_ToggleTrigger(libCOMI_ge_CT_TriggerType_UnitCreation, true);
     autoDA41741F_g = libNtve_gf_UnitsInRegionWithAllianceToPlayerMatchingCondition(null, "", "", libCOMI_gf_GetAlliedPlayer(0), c_unitAllianceEnemy, null, UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32))), 0);
@@ -15152,8 +14904,7 @@ bool libCOMU_gt_CT_InitializePolarity_Func (bool testConds, bool runActions) {
         libCOMU_gf_CT_ApplyPolarity(lv_indexUnit);
     }
     if ((PlayerGroupCount(libCOMI_gf_GetAlliedCommandersPlayers()) == 1)) {
-        TriggerEnable(libCOMU_gt_PolaritySoloUnits, true);
-        TriggerEnable(libCOMU_gt_PolaritySoloUpgrades, true);
+        TimerStart(libCOMU_gv_polarityTimer, 30.0, true, c_timeReal);
     }
 
     return true;
@@ -15162,6 +14913,46 @@ bool libCOMU_gt_CT_InitializePolarity_Func (bool testConds, bool runActions) {
 //--------------------------------------------------------------------------------------------------
 void libCOMU_gt_CT_InitializePolarity_Init () {
     libCOMU_gt_CT_InitializePolarity = TriggerCreate("libCOMU_gt_CT_InitializePolarity_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: CT_ShutdownPolarity
+//--------------------------------------------------------------------------------------------------
+bool libCOMU_gt_CT_ShutdownPolarity_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_indexUnit;
+
+    // Automatic Variable Declarations
+    unitgroup auto216C5FC7_g;
+    int auto216C5FC7_u;
+
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libCOMI_gv_cT_MutatorEnabledQuickList[(libCOMI_ge_CT_MutatorQuickList_CT_QuickPolarity)] = false;
+    libCOMI_gf_CT_ToggleTrigger(libCOMI_ge_CT_TriggerType_UnitDamage, false);
+    libCOMI_gf_CT_ToggleTrigger(libCOMI_ge_CT_TriggerType_UnitCreation, false);
+    auto216C5FC7_g = libNtve_gf_UnitsInRegionWithAllianceToPlayerMatchingCondition(null, "", "", libCOMI_gf_GetAlliedPlayer(0), c_unitAllianceEnemy, null, UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32))), 0);
+    auto216C5FC7_u = UnitGroupCount(auto216C5FC7_g, c_unitCountAll);
+    for (;; auto216C5FC7_u -= 1) {
+        lv_indexUnit = UnitGroupUnitFromEnd(auto216C5FC7_g, auto216C5FC7_u);
+        if (lv_indexUnit == null) { break; }
+        libCOMU_gf_CT_RemovePolarity(lv_indexUnit);
+    }
+    if ((PlayerGroupCount(libCOMI_gf_GetAlliedCommandersPlayers()) == 1)) {
+        libNtve_gf_StopTimer(libCOMU_gv_polarityTimer);
+    }
+
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMU_gt_CT_ShutdownPolarity_Init () {
+    libCOMU_gt_CT_ShutdownPolarity = TriggerCreate("libCOMU_gt_CT_ShutdownPolarity_Func");
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -16018,7 +15809,11 @@ bool libCOMU_gt_CT_DeathTrigger_ReanimatorCorpse_Func (bool testConds, bool runA
             return false;
         }
 
-        if (!((libCOMI_gf_UnitIsMutatorMissile(lv_type) == false))) {
+        if (!(libCOMI_gf_UnitIsMutatorMissileXX(lv_type))) {
+            return false;
+        }
+
+        if (!(libCOMI_gf_UnitIsMutatorMissile(UnitGetType(EventUnit())))) {
             return false;
         }
 
@@ -20192,7 +19987,6 @@ void libCOMU_gt_CT_DebugBrutal_Init () {
 }
 
 void libCOMU_InitTriggers () {
-    libCOMU_gt_InitializeMutators_Init();
     libCOMU_gt_MM_RandomMutatorFix_Init();
     libCOMU_gt_MM_RandomMutator_Init();
     libCOMU_gt_CT_InitializeAfraidOfTheDark_Init();
@@ -20213,7 +20007,6 @@ void libCOMU_InitTriggers () {
     libCOMU_gt_CT_BlizzardEntersSafetyZone_Init();
     libCOMU_gt_CT_BlizzardLeavesSafetyZone_Init();
     libCOMU_gt_CT_InitializeBlizzard_Init();
-    libCOMU_gt_CT_ShutdownBlizzconChallenge_Init();
     libCOMU_gt_MM_InitializeBloodlust_Init();
     libCOMU_gt_MM_BloodlustActivated_Init();
     libCOMU_gt_MM_ShutdownBloodlust_Init();
@@ -20370,10 +20163,9 @@ void libCOMU_InitTriggers () {
     libCOMU_gt_CT_PlagueDeath_Init();
     libCOMU_gt_CT_ShutdownPlague_Init();
     libCOMU_gt_CT_InitializePlague_Init();
-    libCOMU_gt_CT_ShutdownPolarity_Init();
-    libCOMU_gt_PolaritySoloUnits_Init();
-    libCOMU_gt_PolaritySoloUpgrades_Init();
+    libCOMU_gt_PolarityTimer_Init();
     libCOMU_gt_CT_InitializePolarity_Init();
+    libCOMU_gt_CT_ShutdownPolarity_Init();
     libCOMU_gt_CT_PropagateClone_Init();
     libCOMU_gt_CT_PropagatorSpawn_Init();
     libCOMU_gt_CT_ShutdownPropagate_Init();

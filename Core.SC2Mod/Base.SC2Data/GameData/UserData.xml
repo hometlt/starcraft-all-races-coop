@@ -9454,6 +9454,9 @@
             <Int Int="1">
                 <Field Id="CustomAllowMultiple"/>
             </Int>
+            <Int Int="63">
+                <Field Id="ListOrder"/>
+            </Int>
             <Text Text="UserData/Mutators/Random_Description">
                 <Field Id="Description"/>
             </Text>
@@ -9470,6 +9473,9 @@
             </Int>
             <Int Int="1">
                 <Field Id="CustomAllowed"/>
+            </Int>
+            <Int Int="88">
+                <Field Id="ListOrder"/>
             </Int>
             <Text Text="UserData/Mutators/WalkingInfested_Name">
                 <Field Id="Name"/>
@@ -9488,6 +9494,9 @@
             <Int Int="1">
                 <Field Id="CustomAllowed"/>
             </Int>
+            <Int Int="57">
+                <Field Id="ListOrder"/>
+            </Int>
             <Text Text="UserData/Mutators/InfestedTerranSpawner_Name">
                 <Field Id="Name"/>
             </Text>
@@ -9504,6 +9513,9 @@
             </Int>
             <Int Int="1">
                 <Field Id="CustomAllowed"/>
+            </Int>
+            <Int Int="14">
+                <Field Id="ListOrder"/>
             </Int>
             <Text Text="UserData/Mutators/BlackFog_Name">
                 <Field Id="Name"/>
@@ -9522,6 +9534,9 @@
             <Int Int="1">
                 <Field Id="CustomAllowed"/>
             </Int>
+            <Int Int="79">
+                <Field Id="ListOrder"/>
+            </Int>
             <Text Text="UserData/Mutators/TimeWarp_Name">
                 <Field Id="Name"/>
             </Text>
@@ -9539,6 +9554,9 @@
             <Int Int="1">
                 <Field Id="CustomAllowed"/>
             </Int>
+            <Int Int="73">
+                <Field Id="ListOrder"/>
+            </Int>
             <Text Text="UserData/Mutators/UnitSpeed_Name">
                 <Field Id="Name"/>
             </Text>
@@ -9552,6 +9570,9 @@
             </Image>
             <Int Int="1">
                 <Field Id="CustomAllowed"/>
+            </Int>
+            <Int Int="42">
+                <Field Id="ListOrder"/>
             </Int>
             <Text Text="UserData/Mutators/Magnificent_Name">
                 <Field Id="Name"/>
@@ -9573,6 +9594,9 @@
             <Int Int="1">
                 <Field Id="CustomAllowed"/>
             </Int>
+            <Int Int="45">
+                <Field Id="ListOrder"/>
+            </Int>
             <Text Text="UserData/Mutators/Entomb_Name">
                 <Field Id="Name"/>
             </Text>
@@ -9589,6 +9613,9 @@
             </Int>
             <Int Int="1">
                 <Field Id="CustomAllowed"/>
+            </Int>
+            <Int Int="5">
+                <Field Id="ListOrder"/>
             </Int>
             <Text Text="UserData/Mutators/Barrier_Description">
                 <Field Id="Description"/>
@@ -9607,6 +9634,9 @@
             <Int Int="1">
                 <Field Id="CustomAllowed"/>
             </Int>
+            <Int Int="4">
+                <Field Id="ListOrder"/>
+            </Int>
             <Text Text="UserData/Mutators/Avenger_Name">
                 <Field Id="Name"/>
             </Text>
@@ -9623,6 +9653,9 @@
             </Int>
             <Int Int="1">
                 <Field Id="CustomAllowed"/>
+            </Int>
+            <Int Int="19">
+                <Field Id="ListOrder"/>
             </Int>
             <Text Text="UserData/Mutators/SideStep_Name">
                 <Field Id="Name"/>
@@ -9641,6 +9674,9 @@
             <Int Int="1">
                 <Field Id="CustomAllowed"/>
             </Int>
+            <Int Int="66">
+                <Field Id="ListOrder"/>
+            </Int>
             <Text Text="UserData/Mutators/FireFight_Name">
                 <Field Id="Name"/>
             </Text>
@@ -9657,6 +9693,9 @@
             </Int>
             <Int Int="1">
                 <Field Id="CustomAllowed"/>
+            </Int>
+            <Int Int="37">
+                <Field Id="ListOrder"/>
             </Int>
             <Text Text="UserData/Mutators/LavaBurst_Name">
                 <Field Id="Name"/>
@@ -9675,6 +9714,9 @@
             <Int Int="1">
                 <Field Id="CustomAllowed"/>
             </Int>
+            <Int Int="67">
+                <Field Id="ListOrder"/>
+            </Int>
             <Text Text="UserData/Mutators/DeathAOE_Description">
                 <Field Id="Description"/>
             </Text>
@@ -9691,6 +9733,9 @@
             </Int>
             <Int Int="1">
                 <Field Id="CustomAllowed"/>
+            </Int>
+            <Int Int="2">
+                <Field Id="ListOrder"/>
             </Int>
             <Text Text="UserData/Mutators/DropPods_Name">
                 <Field Id="Name"/>
@@ -9709,6 +9754,9 @@
             <Int Int="1">
                 <Field Id="CustomAllowed"/>
             </Int>
+            <Int Int="3">
+                <Field Id="ListOrder"/>
+            </Int>
             <Text Text="UserData/Mutators/SpawnBroodlings_Name">
                 <Field Id="Name"/>
             </Text>
@@ -9726,6 +9774,9 @@
             <Int Int="1">
                 <Field Id="CustomAllowed"/>
             </Int>
+            <Int Int="36">
+                <Field Id="ListOrder"/>
+            </Int>
             <Text Text="UserData/Mutators/LaserDrill_Description">
                 <Field Id="Description"/>
             </Text>
@@ -9739,6 +9790,9 @@
             </Image>
             <Int Int="1">
                 <Field Id="CustomAllowed"/>
+            </Int>
+            <Int Int="40">
+                <Field Id="ListOrder"/>
             </Int>
             <Text Text="UserData/Mutators/LongRange_Name">
                 <Field Id="Name"/>
@@ -9754,6 +9808,9 @@
             <Int Int="1">
                 <Field Id="CustomAllowed"/>
             </Int>
+            <Int Int="70">
+                <Field Id="ListOrder"/>
+            </Int>
             <Text Text="UserData/Mutators/ReducedVision_Name">
                 <Field Id="Name"/>
             </Text>
@@ -9767,6 +9824,9 @@
             </Image>
             <Int Int="1">
                 <Field Id="CustomAllowed"/>
+            </Int>
+            <Int Int="50">
+                <Field Id="ListOrder"/>
             </Int>
             <Text Text="UserData/Mutators/HybridNuke_Description">
                 <Field Id="Description"/>
@@ -9785,6 +9845,9 @@
             <Int Int="1">
                 <Field Id="CustomAllowed"/>
             </Int>
+            <Int Int="89">
+                <Field Id="ListOrder"/>
+            </Int>
             <Text Text="UserData/Mutators/AllEnemiesCloaked_Description">
                 <Field Id="Description"/>
             </Text>
@@ -9796,6 +9859,12 @@
             <Image Image="Assets\Textures\naptime_coop.dds">
                 <Field Id="Icon"/>
             </Image>
+            <Int Int="1">
+                <Field Id="Unfinished"/>
+            </Int>
+            <Int Int="51">
+                <Field Id="ListOrder"/>
+            </Int>
             <Text Text="UserData/Mutators/LazyWorkers_Description">
                 <Field Id="Description"/>
             </Text>
@@ -9816,6 +9885,9 @@
             <Int Int="1">
                 <Field Id="CustomAllowed"/>
             </Int>
+            <Int Int="71">
+                <Field Id="ListOrder"/>
+            </Int>
             <Text Text="UserData/Mutators/NoResources_Description">
                 <Field Id="Description"/>
             </Text>
@@ -9833,6 +9905,9 @@
             <Int Int="1">
                 <Field Id="CustomAllowed"/>
             </Int>
+            <Int Int="12">
+                <Field Id="ListOrder"/>
+            </Int>
             <Text Text="UserData/Mutators/ConcussiveAttacks_Name">
                 <Field Id="Name"/>
             </Text>
@@ -9844,6 +9919,12 @@
             <Image Image="Assets\Textures\stonezealot_coop.dds">
                 <Field Id="Icon"/>
             </Image>
+            <Int Int="74">
+                <Field Id="ListOrder"/>
+            </Int>
+            <Int Int="1">
+                <Field Id="Unfinished"/>
+            </Int>
             <Text Text="UserData/Mutators/StoneZealots_Name">
                 <Field Id="Name"/>
             </Text>
@@ -9860,6 +9941,9 @@
             </Int>
             <Int Int="1">
                 <Field Id="CustomAllowed"/>
+            </Int>
+            <Int Int="34">
+                <Field Id="ListOrder"/>
             </Int>
             <Text Text="UserData/Mutators/JustDie_Name">
                 <Field Id="Name"/>
@@ -9878,6 +9962,9 @@
             <Int Int="1">
                 <Field Id="CustomAllowed"/>
             </Int>
+            <Int Int="76">
+                <Field Id="ListOrder"/>
+            </Int>
             <Text Text="UserData/Mutators/TemporalField_Description">
                 <Field Id="Description"/>
             </Text>
@@ -9894,6 +9981,9 @@
             </Int>
             <Int Int="1">
                 <Field Id="CustomAllowed"/>
+            </Int>
+            <Int Int="87">
+                <Field Id="ListOrder"/>
             </Int>
             <Text Text="UserData/Mutators/VoidRifts_Name">
                 <Field Id="Name"/>
@@ -9912,6 +10002,9 @@
             <Int Int="1">
                 <Field Id="CustomAllowed"/>
             </Int>
+            <Int Int="83">
+                <Field Id="ListOrder"/>
+            </Int>
             <Text Text="UserData/Mutators/Tornadoes_Name">
                 <Field Id="Name"/>
             </Text>
@@ -9928,6 +10021,9 @@
             </Int>
             <Int Int="1">
                 <Field Id="CustomAllowed"/>
+            </Int>
+            <Int Int="56">
+                <Field Id="ListOrder"/>
             </Int>
             <Text Text="UserData/Mutators/OrbitalStrike_Name">
                 <Field Id="Name"/>
@@ -9946,6 +10042,9 @@
             <Int Int="1">
                 <Field Id="CustomAllowed"/>
             </Int>
+            <Int Int="62">
+                <Field Id="ListOrder"/>
+            </Int>
             <Text Text="UserData/Mutators/PurifierBeam_Description">
                 <Field Id="Description"/>
             </Text>
@@ -9963,6 +10062,9 @@
             <Int Int="1">
                 <Field Id="CustomAllowed"/>
             </Int>
+            <Int Int="7">
+                <Field Id="ListOrder"/>
+            </Int>
             <Text Text="UserData/Mutators/Blizzard_Name">
                 <Field Id="Name"/>
             </Text>
@@ -9976,6 +10078,9 @@
             </Image>
             <Int Int="1">
                 <Field Id="CustomAllowed"/>
+            </Int>
+            <Int Int="22">
+                <Field Id="ListOrder"/>
             </Int>
             <Text Text="UserData/Mutators/Fear_Name">
                 <Field Id="Name"/>
@@ -9994,6 +10099,9 @@
             <Int Int="1">
                 <Field Id="CustomAllowed"/>
             </Int>
+            <Int Int="58">
+                <Field Id="ListOrder"/>
+            </Int>
             <Text Text="UserData/Mutators/PhotonOverload_Description">
                 <Field Id="Description"/>
             </Text>
@@ -10008,6 +10116,9 @@
             <Int Int="1">
                 <Field Id="CustomAllowed"/>
             </Int>
+            <Int Int="46">
+                <Field Id="ListOrder"/>
+            </Int>
             <Text Text="UserData/Mutators/SpiderMines_Name">
                 <Field Id="Name"/>
             </Text>
@@ -10019,6 +10130,9 @@
             <Image Image="Assets\Textures\coop_mutators_randomicon.dds">
                 <Field Id="Icon"/>
             </Image>
+            <Int Int="11">
+                <Field Id="ListOrder"/>
+            </Int>
             <Text Text="UserData/Mutators/CycleRandom_Description">
                 <Field Id="Description"/>
             </Text>
@@ -10035,6 +10149,9 @@
             </Int>
             <Int Int="1">
                 <Field Id="CustomAllowed"/>
+            </Int>
+            <Int Int="86">
+                <Field Id="ListOrder"/>
             </Int>
             <Text Text="UserData/Mutators/Reanimators_Name">
                 <Field Id="Name"/>
@@ -10053,6 +10170,9 @@
             <Int Int="1">
                 <Field Id="RandomAllowed"/>
             </Int>
+            <Int Int="25">
+                <Field Id="ListOrder"/>
+            </Int>
             <Text Text="UserData/Mutators/Nukes_Name">
                 <Field Id="Name"/>
             </Text>
@@ -10070,6 +10190,9 @@
             <Int Int="1">
                 <Field Id="RandomAllowed"/>
             </Int>
+            <Int Int="39">
+                <Field Id="ListOrder"/>
+            </Int>
             <Text Text="UserData/Mutators/LifeLeech_Name">
                 <Field Id="Name"/>
             </Text>
@@ -10083,6 +10206,9 @@
             </Image>
             <Int Int="1">
                 <Field Id="CustomAllowed"/>
+            </Int>
+            <Int Int="60">
+                <Field Id="ListOrder"/>
             </Int>
             <Text Text="UserData/Mutators/OopsAllCasters_Name">
                 <Field Id="Name"/>
@@ -10101,6 +10227,9 @@
             <Int Int="1">
                 <Field Id="RandomAllowed"/>
             </Int>
+            <Int Int="44">
+                <Field Id="ListOrder"/>
+            </Int>
             <Text Text="UserData/Mutators/OrderCosts_Name">
                 <Field Id="Name"/>
             </Text>
@@ -10118,6 +10247,9 @@
             <Int Int="1">
                 <Field Id="RandomAllowed"/>
             </Int>
+            <Int Int="47">
+                <Field Id="ListOrder"/>
+            </Int>
             <Text Text="UserData/Mutators/MissileBarrage_Name">
                 <Field Id="Name"/>
             </Text>
@@ -10132,6 +10264,9 @@
             <Int Int="1">
                 <Field Id="CustomAllowed"/>
             </Int>
+            <Int Int="85">
+                <Field Id="ListOrder"/>
+            </Int>
             <Text Text="UserData/Mutators/Vertigo_Description">
                 <Field Id="Description"/>
             </Text>
@@ -10143,6 +10278,12 @@
             <Image Image="Assets\Textures\tip_hybriddominator.dds">
                 <Field Id="Icon"/>
             </Image>
+            <Int Int="84">
+                <Field Id="ListOrder"/>
+            </Int>
+            <Int Int="1">
+                <Field Id="Unfinished"/>
+            </Int>
             <Text Text="UserData/Mutators/UndyingEvil_Name">
                 <Field Id="Name"/>
             </Text>
@@ -10157,8 +10298,14 @@
             <Int Int="1">
                 <Field Id="CustomAllowed"/>
             </Int>
+            <Int Int="59">
+                <Field Id="ListOrder"/>
+            </Int>
             <Int Int="1">
-                <Field Id="RandomAllowed"/>
+                <Field Id="Unfinished"/>
+            </Int>
+            <Int>
+                <Field Id="RandomFirstAllowed"/>
             </Int>
             <Text Text="UserData/Mutators/Polarity_Name">
                 <Field Id="Name"/>
@@ -10177,6 +10324,9 @@
             <Int Int="1">
                 <Field Id="RandomAllowed"/>
             </Int>
+            <Int Int="80">
+                <Field Id="ListOrder"/>
+            </Int>
             <Text Text="UserData/Mutators/Evolve_Name">
                 <Field Id="Name"/>
             </Text>
@@ -10188,6 +10338,9 @@
             <Image Image="Assets\Textures\btn-upgrade-afaidofthedark.dds">
                 <Field Id="Icon"/>
             </Image>
+            <Int Int="1">
+                <Field Id="ListOrder"/>
+            </Int>
             <Text Text="UserData/Mutators/UberDarkness_Name">
                 <Field Id="Name"/>
             </Text>
@@ -10199,6 +10352,9 @@
             <Image Image="Assets\Textures\halloweencandy_coop.dds">
                 <Field Id="Icon"/>
             </Image>
+            <Int Int="81">
+                <Field Id="ListOrder"/>
+            </Int>
             <Text Text="UserData/Mutators/TrickOrTreat_Name">
                 <Field Id="Name"/>
             </Text>
@@ -10210,6 +10366,9 @@
             <Image Image="Assets\Textures\foodhunt_coop.dds">
                 <Field Id="Icon"/>
             </Image>
+            <Int Int="82">
+                <Field Id="ListOrder"/>
+            </Int>
             <Text Text="UserData/Mutators/FoodHunt_Name">
                 <Field Id="Name"/>
             </Text>
@@ -10221,6 +10380,9 @@
             <Image Image="Assets\Textures\sharingaroof_coop.dds">
                 <Field Id="Icon"/>
             </Image>
+            <Int Int="69">
+                <Field Id="ListOrder"/>
+            </Int>
             <Text Text="UserData/Mutators/SharedSupply_Name">
                 <Field Id="Name"/>
             </Text>
@@ -10237,6 +10399,9 @@
             </Int>
             <Int Int="1">
                 <Field Id="CustomAllowed"/>
+            </Int>
+            <Int Int="15">
+                <Field Id="ListOrder"/>
             </Int>
             <Text Text="UserData/Mutators/DamageBounce_Name">
                 <Field Id="Name"/>
@@ -10255,6 +10420,9 @@
             <Int Int="1">
                 <Field Id="CustomAllowed"/>
             </Int>
+            <Int Int="6">
+                <Field Id="ListOrder"/>
+            </Int>
             <Text Text="UserData/Mutators/Plague_Name">
                 <Field Id="Name"/>
             </Text>
@@ -10272,6 +10440,9 @@
             <Int Int="1">
                 <Field Id="CustomAllowed"/>
             </Int>
+            <Int Int="17">
+                <Field Id="ListOrder"/>
+            </Int>
             <Text Text="UserData/Mutators/StructureSteal_Name">
                 <Field Id="Name"/>
             </Text>
@@ -10283,6 +10454,9 @@
             <Image Image="Assets\Textures\giftexchange_coop.dds">
                 <Field Id="Icon"/>
             </Image>
+            <Int Int="24">
+                <Field Id="ListOrder"/>
+            </Int>
             <Text Text="UserData/Mutators/GiftFight_Name">
                 <Field Id="Name"/>
             </Text>
@@ -10294,6 +10468,9 @@
             <Image Image="Assets\Textures\naughtylist_coop.dds">
                 <Field Id="Icon"/>
             </Image>
+            <Int Int="52">
+                <Field Id="ListOrder"/>
+            </Int>
             <Text Text="UserData/Mutators/KillKarma_Name">
                 <Field Id="Name"/>
             </Text>
@@ -10305,6 +10482,12 @@
             <Image Image="Assets\Textures\btn-command-move.dds">
                 <Field Id="Icon"/>
             </Image>
+            <Int Int="20">
+                <Field Id="ListOrder"/>
+            </Int>
+            <Int Int="1">
+                <Field Id="Unfinished"/>
+            </Int>
             <Text Text="UserData/Mutators/AfraidOfTheDark_Name">
                 <Field Id="Name"/>
             </Text>
@@ -10316,6 +10499,12 @@
             <Image Image="Assets\Textures\btn-ability-terran-battlefieldawareness.dds">
                 <Field Id="Icon"/>
             </Image>
+            <Int Int="33">
+                <Field Id="ListOrder"/>
+            </Int>
+            <Int Int="1">
+                <Field Id="Unfinished"/>
+            </Int>
             <Text Text="UserData/Mutators/Insubordination_Name">
                 <Field Id="Name"/>
             </Text>
@@ -10329,6 +10518,9 @@
             </Image>
             <Int Int="1">
                 <Field Id="CustomAllowed"/>
+            </Int>
+            <Int Int="28">
+                <Field Id="ListOrder"/>
             </Int>
             <Text Text="UserData/Mutators/HeroesFromTheStorm_Description">
                 <Field Id="Description"/>
@@ -10344,6 +10536,9 @@
             <Int Int="1">
                 <Field Id="CustomAllowed"/>
             </Int>
+            <Int Int="32">
+                <Field Id="ListOrder"/>
+            </Int>
             <Text Text="UserData/Mutators/Inspiration_Name">
                 <Field Id="Name"/>
             </Text>
@@ -10358,6 +10553,9 @@
             <Int Int="1">
                 <Field Id="CustomAllowed"/>
             </Int>
+            <Int Int="27">
+                <Field Id="ListOrder"/>
+            </Int>
             <Text Text="UserData/Mutators/HardenedWill_Name">
                 <Field Id="Name"/>
             </Text>
@@ -10369,6 +10567,9 @@
             <Image Image="Assets\Textures\lunarnewyearfirework_coop.dds">
                 <Field Id="Icon"/>
             </Image>
+            <Int Int="23">
+                <Field Id="ListOrder"/>
+            </Int>
             <Text Text="UserData/Mutators/Fireworks_Name">
                 <Field Id="Name"/>
             </Text>
@@ -10380,6 +10581,9 @@
             <Image Image="Assets\Textures\redenvelop_coop.dds">
                 <Field Id="Icon"/>
             </Image>
+            <Int Int="41">
+                <Field Id="ListOrder"/>
+            </Int>
             <Text Text="UserData/Mutators/RedEnvelopes_Name">
                 <Field Id="Name"/>
             </Text>
@@ -10391,6 +10595,12 @@
             <Image Image="Assets\Textures\ui_tipicon_campaign_zerus03-yagdratunnel.dds">
                 <Field Id="Icon"/>
             </Image>
+            <Int Int="72">
+                <Field Id="ListOrder"/>
+            </Int>
+            <Int Int="1">
+                <Field Id="Unfinished"/>
+            </Int>
             <Text Text="UserData/Mutators/Sluggish_Description">
                 <Field Id="Description"/>
             </Text>
@@ -10408,6 +10618,9 @@
             <Int Int="1">
                 <Field Id="RandomAllowed"/>
             </Int>
+            <Int Int="16">
+                <Field Id="ListOrder"/>
+            </Int>
             <Text Text="UserData/Mutators/DamageReflect_Name">
                 <Field Id="Name"/>
             </Text>
@@ -10424,6 +10637,9 @@
             </Int>
             <Int Int="1">
                 <Field Id="CustomAllowed"/>
+            </Int>
+            <Int Int="21">
+                <Field Id="ListOrder"/>
             </Int>
             <Text Text="UserData/Mutators/DeathPull_Name">
                 <Field Id="Name"/>
@@ -10445,6 +10661,9 @@
             <Int Int="1">
                 <Field Id="CustomAllowed"/>
             </Int>
+            <Int Int="61">
+                <Field Id="ListOrder"/>
+            </Int>
             <Text Text="UserData/Mutators/Propagate_Name">
                 <Field Id="Name"/>
             </Text>
@@ -10458,6 +10677,9 @@
             </Image>
             <Int Int="1">
                 <Field Id="CustomAllowed"/>
+            </Int>
+            <Int Int="48">
+                <Field Id="ListOrder"/>
             </Int>
             <Text Text="UserData/Mutators/MomentOfSilence_Name">
                 <Field Id="Name"/>
@@ -10473,6 +10695,9 @@
             <Int Int="1">
                 <Field Id="CustomAllowed"/>
             </Int>
+            <Int Int="35">
+                <Field Id="ListOrder"/>
+            </Int>
             <Text Text="UserData/Mutators/KillBots_Name">
                 <Field Id="Name"/>
             </Text>
@@ -10486,6 +10711,9 @@
             </Image>
             <Int Int="1">
                 <Field Id="CustomAllowed"/>
+            </Int>
+            <Int Int="10">
+                <Field Id="ListOrder"/>
             </Int>
             <Text Text="UserData/Mutators/BoomBots_Name">
                 <Field Id="Name"/>
@@ -10848,369 +11076,6 @@
             <Text Text="UserData/Mutators/HeroesfromtheStormOld_Description">
                 <Field Id="Description"/>
             </Text>
-        </Instances>
-        <Instances Id="[Override]Random">
-            <Int Int="63">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]WalkingInfested">
-            <Int Int="88">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]InfestedTerranSpawner">
-            <Int Int="57">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]BlackFog">
-            <Int Int="14">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]TimeWarp">
-            <Int Int="79">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]UnitSpeed">
-            <Int Int="73">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]Magnificent">
-            <Int Int="42">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]Entomb">
-            <Int Int="45">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]Barrier">
-            <Int Int="5">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]Avenger">
-            <Int Int="4">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]SideStep">
-            <Int Int="19">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]FireFight">
-            <Int Int="66">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]LavaBurst">
-            <Int Int="37">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]DeathAOE">
-            <Int Int="67">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]DropPods">
-            <Int Int="2">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]SpawnBroodlings">
-            <Int Int="3">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]LaserDrill">
-            <Int Int="36">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]LongRange">
-            <Int Int="40">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]ReducedVision">
-            <Int Int="70">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]HybridNuke">
-            <Int Int="50">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]AllEnemiesCloaked">
-            <Int Int="89">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]LazyWorkers">
-            <Int Int="1">
-                <Field Id="Unfinished"/>
-            </Int>
-            <Int Int="51">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]NoResources">
-            <Int Int="71">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]ConcussiveAttacks">
-            <Int Int="12">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]StoneZealots">
-            <Int Int="74">
-                <Field Id="ListOrder"/>
-            </Int>
-            <Int Int="1">
-                <Field Id="Unfinished"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]JustDie">
-            <Int Int="34">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]TemporalField">
-            <Int Int="76">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]VoidRifts">
-            <Int Int="87">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]Tornadoes">
-            <Int Int="83">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]OrbitalStrike">
-            <Int Int="56">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]PurifierBeam">
-            <Int Int="62">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]Blizzard">
-            <Int Int="7">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]Fear">
-            <Int Int="22">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]PhotonOverload">
-            <Int Int="58">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]SpiderMines">
-            <Int Int="46">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]CycleRandom">
-            <Int Int="11">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]Reanimators">
-            <Int Int="86">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]Nukes">
-            <Int Int="25">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]LifeLeech">
-            <Int Int="39">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]OopsAllCasters">
-            <Int Int="60">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]OrderCosts">
-            <Int Int="44">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]MissileBarrage">
-            <Int Int="47">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]Vertigo">
-            <Int Int="85">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]UndyingEvil">
-            <Int Int="84">
-                <Field Id="ListOrder"/>
-            </Int>
-            <Int Int="1">
-                <Field Id="Unfinished"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]Polarity">
-            <Int Int="59">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]Evolve">
-            <Int Int="80">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]UberDarkness">
-            <Int Int="1">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]TrickOrTreat">
-            <Int Int="81">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]FoodHunt">
-            <Int Int="82">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]SharedSupply">
-            <Int Int="69">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]DamageBounce">
-            <Int Int="15">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]Plague">
-            <Int Int="6">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]StructureSteal">
-            <Int Int="17">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]GiftFight">
-            <Int Int="24">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]KillKarma">
-            <Int Int="52">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]AfraidOfTheDark">
-            <Int Int="20">
-                <Field Id="ListOrder"/>
-            </Int>
-            <Int Int="1">
-                <Field Id="Unfinished"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]Insubordination">
-            <Int Int="33">
-                <Field Id="ListOrder"/>
-            </Int>
-            <Int Int="1">
-                <Field Id="Unfinished"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]HeroesFromTheStorm">
-            <Int Int="28">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]Inspiration">
-            <Int Int="32">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]HardenedWill">
-            <Int Int="27">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]Fireworks">
-            <Int Int="23">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]RedEnvelopes">
-            <Int Int="41">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]Sluggish">
-            <Int Int="72">
-                <Field Id="ListOrder"/>
-            </Int>
-            <Int Int="1">
-                <Field Id="Unfinished"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]DamageReflect">
-            <Int Int="16">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]DeathPull">
-            <Int Int="21">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]Propagate">
-            <Int Int="61">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]MomentOfSilence">
-            <Int Int="48">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]KillBots">
-            <Int Int="35">
-                <Field Id="ListOrder"/>
-            </Int>
-        </Instances>
-        <Instances Id="[Override]BoomBots">
-            <Int Int="10">
-                <Field Id="ListOrder"/>
-            </Int>
         </Instances>
     </CUser>
     <CUser id="MissionObjective">
