@@ -4,14 +4,10 @@ include "LibCOMI_h"
 // Library: COMMANDERS
 //--------------------------------------------------------------------------------------------------
 // Preset Declarations
-const int libCOMM_ge_CM_SoATargetingPhaseType_None = 0;
-const int libCOMM_ge_CM_SoATargetingPhaseType_Location = 1;
-const int libCOMM_ge_CM_SoATargetingPhaseType_Direction = 2;
 const int libCOMM_ge_CM_ZeratulProphecyEventUnits_ZeratulUnit = 0;
 const int libCOMM_ge_CM_ZeratulProphecyEventUnits_ArtifactUnit = 1;
 
 // Constants
-const int libCOMM_gv_cMC_SOATARGETCOUNTMAX = 5;
 const string libCOMM_gv_warpGateTrainAbility = "WarpGateTrain";
 const string libCOMM_gv_supplicantWarpTrainActualAbility = "WarpGateTrainSupplicantTrue";
 const string libCOMM_gv_supplicantWarpTrainDummyUnitLink = "AlarakSupplicantWarpTrainDummy";
@@ -92,27 +88,6 @@ const int libCOMM_gv_cM_ZeratulProphecyArtifactFinalUniqueNumber = 3;
 
 // Variable Declarations
 int[5][3] libCOMM_gv_aF_TopbarButton;
-bool libCOMM_gv_cM_SoAExitInstantly;
-int[libCOMI_gv_cCC_MAXPLAYERS + 1] libCOMM_gv_cM_SoATargetingChargesSpent;
-int[libCOMI_gv_cCC_MAXPLAYERS + 1] libCOMM_gv_cM_SoATargetingChargesTotal;
-int libCOMM_gv_cM_SoATargetingUsageCount;
-int[libCOMI_gv_cCC_MAXPLAYERS + 1] libCOMM_gv_cM_SoATargetingPhase;
-bool[libCOMI_gv_cCC_MAXPLAYERS + 1] libCOMM_gv_cM_SoATargetingTransitioning;
-bool[libCOMI_gv_cCC_MAXPLAYERS + 1] libCOMM_gv_cM_SoATargetingUnrefundableStageEntered;
-bool[libCOMI_gv_cCC_MAXPLAYERS + 1] libCOMM_gv_cM_SoATargetingAlreadyCanceled;
-string[libCOMI_gv_cCC_MAXPLAYERS + 1] libCOMM_gv_cM_SoATargetingModel;
-string[libCOMI_gv_cCC_MAXPLAYERS + 1] libCOMM_gv_cM_SoATargetingUnitType;
-unit[libCOMM_gv_cMC_SOATARGETCOUNTMAX + 1][libCOMI_gv_cCC_MAXPLAYERS + 1] libCOMM_gv_cM_SoATargetingUnit;
-actor[libCOMM_gv_cMC_SOATARGETCOUNTMAX + 1][libCOMI_gv_cCC_MAXPLAYERS + 1] libCOMM_gv_cM_SoATargetingActors;
-string[libCOMI_gv_cCC_MAXPLAYERS + 1] libCOMM_gv_cM_SoATargetingBehavior;
-string[libCOMI_gv_cCC_MAXPLAYERS + 1] libCOMM_gv_cM_SoATargetingActivateAbility;
-abilcmd[libCOMI_gv_cCC_MAXPLAYERS + 1] libCOMM_gv_cM_SoATargetingExecuteCommand;
-text[libCOMI_gv_cCC_MAXPLAYERS + 1] libCOMM_gv_cM_SoATargetingInstructionsPrimary;
-text[libCOMI_gv_cCC_MAXPLAYERS + 1] libCOMM_gv_cM_SoATargetingInstructionsSecondary;
-string[libCOMI_gv_cCC_MAXPLAYERS + 1] libCOMM_gv_cM_SoATargetingCooldown;
-order[libCOMI_gv_cCC_MAXPLAYERS + 1] libCOMM_gv_cM_SoATargetingOrder;
-unitgroup[libCOMI_gv_cCC_MAXPLAYERS + 1] libCOMM_gv_cM_SoATargetingDirectionGroup;
-bool[libCOMI_gv_cCC_MAXPLAYERS + 1] libCOMM_gv_cM_SoATargetingCycling;
 fixed[libCOMI_gv_cCC_MAXPLAYERS + 1] libCOMM_gv_cC_ScoreArtanisKaraxSoADmg;
 int libCOMM_gv_cU_GPAlarakGemClickCount;
 int[libCOMI_gv_cCC_MAXPLAYERS + 1] libCOMM_gv_cU_GPAlarakButton;
@@ -393,12 +368,6 @@ bool libCOMM_gf_AF_AbilityIsAvailable (int lp_pPlayer, int lp_pButtonIndex);
 fixed libCOMM_gf_AF_EnergyCostofAbility (string lp_pAbility);
 string libCOMM_gf_AF_GetButton (int lp_pPlayer, int lp_pButtonIndex);
 void libCOMM_gf_AF_TopBarNotificationsInitialization (int lp_player);
-void libCOMM_gf_CM_SoATargetingModeEnter (int lp_player);
-void libCOMM_gf_CM_SoATargetingModeExit (int lp_player);
-void libCOMM_gf_CM_SoATargetingCleanupActorsAndUnits (int lp_player);
-void libCOMM_gf_CM_SetFogAlphaOverTime (fixed lp_targetAlpha, fixed lp_duration, int lp_player);
-void libCOMM_gf_CM_ResetFogAlphaOverTime (fixed lp_duration, int lp_player);
-void libCOMM_gf_CM_SoATargetingCancel (int lp_player);
 void libCOMM_gf_CU_GPInitAlarak (int lp_player);
 void libCOMM_gf_CM_GPReminderArtanis (int lp_player);
 void libCOMM_gf_CM_GPReminderAbathur (int lp_player);
@@ -555,24 +524,14 @@ point libCOMM_gf_CM_Zeratul_GetArtifactPlacementOrigin (string lp_artifactPlacem
 int libCOMM_gf_CM_Zeratul_GetArtifactLimit (int lp_zeratulPlayer);
 
 // Trigger Declarations
-trigger libCOMM_gt_AF_TopBarNotificationsEnableDisable;
-trigger libCOMM_gt_AF_TopBarClicked;
-trigger libCOMM_gt_AF_MouseEntersTopBar;
-trigger libCOMM_gt_AF_MouseExitsTopBar;
 trigger libCOMM_gt_CM_GPReminderAbilityUsed;
 trigger libCOMM_gt_CM_SoAShiftCheatFailSafeThermal;
 trigger libCOMM_gt_CM_SoAShiftCheatFailSafeHHCallFleet;
 trigger libCOMM_gt_CM_SoAShiftCheatFailSafeNovaBombing;
-trigger libCOMM_gt_CM_SoATargetingForceOff;
-trigger libCOMM_gt_CM_SoATargetingDeactivated;
-trigger libCOMM_gt_CM_SoATargetingPointChosen;
-trigger libCOMM_gt_CM_SoATargetingDirectionChosen;
-trigger libCOMM_gt_CM_SoATargetingEffectFired;
-trigger libCOMM_gt_CM_SoATargetingCancel;
-trigger libCOMM_gt_CM_SoATargetingCancelFromUI;
-trigger libCOMM_gt_CM_SoATargetingCameraShake;
-trigger libCOMM_gt_ChronoAnimSpeedOn;
-trigger libCOMM_gt_ChronoAnimSpeedOff;
+trigger libCOMM_gt_AF_TopBarNotificationsEnableDisable;
+trigger libCOMM_gt_AF_TopBarClicked;
+trigger libCOMM_gt_AF_MouseEntersTopBar;
+trigger libCOMM_gt_AF_MouseExitsTopBar;
 trigger libCOMM_gt_CM_SoAGravitonBombActivated;
 trigger libCOMM_gt_CC_ScoreArtanisKaraxOrbitalStrike;
 trigger libCOMM_gt_CM_SoAOrbitalStrikeActivated;

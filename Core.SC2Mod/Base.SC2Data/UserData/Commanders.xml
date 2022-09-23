@@ -313,9 +313,6 @@
             <Model Model="SwannPortrait">
                 <Field Id="PortraitModel"/>
             </Model>
-            <Sound Sound="SwannCommander_Thanks">
-                <Field Id="StandardVO" Index="6"/>
-            </Sound>
             <Sound Sound="SwannCommander_Trade_ResourcesGiven">
                 <Field Id="StandardVO"/>
             </Sound>
@@ -333,6 +330,9 @@
             </Sound>
             <Sound Sound="SwannCommander_Trade_VespeneNeeded">
                 <Field Id="StandardVO" Index="5"/>
+            </Sound>
+            <Sound Sound="SwannCommander_Thanks">
+                <Field Id="StandardVO" Index="6"/>
             </Sound>
             <Sound Sound="SwannCommander_Auto_EnemyProtoss">
                 <Field Id="StandardVO" Index="7"/>
@@ -471,9 +471,6 @@
             <Sound Sound="KerriganCommander_Trade_ResourcesGiven">
                 <Field Id="StandardVO"/>
             </Sound>
-            <Sound Sound="KerriganCommander_Thanks">
-                <Field Id="StandardVO" Index="6"/>
-            </Sound>
             <Sound Sound="KerriganCommander_Trade_ResourcesNeeded">
                 <Field Id="StandardVO" Index="1"/>
             </Sound>
@@ -488,6 +485,9 @@
             </Sound>
             <Sound Sound="KerriganCommander_Trade_VespeneNeeded">
                 <Field Id="StandardVO" Index="5"/>
+            </Sound>
+            <Sound Sound="KerriganCommander_Thanks">
+                <Field Id="StandardVO" Index="6"/>
             </Sound>
             <Sound Sound="KerriganCommander_Auto_EnemyProtoss">
                 <Field Id="StandardVO" Index="7"/>
@@ -2756,6 +2756,24 @@
             <Model Model="AdjutantPortrait">
                 <Field Id="PortraitModel"/>
             </Model>
+            <Sound Sound="RaynorCommander_Thanks">
+                <Field Id="StandardVO" Index="6"/>
+            </Sound>
+            <Sound Sound="RaynorCommander_Auto_EnemyProtoss">
+                <Field Id="StandardVO" Index="7"/>
+            </Sound>
+            <Sound Sound="RaynorCommander_Auto_EnemyTerran">
+                <Field Id="StandardVO" Index="8"/>
+            </Sound>
+            <Sound Sound="RaynorCommander_Auto_EnemyZerg">
+                <Field Id="StandardVO" Index="9"/>
+            </Sound>
+            <Sound Sound="RaynorCommander_CloakedUnits">
+                <Field Id="StandardVO" Index="10"/>
+            </Sound>
+            <Sound Sound="RaynorCommander_Auto_UnitsLost">
+                <Field Id="StandardVO" Index="11"/>
+            </Sound>
             <Text Text="UserData/Commanders/Terran_Description">
                 <Field Id="Description"/>
             </Text>
@@ -2845,6 +2863,24 @@
             <Image Image="Assets\Textures\ui_battlenet_glues_multiplayer_racebutton_raceicon_normal_zerg.dds">
                 <Field Id="Icon"/>
             </Image>
+            <Sound Sound="KerriganCommander_Thanks">
+                <Field Id="StandardVO" Index="6"/>
+            </Sound>
+            <Sound Sound="KerriganCommander_Auto_EnemyProtoss">
+                <Field Id="StandardVO" Index="7"/>
+            </Sound>
+            <Sound Sound="KerriganCommander_Auto_EnemyTerran">
+                <Field Id="StandardVO" Index="8"/>
+            </Sound>
+            <Sound Sound="KerriganCommander_Auto_EnemyZerg">
+                <Field Id="StandardVO" Index="9"/>
+            </Sound>
+            <Sound Sound="KerriganCommander_Auto_CloakedUnits">
+                <Field Id="StandardVO" Index="10"/>
+            </Sound>
+            <Sound Sound="KerriganCommander_Auto_UnitsLost">
+                <Field Id="StandardVO" Index="11"/>
+            </Sound>
             <Text Text="UserData/Commanders/Zerg_Description">
                 <Field Id="Description"/>
             </Text>
@@ -2934,6 +2970,24 @@
             <Model Model="ExecutorPortrait">
                 <Field Id="PortraitModel"/>
             </Model>
+            <Sound Sound="ArtanisCommander_Thanks">
+                <Field Id="StandardVO" Index="6"/>
+            </Sound>
+            <Sound Sound="ArtanisCommander_Auto_EnemyProtoss">
+                <Field Id="StandardVO" Index="7"/>
+            </Sound>
+            <Sound Sound="ArtanisCommander_Auto_EnemyTerran">
+                <Field Id="StandardVO" Index="8"/>
+            </Sound>
+            <Sound Sound="ArtanisCommander_Auto_EnemyZerg">
+                <Field Id="StandardVO" Index="9"/>
+            </Sound>
+            <Sound Sound="ArtanisCommander_Auto_CloakedUnits">
+                <Field Id="StandardVO" Index="10"/>
+            </Sound>
+            <Sound Sound="ArtanisCommander_Auto_UnitsLost">
+                <Field Id="StandardVO" Index="11"/>
+            </Sound>
             <Text Text="UserData/Commanders/Protoss_Description">
                 <Field Id="Description"/>
             </Text>
@@ -2975,6 +3029,24 @@
             <Model Model="WarfieldPortrait">
                 <Field Id="PortraitModel"/>
             </Model>
+            <Sound Sound="HornerHan_Auto_UnitsLost">
+                <Field Id="StandardVO" Index="11"/>
+            </Sound>
+            <Sound Sound="HornerHan_Auto_EnemyZerg">
+                <Field Id="StandardVO" Index="9"/>
+            </Sound>
+            <Sound Sound="HornerHan_Auto_EnemyTerran">
+                <Field Id="StandardVO" Index="8"/>
+            </Sound>
+            <Sound Sound="HornerHan_Auto_EnemyProtoss">
+                <Field Id="StandardVO" Index="7"/>
+            </Sound>
+            <Sound Sound="HornerHan_Thanks">
+                <Field Id="StandardVO" Index="6"/>
+            </Sound>
+            <Sound Sound="acAttackWave_Han_240">
+                <Field Id="StandardVO" Index="10"/>
+            </Sound>
             <Text Text="UserData/Commanders/UED_Name">
                 <Field Id="Name"/>
             </Text>
@@ -3055,6 +3127,24 @@
             <Model Model="NHbrPollinator@Portrait">
                 <Field Id="PortraitModel"/>
             </Model>
+            <Sound Sound="ZeratulCommander_Thanks">
+                <Field Id="StandardVO" Index="6"/>
+            </Sound>
+            <Sound Sound="ZeratulCommander_Auto_EnemyProtoss">
+                <Field Id="StandardVO" Index="7"/>
+            </Sound>
+            <Sound Sound="ZeratulCommander_Auto_EnemyTerran">
+                <Field Id="StandardVO" Index="8"/>
+            </Sound>
+            <Sound Sound="ZeratulCommander_Auto_EnemyZerg">
+                <Field Id="StandardVO" Index="9"/>
+            </Sound>
+            <Sound Sound="ZeratulCommander_Auto_CloakedUnits">
+                <Field Id="StandardVO" Index="10"/>
+            </Sound>
+            <Sound Sound="ZeratulCommander_Auto_UnitsLost">
+                <Field Id="StandardVO" Index="11"/>
+            </Sound>
             <Text Text="UserData/Commanders/NetworkHybrids_Description">
                 <Field Id="Description"/>
             </Text>
@@ -3129,6 +3219,24 @@
             <Model Model="GenetronAdjutantPortrait">
                 <Field Id="PortraitModel"/>
             </Model>
+            <Sound Sound="SwannCommander_Thanks">
+                <Field Id="StandardVO" Index="6"/>
+            </Sound>
+            <Sound Sound="SwannCommander_Auto_EnemyProtoss">
+                <Field Id="StandardVO" Index="7"/>
+            </Sound>
+            <Sound Sound="SwannCommander_Auto_EnemyTerran">
+                <Field Id="StandardVO" Index="8"/>
+            </Sound>
+            <Sound Sound="SwannCommander_Auto_EnemyZerg">
+                <Field Id="StandardVO" Index="9"/>
+            </Sound>
+            <Sound Sound="SwannCommander_Auto_CloakedUnits">
+                <Field Id="StandardVO" Index="10"/>
+            </Sound>
+            <Sound Sound="SwannCommander_Auto_UnitsLost">
+                <Field Id="StandardVO" Index="11"/>
+            </Sound>
             <Text Text="UserData/Commanders/Genetron_Description">
                 <Field Id="Description"/>
             </Text>
@@ -3203,6 +3311,24 @@
             <Model Model="PortraitEroder">
                 <Field Id="PortraitModel"/>
             </Model>
+            <Sound Sound="AbathurCommander_Thanks">
+                <Field Id="StandardVO" Index="6"/>
+            </Sound>
+            <Sound Sound="AbathurCommander_Auto_EnemyProtoss">
+                <Field Id="StandardVO" Index="7"/>
+            </Sound>
+            <Sound Sound="AbathurCommander_Auto_EnemyTerran">
+                <Field Id="StandardVO" Index="8"/>
+            </Sound>
+            <Sound Sound="AbathurCommander_Auto_EnemyZerg">
+                <Field Id="StandardVO" Index="9"/>
+            </Sound>
+            <Sound Sound="AbathurCommander_Auto_UnitsLost">
+                <Field Id="StandardVO" Index="11"/>
+            </Sound>
+            <Sound Sound="acAttackWave_Abathur_190">
+                <Field Id="StandardVO" Index="10"/>
+            </Sound>
             <Text Text="UserData/Commanders/Xayid_Description">
                 <Field Id="Description"/>
             </Text>
@@ -3277,6 +3403,24 @@
             <Model Model="DragonBuildingPortrait">
                 <Field Id="PortraitModel"/>
             </Model>
+            <Sound Sound="DehakaCommander_Thanks">
+                <Field Id="StandardVO" Index="6"/>
+            </Sound>
+            <Sound Sound="DehakaCommander_Auto_EnemyProtoss">
+                <Field Id="StandardVO" Index="7"/>
+            </Sound>
+            <Sound Sound="DehakaCommander_Auto_EnemyTerran">
+                <Field Id="StandardVO" Index="8"/>
+            </Sound>
+            <Sound Sound="DehakaCommander_Auto_EnemyZerg">
+                <Field Id="StandardVO" Index="9"/>
+            </Sound>
+            <Sound Sound="acAttackWave_Dehaka_226">
+                <Field Id="StandardVO" Index="10"/>
+            </Sound>
+            <Sound Sound="DehakaCommander_Auto_UnitsLost">
+                <Field Id="StandardVO" Index="11"/>
+            </Sound>
             <Text Text="UserData/Commanders/Dragon_Description">
                 <Field Id="Description"/>
             </Text>
@@ -3348,6 +3492,24 @@
             <Model Model="HybridDominatorVoidPortrait">
                 <Field Id="PortraitModel"/>
             </Model>
+            <Sound Sound="VorazunCommander_Thanks">
+                <Field Id="StandardVO" Index="6"/>
+            </Sound>
+            <Sound Sound="VorazunCommander_Auto_EnemyProtoss">
+                <Field Id="StandardVO" Index="7"/>
+            </Sound>
+            <Sound Sound="VorazunCommander_Auto_EnemyTerran">
+                <Field Id="StandardVO" Index="8"/>
+            </Sound>
+            <Sound Sound="VorazunCommander_Auto_EnemyZerg">
+                <Field Id="StandardVO" Index="9"/>
+            </Sound>
+            <Sound Sound="VorazunCommander_Auto_CloakedUnits">
+                <Field Id="StandardVO" Index="10"/>
+            </Sound>
+            <Sound Sound="VorazunCommander_Auto_UnitsLost">
+                <Field Id="StandardVO" Index="11"/>
+            </Sound>
             <Text Text="UserData/Commanders/Keiron_Description">
                 <Field Id="Description"/>
             </Text>
@@ -3377,6 +3539,24 @@
             <Model Model="MiningDronePortrait">
                 <Field Id="PortraitModel"/>
             </Model>
+            <Sound Sound="MengskCommander_Thanks">
+                <Field Id="StandardVO" Index="6"/>
+            </Sound>
+            <Sound Sound="MengskCommander_Auto_EnemyProtoss">
+                <Field Id="StandardVO" Index="7"/>
+            </Sound>
+            <Sound Sound="MengskCommander_Auto_EnemyTerran">
+                <Field Id="StandardVO" Index="8"/>
+            </Sound>
+            <Sound Sound="MengskCommander_Auto_EnemyZerg">
+                <Field Id="StandardVO" Index="9"/>
+            </Sound>
+            <Sound Sound="MengskCommander_Auto_UnitsLost">
+                <Field Id="StandardVO" Index="11"/>
+            </Sound>
+            <Sound Sound="acAttackWave_MengskCommander_271">
+                <Field Id="StandardVO" Index="10"/>
+            </Sound>
             <Text Text="UserData/Commanders/UPL_Description">
                 <Field Id="Description"/>
             </Text>
@@ -3412,6 +3592,24 @@
             <Model Model="Carrier_AmonBrood_Collection_Portrait">
                 <Field Id="PortraitModel"/>
             </Model>
+            <Sound Sound="AlarakCommander_Thanks">
+                <Field Id="StandardVO" Index="6"/>
+            </Sound>
+            <Sound Sound="AlarakCommander_Auto_EnemyProtoss">
+                <Field Id="StandardVO" Index="7"/>
+            </Sound>
+            <Sound Sound="AlarakCommander_Auto_EnemyTerran">
+                <Field Id="StandardVO" Index="8"/>
+            </Sound>
+            <Sound Sound="AlarakCommander_Auto_EnemyZerg">
+                <Field Id="StandardVO" Index="9"/>
+            </Sound>
+            <Sound Sound="AlarakCommander_Auto_UnitsLost">
+                <Field Id="StandardVO" Index="11"/>
+            </Sound>
+            <Sound Sound="acAttackWave_Alarak_204">
+                <Field Id="StandardVO" Index="10"/>
+            </Sound>
             <Text Text="UserData/Commanders/Talon_Description">
                 <Field Id="Description"/>
             </Text>

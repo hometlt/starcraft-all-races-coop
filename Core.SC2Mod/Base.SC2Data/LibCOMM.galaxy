@@ -36,12 +36,6 @@ void libCOMM_InitVariables () {
         }
     }
     for (init_i = 0; init_i <= libCOMI_gv_cCC_MAXPLAYERS; init_i += 1) {
-        libCOMM_gv_cM_SoATargetingAlreadyCanceled[init_i] = true;
-    }
-    for (init_i = 0; init_i <= libCOMI_gv_cCC_MAXPLAYERS; init_i += 1) {
-        libCOMM_gv_cM_SoATargetingDirectionGroup[init_i] = UnitGroupEmpty();
-    }
-    for (init_i = 0; init_i <= libCOMI_gv_cCC_MAXPLAYERS; init_i += 1) {
         libCOMM_gv_cU_GPAlarakButton[init_i] = c_invalidDialogControlId;
     }
     libCOMM_gv_supplicantWarpTrainActualUnitCost = UnitTypeGetCost("Supplicant", c_unitCostMinerals);
@@ -1735,251 +1729,6 @@ void libCOMM_gf_AF_TopBarNotificationsInitialization (int lp_player) {
         libCOMM_gv_aF_TopbarButton[1][lp_player] = DialogControlLastCreated();
     }
 
-}
-
-void libCOMM_gf_CM_SoATargetingModeEnter (int lp_player) {
-    // Variable Declarations
-    int lv_count;
-
-    // Automatic Variable Declarations
-    // Variable Initialization
-
-    // Implementation
-    libCOMM_gv_cM_SoATargetingUnrefundableStageEntered[lp_player] = false;
-    libCOMM_gv_cM_SoATargetingAlreadyCanceled[lp_player] = false;
-    while (!((libCOMM_gv_cM_SoATargetingTransitioning[lp_player] == false))) {
-        Wait(0.0625, c_timeGame);
-    }
-    if ((libCOMI_gf_PlayerInCinematicModeCampaign() == true)) {
-        return ;
-    }
-
-    TriggerEnable(libCOMM_gt_CM_SoATargetingCancel, true);
-    libCOMM_gv_cM_SoAExitInstantly = false;
-    libCOMM_gv_cM_SoATargetingUsageCount += 1;
-    libCOMM_gv_cM_SoATargetingChargesSpent[lp_player] = 0;
-    libCOMI_gf_CU_TargetingSetCharges(libCOMM_gv_cM_SoATargetingChargesTotal[lp_player], libCOMM_gv_cM_SoATargetingChargesTotal[lp_player], lp_player);
-    if ((libCOMM_gv_cM_SoATargetingOrder[lp_player] != null)) {
-        TriggerEnable(libCOMM_gt_CM_SoATargetingPointChosen, true);
-        TriggerEnable(libCOMM_gt_CM_SoATargetingDirectionChosen, true);
-        UISetTargetingOrder(PlayerGroupSingle(lp_player), libCOMI_gv_yY_GPCasterGroup[lp_player], libCOMM_gv_cM_SoATargetingOrder[lp_player], false);
-        libCOMM_gv_cM_SoATargetingPhase[lp_player] = libCOMM_ge_CM_SoATargetingPhaseType_Location;
-    }
-    else {
-        libCOMM_gv_cM_SoATargetingPhase[lp_player] = libCOMM_ge_CM_SoATargetingPhaseType_None;
-    }
-    libCOMM_gv_cM_SoATargetingTransitioning[lp_player] = true;
-    libCOMI_gf_PU_TargetingUI_EnterTargetingMode(true, false, lp_player);
-    libCOMI_gf_CU_TargetingSetInstructionText(libCOMM_gv_cM_SoATargetingInstructionsPrimary[lp_player], lp_player);
-    libCOMM_gf_CM_SetFogAlphaOverTime(100.0, 0.5, lp_player);
-    CameraSetValue(lp_player, c_cameraValueDistance, 50.0, 1.0, -1, 10.0);
-    CameraSetValue(lp_player, c_cameraValuePitch, 70.0, 1.0, -1, 10.0);
-    CameraSetData(PlayerGroupSingle(lp_player), "SOATargetingModeCamera");
-    libCOMM_gv_cM_SoATargetingTransitioning[lp_player] = false;
-    libCOMM_gv_cM_SoATargetingCycling[lp_player] = false;
-}
-
-void libCOMM_gf_CM_SoATargetingModeExit (int lp_player) {
-    // Automatic Variable Declarations
-    // Implementation
-    libCOMM_gv_cM_SoATargetingPhase[lp_player] = libCOMM_ge_CM_SoATargetingPhaseType_None;
-    while (!((libCOMM_gv_cM_SoATargetingTransitioning[lp_player] == false))) {
-        Wait(0.0625, c_timeGame);
-    }
-    libCOMM_gv_cM_SoATargetingTransitioning[lp_player] = true;
-    if ((libCOMM_gv_cM_SoAExitInstantly == true)) {
-        CameraSetValue(lp_player, c_cameraValueDistance, 34.0, 0.0, -1, 10.0);
-        CameraSetValue(lp_player, c_cameraValuePitch, 56.0, 0.0, -1, 10.0);
-    }
-    else {
-        CameraSetValue(lp_player, c_cameraValueDistance, 34.0, 0.5, -1, 10.0);
-        CameraSetValue(lp_player, c_cameraValuePitch, 56.0, 0.5, -1, 10.0);
-    }
-    CameraSetData(PlayerGroupSingle(lp_player), "Dflt");
-    if ((libCOMM_gv_cM_SoAExitInstantly == true)) {
-        VisResetFoWAlpha(lp_player);
-        libCOMI_gf_PU_TargetingUI_EnterTargetingMode(false, true, lp_player);
-    }
-    else {
-        libCOMM_gf_CM_ResetFogAlphaOverTime(0.5, lp_player);
-        libCOMI_gf_PU_TargetingUI_EnterTargetingMode(false, false, lp_player);
-    }
-    libNtve_gf_RestoreUnitSelection(lp_player);
-    libCOMM_gv_cM_SoATargetingActivateAbility[lp_player] = null;
-    libCOMM_gv_cM_SoATargetingTransitioning[lp_player] = false;
-    libCOMM_gv_cM_SoATargetingUsageCount -= 1;
-    if ((libCOMM_gv_cM_SoATargetingUsageCount == 0)) {
-        TriggerEnable(libCOMM_gt_CM_SoATargetingCancel, false);
-        TriggerEnable(libCOMM_gt_CM_SoATargetingPointChosen, false);
-        TriggerEnable(libCOMM_gt_CM_SoATargetingDirectionChosen, false);
-    }
-
-}
-
-void libCOMM_gf_CM_SoATargetingCleanupActorsAndUnits (int lp_player) {
-    // Variable Declarations
-    int lv_index;
-
-    // Automatic Variable Declarations
-    const int auto86535067_ae = libCOMM_gv_cMC_SOATARGETCOUNTMAX;
-    const int auto86535067_ai = 1;
-
-    // Variable Initialization
-
-    // Implementation
-    lv_index = 1;
-    for ( ; ( (auto86535067_ai >= 0 && lv_index <= auto86535067_ae) || (auto86535067_ai < 0 && lv_index >= auto86535067_ae) ) ; lv_index += auto86535067_ai ) {
-        if ((libCOMM_gv_cM_SoATargetingActors[lv_index][lp_player] != null)) {
-            ActorSend(libCOMM_gv_cM_SoATargetingActors[lv_index][lp_player], "Signal Destroy");
-            libCOMM_gv_cM_SoATargetingActors[lv_index][lp_player] = null;
-        }
-
-        if ((libCOMM_gv_cM_SoATargetingUnit[lv_index][lp_player] != null)) {
-            UnitRemove(libCOMM_gv_cM_SoATargetingUnit[lv_index][lp_player]);
-            libCOMM_gv_cM_SoATargetingUnit[lv_index][lp_player] = null;
-        }
-
-    }
-}
-
-trigger auto_libCOMM_gf_CM_SetFogAlphaOverTime_Trigger = null;
-fixed auto_libCOMM_gf_CM_SetFogAlphaOverTime_lp_targetAlpha;
-fixed auto_libCOMM_gf_CM_SetFogAlphaOverTime_lp_duration;
-int auto_libCOMM_gf_CM_SetFogAlphaOverTime_lp_player;
-
-void libCOMM_gf_CM_SetFogAlphaOverTime (fixed lp_targetAlpha, fixed lp_duration, int lp_player) {
-    auto_libCOMM_gf_CM_SetFogAlphaOverTime_lp_targetAlpha = lp_targetAlpha;
-    auto_libCOMM_gf_CM_SetFogAlphaOverTime_lp_duration = lp_duration;
-    auto_libCOMM_gf_CM_SetFogAlphaOverTime_lp_player = lp_player;
-
-    if (auto_libCOMM_gf_CM_SetFogAlphaOverTime_Trigger == null) {
-        auto_libCOMM_gf_CM_SetFogAlphaOverTime_Trigger = TriggerCreate("auto_libCOMM_gf_CM_SetFogAlphaOverTime_TriggerFunc");
-    }
-
-    TriggerExecute(auto_libCOMM_gf_CM_SetFogAlphaOverTime_Trigger, false, false);
-}
-
-bool auto_libCOMM_gf_CM_SetFogAlphaOverTime_TriggerFunc (bool testConds, bool runActions) {
-    fixed lp_targetAlpha = auto_libCOMM_gf_CM_SetFogAlphaOverTime_lp_targetAlpha;
-    fixed lp_duration = auto_libCOMM_gf_CM_SetFogAlphaOverTime_lp_duration;
-    int lp_player = auto_libCOMM_gf_CM_SetFogAlphaOverTime_lp_player;
-
-    // Variable Declarations
-    fixed lv_currentAlpha;
-    fixed lv_alphaIncrement;
-    fixed lv_incrementFrequency;
-    int lv_increments;
-
-    // Automatic Variable Declarations
-    int autoBF41BA45_n;
-    int autoBF41BA45_i;
-
-    // Variable Initialization
-
-    // Implementation
-    if (((libCOMI_gf_MutatorIsEnabled("BlackFog") == true) || (libCOMI_gf_MutatorIsEnabled("UberDarkness") == true))) {
-        return true;
-    }
-
-    lv_incrementFrequency = 0.05;
-    lv_currentAlpha = VisGetFoWAlpha(lp_player);
-    lv_increments = AbsI(FixedToInt((lp_duration / lv_incrementFrequency)));
-    lv_alphaIncrement = ((lp_targetAlpha-lv_currentAlpha)/IntToFixed(lv_increments));
-    autoBF41BA45_n = lv_increments;
-    for (autoBF41BA45_i = 1; autoBF41BA45_i <= autoBF41BA45_n; autoBF41BA45_i += 1) {
-        Wait(lv_incrementFrequency, c_timeGame);
-        lv_currentAlpha += lv_alphaIncrement;
-        VisSetFoWAlpha(lp_player, lv_currentAlpha);
-    }
-    VisSetFoWAlpha(lp_player, lp_targetAlpha);
-    return true;
-}
-
-trigger auto_libCOMM_gf_CM_ResetFogAlphaOverTime_Trigger = null;
-fixed auto_libCOMM_gf_CM_ResetFogAlphaOverTime_lp_duration;
-int auto_libCOMM_gf_CM_ResetFogAlphaOverTime_lp_player;
-
-void libCOMM_gf_CM_ResetFogAlphaOverTime (fixed lp_duration, int lp_player) {
-    auto_libCOMM_gf_CM_ResetFogAlphaOverTime_lp_duration = lp_duration;
-    auto_libCOMM_gf_CM_ResetFogAlphaOverTime_lp_player = lp_player;
-
-    if (auto_libCOMM_gf_CM_ResetFogAlphaOverTime_Trigger == null) {
-        auto_libCOMM_gf_CM_ResetFogAlphaOverTime_Trigger = TriggerCreate("auto_libCOMM_gf_CM_ResetFogAlphaOverTime_TriggerFunc");
-    }
-
-    TriggerExecute(auto_libCOMM_gf_CM_ResetFogAlphaOverTime_Trigger, false, false);
-}
-
-bool auto_libCOMM_gf_CM_ResetFogAlphaOverTime_TriggerFunc (bool testConds, bool runActions) {
-    fixed lp_duration = auto_libCOMM_gf_CM_ResetFogAlphaOverTime_lp_duration;
-    int lp_player = auto_libCOMM_gf_CM_ResetFogAlphaOverTime_lp_player;
-
-    // Variable Declarations
-    fixed lv_currentAlpha;
-    fixed lv_alphaIncrement;
-    fixed lv_incrementFrequency;
-    int lv_increments;
-    fixed lv_targetAlpha;
-
-    // Automatic Variable Declarations
-    int auto438B7E00_n;
-    int auto438B7E00_i;
-
-    // Variable Initialization
-
-    // Implementation
-    if (((libCOMI_gf_MutatorIsEnabled("BlackFog") == true) || (libCOMI_gf_MutatorIsEnabled("UberDarkness") == true))) {
-        return true;
-    }
-
-    lv_incrementFrequency = 0.05;
-    lv_currentAlpha = VisGetFoWAlpha(lp_player);
-    VisResetFoWAlpha(lp_player);
-    lv_targetAlpha = VisGetFoWAlpha(lp_player);
-    lv_increments = AbsI(FixedToInt((lp_duration / lv_incrementFrequency)));
-    lv_alphaIncrement = ((lv_targetAlpha-lv_currentAlpha)/IntToFixed(lv_increments));
-    VisSetFoWAlpha(lp_player, lv_currentAlpha);
-    auto438B7E00_n = lv_increments;
-    for (auto438B7E00_i = 1; auto438B7E00_i <= auto438B7E00_n; auto438B7E00_i += 1) {
-        Wait(lv_incrementFrequency, c_timeGame);
-        lv_currentAlpha += lv_alphaIncrement;
-        VisSetFoWAlpha(lp_player, lv_currentAlpha);
-    }
-    VisResetFoWAlpha(lp_player);
-    return true;
-}
-
-void libCOMM_gf_CM_SoATargetingCancel (int lp_player) {
-    // Variable Declarations
-    string lv_cost;
-    string lv_costField;
-
-    // Automatic Variable Declarations
-    // Variable Initialization
-    lv_cost = "";
-    lv_costField = "";
-
-    // Implementation
-    UnitIssueOrder(libCOMI_gv_yY_GPCasterUnit[lp_player], Order(AbilityCommand("stop", 0)), c_orderQueueReplace);
-    libCOMM_gv_cM_SoATargetingAlreadyCanceled[lp_player] = true;
-    libCOMM_gf_CM_SoATargetingCleanupActorsAndUnits(lp_player);
-    if ((libCOMM_gv_cM_SoATargetingUnitType[lp_player] != null) && (libCOMM_gv_cM_SoATargetingPhase[lp_player] == libCOMM_ge_CM_SoATargetingPhaseType_Direction)) {
-        libCOMM_gv_cM_SoATargetingChargesSpent[lp_player] -= 1;
-    }
-
-    if ((libCOMM_gv_cM_SoATargetingChargesSpent[lp_player] == 0) && (libCOMM_gv_cM_SoATargetingUnrefundableStageEntered[lp_player] == false)) {
-        libNtve_gf_UnitAbilityRemoveCooldown(libCOMI_gv_yY_GPCasterUnit[lp_player], libCOMM_gv_cM_SoATargetingActivateAbility[lp_player], libCOMM_gv_cM_SoATargetingCooldown[lp_player]);
-        lv_costField = ("Cost[0].Vital[" + "Energy" + "]");
-        lv_cost = CatalogFieldValueGet(c_gameCatalogAbil, libCOMM_gv_cM_SoATargetingActivateAbility[lp_player], (lv_costField), lp_player);
-        UnitSetPropertyFixed(libCOMI_gv_yY_GPCasterUnit[lp_player], c_unitPropEnergy, (UnitGetPropertyFixed(libCOMI_gv_yY_GPCasterUnit[lp_player], c_unitPropEnergy, c_unitPropCurrent) + StringToFixed(lv_cost)));
-        if ((TechTreeUpgradeCount(lp_player, "NovaCommander", c_techCountCompleteOnly) == 1)) {
-            PlayerModifyPropertyInt(lp_player, c_playerPropMinerals, c_playerPropOperAdd, libCOMM_gv_cM_NovaGriffinBombingRunCost[lp_player]);
-        }
-
-    }
-
-    UnitBehaviorRemove(libCOMI_gv_yY_GPCasterUnit[lp_player], libCOMM_gv_cM_SoATargetingBehavior[lp_player], 1);
-    libCOMM_gv_cM_SoATargetingUnrefundableStageEntered[lp_player] = true;
 }
 
 void libCOMM_gf_CU_GPInitAlarak (int lp_player) {
@@ -6559,6 +6308,158 @@ int libCOMM_gf_CM_Zeratul_GetArtifactLimit (int lp_zeratulPlayer) {
 
 // Triggers
 //--------------------------------------------------------------------------------------------------
+// Trigger: CM_GPReminderAbilityUsed
+//--------------------------------------------------------------------------------------------------
+bool libCOMM_gt_CM_GPReminderAbilityUsed_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    playergroup autoC28E37D0_g;
+    int autoC28E37D0_var;
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libCOMI_gf_CM_GPReminderDisable(UnitGetOwner(EventUnit()));
+    autoC28E37D0_g = libCOMI_gf_GetAlliedCommandersPlayers();
+    autoC28E37D0_var = -1;
+    while (true) {
+        autoC28E37D0_var = PlayerGroupNextPlayer(autoC28E37D0_g, autoC28E37D0_var);
+        if (autoC28E37D0_var < 0) { break; }
+        if ((libCOMI_gv_cM_GPRemindersOn[autoC28E37D0_var] == true)) {
+            return true;
+        }
+
+    }
+    TriggerEnable(TriggerGetCurrent(), false);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMM_gt_CM_GPReminderAbilityUsed_Init () {
+    libCOMM_gt_CM_GPReminderAbilityUsed = TriggerCreate("libCOMM_gt_CM_GPReminderAbilityUsed_Func");
+    TriggerEnable(libCOMM_gt_CM_GPReminderAbilityUsed, false);
+    TriggerAddEventUnitAbility(libCOMM_gt_CM_GPReminderAbilityUsed, null, AbilityCommand("SoASuperShield", 0), c_unitAbilStageExecute, false);
+    TriggerAddEventUnitAbility(libCOMM_gt_CM_GPReminderAbilityUsed, null, AbilityCommand("SOAOrbitalStrikeActivate", 0), c_unitAbilStageExecute, false);
+    TriggerAddEventUnitAbility(libCOMM_gt_CM_GPReminderAbilityUsed, null, AbilityCommand("VoidSentryBlackHole", 0), c_unitAbilStageExecute, false);
+    TriggerAddEventUnitAbility(libCOMM_gt_CM_GPReminderAbilityUsed, null, AbilityCommand("SOADarkPylon", 0), c_unitAbilStageExecute, false);
+    TriggerAddEventUnitAbility(libCOMM_gt_CM_GPReminderAbilityUsed, null, AbilityCommand("SOAShadowGuardCalldown", 0), c_unitAbilStageExecute, false);
+    TriggerAddEventUnitAbility(libCOMM_gt_CM_GPReminderAbilityUsed, null, AbilityCommand("SpawnToxicNest", 0), c_unitAbilStageExecute, false);
+    TriggerAddEventUnitAbility(libCOMM_gt_CM_GPReminderAbilityUsed, null, AbilityCommand("HHTrainTopBar", 0), c_unitAbilStageExecute, false);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: CM_SoAShiftCheatFailSafeThermal
+//--------------------------------------------------------------------------------------------------
+bool libCOMM_gt_CM_SoAShiftCheatFailSafeThermal_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_caster;
+    abilcmd lv_cmd;
+    string lv_abil;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_caster = libCOMI_gv_yY_GPCasterUnit[EventPlayer()];
+    lv_cmd = AbilityCommand("SOAThermalLanceActivate", 0);
+    lv_abil = AbilityCommandGetAbility(lv_cmd);
+
+    // Conditions
+    if (testConds) {
+        if (!((UnitAbilityGetCooldown(lv_caster, lv_abil, CatalogFieldValueGet(c_gameCatalogAbil, lv_abil, "Cost[" + IntToString(0) + "].Cooldown.Link", EventPlayer())) == 0.0))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    UnitAbilitySpendExplicit(lv_caster, lv_cmd, c_spendLocationAll, 1.0, 1.0, 1.0, 1.0);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMM_gt_CM_SoAShiftCheatFailSafeThermal_Init () {
+    libCOMM_gt_CM_SoAShiftCheatFailSafeThermal = TriggerCreate("libCOMM_gt_CM_SoAShiftCheatFailSafeThermal_Func");
+    TriggerAddEventPlayerEffectUsed(libCOMM_gt_CM_SoAShiftCheatFailSafeThermal, c_playerAny, "SOAThermalLanceSet");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: CM_SoAShiftCheatFailSafeHHCallFleet
+//--------------------------------------------------------------------------------------------------
+bool libCOMM_gt_CM_SoAShiftCheatFailSafeHHCallFleet_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_caster;
+    abilcmd lv_cmd;
+    string lv_abil;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_caster = libCOMI_gv_yY_GPCasterUnit[EventPlayer()];
+    lv_cmd = AbilityCommand("HornerAirFleetActivate", 0);
+    lv_abil = AbilityCommandGetAbility(lv_cmd);
+
+    // Conditions
+    if (testConds) {
+        if (!((UnitAbilityGetCooldown(lv_caster, lv_abil, CatalogFieldValueGet(c_gameCatalogAbil, lv_abil, "Cost[" + IntToString(0) + "].Cooldown.Link", EventPlayer())) == 0.0))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    UnitAbilitySpendExplicit(lv_caster, lv_cmd, c_spendLocationAll, 1.0, 1.0, 1.0, 1.0);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMM_gt_CM_SoAShiftCheatFailSafeHHCallFleet_Init () {
+    libCOMM_gt_CM_SoAShiftCheatFailSafeHHCallFleet = TriggerCreate("libCOMM_gt_CM_SoAShiftCheatFailSafeHHCallFleet_Func");
+    TriggerAddEventPlayerEffectUsed(libCOMM_gt_CM_SoAShiftCheatFailSafeHHCallFleet, c_playerAny, "HornerAirFleetInitialSet");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: CM_SoAShiftCheatFailSafeNovaBombing
+//--------------------------------------------------------------------------------------------------
+bool libCOMM_gt_CM_SoAShiftCheatFailSafeNovaBombing_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_caster;
+    abilcmd lv_cmd;
+    string lv_abil;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_caster = libCOMI_gv_yY_GPCasterUnit[EventPlayer()];
+    lv_cmd = AbilityCommand("NovaGriffinBombingRunActivate", 0);
+    lv_abil = AbilityCommandGetAbility(lv_cmd);
+
+    // Conditions
+    if (testConds) {
+        if (!((UnitAbilityGetCooldown(lv_caster, lv_abil, CatalogFieldValueGet(c_gameCatalogAbil, lv_abil, "Cost[" + IntToString(0) + "].Cooldown.Link", EventPlayer())) == 0.0))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    UnitAbilitySpendExplicit(lv_caster, lv_cmd, c_spendLocationAll, 1.0, 1.0, 1.0, 1.0);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMM_gt_CM_SoAShiftCheatFailSafeNovaBombing_Init () {
+    libCOMM_gt_CM_SoAShiftCheatFailSafeNovaBombing = TriggerCreate("libCOMM_gt_CM_SoAShiftCheatFailSafeNovaBombing_Func");
+    TriggerAddEventPlayerEffectUsed(libCOMM_gt_CM_SoAShiftCheatFailSafeNovaBombing, c_playerAny, "NovaGriffinBombingRunInitialSet");
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger: AF_TopBar Notifications Enable/Disable
 //--------------------------------------------------------------------------------------------------
 bool libCOMM_gt_AF_TopBarNotificationsEnableDisable_Func (bool testConds, bool runActions) {
@@ -6775,573 +6676,6 @@ void libCOMM_gt_AF_MouseExitsTopBar_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: CM_GPReminderAbilityUsed
-//--------------------------------------------------------------------------------------------------
-bool libCOMM_gt_CM_GPReminderAbilityUsed_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    playergroup autoC28E37D0_g;
-    int autoC28E37D0_var;
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    libCOMI_gf_CM_GPReminderDisable(UnitGetOwner(EventUnit()));
-    autoC28E37D0_g = libCOMI_gf_GetAlliedCommandersPlayers();
-    autoC28E37D0_var = -1;
-    while (true) {
-        autoC28E37D0_var = PlayerGroupNextPlayer(autoC28E37D0_g, autoC28E37D0_var);
-        if (autoC28E37D0_var < 0) { break; }
-        if ((libCOMI_gv_cM_GPRemindersOn[autoC28E37D0_var] == true)) {
-            return true;
-        }
-
-    }
-    TriggerEnable(TriggerGetCurrent(), false);
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMM_gt_CM_GPReminderAbilityUsed_Init () {
-    libCOMM_gt_CM_GPReminderAbilityUsed = TriggerCreate("libCOMM_gt_CM_GPReminderAbilityUsed_Func");
-    TriggerEnable(libCOMM_gt_CM_GPReminderAbilityUsed, false);
-    TriggerAddEventUnitAbility(libCOMM_gt_CM_GPReminderAbilityUsed, null, AbilityCommand("SoASuperShield", 0), c_unitAbilStageExecute, false);
-    TriggerAddEventUnitAbility(libCOMM_gt_CM_GPReminderAbilityUsed, null, AbilityCommand("SOAOrbitalStrikeActivate", 0), c_unitAbilStageExecute, false);
-    TriggerAddEventUnitAbility(libCOMM_gt_CM_GPReminderAbilityUsed, null, AbilityCommand("VoidSentryBlackHole", 0), c_unitAbilStageExecute, false);
-    TriggerAddEventUnitAbility(libCOMM_gt_CM_GPReminderAbilityUsed, null, AbilityCommand("SOADarkPylon", 0), c_unitAbilStageExecute, false);
-    TriggerAddEventUnitAbility(libCOMM_gt_CM_GPReminderAbilityUsed, null, AbilityCommand("SOAShadowGuardCalldown", 0), c_unitAbilStageExecute, false);
-    TriggerAddEventUnitAbility(libCOMM_gt_CM_GPReminderAbilityUsed, null, AbilityCommand("SpawnToxicNest", 0), c_unitAbilStageExecute, false);
-    TriggerAddEventUnitAbility(libCOMM_gt_CM_GPReminderAbilityUsed, null, AbilityCommand("HHTrainTopBar", 0), c_unitAbilStageExecute, false);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: CM_SoAShiftCheatFailSafeThermal
-//--------------------------------------------------------------------------------------------------
-bool libCOMM_gt_CM_SoAShiftCheatFailSafeThermal_Func (bool testConds, bool runActions) {
-    // Variable Declarations
-    unit lv_caster;
-    abilcmd lv_cmd;
-    string lv_abil;
-
-    // Automatic Variable Declarations
-    // Variable Initialization
-    lv_caster = libCOMI_gv_yY_GPCasterUnit[EventPlayer()];
-    lv_cmd = AbilityCommand("SOAThermalLanceActivate", 0);
-    lv_abil = AbilityCommandGetAbility(lv_cmd);
-
-    // Conditions
-    if (testConds) {
-        if (!((UnitAbilityGetCooldown(lv_caster, lv_abil, CatalogFieldValueGet(c_gameCatalogAbil, lv_abil, "Cost[" + IntToString(0) + "].Cooldown.Link", EventPlayer())) == 0.0))) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    UnitAbilitySpendExplicit(lv_caster, lv_cmd, c_spendLocationAll, 1.0, 1.0, 1.0, 1.0);
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMM_gt_CM_SoAShiftCheatFailSafeThermal_Init () {
-    libCOMM_gt_CM_SoAShiftCheatFailSafeThermal = TriggerCreate("libCOMM_gt_CM_SoAShiftCheatFailSafeThermal_Func");
-    TriggerAddEventPlayerEffectUsed(libCOMM_gt_CM_SoAShiftCheatFailSafeThermal, c_playerAny, "SOAThermalLanceSet");
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: CM_SoAShiftCheatFailSafeHHCallFleet
-//--------------------------------------------------------------------------------------------------
-bool libCOMM_gt_CM_SoAShiftCheatFailSafeHHCallFleet_Func (bool testConds, bool runActions) {
-    // Variable Declarations
-    unit lv_caster;
-    abilcmd lv_cmd;
-    string lv_abil;
-
-    // Automatic Variable Declarations
-    // Variable Initialization
-    lv_caster = libCOMI_gv_yY_GPCasterUnit[EventPlayer()];
-    lv_cmd = AbilityCommand("HornerAirFleetActivate", 0);
-    lv_abil = AbilityCommandGetAbility(lv_cmd);
-
-    // Conditions
-    if (testConds) {
-        if (!((UnitAbilityGetCooldown(lv_caster, lv_abil, CatalogFieldValueGet(c_gameCatalogAbil, lv_abil, "Cost[" + IntToString(0) + "].Cooldown.Link", EventPlayer())) == 0.0))) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    UnitAbilitySpendExplicit(lv_caster, lv_cmd, c_spendLocationAll, 1.0, 1.0, 1.0, 1.0);
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMM_gt_CM_SoAShiftCheatFailSafeHHCallFleet_Init () {
-    libCOMM_gt_CM_SoAShiftCheatFailSafeHHCallFleet = TriggerCreate("libCOMM_gt_CM_SoAShiftCheatFailSafeHHCallFleet_Func");
-    TriggerAddEventPlayerEffectUsed(libCOMM_gt_CM_SoAShiftCheatFailSafeHHCallFleet, c_playerAny, "HornerAirFleetInitialSet");
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: CM_SoAShiftCheatFailSafeNovaBombing
-//--------------------------------------------------------------------------------------------------
-bool libCOMM_gt_CM_SoAShiftCheatFailSafeNovaBombing_Func (bool testConds, bool runActions) {
-    // Variable Declarations
-    unit lv_caster;
-    abilcmd lv_cmd;
-    string lv_abil;
-
-    // Automatic Variable Declarations
-    // Variable Initialization
-    lv_caster = libCOMI_gv_yY_GPCasterUnit[EventPlayer()];
-    lv_cmd = AbilityCommand("NovaGriffinBombingRunActivate", 0);
-    lv_abil = AbilityCommandGetAbility(lv_cmd);
-
-    // Conditions
-    if (testConds) {
-        if (!((UnitAbilityGetCooldown(lv_caster, lv_abil, CatalogFieldValueGet(c_gameCatalogAbil, lv_abil, "Cost[" + IntToString(0) + "].Cooldown.Link", EventPlayer())) == 0.0))) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    UnitAbilitySpendExplicit(lv_caster, lv_cmd, c_spendLocationAll, 1.0, 1.0, 1.0, 1.0);
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMM_gt_CM_SoAShiftCheatFailSafeNovaBombing_Init () {
-    libCOMM_gt_CM_SoAShiftCheatFailSafeNovaBombing = TriggerCreate("libCOMM_gt_CM_SoAShiftCheatFailSafeNovaBombing_Func");
-    TriggerAddEventPlayerEffectUsed(libCOMM_gt_CM_SoAShiftCheatFailSafeNovaBombing, c_playerAny, "NovaGriffinBombingRunInitialSet");
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: CM_SoATargetingForceOff
-//--------------------------------------------------------------------------------------------------
-bool libCOMM_gt_CM_SoATargetingForceOff_Func (bool testConds, bool runActions) {
-    // Variable Declarations
-    int lv_indexPlayer;
-
-    // Automatic Variable Declarations
-    playergroup auto25DDC9C2_g;
-
-    // Variable Initialization
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    TriggerEnable(libCOMM_gt_CM_SoATargetingCancel, false);
-    TriggerEnable(libCOMM_gt_CM_SoATargetingPointChosen, false);
-    TriggerEnable(libCOMM_gt_CM_SoATargetingDirectionChosen, false);
-    libCOMM_gv_cM_SoAExitInstantly = true;
-    auto25DDC9C2_g = libCOMI_gf_GetAlliedCommandersPlayersCopy();
-    lv_indexPlayer = -1;
-    while (true) {
-        lv_indexPlayer = PlayerGroupNextPlayer(auto25DDC9C2_g, lv_indexPlayer);
-        if (lv_indexPlayer < 0) { break; }
-        if ((libCOMM_gv_cM_SoATargetingPhase[lv_indexPlayer] != libCOMM_ge_CM_SoATargetingPhaseType_None)) {
-            libCOMM_gv_cM_SoATargetingTransitioning[lv_indexPlayer] = false;
-            UISetTargetingOrder(PlayerGroupSingle(lv_indexPlayer), libCOMI_gv_yY_GPCasterGroup[lv_indexPlayer], null, false);
-            libCOMM_gf_CM_SoATargetingCancel(lv_indexPlayer);
-        }
-
-    }
-    libCOMM_gv_cM_SoATargetingUsageCount = 0;
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMM_gt_CM_SoATargetingForceOff_Init () {
-    libCOMM_gt_CM_SoATargetingForceOff = TriggerCreate("libCOMM_gt_CM_SoATargetingForceOff_Func");
-    TriggerAddEventGeneric(libCOMM_gt_CM_SoATargetingForceOff, "CinematicModeOn");
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: CM_SoATargetingDeactivated
-//--------------------------------------------------------------------------------------------------
-bool libCOMM_gt_CM_SoATargetingDeactivated_Func (bool testConds, bool runActions) {
-    // Variable Declarations
-    int lv_casterPlayer;
-
-    // Automatic Variable Declarations
-    // Variable Initialization
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    lv_casterPlayer = UnitGetOwner(EventUnit());
-    UISetTargetingOrder(PlayerGroupSingle(lv_casterPlayer), libCOMI_gv_yY_GPCasterGroup[lv_casterPlayer], null, false);
-    libCOMM_gv_cM_SoATargetingChargesSpent[lv_casterPlayer] = 0;
-    libCOMM_gf_CM_SoATargetingModeExit(lv_casterPlayer);
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMM_gt_CM_SoATargetingDeactivated_Init () {
-    libCOMM_gt_CM_SoATargetingDeactivated = TriggerCreate("libCOMM_gt_CM_SoATargetingDeactivated_Func");
-    TriggerAddEventUnitBehaviorChange(libCOMM_gt_CM_SoATargetingDeactivated, null, "SOAOrbitalStrikeActivate", c_unitBehaviorChangeDeactivate);
-    TriggerAddEventUnitBehaviorChange(libCOMM_gt_CM_SoATargetingDeactivated, null, "SOAGravitonBombActivate", c_unitBehaviorChangeDeactivate);
-    TriggerAddEventUnitBehaviorChange(libCOMM_gt_CM_SoATargetingDeactivated, null, "SOAThermalLanceActivate", c_unitBehaviorChangeDeactivate);
-    TriggerAddEventUnitBehaviorChange(libCOMM_gt_CM_SoATargetingDeactivated, null, "SOAStrafeAttackActivate", c_unitBehaviorChangeDeactivate);
-    TriggerAddEventUnitBehaviorChange(libCOMM_gt_CM_SoATargetingDeactivated, null, "NovaGriffinBombingRunActivate", c_unitBehaviorChangeDeactivate);
-    TriggerAddEventUnitBehaviorChange(libCOMM_gt_CM_SoATargetingDeactivated, null, "HornerAirFleetActivate", c_unitBehaviorChangeDeactivate);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: CM_SoATargetingPointChosen
-//--------------------------------------------------------------------------------------------------
-bool libCOMM_gt_CM_SoATargetingPointChosen_Func (bool testConds, bool runActions) {
-    // Variable Declarations
-    point lv_targetPoint;
-    int lv_casterPlayer;
-
-    // Automatic Variable Declarations
-    // Variable Initialization
-
-    // Conditions
-    if (testConds) {
-        if (!((PlayerGroupHasPlayer(libCOMI_gf_GetAlliedCommandersPlayersCopy(), EventPlayer()) == true))) {
-            return false;
-        }
-
-        if (!((libCOMM_gv_cM_SoATargetingPhase[EventPlayer()] == libCOMM_ge_CM_SoATargetingPhaseType_Location))) {
-            return false;
-        }
-
-        if (!((libCOMM_gv_cM_SoATargetingChargesSpent[EventPlayer()] < libCOMM_gv_cM_SoATargetingChargesTotal[EventPlayer()]))) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    lv_targetPoint = OrderGetTargetPoint(EventUnitOrder());
-    lv_casterPlayer = EventPlayer();
-    if ((VisIsVisibleForPlayer(lv_casterPlayer, lv_targetPoint) == false)) {
-        return true;
-    }
-
-    libCOMM_gv_cM_SoATargetingCycling[lv_casterPlayer] = true;
-    libCOMM_gv_cM_SoATargetingChargesSpent[lv_casterPlayer] += 1;
-    libNtve_gf_CreateActorAtPoint(libCOMM_gv_cM_SoATargetingModel[lv_casterPlayer], lv_targetPoint);
-    libCOMM_gv_cM_SoATargetingActors[libCOMM_gv_cM_SoATargetingChargesSpent[lv_casterPlayer]][lv_casterPlayer] = libNtve_gf_ActorLastCreated();
-    libNtve_gf_CreateActorAtPoint("SOATargetingModeConfirmationSound", lv_targetPoint);
-    if ((libCOMM_gv_cM_SoATargetingUnitType[lv_casterPlayer] == null)) {
-        UnitIssueOrder(libCOMI_gv_yY_GPCasterUnit[lv_casterPlayer], OrderTargetingPoint(libCOMM_gv_cM_SoATargetingExecuteCommand[lv_casterPlayer], lv_targetPoint), c_orderQueueAddToEnd);
-        libCOMI_gf_CU_TargetingSetCharges((libCOMM_gv_cM_SoATargetingChargesTotal[lv_casterPlayer]-libCOMM_gv_cM_SoATargetingChargesSpent[lv_casterPlayer]), libCOMM_gv_cM_SoATargetingChargesTotal[lv_casterPlayer], lv_casterPlayer);
-        if ((libCOMM_gv_cM_SoATargetingChargesSpent[lv_casterPlayer] == libCOMM_gv_cM_SoATargetingChargesTotal[lv_casterPlayer])) {
-            Wait(0.125, c_timeGame);
-            UnitBehaviorRemove(libCOMI_gv_yY_GPCasterUnit[lv_casterPlayer], libCOMM_gv_cM_SoATargetingBehavior[lv_casterPlayer], 1);
-        }
-        else {
-            Wait(0.1, c_timeGame);
-            UISetTargetingOrder(PlayerGroupSingle(lv_casterPlayer), libCOMI_gv_yY_GPCasterGroup[lv_casterPlayer], libCOMM_gv_cM_SoATargetingOrder[lv_casterPlayer], false);
-        }
-    }
-    else {
-        libNtve_gf_CreateUnitsWithDefaultFacing(1, libCOMM_gv_cM_SoATargetingUnitType[lv_casterPlayer], 0, lv_casterPlayer, lv_targetPoint);
-        UnitSetState(UnitLastCreated(), c_unitStateTooltipable, false);
-        libCOMM_gv_cM_SoATargetingUnit[libCOMM_gv_cM_SoATargetingChargesSpent[lv_casterPlayer]][lv_casterPlayer] = UnitLastCreated();
-        libCOMM_gv_cM_SoATargetingDirectionGroup[lv_casterPlayer] = libNtve_gf_ConvertUnitToUnitGroup(libCOMM_gv_cM_SoATargetingUnit[libCOMM_gv_cM_SoATargetingChargesSpent[lv_casterPlayer]][lv_casterPlayer]);
-        Wait(0.1, c_timeGame);
-        if ((UnitIsValid(libCOMM_gv_cM_SoATargetingUnit[libCOMM_gv_cM_SoATargetingChargesSpent[lv_casterPlayer]][lv_casterPlayer]) == true)) {
-            UISetTargetingOrder(PlayerGroupSingle(lv_casterPlayer), libCOMM_gv_cM_SoATargetingDirectionGroup[lv_casterPlayer], OrderTargetingPoint(libCOMM_gv_cM_SoATargetingExecuteCommand[lv_casterPlayer], UnitGetPosition(libCOMM_gv_cM_SoATargetingUnit[libCOMM_gv_cM_SoATargetingChargesSpent[lv_casterPlayer]][lv_casterPlayer])), false);
-            libCOMI_gf_CU_TargetingSetInstructionText(libCOMM_gv_cM_SoATargetingInstructionsSecondary[lv_casterPlayer], lv_casterPlayer);
-            libCOMM_gv_cM_SoATargetingPhase[lv_casterPlayer] = libCOMM_ge_CM_SoATargetingPhaseType_Direction;
-        }
-
-    }
-    libCOMM_gv_cM_SoATargetingCycling[lv_casterPlayer] = false;
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMM_gt_CM_SoATargetingPointChosen_Init () {
-    libCOMM_gt_CM_SoATargetingPointChosen = TriggerCreate("libCOMM_gt_CM_SoATargetingPointChosen_Func");
-    TriggerEnable(libCOMM_gt_CM_SoATargetingPointChosen, false);
-    TriggerAddEventUnitOrder(libCOMM_gt_CM_SoATargetingPointChosen, null, AbilityCommand("SOAOrbitalStrikeTargetingDummy", 0));
-    TriggerAddEventUnitOrder(libCOMM_gt_CM_SoATargetingPointChosen, null, AbilityCommand("SOAThermalLanceTargetingDummy", 0));
-    TriggerAddEventUnitOrder(libCOMM_gt_CM_SoATargetingPointChosen, null, AbilityCommand("SOAGravitonBomb", 0));
-    TriggerAddEventUnitOrder(libCOMM_gt_CM_SoATargetingPointChosen, null, AbilityCommand("NovaGriffinBombingRunTargetingDummy", 0));
-    TriggerAddEventUnitOrder(libCOMM_gt_CM_SoATargetingPointChosen, null, AbilityCommand("HornerAirFleetTargetingDummy", 0));
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: CM_SoATargetingDirectionChosen
-//--------------------------------------------------------------------------------------------------
-bool libCOMM_gt_CM_SoATargetingDirectionChosen_Func (bool testConds, bool runActions) {
-    // Variable Declarations
-    point lv_targetPoint;
-    int lv_casterPlayer;
-
-    // Automatic Variable Declarations
-    // Variable Initialization
-
-    // Conditions
-    if (testConds) {
-        if (!((PlayerGroupHasPlayer(libCOMI_gf_GetAlliedCommandersPlayersCopy(), EventPlayer()) == true))) {
-            return false;
-        }
-
-        if (!((libCOMM_gv_cM_SoATargetingPhase[EventPlayer()] == libCOMM_ge_CM_SoATargetingPhaseType_Direction))) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    lv_casterPlayer = EventPlayer();
-    libCOMM_gv_cM_SoATargetingCycling[lv_casterPlayer] = true;
-    lv_targetPoint = OrderGetTargetPoint(EventUnitOrder());
-    libCOMM_gv_cM_SoATargetingUnrefundableStageEntered[lv_casterPlayer] = true;
-    libNtve_gf_CreateActorAtPoint("SOATargetingModeConfirmationSound", lv_targetPoint);
-    ActorSend(libCOMM_gv_cM_SoATargetingActors[libCOMM_gv_cM_SoATargetingChargesSpent[lv_casterPlayer]][lv_casterPlayer], "Signal Destroy");
-    if ((UnitIsValid(libCOMM_gv_cM_SoATargetingUnit[libCOMM_gv_cM_SoATargetingChargesSpent[lv_casterPlayer]][lv_casterPlayer]) == false)) {
-        return true;
-    }
-
-    libNtve_gf_MakeUnitFacePoint(libCOMM_gv_cM_SoATargetingUnit[libCOMM_gv_cM_SoATargetingChargesSpent[lv_casterPlayer]][lv_casterPlayer], lv_targetPoint, 0.0);
-    libCOMI_gf_CU_TargetingSetCharges((libCOMM_gv_cM_SoATargetingChargesTotal[lv_casterPlayer]-libCOMM_gv_cM_SoATargetingChargesSpent[lv_casterPlayer]), libCOMM_gv_cM_SoATargetingChargesTotal[lv_casterPlayer], lv_casterPlayer);
-    if ((libCOMM_gv_cM_SoATargetingChargesSpent[lv_casterPlayer] == libCOMM_gv_cM_SoATargetingChargesTotal[lv_casterPlayer])) {
-        UnitBehaviorRemove(libCOMI_gv_yY_GPCasterUnit[lv_casterPlayer], libCOMM_gv_cM_SoATargetingBehavior[lv_casterPlayer], 1);
-        Wait(0.1, c_timeGame);
-    }
-    else {
-        libCOMI_gf_CU_TargetingSetInstructionText(libCOMM_gv_cM_SoATargetingInstructionsPrimary[lv_casterPlayer], lv_casterPlayer);
-        Wait(0.1, c_timeGame);
-        if ((libCOMM_gv_cM_SoATargetingAlreadyCanceled[lv_casterPlayer] == false)) {
-            UISetTargetingOrder(PlayerGroupSingle(lv_casterPlayer), libCOMI_gv_yY_GPCasterGroup[lv_casterPlayer], libCOMM_gv_cM_SoATargetingOrder[lv_casterPlayer], false);
-        }
-
-        libCOMM_gv_cM_SoATargetingPhase[lv_casterPlayer] = libCOMM_ge_CM_SoATargetingPhaseType_Location;
-    }
-    libCOMM_gv_cM_SoATargetingCycling[lv_casterPlayer] = false;
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMM_gt_CM_SoATargetingDirectionChosen_Init () {
-    libCOMM_gt_CM_SoATargetingDirectionChosen = TriggerCreate("libCOMM_gt_CM_SoATargetingDirectionChosen_Func");
-    TriggerEnable(libCOMM_gt_CM_SoATargetingDirectionChosen, false);
-    TriggerAddEventUnitOrder(libCOMM_gt_CM_SoATargetingDirectionChosen, null, AbilityCommand("SOAThermalLanceExecute", 0));
-    TriggerAddEventUnitOrder(libCOMM_gt_CM_SoATargetingDirectionChosen, null, AbilityCommand("NovaGriffinBombingRunExecute", 0));
-    TriggerAddEventUnitOrder(libCOMM_gt_CM_SoATargetingDirectionChosen, null, AbilityCommand("HornerAirFleetExecute", 0));
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: CM_SoATargetingEffectFired
-//--------------------------------------------------------------------------------------------------
-bool libCOMM_gt_CM_SoATargetingEffectFired_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    libCOMM_gf_CM_SoATargetingCleanupActorsAndUnits(EventPlayer());
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMM_gt_CM_SoATargetingEffectFired_Init () {
-    libCOMM_gt_CM_SoATargetingEffectFired = TriggerCreate("libCOMM_gt_CM_SoATargetingEffectFired_Func");
-    TriggerAddEventPlayerEffectUsed(libCOMM_gt_CM_SoATargetingEffectFired, c_playerAny, "SOAOrbitalStrikeCP");
-    TriggerAddEventPlayerEffectUsed(libCOMM_gt_CM_SoATargetingEffectFired, c_playerAny, "SOAGravitonBombLM");
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: CM_SoATargetingCancel
-//--------------------------------------------------------------------------------------------------
-bool libCOMM_gt_CM_SoATargetingCancel_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Conditions
-    if (testConds) {
-        if (!((libCOMM_gv_cM_SoATargetingCycling[EventPlayer()] == false))) {
-            return false;
-        }
-
-        if (!(((EventTargetModeAbilCmd() == AbilityCommand("SOAOrbitalStrikeTargetingDummy", 0)) || (EventTargetModeAbilCmd() == AbilityCommand("SOAThermalLanceTargetingDummy", 0)) || (EventTargetModeAbilCmd() == AbilityCommand("SOAGravitonBomb", 0)) || (EventTargetModeAbilCmd() == AbilityCommand("SOAThermalLanceExecute", 0)) || (EventTargetModeAbilCmd() == AbilityCommand("NovaGriffinBombingRunExecute", 0)) || (EventTargetModeAbilCmd() == AbilityCommand("NovaGriffinBombingRunTargetingDummy", 0)) || (EventTargetModeAbilCmd() == AbilityCommand("HornerAirFleetExecute", 0)) || (EventTargetModeAbilCmd() == AbilityCommand("HornerAirFleetTargetingDummy", 0))))) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    libCOMM_gf_CM_SoATargetingCancel(EventPlayer());
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMM_gt_CM_SoATargetingCancel_Init () {
-    libCOMM_gt_CM_SoATargetingCancel = TriggerCreate("libCOMM_gt_CM_SoATargetingCancel_Func");
-    TriggerEnable(libCOMM_gt_CM_SoATargetingCancel, false);
-    TriggerAddEventTargetModeUpdate(libCOMM_gt_CM_SoATargetingCancel, c_playerAny, null, c_targetModeStateOff);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: CM_SoATargetingCancelFromUI
-//--------------------------------------------------------------------------------------------------
-bool libCOMM_gt_CM_SoATargetingCancelFromUI_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    libCOMM_gf_CM_SoATargetingCancel(libCOMI_gf_CU_TargetingTriggeringPlayer());
-    UISetTargetingOrder(PlayerGroupSingle(libCOMI_gf_CU_TargetingTriggeringPlayer()), libNtve_gf_ConvertUnitToUnitGroup(libCOMI_gv_yY_GPCasterUnit[libCOMI_gf_CU_TargetingTriggeringPlayer()]), null, false);
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMM_gt_CM_SoATargetingCancelFromUI_Init () {
-    libCOMM_gt_CM_SoATargetingCancelFromUI = TriggerCreate("libCOMM_gt_CM_SoATargetingCancelFromUI_Func");
-    libCOMI_gf_CU_TargetingCancel(libCOMM_gt_CM_SoATargetingCancelFromUI);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: CM_SoATargetingCameraShake
-//--------------------------------------------------------------------------------------------------
-bool libCOMM_gt_CM_SoATargetingCameraShake_Func (bool testConds, bool runActions) {
-    // Variable Declarations
-    fixed lv_distance;
-    fixed[4] lv_cameraPosition;
-    fixed[4] lv_effectPosition;
-    int lv_player;
-    point lv_effectTargetPoint;
-    point lv_cameraTargetPoint;
-
-    // Automatic Variable Declarations
-    // Variable Initialization
-    lv_player = EventPlayerEffectUsedUnitOwner(c_effectPlayerCaster);
-    lv_effectTargetPoint = EventPlayerEffectUsedPoint(c_effectLocationTargetPoint);
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    lv_cameraTargetPoint = CameraGetTarget(lv_player);
-    lv_cameraPosition[0] = PointGetX(lv_cameraTargetPoint);
-    lv_cameraPosition[1] = (PointGetY(lv_cameraTargetPoint)-(Cos(CameraGetPitch(lv_player))*CameraGetDistance(lv_player)));
-    lv_cameraPosition[2] = (WorldHeight(c_heightMapGround, lv_cameraTargetPoint)+(Sin(CameraGetPitch(lv_player))*CameraGetDistance(lv_player)));
-    lv_effectPosition[0] = PointGetX(lv_effectTargetPoint);
-    lv_effectPosition[1] = PointGetY(lv_effectTargetPoint);
-    lv_effectPosition[2] = WorldHeight(c_heightMapGround, lv_effectTargetPoint);
-    lv_distance = SquareRoot((Pow((lv_cameraPosition[0]-lv_effectPosition[0]), 2.0) + Pow((lv_cameraPosition[1]-lv_effectPosition[1]), 2.0) + Pow((lv_cameraPosition[2]-lv_effectPosition[2]), 2.0)));
-    CameraShakeStart(lv_player, c_cameraPositionTarget, c_cameraDirectionZ, MaxF((1-(lv_distance/50)), 0.0), 2.5, 100.0, 0.1);
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMM_gt_CM_SoATargetingCameraShake_Init () {
-    libCOMM_gt_CM_SoATargetingCameraShake = TriggerCreate("libCOMM_gt_CM_SoATargetingCameraShake_Func");
-    TriggerAddEventPlayerEffectUsed(libCOMM_gt_CM_SoATargetingCameraShake, c_playerAny, "SOAOrbitalStrikeImpactSearch");
-    TriggerAddEventPlayerEffectUsed(libCOMM_gt_CM_SoATargetingCameraShake, c_playerAny, "SOAGravitonBombCP");
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Chrono Anim Speed On
-//--------------------------------------------------------------------------------------------------
-bool libCOMM_gt_ChronoAnimSpeedOn_Func (bool testConds, bool runActions) {
-    // Variable Declarations
-    string lv_buff;
-    unit lv_unit;
-    fixed lv_scale;
-
-    // Automatic Variable Declarations
-    // Variable Initialization
-    lv_buff = EventUnitBehavior();
-    lv_unit = EventUnit();
-    lv_scale = StringToFixed(CatalogFieldValueGet(c_gameCatalogBehavior, lv_buff, "Modification.RateMultiplierArray[" + IntToString(0) + "]", UnitBehaviorEffectPlayer(lv_unit, lv_buff, c_effectPlayerCaster, 0)));
-
-    // Conditions
-    if (testConds) {
-        if (!((UnitIsValid(lv_unit) == true))) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    libNtve_gf_SendActorMessageToUnit(lv_unit, (("AnimSetTimeScaleGlobal " + FixedToString(lv_scale, c_fixedPrecisionAny) + " " + (lv_buff))));
-    libNtve_gf_SendActorMessageToUnit(lv_unit, (("AnimSetTimeScaleGlobal " + FixedToString(lv_scale, c_fixedPrecisionAny) + " " + (lv_buff))));
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMM_gt_ChronoAnimSpeedOn_Init () {
-    libCOMM_gt_ChronoAnimSpeedOn = TriggerCreate("libCOMM_gt_ChronoAnimSpeedOn_Func");
-    TriggerAddEventUnitBehaviorChange(libCOMM_gt_ChronoAnimSpeedOn, null, "SOAMapWideChronoPassiveTarget", c_unitBehaviorChangeActivate);
-    TriggerAddEventUnitBehaviorChange(libCOMM_gt_ChronoAnimSpeedOn, null, "SOAMapWideChrono", c_unitBehaviorChangeActivate);
-    TriggerAddEventUnitBehaviorChange(libCOMM_gt_ChronoAnimSpeedOn, null, "TimeWarpProduction", c_unitBehaviorChangeActivate);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Chrono Anim Speed Off
-//--------------------------------------------------------------------------------------------------
-bool libCOMM_gt_ChronoAnimSpeedOff_Func (bool testConds, bool runActions) {
-    // Variable Declarations
-    string lv_buff;
-    unit lv_unit;
-
-    // Automatic Variable Declarations
-    // Variable Initialization
-    lv_buff = EventUnitBehavior();
-    lv_unit = EventUnit();
-
-    // Conditions
-    if (testConds) {
-        if (!((UnitIsValid(lv_unit) == true))) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    libNtve_gf_SendActorMessageToUnit(lv_unit, (("AnimClearTimeScaleGlobal " + (lv_buff))));
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMM_gt_ChronoAnimSpeedOff_Init () {
-    libCOMM_gt_ChronoAnimSpeedOff = TriggerCreate("libCOMM_gt_ChronoAnimSpeedOff_Func");
-    TriggerAddEventUnitBehaviorChange(libCOMM_gt_ChronoAnimSpeedOff, null, "SOAMapWideChronoPassiveTarget", c_unitBehaviorChangeDeactivate);
-    TriggerAddEventUnitBehaviorChange(libCOMM_gt_ChronoAnimSpeedOff, null, "SOAMapWideChrono", c_unitBehaviorChangeDeactivate);
-    TriggerAddEventUnitBehaviorChange(libCOMM_gt_ChronoAnimSpeedOff, null, "TimeWarpProduction", c_unitBehaviorChangeDeactivate);
-}
-
-//--------------------------------------------------------------------------------------------------
 // Trigger: CM_SoAGravitonBombActivated
 //--------------------------------------------------------------------------------------------------
 bool libCOMM_gt_CM_SoAGravitonBombActivated_Func (bool testConds, bool runActions) {
@@ -7358,17 +6692,17 @@ bool libCOMM_gt_CM_SoAGravitonBombActivated_Func (bool testConds, bool runAction
 
     lv_casterPlayer = UnitGetOwner(EventUnit());
     libNtve_gf_StoreUnitSelection(lv_casterPlayer, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection);
-    libCOMM_gv_cM_SoATargetingActivateAbility[lv_casterPlayer] = "SOAGravitonBombActivate";
-    libCOMM_gv_cM_SoATargetingExecuteCommand[lv_casterPlayer] = AbilityCommand("SOAGravitonBombExecute", 0);
-    libCOMM_gv_cM_SoATargetingCooldown[lv_casterPlayer] = "Abil/SOAGravitonBombActivate";
-    libCOMM_gv_cM_SoATargetingBehavior[lv_casterPlayer] = "SOAGravitonBombActivate";
-    libCOMM_gv_cM_SoATargetingModel[lv_casterPlayer] = "SOAGravitonBombTargetModel";
-    libCOMM_gv_cM_SoATargetingOrder[lv_casterPlayer] = OrderTargetingPoint(AbilityCommand("SOAGravitonBomb", 0), UnitGetPosition(libCOMI_gv_yY_GPCasterUnit[lv_casterPlayer]));
-    libCOMM_gv_cM_SoATargetingUnitType[lv_casterPlayer] = null;
-    libCOMM_gv_cM_SoATargetingChargesTotal[lv_casterPlayer] = 3;
-    libCOMM_gv_cM_SoATargetingInstructionsPrimary[lv_casterPlayer] = StringExternal("Param/Value/lib_COMM_19A5CDC1");
-    libCOMM_gv_cM_SoATargetingInstructionsSecondary[lv_casterPlayer] = null;
-    libCOMM_gf_CM_SoATargetingModeEnter(lv_casterPlayer);
+    libCOMI_gv_cM_SoATargetingActivateAbility[lv_casterPlayer] = "SOAGravitonBombActivate";
+    libCOMI_gv_cM_SoATargetingExecuteCommand[lv_casterPlayer] = AbilityCommand("SOAGravitonBombExecute", 0);
+    libCOMI_gv_cM_SoATargetingCooldown[lv_casterPlayer] = "Abil/SOAGravitonBombActivate";
+    libCOMI_gv_cM_SoATargetingBehavior[lv_casterPlayer] = "SOAGravitonBombActivate";
+    libCOMI_gv_cM_SoATargetingModel[lv_casterPlayer] = "SOAGravitonBombTargetModel";
+    libCOMI_gv_cM_SoATargetingOrder[lv_casterPlayer] = OrderTargetingPoint(AbilityCommand("SOAGravitonBomb", 0), UnitGetPosition(libCOMI_gv_yY_GPCasterUnit[lv_casterPlayer]));
+    libCOMI_gv_cM_SoATargetingUnitType[lv_casterPlayer] = null;
+    libCOMI_gv_cM_SoATargetingChargesTotal[lv_casterPlayer] = 3;
+    libCOMI_gv_cM_SoATargetingInstructionsPrimary[lv_casterPlayer] = StringExternal("Param/Value/lib_COMM_19A5CDC1");
+    libCOMI_gv_cM_SoATargetingInstructionsSecondary[lv_casterPlayer] = null;
+    libCOMI_gf_CM_SoATargetingModeEnter(lv_casterPlayer);
     return true;
 }
 
@@ -7424,17 +6758,17 @@ bool libCOMM_gt_CM_SoAOrbitalStrikeActivated_Func (bool testConds, bool runActio
 
     lv_casterPlayer = UnitGetOwner(EventUnit());
     libNtve_gf_StoreUnitSelection(lv_casterPlayer, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection);
-    libCOMM_gv_cM_SoATargetingActivateAbility[lv_casterPlayer] = "SOAOrbitalStrikeActivate";
-    libCOMM_gv_cM_SoATargetingExecuteCommand[lv_casterPlayer] = AbilityCommand("SOAOrbitalStrikeExecute", 0);
-    libCOMM_gv_cM_SoATargetingCooldown[lv_casterPlayer] = "Abil/SOAOrbitalStrikeActivate";
-    libCOMM_gv_cM_SoATargetingBehavior[lv_casterPlayer] = "SOAOrbitalStrikeActivate";
-    libCOMM_gv_cM_SoATargetingModel[lv_casterPlayer] = "SOAOrbitalStrikeTargetModel";
-    libCOMM_gv_cM_SoATargetingOrder[lv_casterPlayer] = OrderTargetingPoint(AbilityCommand("SOAOrbitalStrikeTargetingDummy", 0), UnitGetPosition(libCOMI_gv_yY_GPCasterUnit[lv_casterPlayer]));
-    libCOMM_gv_cM_SoATargetingUnitType[lv_casterPlayer] = null;
-    libCOMM_gv_cM_SoATargetingChargesTotal[lv_casterPlayer] = 5;
-    libCOMM_gv_cM_SoATargetingInstructionsPrimary[lv_casterPlayer] = StringExternal("Param/Value/lib_COMM_CC25E90D");
-    libCOMM_gv_cM_SoATargetingInstructionsSecondary[lv_casterPlayer] = null;
-    libCOMM_gf_CM_SoATargetingModeEnter(lv_casterPlayer);
+    libCOMI_gv_cM_SoATargetingActivateAbility[lv_casterPlayer] = "SOAOrbitalStrikeActivate";
+    libCOMI_gv_cM_SoATargetingExecuteCommand[lv_casterPlayer] = AbilityCommand("SOAOrbitalStrikeExecute", 0);
+    libCOMI_gv_cM_SoATargetingCooldown[lv_casterPlayer] = "Abil/SOAOrbitalStrikeActivate";
+    libCOMI_gv_cM_SoATargetingBehavior[lv_casterPlayer] = "SOAOrbitalStrikeActivate";
+    libCOMI_gv_cM_SoATargetingModel[lv_casterPlayer] = "SOAOrbitalStrikeTargetModel";
+    libCOMI_gv_cM_SoATargetingOrder[lv_casterPlayer] = OrderTargetingPoint(AbilityCommand("SOAOrbitalStrikeTargetingDummy", 0), UnitGetPosition(libCOMI_gv_yY_GPCasterUnit[lv_casterPlayer]));
+    libCOMI_gv_cM_SoATargetingUnitType[lv_casterPlayer] = null;
+    libCOMI_gv_cM_SoATargetingChargesTotal[lv_casterPlayer] = 5;
+    libCOMI_gv_cM_SoATargetingInstructionsPrimary[lv_casterPlayer] = StringExternal("Param/Value/lib_COMM_CC25E90D");
+    libCOMI_gv_cM_SoATargetingInstructionsSecondary[lv_casterPlayer] = null;
+    libCOMI_gf_CM_SoATargetingModeEnter(lv_casterPlayer);
     return true;
 }
 
@@ -7467,8 +6801,8 @@ bool libCOMM_gt_CM_SoAOrbitalStrikeActivatedKarax_Func (bool testConds, bool run
     }
 
     lv_casterPlayer = UnitGetOwner(EventPlayerEffectUsedUnit(c_effectUnitCaster));
-    libCOMM_gv_cM_SoATargetingOrder[lv_casterPlayer] = OrderTargetingPoint(AbilityCommand("SOAOrbitalStrikeKarax", 0), UnitGetPosition(libCOMI_gv_yY_GPCasterUnit[lv_casterPlayer]));
-    UISetTargetingOrder(PlayerGroupSingle(lv_casterPlayer), libCOMI_gv_yY_GPCasterGroup[lv_casterPlayer], libCOMM_gv_cM_SoATargetingOrder[lv_casterPlayer], false);
+    libCOMI_gv_cM_SoATargetingOrder[lv_casterPlayer] = OrderTargetingPoint(AbilityCommand("SOAOrbitalStrikeKarax", 0), UnitGetPosition(libCOMI_gv_yY_GPCasterUnit[lv_casterPlayer]));
+    UISetTargetingOrder(PlayerGroupSingle(lv_casterPlayer), libCOMI_gv_yY_GPCasterGroup[lv_casterPlayer], libCOMI_gv_cM_SoATargetingOrder[lv_casterPlayer], false);
     return true;
 }
 
@@ -8804,7 +8138,7 @@ bool libCOMM_gt_CM_AbilityTransmissionArtanisSuperShields_Func (bool testConds, 
     libCOMI_gf_CM_GPReminderDisable(EventPlayer());
     libCOMI_gf_CM_CommanderVOSend(libCOMI_gf_CC_PlayerAlly(EventPlayer()), SoundLink("ArtanisCommander_Shield", -1), PlayerGroupAll());
     SoundWait(SoundLastPlayed(), 0.0, c_soundOffsetEnd);
-    libCOMI_gf_CM_CommanderVOSend(EventPlayer(), libCOMI_gf_CC_CommanderVOLine(libCOMI_gf_ActiveCommanderForPlayer(libCOMI_gf_CC_PlayerAlly(EventPlayer())), libCOMI_ge_CC_CommanderVOLines_CC_CommanderVOThankyou), PlayerGroupSingle(EventPlayer()));
+    libCOMI_gf_ThankYou(EventPlayer(), EventResourceTradeRecipient());
     return true;
 }
 
@@ -14715,18 +14049,19 @@ bool libCOMM_gt_CM_Horner_AirFleet_Activated_Func (bool testConds, bool runActio
 
     lv_casterPlayer = UnitGetOwner(EventUnit());
     libNtve_gf_StoreUnitSelection(lv_casterPlayer, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection);
-    libCOMM_gv_cM_SoATargetingActivateAbility[lv_casterPlayer] = "HornerAirFleetActivate";
-    libCOMM_gv_cM_SoATargetingExecuteCommand[lv_casterPlayer] = AbilityCommand("HornerAirFleetExecute", 0);
-    libCOMM_gv_cM_SoATargetingCooldown[lv_casterPlayer] = "Abil/HornerAirFleetActivate";
-    libCOMM_gv_cM_SoATargetingBehavior[lv_casterPlayer] = "HornerAirFleetActivate";
-    libCOMM_gv_cM_SoATargetingModel[lv_casterPlayer] = "HornerAirFleetTargetingModel";
-    libCOMM_gv_cM_SoATargetingOrder[lv_casterPlayer] = OrderTargetingPoint(AbilityCommand("HornerAirFleetTargetingDummy", 0), UnitGetPosition(libCOMI_gv_yY_GPCasterUnit[lv_casterPlayer]));
-    libCOMM_gv_cM_SoATargetingUnitType[lv_casterPlayer] = "HornerAirFleetTargeter";
-    libCOMM_gv_cM_SoATargetingChargesTotal[lv_casterPlayer] = 1;
-    libCOMM_gv_cM_SoATargetingInstructionsPrimary[lv_casterPlayer] = StringExternal("Param/Value/lib_COMM_D8EA2A45");
-    libCOMM_gv_cM_SoATargetingInstructionsSecondary[lv_casterPlayer] = StringExternal("Param/Value/lib_COMM_88664EF1");
+    libCOMI_gv_cM_SoATargetingActivateAbility[lv_casterPlayer] = "HornerAirFleetActivate";
+    libCOMI_gv_cM_SoATargetingExecuteCommand[lv_casterPlayer] = AbilityCommand("HornerAirFleetExecute", 0);
+    libCOMI_gv_cM_SoATargetingCooldown[lv_casterPlayer] = "Abil/HornerAirFleetActivate";
+    libCOMI_gv_cM_SoATargetingBehavior[lv_casterPlayer] = "HornerAirFleetActivate";
+    libCOMI_gv_cM_SoATargetingModel[lv_casterPlayer] = "HornerAirFleetTargetingModel";
+    libCOMI_gv_cM_SoATargetingOrder[lv_casterPlayer] = OrderTargetingPoint(AbilityCommand("HornerAirFleetTargetingDummy", 0), UnitGetPosition(libCOMI_gv_yY_GPCasterUnit[lv_casterPlayer]));
+    libCOMI_gv_cM_SoATargetingUnitType[lv_casterPlayer] = "HornerAirFleetTargeter";
+    libCOMI_gv_cM_SoATargetingChargesTotal[lv_casterPlayer] = 1;
+    libCOMI_gv_cM_SoATargetingInstructionsPrimary[lv_casterPlayer] = StringExternal("Param/Value/lib_COMM_D8EA2A45");
+    libCOMI_gv_cM_SoATargetingInstructionsSecondary[lv_casterPlayer] = StringExternal("Param/Value/lib_COMM_88664EF1");
     libCOMM_gv_cM_HornerAirFleet_Cost[lv_casterPlayer] = StringToInt(CatalogFieldValueGet(c_gameCatalogAbil, "HornerAirFleetActivate", "Cost[" + IntToString(0) + "].Resource[" + IntToString(0) + "]", lv_casterPlayer));
-    libCOMM_gf_CM_SoATargetingModeEnter(lv_casterPlayer);
+    libCOMI_gv_targetingTemplate[lv_casterPlayer] = "Coop_TerranTargetingUI/TerranTargetingUITemplate";
+    libCOMI_gf_CM_SoATargetingModeEnter(lv_casterPlayer);
     return true;
 }
 
@@ -15140,7 +14475,7 @@ bool libCOMM_gt_BanelingScourgeDeathrattleScrapDeaths_Func (bool testConds, bool
         return true;
     }
 
-    if ((libCOMI_gf_ActiveCommanderForPlayer(UnitGetOwner(EventUnitCreatedUnit())) == "Horner")) {
+    if ((libCOMI_gf_ActiveCommanderForPlayer(UnitGetOwner(EventUnit())) == "Horner")) {
         lv_scrapPlayerDivisor = 5;
     }
 
@@ -16111,17 +15446,17 @@ bool libCOMM_gt_CM_SoAThermalLanceActivated_Func (bool testConds, bool runAction
 
     lv_casterPlayer = UnitGetOwner(EventUnit());
     libNtve_gf_StoreUnitSelection(lv_casterPlayer, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection);
-    libCOMM_gv_cM_SoATargetingActivateAbility[lv_casterPlayer] = "SOAThermalLanceActivate";
-    libCOMM_gv_cM_SoATargetingExecuteCommand[lv_casterPlayer] = AbilityCommand("SOAThermalLanceExecute", 0);
-    libCOMM_gv_cM_SoATargetingCooldown[lv_casterPlayer] = "Abil/SOAThermalLanceActivate";
-    libCOMM_gv_cM_SoATargetingBehavior[lv_casterPlayer] = "SOAThermalLanceActivate";
-    libCOMM_gv_cM_SoATargetingModel[lv_casterPlayer] = "SOAThermalLanceTargetingModel";
-    libCOMM_gv_cM_SoATargetingOrder[lv_casterPlayer] = OrderTargetingPoint(AbilityCommand("SOAThermalLanceTargetingDummy", 0), UnitGetPosition(libCOMI_gv_yY_GPCasterUnit[lv_casterPlayer]));
-    libCOMM_gv_cM_SoATargetingUnitType[lv_casterPlayer] = "SOAThermalLanceTargeter";
-    libCOMM_gv_cM_SoATargetingChargesTotal[lv_casterPlayer] = 3;
-    libCOMM_gv_cM_SoATargetingInstructionsPrimary[lv_casterPlayer] = StringExternal("Param/Value/lib_COMM_BE2C04CD");
-    libCOMM_gv_cM_SoATargetingInstructionsSecondary[lv_casterPlayer] = StringExternal("Param/Value/lib_COMM_784AA310");
-    libCOMM_gf_CM_SoATargetingModeEnter(lv_casterPlayer);
+    libCOMI_gv_cM_SoATargetingActivateAbility[lv_casterPlayer] = "SOAThermalLanceActivate";
+    libCOMI_gv_cM_SoATargetingExecuteCommand[lv_casterPlayer] = AbilityCommand("SOAThermalLanceExecute", 0);
+    libCOMI_gv_cM_SoATargetingCooldown[lv_casterPlayer] = "Abil/SOAThermalLanceActivate";
+    libCOMI_gv_cM_SoATargetingBehavior[lv_casterPlayer] = "SOAThermalLanceActivate";
+    libCOMI_gv_cM_SoATargetingModel[lv_casterPlayer] = "SOAThermalLanceTargetingModel";
+    libCOMI_gv_cM_SoATargetingOrder[lv_casterPlayer] = OrderTargetingPoint(AbilityCommand("SOAThermalLanceTargetingDummy", 0), UnitGetPosition(libCOMI_gv_yY_GPCasterUnit[lv_casterPlayer]));
+    libCOMI_gv_cM_SoATargetingUnitType[lv_casterPlayer] = "SOAThermalLanceTargeter";
+    libCOMI_gv_cM_SoATargetingChargesTotal[lv_casterPlayer] = 3;
+    libCOMI_gv_cM_SoATargetingInstructionsPrimary[lv_casterPlayer] = StringExternal("Param/Value/lib_COMM_BE2C04CD");
+    libCOMI_gv_cM_SoATargetingInstructionsSecondary[lv_casterPlayer] = StringExternal("Param/Value/lib_COMM_784AA310");
+    libCOMI_gf_CM_SoATargetingModeEnter(lv_casterPlayer);
     return true;
 }
 
@@ -16142,16 +15477,16 @@ bool libCOMM_gt_PM_SoATargetingPurifierBeamOn_Func (bool testConds, bool runActi
     }
 
     libNtve_gf_StoreUnitSelection(EventPlayer(), libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection);
-    libCOMM_gv_cM_SoATargetingActivateAbility[EventPlayer()] = "SOAPurifierBeam";
-    libCOMM_gv_cM_SoATargetingOrder[EventPlayer()] = null;
-    libCOMM_gv_cM_SoATargetingExecuteCommand[EventPlayer()] = null;
-    libCOMM_gv_cM_SoATargetingCooldown[EventPlayer()] = "";
-    libCOMM_gv_cM_SoATargetingBehavior[EventPlayer()] = null;
-    libCOMM_gv_cM_SoATargetingModel[EventPlayer()] = null;
-    libCOMM_gv_cM_SoATargetingUnitType[EventPlayer()] = null;
-    libCOMM_gv_cM_SoATargetingChargesTotal[EventPlayer()] = 1;
-    libCOMM_gv_cM_SoATargetingInstructionsPrimary[EventPlayer()] = StringExternal("Param/Value/lib_COMM_7F8ACE72");
-    libCOMM_gf_CM_SoATargetingModeEnter(EventPlayer());
+    libCOMI_gv_cM_SoATargetingActivateAbility[EventPlayer()] = "SOAPurifierBeam";
+    libCOMI_gv_cM_SoATargetingOrder[EventPlayer()] = null;
+    libCOMI_gv_cM_SoATargetingExecuteCommand[EventPlayer()] = null;
+    libCOMI_gv_cM_SoATargetingCooldown[EventPlayer()] = "";
+    libCOMI_gv_cM_SoATargetingBehavior[EventPlayer()] = null;
+    libCOMI_gv_cM_SoATargetingModel[EventPlayer()] = null;
+    libCOMI_gv_cM_SoATargetingUnitType[EventPlayer()] = null;
+    libCOMI_gv_cM_SoATargetingChargesTotal[EventPlayer()] = 1;
+    libCOMI_gv_cM_SoATargetingInstructionsPrimary[EventPlayer()] = StringExternal("Param/Value/lib_COMM_7F8ACE72");
+    libCOMI_gf_CM_SoATargetingModeEnter(EventPlayer());
     return true;
 }
 
@@ -16171,7 +15506,7 @@ bool libCOMM_gt_PM_SoATargetingPurifierBeamOff_Func (bool testConds, bool runAct
         return true;
     }
 
-    libCOMM_gf_CM_SoATargetingModeExit(EventPlayer());
+    libCOMI_gf_CM_SoATargetingModeExit(EventPlayer());
     return true;
 }
 
@@ -19716,18 +19051,19 @@ bool libCOMM_gt_CM_NovaGriffinBombingRunActivated_Func (bool testConds, bool run
 
     lv_casterPlayer = UnitGetOwner(EventUnit());
     libNtve_gf_StoreUnitSelection(lv_casterPlayer, libNtve_ge_UnitSelectionStoreOption_ClearUnitSelection);
-    libCOMM_gv_cM_SoATargetingActivateAbility[lv_casterPlayer] = "NovaGriffinBombingRunActivate";
-    libCOMM_gv_cM_SoATargetingExecuteCommand[lv_casterPlayer] = AbilityCommand("NovaGriffinBombingRunExecute", 0);
-    libCOMM_gv_cM_SoATargetingCooldown[lv_casterPlayer] = "Abil/NovaGriffinBombingRunActivate";
-    libCOMM_gv_cM_SoATargetingBehavior[lv_casterPlayer] = "NovaGriffinBombingRunActivate";
-    libCOMM_gv_cM_SoATargetingModel[lv_casterPlayer] = "NovaGriffinBombingRunTargetingModel";
-    libCOMM_gv_cM_SoATargetingOrder[lv_casterPlayer] = OrderTargetingPoint(AbilityCommand("NovaGriffinBombingRunTargetingDummy", 0), UnitGetPosition(libCOMI_gv_yY_GPCasterUnit[lv_casterPlayer]));
-    libCOMM_gv_cM_SoATargetingUnitType[lv_casterPlayer] = "NovaGriffinBombingRunTargeter";
-    libCOMM_gv_cM_SoATargetingChargesTotal[lv_casterPlayer] = 1;
-    libCOMM_gv_cM_SoATargetingInstructionsPrimary[lv_casterPlayer] = StringExternal("Param/Value/lib_COMM_892ADD20");
-    libCOMM_gv_cM_SoATargetingInstructionsSecondary[lv_casterPlayer] = StringExternal("Param/Value/lib_COMM_2BAF48CC");
+    libCOMI_gv_cM_SoATargetingActivateAbility[lv_casterPlayer] = "NovaGriffinBombingRunActivate";
+    libCOMI_gv_cM_SoATargetingExecuteCommand[lv_casterPlayer] = AbilityCommand("NovaGriffinBombingRunExecute", 0);
+    libCOMI_gv_cM_SoATargetingCooldown[lv_casterPlayer] = "Abil/NovaGriffinBombingRunActivate";
+    libCOMI_gv_cM_SoATargetingBehavior[lv_casterPlayer] = "NovaGriffinBombingRunActivate";
+    libCOMI_gv_cM_SoATargetingModel[lv_casterPlayer] = "NovaGriffinBombingRunTargetingModel";
+    libCOMI_gv_cM_SoATargetingOrder[lv_casterPlayer] = OrderTargetingPoint(AbilityCommand("NovaGriffinBombingRunTargetingDummy", 0), UnitGetPosition(libCOMI_gv_yY_GPCasterUnit[lv_casterPlayer]));
+    libCOMI_gv_cM_SoATargetingUnitType[lv_casterPlayer] = "NovaGriffinBombingRunTargeter";
+    libCOMI_gv_cM_SoATargetingChargesTotal[lv_casterPlayer] = 1;
+    libCOMI_gv_cM_SoATargetingInstructionsPrimary[lv_casterPlayer] = StringExternal("Param/Value/lib_COMM_892ADD20");
+    libCOMI_gv_cM_SoATargetingInstructionsSecondary[lv_casterPlayer] = StringExternal("Param/Value/lib_COMM_2BAF48CC");
     libCOMM_gv_cM_NovaGriffinBombingRunCost[lv_casterPlayer] = StringToInt(CatalogFieldValueGet(c_gameCatalogAbil, "NovaGriffinBombingRunActivate", "Cost[" + IntToString(0) + "].Resource[" + IntToString(0) + "]", lv_casterPlayer));
-    libCOMM_gf_CM_SoATargetingModeEnter(lv_casterPlayer);
+    libCOMI_gv_targetingTemplate[lv_casterPlayer] = "Coop_TerranTargetingUI/TerranTargetingUITemplate";
+    libCOMI_gf_CM_SoATargetingModeEnter(lv_casterPlayer);
     return true;
 }
 
@@ -22286,7 +21622,7 @@ bool libCOMM_gt_CM_AbilityTransmissionSwannDrone_Func (bool testConds, bool runA
     TriggerEnable(TriggerGetCurrent(), false);
     libCOMI_gf_CM_CommanderVOSend(libCOMI_gf_CC_PlayerAlly(EventPlayer()), SoundLink("SwannCommander_Drone", -1), PlayerGroupAll());
     SoundWait(SoundLastPlayed(), 0.0, c_soundOffsetEnd);
-    libCOMI_gf_CM_CommanderVOSend(EventPlayer(), libCOMI_gf_CC_CommanderVOLine(libCOMI_gf_ActiveCommanderForPlayer(libCOMI_gf_CC_PlayerAlly(EventPlayer())), libCOMI_ge_CC_CommanderVOLines_CC_CommanderVOThankyou), PlayerGroupSingle(EventPlayer()));
+    libCOMI_gf_TeamThankYou(EventPlayer());
     return true;
 }
 
@@ -24673,13 +24009,6 @@ bool libCOMM_gt_CM_TychusHERC_CriticalText_Func (bool testConds, bool runActions
     lv_ragestacks = UnitBehaviorCount(EventPlayerEffectUsedUnit(c_effectUnitCaster), "TychusHercRageDamageBuff");
     lv_ragedamage = CatalogReferenceGetAsInt("Behavior,TychusHercRageDamageBuff,Modification.DamageDealtUnscaled[Melee]", EventPlayer());
     lv_weapondamage = CatalogFieldValueGetAsInt(c_gameCatalogEffect, "TychusHERCWeaponDamage", "Amount", EventPlayer());
-
-    // Conditions
-    if (testConds) {
-        if (!((libCOMI_gf_ActiveCommanderForPlayer(UnitGetOwner(EventUnit())) == "Tychus"))) {
-            return false;
-        }
-    }
 
     // Actions
     if (!runActions) {
@@ -29852,24 +29181,14 @@ void libCOMM_gt_AegisCreated_Init () {
 }
 
 void libCOMM_InitTriggers () {
-    libCOMM_gt_AF_TopBarNotificationsEnableDisable_Init();
-    libCOMM_gt_AF_TopBarClicked_Init();
-    libCOMM_gt_AF_MouseEntersTopBar_Init();
-    libCOMM_gt_AF_MouseExitsTopBar_Init();
     libCOMM_gt_CM_GPReminderAbilityUsed_Init();
     libCOMM_gt_CM_SoAShiftCheatFailSafeThermal_Init();
     libCOMM_gt_CM_SoAShiftCheatFailSafeHHCallFleet_Init();
     libCOMM_gt_CM_SoAShiftCheatFailSafeNovaBombing_Init();
-    libCOMM_gt_CM_SoATargetingForceOff_Init();
-    libCOMM_gt_CM_SoATargetingDeactivated_Init();
-    libCOMM_gt_CM_SoATargetingPointChosen_Init();
-    libCOMM_gt_CM_SoATargetingDirectionChosen_Init();
-    libCOMM_gt_CM_SoATargetingEffectFired_Init();
-    libCOMM_gt_CM_SoATargetingCancel_Init();
-    libCOMM_gt_CM_SoATargetingCancelFromUI_Init();
-    libCOMM_gt_CM_SoATargetingCameraShake_Init();
-    libCOMM_gt_ChronoAnimSpeedOn_Init();
-    libCOMM_gt_ChronoAnimSpeedOff_Init();
+    libCOMM_gt_AF_TopBarNotificationsEnableDisable_Init();
+    libCOMM_gt_AF_TopBarClicked_Init();
+    libCOMM_gt_AF_MouseEntersTopBar_Init();
+    libCOMM_gt_AF_MouseExitsTopBar_Init();
     libCOMM_gt_CM_SoAGravitonBombActivated_Init();
     libCOMM_gt_CC_ScoreArtanisKaraxOrbitalStrike_Init();
     libCOMM_gt_CM_SoAOrbitalStrikeActivated_Init();

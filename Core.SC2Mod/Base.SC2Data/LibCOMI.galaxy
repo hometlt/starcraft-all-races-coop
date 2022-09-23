@@ -514,6 +514,15 @@ void libCOMI_InitVariables () {
     libCOMI_gv_cU_MissionUIContainer = c_invalidDialogControlId;
     libCOMI_gv_cU_ObjectivePanel = c_invalidDialogControlId;
     for (init_i = 0; init_i <= libCOMI_gv_cCC_MAXPLAYERS; init_i += 1) {
+        libCOMI_gv_targetingTemplate[init_i] = "LotV_GameUI/SoATargetingUITemplate";
+    }
+    for (init_i = 0; init_i <= libCOMI_gv_cCC_MAXPLAYERS; init_i += 1) {
+        libCOMI_gv_cM_SoATargetingAlreadyCanceled[init_i] = true;
+    }
+    for (init_i = 0; init_i <= libCOMI_gv_cCC_MAXPLAYERS; init_i += 1) {
+        libCOMI_gv_cM_SoATargetingDirectionGroup[init_i] = UnitGroupEmpty();
+    }
+    for (init_i = 0; init_i <= libCOMI_gv_cCC_MAXPLAYERS; init_i += 1) {
         libCOMI_gv_cU_TargetingOverlayDialog[init_i] = c_invalidDialogId;
     }
     for (init_i = 0; init_i <= libCOMI_gv_cCC_MAXPLAYERS; init_i += 1) {
@@ -3868,7 +3877,6 @@ void libCOMI_gf_CreateStartingUnitsForPlayer (int lp_player, point lp_location) 
     unitgroup lv_minerals;
     unitgroup lv_vespene;
     unit lv_townhall;
-    abilcmd lv_ability;
     string lv_behavior;
     int lv_iteration;
     int lv_round;
@@ -3877,6 +3885,10 @@ void libCOMI_gf_CreateStartingUnitsForPlayer (int lp_player, point lp_location) 
     point lv_mineralPoint;
     point lv_targetPoint;
     string lv_actorInstance;
+    string lv_ability;
+    abilcmd lv_abilityCommand;
+    int lv_abilityCommandIndex;
+    string lv_unitUserData;
 
     // Automatic Variable Declarations
     int auto8B953206_ae;
@@ -3903,8 +3915,11 @@ void libCOMI_gf_CreateStartingUnitsForPlayer (int lp_player, point lp_location) 
     libNtve_gf_CreateUnitsWithDefaultFacing(1, lv_uNIT_TOWNHALL, 0, lp_player, lp_location);
     lv_townhall = UnitLastCreated();
     libCOMI_gv_cM_PrimaryTownHall[lp_player] = lv_townhall;
-    lv_ability = AbilityCommand(libNtve_gf_UnitAbilityGetByType(lv_townhall, c_classIdCAbilRally, 1), 0);
-    UnitGroupIssueOrder(libNtve_gf_ConvertUnitToUnitGroup(lv_townhall), OrderTargetingUnit(lv_ability, UnitGroupClosestToPoint(lv_minerals, lp_location)), c_orderQueueAddToFront);
+    lv_ability = libNtve_gf_UnitAbilityGetByType(lv_townhall, c_classIdCAbilRally, 1);
+    lv_unitUserData = libCOMI_gf_UnitUserData(lv_uNIT_TOWNHALL);
+    lv_abilityCommandIndex = UserDataGetInt("UnitData", lv_unitUserData, "WrokersRallyIndex", 1);
+    lv_abilityCommand = AbilityCommand(lv_ability, lv_abilityCommandIndex);
+    UnitGroupIssueOrder(libNtve_gf_ConvertUnitToUnitGroup(lv_townhall), OrderTargetingUnit(lv_abilityCommand, UnitGroupClosestToPoint(lv_minerals, lp_location)), c_orderQueueAddToFront);
     auto8B953206_ae = (CatalogFieldValueCount(c_gameCatalogUnit, lv_uNIT_TOWNHALL, "BehaviorArray", lp_player) - 1);
     auto8B953206_var = 0;
     for ( ; auto8B953206_var <= auto8B953206_ae; auto8B953206_var += 1 ) {
@@ -3940,8 +3955,8 @@ void libCOMI_gf_CreateStartingUnitsForPlayer (int lp_player, point lp_location) 
         }
         libNtve_gf_UnitCreateFacingPoint(1, lv_uNIT_WORKER, 0, lp_player, lv_targetPoint, lv_mineralPoint);
         lv_workerUnit = UnitLastCreated();
-        lv_ability = AbilityCommand(libNtve_gf_UnitAbilityGetByType(lv_workerUnit, c_classIdCAbilHarvest, 1), 0);
-        UnitIssueOrder(lv_workerUnit, OrderTargetingUnit(lv_ability, lv_mineralUnit), c_orderQueueReplace);
+        lv_abilityCommand = AbilityCommand(libNtve_gf_UnitAbilityGetByType(lv_workerUnit, c_classIdCAbilHarvest, 1), 0);
+        UnitIssueOrder(lv_workerUnit, OrderTargetingUnit(lv_abilityCommand, lv_mineralUnit), c_orderQueueReplace);
         libNtve_gf_PauseUnit(lv_workerUnit, true);
         lv_iteration += 1;
         if ((UnitGroupCount(lv_minerals, c_unitCountAlive) < lv_iteration)) {
@@ -3950,6 +3965,29 @@ void libCOMI_gf_CreateStartingUnitsForPlayer (int lp_player, point lp_location) 
         }
 
     }
+}
+
+string libCOMI_gf_UnitUserData (string lp_unit) {
+    // Variable Declarations
+    string lv_instance;
+
+    // Automatic Variable Declarations
+    int autoFEC7078E_ae;
+    int autoFEC7078E_var;
+
+    // Variable Initialization
+
+    // Implementation
+    autoFEC7078E_ae = UserDataInstanceCount("UnitData");
+    autoFEC7078E_var = 1;
+    for ( ; autoFEC7078E_var <= autoFEC7078E_ae; autoFEC7078E_var += 1 ) {
+        lv_instance = UserDataInstance("UnitData", autoFEC7078E_var);
+        if ((UserDataGetUnit("UnitData", lv_instance, "Unit", 1) == lp_unit)) {
+            return lv_instance;
+        }
+
+    }
+    return UserDataInstance("UnitData", 1);
 }
 
 void libCOMI_gf_CreateExpansionUnitsForPlayer (int lp_player, point lp_location) {
@@ -6025,6 +6063,10 @@ int libCOMI_gf_GetPlayerTeam (int lp_player) {
     lv_players = PlayerGroupEmpty();
 
     // Implementation
+    if ((lp_player == 16)) {
+        return 16;
+    }
+
     if ((lp_player == 0)) {
         return 0;
     }
@@ -6038,6 +6080,27 @@ int libCOMI_gf_GetPlayerTeam (int lp_player) {
     }
 
     return 3;
+}
+
+playergroup libCOMI_gf_GetTeammates (int lp_player) {
+    // Variable Declarations
+    playergroup lv_team;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_team = PlayerGroupEmpty();
+
+    // Implementation
+    if ((PlayerGroupHasPlayer(libCOMI_gf_GetAlliesPlayers(), lp_player) == true)) {
+        lv_team = libCOMI_gf_GetAlliesPlayers();
+    }
+
+    if ((PlayerGroupHasPlayer(libCOMI_gf_GetEnemyPlayers(), lp_player) == true)) {
+        lv_team = libCOMI_gf_GetEnemyPlayers();
+    }
+
+    PlayerGroupRemove(lv_team, lp_player);
+    return lv_team;
 }
 
 playergroup libCOMI_gf_PlayersOfCommander (string lp_commander) {
@@ -17004,40 +17067,6 @@ void libCOMI_gf_UpdateDifficultiesList () {
     libCOMI_gf_SetDifficulty(libCOMI_gv_selectedDifficulty);
 }
 
-string libCOMI_gf_HybridMajor () {
-    // Variable Declarations
-    string lv_hybridMajor;
-
-    // Automatic Variable Declarations
-    // Variable Initialization
-
-    // Implementation
-    if ((RandomInt(0, 1) == 1)) {
-        lv_hybridMajor = "HybridBehemoth";
-    }
-    else {
-        lv_hybridMajor = "HybridDominatorVoid";
-    }
-    return lv_hybridMajor;
-}
-
-string libCOMI_gf_HybridMinor () {
-    // Variable Declarations
-    string lv_hybridMinor;
-
-    // Automatic Variable Declarations
-    // Variable Initialization
-
-    // Implementation
-    if ((RandomInt(0, 1) == 1)) {
-        lv_hybridMinor = "HybridDestroyer";
-    }
-    else {
-        lv_hybridMinor = "HybridReaver";
-    }
-    return lv_hybridMinor;
-}
-
 void libCOMI_gf_HistogramHorizontalCreate (color lp_pColor, structref<libCOMI_gs_HistogramData> lp_pData, bool lp_pShowCounts, bool lp_pBackground, int lp_pCenter, int lp_pVertical, bool lp_pPercent, int lp_pTotal) {
     // Variable Declarations
     const int lv_vPadding = 50;
@@ -17244,6 +17273,40 @@ void libCOMI_gf_HistogramVerticalCreate (color lp_pColor, structref<libCOMI_gs_H
         }
 
     }
+}
+
+string libCOMI_gf_HybridMajor () {
+    // Variable Declarations
+    string lv_hybridMajor;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Implementation
+    if ((RandomInt(0, 1) == 1)) {
+        lv_hybridMajor = "HybridBehemoth";
+    }
+    else {
+        lv_hybridMajor = "HybridDominatorVoid";
+    }
+    return lv_hybridMajor;
+}
+
+string libCOMI_gf_HybridMinor () {
+    // Variable Declarations
+    string lv_hybridMinor;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Implementation
+    if ((RandomInt(0, 1) == 1)) {
+        lv_hybridMinor = "HybridDestroyer";
+    }
+    else {
+        lv_hybridMinor = "HybridReaver";
+    }
+    return lv_hybridMinor;
 }
 
 text libCOMI_gf_CU_PrestigeBriefFormatTooltip (int lp_player) {
@@ -17893,6 +17956,18 @@ bool auto_libCOMI_gf_CU_UpdateObjectivePanel_TriggerFunc (bool testConds, bool r
     return true;
 }
 
+void libCOMI_gf_CU_TargetingCancel (trigger t) {
+    // Automatic Variable Declarations
+    // Implementation
+    TriggerAddEventGeneric(t, libCOMI_gv_cUC_TargetingEventCancel);
+}
+
+int libCOMI_gf_CU_TargetingTriggeringPlayer () {
+    // Automatic Variable Declarations
+    // Implementation
+    return DataTableGetInt(false, TriggerEventParamName(libCOMI_gv_cUC_TargetingEventCancel, libCOMI_gv_cUC_TargetingParamPlayer));
+}
+
 void libCOMI_gf_PU_TargetingUI_EnterTargetingMode (bool lp_showHide, bool lp_instant, int lp_player) {
     // Variable Declarations
     int lv_index;
@@ -17930,8 +18005,6 @@ void libCOMI_gf_PU_TargetingUI_EnterTargetingMode (bool lp_showHide, bool lp_ins
 
 void libCOMI_gf_CU_TargetingCreate (int lp_player) {
     // Automatic Variable Declarations
-    string auto6EB1B823_val;
-
     // Implementation
     if ((libCOMI_gv_cU_TargetingAbilityDialog[lp_player] != c_invalidDialogId)) {
         return ;
@@ -17941,22 +18014,13 @@ void libCOMI_gf_CU_TargetingCreate (int lp_player) {
     DialogSetFullscreen(DialogLastCreated(), true);
     libCOMI_gv_cU_TargetingAbilityDialog[lp_player] = DialogLastCreated();
     DialogSetImageVisible(DialogLastCreated(), false);
-    auto6EB1B823_val = PlayerRace(lp_player);
-    if (auto6EB1B823_val == "Terr") {
-        DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypePanel, "Coop_TerranTargetingUI/TerranTargetingUITemplate");
-    }
-    else if (auto6EB1B823_val == "Prot") {
-        DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypePanel, "LotV_GameUI/SoATargetingUITemplate");
-    }
-    else {
-        DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypePanel, "LotV_GameUI/SoATargetingUITemplate");
-    }
+    DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypePanel, libCOMI_gv_targetingTemplate[lp_player]);
     libCOMI_gv_cU_TargetingPanel[lp_player] = DialogControlLastCreated();
     DialogControlHookup(libCOMI_gv_cU_TargetingPanel[lp_player], c_triggerControlTypeLabel, "Instructions");
     libCOMI_gv_cU_TargetingInstructionsLabel[lp_player] = DialogControlLastCreated();
     DialogControlHookup(libCOMI_gv_cU_TargetingPanel[lp_player], c_triggerControlTypeButton, "CancelButton");
     libCOMI_gv_cU_TargetingCancelButton[lp_player] = DialogControlLastCreated();
-    if ((PlayerRace(lp_player) == "Prot")) {
+    if ((libCOMI_gv_cM_SoATargetingChargesTotal[lp_player] > 0)) {
         DialogControlHookup(libCOMI_gv_cU_TargetingPanel[lp_player], c_triggerControlTypePanel, "ChargesContainer");
         libCOMI_gv_cU_TargetingChargesPanel[lp_player] = DialogControlLastCreated();
         DialogControlHookup(libCOMI_gv_cU_TargetingChargesPanel[lp_player], c_triggerControlTypePanel, "Charge1");
@@ -17992,7 +18056,7 @@ void libCOMI_gf_CU_TargetingSetCharges (int lp_current, int lp_max, int lp_playe
     const int auto1E411E65_ai = 1;
     int auto61400EA8_ae;
     const int auto61400EA8_ai = 1;
-    const int auto8D6D93FB_ae = libCOMM_gv_cMC_SOATARGETCOUNTMAX;
+    const int auto8D6D93FB_ae = libCOMI_gv_cMC_SOATARGETCOUNTMAX;
     const int auto8D6D93FB_ai = 1;
 
     // Variable Initialization
@@ -18001,7 +18065,7 @@ void libCOMI_gf_CU_TargetingSetCharges (int lp_current, int lp_max, int lp_playe
     // Implementation
     lv_uIPlayers = PlayerGroupSingle(lp_player);
     libCOMI_gf_CU_TargetingCreate(lp_player);
-    if ((PlayerRace(lp_player) == "Terr")) {
+    if ((libCOMI_gv_cM_SoATargetingChargesTotal[lp_player] == 0)) {
         return ;
     }
 
@@ -18041,16 +18105,249 @@ void libCOMI_gf_CU_TargetingSetInstructionText (text lp_instructions, int lp_pla
     libNtve_gf_SetDialogItemText(libCOMI_gv_cU_TargetingInstructionsLabel[lp_player], lp_instructions, PlayerGroupSingle(lp_player));
 }
 
-int libCOMI_gf_CU_TargetingTriggeringPlayer () {
+void libCOMI_gf_CM_SoATargetingModeEnter (int lp_player) {
+    // Variable Declarations
+    int lv_count;
+
     // Automatic Variable Declarations
+    // Variable Initialization
+
     // Implementation
-    return DataTableGetInt(false, TriggerEventParamName(libCOMI_gv_cUC_TargetingEventCancel, libCOMI_gv_cUC_TargetingParamPlayer));
+    libCOMI_gv_cM_SoATargetingUnrefundableStageEntered[lp_player] = false;
+    libCOMI_gv_cM_SoATargetingAlreadyCanceled[lp_player] = false;
+    while (!((libCOMI_gv_cM_SoATargetingTransitioning[lp_player] == false))) {
+        Wait(0.0625, c_timeGame);
+    }
+    if ((libCOMI_gf_PlayerInCinematicModeCampaign() == true)) {
+        return ;
+    }
+
+    TriggerEnable(libCOMI_gt_CM_SoATargetingCancel, true);
+    libCOMI_gv_cM_SoAExitInstantly = false;
+    libCOMI_gv_cM_SoATargetingUsageCount += 1;
+    libCOMI_gv_cM_SoATargetingChargesSpent[lp_player] = 0;
+    libCOMI_gf_CU_TargetingSetCharges(libCOMI_gv_cM_SoATargetingChargesTotal[lp_player], libCOMI_gv_cM_SoATargetingChargesTotal[lp_player], lp_player);
+    if ((libCOMI_gv_cM_SoATargetingOrder[lp_player] != null)) {
+        TriggerEnable(libCOMI_gt_CM_SoATargetingPointChosen, true);
+        TriggerEnable(libCOMI_gt_CM_SoATargetingDirectionChosen, true);
+        UISetTargetingOrder(PlayerGroupSingle(lp_player), libCOMI_gv_yY_GPCasterGroup[lp_player], libCOMI_gv_cM_SoATargetingOrder[lp_player], false);
+        libCOMI_gv_cM_SoATargetingPhase[lp_player] = libCOMI_ge_CM_SoATargetingPhaseType_Location;
+    }
+    else {
+        libCOMI_gv_cM_SoATargetingPhase[lp_player] = libCOMI_ge_CM_SoATargetingPhaseType_None;
+    }
+    libCOMI_gv_cM_SoATargetingTransitioning[lp_player] = true;
+    libCOMI_gf_PU_TargetingUI_EnterTargetingMode(true, false, lp_player);
+    libCOMI_gf_CU_TargetingSetInstructionText(libCOMI_gv_cM_SoATargetingInstructionsPrimary[lp_player], lp_player);
+    libCOMI_gf_CM_SetFogAlphaOverTime(100.0, 0.5, lp_player);
+    CameraSetValue(lp_player, c_cameraValueDistance, 50.0, 1.0, -1, 10.0);
+    CameraSetValue(lp_player, c_cameraValuePitch, 70.0, 1.0, -1, 10.0);
+    CameraSetData(PlayerGroupSingle(lp_player), "SOATargetingModeCamera");
+    libCOMI_gv_cM_SoATargetingTransitioning[lp_player] = false;
+    libCOMI_gv_cM_SoATargetingCycling[lp_player] = false;
 }
 
-void libCOMI_gf_CU_TargetingCancel (trigger t) {
+void libCOMI_gf_CM_SoATargetingModeExit (int lp_player) {
     // Automatic Variable Declarations
     // Implementation
-    TriggerAddEventGeneric(t, libCOMI_gv_cUC_TargetingEventCancel);
+    libCOMI_gv_cM_SoATargetingPhase[lp_player] = libCOMI_ge_CM_SoATargetingPhaseType_None;
+    while (!((libCOMI_gv_cM_SoATargetingTransitioning[lp_player] == false))) {
+        Wait(0.0625, c_timeGame);
+    }
+    libCOMI_gv_cM_SoATargetingTransitioning[lp_player] = true;
+    if ((libCOMI_gv_cM_SoAExitInstantly == true)) {
+        CameraSetValue(lp_player, c_cameraValueDistance, 34.0, 0.0, -1, 10.0);
+        CameraSetValue(lp_player, c_cameraValuePitch, 56.0, 0.0, -1, 10.0);
+    }
+    else {
+        CameraSetValue(lp_player, c_cameraValueDistance, 34.0, 0.5, -1, 10.0);
+        CameraSetValue(lp_player, c_cameraValuePitch, 56.0, 0.5, -1, 10.0);
+    }
+    CameraSetData(PlayerGroupSingle(lp_player), "Dflt");
+    if ((libCOMI_gv_cM_SoAExitInstantly == true)) {
+        VisResetFoWAlpha(lp_player);
+        libCOMI_gf_PU_TargetingUI_EnterTargetingMode(false, true, lp_player);
+    }
+    else {
+        libCOMI_gf_CM_ResetFogAlphaOverTime(0.5, lp_player);
+        libCOMI_gf_PU_TargetingUI_EnterTargetingMode(false, false, lp_player);
+    }
+    libNtve_gf_RestoreUnitSelection(lp_player);
+    libCOMI_gv_cM_SoATargetingActivateAbility[lp_player] = null;
+    libCOMI_gv_cM_SoATargetingTransitioning[lp_player] = false;
+    libCOMI_gv_cM_SoATargetingUsageCount -= 1;
+    if ((libCOMI_gv_cM_SoATargetingUsageCount == 0)) {
+        TriggerEnable(libCOMI_gt_CM_SoATargetingCancel, false);
+        TriggerEnable(libCOMI_gt_CM_SoATargetingPointChosen, false);
+        TriggerEnable(libCOMI_gt_CM_SoATargetingDirectionChosen, false);
+    }
+
+}
+
+void libCOMI_gf_CM_SoATargetingCleanupActorsAndUnits (int lp_player) {
+    // Variable Declarations
+    int lv_index;
+
+    // Automatic Variable Declarations
+    const int auto614ACFCA_ae = libCOMI_gv_cMC_SOATARGETCOUNTMAX;
+    const int auto614ACFCA_ai = 1;
+
+    // Variable Initialization
+
+    // Implementation
+    lv_index = 1;
+    for ( ; ( (auto614ACFCA_ai >= 0 && lv_index <= auto614ACFCA_ae) || (auto614ACFCA_ai < 0 && lv_index >= auto614ACFCA_ae) ) ; lv_index += auto614ACFCA_ai ) {
+        if ((libCOMI_gv_cM_SoATargetingActors[lv_index][lp_player] != null)) {
+            ActorSend(libCOMI_gv_cM_SoATargetingActors[lv_index][lp_player], "Signal Destroy");
+            libCOMI_gv_cM_SoATargetingActors[lv_index][lp_player] = null;
+        }
+
+        if ((libCOMI_gv_cM_SoATargetingUnit[lv_index][lp_player] != null)) {
+            UnitRemove(libCOMI_gv_cM_SoATargetingUnit[lv_index][lp_player]);
+            libCOMI_gv_cM_SoATargetingUnit[lv_index][lp_player] = null;
+        }
+
+    }
+}
+
+trigger auto_libCOMI_gf_CM_SetFogAlphaOverTime_Trigger = null;
+fixed auto_libCOMI_gf_CM_SetFogAlphaOverTime_lp_targetAlpha;
+fixed auto_libCOMI_gf_CM_SetFogAlphaOverTime_lp_duration;
+int auto_libCOMI_gf_CM_SetFogAlphaOverTime_lp_player;
+
+void libCOMI_gf_CM_SetFogAlphaOverTime (fixed lp_targetAlpha, fixed lp_duration, int lp_player) {
+    auto_libCOMI_gf_CM_SetFogAlphaOverTime_lp_targetAlpha = lp_targetAlpha;
+    auto_libCOMI_gf_CM_SetFogAlphaOverTime_lp_duration = lp_duration;
+    auto_libCOMI_gf_CM_SetFogAlphaOverTime_lp_player = lp_player;
+
+    if (auto_libCOMI_gf_CM_SetFogAlphaOverTime_Trigger == null) {
+        auto_libCOMI_gf_CM_SetFogAlphaOverTime_Trigger = TriggerCreate("auto_libCOMI_gf_CM_SetFogAlphaOverTime_TriggerFunc");
+    }
+
+    TriggerExecute(auto_libCOMI_gf_CM_SetFogAlphaOverTime_Trigger, false, false);
+}
+
+bool auto_libCOMI_gf_CM_SetFogAlphaOverTime_TriggerFunc (bool testConds, bool runActions) {
+    fixed lp_targetAlpha = auto_libCOMI_gf_CM_SetFogAlphaOverTime_lp_targetAlpha;
+    fixed lp_duration = auto_libCOMI_gf_CM_SetFogAlphaOverTime_lp_duration;
+    int lp_player = auto_libCOMI_gf_CM_SetFogAlphaOverTime_lp_player;
+
+    // Variable Declarations
+    fixed lv_currentAlpha;
+    fixed lv_alphaIncrement;
+    fixed lv_incrementFrequency;
+    int lv_increments;
+
+    // Automatic Variable Declarations
+    int auto03C30BA1_n;
+    int auto03C30BA1_i;
+
+    // Variable Initialization
+
+    // Implementation
+    if (((libCOMI_gf_MutatorIsEnabled("BlackFog") == true) || (libCOMI_gf_MutatorIsEnabled("UberDarkness") == true))) {
+        return true;
+    }
+
+    lv_incrementFrequency = 0.05;
+    lv_currentAlpha = VisGetFoWAlpha(lp_player);
+    lv_increments = AbsI(FixedToInt((lp_duration / lv_incrementFrequency)));
+    lv_alphaIncrement = ((lp_targetAlpha-lv_currentAlpha)/IntToFixed(lv_increments));
+    auto03C30BA1_n = lv_increments;
+    for (auto03C30BA1_i = 1; auto03C30BA1_i <= auto03C30BA1_n; auto03C30BA1_i += 1) {
+        Wait(lv_incrementFrequency, c_timeGame);
+        lv_currentAlpha += lv_alphaIncrement;
+        VisSetFoWAlpha(lp_player, lv_currentAlpha);
+    }
+    VisSetFoWAlpha(lp_player, lp_targetAlpha);
+    return true;
+}
+
+trigger auto_libCOMI_gf_CM_ResetFogAlphaOverTime_Trigger = null;
+fixed auto_libCOMI_gf_CM_ResetFogAlphaOverTime_lp_duration;
+int auto_libCOMI_gf_CM_ResetFogAlphaOverTime_lp_player;
+
+void libCOMI_gf_CM_ResetFogAlphaOverTime (fixed lp_duration, int lp_player) {
+    auto_libCOMI_gf_CM_ResetFogAlphaOverTime_lp_duration = lp_duration;
+    auto_libCOMI_gf_CM_ResetFogAlphaOverTime_lp_player = lp_player;
+
+    if (auto_libCOMI_gf_CM_ResetFogAlphaOverTime_Trigger == null) {
+        auto_libCOMI_gf_CM_ResetFogAlphaOverTime_Trigger = TriggerCreate("auto_libCOMI_gf_CM_ResetFogAlphaOverTime_TriggerFunc");
+    }
+
+    TriggerExecute(auto_libCOMI_gf_CM_ResetFogAlphaOverTime_Trigger, false, false);
+}
+
+bool auto_libCOMI_gf_CM_ResetFogAlphaOverTime_TriggerFunc (bool testConds, bool runActions) {
+    fixed lp_duration = auto_libCOMI_gf_CM_ResetFogAlphaOverTime_lp_duration;
+    int lp_player = auto_libCOMI_gf_CM_ResetFogAlphaOverTime_lp_player;
+
+    // Variable Declarations
+    fixed lv_currentAlpha;
+    fixed lv_alphaIncrement;
+    fixed lv_incrementFrequency;
+    int lv_increments;
+    fixed lv_targetAlpha;
+
+    // Automatic Variable Declarations
+    int auto56E2CCBE_n;
+    int auto56E2CCBE_i;
+
+    // Variable Initialization
+
+    // Implementation
+    if (((libCOMI_gf_MutatorIsEnabled("BlackFog") == true) || (libCOMI_gf_MutatorIsEnabled("UberDarkness") == true))) {
+        return true;
+    }
+
+    lv_incrementFrequency = 0.05;
+    lv_currentAlpha = VisGetFoWAlpha(lp_player);
+    VisResetFoWAlpha(lp_player);
+    lv_targetAlpha = VisGetFoWAlpha(lp_player);
+    lv_increments = AbsI(FixedToInt((lp_duration / lv_incrementFrequency)));
+    lv_alphaIncrement = ((lv_targetAlpha-lv_currentAlpha)/IntToFixed(lv_increments));
+    VisSetFoWAlpha(lp_player, lv_currentAlpha);
+    auto56E2CCBE_n = lv_increments;
+    for (auto56E2CCBE_i = 1; auto56E2CCBE_i <= auto56E2CCBE_n; auto56E2CCBE_i += 1) {
+        Wait(lv_incrementFrequency, c_timeGame);
+        lv_currentAlpha += lv_alphaIncrement;
+        VisSetFoWAlpha(lp_player, lv_currentAlpha);
+    }
+    VisResetFoWAlpha(lp_player);
+    return true;
+}
+
+void libCOMI_gf_CM_SoATargetingCancel (int lp_player) {
+    // Variable Declarations
+    string lv_cost;
+    string lv_costField;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_cost = "";
+    lv_costField = "";
+
+    // Implementation
+    UnitIssueOrder(libCOMI_gv_yY_GPCasterUnit[lp_player], Order(AbilityCommand("stop", 0)), c_orderQueueReplace);
+    libCOMI_gv_cM_SoATargetingAlreadyCanceled[lp_player] = true;
+    libCOMI_gf_CM_SoATargetingCleanupActorsAndUnits(lp_player);
+    if ((libCOMI_gv_cM_SoATargetingUnitType[lp_player] != null) && (libCOMI_gv_cM_SoATargetingPhase[lp_player] == libCOMI_ge_CM_SoATargetingPhaseType_Direction)) {
+        libCOMI_gv_cM_SoATargetingChargesSpent[lp_player] -= 1;
+    }
+
+    if ((libCOMI_gv_cM_SoATargetingChargesSpent[lp_player] == 0) && (libCOMI_gv_cM_SoATargetingUnrefundableStageEntered[lp_player] == false)) {
+        libNtve_gf_UnitAbilityRemoveCooldown(libCOMI_gv_yY_GPCasterUnit[lp_player], libCOMI_gv_cM_SoATargetingActivateAbility[lp_player], libCOMI_gv_cM_SoATargetingCooldown[lp_player]);
+        lv_costField = ("Cost[0].Vital[" + "Energy" + "]");
+        lv_cost = CatalogFieldValueGet(c_gameCatalogAbil, libCOMI_gv_cM_SoATargetingActivateAbility[lp_player], (lv_costField), lp_player);
+        UnitSetPropertyFixed(libCOMI_gv_yY_GPCasterUnit[lp_player], c_unitPropEnergy, (UnitGetPropertyFixed(libCOMI_gv_yY_GPCasterUnit[lp_player], c_unitPropEnergy, c_unitPropCurrent) + StringToFixed(lv_cost)));
+        if ((TechTreeUpgradeCount(lp_player, "NovaCommander", c_techCountCompleteOnly) == 1)) {
+            PlayerModifyPropertyInt(lp_player, c_playerPropMinerals, c_playerPropOperAdd, libCOMM_gv_cM_NovaGriffinBombingRunCost[lp_player]);
+        }
+
+    }
+
+    UnitBehaviorRemove(libCOMI_gv_yY_GPCasterUnit[lp_player], libCOMI_gv_cM_SoATargetingBehavior[lp_player], 1);
+    libCOMI_gv_cM_SoATargetingUnrefundableStageEntered[lp_player] = true;
 }
 
 trigger auto_libCOMI_gf_DisplayProgressBar_Trigger = null;
@@ -21998,6 +22295,29 @@ void libCOMI_gf_MM_UnitCreationManual (unit lp_pUnit) {
     libCOMU_gf_MM_ApplyEndurance(lp_pUnit);
     libCOMU_gf_MM_ApplySupremeCommander(lp_pUnit);
     libCOMU_gf_MM_ApplyBloodlust(lp_pUnit);
+}
+
+void libCOMI_gf_ThankYou (int lp_caster, int lp_target) {
+    // Automatic Variable Declarations
+    // Implementation
+    libCOMI_gf_CM_CommanderVOSend(lp_caster, libCOMI_gf_CC_CommanderVOLine(libCOMI_gf_ActiveCommanderForPlayer(lp_target), libCOMI_ge_CC_CommanderVOLines_CC_CommanderVOThankyou), PlayerGroupSingle(lp_target));
+}
+
+void libCOMI_gf_TeamThankYou (int lp_caster) {
+    // Variable Declarations
+    playergroup lv_team;
+    int lv_player;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_team = libCOMI_gf_GetTeammates(lp_caster);
+
+    // Implementation
+    if ((PlayerGroupCount(lv_team) > 0)) {
+        lv_player = PlayerGroupPlayer(lv_team, RandomInt(1, PlayerGroupCount(lv_team)));
+        libCOMI_gf_CM_CommanderVOSend(lp_caster, libCOMI_gf_CC_CommanderVOLine(libCOMI_gf_ActiveCommanderForPlayer(lv_player), libCOMI_ge_CC_CommanderVOLines_CC_CommanderVOThankyou), PlayerGroupSingle(lv_player));
+    }
+
 }
 
 void libCOMI_gf_DefferedTransmission (string lp_transmission, fixed lp_delay, fixed lp_defer) {
@@ -30113,6 +30433,7 @@ bool libCOMI_gt_CM_CampaignMissionInitialize_Func (bool testConds, bool runActio
     int lv_actorTarmacSplatHero;
     int lv_i;
     int lv_expansionIndex;
+    int lv_mAX_RECOMMENDED_ALLIED_PLAYERS;
 
     // Automatic Variable Declarations
     playergroup auto6B1E1E16_g;
@@ -30131,6 +30452,7 @@ bool libCOMI_gt_CM_CampaignMissionInitialize_Func (bool testConds, bool runActio
     lv_spawners = UserDataGetInt("MissionSettings", "CurrentMission", "Spawners", 1);
     lv_time = UserDataGetString("MissionSettings", "CurrentMission", "Time", 1);
     lv_gameSoundtrack = UserDataGetGameLink("MissionSettings", "CurrentMission", "GameSoundtrack", 1);
+    lv_mAX_RECOMMENDED_ALLIED_PLAYERS = 3;
 
     // Actions
     if (!runActions) {
@@ -30189,7 +30511,7 @@ bool libCOMI_gt_CM_CampaignMissionInitialize_Func (bool testConds, bool runActio
         CameraApplyInfo(lv_itPlayer, lv_camera, 0.0, -1, 0.0, true);
         lv_expansionIndex = 1;
         lv_point = libCOMI_gf_GetAllyExpansionPosition(lv_playerInTeam, lv_expansionIndex, PlayerGroupCount(libCOMI_gf_GetAlliedCommandersPlayers()));
-        while ((lv_point != null)) {
+        while ((lv_point != null) && (lv_playerInTeam <= lv_mAX_RECOMMENDED_ALLIED_PLAYERS)) {
             libCOMI_gf_CreateExpansionUnitsForPlayer(lv_playerInTeam, lv_point);
             lv_expansionIndex += 1;
             lv_point = libCOMI_gf_GetAllyExpansionPosition(lv_playerInTeam, lv_expansionIndex, PlayerGroupCount(libCOMI_gf_GetAlliedCommandersPlayers()));
@@ -34026,6 +34348,421 @@ void libCOMI_gt_CU_TargetingCancelButtonUsed_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Trigger: CM_SoATargetingForceOff
+//--------------------------------------------------------------------------------------------------
+bool libCOMI_gt_CM_SoATargetingForceOff_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_indexPlayer;
+
+    // Automatic Variable Declarations
+    playergroup auto252FCEF8_g;
+
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    TriggerEnable(libCOMI_gt_CM_SoATargetingCancel, false);
+    TriggerEnable(libCOMI_gt_CM_SoATargetingPointChosen, false);
+    TriggerEnable(libCOMI_gt_CM_SoATargetingDirectionChosen, false);
+    libCOMI_gv_cM_SoAExitInstantly = true;
+    auto252FCEF8_g = libCOMI_gf_GetAlliedCommandersPlayersCopy();
+    lv_indexPlayer = -1;
+    while (true) {
+        lv_indexPlayer = PlayerGroupNextPlayer(auto252FCEF8_g, lv_indexPlayer);
+        if (lv_indexPlayer < 0) { break; }
+        if ((libCOMI_gv_cM_SoATargetingPhase[lv_indexPlayer] != libCOMI_ge_CM_SoATargetingPhaseType_None)) {
+            libCOMI_gv_cM_SoATargetingTransitioning[lv_indexPlayer] = false;
+            UISetTargetingOrder(PlayerGroupSingle(lv_indexPlayer), libCOMI_gv_yY_GPCasterGroup[lv_indexPlayer], null, false);
+            libCOMI_gf_CM_SoATargetingCancel(lv_indexPlayer);
+        }
+
+    }
+    libCOMI_gv_cM_SoATargetingUsageCount = 0;
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMI_gt_CM_SoATargetingForceOff_Init () {
+    libCOMI_gt_CM_SoATargetingForceOff = TriggerCreate("libCOMI_gt_CM_SoATargetingForceOff_Func");
+    TriggerAddEventGeneric(libCOMI_gt_CM_SoATargetingForceOff, "CinematicModeOn");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: CM_SoATargetingDeactivated
+//--------------------------------------------------------------------------------------------------
+bool libCOMI_gt_CM_SoATargetingDeactivated_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_casterPlayer;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_casterPlayer = UnitGetOwner(EventUnit());
+    UISetTargetingOrder(PlayerGroupSingle(lv_casterPlayer), libCOMI_gv_yY_GPCasterGroup[lv_casterPlayer], null, false);
+    libCOMI_gv_cM_SoATargetingChargesSpent[lv_casterPlayer] = 0;
+    libCOMI_gf_CM_SoATargetingModeExit(lv_casterPlayer);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMI_gt_CM_SoATargetingDeactivated_Init () {
+    libCOMI_gt_CM_SoATargetingDeactivated = TriggerCreate("libCOMI_gt_CM_SoATargetingDeactivated_Func");
+    TriggerAddEventUnitBehaviorChange(libCOMI_gt_CM_SoATargetingDeactivated, null, "SOAOrbitalStrikeActivate", c_unitBehaviorChangeDeactivate);
+    TriggerAddEventUnitBehaviorChange(libCOMI_gt_CM_SoATargetingDeactivated, null, "SOAGravitonBombActivate", c_unitBehaviorChangeDeactivate);
+    TriggerAddEventUnitBehaviorChange(libCOMI_gt_CM_SoATargetingDeactivated, null, "SOAThermalLanceActivate", c_unitBehaviorChangeDeactivate);
+    TriggerAddEventUnitBehaviorChange(libCOMI_gt_CM_SoATargetingDeactivated, null, "SOAStrafeAttackActivate", c_unitBehaviorChangeDeactivate);
+    TriggerAddEventUnitBehaviorChange(libCOMI_gt_CM_SoATargetingDeactivated, null, "NovaGriffinBombingRunActivate", c_unitBehaviorChangeDeactivate);
+    TriggerAddEventUnitBehaviorChange(libCOMI_gt_CM_SoATargetingDeactivated, null, "HornerAirFleetActivate", c_unitBehaviorChangeDeactivate);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: CM_SoATargetingPointChosen
+//--------------------------------------------------------------------------------------------------
+bool libCOMI_gt_CM_SoATargetingPointChosen_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    point lv_targetPoint;
+    int lv_casterPlayer;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Conditions
+    if (testConds) {
+        if (!((PlayerGroupHasPlayer(libCOMI_gf_GetAlliedCommandersPlayersCopy(), EventPlayer()) == true))) {
+            return false;
+        }
+
+        if (!((libCOMI_gv_cM_SoATargetingPhase[EventPlayer()] == libCOMI_ge_CM_SoATargetingPhaseType_Location))) {
+            return false;
+        }
+
+        if (!((libCOMI_gv_cM_SoATargetingChargesSpent[EventPlayer()] < libCOMI_gv_cM_SoATargetingChargesTotal[EventPlayer()]))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_targetPoint = OrderGetTargetPoint(EventUnitOrder());
+    lv_casterPlayer = EventPlayer();
+    if ((VisIsVisibleForPlayer(lv_casterPlayer, lv_targetPoint) == false)) {
+        return true;
+    }
+
+    libCOMI_gv_cM_SoATargetingCycling[lv_casterPlayer] = true;
+    libCOMI_gv_cM_SoATargetingChargesSpent[lv_casterPlayer] += 1;
+    libNtve_gf_CreateActorAtPoint(libCOMI_gv_cM_SoATargetingModel[lv_casterPlayer], lv_targetPoint);
+    libCOMI_gv_cM_SoATargetingActors[libCOMI_gv_cM_SoATargetingChargesSpent[lv_casterPlayer]][lv_casterPlayer] = libNtve_gf_ActorLastCreated();
+    libNtve_gf_CreateActorAtPoint("SOATargetingModeConfirmationSound", lv_targetPoint);
+    if ((libCOMI_gv_cM_SoATargetingUnitType[lv_casterPlayer] == null)) {
+        UnitIssueOrder(libCOMI_gv_yY_GPCasterUnit[lv_casterPlayer], OrderTargetingPoint(libCOMI_gv_cM_SoATargetingExecuteCommand[lv_casterPlayer], lv_targetPoint), c_orderQueueAddToEnd);
+        libCOMI_gf_CU_TargetingSetCharges((libCOMI_gv_cM_SoATargetingChargesTotal[lv_casterPlayer]-libCOMI_gv_cM_SoATargetingChargesSpent[lv_casterPlayer]), libCOMI_gv_cM_SoATargetingChargesTotal[lv_casterPlayer], lv_casterPlayer);
+        if ((libCOMI_gv_cM_SoATargetingChargesSpent[lv_casterPlayer] == libCOMI_gv_cM_SoATargetingChargesTotal[lv_casterPlayer])) {
+            Wait(0.125, c_timeGame);
+            UnitBehaviorRemove(libCOMI_gv_yY_GPCasterUnit[lv_casterPlayer], libCOMI_gv_cM_SoATargetingBehavior[lv_casterPlayer], 1);
+        }
+        else {
+            Wait(0.1, c_timeGame);
+            UISetTargetingOrder(PlayerGroupSingle(lv_casterPlayer), libCOMI_gv_yY_GPCasterGroup[lv_casterPlayer], libCOMI_gv_cM_SoATargetingOrder[lv_casterPlayer], false);
+        }
+    }
+    else {
+        libNtve_gf_CreateUnitsWithDefaultFacing(1, libCOMI_gv_cM_SoATargetingUnitType[lv_casterPlayer], 0, lv_casterPlayer, lv_targetPoint);
+        UnitSetState(UnitLastCreated(), c_unitStateTooltipable, false);
+        libCOMI_gv_cM_SoATargetingUnit[libCOMI_gv_cM_SoATargetingChargesSpent[lv_casterPlayer]][lv_casterPlayer] = UnitLastCreated();
+        libCOMI_gv_cM_SoATargetingDirectionGroup[lv_casterPlayer] = libNtve_gf_ConvertUnitToUnitGroup(libCOMI_gv_cM_SoATargetingUnit[libCOMI_gv_cM_SoATargetingChargesSpent[lv_casterPlayer]][lv_casterPlayer]);
+        Wait(0.1, c_timeGame);
+        if ((UnitIsValid(libCOMI_gv_cM_SoATargetingUnit[libCOMI_gv_cM_SoATargetingChargesSpent[lv_casterPlayer]][lv_casterPlayer]) == true)) {
+            UISetTargetingOrder(PlayerGroupSingle(lv_casterPlayer), libCOMI_gv_cM_SoATargetingDirectionGroup[lv_casterPlayer], OrderTargetingPoint(libCOMI_gv_cM_SoATargetingExecuteCommand[lv_casterPlayer], UnitGetPosition(libCOMI_gv_cM_SoATargetingUnit[libCOMI_gv_cM_SoATargetingChargesSpent[lv_casterPlayer]][lv_casterPlayer])), false);
+            libCOMI_gf_CU_TargetingSetInstructionText(libCOMI_gv_cM_SoATargetingInstructionsSecondary[lv_casterPlayer], lv_casterPlayer);
+            libCOMI_gv_cM_SoATargetingPhase[lv_casterPlayer] = libCOMI_ge_CM_SoATargetingPhaseType_Direction;
+        }
+
+    }
+    libCOMI_gv_cM_SoATargetingCycling[lv_casterPlayer] = false;
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMI_gt_CM_SoATargetingPointChosen_Init () {
+    libCOMI_gt_CM_SoATargetingPointChosen = TriggerCreate("libCOMI_gt_CM_SoATargetingPointChosen_Func");
+    TriggerEnable(libCOMI_gt_CM_SoATargetingPointChosen, false);
+    TriggerAddEventUnitOrder(libCOMI_gt_CM_SoATargetingPointChosen, null, AbilityCommand("SOAOrbitalStrikeTargetingDummy", 0));
+    TriggerAddEventUnitOrder(libCOMI_gt_CM_SoATargetingPointChosen, null, AbilityCommand("SOAThermalLanceTargetingDummy", 0));
+    TriggerAddEventUnitOrder(libCOMI_gt_CM_SoATargetingPointChosen, null, AbilityCommand("SOAGravitonBomb", 0));
+    TriggerAddEventUnitOrder(libCOMI_gt_CM_SoATargetingPointChosen, null, AbilityCommand("NovaGriffinBombingRunTargetingDummy", 0));
+    TriggerAddEventUnitOrder(libCOMI_gt_CM_SoATargetingPointChosen, null, AbilityCommand("HornerAirFleetTargetingDummy", 0));
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: CM_SoATargetingDirectionChosen
+//--------------------------------------------------------------------------------------------------
+bool libCOMI_gt_CM_SoATargetingDirectionChosen_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    point lv_targetPoint;
+    int lv_casterPlayer;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Conditions
+    if (testConds) {
+        if (!((PlayerGroupHasPlayer(libCOMI_gf_GetAlliedCommandersPlayersCopy(), EventPlayer()) == true))) {
+            return false;
+        }
+
+        if (!((libCOMI_gv_cM_SoATargetingPhase[EventPlayer()] == libCOMI_ge_CM_SoATargetingPhaseType_Direction))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_casterPlayer = EventPlayer();
+    libCOMI_gv_cM_SoATargetingCycling[lv_casterPlayer] = true;
+    lv_targetPoint = OrderGetTargetPoint(EventUnitOrder());
+    libCOMI_gv_cM_SoATargetingUnrefundableStageEntered[lv_casterPlayer] = true;
+    libNtve_gf_CreateActorAtPoint("SOATargetingModeConfirmationSound", lv_targetPoint);
+    ActorSend(libCOMI_gv_cM_SoATargetingActors[libCOMI_gv_cM_SoATargetingChargesSpent[lv_casterPlayer]][lv_casterPlayer], "Signal Destroy");
+    if ((UnitIsValid(libCOMI_gv_cM_SoATargetingUnit[libCOMI_gv_cM_SoATargetingChargesSpent[lv_casterPlayer]][lv_casterPlayer]) == false)) {
+        return true;
+    }
+
+    libNtve_gf_MakeUnitFacePoint(libCOMI_gv_cM_SoATargetingUnit[libCOMI_gv_cM_SoATargetingChargesSpent[lv_casterPlayer]][lv_casterPlayer], lv_targetPoint, 0.0);
+    libCOMI_gf_CU_TargetingSetCharges((libCOMI_gv_cM_SoATargetingChargesTotal[lv_casterPlayer]-libCOMI_gv_cM_SoATargetingChargesSpent[lv_casterPlayer]), libCOMI_gv_cM_SoATargetingChargesTotal[lv_casterPlayer], lv_casterPlayer);
+    if ((libCOMI_gv_cM_SoATargetingChargesSpent[lv_casterPlayer] == libCOMI_gv_cM_SoATargetingChargesTotal[lv_casterPlayer])) {
+        UnitBehaviorRemove(libCOMI_gv_yY_GPCasterUnit[lv_casterPlayer], libCOMI_gv_cM_SoATargetingBehavior[lv_casterPlayer], 1);
+        Wait(0.1, c_timeGame);
+    }
+    else {
+        libCOMI_gf_CU_TargetingSetInstructionText(libCOMI_gv_cM_SoATargetingInstructionsPrimary[lv_casterPlayer], lv_casterPlayer);
+        Wait(0.1, c_timeGame);
+        if ((libCOMI_gv_cM_SoATargetingAlreadyCanceled[lv_casterPlayer] == false)) {
+            UISetTargetingOrder(PlayerGroupSingle(lv_casterPlayer), libCOMI_gv_yY_GPCasterGroup[lv_casterPlayer], libCOMI_gv_cM_SoATargetingOrder[lv_casterPlayer], false);
+        }
+
+        libCOMI_gv_cM_SoATargetingPhase[lv_casterPlayer] = libCOMI_ge_CM_SoATargetingPhaseType_Location;
+    }
+    libCOMI_gv_cM_SoATargetingCycling[lv_casterPlayer] = false;
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMI_gt_CM_SoATargetingDirectionChosen_Init () {
+    libCOMI_gt_CM_SoATargetingDirectionChosen = TriggerCreate("libCOMI_gt_CM_SoATargetingDirectionChosen_Func");
+    TriggerEnable(libCOMI_gt_CM_SoATargetingDirectionChosen, false);
+    TriggerAddEventUnitOrder(libCOMI_gt_CM_SoATargetingDirectionChosen, null, AbilityCommand("SOAThermalLanceExecute", 0));
+    TriggerAddEventUnitOrder(libCOMI_gt_CM_SoATargetingDirectionChosen, null, AbilityCommand("NovaGriffinBombingRunExecute", 0));
+    TriggerAddEventUnitOrder(libCOMI_gt_CM_SoATargetingDirectionChosen, null, AbilityCommand("HornerAirFleetExecute", 0));
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: CM_SoATargetingEffectFired
+//--------------------------------------------------------------------------------------------------
+bool libCOMI_gt_CM_SoATargetingEffectFired_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libCOMI_gf_CM_SoATargetingCleanupActorsAndUnits(EventPlayer());
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMI_gt_CM_SoATargetingEffectFired_Init () {
+    libCOMI_gt_CM_SoATargetingEffectFired = TriggerCreate("libCOMI_gt_CM_SoATargetingEffectFired_Func");
+    TriggerAddEventPlayerEffectUsed(libCOMI_gt_CM_SoATargetingEffectFired, c_playerAny, "SOAOrbitalStrikeCP");
+    TriggerAddEventPlayerEffectUsed(libCOMI_gt_CM_SoATargetingEffectFired, c_playerAny, "SOAGravitonBombLM");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: CM_SoATargetingCancel
+//--------------------------------------------------------------------------------------------------
+bool libCOMI_gt_CM_SoATargetingCancel_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((libCOMI_gv_cM_SoATargetingCycling[EventPlayer()] == false))) {
+            return false;
+        }
+
+        if (!(((EventTargetModeAbilCmd() == AbilityCommand("SOAOrbitalStrikeTargetingDummy", 0)) || (EventTargetModeAbilCmd() == AbilityCommand("SOAThermalLanceTargetingDummy", 0)) || (EventTargetModeAbilCmd() == AbilityCommand("SOAGravitonBomb", 0)) || (EventTargetModeAbilCmd() == AbilityCommand("SOAThermalLanceExecute", 0)) || (EventTargetModeAbilCmd() == AbilityCommand("NovaGriffinBombingRunExecute", 0)) || (EventTargetModeAbilCmd() == AbilityCommand("NovaGriffinBombingRunTargetingDummy", 0)) || (EventTargetModeAbilCmd() == AbilityCommand("HornerAirFleetExecute", 0)) || (EventTargetModeAbilCmd() == AbilityCommand("HornerAirFleetTargetingDummy", 0))))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libCOMI_gf_CM_SoATargetingCancel(EventPlayer());
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMI_gt_CM_SoATargetingCancel_Init () {
+    libCOMI_gt_CM_SoATargetingCancel = TriggerCreate("libCOMI_gt_CM_SoATargetingCancel_Func");
+    TriggerEnable(libCOMI_gt_CM_SoATargetingCancel, false);
+    TriggerAddEventTargetModeUpdate(libCOMI_gt_CM_SoATargetingCancel, c_playerAny, null, c_targetModeStateOff);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: CM_SoATargetingCancelFromUI
+//--------------------------------------------------------------------------------------------------
+bool libCOMI_gt_CM_SoATargetingCancelFromUI_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libCOMI_gf_CM_SoATargetingCancel(libCOMI_gf_CU_TargetingTriggeringPlayer());
+    UISetTargetingOrder(PlayerGroupSingle(libCOMI_gf_CU_TargetingTriggeringPlayer()), libNtve_gf_ConvertUnitToUnitGroup(libCOMI_gv_yY_GPCasterUnit[libCOMI_gf_CU_TargetingTriggeringPlayer()]), null, false);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMI_gt_CM_SoATargetingCancelFromUI_Init () {
+    libCOMI_gt_CM_SoATargetingCancelFromUI = TriggerCreate("libCOMI_gt_CM_SoATargetingCancelFromUI_Func");
+    libCOMI_gf_CU_TargetingCancel(libCOMI_gt_CM_SoATargetingCancelFromUI);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: CM_SoATargetingCameraShake
+//--------------------------------------------------------------------------------------------------
+bool libCOMI_gt_CM_SoATargetingCameraShake_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    fixed lv_distance;
+    fixed[4] lv_cameraPosition;
+    fixed[4] lv_effectPosition;
+    int lv_player;
+    point lv_effectTargetPoint;
+    point lv_cameraTargetPoint;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_player = EventPlayerEffectUsedUnitOwner(c_effectPlayerCaster);
+    lv_effectTargetPoint = EventPlayerEffectUsedPoint(c_effectLocationTargetPoint);
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_cameraTargetPoint = CameraGetTarget(lv_player);
+    lv_cameraPosition[0] = PointGetX(lv_cameraTargetPoint);
+    lv_cameraPosition[1] = (PointGetY(lv_cameraTargetPoint)-(Cos(CameraGetPitch(lv_player))*CameraGetDistance(lv_player)));
+    lv_cameraPosition[2] = (WorldHeight(c_heightMapGround, lv_cameraTargetPoint)+(Sin(CameraGetPitch(lv_player))*CameraGetDistance(lv_player)));
+    lv_effectPosition[0] = PointGetX(lv_effectTargetPoint);
+    lv_effectPosition[1] = PointGetY(lv_effectTargetPoint);
+    lv_effectPosition[2] = WorldHeight(c_heightMapGround, lv_effectTargetPoint);
+    lv_distance = SquareRoot((Pow((lv_cameraPosition[0]-lv_effectPosition[0]), 2.0) + Pow((lv_cameraPosition[1]-lv_effectPosition[1]), 2.0) + Pow((lv_cameraPosition[2]-lv_effectPosition[2]), 2.0)));
+    CameraShakeStart(lv_player, c_cameraPositionTarget, c_cameraDirectionZ, MaxF((1-(lv_distance/50)), 0.0), 2.5, 100.0, 0.1);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMI_gt_CM_SoATargetingCameraShake_Init () {
+    libCOMI_gt_CM_SoATargetingCameraShake = TriggerCreate("libCOMI_gt_CM_SoATargetingCameraShake_Func");
+    TriggerAddEventPlayerEffectUsed(libCOMI_gt_CM_SoATargetingCameraShake, c_playerAny, "SOAOrbitalStrikeImpactSearch");
+    TriggerAddEventPlayerEffectUsed(libCOMI_gt_CM_SoATargetingCameraShake, c_playerAny, "SOAGravitonBombCP");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Chrono Anim Speed On
+//--------------------------------------------------------------------------------------------------
+bool libCOMI_gt_ChronoAnimSpeedOn_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    string lv_buff;
+    unit lv_unit;
+    fixed lv_scale;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_buff = EventUnitBehavior();
+    lv_unit = EventUnit();
+    lv_scale = StringToFixed(CatalogFieldValueGet(c_gameCatalogBehavior, lv_buff, "Modification.RateMultiplierArray[" + IntToString(0) + "]", UnitBehaviorEffectPlayer(lv_unit, lv_buff, c_effectPlayerCaster, 0)));
+
+    // Conditions
+    if (testConds) {
+        if (!((UnitIsValid(lv_unit) == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libNtve_gf_SendActorMessageToUnit(lv_unit, (("AnimSetTimeScaleGlobal " + FixedToString(lv_scale, c_fixedPrecisionAny) + " " + (lv_buff))));
+    libNtve_gf_SendActorMessageToUnit(lv_unit, (("AnimSetTimeScaleGlobal " + FixedToString(lv_scale, c_fixedPrecisionAny) + " " + (lv_buff))));
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMI_gt_ChronoAnimSpeedOn_Init () {
+    libCOMI_gt_ChronoAnimSpeedOn = TriggerCreate("libCOMI_gt_ChronoAnimSpeedOn_Func");
+    TriggerAddEventUnitBehaviorChange(libCOMI_gt_ChronoAnimSpeedOn, null, "SOAMapWideChronoPassiveTarget", c_unitBehaviorChangeActivate);
+    TriggerAddEventUnitBehaviorChange(libCOMI_gt_ChronoAnimSpeedOn, null, "SOAMapWideChrono", c_unitBehaviorChangeActivate);
+    TriggerAddEventUnitBehaviorChange(libCOMI_gt_ChronoAnimSpeedOn, null, "TimeWarpProduction", c_unitBehaviorChangeActivate);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Chrono Anim Speed Off
+//--------------------------------------------------------------------------------------------------
+bool libCOMI_gt_ChronoAnimSpeedOff_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    string lv_buff;
+    unit lv_unit;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_buff = EventUnitBehavior();
+    lv_unit = EventUnit();
+
+    // Conditions
+    if (testConds) {
+        if (!((UnitIsValid(lv_unit) == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libNtve_gf_SendActorMessageToUnit(lv_unit, (("AnimClearTimeScaleGlobal " + (lv_buff))));
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMI_gt_ChronoAnimSpeedOff_Init () {
+    libCOMI_gt_ChronoAnimSpeedOff = TriggerCreate("libCOMI_gt_ChronoAnimSpeedOff_Func");
+    TriggerAddEventUnitBehaviorChange(libCOMI_gt_ChronoAnimSpeedOff, null, "SOAMapWideChronoPassiveTarget", c_unitBehaviorChangeDeactivate);
+    TriggerAddEventUnitBehaviorChange(libCOMI_gt_ChronoAnimSpeedOff, null, "SOAMapWideChrono", c_unitBehaviorChangeDeactivate);
+    TriggerAddEventUnitBehaviorChange(libCOMI_gt_ChronoAnimSpeedOff, null, "TimeWarpProduction", c_unitBehaviorChangeDeactivate);
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger: CU_TimerWindowFlash
 //--------------------------------------------------------------------------------------------------
 bool libCOMI_gt_CU_TimerWindowFlash_Func (bool testConds, bool runActions) {
@@ -35766,15 +36503,15 @@ bool libCOMI_gt_CM_VOResourceSent_Func (bool testConds, bool runActions) {
     }
 
     if ((EventResourceTradeAmount(c_resourceTypeMinerals) == 0)) {
-        libCOMI_gf_CM_CommanderVOSend(libCOMI_gf_CC_PlayerAlly(EventPlayer()), libCOMI_gf_CC_CommanderVOLine(libCOMI_gf_ActiveCommanderForPlayer(EventPlayer()), libCOMI_ge_CC_CommanderVOLines_CC_CommanderVOVespeneSent), PlayerGroupSingle(libCOMI_gf_CC_PlayerAlly(EventPlayer())));
+        libCOMI_gf_CM_CommanderVOSend(libCOMI_gf_CC_PlayerAlly(EventPlayer()), libCOMI_gf_CC_CommanderVOLine(libCOMI_gf_ActiveCommanderForPlayer(EventPlayer()), libCOMI_ge_CC_CommanderVOLines_CC_CommanderVOVespeneSent), PlayerGroupSingle(EventResourceTradeRecipient()));
     }
     else if ((EventResourceTradeAmount(c_resourceTypeVespene) == 0)) {
-        libCOMI_gf_CM_CommanderVOSend(libCOMI_gf_CC_PlayerAlly(EventPlayer()), libCOMI_gf_CC_CommanderVOLine(libCOMI_gf_ActiveCommanderForPlayer(EventPlayer()), libCOMI_ge_CC_CommanderVOLines_CC_CommanderVOMineralsSent), PlayerGroupSingle(libCOMI_gf_CC_PlayerAlly(EventPlayer())));
+        libCOMI_gf_CM_CommanderVOSend(libCOMI_gf_CC_PlayerAlly(EventPlayer()), libCOMI_gf_CC_CommanderVOLine(libCOMI_gf_ActiveCommanderForPlayer(EventPlayer()), libCOMI_ge_CC_CommanderVOLines_CC_CommanderVOMineralsSent), PlayerGroupSingle(EventResourceTradeRecipient()));
     }
     else if (true) {
-        libCOMI_gf_CM_CommanderVOSend(libCOMI_gf_CC_PlayerAlly(EventPlayer()), libCOMI_gf_CC_CommanderVOLine(libCOMI_gf_ActiveCommanderForPlayer(EventPlayer()), libCOMI_ge_CC_CommanderVOLines_CC_CommanderVOResourcesSent), PlayerGroupSingle(libCOMI_gf_CC_PlayerAlly(EventPlayer())));
+        libCOMI_gf_CM_CommanderVOSend(libCOMI_gf_CC_PlayerAlly(EventPlayer()), libCOMI_gf_CC_CommanderVOLine(libCOMI_gf_ActiveCommanderForPlayer(EventPlayer()), libCOMI_ge_CC_CommanderVOLines_CC_CommanderVOResourcesSent), PlayerGroupSingle(EventResourceTradeRecipient()));
     }
-    libCOMI_gf_CM_CommanderVOSend(EventPlayer(), libCOMI_gf_CC_CommanderVOLine(libCOMI_gf_ActiveCommanderForPlayer(libCOMI_gf_CC_PlayerAlly(EventPlayer())), libCOMI_ge_CC_CommanderVOLines_CC_CommanderVOThankyou), PlayerGroupSingle(EventPlayer()));
+    libCOMI_gf_ThankYou(EventPlayer(), EventResourceTradeRecipient());
     return true;
 }
 
@@ -45681,6 +46418,16 @@ void libCOMI_InitTriggers () {
     libCOMI_gt_CU_HealthWatchHeartLoop_Init();
     libCOMI_gt_CU_HealthWatchBreathLoop_Init();
     libCOMI_gt_CU_TargetingCancelButtonUsed_Init();
+    libCOMI_gt_CM_SoATargetingForceOff_Init();
+    libCOMI_gt_CM_SoATargetingDeactivated_Init();
+    libCOMI_gt_CM_SoATargetingPointChosen_Init();
+    libCOMI_gt_CM_SoATargetingDirectionChosen_Init();
+    libCOMI_gt_CM_SoATargetingEffectFired_Init();
+    libCOMI_gt_CM_SoATargetingCancel_Init();
+    libCOMI_gt_CM_SoATargetingCancelFromUI_Init();
+    libCOMI_gt_CM_SoATargetingCameraShake_Init();
+    libCOMI_gt_ChronoAnimSpeedOn_Init();
+    libCOMI_gt_ChronoAnimSpeedOff_Init();
     libCOMI_gt_CU_TimerWindowFlash_Init();
     libCOMI_gt_CU_TimerWindowMoveForBossBar_Init();
     libCOMI_gt_CU_TimerWindowThresholdCrossed_Init();

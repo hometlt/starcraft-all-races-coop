@@ -112,6 +112,48 @@
             </Fixed>
         </Instances>
     </CUser>
+    <CUser id="UnitData">
+        <Fields Id="Unit" Type="Unit" EditorColumn="2"/>
+        <Fields Id="WrokersRallyIndex" Type="Int" EditorColumn="3"/>
+        <Instances Id="[Default]"/>
+        <Instances Id="-">
+            <Unit Unit="NONE">
+                <Field Id="Unit"/>
+            </Unit>
+        </Instances>
+        <Instances Id="Hatchery">
+            <Int Int="1">
+                <Field Id="WrokersRallyIndex"/>
+            </Int>
+            <Unit Unit="Hatchery">
+                <Field Id="Unit"/>
+            </Unit>
+        </Instances>
+        <Instances Id="StetmannHatchery">
+            <Int Int="1">
+                <Field Id="WrokersRallyIndex"/>
+            </Int>
+            <Unit Unit="HatcheryStetmann">
+                <Field Id="Unit"/>
+            </Unit>
+        </Instances>
+        <Instances Id="Mengsk CommandCenter">
+            <Int Int="1">
+                <Field Id="WrokersRallyIndex"/>
+            </Int>
+            <Unit Unit="CommandCenterMengsk">
+                <Field Id="Unit"/>
+            </Unit>
+        </Instances>
+        <Instances Id="UPLHeadquarters">
+            <Int Int="1">
+                <Field Id="WrokersRallyIndex"/>
+            </Int>
+            <Unit Unit="UPLHeadquarters">
+                <Field Id="Unit"/>
+            </Unit>
+        </Instances>
+    </CUser>
     <CUser id="UpgradeLevel">
         <Instances Id="[Default]"/>
         <Instances Id="CHEAT"/>

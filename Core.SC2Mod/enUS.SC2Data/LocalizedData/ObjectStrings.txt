@@ -30528,6 +30528,7 @@ User/Name/Terrain=Terrain
 User/Name/TheHornersInstantMessageCharacters=The Horners - Instant Message - Characters
 User/Name/TheHornersInstantMessageContents=The Horners - Instant Message - Contents
 User/Name/TheHornersInstantMessageEvents=The Horners - Instant Message - Events
+User/Name/UnitData=Unit Data
 User/Name/Units=Units
 User/Name/UnitsCategory=Units Category
 User/Name/UpgradeLevel=Upgrade Level

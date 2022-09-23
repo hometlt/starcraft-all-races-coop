@@ -3,4 +3,24 @@
     <CUpgrade id="FastRevive">
         <EffectArray Operation="Set" Reference="Behavior,ZeratulReviveTimer,Duration" Value="1.000000"/>
     </CUpgrade>
+    <CUpgrade id="OrbitalStrike">
+        <EffectArray index="1" Value="UnitData"/>
+        <EffectArray index="4" Value="UnitData"/>
+        <EffectArray index="8" Value="UnitData"/>
+        <EffectArray index="11" Value="UnitData"/>
+        <EffectArray index="14" Value="UnitData"/>
+        <EffectArray index="17" Value="UnitData"/>
+        <EffectArray index="20" Value="UnitData"/>
+        <EffectArray index="23" Value="UnitData"/>
+        <EffectArray index="26" Value="UnitData"/>
+        <EffectArray index="29" Value="UnitData"/>
+        <EffectArray index="32" Value="UnitData"/>
+        <EffectArray index="35" Value="UnitData"/>
+    </CUpgrade>
+    <CUpgrade id="TrooperMengskDropTrain">
+        <EffectArray index="1" Value="UnitData"/>
+        <EffectArray index="3" Value="UnitData"/>
+        <EffectArray index="5" Value="UnitData"/>
+        <EffectArray index="7" Value="UnitData"/>
+    </CUpgrade>
 </Catalog>
