@@ -42,16 +42,13 @@
     <CAbilEffectInstant id="AutoBeholder">
         <Cost>
             <Vital index="Energy" value="75"/>
-            <Charge Link="Abil/AutoBeholder"/>
-            <Cooldown Link="Abil/AutoBeholder" TimeUse="22.4"/>
+            <Cooldown TimeUse="22.4"/>
         </Cost>
         <AutoCastValidatorArray value="UndetectedEnemyCloakedUnitsNearby"/>
     </CAbilEffectInstant>
     <CAbilEffectTarget id="AutoConvergence">
         <Cost>
             <Vital index="Energy" value="150"/>
-            <Charge Link="Abil/AutoConvergence"/>
-            <Cooldown Link="Abil/AutoConvergence"/>
         </Cost>
         <Range value="11"/>
         <FinishTime value="0.25"/>
@@ -82,8 +79,7 @@
     </CAbilMorph>
     <CAbilEffectTarget id="AutoEmanator">
         <Cost>
-            <Charge Link="Abil/AutoEmanator"/>
-            <Cooldown Link="Abil/AutoEmanator" TimeUse="94.5"/>
+            <Cooldown TimeUse="94.5"/>
         </Cost>
         <Range value="4"/>
         <ProducedUnitArray value="Emanator"/>
@@ -92,8 +88,6 @@
     <CAbilEffectTarget id="AutoEmissaryOrb">
         <Cost>
             <Vital index="Energy" value="100"/>
-            <Charge Link="Abil/AutoEmissaryOrb"/>
-            <Cooldown Link="Abil/AutoEmissaryOrb"/>
         </Cost>
         <TargetFilters value="-;Self,Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <Range value="10"/>
@@ -115,8 +109,6 @@
     <CAbilEffectTarget id="AutoLightningBolt">
         <Cost>
             <Vital index="Energy" value="125"/>
-            <Charge Link="Abil/AutoLightningBolt"/>
-            <Cooldown Link="Abil/AutoLightningBolt"/>
         </Cost>
         <TargetFilters value="-;Self,Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <Range value="10"/>
@@ -127,8 +119,6 @@
     <CAbilEffectTarget id="AutoParadoxTrap">
         <Cost>
             <Vital index="Energy" value="100"/>
-            <Charge Link="Abil/AutoParadoxTrap"/>
-            <Cooldown Link="Abil/AutoParadoxTrap"/>
         </Cost>
         <Range value="11"/>
         <CursorEffect value="InvertFFieldSA"/>
@@ -136,23 +126,19 @@
     </CAbilEffectTarget>
     <CAbilEffectTarget id="AutoProjection">
         <Cost>
-            <Charge Link="Abil/AutoProjection"/>
-            <Cooldown Link="Abil/AutoProjection" TimeUse="9.8"/>
+            <Cooldown TimeUse="9.8"/>
         </Cost>
         <Range value="500"/>
     </CAbilEffectTarget>
     <CAbilEffectInstant id="AutoDampener">
         <Cost>
-            <Charge Link="Abil/AutoDampener"/>
-            <Cooldown Link="Abil/AutoDampener" TimeUse="20"/>
+            <Cooldown TimeUse="20"/>
         </Cost>
         <AutoCastValidatorArray value="CasterShieldsLT1"/>
     </CAbilEffectInstant>
     <CAbilEffectTarget id="AutoShieldBoost">
         <Cost>
             <Vital index="Energy" value="75"/>
-            <Charge Link="Abil/AutoShieldBoost"/>
-            <Cooldown Link="Abil/AutoShieldBoost"/>
         </Cost>
         <TargetFilters value="-;Neutral,Enemy,Missile,Stasis,Dead,Hidden"/>
         <Range value="8"/>
@@ -161,8 +147,7 @@
     <CAbilEffectInstant id="AutoShieldCompulsion">
         <Cost>
             <Vital index="Life" value="15"/>
-            <Charge Link="Abil/AutoShieldCompulsion"/>
-            <Cooldown Link="Abil/AutoShieldCompulsion" TimeUse="1.4"/>
+            <Cooldown TimeUse="1.4"/>
         </Cost>
         <AutoCastValidatorArray value="CasterShieldsLT1"/>
     </CAbilEffectInstant>
@@ -171,8 +156,7 @@
     </CAbilEffectInstant>
     <CAbilEffectInstant id="AutoSonicImage">
         <Cost>
-            <Charge Link="Abil/AutoSonicImage"/>
-            <Cooldown Link="Abil/AutoSonicImage" TimeUse="7"/>
+            <Cooldown TimeUse="7"/>
         </Cost>
         <AutoCastValidatorArray value="EnemiesWithin14"/>
     </CAbilEffectInstant>
@@ -556,6 +540,9 @@
     <CUnit id="Elytron">
         <BehaviorArray Link="AllUnitBehaviorController"/>
     </CUnit>
+    <CUnit id="Fuse">
+        <BehaviorArray Link="AllUnitBehaviorController"/>
+    </CUnit>
     <CUnit id="Echo">
         <BehaviorArray Link="AllUnitBehaviorController"/>
         <AbilArray Link="AutoReverb"/>
@@ -779,15 +766,6 @@
     </CBehaviorBuff>
     <!--  Keiron  -->
     <CUpgrade id="KeironCommander"/>
-    <CUpgrade id="CommanderPrestigeKeironBio" parent="CommanderPrestige">
-        <EditorCategories value="Race:Keiron"/>
-    </CUpgrade>
-    <CUpgrade id="CommanderPrestigeKeironMech" parent="CommanderPrestige">
-        <EditorCategories value="Race:Keiron"/>
-    </CUpgrade>
-    <CUpgrade id="CommanderPrestigeKeironAir" parent="CommanderPrestige">
-        <EditorCategories value="Race:Keiron"/>
-    </CUpgrade>
     <CUpgrade id="UpgradeKeironLevel01">
         <EffectArray Operation="Set" Reference="Unit,Aegis,CostResource[Vespene]" Value="0"/>
         <EffectArray Operation="Set" Reference="Unit,Aegis,CostResource[Minerals]" Value="0"/>

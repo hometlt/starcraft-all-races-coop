@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CValidatorUnitType id="isDragonPlodder">
+        <Value value="Plodder"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="isDragonAscendedPlodder">
+        <Value value="AscendedPlodder"/>
+    </CValidatorUnitType>
     <CButton id="ButtonDragonMastery01">
         <EditorCategories value="Race:Dragon"/>
     </CButton>
@@ -183,9 +189,6 @@
         </CardLayouts>
         <BehaviorArray Link="AllUnitBehaviorController"/>
     </CUnit>
-    <CRace id="Dragon">
-        <Icon value="Assets\Factions\lobby-dragons.dds"/>
-    </CRace>
     <CUnit id="Arkwyrm">
         <BehaviorArray Link="AllUnitBehaviorController"/>
     </CUnit>
@@ -216,7 +219,7 @@
     <CUnit id="AscendedHornedMagus">
         <BehaviorArray Link="AllUnitBehaviorController"/>
     </CUnit>
-    <CUnit id="AscendedHunter">
+    <CUnit id="AscendedDragonHunter">
         <BehaviorArray Link="AllUnitBehaviorController"/>
     </CUnit>
     <CUnit id="AscendedSkyrazer">
@@ -256,9 +259,6 @@
     </CUnit>
     <CUnit id="BrimstoneDemolisher">
         <BehaviorArray Link="AllUnitBehaviorController"/>
-    </CUnit>
-    <CUnit id="Coagulater">
-        <BehaviorArray Link="ChronoBoostTarget"/>
     </CUnit>
     <CUnit id="DenizenoftheDeep">
         <BehaviorArray Link="ChronoBoostTarget"/>
@@ -308,7 +308,7 @@
     <CUnit id="HornedMagus">
         <BehaviorArray Link="AllUnitBehaviorController"/>
     </CUnit>
-    <CUnit id="Hunter">
+    <CUnit id="DragonHunter">
         <BehaviorArray Link="AllUnitBehaviorController"/>
     </CUnit>
     <CUnit id="LesserDeepOne">
@@ -354,15 +354,6 @@
     </CUnit>
     <CUpgrade id="DragonCommander">
         <Flags index="UpgradeCheat" value="0"/>
-        <EditorCategories value="Race:Dragon"/>
-    </CUpgrade>
-    <CUpgrade id="CommanderPrestigeDragonBio" parent="CommanderPrestige">
-        <EditorCategories value="Race:Dragon"/>
-    </CUpgrade>
-    <CUpgrade id="CommanderPrestigeDragonMech" parent="CommanderPrestige">
-        <EditorCategories value="Race:Dragon"/>
-    </CUpgrade>
-    <CUpgrade id="CommanderPrestigeDragonAir" parent="CommanderPrestige">
         <EditorCategories value="Race:Dragon"/>
     </CUpgrade>
     <CUpgrade id="UpgradeDragonLevel01">
@@ -440,10 +431,7 @@
         <EditorCategories value="Race:Dragon,UpgradeType:Talents"/>
         <MaxLevel value="30"/>
     </CUpgrade>
-    <CValidatorUnitType id="isDragonPlodder">
-        <Value value="Plodder"/>
-    </CValidatorUnitType>
-    <CValidatorUnitType id="isDragonAscendedPlodder">
-        <Value value="AscendedPlodder"/>
-    </CValidatorUnitType>
+    <CRace id="Dragon">
+        <Icon value="Assets\Factions\lobby-dragons.dds"/>
+    </CRace>
 </Catalog>

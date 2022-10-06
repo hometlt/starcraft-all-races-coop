@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
-
     <CButton id="ButtonNetworkMastery01">
         <EditorCategories value="Race:NHbr"/>
     </CButton>
@@ -176,9 +175,6 @@
         <PrestigeArray value="CommanderPrestigeNetwork3"/>
         <Color value="255,92,128,0"/>
     </CCommander>
-    <CRace id="NHbr">
-        <Icon value="Assets\Factions\lobby-hybrid.dds"/>
-    </CRace>
     <CUnit id="NHbrChimera">
         <BehaviorArray Link="AllUnitBehaviorController"/>
     </CUnit>
@@ -325,15 +321,6 @@
         <Flags index="UpgradeCheat" value="0"/>
         <EditorCategories value="Race:NHbr"/>
     </CUpgrade>
-    <CUpgrade id="CommanderPrestigeNetworkBio" parent="CommanderPrestige">
-        <EditorCategories value="Race:NHbr"/>
-    </CUpgrade>
-    <CUpgrade id="CommanderPrestigeNetworkMech" parent="CommanderPrestige">
-        <EditorCategories value="Race:NHbr"/>
-    </CUpgrade>
-    <CUpgrade id="CommanderPrestigeNetworkAir" parent="CommanderPrestige">
-        <EditorCategories value="Race:NHbr"/>
-    </CUpgrade>
     <CUpgrade id="UpgradeNetworkLevel01">
         <EditorCategories value="Race:NHbr,UpgradeType:Talents"/>
     </CUpgrade>
@@ -409,5 +396,7 @@
         <EditorCategories value="Race:NHbr,UpgradeType:Talents"/>
         <MaxLevel value="30"/>
     </CUpgrade>
-
+    <CRace id="NHbr">
+        <Icon value="Assets\Factions\lobby-hybrid.dds"/>
+    </CRace>
 </Catalog>

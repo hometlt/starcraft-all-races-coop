@@ -73,6 +73,11 @@
 <Actor id="SYSTEM_ActorConfig"/>
 <Actor id="PortraitActor"/>
 <Actor id="TriggerRegion"/>
+<Actor id="Aiur_Puddle"/>
+<Actor id="Fog_Hazy"/>
+<Actor id="ThunderLightning"/>
+<Actor id="RainEmitterLarge"/>
+<Actor id="RainEmitterMedium"/>
 <Actor id="XelNagaShieldDomeImpact"/>
 <Actor id="SOATargetingModeConfirmationSound"/>
 <Actor id="Diffusion_Shockwave_Coop"/>

@@ -1290,6 +1290,24 @@ bool libARRA_gf_MapIntIncludes (string lp_unit, string lp_index) {
     return libARRA_gf_ListStringIncludes(libARRA_gf_MapIntIndexes(lp_unit), lp_index);
 }
 
+void libARRA_gf_ListStringCopy (string lp_source, string lp_target) {
+    // Automatic Variable Declarations
+    int autoC8B85EA3_ae;
+    int autoC8B85EA3_var;
+
+    // Implementation
+    if ((libARRA_gf_ListSize(lp_source) == 0)) {
+        return ;
+    }
+
+    libARRA_gf_ListClear(lp_target);
+    autoC8B85EA3_ae = libARRA_gf_ListSize(lp_source);
+    autoC8B85EA3_var = 1;
+    for ( ; autoC8B85EA3_var <= autoC8B85EA3_ae; autoC8B85EA3_var += 1 ) {
+        libARRA_gf_ListStringPush(lp_target, libARRA_gf_ListStringGet(lp_source, autoC8B85EA3_var));
+    }
+}
+
 string libARRA_gf_ListStringGet (string lp_list, int lp_index) {
     // Variable Declarations
     string lv_returnvalue;
@@ -1449,7 +1467,7 @@ void libARRA_gf_LOGListString (string lp_list) {
     lv_log_string = "[";
 
     // Implementation
-    if ((DataTableValueExists(true, lp_list) == false)) {
+    if ((lp_list == null) && (DataTableValueExists(true, lp_list) == false)) {
         libARRA_gf_LOGString("-");
     }
     else {

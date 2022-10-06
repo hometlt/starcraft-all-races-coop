@@ -10952,7 +10952,6 @@ Param/Value/lib_COMI_21313CB4=COMMANDS
 Param/Value/lib_COMI_21393D61=Hellion (26 kills)
 Param/Value/lib_COMI_2268A908=Prevented the mission from assigning a unit to the secondary hero panel -- reserved by commander prestige
 Param/Value/lib_COMI_22C713BD=Attack Wave
-Param/Value/lib_COMI_22D51D94=UI options
 Param/Value/lib_COMI_2334AC7B=Mutators
 Param/Value/lib_COMI_23C1C53E=<c val="AEAEAE">Defeated</c>
 Param/Value/lib_COMI_2500A4A0=► <c val="FF8000"> -oldmengsk</c> to try older version of Mengsk commander<n/><n/>► Old <c val="FF8000">Heroes of the Storm</c> mutator is now available with the help of TangorCraft<n/><n/>► <c val="FF8000">-arange X</c> command changes ranges of abilities of selected units to X<n/><n/>► <c val="FF8000">-solo</c> command now works on CoA, LnL and with the Missile Command mutator.<n/><n/>► Testing many Karax changes with <c val="FF8000">-karax2</c> command – <c val="8888FF">info.maguro.one/karax</c><n/><n/>
@@ -11011,7 +11010,6 @@ Param/Value/lib_COMI_519C94CF=Retry mode detected. P1 had a Mutator Retry Index 
 Param/Value/lib_COMI_525394ED=Any
 Param/Value/lib_COMI_52F125E5=StarCraft emotes
 Param/Value/lib_COMI_5316E4A3=Switch between graph for kills and charts for unit damage
-Param/Value/lib_COMI_54553233=Your ally's base has been destroyed.
 Param/Value/lib_COMI_568952AB=Unit wasn't added to any wave
 Param/Value/lib_COMI_57E89B93=<c val="FF8000">NOT sharing control and spending</c>
 Param/Value/lib_COMI_58E9F685=Fenix has been revived at your Nexus.
@@ -11076,6 +11074,7 @@ Param/Value/lib_COMI_8F56BF35=First Wave Location
 Param/Value/lib_COMI_8F7C580B=Deactivate
 Param/Value/lib_COMI_8F8A32E2=<c val="FF9800">Fenix has died. You must warp in a Nexus to revive him.</c>
 Param/Value/lib_COMI_904C23E1=BRUTAL
+Param/Value/lib_COMI_907B08EE=Starting Base
 Param/Value/lib_COMI_90CDBC78=<c val="FF8000">Ally control acquired</c>
 Param/Value/lib_COMI_90EC773D=~NAME~
 Param/Value/lib_COMI_90F87EFD=Hybrid Nemesis
@@ -11123,7 +11122,6 @@ Param/Value/lib_COMI_B094DB13=Top
 Param/Value/lib_COMI_B102B98A=<c val="FF8000">Tracing enabled<n/>(works only when the map is launched from the editor)</c>
 Param/Value/lib_COMI_B116A5EC=Hellion (26 kills)
 Param/Value/lib_COMI_B2936857=
-Param/Value/lib_COMI_B3C2C8C4=End game options
 Param/Value/lib_COMI_B73B0F4E=All of your structures have been destroyed.
 Param/Value/lib_COMI_B775FCC6=<c val="FF8000">Sharing control and spending</c>
 Param/Value/lib_COMI_B793133B=<c val="FF8000">CoopCasterUnit created</c> (abilities may or may not work)
@@ -11135,7 +11133,6 @@ Param/Value/lib_COMI_B9031494=<c val="B0B0B0">DPS (5s): —<n/>DPS (?s): —</c>
 Param/Value/lib_COMI_B90F2179=Unable to add a wave unit ping group, may need to increase max ping count.
 Param/Value/lib_COMI_B9A66432=Random
 Param/Value/lib_COMI_B9BB5546=<n/><c val="AAAAAA">(Bonus experience)</c>
-Param/Value/lib_COMI_B9CBC084=Starting Base
 Param/Value/lib_COMI_BAEB517D=Quit
 Param/Value/lib_COMI_BB5EEA9B=~Reviver~
 Param/Value/lib_COMI_BB77207C=<c val="FF8000">AI paused</c>
@@ -11158,7 +11155,6 @@ Param/Value/lib_COMI_C7D64A1E=" width="0"/>
 Param/Value/lib_COMI_C8E43CFE=)</c></s>
 Param/Value/lib_COMI_C9DB7502=
 Param/Value/lib_COMI_CACA57DE=<c val="FF8000">Speed set to slower</c>
-Param/Value/lib_COMI_CC1BC239=Your base has been destroyed.
 Param/Value/lib_COMI_CC1FFCCC=Resources Used exceeds Resources Total in CoopAI_ConstructAttackWave
 Param/Value/lib_COMI_CC7555F6=VICTORY!
 Param/Value/lib_COMI_CDE8D4FE=Ran out of CoopAI upgrade slots, need to increase the trigger constant.
@@ -11185,7 +11181,6 @@ Param/Value/lib_COMI_E6FED409=<s val="ArmyCustomizationSelectedUnitDescriptionNa
 Param/Value/lib_COMI_E7447647=Initializing Brutal+ difficulty settings...
 Param/Value/lib_COMI_E7A3D318=Load campaign bank
 Param/Value/lib_COMI_E81C0E89=<k val="HeroSelect1"/>
-Param/Value/lib_COMI_E9409815={Zerutal is killed}
 Param/Value/lib_COMI_EC26C86E=<s val="ModCenterSize32Bold">DEBUG</s>
 Param/Value/lib_COMI_EE667A8C=(DEBUG) Only player 1 can do this.  Sorry!
 Param/Value/lib_COMI_EE76CFA8=AI Units should try to attack unit spawners over the units they spawn. (New Behavior)
@@ -11206,7 +11201,6 @@ Param/Value/lib_COMI_F79488DF=Retry mode not detected. P1 did not have a positiv
 Param/Value/lib_COMI_F7F415BF=<c val="FF8000">Attacking</c>
 Param/Value/lib_COMI_F86CDF9E=<hour/>:<min2/>:<sec2/>
 Param/Value/lib_COMI_F88307D0=<c val="FF8000">Fast build disabled</c>
-Param/Value/lib_COMI_FB6C3049=You completed the objective.
 Param/Value/lib_COMI_FCBCAB0F=<c val="FF8000">Advanced Bombardment enabled</c>
 Param/Value/lib_COMI_FD584867=<c val="FF8000">Copy-paste enabled. <n/>Units will be created in the center of your screen.</c>
 Param/Value/lib_COMI_FD678B49={Starting Location}
@@ -11303,12 +11297,14 @@ Param/Value/lib_COMU_FE1BD2F8=Kill Bot
 Param/Value/lib_MISS_0D861F58=Harvesting Bot
 Param/Value/lib_MISS_0EBFC1AE=Extraction Device
 Param/Value/lib_MISS_10BA1E4A=Terrazine Geyser
+Param/Value/lib_MISS_467F2D71=Terrazine successfully harvested. 
 Param/Value/lib_MISS_5190C34A=Harvesting Bot
 Param/Value/lib_MISS_694B36E1=Stetmann's Facility
 Param/Value/lib_MISS_A1F4163A=Terrazine Tank destroyed. 
 Param/Value/lib_MISS_B03F2903=Terrazine Geyser
 Param/Value/lib_MISS_BA21FFBF=Extraction Device
 Param/Value/lib_MISS_E06B46F6=Terrazine successfully harvested. 
+Param/Value/lib_MISS_E07AE820=Terrazine harvesters destroyed. 
 Param/Value/lib_MISS_EAAB6452=Terrazine harvesters destroyed. 
 Race/Name/@Amon=@Amon
 Race/Name/@AmonAlly=@Enemy
@@ -11322,6 +11318,7 @@ Race/Name/Hybr=Hybrids
 Race/Name/ProtA=Protoss Artanis
 Race/Name/ProtI=Protoss Ihanrii
 Race/Name/ProtK=Protoss Karax
+Race/Name/ProtL=Protoss Talon
 Race/Name/ProtN=Protoss Nerazim
 Race/Name/ProtP=Protoss Purifiers
 Race/Name/ProtT=Protoss Taldarim
@@ -13998,6 +13995,8 @@ UserData/Commanders/Mengsk_Name=Mengsk
 UserData/Commanders/NetworkHybrids_Name=Hybrids
 UserData/Commanders/Nova_Description=Nova army consists of elite special ops units that deploy instantly and have more hit points, but have substantial resource costs over normal units.<n/><n/>Combat units:<n/><img path="Assets\Textures\btn-unit-terran-marineblackops.dds"/><img path="Assets\Textures\btn-unit-terran-marauderblackops.dds"/><img path="Assets\Textures\btn-unit-terran-blackops-ghost.dds"/><n/><img path="Assets\Textures\btn-unit-terran-hellbatblackops.dds"/><img path="Assets\Textures\btn-unit-terran-goliathblackops.dds"/><img path="Assets\Textures\btn-unit-terran-siegetankblackops-tank.dds"/><n/><img path="Assets\Textures\btn-unit-terran-liberatorblackops.dds"/><img path="Assets\Textures\btn-unit-terran-bansheeblackops.dds"/><img path="Assets\Textures\btn-unit-terran-ravenblackops.dds"/><n/><img path="Assets\Textures\btn-unit-terran-autoturretblackops.dds"/><img path="Assets\Textures\btn-building-nova-missileturret.dds"/>
 UserData/Commanders/Nova_Name=Nova
+UserData/Commanders/ProtossVolchron_Description=Talon
+UserData/Commanders/ProtossVolchron_Name=Volchron
 UserData/Commanders/Protoss_AlternativeCutscenemessage=<img path="Assets\Factions\AiurProtossLogo.dds"/>
 UserData/Commanders/Protoss_Description=Protoss advanced technology complements and enhances their psionic mastery
 UserData/Commanders/Protoss_Name=Protoss
@@ -14019,6 +14018,8 @@ UserData/Commanders/UED_Description=UED General
 UserData/Commanders/UED_Name=UED
 UserData/Commanders/UPL_Description=UPL
 UserData/Commanders/UPL_Name=UPL
+UserData/Commanders/Volchron_Description=Talon
+UserData/Commanders/Volchron_Name=Volchron
 UserData/Commanders/Vorazun_Description=Vorazun uses the power of cloaked units to wreak havoc around the battlefield, combined with a powerful ability to stop time.<n/><n/>Combat units:<n/><img path="Assets\Textures\btn-unit-protoss-zealot-nerazim.dds"/><img path="Assets\Textures\btn-unit-protoss-stalker.dds"/><img path="Assets\Textures\btn-unit-protoss-darktemplar.dds"/><img path="Assets\Textures\btn-unit-protoss-darkarchon.dds"/><n/><img path="Assets\Textures\btn-unit-protoss-corsair.dds"/><img path="Assets\Textures\btn-unit-protoss-oracle.dds"/><img path="Assets\Textures\btn-unit-protoss-warpray.dds"/>
 UserData/Commanders/Vorazun_Name=Vorazun
 UserData/Commanders/Xayid_Description=NYI
@@ -14159,6 +14160,8 @@ UserData/Compositions/Protoss-Taldarim_Description=An ancient faction once based
 UserData/Compositions/Protoss-Taldarim_Name=Wrath Of The Taldarim
 UserData/Compositions/Protoss-Taldarim_Subtitle=Advanced Enemy
 UserData/Compositions/Protoss-Taldarim_Title=Wrath Of The Taldarim
+UserData/Compositions/Protoss-Talon_Description=Protoss Talon
+UserData/Compositions/Protoss-Talon_Title=Protoss Talon
 UserData/Compositions/ProtossBuildAirClassic_Category=Protoss Armada
 UserData/Compositions/ProtossBuildAirClassic_Description=Representative of the remainder of the protoss armada at the end of the Brood War, this force was the first example of the awesome potential of Khalai and Nerazim unification
 UserData/Compositions/ProtossBuildAirClassic_Name=Fleet of the Matriarch
@@ -14556,6 +14559,9 @@ UserData/CoopUIFactions/Protoss_Name=Protoss
 UserData/CoopUIFactions/Standart_Name=Standart
 UserData/CoopUIFactions/Terran_Name=Terran
 UserData/CoopUIFactions/Zerg_Name=Zerg
+UserData/Factions/<Custom>_Name=Custom
+UserData/Factions/<Random>_Name=Random
+UserData/Factions/<Standard>_Name=Standard
 UserData/Factions/CovertOps_Name=CovertOps
 UserData/Factions/Custom_Name=Custom
 UserData/Factions/Dominion_Name=Dominion
@@ -14580,6 +14586,9 @@ UserData/Factions/UED_Name=UED
 UserData/Factions/UPL_Name=UPL
 UserData/Factions/Xayid_Name=Xayid
 UserData/Factions/Zerg_Name=Zerg
+UserData/Factions/_Custom__Name=Custom
+UserData/Factions/_Random__Name=Random
+UserData/Factions/_Standart__Name=Standard
 UserData/GeneralTips/Tip00_TipDetails=Completing main and bonus objectives will reward both you and your ally with experience points.
 UserData/GeneralTips/Tip00_TipTitle=Completing Objectives
 UserData/GeneralTips/Tip01_TipDetails=Use the advanced ping system (Alt + Left-click) to communicate with your ally.
@@ -14685,6 +14694,30 @@ UserData/HeroUnits/Vorazun_messageNoSpawningUnit=Vorazun has died. You must warp
 UserData/HeroUnits/Zagara_messageNoSpawningUnit=Zagara has died. You must mutate a Hatchery to revive her.
 UserData/HeroUnits/Zeratul_messageNoSpawningUnit=Zeratul has died. You must warp in an Ancient Nexus to revive him.
 UserData/HeroUnits/Zeratul_messageRevived=Zeratul has been revived.
+UserData/Heroes/Alarak_messageNoSpawningUnit=Alarak has died. You must warp in a Nexus to revive him.
+UserData/Heroes/Artanis_messageNoSpawningUnit=Artanis has died. You must warp in a Nexus to revive him.
+UserData/Heroes/Dehaka_messageDied=Dehaka has died. He will be revived at his den in ~Duration~ seconds.  You can also feed him drones to revive faster.
+UserData/Heroes/Dehaka_messageRevived=Dehaka has been revived at your Hatchery.
+UserData/Heroes/Gary_messageDied=Gary has died. He will be &quot;revived&quot; at his room in ~Duration~ second.
+UserData/Heroes/Gary_messageNoSpawningUnit=Gary has died. You must mutate a Mecha Hatchery to &quot;revive&quot; him.
+UserData/Heroes/Gary_messageRevived=Gary has been &quot;revived&quot; at his room.
+UserData/Heroes/Karax_messageNoSpawningUnit=Karax has died. You must warp in a Nexus to revive him.
+UserData/Heroes/Kerrigan_messageNoSpawningUnit=Kerrigan has died. You must mutate a Hatchery to revive her.
+UserData/Heroes/Nova_messageDied=Nova has died. She will be revived at the Command Center in ~Duration~ seconds. You can instantly revive Nova by using Instant Regeneration from the top bar.
+UserData/Heroes/Nova_messageNoSpawningUnit=Nova has died. You must build or land a Command Center to revive her.
+UserData/Heroes/Nova_messageRevived=Nova has been revived.
+UserData/Heroes/Raynor_messageNoSpawningUnit=Raynor has died. You must build or land a Command Center to revive her.
+UserData/Heroes/Stukov_messageNoSpawningUnit=Stukov has died. You must mutate a Hatchery to revive him.
+UserData/Heroes/Swann_messageNoSpawningUnit=Swann has died. You must build or land a Command Center to revive her.
+UserData/Heroes/Volchron_messageNoSpawningUnit=Alarak has died. You must warp in a Nexus to revive him.
+UserData/Heroes/Vorazun_messageNoSpawningUnit=Vorazun has died. You must warp in a Nexus to revive her.
+UserData/Heroes/Zagara_messageNoSpawningUnit=Zagara has died. You must mutate a Hatchery to revive her.
+UserData/Heroes/Zeratul_messageNoSpawningUnit=Zeratul has died. You must warp in an Ancient Nexus to revive him.
+UserData/Heroes/Zeratul_messageRevived=Zeratul has been revived.
+UserData/Heroes/[Default]_messageDied=~Hero~ has died and will be revived at the ~Spawner~ in ~Duration~ seconds.
+UserData/Heroes/[Default]_messageNoSpawningUnit=~Hero~ has died. It needs a ~Spawner~ to revive
+UserData/Heroes/[Default]_messageReady=~Hero~ is ready for battle.
+UserData/Heroes/[Default]_messageRevived=~Hero~ has been revived at your ~Spawner~.
 UserData/Maps/01_ChainOfAscension_Description=Amon seeks to regain control of the Tal'darim. Assist First Ascendant Ji'nara in the rite of Rak'Shir so she can defeat Amon's champion.
 UserData/Maps/01_ChainOfAscension_Name=Chain Of Ascension
 UserData/Maps/02_CradleOfDeath_Description=Moebius Corps is using this massive battle station to target Dominion colonies. Help Stone deliver xel'naga artifacts to key target sites in order to destroy the station and save innocent lives.

@@ -23,16 +23,16 @@
         <Fields Id="ReviveLink" Type="Text" EditorColumn="4"/>
         <Fields Id="unitSpawner" Type="Unit" EditorColumn="5"/>
         <Instances Id="[Default]">
-            <Text Text="UserData/HeroUnits/Default_messageReady">
+            <Text Text="UserData/Heroes/[Default]_messageReady">
                 <Field Id="messageReady"/>
             </Text>
-            <Text Text="UserData/HeroUnits/Default_messageRevived">
+            <Text Text="UserData/Heroes/[Default]_messageRevived">
                 <Field Id="messageRevived"/>
             </Text>
-            <Text Text="UserData/HeroUnits/Default_messageNoSpawningUnit">
+            <Text Text="UserData/Heroes/[Default]_messageNoSpawningUnit">
                 <Field Id="messageNoSpawningUnit"/>
             </Text>
-            <Text Text="UserData/HeroUnits/Default_messageDied">
+            <Text Text="UserData/Heroes/[Default]_messageDied">
                 <Field Id="messageDied"/>
             </Text>
         </Instances>
@@ -46,10 +46,10 @@
             <GameLink GameLink="AlarakReviveTimer">
                 <Field Id="ReviveBehaviorNormal"/>
             </GameLink>
-            <Text Text="UserData/HeroUnits/Alarak_messageNoSpawningUnit">
+            <Text Text="UserData/Heroes/Alarak_messageNoSpawningUnit">
                 <Field Id="messageNoSpawningUnit"/>
             </Text>
-            <Text Text="UserData/HeroUnits/Alarak_ReviveLink">
+            <Text Text="UserData/Heroes/Alarak_ReviveLink">
                 <Field Id="ReviveLink"/>
             </Text>
             <Unit Unit="AlarakCoop">
@@ -72,13 +72,13 @@
             <GameLink GameLink="DehakaNormalReviveTimer">
                 <Field Id="ReviveBehaviorNormal"/>
             </GameLink>
-            <Text Text="UserData/HeroUnits/Dehaka_messageDied">
+            <Text Text="UserData/Heroes/Dehaka_messageDied">
                 <Field Id="messageDied"/>
             </Text>
-            <Text Text="UserData/HeroUnits/Dehaka_messageRevived">
+            <Text Text="UserData/Heroes/Dehaka_messageRevived">
                 <Field Id="messageRevived"/>
             </Text>
-            <Text Text="UserData/HeroUnits/Dehaka_ReviveLink">
+            <Text Text="UserData/Heroes/Dehaka_ReviveLink">
                 <Field Id="ReviveLink"/>
             </Text>
             <Unit Unit="DehakaCoop">
@@ -101,16 +101,16 @@
             <GameLink GameLink="GaryNormalReviveTimer">
                 <Field Id="ReviveBehaviorNormal"/>
             </GameLink>
-            <Text Text="UserData/HeroUnits/Gary_messageDied">
+            <Text Text="UserData/Heroes/Gary_messageDied">
                 <Field Id="messageDied"/>
             </Text>
-            <Text Text="UserData/HeroUnits/Gary_messageNoSpawningUnit">
+            <Text Text="UserData/Heroes/Gary_messageNoSpawningUnit">
                 <Field Id="messageNoSpawningUnit"/>
             </Text>
-            <Text Text="UserData/HeroUnits/Gary_messageRevived">
+            <Text Text="UserData/Heroes/Gary_messageRevived">
                 <Field Id="messageRevived"/>
             </Text>
-            <Text Text="UserData/HeroUnits/Gary_ReviveLink">
+            <Text Text="UserData/Heroes/Gary_ReviveLink">
                 <Field Id="ReviveLink"/>
             </Text>
             <Unit Unit="GaryStetmann">
@@ -133,10 +133,10 @@
             <GameLink GameLink="KerriganNormalReviveTimer">
                 <Field Id="ReviveBehaviorNormal"/>
             </GameLink>
-            <Text Text="UserData/HeroUnits/Kerrigan_messageNoSpawningUnit">
+            <Text Text="UserData/Heroes/Kerrigan_messageNoSpawningUnit">
                 <Field Id="messageNoSpawningUnit"/>
             </Text>
-            <Text Text="UserData/HeroUnits/Kerrigan_ReviveLink">
+            <Text Text="UserData/Heroes/Kerrigan_ReviveLink">
                 <Field Id="ReviveLink"/>
             </Text>
             <Unit Unit="K5Kerrigan">
@@ -156,16 +156,16 @@
             <GameLink GameLink="NovaReviveTimer">
                 <Field Id="ReviveBehaviorNormal"/>
             </GameLink>
-            <Text Text="UserData/HeroUnits/Nova_messageDied">
+            <Text Text="UserData/Heroes/Nova_messageDied">
                 <Field Id="messageDied"/>
             </Text>
-            <Text Text="UserData/HeroUnits/Nova_messageNoSpawningUnit">
+            <Text Text="UserData/Heroes/Nova_messageNoSpawningUnit">
                 <Field Id="messageNoSpawningUnit"/>
             </Text>
-            <Text Text="UserData/HeroUnits/Nova_messageRevived">
+            <Text Text="UserData/Heroes/Nova_messageRevived">
                 <Field Id="messageRevived"/>
             </Text>
-            <Text Text="UserData/HeroUnits/Nova_ReviveLink">
+            <Text Text="UserData/Heroes/Nova_ReviveLink">
                 <Field Id="ReviveLink"/>
             </Text>
             <Unit Unit="NovaCoop">
@@ -185,10 +185,10 @@
             <GameLink GameLink="ZagaraNormalReviveTimer">
                 <Field Id="ReviveBehaviorNormal"/>
             </GameLink>
-            <Text Text="UserData/HeroUnits/Zagara_messageNoSpawningUnit">
+            <Text Text="UserData/Heroes/Zagara_messageNoSpawningUnit">
                 <Field Id="messageNoSpawningUnit"/>
             </Text>
-            <Text Text="UserData/HeroUnits/Zagara_ReviveLink">
+            <Text Text="UserData/Heroes/Zagara_ReviveLink">
                 <Field Id="ReviveLink"/>
             </Text>
             <Unit Unit="ZagaraVoidCoop">
@@ -208,13 +208,13 @@
             <GameLink GameLink="ZeratulReviveTimer">
                 <Field Id="ReviveBehaviorNormal"/>
             </GameLink>
-            <Text Text="UserData/HeroUnits/Zeratul_messageNoSpawningUnit">
+            <Text Text="UserData/Heroes/Zeratul_messageNoSpawningUnit">
                 <Field Id="messageNoSpawningUnit"/>
             </Text>
-            <Text Text="UserData/HeroUnits/Zeratul_messageRevived">
+            <Text Text="UserData/Heroes/Zeratul_messageRevived">
                 <Field Id="messageRevived"/>
             </Text>
-            <Text Text="UserData/HeroUnits/Zeratul_ReviveLink">
+            <Text Text="UserData/Heroes/Zeratul_ReviveLink">
                 <Field Id="ReviveLink"/>
             </Text>
             <Unit Unit="ZeratulCoop">
@@ -234,10 +234,10 @@
             <GameLink GameLink="RaynorNormalReviveTimer">
                 <Field Id="ReviveBehaviorNormal"/>
             </GameLink>
-            <Text Text="UserData/HeroUnits/Raynor_messageNoSpawningUnit">
+            <Text Text="UserData/Heroes/Raynor_messageNoSpawningUnit">
                 <Field Id="messageNoSpawningUnit"/>
             </Text>
-            <Text Text="UserData/HeroUnits/Raynor_ReviveLink">
+            <Text Text="UserData/Heroes/Raynor_ReviveLink">
                 <Field Id="ReviveLink"/>
             </Text>
             <Unit Unit="RaynorCommando">
@@ -257,10 +257,10 @@
             <GameLink GameLink="SwannNormalReviveTimer">
                 <Field Id="ReviveBehaviorNormal"/>
             </GameLink>
-            <Text Text="UserData/HeroUnits/Swann_messageNoSpawningUnit">
+            <Text Text="UserData/Heroes/Swann_messageNoSpawningUnit">
                 <Field Id="messageNoSpawningUnit"/>
             </Text>
-            <Text Text="UserData/HeroUnits/Swann_ReviveLink">
+            <Text Text="UserData/Heroes/Swann_ReviveLink">
                 <Field Id="ReviveLink"/>
             </Text>
             <Unit Unit="Swann">
@@ -280,10 +280,10 @@
             <GameLink GameLink="KaraxNormalReviveTimer">
                 <Field Id="ReviveBehaviorNormal"/>
             </GameLink>
-            <Text Text="UserData/HeroUnits/Karax_messageNoSpawningUnit">
+            <Text Text="UserData/Heroes/Karax_messageNoSpawningUnit">
                 <Field Id="messageNoSpawningUnit"/>
             </Text>
-            <Text Text="UserData/HeroUnits/Karax_ReviveLink">
+            <Text Text="UserData/Heroes/Karax_ReviveLink">
                 <Field Id="ReviveLink"/>
             </Text>
             <Unit Unit="KaraxChampion">
@@ -303,10 +303,10 @@
             <GameLink GameLink="ArtanisNormalReviveTimer">
                 <Field Id="ReviveBehaviorNormal"/>
             </GameLink>
-            <Text Text="UserData/HeroUnits/Artanis_messageNoSpawningUnit">
+            <Text Text="UserData/Heroes/Artanis_messageNoSpawningUnit">
                 <Field Id="messageNoSpawningUnit"/>
             </Text>
-            <Text Text="UserData/HeroUnits/Artanis_ReviveLink">
+            <Text Text="UserData/Heroes/Artanis_ReviveLink">
                 <Field Id="ReviveLink"/>
             </Text>
             <Unit Unit="ArtanisVoid">
@@ -326,10 +326,10 @@
             <GameLink GameLink="VorazunNormalReviveTimer">
                 <Field Id="ReviveBehaviorNormal"/>
             </GameLink>
-            <Text Text="UserData/HeroUnits/Vorazun_messageNoSpawningUnit">
+            <Text Text="UserData/Heroes/Vorazun_messageNoSpawningUnit">
                 <Field Id="messageNoSpawningUnit"/>
             </Text>
-            <Text Text="UserData/HeroUnits/Vorazun_ReviveLink">
+            <Text Text="UserData/Heroes/Vorazun_ReviveLink">
                 <Field Id="ReviveLink"/>
             </Text>
             <Unit Unit="VorazunChampion">
@@ -349,16 +349,39 @@
             <GameLink GameLink="StukovNormalReviveTimer">
                 <Field Id="ReviveBehaviorNormal"/>
             </GameLink>
-            <Text Text="UserData/HeroUnits/Stukov_messageNoSpawningUnit">
+            <Text Text="UserData/Heroes/Stukov_messageNoSpawningUnit">
                 <Field Id="messageNoSpawningUnit"/>
             </Text>
-            <Text Text="UserData/HeroUnits/Stukov_ReviveLink">
+            <Text Text="UserData/Heroes/Stukov_ReviveLink">
                 <Field Id="ReviveLink"/>
             </Text>
             <Unit Unit="InfestedStukovCoop">
                 <Field Id="unitHero"/>
             </Unit>
             <Unit Unit="StukovReviveCocoon">
+                <Field Id="unitReviver"/>
+            </Unit>
+        </Instances>
+        <Instances Id="Volchron">
+            <AbilCmd Abil="AlarakRevive">
+                <Field Id="ReviveAbilityCommand"/>
+            </AbilCmd>
+            <GameLink GameLink="AlarakInitialReviveTimer">
+                <Field Id="ReviveBehaviorFirst"/>
+            </GameLink>
+            <GameLink GameLink="AlarakReviveTimer">
+                <Field Id="ReviveBehaviorNormal"/>
+            </GameLink>
+            <Text Text="UserData/Heroes/Volchron_messageNoSpawningUnit">
+                <Field Id="messageNoSpawningUnit"/>
+            </Text>
+            <Text Text="UserData/Heroes/Volchron_ReviveLink">
+                <Field Id="ReviveLink"/>
+            </Text>
+            <Unit Unit="VolchrontheHunter">
+                <Field Id="unitHero"/>
+            </Unit>
+            <Unit Unit="AlarakReviveBeacon">
                 <Field Id="unitReviver"/>
             </Unit>
         </Instances>

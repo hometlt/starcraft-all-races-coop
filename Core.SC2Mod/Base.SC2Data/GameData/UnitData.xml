@@ -29,6 +29,9 @@
     <CUnit id="CreepTumorQueen">
         <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
     </CUnit>
+    <CUnit id="DragonHunter">
+        <BehaviorArray Link="AllUnitBehaviorController"/>
+    </CUnit>
     <CUnit id="Dummy">
         <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
     </CUnit>

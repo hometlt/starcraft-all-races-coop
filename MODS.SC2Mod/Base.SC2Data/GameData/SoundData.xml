@@ -47220,6 +47220,12 @@
   <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\ScienceVessel\ScienceVessel_Pissed00.ogg" Volume="-96.000000,-96.000000" FacialAnim="ScienceVessel_Pissed00"/>
   <Volume value="-2.000000,-2.000000"/>
 </CSound>
+<CSound id="ApertureKeyholeTargetEndSound" parent="Spell">
+  <EditorCategories value="Race:Protoss"/>
+  <AssetArray File="Assets\Sounds\Protoss\Zeratul\Zeratul_AC_UI_Blink_In.wav"/>
+  <Pitch value="0.500000,2.500000"/>
+  <Volume value="-4.000000,-3.000000"/>
+</CSound>
 <CSound id="AquilaDeathVoice" parent="Death">
   <EditorCategories value="Race:Genetron"/>
   <AssetArray File="Assets\Sounds\WarpPrismTaldarim_AttackImpact01.wav" FacialGroup=""/>
@@ -47330,6 +47336,38 @@
   <Pitch value="1.000000,4.000000"/>
   <Volume value="-4.000000,-2.000000"/>
 </CSound>
+<CSound id="SystemRecharge_LoopStart" parent="Spell">
+  <EditorCategories value="Race:Genetron"/>
+  <AssetArray File="Assets\Sounds\Ultralisk_Mooch_Start_01.wav" FacialGroup=""/>
+  <AssetArray File="Assets\Sounds\Ultralisk_Mooch_Start_02.wav" FacialGroup=""/>
+  <DupeDestroyCount value="4"/>
+  <Pitch value="-1.820000,1.640000"/>
+  <Volume value="-14.000000,-14.000000"/>
+</CSound>
+<CSound id="SystemRecharge_Loop" parent="Spell">
+  <EditorCategories value="Race:Genetron"/>
+  <AssetArray File="Assets\Sounds\Ultralisk_Mooch_Loop_01.wav" FacialGroup=""/>
+  <AssetArray File="Assets\Sounds\Ultralisk_Mooch_Loop_02.wav" FacialGroup=""/>
+  <AssetArray File="Assets\Sounds\Ultralisk_Mooch_Loop_03.wav" FacialGroup=""/>
+  <DupeDestroyCount value="4"/>
+  <Pitch value="-1.820000,1.640000"/>
+  <Volume value="-9.000000,-9.000000"/>
+</CSound>
+<CSound id="RelayTower_Ready" parent="Ready">
+  <EditorCategories value="Race:Terran"/>
+  <AssetArray File="Assets\Sounds\Terran\HiveMindEmulator\HiveMindEmulator_What0.ogg"/>
+  <Volume value="-9.000000,-9.000000"/>
+</CSound>
+<CSound id="Generator_Ready" parent="Ready">
+  <EditorCategories value="Race:Terran"/>
+  <AssetArray File="Assets\Sounds\Terran\PsiDisruptor\PsiDisruptor_What0.wav"/>
+  <Volume value="-9.000000,-9.000000"/>
+</CSound>
+<CSound id="RelayTower_What" parent="Voice">
+  <EditorCategories value="Race:Terran"/>
+  <AssetArray File="Assets\Sounds\Terran\HiveMindEmulator\HiveMindEmulator_What0.ogg"/>
+  <Volume value="-9.000000,-9.000000"/>
+</CSound>
 <CSound id="Gyre_Annexed" parent="Spell">
   <EditorCategories value="Race:Keiron"/>
   <AssetArray File="Assets\Sounds\StetmannBaneling_Jumps_Long_1.wav" FacialGroup=""/>
@@ -47390,6 +47428,14 @@
   <DupeDestroyCount value="3"/>
   <Pitch value="-6.000000,-6.000000"/>
   <Volume value="-2.000000,2.000000"/>
+</CSound>
+<CSound id="Mole_Bury" parent="Spell">
+  <EditorCategories value="Race:Genetron"/>
+</CSound>
+<CSound id="Generator_What" parent="Voice">
+  <EditorCategories value="Race:Terran"/>
+  <AssetArray File="Assets\Sounds\Terran\PsiDisruptor\PsiDisruptor_What0.wav"/>
+  <Volume value="-9.000000,-9.000000"/>
 </CSound>
 <CSound id="SpitterVolatileSound" parent="Spell">
   <EditorCategories value="Race:Zerg"/>
@@ -47529,6 +47575,37 @@
   <AssetArray File="Assets\Sounds\Zerg\Drone\Drone_Yes9.ogg"/>
   <Pitch value="0.000000,4.000000"/>
   <Volume value="-2.000000,-2.000000"/>
+</CSound>
+<CSound id="SystemRecharge_LoopStop" parent="Spell">
+  <EditorCategories value="Race:Genetron"/>
+  <AssetArray File="Assets\Sounds\Ultralisk_Mooch_Stop_01.wav" FacialGroup=""/>
+  <AssetArray File="Assets\Sounds\Ultralisk_Mooch_Stop_03.wav" FacialGroup=""/>
+  <DupeDestroyCount value="4"/>
+  <Pitch value="-1.820000,1.640000"/>
+  <Volume value="-14.000000,-14.000000"/>
+</CSound>
+<CSound id="VirtusSelfFixProtocolOneshot" parent="Combat">
+  <EditorCategories value="Race:Genetron"/>
+  <AssetArray File="Assets\Sounds\Uni_ElectricalArcs_00.wav" FacialGroup=""/>
+  <AssetArray File="Assets\Sounds\Uni_ElectricalArcs_01.wav" FacialGroup=""/>
+  <AssetArray File="Assets\Sounds\Uni_ElectricalArcs_03.wav" FacialGroup=""/>
+  <AssetArray File="Assets\Sounds\Uni_ElectricalArcs_04.wav" FacialGroup=""/>
+  <AssetArray File="Assets\Sounds\Uni_ElectricalArcs_05.wav" FacialGroup=""/>
+  <AssetArray File="Assets\Sounds\Uni_ElectricalArcs_06.wav" FacialGroup=""/>
+  <AssetArray File="Assets\Sounds\Uni_ElectricalArcs_07.wav" FacialGroup=""/>
+  <AssetArray File="Assets\Sounds\Uni_ElectricalArcs_08.wav" FacialGroup=""/>
+  <Pitch value="-1.000000,1.000000"/>
+  <Volume value="-5.000000,-4.000000"/>
+</CSound>
+<CSound id="VirtusSelfFixProtocol_Loop" parent="Spell">
+  <EditorCategories value="Race:Genetron"/>
+  <AssetArray File="Assets\Sounds\Sabo_Drone_Power_Loop_01.wav" FacialGroup=""/>
+  <DupeDestroyCount value="6"/>
+  <DupeMuteCount value="5"/>
+  <LoopCount value="-1"/>
+  <Volume value="-4.000000,-4.000000"/>
+  <VolumeRolloffPoints Distance="10.518292"/>
+  <VolumeRolloffPoints Distance="31.097561" Volume="-96.000000"/>
 </CSound>
 <CSound id="TorrentAGAttackLaunch" parent="Combat">
   <EditorCategories value="Race:Genetron"/>
@@ -47982,6 +48059,17 @@
   <Pitch value="-3.000000,3.000000"/>
   <Volume value="-4.000000,-1.000000"/>
 </CSound>
+<CSound id="VirtusSelfFixProtocol_Init" parent="Spell">
+  <EditorCategories value="Race:Genetron"/>
+  <AssetArray File="Assets\Sounds\Satellite_Shield_Recede_01.wav" FacialGroup=""/>
+  <AssetArray File="Assets\Sounds\Satellite_Shield_Recede_02.wav" FacialGroup=""/>
+  <AssetArray File="Assets\Sounds\Satellite_Shield_Recede_03.wav" FacialGroup=""/>
+  <AssetArray File="Assets\Sounds\Satellite_Shield_Recede_04.wav" FacialGroup=""/>
+  <AssetArray File="Assets\Sounds\Satellite_Shield_Recede_05.wav" FacialGroup=""/>
+  <DupeDestroyCount value="6"/>
+  <DupeMuteCount value="5"/>
+  <Pitch value="-6.000000,-5.000000"/>
+</CSound>
 <CSound id="XayidlingAttackLaunch" parent="Combat">
   <EditorCategories value="Race:Zerg"/>
   <AssetArray File="Assets\Sounds\Zerg\Corruptor\Corruptor_AttackLaunch0.wav" FacialGroup=""/>
@@ -48152,7 +48240,7 @@
   <OffsetFadeIn Time="3000"/>
   <Volume value="4.000000,4.000000"/>
 </CSound>
-<CSound id="ProcessingDrone_Movement" parent="Movement">
+<CSound id="Processor_Movement" parent="Movement">
   <EditorCategories value="Race:Genetron"/>
   <AssetArray File="Assets\Sounds\Terran\Diamondback\DiamondBack_Movement01.wav" FacialGroup=""/>
   <AssetArray File="Assets\Sounds\Terran\Diamondback\DiamondBack_Movement02.wav" FacialGroup=""/>
@@ -48618,7 +48706,7 @@
   <Volume value="-7.480000,-6.480000"/>
   <VolumeRolloffFadeBlend value="Logarithmic"/>
 </CSound>
-<CSound id="ProcessingDrone_Ready" parent="TerranReady">
+<CSound id="Processor_Ready" parent="TerranReady">
   <EditorCategories value="Race:Genetron"/>
   <AssetArray File="Assets\Sounds\Energizer_Ready01.ogg" FacialGroup=""/>
   <Pitch value="-2.000000,2.000000"/>
@@ -48626,7 +48714,7 @@
   <Flags index="NeedsUpdate" value="1"/>
   <Flags index="NeedsTTS" value="1"/>
 </CSound>
-<CSound id="ProcessingDrone_What" parent="TerranAck_Void">
+<CSound id="Processor_What" parent="TerranAck_Void">
   <EditorCategories value="Race:Genetron"/>
   <AssetArray File="Assets\Sounds\Energizer_What01.ogg" FacialGroup=""/>
   <AssetArray File="Assets\Sounds\Energizer_What02.ogg" FacialGroup=""/>
@@ -48634,7 +48722,7 @@
   <Pitch value="-2.000000,2.000000"/>
   <Volume value="1.000000,1.000000"/>
 </CSound>
-<CSound id="ProcessingDrone_Yes" parent="TerranAck_Void">
+<CSound id="Processor_Yes" parent="TerranAck_Void">
   <EditorCategories value="Race:Genetron"/>
   <AssetArray File="Assets\Sounds\Energizer_Yes01.ogg" FacialGroup=""/>
   <AssetArray File="Assets\Sounds\Energizer_Yes02.ogg" FacialGroup=""/>
@@ -48920,7 +49008,7 @@
   <ResourcePriority value="16"/>
   <Volume value="-8.000000,-7.000000"/>
 </CSound>
-<CSound id="ProcessingDrone_SystemOffload_Sound" parent="Combat">
+<CSound id="Processor_SystemOffload_Sound" parent="Combat">
   <EditorCategories value="Race:Genetron"/>
   <AssetArray File="Assets\Sounds\Eradicator_RailGun_TargetSweep_01.wav" FacialGroup=""/>
   <AssetArray File="Assets\Sounds\Eradicator_RailGun_TargetSweep_02.wav" FacialGroup=""/>
@@ -48932,7 +49020,7 @@
   <Pitch value="5.000000,6.000000"/>
   <Volume value="-8.000000,-8.000000"/>
 </CSound>
-<CSound id="ProcessingDrone_Analyze_Sound" parent="Combat">
+<CSound id="Processor_Analyze_Sound" parent="Combat">
   <EditorCategories value="Race:Genetron"/>
   <AssetArray File="Assets\Sounds\Eradicator_RailGun_TargetSweep_01.wav" FacialGroup=""/>
   <AssetArray File="Assets\Sounds\Eradicator_RailGun_TargetSweep_02.wav" FacialGroup=""/>
@@ -55910,7 +55998,7 @@
   <Volume value="-7.000000,-5.000000"/>
   <EditorCategories value="Race:Dragon"/>
 </CSound>
-<CSound id="Hunter_Death" parent="Dragon_Death">
+<CSound id="DragonHunter_Death" parent="Dragon_Death">
   <Pitch value="8.000000,10.000000"/>
   <Volume value="-4.000000,-2.000000"/>
 </CSound>
@@ -55997,14 +56085,14 @@
   <AssetArray File="Assets\Sounds\Zerg\SpineCrawler\SpineCrawler_Ready1.ogg" FacialGroup=""/>
   <Pitch value="-4.000000,-2.000000"/>
 </CSound>
-<CSound id="HunterMeleeImpact" parent="Combat">
+<CSound id="DragonHunterMeleeImpact" parent="Combat">
+  <EditorCategories value="Race:Dragon"/>
   <AssetArray File="Assets\Sounds\Zerg\Ultralisk\Ultralisk_AttackImpact0.wav"/>
   <AssetArray File="Assets\Sounds\Zerg\Ultralisk\Ultralisk_AttackImpact1.wav"/>
   <AssetArray File="Assets\Sounds\Zerg\Ultralisk\Ultralisk_AttackImpact2.wav"/>
   <AssetArray File="Assets\Sounds\Zerg\Ultralisk\Ultralisk_AttackImpact3.wav"/>
   <Pitch value="11.000000,13.000000"/>
   <Volume value="-7.000000,-5.000000"/>
-  <EditorCategories value="Race:Dragon"/>
 </CSound>
 <CSound id="Berserker_Attack" parent="Dragon_Attack">
   <Pitch value="2.000000,4.000000"/>
@@ -56019,7 +56107,8 @@
 <CSound id="Razorback_Death" parent="Dragon_Death">
   <Volume value="2.000000,4.000000"/>
 </CSound>
-<CSound id="HunterAttackImpact" parent="Combat">
+<CSound id="DragonHunterAttackImpact" parent="Combat">
+  <EditorCategories value="Race:Dragon"/>
   <AssetArray File="Assets\Sounds\Locust_Spit_Impact_1.wav"/>
   <AssetArray File="Assets\Sounds\Locust_Spit_Impact_2.wav"/>
   <AssetArray File="Assets\Sounds\Locust_Spit_Impact_3.wav"/>
@@ -56030,9 +56119,9 @@
   <AssetArray File="Assets\Sounds\Locust_Spit_Impact_8.wav"/>
   <Pitch value="-4.000000,-2.000000"/>
   <Volume value="-7.000000,-5.000000"/>
-  <EditorCategories value="Race:Dragon"/>
 </CSound>
-<CSound id="HunterAttackLaunch" parent="Combat">
+<CSound id="DragonHunterAttackLaunch" parent="Combat">
+  <EditorCategories value="Race:Dragon"/>
   <AssetArray File="Assets\Sounds\Spell_Eyestalk_Launch_00.wav"/>
   <AssetArray File="Assets\Sounds\Spell_Eyestalk_Launch_01.wav"/>
   <AssetArray File="Assets\Sounds\Spell_Eyestalk_Launch_02.wav"/>
@@ -56041,19 +56130,18 @@
   <DupeMaximumMethod value="Replace"/>
   <Pitch value="5.000000,7.000000"/>
   <Volume value="-7.000000,-5.000000"/>
-  <EditorCategories value="Race:Dragon"/>
 </CSound>
-<CSound id="Hunter_Attack" parent="Dragon_Attack">
+<CSound id="DragonHunter_Attack" parent="Dragon_Attack">
   <Pitch value="8.000000,10.000000"/>
 </CSound>
-<CSound id="HunterAscend" parent="Hunter_Attack">
+<CSound id="HunterAscend" parent="DragonHunter_Attack">
   <Flags index="Ignorable" value="0"/>
   <Flags index="Purgable" value="1"/>
   <Flags index="Stream" value="0"/>
   <Category value="Spell"/>
   <Volume value="-4.000000,-2.000000"/>
 </CSound>
-<CSound id="Hunter_Ready" parent="Dragon_Ready">
+<CSound id="DragonHunter_Ready" parent="Dragon_Ready">
   <Pitch value="8.000000,10.000000"/>
 </CSound>
 <CSound id="Flamespitter_Attack" parent="Dragon_Attack">
@@ -56260,10 +56348,10 @@
 <CSound id="GrimGlider_Yes" parent="GrimGlider_What">
   <Pitch value="5.000000,7.000000"/>
 </CSound>
-<CSound id="Hunter_What" parent="Dragon_What">
+<CSound id="DragonHunter_What" parent="Dragon_What">
   <Pitch value="8.000000,10.000000"/>
 </CSound>
-<CSound id="Hunter_Yes" parent="Dragon_Yes">
+<CSound id="DragonHunter_Yes" parent="Dragon_Yes">
   <Pitch value="8.000000,10.000000"/>
 </CSound>
 <CSound id="HornedMagusInvigorateSound" parent="Combat">

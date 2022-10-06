@@ -6658,7 +6658,7 @@ bool libCOMM_gt_DUT_CommanderAlarak_Func (bool testConds, bool runActions) {
 //--------------------------------------------------------------------------------------------------
 void libCOMM_gt_DUT_CommanderAlarak_Init () {
     libCOMM_gt_DUT_CommanderAlarak = TriggerCreate("libCOMM_gt_DUT_CommanderAlarak_Func");
-    TriggerAddEventGeneric(libCOMM_gt_DUT_CommanderAlarak, libCOMI_gv_iNIT_COOP_MISSION_STAGE2);
+    TriggerAddEventGeneric(libCOMM_gt_DUT_CommanderAlarak, libCOMI_gv_mISSIONINITIALIZED);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -7772,7 +7772,7 @@ bool libCOMM_gt_DUT_CommanderArtanis_Func (bool testConds, bool runActions) {
 //--------------------------------------------------------------------------------------------------
 void libCOMM_gt_DUT_CommanderArtanis_Init () {
     libCOMM_gt_DUT_CommanderArtanis = TriggerCreate("libCOMM_gt_DUT_CommanderArtanis_Func");
-    TriggerAddEventGeneric(libCOMM_gt_DUT_CommanderArtanis, libCOMI_gv_iNIT_COOP_MISSION_STAGE2);
+    TriggerAddEventGeneric(libCOMM_gt_DUT_CommanderArtanis, libCOMI_gv_mISSIONINITIALIZED);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -8143,7 +8143,7 @@ bool libCOMM_gt_DUT_CommanderAbathur_Func (bool testConds, bool runActions) {
 //--------------------------------------------------------------------------------------------------
 void libCOMM_gt_DUT_CommanderAbathur_Init () {
     libCOMM_gt_DUT_CommanderAbathur = TriggerCreate("libCOMM_gt_DUT_CommanderAbathur_Func");
-    TriggerAddEventGeneric(libCOMM_gt_DUT_CommanderAbathur, libCOMI_gv_iNIT_COOP_MISSION_STAGE2);
+    TriggerAddEventGeneric(libCOMM_gt_DUT_CommanderAbathur, libCOMI_gv_mISSIONINITIALIZED);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -9315,7 +9315,7 @@ bool libCOMM_gt_InitDehaka_Func (bool testConds, bool runActions) {
 //--------------------------------------------------------------------------------------------------
 void libCOMM_gt_InitDehaka_Init () {
     libCOMM_gt_InitDehaka = TriggerCreate("libCOMM_gt_InitDehaka_Func");
-    TriggerAddEventGeneric(libCOMM_gt_InitDehaka, libCOMI_gv_iNIT_COOP_MISSION_STAGE2);
+    TriggerAddEventGeneric(libCOMM_gt_InitDehaka, libCOMI_gv_mISSIONINITIALIZED);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -11553,7 +11553,7 @@ bool libCOMM_gt_DUT_CommanderFenix_Func (bool testConds, bool runActions) {
 //--------------------------------------------------------------------------------------------------
 void libCOMM_gt_DUT_CommanderFenix_Init () {
     libCOMM_gt_DUT_CommanderFenix = TriggerCreate("libCOMM_gt_DUT_CommanderFenix_Func");
-    TriggerAddEventGeneric(libCOMM_gt_DUT_CommanderFenix, libCOMI_gv_iNIT_COOP_MISSION_STAGE2);
+    TriggerAddEventGeneric(libCOMM_gt_DUT_CommanderFenix, libCOMI_gv_mISSIONINITIALIZED);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -13692,7 +13692,7 @@ bool libCOMM_gt_DUT_CommanderHanHorner_Func (bool testConds, bool runActions) {
 //--------------------------------------------------------------------------------------------------
 void libCOMM_gt_DUT_CommanderHanHorner_Init () {
     libCOMM_gt_DUT_CommanderHanHorner = TriggerCreate("libCOMM_gt_DUT_CommanderHanHorner_Func");
-    TriggerAddEventGeneric(libCOMM_gt_DUT_CommanderHanHorner, libCOMI_gv_iNIT_COOP_MISSION_STAGE2);
+    TriggerAddEventGeneric(libCOMM_gt_DUT_CommanderHanHorner, libCOMI_gv_mISSIONINITIALIZED);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -15322,7 +15322,7 @@ bool libCOMM_gt_DUT_CommanderKarax_Func (bool testConds, bool runActions) {
 //--------------------------------------------------------------------------------------------------
 void libCOMM_gt_DUT_CommanderKarax_Init () {
     libCOMM_gt_DUT_CommanderKarax = TriggerCreate("libCOMM_gt_DUT_CommanderKarax_Func");
-    TriggerAddEventGeneric(libCOMM_gt_DUT_CommanderKarax, libCOMI_gv_iNIT_COOP_MISSION_STAGE2);
+    TriggerAddEventGeneric(libCOMM_gt_DUT_CommanderKarax, libCOMI_gv_mISSIONINITIALIZED);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -15918,7 +15918,7 @@ bool libCOMM_gt_DUT_CommanderKerrigan_Func (bool testConds, bool runActions) {
 //--------------------------------------------------------------------------------------------------
 void libCOMM_gt_DUT_CommanderKerrigan_Init () {
     libCOMM_gt_DUT_CommanderKerrigan = TriggerCreate("libCOMM_gt_DUT_CommanderKerrigan_Func");
-    TriggerAddEventGeneric(libCOMM_gt_DUT_CommanderKerrigan, libCOMI_gv_iNIT_COOP_MISSION_STAGE2);
+    TriggerAddEventGeneric(libCOMM_gt_DUT_CommanderKerrigan, libCOMI_gv_mISSIONINITIALIZED);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -16805,7 +16805,7 @@ bool libCOMM_gt_DUT_CommanderMengsk_Func (bool testConds, bool runActions) {
 //--------------------------------------------------------------------------------------------------
 void libCOMM_gt_DUT_CommanderMengsk_Init () {
     libCOMM_gt_DUT_CommanderMengsk = TriggerCreate("libCOMM_gt_DUT_CommanderMengsk_Func");
-    TriggerAddEventGeneric(libCOMM_gt_DUT_CommanderMengsk, libCOMI_gv_iNIT_COOP_MISSION_STAGE2);
+    TriggerAddEventGeneric(libCOMM_gt_DUT_CommanderMengsk, libCOMI_gv_mISSIONINITIALIZED);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -18342,7 +18342,7 @@ bool libCOMM_gt_DUT_CommanderNova_Func (bool testConds, bool runActions) {
 //--------------------------------------------------------------------------------------------------
 void libCOMM_gt_DUT_CommanderNova_Init () {
     libCOMM_gt_DUT_CommanderNova = TriggerCreate("libCOMM_gt_DUT_CommanderNova_Func");
-    TriggerAddEventGeneric(libCOMM_gt_DUT_CommanderNova, libCOMI_gv_iNIT_COOP_MISSION_STAGE2);
+    TriggerAddEventGeneric(libCOMM_gt_DUT_CommanderNova, libCOMI_gv_mISSIONINITIALIZED);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -19347,7 +19347,7 @@ bool libCOMM_gt_DUT_CommanderRaynor_Func (bool testConds, bool runActions) {
 //--------------------------------------------------------------------------------------------------
 void libCOMM_gt_DUT_CommanderRaynor_Init () {
     libCOMM_gt_DUT_CommanderRaynor = TriggerCreate("libCOMM_gt_DUT_CommanderRaynor_Func");
-    TriggerAddEventGeneric(libCOMM_gt_DUT_CommanderRaynor, libCOMI_gv_iNIT_COOP_MISSION_STAGE2);
+    TriggerAddEventGeneric(libCOMM_gt_DUT_CommanderRaynor, libCOMI_gv_mISSIONINITIALIZED);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -19677,7 +19677,7 @@ bool libCOMM_gt_DUT_CommanderStetmann_Func (bool testConds, bool runActions) {
 //--------------------------------------------------------------------------------------------------
 void libCOMM_gt_DUT_CommanderStetmann_Init () {
     libCOMM_gt_DUT_CommanderStetmann = TriggerCreate("libCOMM_gt_DUT_CommanderStetmann_Func");
-    TriggerAddEventGeneric(libCOMM_gt_DUT_CommanderStetmann, libCOMI_gv_iNIT_COOP_MISSION_STAGE2);
+    TriggerAddEventGeneric(libCOMM_gt_DUT_CommanderStetmann, libCOMI_gv_mISSIONINITIALIZED);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -20509,7 +20509,7 @@ bool libCOMM_gt_DUT_CommanderStukov_Func (bool testConds, bool runActions) {
 //--------------------------------------------------------------------------------------------------
 void libCOMM_gt_DUT_CommanderStukov_Init () {
     libCOMM_gt_DUT_CommanderStukov = TriggerCreate("libCOMM_gt_DUT_CommanderStukov_Func");
-    TriggerAddEventGeneric(libCOMM_gt_DUT_CommanderStukov, libCOMI_gv_iNIT_COOP_MISSION_STAGE2);
+    TriggerAddEventGeneric(libCOMM_gt_DUT_CommanderStukov, libCOMI_gv_mISSIONINITIALIZED);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -21436,7 +21436,7 @@ bool libCOMM_gt_DUT_CommanderSwann_Func (bool testConds, bool runActions) {
 //--------------------------------------------------------------------------------------------------
 void libCOMM_gt_DUT_CommanderSwann_Init () {
     libCOMM_gt_DUT_CommanderSwann = TriggerCreate("libCOMM_gt_DUT_CommanderSwann_Func");
-    TriggerAddEventGeneric(libCOMM_gt_DUT_CommanderSwann, libCOMI_gv_iNIT_COOP_MISSION_STAGE2);
+    TriggerAddEventGeneric(libCOMM_gt_DUT_CommanderSwann, libCOMI_gv_mISSIONINITIALIZED);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -21490,7 +21490,7 @@ bool libCOMM_gt_SwannVespeneDroneTrigger_Func (bool testConds, bool runActions) 
     while (true) {
         lv_itPlayer = PlayerGroupNextPlayer(autoE82B7BF1_g, lv_itPlayer);
         if (lv_itPlayer < 0) { break; }
-        PlayerCreateEffectPoint(lv_itPlayer, "VespeneDroneGrantResourcesTrigger", PlayerStartLocation(lv_itPlayer));
+        PlayerCreateEffectPoint(lv_itPlayer, "VespeneDroneGrantResourcesTrigger", libCOMI_gf_GetPlayerStartPosition(lv_itPlayer));
     }
     return true;
 }
@@ -22472,7 +22472,7 @@ bool libCOMM_gt_DUT_CommanderTychus_Func (bool testConds, bool runActions) {
 //--------------------------------------------------------------------------------------------------
 void libCOMM_gt_DUT_CommanderTychus_Init () {
     libCOMM_gt_DUT_CommanderTychus = TriggerCreate("libCOMM_gt_DUT_CommanderTychus_Func");
-    TriggerAddEventGeneric(libCOMM_gt_DUT_CommanderTychus, libCOMI_gv_iNIT_COOP_MISSION_STAGE2);
+    TriggerAddEventGeneric(libCOMM_gt_DUT_CommanderTychus, libCOMI_gv_mISSIONINITIALIZED);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -25753,7 +25753,7 @@ bool libCOMM_gt_DUT_CommanderVorazun_Func (bool testConds, bool runActions) {
 //--------------------------------------------------------------------------------------------------
 void libCOMM_gt_DUT_CommanderVorazun_Init () {
     libCOMM_gt_DUT_CommanderVorazun = TriggerCreate("libCOMM_gt_DUT_CommanderVorazun_Func");
-    TriggerAddEventGeneric(libCOMM_gt_DUT_CommanderVorazun, libCOMI_gv_iNIT_COOP_MISSION_STAGE2);
+    TriggerAddEventGeneric(libCOMM_gt_DUT_CommanderVorazun, libCOMI_gv_mISSIONINITIALIZED);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -26160,7 +26160,7 @@ bool libCOMM_gt_DUT_CommanderZagara_Func (bool testConds, bool runActions) {
 //--------------------------------------------------------------------------------------------------
 void libCOMM_gt_DUT_CommanderZagara_Init () {
     libCOMM_gt_DUT_CommanderZagara = TriggerCreate("libCOMM_gt_DUT_CommanderZagara_Func");
-    TriggerAddEventGeneric(libCOMM_gt_DUT_CommanderZagara, libCOMI_gv_iNIT_COOP_MISSION_STAGE2);
+    TriggerAddEventGeneric(libCOMM_gt_DUT_CommanderZagara, libCOMI_gv_mISSIONINITIALIZED);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -26479,7 +26479,7 @@ bool libCOMM_gt_DUT_CommanderZeratul2_Func (bool testConds, bool runActions) {
 //--------------------------------------------------------------------------------------------------
 void libCOMM_gt_DUT_CommanderZeratul2_Init () {
     libCOMM_gt_DUT_CommanderZeratul2 = TriggerCreate("libCOMM_gt_DUT_CommanderZeratul2_Func");
-    TriggerAddEventGeneric(libCOMM_gt_DUT_CommanderZeratul2, libCOMI_gv_iNIT_COOP_MISSION_STAGE1);
+    TriggerAddEventGeneric(libCOMM_gt_DUT_CommanderZeratul2, libCOMI_gv_mISSIONPREPARED);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -26535,7 +26535,7 @@ bool libCOMM_gt_DUT_CommanderZeratul_Func (bool testConds, bool runActions) {
 //--------------------------------------------------------------------------------------------------
 void libCOMM_gt_DUT_CommanderZeratul_Init () {
     libCOMM_gt_DUT_CommanderZeratul = TriggerCreate("libCOMM_gt_DUT_CommanderZeratul_Func");
-    TriggerAddEventGeneric(libCOMM_gt_DUT_CommanderZeratul, libCOMI_gv_iNIT_COOP_MISSION_STAGE2);
+    TriggerAddEventGeneric(libCOMM_gt_DUT_CommanderZeratul, libCOMI_gv_mISSIONINITIALIZED);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -27236,7 +27236,7 @@ bool libCOMM_gt_CM_Zeratul_TransportDropOff_Func (bool testConds, bool runAction
         if (auto65803C34_var == null) { break; }
         lv_fallbackexitpoint = UnitTypePlacementFromUnit(UnitGetType(auto65803C34_var), UnitGetOwner(auto65803C34_var), lv_voidseeker, 10.0);
         if ((lv_fallbackexitpoint == null)) {
-            lv_fallbackexitpoint = UnitTypePlacementFromPoint(UnitGetType(auto65803C34_var), UnitGetOwner(auto65803C34_var), PlayerStartLocation(UnitGetOwner(lv_voidseeker)), 10.0);
+            lv_fallbackexitpoint = UnitTypePlacementFromPoint(UnitGetType(auto65803C34_var), UnitGetOwner(auto65803C34_var), libCOMI_gf_GetPlayerStartPosition(UnitGetOwner(lv_voidseeker)), 10.0);
         }
 
         UnitSetPosition(auto65803C34_var, lv_fallbackexitpoint, false);
@@ -28863,7 +28863,7 @@ bool libCOMM_gt_StartingCreepAndLarva1_Func (bool testConds, bool runActions) {
 //--------------------------------------------------------------------------------------------------
 void libCOMM_gt_StartingCreepAndLarva1_Init () {
     libCOMM_gt_StartingCreepAndLarva1 = TriggerCreate("libCOMM_gt_StartingCreepAndLarva1_Func");
-    TriggerAddEventGeneric(libCOMM_gt_StartingCreepAndLarva1, libCOMI_gv_iNIT_COOP_MISSION_STAGE1);
+    TriggerAddEventGeneric(libCOMM_gt_StartingCreepAndLarva1, libCOMI_gv_mISSIONPREPARED);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -28884,7 +28884,7 @@ bool libCOMM_gt_StartingCreepAndLarva2_Func (bool testConds, bool runActions) {
 //--------------------------------------------------------------------------------------------------
 void libCOMM_gt_StartingCreepAndLarva2_Init () {
     libCOMM_gt_StartingCreepAndLarva2 = TriggerCreate("libCOMM_gt_StartingCreepAndLarva2_Func");
-    TriggerAddEventGeneric(libCOMM_gt_StartingCreepAndLarva2, libCOMI_gv_iNIT_COOP_MISSION_STAGE3);
+    TriggerAddEventGeneric(libCOMM_gt_StartingCreepAndLarva2, libCOMI_gv_mISSIONREADY);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -28911,7 +28911,7 @@ bool libCOMM_gt_InitializeUED_Func (bool testConds, bool runActions) {
 //--------------------------------------------------------------------------------------------------
 void libCOMM_gt_InitializeUED_Init () {
     libCOMM_gt_InitializeUED = TriggerCreate("libCOMM_gt_InitializeUED_Func");
-    TriggerAddEventGeneric(libCOMM_gt_InitializeUED, libCOMI_gv_iNIT_COOP_MISSION_STAGE2);
+    TriggerAddEventGeneric(libCOMM_gt_InitializeUED, libCOMI_gv_mISSIONINITIALIZED);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -28944,7 +28944,7 @@ bool libCOMM_gt_InitializeDragons_Func (bool testConds, bool runActions) {
 //--------------------------------------------------------------------------------------------------
 void libCOMM_gt_InitializeDragons_Init () {
     libCOMM_gt_InitializeDragons = TriggerCreate("libCOMM_gt_InitializeDragons_Func");
-    TriggerAddEventGeneric(libCOMM_gt_InitializeDragons, libCOMI_gv_iNIT_COOP_MISSION_STAGE2);
+    TriggerAddEventGeneric(libCOMM_gt_InitializeDragons, libCOMI_gv_mISSIONINITIALIZED);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -28977,7 +28977,7 @@ bool libCOMM_gt_InitializeHybrids_Func (bool testConds, bool runActions) {
 //--------------------------------------------------------------------------------------------------
 void libCOMM_gt_InitializeHybrids_Init () {
     libCOMM_gt_InitializeHybrids = TriggerCreate("libCOMM_gt_InitializeHybrids_Func");
-    TriggerAddEventGeneric(libCOMM_gt_InitializeHybrids, libCOMI_gv_iNIT_COOP_MISSION_STAGE2);
+    TriggerAddEventGeneric(libCOMM_gt_InitializeHybrids, libCOMI_gv_mISSIONINITIALIZED);
 }
 
 //--------------------------------------------------------------------------------------------------

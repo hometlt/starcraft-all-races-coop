@@ -19457,21 +19457,21 @@
   <EffectArray Reference="Unit,Courier,LifeArmor" Value="1"/>
   <EffectArray Reference="Unit,Hornet,LifeArmor" Value="1"/>
   <EffectArray Reference="Unit,Jupiter,LifeArmor" Value="1"/>
-  <EffectArray Reference="Unit,ProcessingDrone,LifeArmor" Value="1"/>
+  <EffectArray Reference="Unit,Processor,LifeArmor" Value="1"/>
   <EffectArray Reference="Unit,AvengerGenetron,LifeArmorLevel" Value="1"/>
   <EffectArray Reference="Unit,Badger,LifeArmorLevel" Value="1"/>
   <EffectArray Reference="Unit,Boar,LifeArmorLevel" Value="1"/>
   <EffectArray Reference="Unit,Courier,LifeArmorLevel" Value="1"/>
   <EffectArray Reference="Unit,Hornet,LifeArmorLevel" Value="1"/>
   <EffectArray Reference="Unit,Jupiter,LifeArmorLevel" Value="1"/>
-  <EffectArray Reference="Unit,ProcessingDrone,LifeArmorLevel" Value="1"/>
+  <EffectArray Reference="Unit,Processor,LifeArmorLevel" Value="1"/>
   <EffectArray Operation="Set" Reference="Actor,AvengerGenetron,LifeArmorIcon" Value="##Icon##"/>
   <EffectArray Operation="Set" Reference="Actor,Badger,LifeArmorIcon" Value="##Icon##"/>
   <EffectArray Operation="Set" Reference="Actor,Boar,LifeArmorIcon" Value="##Icon##"/>
   <EffectArray Operation="Set" Reference="Actor,Courier,LifeArmorIcon" Value="##Icon##"/>
   <EffectArray Operation="Set" Reference="Actor,Hornet,LifeArmorIcon" Value="##Icon##"/>
   <EffectArray Operation="Set" Reference="Actor,Jupiter,LifeArmorIcon" Value="##Icon##"/>
-  <EffectArray Operation="Set" Reference="Actor,ProcessingDrone,LifeArmorIcon" Value="##Icon##"/>
+  <EffectArray Operation="Set" Reference="Actor,Processor,LifeArmorIcon" Value="##Icon##"/>
   <EditorCategories value="Race:Genetron,UpgradeType:ArmorBonus"/>
   <AffectedUnitArray value="AvengerGenetron"/>
   <AffectedUnitArray value="Badger"/>
@@ -19479,7 +19479,7 @@
   <AffectedUnitArray value="Courier"/>
   <AffectedUnitArray value="Hornet"/>
   <AffectedUnitArray value="Jupiter"/>
-  <AffectedUnitArray value="ProcessingDrone"/>
+  <AffectedUnitArray value="Processor"/>
 </CUpgrade>
 <CUpgrade default="1" id="GenetronAircraftWeapons">
   <?token id="Icon"?>
@@ -19549,6 +19549,7 @@
   <EffectArray Operation="Set" Reference="Actor,Equalizer,LifeArmorIcon" Value="##Icon##"/>
   <EffectArray Operation="Set" Reference="Actor,Fixer,LifeArmorIcon" Value="##Icon##"/>
   <EffectArray Operation="Set" Reference="Actor,Mole,LifeArmorIcon" Value="##Icon##"/>
+  <EffectArray Operation="Set" Reference="Actor,MoleBurrowed,LifeArmorIcon" Value="##Icon##"/>
   <EffectArray Operation="Set" Reference="Actor,ACR,LifeArmorIcon" Value="##Icon##"/>
   <EffectArray Operation="Set" Reference="Actor,Spitfire,LifeArmorIcon" Value="##Icon##"/>
   <EffectArray Operation="Set" Reference="Actor,Tesla,LifeArmorIcon" Value="##Icon##"/>
@@ -19589,14 +19590,12 @@
   <EffectArray Reference="Weapon,TwinP1Dash0Guns,Level" Value="1"/>
   <EffectArray Reference="Weapon,330mmStrikeCannon,Level" Value="1"/>
   <EffectArray Reference="Weapon,HalifaxGrenades,Level" Value="1"/>
-  <EffectArray Reference="Weapon,HurricaneMissilesHighOutput,Level" Value="1"/>
-  <EffectArray Reference="Weapon,HurricaneMissilesNormalOutput,Level" Value="1"/>
+  <EffectArray Reference="Weapon,HurricaneMissiles,Level" Value="1"/>
   <EffectArray Reference="Weapon,LynxCannon,Level" Value="1"/>
   <EffectArray Operation="Set" Reference="Weapon,TwinP1Dash0Guns,Icon" Value="##Icon##"/>
   <EffectArray Operation="Set" Reference="Weapon,330mmStrikeCannon,Icon" Value="##Icon##"/>
   <EffectArray Operation="Set" Reference="Weapon,HalifaxGrenades,Icon" Value="##Icon##"/>
-  <EffectArray Operation="Set" Reference="Weapon,HurricaneMissilesHighOutput,Icon" Value="##Icon##"/>
-  <EffectArray Operation="Set" Reference="Weapon,HurricaneMissilesNormalOutput,Icon" Value="##Icon##"/>
+  <EffectArray Operation="Set" Reference="Weapon,HurricaneMissiles,Icon" Value="##Icon##"/>
   <EffectArray Operation="Set" Reference="Weapon,LynxCannon,Icon" Value="##Icon##"/>
   <EditorCategories value="Race:Genetron,UpgradeType:AttackBonus"/>
   <AffectedUnitArray value="Torrent"/>
@@ -20181,7 +20180,7 @@
 </CUpgrade>
 <CUpgrade id="FixerReactiveArmor" parent="ResearchGenetron">
   <Icon value="Assets\Textures\btn-upgrade-genetron-reactivearmor.dds"/>
-  <ScoreAmount value="200"/>
+  <ScoreAmount value="300"/>
   <EffectArray Reference="Behavior,FixerReactiveArmor,DamageResponse.Chance" Value="1"/>
   <AffectedUnitArray value="Fixer"/>
 </CUpgrade>
@@ -20307,10 +20306,10 @@
 </CUpgrade>
 <CUpgrade id="SpitfireMadcapRounds" parent="ResearchGenetron">
   <Icon value="Assets\Textures\btn-tips-terran-penetrator.dds"/>
-  <ScoreAmount value="300"/>
+  <ScoreAmount value="400"/>
   <EffectArray Reference="Weapon,RiotGun,Range" Value="1"/>
   <EffectArray Reference="Weapon,RiotGun,MinScanRange" Value="0.5"/>
-  <EffectArray Reference="Weapon,RiotGun,Period" Value="-0.112000"/>
+  <EffectArray Reference="Weapon,RiotGun,Period" Value="-0.084000"/>
   <AffectedUnitArray value="Spitfire"/>
 </CUpgrade>
 <CUpgrade id="XayidFlyerAttacksLevel1" parent="XayidFlyerAttacks" Icon="Assets\Textures\btn-upgrade-xayid-airweaponslevel1.dds">
@@ -20401,7 +20400,6 @@
   <Icon value="Assets\Textures\btn-upgrade-Xayid-scorpaliskmetabolics.dds"/>
   <ScoreAmount value="300"/>
   <EffectArray Reference="Unit,Scorpalisk,Speed" Value="0.843700"/>
-  <EffectArray Operation="Subtract" Reference="Behavior,ScorpaliskSnareMultiplier,Modification.SnareMultiplier" Value="0.5"/>
   <AffectedUnitArray value="Scorpalisk"/>
 </CUpgrade>
 <CUpgrade id="PersistentSpores" parent="ResearchXayid">
@@ -20418,7 +20416,6 @@
 <CUpgrade id="ResidualAcid" parent="ResearchXayid">
   <Icon value="Assets\Textures\btn-upgrade-Xayid-residualacid.dds"/>
   <ScoreAmount value="200"/>
-  <EffectArray Reference="Effect,ResidualAcidCP,Chance" Value="1"/>
   <AffectedUnitArray value="Prowler"/>
   <AffectedUnitArray value="AcidNest"/>
 </CUpgrade>
@@ -20500,8 +20497,7 @@
 <CUpgrade id="PhalanxReactor" parent="ResearchGenetron">
   <Icon value="Assets\Textures\btn-upgrade-genetron-phalanxreactor.dds"/>
   <ScoreAmount value="300"/>
-  <EffectArray Reference="Unit,Aquila,EnergyRegenRate" Value="0.281200"/>
-  <EffectArray Reference="Unit,Aquila,EnergyStart" Value="50"/>
+  <EffectArray Reference="Effect,AquilaEnergyRegenHealer,RechargeVitalRate" Value="0.562500"/>
   <AffectedUnitArray value="Aquila"/>
 </CUpgrade>
 <CUpgrade id="EnhancedTargeting" parent="ResearchGenetron">
@@ -20509,18 +20505,14 @@
   <ScoreAmount value="200"/>
   <EffectArray Reference="Weapon,TwinP1Dash0Guns,Range" Value="1"/>
   <EffectArray Reference="Weapon,TwinP1Dash0Guns,MinScanRange" Value="1"/>
-  <EffectArray Reference="Weapon,HurricaneMissilesHighOutput,Range" Value="3"/>
-  <EffectArray Reference="Weapon,HurricaneMissilesNormalOutput,Range" Value="3"/>
-  <EffectArray Reference="Weapon,HurricaneMissilesNormalOutput,MinScanRange" Value="3"/>
-  <EffectArray Reference="Weapon,HurricaneMissilesHighOutput,MinScanRange" Value="3"/>
-  <EffectArray Reference="Weapon,TorrentAADummy,Range" Value="3"/>
-  <EffectArray Reference="Weapon,TorrentAADummy,MinScanRange" Value="3"/>
+  <EffectArray Reference="Weapon,HurricaneMissiles,Range" Value="3"/>
+  <EffectArray Reference="Weapon,HurricaneMissiles,MinScanRange" Value="3"/>
   <AffectedUnitArray value="Torrent"/>
 </CUpgrade>
 <CUpgrade id="SubterraneanSensors" parent="ResearchGenetron">
-  <Icon value="Assets\Textures\btn-upgrade-protoss-alarak-havoctargetlockbuffed.dds"/>
+  <Icon value="Assets\Textures\btn-upgrade-terran-nova-detector.dds"/>
   <ScoreAmount value="300"/>
-  <EffectArray Reference="Behavior,MoleBurrowed,Modification.Radar" Value="22"/>
+  <EffectArray Reference="Behavior,MoleBurrowed,Modification.Radar" Value="25"/>
   <AffectedUnitArray value="Mole"/>
   <AffectedUnitArray value="MoleBurrowed"/>
 </CUpgrade>
@@ -20549,11 +20541,10 @@
 <CUpgrade id="StealthSystems" parent="ResearchGenetron">
   <Icon value="Assets\Textures\btn-ability-hornerhan-wraith-permanentcloak.dds"/>
   <ScoreAmount value="200"/>
-  <EffectArray Reference="Effect,JupiterStealth,Chance" Value="1"/>
   <AffectedUnitArray value="Courier"/>
   <AffectedUnitArray value="Jupiter"/>
 </CUpgrade>
-<CUpgrade id="BoarShapedHull" parent="ResearchGenetron">
+<CUpgrade id="ShapedHull" parent="ResearchGenetron">
   <Icon value="Assets\Textures\btn-upgrade-genetron-shapedhull.dds"/>
   <ScoreAmount value="300"/>
   <EffectArray Reference="Unit,Boar,LifeMax" Value="50"/>
@@ -20566,16 +20557,16 @@
   <AffectedUnitArray value="Badger"/>
 </CUpgrade>
 <CUpgrade id="CloakingGenerator" parent="ResearchGenetron">
-  <Icon value="Assets\Textures\btn-upgrade-genetron-processingdronecloak.dds"/>
+  <Icon value="Assets\Textures\btn-upgrade-genetron-Processorcloak.dds"/>
   <ScoreAmount value="200"/>
-  <AffectedUnitArray value="ProcessingDrone"/>
+  <AffectedUnitArray value="Processor"/>
 </CUpgrade>
 <CUpgrade id="IntegratedOptics" parent="ResearchGenetron">
   <Icon value="Assets\Textures\btn-upgrade-genetron-integratedoptics.dds"/>
   <ScoreAmount value="200"/>
-  <EffectArray Reference="Unit,ProcessingDrone,Sight" Value="2"/>
-  <EffectArray Operation="Set" Reference="Unit,ProcessingDrone,TacticalAI" Value="ProcessingDroneUpgrade"/>
-  <AffectedUnitArray value="ProcessingDrone"/>
+  <EffectArray Reference="Unit,Processor,Sight" Value="2"/>
+  <EffectArray Operation="Set" Reference="Unit,Processor,TacticalAI" Value="ProcessorUpgrade"/>
+  <AffectedUnitArray value="Processor"/>
 </CUpgrade>
 <CUpgrade id="ModifiedGait" parent="ResearchKeiron">
   <EffectArray Reference="Unit,Volt,Speed" Value="0.875000"/>
@@ -21992,7 +21983,7 @@
   <AffectedUnitArray value="Flamespitter"/>
   <AffectedUnitArray value="Fleshrender"/>
   <AffectedUnitArray value="HornedMagus"/>
-  <AffectedUnitArray value="Hunter"/>
+  <AffectedUnitArray value="DragonHunter"/>
   <AffectedUnitArray value="Plodder"/>
   <AffectedUnitArray value="Berserker"/>
   <AffectedUnitArray value="Razorback"/>
@@ -22006,7 +21997,7 @@
   <EffectArray Reference="Effect,FlamespitterAscendedClawsDamage,Amount" Value="1"/>
   <EffectArray Reference="Effect,FleshrenderShredDamage,Amount" Value="1"/>
   <EffectArray Reference="Effect,HornedMagusHeadbuttDamage,Amount" Value="1"/>
-  <EffectArray Reference="Effect,HunterMeleeDamage,Amount" Value="1"/>
+  <EffectArray Reference="Effect,DragonHunterMeleeDamage,Amount" Value="1"/>
   <EffectArray Reference="Effect,HunterTongueLashDamage,Amount" Value="1"/>
   <EffectArray Reference="Effect,HunterTongueLashDamage,AttributeBonus[Light]" Value="1"/>
   <EffectArray Reference="Effect,PlodderPincerDamage,Amount" Value="1"/>
@@ -22025,8 +22016,8 @@
   <EffectArray Reference="Weapon,FlamespitterAscendedClaws,Level" Value="1"/>
   <EffectArray Reference="Weapon,FleshrenderShred,Level" Value="1"/>
   <EffectArray Reference="Weapon,HornedMagusHeadbutt,Level" Value="1"/>
-  <EffectArray Reference="Weapon,HunterClaws,Level" Value="1"/>
-  <EffectArray Reference="Weapon,HunterTongueLash,Level" Value="1"/>
+  <EffectArray Reference="Weapon,DragonHunterClaws,Level" Value="1"/>
+  <EffectArray Reference="Weapon,DragonHunterTongueLash,Level" Value="1"/>
   <EffectArray Reference="Weapon,PlodderPincer,Level" Value="1"/>
   <EffectArray Reference="Weapon,SkyrazerSavageClaws,Level" Value="1"/>
   <EffectArray Reference="Weapon,SkyrazerSavageClaws1,Level" Value="1"/>
@@ -22105,7 +22096,7 @@
   <AffectedUnitArray value="GreaterDeepOne"/>
   <AffectedUnitArray value="GreaterDeepOneNoFootprint"/>
   <AffectedUnitArray value="HandofPower"/>
-  <AffectedUnitArray value="Hunter"/>
+  <AffectedUnitArray value="DragonHunter"/>
   <AffectedUnitArray value="LesserDeepOne"/>
   <AffectedUnitArray value="LesserDeepOneNoFootprint"/>
   <AffectedUnitArray value="PhlogistonGuardian"/>
@@ -22157,10 +22148,10 @@
   <EffectArray Reference="Unit,HandofPower,LifeArmorLevel" Value="1"/>
   <EffectArray Reference="Unit,AscendedHandofPower,LifeArmor" Value="1"/>
   <EffectArray Reference="Unit,AscendedHandofPower,LifeArmorLevel" Value="1"/>
-  <EffectArray Reference="Unit,Hunter,LifeArmor" Value="1"/>
-  <EffectArray Reference="Unit,Hunter,LifeArmorLevel" Value="1"/>
-  <EffectArray Reference="Unit,AscendedHunter,LifeArmor" Value="1"/>
-  <EffectArray Reference="Unit,AscendedHunter,LifeArmorLevel" Value="1"/>
+  <EffectArray Reference="Unit,DragonHunter,LifeArmor" Value="1"/>
+  <EffectArray Reference="Unit,DragonHunter,LifeArmorLevel" Value="1"/>
+  <EffectArray Reference="Unit,AscendedDragonHunter,LifeArmor" Value="1"/>
+  <EffectArray Reference="Unit,AscendedDragonHunter,LifeArmorLevel" Value="1"/>
   <EffectArray Reference="Unit,LesserDeepOne,LifeArmor" Value="1"/>
   <EffectArray Reference="Unit,LesserDeepOne,LifeArmorLevel" Value="1"/>
   <EffectArray Reference="Unit,LesserDeepOneNoFootprint,LifeArmor" Value="1"/>
@@ -22349,8 +22340,8 @@
   <EffectArray Operation="Set" Reference="Weapon,FlamespitterAscendedClaws,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds"/>
   <EffectArray Operation="Set" Reference="Weapon,FleshrenderShred,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds"/>
   <EffectArray Operation="Set" Reference="Weapon,HornedMagusHeadbutt,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds"/>
-  <EffectArray Operation="Set" Reference="Weapon,HunterClaws,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds"/>
-  <EffectArray Operation="Set" Reference="Weapon,HunterTongueLash,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds"/>
+  <EffectArray Operation="Set" Reference="Weapon,DragonHunterClaws,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds"/>
+  <EffectArray Operation="Set" Reference="Weapon,DragonHunterTongueLash,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds"/>
   <EffectArray Operation="Set" Reference="Weapon,PlodderPincer,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds"/>
   <EffectArray Operation="Set" Reference="Weapon,SkyrazerSavageClaws,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds"/>
   <EffectArray Operation="Set" Reference="Weapon,SkyrazerSavageClaws1,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds"/>
@@ -22369,8 +22360,8 @@
   <EffectArray Operation="Set" Reference="Weapon,FlamespitterAscendedClaws,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level2.dds"/>
   <EffectArray Operation="Set" Reference="Weapon,FleshrenderShred,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level2.dds"/>
   <EffectArray Operation="Set" Reference="Weapon,HornedMagusHeadbutt,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level2.dds"/>
-  <EffectArray Operation="Set" Reference="Weapon,HunterClaws,-" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level2.dds"/>
-  <EffectArray Operation="Set" Reference="Weapon,HunterTongueLash,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level2.dds"/>
+  <EffectArray Operation="Set" Reference="Weapon,DragonHunterClaws,-" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level2.dds"/>
+  <EffectArray Operation="Set" Reference="Weapon,DragonHunterTongueLash,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level2.dds"/>
   <EffectArray Operation="Set" Reference="Weapon,PlodderPincer,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level2.dds"/>
   <EffectArray Operation="Set" Reference="Weapon,SkyrazerSavageClaws,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level2.dds"/>
   <EffectArray Operation="Set" Reference="Weapon,SkyrazerSavageClaws1,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level2.dds"/>
@@ -22389,8 +22380,8 @@
   <EffectArray Operation="Set" Reference="Weapon,FlamespitterAscendedClaws,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level3.dds"/>
   <EffectArray Operation="Set" Reference="Weapon,FleshrenderShred,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level3.dds"/>
   <EffectArray Operation="Set" Reference="Weapon,HornedMagusHeadbutt,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level3.dds"/>
-  <EffectArray Operation="Set" Reference="Weapon,HunterClaws,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level3.dds"/>
-  <EffectArray Operation="Set" Reference="Weapon,HunterTongueLash,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level3.dds"/>
+  <EffectArray Operation="Set" Reference="Weapon,DragonHunterClaws,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level3.dds"/>
+  <EffectArray Operation="Set" Reference="Weapon,DragonHunterTongueLash,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level3.dds"/>
   <EffectArray Operation="Set" Reference="Weapon,PlodderPincer,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level3.dds"/>
   <EffectArray Operation="Set" Reference="Weapon,SkyrazerSavageClaws,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level3.dds"/>
   <EffectArray Operation="Set" Reference="Weapon,SkyrazerSavageClaws1,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level3.dds"/>
@@ -22421,7 +22412,7 @@
   <EffectArray Operation="Set" Reference="Actor,GreaterDeepOne,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level1.dds"/>
   <EffectArray Operation="Set" Reference="Actor,HandofPower,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level1.dds"/>
   <EffectArray Operation="Set" Reference="Actor,AscendedHandofPower,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level1.dds"/>
-  <EffectArray Operation="Set" Reference="Actor,Hunter,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level1.dds"/>
+  <EffectArray Operation="Set" Reference="Actor,DragonHunter,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level1.dds"/>
   <EffectArray Operation="Set" Reference="Actor,AscendedHunter,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level1.dds"/>
   <EffectArray Operation="Set" Reference="Actor,LesserDeepOne,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level1.dds"/>
   <EffectArray Operation="Set" Reference="Actor,PhlogistonGuardian,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level1.dds"/>
@@ -22453,7 +22444,7 @@
   <EffectArray Operation="Set" Reference="Actor,GreaterDeepOne,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level2.dds"/>
   <EffectArray Operation="Set" Reference="Actor,HandofPower,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level2.dds"/>
   <EffectArray Operation="Set" Reference="Actor,AscendedHandofPower,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level2.dds"/>
-  <EffectArray Operation="Set" Reference="Actor,Hunter,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level2.dds"/>
+  <EffectArray Operation="Set" Reference="Actor,DragonHunter,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level2.dds"/>
   <EffectArray Operation="Set" Reference="Actor,AscendedHunter,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level2.dds"/>
   <EffectArray Operation="Set" Reference="Actor,LesserDeepOne,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level2.dds"/>
   <EffectArray Operation="Set" Reference="Actor,PhlogistonGuardian,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level2.dds"/>
@@ -22485,7 +22476,7 @@
   <EffectArray Operation="Set" Reference="Actor,GreaterDeepOne,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level3.dds"/>
   <EffectArray Operation="Set" Reference="Actor,HandofPower,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level3.dds"/>
   <EffectArray Operation="Set" Reference="Actor,AscendedHandofPower,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level3.dds"/>
-  <EffectArray Operation="Set" Reference="Actor,Hunter,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level3.dds"/>
+  <EffectArray Operation="Set" Reference="Actor,DragonHunter,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level3.dds"/>
   <EffectArray Operation="Set" Reference="Actor,AscendedHunter,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level3.dds"/>
   <EffectArray Operation="Set" Reference="Actor,LesserDeepOne,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level3.dds"/>
   <EffectArray Operation="Set" Reference="Actor,PhlogistonGuardian,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level3.dds"/>
@@ -22603,12 +22594,12 @@
   <ScoreAmount value="340"/>
 </CUpgrade>
 <CUpgrade id="HunterFeast">
-  <EffectArray Reference="Unit,Hunter,LifeMax" Value="30"/>
-  <EffectArray Reference="Unit,Hunter,LifeStart" Value="30"/>
-  <EffectArray Reference="Unit,AscendedHunter,LifeMax" Value="30"/>
-  <EffectArray Reference="Unit,AscendedHunter,LifeStart" Value="30"/>
+  <EffectArray Reference="Unit,DragonHunter,LifeMax" Value="30"/>
+  <EffectArray Reference="Unit,DragonHunter,LifeStart" Value="30"/>
+  <EffectArray Reference="Unit,AscendedDragonHunter,LifeMax" Value="30"/>
+  <EffectArray Reference="Unit,AscendedDragonHunter,LifeStart" Value="30"/>
   <EditorCategories value="UpgradeType:Talents,Race:Dragon"/>
-  <AffectedUnitArray value="Hunter"/>
+  <AffectedUnitArray value="DragonHunter"/>
   <Icon value="Assets\Textures\btn-upgrade-zerg-adrenaloverload.dds"/>
   <ScoreAmount value="170"/>
   <Race value="Dragon"/>
@@ -26836,15 +26827,6 @@
   <MaxLevel value="30"/>
 </CUpgrade>
 <CUpgrade id="KeironCommander"/>
-<CUpgrade id="CommanderPrestigeKeironBio" parent="CommanderPrestige">
-  <EditorCategories value="Race:Keiron"/>
-</CUpgrade>
-<CUpgrade id="CommanderPrestigeKeironMech" parent="CommanderPrestige">
-  <EditorCategories value="Race:Keiron"/>
-</CUpgrade>
-<CUpgrade id="CommanderPrestigeKeironAir" parent="CommanderPrestige">
-  <EditorCategories value="Race:Keiron"/>
-</CUpgrade>
 <CUpgrade id="UpgradeKeironLevel01">
   <EffectArray Operation="Set" Reference="Unit,Aegis,CostResource[Vespene]" Value="0"/>
   <EffectArray Operation="Set" Reference="Unit,Aegis,CostResource[Minerals]" Value="0"/>
@@ -26928,15 +26910,6 @@
   <Flags index="UpgradeCheat" value="0"/>
   <EditorCategories value="Race:NHbr"/>
 </CUpgrade>
-<CUpgrade id="CommanderPrestigeNetworkBio" parent="CommanderPrestige">
-  <EditorCategories value="Race:NHbr"/>
-</CUpgrade>
-<CUpgrade id="CommanderPrestigeNetworkMech" parent="CommanderPrestige">
-  <EditorCategories value="Race:NHbr"/>
-</CUpgrade>
-<CUpgrade id="CommanderPrestigeNetworkAir" parent="CommanderPrestige">
-  <EditorCategories value="Race:NHbr"/>
-</CUpgrade>
 <CUpgrade id="UpgradeNetworkLevel01">
   <EditorCategories value="Race:NHbr,UpgradeType:Talents"/>
 </CUpgrade>
@@ -27011,15 +26984,6 @@
   <Flags index="UpgradeCheat" value="0"/>
   <EditorCategories value="Race:NHbr,UpgradeType:Talents"/>
   <MaxLevel value="30"/>
-</CUpgrade>
-<CUpgrade id="CommanderPrestigeDragonBio" parent="CommanderPrestige">
-  <EditorCategories value="Race:Dragon"/>
-</CUpgrade>
-<CUpgrade id="CommanderPrestigeDragonMech" parent="CommanderPrestige">
-  <EditorCategories value="Race:Dragon"/>
-</CUpgrade>
-<CUpgrade id="CommanderPrestigeDragonAir" parent="CommanderPrestige">
-  <EditorCategories value="Race:Dragon"/>
 </CUpgrade>
 <CUpgrade id="UpgradeDragonLevel01">
   <EditorCategories value="Race:Dragon,UpgradeType:Talents"/>
@@ -27098,15 +27062,6 @@
 </CUpgrade>
 <CUpgrade id="GenetronCommander">
   <Flags index="UpgradeCheat" value="0"/>
-  <EditorCategories value="Race:Genetron"/>
-</CUpgrade>
-<CUpgrade id="CommanderPrestigeGenetronBio" parent="CommanderPrestige">
-  <EditorCategories value="Race:Genetron"/>
-</CUpgrade>
-<CUpgrade id="CommanderPrestigeGenetronMech" parent="CommanderPrestige">
-  <EditorCategories value="Race:Genetron"/>
-</CUpgrade>
-<CUpgrade id="CommanderPrestigeGenetronAir" parent="CommanderPrestige">
   <EditorCategories value="Race:Genetron"/>
 </CUpgrade>
 <CUpgrade id="UpgradeGenetronLevel01">

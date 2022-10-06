@@ -3573,11 +3573,11 @@
                 <Field Id="Prestige"/>
             </User>
         </Instances>
-        <Instances Id="Talon">
+        <Instances Id="ProtossVolchron">
             <GameLink GameLink="Prot">
                 <Field Id="AdjutantRace"/>
             </GameLink>
-            <GameLink GameLink="Prot">
+            <GameLink GameLink="ProtL">
                 <Field Id="Race"/>
             </GameLink>
             <Image>
@@ -3610,10 +3610,10 @@
             <Sound Sound="acAttackWave_Alarak_204">
                 <Field Id="StandardVO" Index="10"/>
             </Sound>
-            <Text Text="UserData/Commanders/Talon_Description">
+            <Text Text="UserData/Commanders/ProtossVolchron_Description">
                 <Field Id="Description"/>
             </Text>
-            <Text Text="UserData/Commanders/Talon_Name">
+            <Text Text="UserData/Commanders/ProtossVolchron_Name">
                 <Field Id="Name"/>
             </Text>
             <User Type="Colors" Instance="Purple">
@@ -3624,9 +3624,6 @@
             </User>
             <User Type="Prestiges" Instance="Talon">
                 <Field Id="Prestige"/>
-            </User>
-            <User Type="Prestiges" Instance="[Default]">
-                <Field Id="Prestige" Index="1"/>
             </User>
         </Instances>
     </CUser>

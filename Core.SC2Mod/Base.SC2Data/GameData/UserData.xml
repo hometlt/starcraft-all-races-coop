@@ -50,7 +50,6 @@
             <EditorColumn value="21"/>
         </Fields>
         <Fields Id="Time" Type="String" EditorColumn="5"/>
-        <Fields Id="Spawners" Type="Int" EditorColumn="15"/>
         <Fields Id="BriefingSoundtrack" Type="GameLink" GameLinkType="Soundtrack"/>
         <Fields Id="ExpansionBlockerTownHall" Type="Unit" EditorColumn="8"/>
         <Fields Id="ExpansionBlockerRefinery" Type="Unit" EditorColumn="7"/>
@@ -77,6 +76,7 @@
         <Fields Id="ClearResources" Type="Int"/>
         <Fields Id="ResorucesMinerals" Type="Int"/>
         <Fields Id="ResourcesVespene" Type="Int"/>
+        <Fields Id="ExpansionBlockerMinerals" Type="Unit" EditorColumn="9"/>
         <Instances Id="[Default]">
             <Fixed Fixed="13">
                 <Field Id="SafetyRadius"/>
@@ -102,6 +102,9 @@
             <Unit Unit="NONE">
                 <Field Id="ExpansionBlockerTownHall"/>
             </Unit>
+            <Unit Unit="NONE">
+                <Field Id="ExpansionBlockerMinerals"/>
+            </Unit>
             <User Type="MissionActors" Instance="[Default]">
                 <Field Id="AllyHeroActor"/>
             </User>
@@ -110,6 +113,42 @@
             <Fixed Fixed="10">
                 <Field Id="ResourcesRadius"/>
             </Fixed>
+        </Instances>
+        <Instances Id="IceWorld">
+            <Unit Unit="DestructibleIce4x4">
+                <Field Id="ExpansionBlockerRefinery"/>
+            </Unit>
+            <Unit Unit="DestructibleIce6x6">
+                <Field Id="ExpansionBlockerTownHall"/>
+            </Unit>
+            <User Type="MissionActors" Instance="[Default]">
+                <Field Id="AllyRefineryActor"/>
+            </User>
+        </Instances>
+        <Instances Id="AshWorld">
+            <Unit Unit="DestructibleRock4x4">
+                <Field Id="ExpansionBlockerRefinery"/>
+            </Unit>
+            <Unit Unit="DestructibleRock6x6">
+                <Field Id="ExpansionBlockerTownHall"/>
+            </Unit>
+            <User Type="MissionActors" Instance="[Default]">
+                <Field Id="AllyRefineryActor"/>
+            </User>
+        </Instances>
+        <Instances Id="CityWorld">
+            <Unit Unit="DestructibleDebris4x4">
+                <Field Id="ExpansionBlockerRefinery"/>
+            </Unit>
+            <Unit Unit="DestructibleDebris6x6">
+                <Field Id="ExpansionBlockerTownHall"/>
+            </Unit>
+            <User Type="MissionActors" Instance="[Default]">
+                <Field Id="AllyRefineryActor"/>
+            </User>
+            <User Type="MissionActors" Instance="[Default]">
+                <Field Id="AllyTownHallActor"/>
+            </User>
         </Instances>
     </CUser>
     <CUser id="UnitData">
@@ -11165,7 +11204,9 @@
             <EditorText value="Suffix"/>
         </Fields>
         <Fields Id="ResponseChance" Type="Int" EditorColumn="4"/>
-        <Fields Id="Deffered" Type="Int"/>
+        <Fields Id="Deffered" Type="Int">
+            <Flags index="Modifiable" value="1"/>
+        </Fields>
         <Instances Id="[Default]">
             <GameLink GameLink="acObj">
                 <Field Id="Conversation"/>
@@ -12223,9 +12264,6 @@
             <Int Int="1">
                 <Field Id="Race"/>
             </Int>
-            <User Type="Compositions" Instance="Protoss-Standard-Techy">
-                <Field Id="Comp"/>
-            </User>
         </Instances>
         <Instances Id="RoboReaver">
             <Int Int="1">
@@ -12249,9 +12287,6 @@
             <Int Int="1">
                 <Field Id="Race"/>
             </Int>
-            <User Type="Compositions" Instance="Protoss-Standard-RoboReaver">
-                <Field Id="Comp"/>
-            </User>
         </Instances>
         <Instances Id="Gateway">
             <Int Int="13">
@@ -12321,9 +12356,6 @@
             <Int Int="1">
                 <Field Id="Race"/>
             </Int>
-            <User Type="Compositions" Instance="Protoss-Standard-RoboColossus">
-                <Field Id="Comp"/>
-            </User>
         </Instances>
         <Instances Id="ClassicProtossGround">
             <Int Int="13">
@@ -12347,9 +12379,6 @@
             <Int Int="1">
                 <Field Id="Race"/>
             </Int>
-            <User Type="Compositions" Instance="Protoss-Standard-Ground-Classic">
-                <Field Id="Comp"/>
-            </User>
         </Instances>
         <Instances Id="ClassicProtossAir">
             <Int Int="13">
@@ -12370,9 +12399,6 @@
             <Int Int="1">
                 <Field Id="Race"/>
             </Int>
-            <User Type="Compositions" Instance="Protoss-Standard-Air-Classic">
-                <Field Id="Comp"/>
-            </User>
         </Instances>
         <Instances Id="Skyterran">
             <Int Int="21">
@@ -12396,9 +12422,6 @@
             <Int Int="2">
                 <Field Id="Race"/>
             </Int>
-            <User Type="Compositions" Instance="Terran-Standard-Air">
-                <Field Id="Comp"/>
-            </User>
         </Instances>
         <Instances Id="ShadowTech">
             <Int Int="27">
@@ -12422,9 +12445,6 @@
             <Int Int="2">
                 <Field Id="Race"/>
             </Int>
-            <User Type="Compositions" Instance="Terran-Standard-ShadowTech">
-                <Field Id="Comp"/>
-            </User>
         </Instances>
         <Instances Id="BioMechStar">
             <Int Int="23">
@@ -12457,9 +12477,6 @@
             <Int Int="2">
                 <Field Id="Race"/>
             </Int>
-            <User Type="Compositions" Instance="Terran-Standard-BioMechStar">
-                <Field Id="Comp"/>
-            </User>
         </Instances>
         <Instances Id="MechStarport">
             <Int Int="36">
@@ -12489,9 +12506,6 @@
             <Int Int="2">
                 <Field Id="Race"/>
             </Int>
-            <User Type="Compositions" Instance="Terran-Standard-MechStarport">
-                <Field Id="Comp"/>
-            </User>
         </Instances>
         <Instances Id="ClassicTerranBio">
             <Int Int="23">
@@ -12515,9 +12529,6 @@
             <Int Int="2">
                 <Field Id="Race"/>
             </Int>
-            <User Type="Compositions" Instance="Terran-Standard-Bio-Classic">
-                <Field Id="Comp"/>
-            </User>
         </Instances>
         <Instances Id="ClassicTerranMech">
             <Int Int="42">
@@ -12541,9 +12552,6 @@
             <Int Int="2">
                 <Field Id="Race"/>
             </Int>
-            <User Type="Compositions" Instance="Terran-Standard-Mech-Classic">
-                <Field Id="Comp"/>
-            </User>
         </Instances>
         <Instances Id="MutaLing">
             <Int Int="44">
@@ -12567,9 +12575,6 @@
             <Int Int="3">
                 <Field Id="Race"/>
             </Int>
-            <User Type="Compositions" Instance="Zerg-Standard-MutaLing">
-                <Field Id="Comp"/>
-            </User>
         </Instances>
         <Instances Id="Swarmy">
             <Int Int="44">
@@ -12596,9 +12601,6 @@
             <Int Int="3">
                 <Field Id="Race"/>
             </Int>
-            <User Type="Compositions" Instance="Zerg-Standard-Swarmy">
-                <Field Id="Comp"/>
-            </User>
         </Instances>
         <Instances Id="Ground">
             <Int Int="54">
@@ -12625,9 +12627,6 @@
             <Int Int="3">
                 <Field Id="Race"/>
             </Int>
-            <User Type="Compositions" Instance="Zerg-Standard-Ground">
-                <Field Id="Comp"/>
-            </User>
         </Instances>
         <Instances Id="ClassicZergGround">
             <Int Int="44">

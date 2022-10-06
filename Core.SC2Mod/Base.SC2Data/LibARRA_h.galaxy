@@ -124,6 +124,7 @@ void libARRA_gf_MapIntSet (string lp_map, string lp_index, int lp_actor);
 int libARRA_gf_MapIntGet (string lp_map, string lp_index);
 string libARRA_gf_MapIntIndexes (string lp_unit);
 bool libARRA_gf_MapIntIncludes (string lp_unit, string lp_index);
+void libARRA_gf_ListStringCopy (string lp_source, string lp_target);
 string libARRA_gf_ListStringGet (string lp_list, int lp_index);
 int libARRA_gf_ListStringIndexOf (string lp_list, string lp_value);
 bool libARRA_gf_ListStringIncludes (string lp_list, string lp_value);

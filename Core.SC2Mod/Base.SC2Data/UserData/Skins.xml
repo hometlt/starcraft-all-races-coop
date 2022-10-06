@@ -1304,5 +1304,13 @@
                 <Field Id="Supplement"/>
             </GameLink>
         </Instances>
+        <Instances Id="Talon">
+            <GameLink GameLink="ProtossTalon">
+                <Field Id="Upgrade"/>
+            </GameLink>
+            <GameLink GameLink="ProtossTalon">
+                <Field Id="Supplement"/>
+            </GameLink>
+        </Instances>
     </CUser>
 </Catalog>

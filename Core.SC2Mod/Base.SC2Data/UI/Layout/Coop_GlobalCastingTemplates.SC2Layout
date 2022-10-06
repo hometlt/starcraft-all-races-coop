@@ -1032,6 +1032,16 @@
             <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
             <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
         </Frame>
+
+        <!-- For Nexus?-->
+        <!--Frame type="Frame" name="AbilityArrow03" template="LotV_SoAMissionUIPanel/SoAAbilityArrowsTemplate">
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+        </Frame>
+        <Frame type="Frame" name="AbilityArrow04" template="LotV_SoAMissionUIPanel/SoAAbilityArrowsTemplate">
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+        </Frame-->
         
         <Frame type="Button" name="GemButton">
             <Width val="32"/>

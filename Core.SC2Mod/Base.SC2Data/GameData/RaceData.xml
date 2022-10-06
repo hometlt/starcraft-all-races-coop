@@ -53,7 +53,6 @@
     </CRace>
     <CRace id="ProtL">
         <AttributeId value="PTal"/>
-        <DefaultConsoleSkin value="ConsoleProtoss_XelNaga"/>
         <GameMusic value="Music_ProtLow"/>
         <Flags index="Selectable" value="1"/>
         <Flags index="TrialAllowed" value="1"/>
@@ -95,6 +94,7 @@
         <DefeatSound value="UI_MissionFailed"/>
         <ExpansionOrder value="3"/>
         <LevelAchievementId value="91475320767755"/>
+        <DefaultConsoleSkin value="ConsoleProtoss_Forged"/>
     </CRace>
     <CRace id="ProtN">
         <AttributeId value="PNer"/>

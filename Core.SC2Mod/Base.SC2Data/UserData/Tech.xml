@@ -14555,14 +14555,6 @@
                 <Field Id="commander"/>
             </User>
         </Instances>
-        <Instances Id="Protoss_TalonSkin">
-            <User Type="Commanders" Instance="Protoss">
-                <Field Id="commander"/>
-            </User>
-            <User Type="Prestiges" Instance="CommanderPrestigeProtossTalon">
-                <Field Id="prestige"/>
-            </User>
-        </Instances>
         <Instances Id="Talon_BuildingArmorLevel1">
             <Upgrade Upgrade="ProtossBuildingArmorLevel1">
                 <Field Id="upgrade"/>
@@ -14732,8 +14724,14 @@
             </User>
         </Instances>
         <Instances Id="Talon_Commander">
+            <Upgrade Upgrade="ProtossTalon">
+                <Field Id="upgrade"/>
+            </Upgrade>
             <User Type="Commanders" Instance="ProtossVolchron">
                 <Field Id="commander"/>
+            </User>
+            <User Type="UpgradeLevel" Instance="CHEAT">
+                <Field Id="state"/>
             </User>
         </Instances>
         <Instances Id="Talon_Gateway">

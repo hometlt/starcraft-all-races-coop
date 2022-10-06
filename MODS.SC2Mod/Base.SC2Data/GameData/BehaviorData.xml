@@ -17974,9 +17974,29 @@
 <CBehaviorBuff id="Active">
   <InfoFlags index="Hidden" value="1"/>
   <EditorCategories value="Race:Genetron,AbilityorEffectType:Units"/>
-  <InitialEffect value="ProcessingDroneActive"/>
-  <FinalEffect value="ProcessingDroneFateSet"/>
+  <InitialEffect value="ProcessorActive"/>
+  <FinalEffect value="ProcessorFateSet"/>
   <RemoveValidatorArray value="CasterNotDead"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="ApertureTeleportTarget">
+  <InfoFlags index="Hidden" value="1"/>
+  <EditorCategories value="Race:Keiron,AbilityorEffectType:Units"/>
+  <DisplayDuration index="Self" value="1"/>
+  <DisplayDuration index="Ally" value="1"/>
+  <RemoveValidatorArray value="NotHidden"/>
+  <RemoveValidatorArray value="CasterIsNotHidden"/>
+  <RemoveValidatorArray value="CasterNotDead"/>
+  <Duration value="2.1"/>
+  <ExpireEffect value="ApertureTeleportSet"/>
+  <Modification>
+    <ModifyFlags index="DisableWeapons" value="1"/>
+    <ModifyFlags index="SuppressMoving" value="1"/>
+    <ModifyFlags index="SuppressTurning" value="1"/>
+    <AbilClassDisableArray index="CAbilAttack" value="1"/>
+    <AbilClassDisableArray index="CAbilEffectInstant" value="1"/>
+    <AbilClassDisableArray index="CAbilEffectTarget" value="1"/>
+    <AbilClassDisableArray index="CAbilMove" value="1"/>
+  </Modification>
 </CBehaviorBuff>
 <CBehaviorBuff id="BoreDrill">
   <Alignment value="Negative"/>
@@ -18009,7 +18029,7 @@
 </CBehaviorBuff>
 <CBehaviorBuff id="CloakingGenerator">
   <InfoFlags index="Hidden" value="1"/>
-  <InfoIcon value="Assets\Textures\btn-upgrade-genetron-processingdronecloak.dds"/>
+  <InfoIcon value="Assets\Textures\btn-upgrade-genetron-Processorcloak.dds"/>
   <BehaviorCategories index="Cloak" value="1"/>
   <EditorCategories value="Race:Genetron,AbilityorEffectType:Units"/>
   <Requirements value="UseCloakingGenerator"/>
@@ -18067,12 +18087,46 @@
 <CBehaviorBuff id="DummyUnit">
   <InfoFlags index="Hidden" value="1"/>
 </CBehaviorBuff>
+<CBehaviorBuff id="AssemblyArrayIsTraining">
+  <InfoFlags index="Hidden" value="1"/>
+  <EditorCategories value="Race:Genetron,AbilityorEffectType:Units"/>
+  <DisableValidatorArray value="AssemblyArrayIsTraining"/>
+  <TimeScaleSource Value="Global"/>
+  <Period value="0.35"/>
+  <PeriodicEffect value="GenetronTrainingEnergyDrainSwitch"/>
+  <Modification QueueCount="-2"/>
+</CBehaviorBuff>
 <CBehaviorBuff id="GenetronConstruction">
   <InfoIcon value="Assets\Textures\btn-ability-genetron-structurelockdownmode.dds"/>
-  <EditorCategories value="AbilityorEffectType:Units"/>
+  <EditorCategories value="AbilityorEffectType:Units,Race:Genetron"/>
   <DisableValidatorArray value="TargetInCombat"/>
   <RemoveValidatorArray value="IsConstructing"/>
   <Modification TimeScale="0.5"/>
+  <Alignment value="Negative"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="GenetronProductionModePerformanceBuff">
+  <InfoFlags index="Hidden" value="1"/>
+  <InfoIcon value="Assets\Textures\btn-ability-genetron-productionmode-performance.dds"/>
+  <EditorCategories value="Race:Genetron,AbilityorEffectType:Units"/>
+  <DisableValidatorArray value="NotUnderConstruction"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="AvengerVengeanceMissileAmmo">
+  <EditorCategories value="Race:Genetron,AbilityorEffectType:Units"/>
+  <InfoFlags index="Hidden" value="1"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="GenetronProductionModeStandardBuff">
+  <InfoFlags index="Hidden" value="1"/>
+  <InfoIcon value="Assets\Textures\btn-ability-genetron-productionmode-standard.dds"/>
+  <EditorCategories value="Race:Genetron,AbilityorEffectType:Units"/>
+  <DisableValidatorArray value="NotUnderConstruction"/>
+  <Modification QueueCount="1" TimeScale="1.5"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="GenetronProductionModeOverclockBuff">
+  <InfoFlags index="Hidden" value="1"/>
+  <InfoIcon value="Assets\Textures\btn-ability-genetron-productionmode-overclock.dds"/>
+  <EditorCategories value="Race:Genetron,AbilityorEffectType:Units"/>
+  <DisableValidatorArray value="NotUnderConstruction"/>
+  <Modification QueueCount="2" TimeScale="2"/>
 </CBehaviorBuff>
 <CBehaviorBuff id="GenetronTurretFreeze">
   <InfoFlags index="Hidden" value="1"/>
@@ -18093,6 +18147,36 @@
     <Kind index="Splash" value="0"/>
     <ModifyAmount value="-2"/>
   </DamageResponse>
+  <InfoFlags index="Hidden" value="1"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="GenetronUnitEnergyRegen">
+  <InfoFlags index="Hidden" value="1"/>
+  <EditorCategories value="Race:Genetron,AbilityorEffectType:Units"/>
+  <DisableValidatorArray value="EnergyNotFull"/>
+  <DisableValidatorArray value="DefaultDataE0"/>
+  <DisableValidatorArray value="HasCoreOrRelay"/>
+  <DisableValidatorArray value="GenetronCasterEnergyRegenNotSuppressed"/>
+  <Period value="0.5"/>
+  <PeriodicEffect value="GenetronUnitEnergyRegenSA"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="GenetronUnitEnergyRegenx3">
+  <InfoFlags index="Hidden" value="1"/>
+  <EditorCategories value="Race:Genetron,AbilityorEffectType:Units"/>
+  <DisableValidatorArray value="EnergyNotFull"/>
+  <DisableValidatorArray value="DefaultDataE0"/>
+  <DisableValidatorArray value="HasCoreOrRelay"/>
+  <DisableValidatorArray value="GenetronCasterEnergyRegenNotSuppressed"/>
+  <Period value="0.5"/>
+  <PeriodicEffect value="GenetronUnitEnergyRegenx3SA"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="GenetronUnitEnergyRegenx2">
+  <EditorCategories value="Race:Genetron,AbilityorEffectType:Units"/>
+  <DisableValidatorArray value="EnergyNotFull"/>
+  <DisableValidatorArray value="DefaultDataE0"/>
+  <DisableValidatorArray value="HasCoreOrRelay"/>
+  <DisableValidatorArray value="GenetronCasterEnergyRegenNotSuppressed"/>
+  <Period value="0.5"/>
+  <PeriodicEffect value="GenetronUnitEnergyRegenx2SA"/>
   <InfoFlags index="Hidden" value="1"/>
 </CBehaviorBuff>
 <CBehaviorBuff id="HornetBoreDrillBase">
@@ -18198,6 +18282,41 @@
   <EditorCategories value="Race:Genetron,AbilityorEffectType:Units"/>
   <Duration value="5.6"/>
   <Modification MoveSpeedMultiplier="1.5"/>
+  <Tooltip value="Button/Tooltip/BlitzerOverdrive"/>
+  <Alignment value="Positive"/>
+  <InfoIcon value="Assets\Textures\btn-ability-stetmann-stetelliteoverloadspeed.dds"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="ManufacturerIsTraining">
+  <InfoFlags index="Hidden" value="1"/>
+  <EditorCategories value="Race:Genetron,AbilityorEffectType:Units"/>
+  <DisableValidatorArray value="ManufacturerIsTraining"/>
+  <TimeScaleSource Value="Global"/>
+  <Period value="0.35"/>
+  <PeriodicEffect value="GenetronTrainingEnergyDrainSwitch"/>
+  <Modification QueueCount="-2"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="FabricatorIsTraining">
+  <InfoFlags index="Hidden" value="1"/>
+  <EditorCategories value="Race:Genetron,AbilityorEffectType:Units"/>
+  <DisableValidatorArray value="FabricatorIsTraining"/>
+  <TimeScaleSource Value="Global"/>
+  <Period value="0.35"/>
+  <PeriodicEffect value="GenetronTrainingEnergyDrainSwitch"/>
+  <Modification QueueCount="-2"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="MoleBury">
+  <InfoFlags index="Hidden" value="1"/>
+  <EditorCategories value="Race:Genetron,AbilityorEffectType:Units"/>
+  <Modification>
+    <TurretDisableArray value="MoleTurret"/>
+  </Modification>
+</CBehaviorBuff>
+<CBehaviorBuff id="MoleBuried">
+  <InfoFlags index="Hidden" value="1"/>
+  <EditorCategories value="Race:Genetron,AbilityorEffectType:Units"/>
+  <Modification>
+    <ModifyFlags index="DisableWeapons" value="1"/>
+  </Modification>
 </CBehaviorBuff>
 <CBehaviorBuff id="MyriadElytronRecall">
   <InfoFlags index="Hidden" value="1"/>
@@ -18210,6 +18329,16 @@
 </CBehaviorBuff>
 <CBehaviorBuff id="Pause">
   <Modification TimeScale="0.01"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="GeneratorPower">
+  <InfoFlags index="Hidden" value="1"/>
+  <InfoIcon value="Assets\Textures\btn-tips-computerterminals.dds"/>
+  <EditorCategories value="Race:Genetron,AbilityorEffectType:Units"/>
+  <DisableValidatorArray value="NotUnderConstruction"/>
+  <DisableValidatorArray value="StructureNotLockedDown"/>
+  <Period value="0.4665"/>
+  <InitialEffect value="GeneratorPowerSearchArea"/>
+  <PeriodicEffect value="GeneratorPowerSearchArea"/>
 </CBehaviorBuff>
 <CBehaviorBuff id="PulsarDampenerAutoTrigger">
   <InfoFlags index="Hidden" value="1"/>
@@ -18266,9 +18395,21 @@
   <Alignment value="Positive"/>
   <InfoIcon value="Assets\Textures\btn-ability-genetron-miningtap.dds"/>
   <EditorCategories value="Race:Genetron,AbilityorEffectType:Units"/>
-  <Duration value="15"/>
+  <Duration value="46.2"/>
   <Period value="0.5"/>
   <PeriodicEffect value="MiningPrioritySearchArea"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="VirtusSelffixProtocolBuff">
+  <InfoIcon value="Assets\Textures\btn-upgrade-swann-regenerativebiosteel.dds"/>
+  <EditorCategories value="Race:Genetron,AbilityorEffectType:Units"/>
+  <DamageResponse ModifyFraction="0.75">
+    <Kind index="Spell" value="0"/>
+    <Chance value="1"/>
+    <Cost>
+      <Charge Link="Behavior/LockdownModeDuration"/>
+      <Cooldown Link="Behavior/LockdownModeDuration"/>
+    </Cost>
+  </DamageResponse>
 </CBehaviorBuff>
 <CBehaviorBuff id="SpitterFate">
   <InfoFlags index="Hidden" value="1"/>
@@ -18292,15 +18433,6 @@
     <StateFlags index="Cloak" value="1"/>
   </Modification>
 </CBehaviorBuff>
-<CBehaviorBuff id="TorrentAAWeaponSwitch">
-  <InfoFlags index="Hidden" value="1"/>
-  <EditorCategories value="Race:Genetron,AbilityorEffectType:Units"/>
-  <DisplayDuration index="Self" value="1"/>
-  <Modification>
-    <WeaponDisableArray value="HurricaneMissilesHighOutput"/>
-    <WeaponDisableArray value="HurricaneMissilesNormalOutput"/>
-  </Modification>
-</CBehaviorBuff>
 <CBehaviorBuff id="UploaderAddonDummyFate">
   <EditorCategories value="Race:Genetron,AbilityorEffectType:Units"/>
   <FinalEffect value="Suicide"/>
@@ -18311,6 +18443,25 @@
   <EditorCategories value="Race:Genetron,AbilityorEffectType:Units"/>
   <RemoveValidatorArray value="IsConstructing"/>
   <FinalEffect value="UploaderCountDummyCreateUnit4x4"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="UploaderIsResearching">
+  <InfoFlags index="Hidden" value="1"/>
+  <EditorCategories value="Race:Genetron,AbilityorEffectType:Units"/>
+  <DisableValidatorArray value="UploaderIsResearching"/>
+  <Period value="0.5"/>
+  <PeriodicEffect value="UploaderResearchDrainSwitch"/>
+</CBehaviorBuff>
+<CBehaviorBuff id="GenetronPowerOutage">
+  <Alignment value="Negative"/>
+  <InfoFlags index="Hidden" value="1"/>
+  <InfoIcon value="Assets\Textures\btn-ability-stetmann-stetelliteoverloadenergy.dds"/>
+  <EditorCategories value="Race:Genetron,AbilityorEffectType:Units"/>
+  <DisplayDuration index="Self" value="1"/>
+  <TimeScaleSource Value="Global"/>
+  <Duration value="2.8"/>
+  <Modification>
+    <RateMultiplierArray index="Queueable" value="0.001"/>
+  </Modification>
 </CBehaviorBuff>
 <CBehaviorBuff id="XayidSpawnTimedLife">
   <InfoFlags index="Hidden" value="1"/>
@@ -18397,15 +18548,6 @@
     <Chance value="1"/>
   </DamageResponse>
   <DisableValidatorArray value="BlindingBurstCooldownComplete"/>
-</CBehaviorBuff>
-<CBehaviorBuff id="SelffixProtocol">
-  <InfoIcon value="Assets\Textures\btn-upgrade-swann-regenerativebiosteel.dds"/>
-  <EditorCategories value="Race:Genetron,AbilityorEffectType:Units"/>
-  <DisableValidatorArray value="VirtusSelfFixProtocolUpgraded"/>
-  <DisableValidatorArray value="VirtusLockedDown"/>
-  <Modification>
-    <VitalRegenArray index="Life" value="3.5703"/>
-  </Modification>
 </CBehaviorBuff>
 <CBehaviorResource id="MineralFieldMineralsBGH" parent="MineralFieldMinerals">
   <Name value="Behavior/Name/MineralFieldMineralsBGH"/>
@@ -18499,6 +18641,7 @@
   <Modification>
     <ModifyFlags index="DisableAbils" value="1"/>
     <ModifyFlags index="DisableWeapons" value="1"/>
+    <StateFlags index="SuppressDetection" value="1"/>
     <StateFlags index="SuppressDropOff" value="1"/>
     <StateFlags index="SuppressFoodMade" value="1"/>
     <StateFlags index="SuppressEnergyRegen" value="1"/>
@@ -18513,17 +18656,6 @@
   </DamageResponse>
   <Period value="0.0625"/>
   <PeriodicEffect value="LockdownModeApplyDuration"/>
-</CBehaviorBuff>
-<CBehaviorBuff id="EnergyRegenerationBuff">
-  <EditorCategories value="Race:Genetron,AbilityorEffectType:Units"/>
-  <MaxStackCount value="65535"/>
-  <Modification>
-    <VitalRegenArray index="Energy" value="0.1875"/>
-  </Modification>
-  <InfoFlags index="Hidden" value="1"/>
-  <Duration value="1.001"/>
-  <InfoIcon value="Assets\Textures\btn-tips-computerterminals.dds"/>
-  <MaxStackCountPerCaster value="1"/>
 </CBehaviorBuff>
 <CBehaviorJump id="InciterJump">
   <InfoFlags index="Hidden" value="1"/>
@@ -18545,46 +18677,30 @@
   <LandCheckRadius value="10"/>
   <InfoIcon value="Assets\Textures\btn-ability-genetron-incitercliffjump.dds"/>
 </CBehaviorJump>
-<CBehaviorBuff id="ProcessingDroneActive">
+<CBehaviorBuff id="ProcessorActive">
   <EditorCategories value="Race:Genetron,AbilityorEffectType:Units"/>
   <InfoFlags index="Hidden" value="1"/>
 </CBehaviorBuff>
 <CBehaviorBuff id="ResourceTap">
   <EditorCategories value="Race:Genetron,AbilityorEffectType:Units"/>
   <Modification>
-    <ResourceHarvestAmountBonus index="Minerals" value="2"/>
-    <ResourceHarvestAmountBonus index="Vespene" value="2"/>
+    <ResourceHarvestAmountBonus index="Minerals" value="1"/>
+    <ResourceHarvestAmountBonus index="Vespene" value="1"/>
   </Modification>
   <InfoIcon value="Assets\Textures\btn-ability-genetron-miningtap.dds"/>
   <Duration value="1"/>
   <Alignment value="Positive"/>
+  <TimeScaleSource Value="Global"/>
 </CBehaviorBuff>
-<CBehaviorBuff id="VirtusLockdownMode">
-  <InfoIcon value="Assets\Textures\btn-ability-genetron-structurelockdownmode.dds"/>
-  <EditorCategories value="Race:Genetron,AbilityorEffectType:Units"/>
-  <DisableValidatorArray value="VirtusLockdownHealthThreshhold"/>
-  <Modification SightBonus="-8">
-    <ModifyFlags index="DisableAbils" value="1"/>
-    <ModifyFlags index="DisableWeapons" value="1"/>
-    <ModifyFlags index="SuppressMoving" value="1"/>
-    <ModifyFlags index="SuppressTurning" value="1"/>
-    <BehaviorLinkDisableArray value="VirtusLockdownModeDuration"/>
-  </Modification>
-  <Period value="0.0625"/>
-  <PeriodicEffect value="VirtusLockdownModeDuration"/>
-  <DamageResponse ModifyFraction="0.4">
-    <Kind index="Spell" value="0"/>
-    <Chance value="1"/>
-  </DamageResponse>
-</CBehaviorBuff>
-<CBehaviorBuff id="ProcessingNodeSearchBuff">
-  <EditorCategories value="Race:Genetron,AbilityorEffectType:Units"/>
-  <Period value="1"/>
-  <PeriodicEffect value="ProcessingPowerSA"/>
-  <DisableValidatorArray value="NotUnderConstruction"/>
-  <DisableValidatorArray value="StructureNotLockedDown"/>
+<CBehaviorBuff id="NodePower">
   <InfoFlags index="Hidden" value="1"/>
   <InfoIcon value="Assets\Textures\btn-tips-computerterminals.dds"/>
+  <EditorCategories value="Race:Genetron,AbilityorEffectType:Units"/>
+  <DisableValidatorArray value="NotUnderConstruction"/>
+  <DisableValidatorArray value="StructureNotLockedDown"/>
+  <Period value="1.4"/>
+  <InitialEffect value="NodePowerSearchArea"/>
+  <PeriodicEffect value="NodePowerSearchArea"/>
 </CBehaviorBuff>
 <CBehaviorBuff id="RevenantBombAbilityChannel">
   <InfoFlags index="Hidden" value="1"/>
@@ -18625,15 +18741,6 @@
     <StateFlags index="Stun" value="1"/>
     <StateFlags index="SuppressCloak" value="1"/>
   </Modification>
-</CBehaviorBuff>
-<CBehaviorBuff id="HeavyOutputActive">
-  <InfoIcon value="Assets\Textures\btn-ability-genetron-heavyoutputmode.dds"/>
-  <EditorCategories value="Race:Genetron,AbilityorEffectType:Units"/>
-  <Modification>
-    <WeaponEnableArray value="HurricaneMissilesHighOutput"/>
-    <WeaponDisableArray value="HurricaneMissilesNormalOutput"/>
-  </Modification>
-  <InfoFlags index="Hidden" value="1"/>
 </CBehaviorBuff>
 <CBehaviorBuff id="SchematicTransmitLM">
   <InfoFlags index="Hidden" value="1"/>
@@ -18758,11 +18865,6 @@
   <EditorCategories value="Race:Genetron,AbilityorEffectType:Units"/>
   <MaxStackCount value="3"/>
   <MaxStackCountPerCaster value="1"/>
-</CBehaviorBuff>
-<CBehaviorBuff id="VengeanceMissilesFate">
-  <EditorCategories value="Race:Genetron,AbilityorEffectType:Units"/>
-  <FinalEffect value="VengeanceMissileST"/>
-  <InfoFlags index="Hidden" value="1"/>
 </CBehaviorBuff>
 <CBehaviorSpawn id="AvianNestSpawnWasp">
   <InfoFlags index="Hidden" value="1"/>
@@ -18968,10 +19070,13 @@
   <EditorCategories value="Race:Xayid,AbilityorEffectType:Units"/>
   <FinalEffect value="ResidualAcidCP"/>
   <InfoFlags index="Hidden" value="1"/>
+  <Requirements value="UseResidualAcid"/>
 </CBehaviorBuff>
 <CBehaviorBuff id="ScorpaliskSnareMultiplier">
   <InfoFlags index="Hidden" value="1"/>
   <EditorCategories value="Race:Xayid,AbilityorEffectType:Units"/>
+  <Requirements value="UseScorpaliskMetabolics"/>
+  <Modification SnareMultiplier="0.5"/>
 </CBehaviorBuff>
 <CBehaviorBuff id="ScourFate">
   <EditorCategories value="Race:Xayid,AbilityorEffectType:Units"/>
@@ -19022,25 +19127,6 @@
   <BuffFlags index="RefreshStack" value="1"/>
   <InfoIcon value="Assets\Textures\btn-ability-Xayid-venomousinjection.dds"/>
   <RemoveValidatorArray value="NotMassive"/>
-</CBehaviorBuff>
-<CBehaviorBuff id="VirtusLockdownModeDuration">
-  <InfoIcon value="Assets\Textures\btn-ability-genetron-structurelockdownmode.dds"/>
-  <EditorCategories value="Race:Genetron,AbilityorEffectType:Units"/>
-  <DisplayDuration index="Self" value="1"/>
-  <DisplayDuration index="Ally" value="1"/>
-  <Duration value="10"/>
-  <Modification SightBonus="-8">
-    <ModifyFlags index="DisableAbils" value="1"/>
-    <ModifyFlags index="DisableWeapons" value="1"/>
-    <ModifyFlags index="SuppressMoving" value="1"/>
-    <ModifyFlags index="SuppressTurning" value="1"/>
-  </Modification>
-  <BuffFlags index="Countdown" value="0"/>
-  <DamageResponse ModifyFraction="0.4">
-    <Kind index="Spell" value="0"/>
-    <Chance value="1"/>
-  </DamageResponse>
-  <Tooltip value="Behavior/Tooltip/VirtusLockdownMode"/>
 </CBehaviorBuff>
 <CBehaviorBuff id="VolatileDischargeAB">
   <InfoIcon value="Assets\Textures\btn-ability-Xayid-volatiledischarge.dds"/>
@@ -19114,14 +19200,6 @@
   <ConjoinedLink value="SpawnLarvaConjoined"/>
   <Flags index="KillSpawnedOnDeath" value="1"/>
 </CBehaviorSpawn>
-<CBehaviorCreepSource id="XayidStructureCreep">
-  <InfoFlags index="Hidden" value="1"/>
-  <EditorCategories value="Race:Xayid,AbilityorEffectType:Structures"/>
-  <Period value="0.8332"/>
-  <Start value="XayidStructureCreepSource"/>
-  <Birth value="Footprint4x4CreepSourceStart"/>
-  <Grown value="XayidStructureCreepSource"/>
-</CBehaviorCreepSource>
 <CBehaviorBuff id="MendBehavior">
   <Alignment value="Positive"/>
   <InfoIcon value="Assets\Textures\btn-ability-xayid-mendlingheal.dds"/>
@@ -19139,14 +19217,6 @@
   <PeriodicEffect value="SacrificialMutationHealSA"/>
   <ExpireEffect value="Suicide"/>
 </CBehaviorBuff>
-<CBehaviorCreepSource id="FeedingPoolCreep">
-  <InfoFlags index="Hidden" value="1"/>
-  <EditorCategories value="Race:Xayid,AbilityorEffectType:Structures"/>
-  <Period value="0.8332"/>
-  <Start value="XayidFeedingPoolCreepSource"/>
-  <Birth value="Footprint4x4CreepSourceStart"/>
-  <Grown value="XayidFeedingPoolCreepSource"/>
-</CBehaviorCreepSource>
 <CBehaviorBuff id="StagnatingBileStun">
   <Alignment value="Negative"/>
   <InfoIcon value="Assets\Textures\btn-ability-Xayid-stagnatingbile.dds"/>
@@ -19169,14 +19239,6 @@
   <FinalEffect value="AcidNestSDMG"/>
   <InfoFlags index="Hidden" value="1"/>
 </CBehaviorBuff>
-<CBehaviorCreepSource id="ScavengerNestCreep">
-  <InfoFlags index="Hidden" value="1"/>
-  <EditorCategories value="Race:Xayid,AbilityorEffectType:Structures"/>
-  <Period value="0.8332"/>
-  <Start value="ScavengerNestCreepSource"/>
-  <Birth value="Footprint4x4CreepSourceStart"/>
-  <Grown value="ScavengerNestCreepSource"/>
-</CBehaviorCreepSource>
 <CBehaviorBuff id="BilePitNotInRangeOfFeedingPool">
   <Alignment value="Negative"/>
   <InfoIcon value="Assets\Textures\btn-ability-zerg-explode.dds"/>
@@ -19251,6 +19313,7 @@
   <DisableValidatorArray value="NotUnderConstruction"/>
   <DisableValidatorArray value="UnitChargeLT3"/>
   <DisableValidatorArray value="NotContaminated"/>
+  <DisableValidatorArray value="NotHidden"/>
   <BuffFlags index="Countdown" value="0"/>
   <Duration value="35"/>
   <ExpireEffect value="AstralConduitEchoSet"/>
@@ -19330,6 +19393,7 @@
   <DisableValidatorArray value="NotUnderConstruction"/>
   <DisableValidatorArray value="UnitChargeLT2"/>
   <DisableValidatorArray value="NotContaminated"/>
+  <DisableValidatorArray value="NotHidden"/>
   <BuffFlags index="Countdown" value="0"/>
   <Duration value="56"/>
   <ExpireEffect value="OutletAurApeSet"/>
@@ -19357,6 +19421,7 @@
   <DisableValidatorArray value="NotUnderConstruction"/>
   <DisableValidatorArray value="UnitChargeLT2"/>
   <DisableValidatorArray value="NotContaminated"/>
+  <DisableValidatorArray value="NotHidden"/>
   <BuffFlags index="Countdown" value="0"/>
   <Duration value="56"/>
   <ExpireEffect value="EmpyreanHarParSet"/>
@@ -19443,6 +19508,7 @@
   <DisableValidatorArray value="NotUnderConstruction"/>
   <DisableValidatorArray value="UnitChargeLT2"/>
   <DisableValidatorArray value="NotContaminated"/>
+  <DisableValidatorArray value="NotHidden"/>
   <BuffFlags index="Countdown" value="0"/>
   <Duration value="63"/>
   <ExpireEffect value="AtriumIndMyrSet"/>
@@ -19525,6 +19591,8 @@
   <DisplayDuration index="Self" value="1"/>
   <DisableValidatorArray value="NotUnderConstruction"/>
   <DisableValidatorArray value="UnitChargeLT1"/>
+  <DisableValidatorArray value="NotContaminated"/>
+  <DisableValidatorArray value="NotHidden"/>
   <BuffFlags index="Countdown" value="0"/>
   <Duration value="77"/>
   <ExpireEffect value="ZenithParagonSet"/>
@@ -19567,6 +19635,8 @@
   <DisplayDuration index="Self" value="1"/>
   <DisableValidatorArray value="NotUnderConstruction"/>
   <DisableValidatorArray value="UnitChargeLT1"/>
+  <DisableValidatorArray value="NotContaminated"/>
+  <DisableValidatorArray value="NotHidden"/>
   <BuffFlags index="Countdown" value="0"/>
   <Duration value="70"/>
   <ExpireEffect value="PantheonTitanSet"/>
@@ -19578,6 +19648,7 @@
   <DisableValidatorArray value="NotUnderConstruction"/>
   <DisableValidatorArray value="UnitChargeLT2"/>
   <DisableValidatorArray value="NotContaminated"/>
+  <DisableValidatorArray value="NotHidden"/>
   <BuffFlags index="Countdown" value="0"/>
   <Duration value="49"/>
   <ExpireEffect value="FoundryUmbraSet"/>
@@ -19598,6 +19669,7 @@
   <DisableValidatorArray value="NotUnderConstruction"/>
   <DisableValidatorArray value="UnitChargeLT2"/>
   <DisableValidatorArray value="NotContaminated"/>
+  <DisableValidatorArray value="NotHidden"/>
   <BuffFlags index="Countdown" value="0"/>
   <Duration value="49"/>
   <ExpireEffect value="SanctumPulSubSet"/>
@@ -19676,6 +19748,7 @@
   <DisableValidatorArray value="NotUnderConstruction"/>
   <DisableValidatorArray value="UnitChargeLT3"/>
   <DisableValidatorArray value="NotContaminated"/>
+  <DisableValidatorArray value="NotHidden"/>
   <BuffFlags index="Countdown" value="0"/>
   <Duration value="28"/>
   <ExpireEffect value="EdificeParVolSet"/>
@@ -19755,6 +19828,8 @@
   <DisplayDuration index="Self" value="1"/>
   <DisableValidatorArray value="NotUnderConstruction"/>
   <DisableValidatorArray value="UnitChargeLT2"/>
+  <DisableValidatorArray value="NotContaminated"/>
+  <DisableValidatorArray value="NotHidden"/>
   <BuffFlags index="Countdown" value="0"/>
   <Duration value="56"/>
   <ExpireEffect value="ElysiumMeridianSet"/>
@@ -22425,8 +22500,9 @@
   <TimeScaleSource Value="Global"/>
   <EditorCategories value="Race:Dragon,AbilityorEffectType:Units"/>
 </CBehaviorBuff>
-<CBehaviorJump id="Hunter">
+<CBehaviorJump id="DragonHunter">
   <InfoFlags index="Hidden" value="1"/>
+  <EditorCategories value="Race:Dragon,AbilityorEffectType:Units"/>
   <TriggerHeightDeltaMin value="1.5"/>
   <TriggerHeightDeltaMax value="4.5"/>
   <InitiateRangeUp value="1.5"/>
@@ -22438,7 +22514,6 @@
   <LandAdjustmentDown value="1"/>
   <LandArrivalRange value="0.05"/>
   <LandCheckRadius value="5"/>
-  <EditorCategories value="Race:Dragon,AbilityorEffectType:Units"/>
 </CBehaviorJump>
 <CBehaviorBuff id="HunterTongueLash">
   <InfoFlags index="Hidden" value="1"/>

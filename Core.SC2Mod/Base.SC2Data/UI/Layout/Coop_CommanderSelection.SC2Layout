@@ -366,8 +366,8 @@
     </Frame>
 
     <Frame type="Button" name="CommanderButtonTemplate">
-        <Width val="110"/>
-        <Height val="135"/>
+        <Width val="100"/>
+        <Height val="130"/>
         <NormalImage val="NormalImage"/>
         <HoverImage val="HoverImage"/>
 
@@ -418,10 +418,10 @@
         </Frame>
 
         <Frame type="Portrait" name="CommanderPortrait">
-            <Anchor side="Top" relative="$parent" pos="Mid" offset="0"/>
-            <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0"/>
-            <Anchor side="Right" relative="$parent" pos="Mid" offset="0"/>
-            <Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
+            <Anchor side="Top" relative="$parent" pos="Mid" offset="-1"/>
+            <Anchor side="Bottom" relative="$parent" pos="Mid" offset="-1"/>
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="-1"/>
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="-1"/>
             <Width val="142"/>
             <Height val="142"/>
             <Alpha val="255"/>
@@ -1502,22 +1502,9 @@
         <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
 
 
-        <Frame type="Button" name="PlayAmon" template="VoidShared_GenericTemplates/StoryButtonTemplate">
-            <Anchor side="Bottom" relative="$parent/CommanderButton1" pos="Min" offset="-8"/>
-            <Anchor side="Left" relative="$parent/CommanderButton1" pos="Min" offset="0"/>
-            <Width val="180"/>
-            <Text val="Play Amon"/>
-        </Frame>
-
-        <Frame type="Button" name="PlayRandom" template="VoidShared_GenericTemplates/StoryButtonTemplate">
-            <Anchor side="Bottom" relative="$parent/CommanderButton6" pos="Min" offset="-8"/>
-            <Anchor side="Right" relative="$parent/CommanderButton6" pos="Max" offset="0"/>
-            <Width val="180"/>
-            <Text val="Play Random"/>
-        </Frame>
 
         <Frame type="Button" name="CommanderButton1" template="Coop_CommanderSelection/CommanderButtonTemplate">
-            <Anchor side="Top"  relative="$parent" pos="Min" offset="200"/>
+            <Anchor side="Top"  relative="$parent" pos="Min" offset="125"/>
             <Anchor side="Left" relative="$parent" pos="Mid" offset="-600"/>
         </Frame>
         <Frame type="Button" name="CommanderButton2" template="Coop_CommanderSelection/CommanderButtonTemplate">
@@ -1664,6 +1651,91 @@
         <Frame type="Button" name="CommanderButton36" template="Coop_CommanderSelection/CommanderButtonTemplate">
             <Anchor side="Top"  relative="$parent/CommanderButton35" pos="Min" offset="0"/>
             <Anchor side="Left" relative="$parent/CommanderButton35" pos="Max" offset="#CommanderButtonHorizontalSpacing"/>
+        </Frame>
+
+        <Frame type="Button" name="CommanderButton37" template="Coop_CommanderSelection/CommanderButtonTemplate">
+            <Anchor side="Top"  relative="$parent/CommanderButton31" pos="Max" offset="#CommanderButtonHorizontalSpacing"/>
+            <Anchor side="Left" relative="$parent/CommanderButton31" pos="Min" offset="0"/>
+        </Frame>
+        <Frame type="Button" name="CommanderButton38" template="Coop_CommanderSelection/CommanderButtonTemplate">
+            <Anchor side="Top"  relative="$parent/CommanderButton37" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent/CommanderButton37" pos="Max" offset="#CommanderButtonHorizontalSpacing"/>
+        </Frame>
+        <Frame type="Button" name="CommanderButton39" template="Coop_CommanderSelection/CommanderButtonTemplate">
+            <Anchor side="Top"  relative="$parent/CommanderButton38" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent/CommanderButton38" pos="Max" offset="#CommanderButtonHorizontalSpacing"/>
+        </Frame>
+        <Frame type="Button" name="CommanderButton40" template="Coop_CommanderSelection/CommanderButtonTemplate">
+            <Anchor side="Top"  relative="$parent/CommanderButton39" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent/CommanderButton39" pos="Max" offset="#CommanderButtonHorizontalSpacing"/>
+        </Frame>
+        <Frame type="Button" name="CommanderButton41" template="Coop_CommanderSelection/CommanderButtonTemplate">
+            <Anchor side="Top"  relative="$parent/CommanderButton40" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent/CommanderButton40" pos="Max" offset="#CommanderButtonHorizontalSpacing"/>
+        </Frame>
+        <Frame type="Button" name="CommanderButton42" template="Coop_CommanderSelection/CommanderButtonTemplate">
+            <Anchor side="Top"  relative="$parent/CommanderButton41" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent/CommanderButton41" pos="Max" offset="#CommanderButtonHorizontalSpacing"/>
+        </Frame>
+
+
+        <Frame type="Button" name="CommanderButton43" template="Coop_CommanderSelection/CommanderButtonTemplate">
+            <Anchor side="Top"  relative="$parent/CommanderButton1" pos="Min" offset="0"/>
+            <Anchor side="Right" relative="$parent/CommanderButton1" pos="Min" offset="-5"/>
+        </Frame>
+        <Frame type="Button" name="CommanderButton44" template="Coop_CommanderSelection/CommanderButtonTemplate">
+            <Anchor side="Top"  relative="$parent/CommanderButton43" pos="Max" offset="#CommanderButtonHorizontalSpacing"/>
+            <Anchor side="Left" relative="$parent/CommanderButton43" pos="Min" offset="0"/>
+        </Frame>
+        <Frame type="Button" name="CommanderButton45" template="Coop_CommanderSelection/CommanderButtonTemplate">
+            <Anchor side="Top"  relative="$parent/CommanderButton44" pos="Max" offset="#CommanderButtonHorizontalSpacing"/>
+            <Anchor side="Left" relative="$parent/CommanderButton44" pos="Min" offset="0"/>
+        </Frame>
+        <Frame type="Button" name="CommanderButton46" template="Coop_CommanderSelection/CommanderButtonTemplate">
+            <Anchor side="Top"  relative="$parent/CommanderButton45" pos="Max" offset="#CommanderButtonHorizontalSpacing"/>
+            <Anchor side="Left" relative="$parent/CommanderButton45" pos="Min" offset="0"/>
+        </Frame>
+        <Frame type="Button" name="CommanderButton47" template="Coop_CommanderSelection/CommanderButtonTemplate">
+            <Anchor side="Top"  relative="$parent/CommanderButton46" pos="Max" offset="#CommanderButtonHorizontalSpacing"/>
+            <Anchor side="Left" relative="$parent/CommanderButton46" pos="Min" offset="0"/>
+        </Frame>
+        <Frame type="Button" name="CommanderButton48" template="Coop_CommanderSelection/CommanderButtonTemplate">
+            <Anchor side="Top"  relative="$parent/CommanderButton47" pos="Max" offset="#CommanderButtonHorizontalSpacing"/>
+            <Anchor side="Left" relative="$parent/CommanderButton47" pos="Min" offset="0"/>
+        </Frame>
+        <Frame type="Button" name="CommanderButton49" template="Coop_CommanderSelection/CommanderButtonTemplate">
+            <Anchor side="Top"  relative="$parent/CommanderButton48" pos="Max" offset="#CommanderButtonHorizontalSpacing"/>
+            <Anchor side="Left" relative="$parent/CommanderButton48" pos="Min" offset="0"/>
+        </Frame>
+
+
+        <Frame type="Button" name="CommanderButton50" template="Coop_CommanderSelection/CommanderButtonTemplate">
+            <Anchor side="Top"  relative="$parent/CommanderButton6" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent/CommanderButton6" pos="Max" offset="#CommanderButtonHorizontalSpacing"/>
+        </Frame>
+        <Frame type="Button" name="CommanderButton51" template="Coop_CommanderSelection/CommanderButtonTemplate">
+            <Anchor side="Top"  relative="$parent/CommanderButton50" pos="Max" offset="#CommanderButtonHorizontalSpacing"/>
+            <Anchor side="Left" relative="$parent/CommanderButton50" pos="Min" offset="0"/>
+        </Frame>
+        <Frame type="Button" name="CommanderButton52" template="Coop_CommanderSelection/CommanderButtonTemplate">
+            <Anchor side="Top"  relative="$parent/CommanderButton51" pos="Max" offset="#CommanderButtonHorizontalSpacing"/>
+            <Anchor side="Left" relative="$parent/CommanderButton51" pos="Min" offset="0"/>
+        </Frame>
+        <Frame type="Button" name="CommanderButton53" template="Coop_CommanderSelection/CommanderButtonTemplate">
+            <Anchor side="Top"  relative="$parent/CommanderButton52" pos="Max" offset="#CommanderButtonHorizontalSpacing"/>
+            <Anchor side="Left" relative="$parent/CommanderButton52" pos="Min" offset="0"/>
+        </Frame>
+        <Frame type="Button" name="CommanderButton54" template="Coop_CommanderSelection/CommanderButtonTemplate">
+            <Anchor side="Top"  relative="$parent/CommanderButton53" pos="Max" offset="#CommanderButtonHorizontalSpacing"/>
+            <Anchor side="Left" relative="$parent/CommanderButton53" pos="Min" offset="0"/>
+        </Frame>
+        <Frame type="Button" name="CommanderButton55" template="Coop_CommanderSelection/CommanderButtonTemplate">
+            <Anchor side="Top"  relative="$parent/CommanderButton54" pos="Max" offset="#CommanderButtonHorizontalSpacing"/>
+            <Anchor side="Left" relative="$parent/CommanderButton54" pos="Min" offset="0"/>
+        </Frame>
+        <Frame type="Button" name="CommanderButton56" template="Coop_CommanderSelection/CommanderButtonTemplate">
+            <Anchor side="Top"  relative="$parent/CommanderButton55" pos="Max" offset="#CommanderButtonHorizontalSpacing"/>
+            <Anchor side="Left" relative="$parent/CommanderButton55" pos="Min" offset="0"/>
         </Frame>
 
         <Frame type="Button" name="CommanderButtonAmon1" template="Coop_CommanderSelection/AmonButtonTemplate">
@@ -2017,9 +2089,25 @@
             <HoverSound val="@UI_LaunchButtonHover"/>
         </Frame>
 
+
+
+        <Frame type="Button" name="PlayAmon" template="VoidShared_GenericTemplates/StoryButtonTemplate">
+            <Anchor side="Top" relative="$parent/ReadyButton" pos="Min" offset="8"/>
+            <Anchor side="Right" relative="$parent/ReadyButton" pos="Min" offset="-8"/>
+            <Width val="200"/>
+            <Text val="Play Amon"/>
+        </Frame>
+
+        <Frame type="Button" name="PlayRandom" template="VoidShared_GenericTemplates/StoryButtonTemplate">
+            <Anchor side="Top" relative="$parent/ReadyButton" pos="Min" offset="8"/>
+            <Anchor side="Left" relative="$parent/ReadyButton" pos="Max" offset="8"/>
+            <Width val="200"/>
+            <Text val="Play Random"/>
+        </Frame>
+
         <Frame type="Label" name="DiscordURL">
             <Anchor side="Bottom" relative="$parent" pos="Max" offset="-10"/>
-            <Anchor side="Right" relative="$parent" pos="Max" offset="-300"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-280"/>
             <Text val="Join Our DISCORD server: discord.gg/2RbcjRkddw"/>
             <Visible val="True"/>
             <Style val="Void_MissionObjective2D"/>
