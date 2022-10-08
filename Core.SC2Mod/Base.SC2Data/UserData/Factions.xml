@@ -66,12 +66,6 @@
             <GameLinkType value="Race"/>
             <EditorColumn value="4"/>
         </Fields>
-        <Fields>
-            <Id value="CategoryUnits"/>
-            <Type value="User"/>
-            <UserType value="FactionsUnitCategories"/>
-            <EditorColumn value="1"/>
-        </Fields>
         <Fields Id="Icon" Type="Image" EditorColumn="3"/>
         <Fields>
             <Id value="VORace"/>
@@ -102,6 +96,12 @@
         <Fields Id="UnitTownHall" Type="Unit" EditorColumn="11"/>
         <Fields Id="UnitRefinery" Type="Unit" EditorColumn="15"/>
         <Fields Id="Category" Type="String" EditorColumn="2"/>
+        <Fields>
+            <Id value="Console"/>
+            <Type value="GameLink"/>
+            <GameLinkType value="Commander"/>
+            <EditorColumn value="1"/>
+        </Fields>
         <Instances Id="[Default]">
             <GameLink GameLink="Neut">
                 <Field Id="Objects"/>
@@ -112,9 +112,6 @@
             <Int Int="100">
                 <Field Id="Chance"/>
             </Int>
-            <User Type="FactionsUnitCategories" Instance="[Default]">
-                <Field Id="CategoryUnits"/>
-            </User>
         </Instances>
         <Instances Id="Random">
             <Image Image="Assets\Textures\sc2_ui_loadingscreen_playercard_raceindicator_random.dds">
@@ -168,6 +165,15 @@
             <GameLink GameLink="Terr">
                 <Field Id="VORace"/>
             </GameLink>
+            <GameLink GameLink="Terr">
+                <Field Id="MainRace"/>
+            </GameLink>
+            <GameLink GameLink="Terr">
+                <Field Id="DropType"/>
+            </GameLink>
+            <GameLink GameLink="UI_ConsoleTerran_Default">
+                <Field Id="Console"/>
+            </GameLink>
             <Image Image="Assets\Textures\icon-1v1-terran.dds">
                 <Field Id="Icon"/>
             </Image>
@@ -177,33 +183,6 @@
             <Int Int="1">
                 <Field Id="Standard"/>
             </Int>
-            <String String="Terran">
-                <Field Id="Category"/>
-            </String>
-            <Text Text="UserData/Factions/Terran_Name">
-                <Field Id="Name"/>
-            </Text>
-            <Unit Unit="SCV">
-                <Field Id="UnitPeon"/>
-            </Unit>
-            <Unit Unit="CommandCenter">
-                <Field Id="UnitTownHall"/>
-            </Unit>
-            <Unit Unit="Refinery">
-                <Field Id="UnitRefinery"/>
-            </Unit>
-            <User Type="FactionsUnitCategories" Instance="Terran">
-                <Field Id="CategoryUnits"/>
-            </User>
-            <User Type="Commanders" Instance="Terran">
-                <Field Id="Commander"/>
-            </User>
-            <GameLink GameLink="Terr">
-                <Field Id="MainRace"/>
-            </GameLink>
-            <GameLink GameLink="Terr">
-                <Field Id="DropType"/>
-            </GameLink>
             <Int Int="2">
                 <Field Id="ZZ_StockCount4"/>
             </Int>
@@ -240,6 +219,21 @@
             <Int Int="2">
                 <Field Id="ZZ_StockCount4" Index="3"/>
             </Int>
+            <String String="Terran">
+                <Field Id="Category"/>
+            </String>
+            <Text Text="UserData/Factions/Terran_Name">
+                <Field Id="Name"/>
+            </Text>
+            <Unit Unit="SCV">
+                <Field Id="UnitPeon"/>
+            </Unit>
+            <Unit Unit="CommandCenter">
+                <Field Id="UnitTownHall"/>
+            </Unit>
+            <Unit Unit="Refinery">
+                <Field Id="UnitRefinery"/>
+            </Unit>
             <Unit Unit="Ghost">
                 <Field Id="UnitCaster"/>
             </Unit>
@@ -303,6 +297,9 @@
             <Unit Unit="RefineryRich">
                 <Field Id="UnitVespene" Index="2"/>
             </Unit>
+            <User Type="Commanders" Instance="Terran">
+                <Field Id="Commander"/>
+            </User>
         </Instances>
         <Instances Id="Zerg">
             <GameLink GameLink="Zerg">
@@ -316,6 +313,15 @@
             </GameLink>
             <GameLink GameLink="Zerg">
                 <Field Id="VORace"/>
+            </GameLink>
+            <GameLink GameLink="Zerg">
+                <Field Id="MainRace"/>
+            </GameLink>
+            <GameLink GameLink="Zerg">
+                <Field Id="DropType"/>
+            </GameLink>
+            <GameLink GameLink="UI_ConsoleZerg_Default">
+                <Field Id="Console"/>
             </GameLink>
             <Image Image="Assets\Textures\icon-1v1-zerg.dds">
                 <Field Id="Icon"/>
@@ -344,19 +350,6 @@
             <Unit Unit="Extractor">
                 <Field Id="UnitRefinery"/>
             </Unit>
-            <User Type="FactionsUnitCategories" Instance="Zerg">
-                <Field Id="CategoryUnits"/>
-            </User>
-            <User Type="Commanders" Instance="Zerg">
-                <Field Id="Commander"/>
-            </User>
-
-            <GameLink GameLink="Zerg">
-                <Field Id="MainRace"/>
-            </GameLink>
-            <GameLink GameLink="Zerg">
-                <Field Id="DropType"/>
-            </GameLink>
             <Unit Unit="Infestor">
                 <Field Id="UnitCaster"/>
             </Unit>
@@ -420,6 +413,9 @@
             <Unit Unit="Larva">
                 <Field Id="UnitFood" Index="1"/>
             </Unit>
+            <User Type="Commanders" Instance="Zerg">
+                <Field Id="Commander"/>
+            </User>
         </Instances>
         <Instances Id="Protoss">
             <GameLink GameLink="Prot">
@@ -433,6 +429,15 @@
             </GameLink>
             <GameLink GameLink="Prot">
                 <Field Id="VORace"/>
+            </GameLink>
+            <GameLink GameLink="Prot">
+                <Field Id="MainRace"/>
+            </GameLink>
+            <GameLink GameLink="Prot">
+                <Field Id="DropType"/>
+            </GameLink>
+            <GameLink GameLink="UI_ConsoleProtoss_Default">
+                <Field Id="Console"/>
             </GameLink>
             <Image Image="Assets\Textures\icon-1v1-protoss.dds">
                 <Field Id="Icon"/>
@@ -458,18 +463,6 @@
             <Unit Unit="Assimilator">
                 <Field Id="UnitRefinery"/>
             </Unit>
-            <User Type="FactionsUnitCategories" Instance="Protoss">
-                <Field Id="CategoryUnits"/>
-            </User>
-            <User Type="Commanders" Instance="Protoss">
-                <Field Id="Commander"/>
-            </User>
-            <GameLink GameLink="Prot">
-                <Field Id="MainRace"/>
-            </GameLink>
-            <GameLink GameLink="Prot">
-                <Field Id="DropType"/>
-            </GameLink>
             <Unit Unit="HighTemplar">
                 <Field Id="UnitCaster"/>
             </Unit>
@@ -524,6 +517,9 @@
             <Unit Unit="AutomatedAssimilator">
                 <Field Id="UnitVespene" Index="5"/>
             </Unit>
+            <User Type="Commanders" Instance="Protoss">
+                <Field Id="Commander"/>
+            </User>
         </Instances>
         <Instances Id="IhanRii">
             <GameLink GameLink="Prot">
@@ -537,6 +533,15 @@
             </GameLink>
             <GameLink GameLink="Prot">
                 <Field Id="VORace"/>
+            </GameLink>
+            <GameLink GameLink="Prot">
+                <Field Id="DropType"/>
+            </GameLink>
+            <GameLink GameLink="Prot">
+                <Field Id="MainRace"/>
+            </GameLink>
+            <GameLink GameLink="UI_ConsoleProtoss_Ihanrii">
+                <Field Id="Console"/>
             </GameLink>
             <Image Image="Assets\Factions\XelNagaRemnantsLogo.dds">
                 <Field Id="Icon"/>
@@ -562,24 +567,6 @@
             <Unit Unit="AutomatedAssimilatorZeratul">
                 <Field Id="UnitRefinery"/>
             </Unit>
-            <User Type="Factions" Instance="Protoss">
-                <Field Id="ReplacementFaction"/>
-            </User>
-            <User Type="Skins" Instance="IhanRii">
-                <Field Id="Skins"/>
-            </User>
-            <User Type="FactionsUnitCategories" Instance="IhanRii">
-                <Field Id="CategoryUnits"/>
-            </User>
-            <User Type="Commanders" Instance="ProtossZeratul">
-                <Field Id="Commander"/>
-            </User>
-            <GameLink GameLink="Prot">
-                <Field Id="DropType"/>
-            </GameLink>
-            <GameLink GameLink="Prot">
-                <Field Id="MainRace"/>
-            </GameLink>
             <Unit Unit="ZeratulXelNagaChargedCrystalCyan">
                 <Field Id="UnitCaster"/>
             </Unit>
@@ -616,6 +603,15 @@
             <Unit Unit="ZeratulKhaydarinMonolith">
                 <Field Id="UnitDefense" Index="2"/>
             </Unit>
+            <User Type="Factions" Instance="Protoss">
+                <Field Id="ReplacementFaction"/>
+            </User>
+            <User Type="Skins" Instance="IhanRii">
+                <Field Id="Skins"/>
+            </User>
+            <User Type="Commanders" Instance="ProtossZeratul">
+                <Field Id="Commander"/>
+            </User>
         </Instances>
         <Instances Id="Taldarim">
             <GameLink GameLink="ProtT">
@@ -629,6 +625,12 @@
             </GameLink>
             <GameLink GameLink="Prot">
                 <Field Id="VORace"/>
+            </GameLink>
+            <GameLink GameLink="Prot">
+                <Field Id="MainRace"/>
+            </GameLink>
+            <GameLink GameLink="UI_ConsoleProtoss_Forged">
+                <Field Id="Console"/>
             </GameLink>
             <Image Image="Assets\Factions\TaldarimLogo.dds">
                 <Field Id="Icon"/>
@@ -651,21 +653,6 @@
             <Unit Unit="Assimilator">
                 <Field Id="UnitRefinery"/>
             </Unit>
-            <User Type="Skins" Instance="Taldarim">
-                <Field Id="Skins"/>
-            </User>
-            <User Type="FactionsUnitCategories" Instance="Taldarim">
-                <Field Id="CategoryUnits"/>
-            </User>
-            <User Type="Factions" Instance="Protoss">
-                <Field Id="ReplacementFaction"/>
-            </User>
-            <User Type="Commanders" Instance="ProtossAlarak">
-                <Field Id="Commander"/>
-            </User>
-            <GameLink GameLink="Prot">
-                <Field Id="MainRace"/>
-            </GameLink>
             <Unit Unit="HighTemplarTaldarim">
                 <Field Id="UnitCaster"/>
             </Unit>
@@ -714,6 +701,15 @@
             <Unit Unit="ShieldBattery">
                 <Field Id="UnitDefense" Index="1"/>
             </Unit>
+            <User Type="Skins" Instance="Taldarim">
+                <Field Id="Skins"/>
+            </User>
+            <User Type="Factions" Instance="Protoss">
+                <Field Id="ReplacementFaction"/>
+            </User>
+            <User Type="Commanders" Instance="ProtossAlarak">
+                <Field Id="Commander"/>
+            </User>
         </Instances>
         <Instances Id="Purifiers">
             <GameLink GameLink="Prot">
@@ -727,6 +723,15 @@
             </GameLink>
             <GameLink GameLink="Prot">
                 <Field Id="VORace"/>
+            </GameLink>
+            <GameLink GameLink="Prot">
+                <Field Id="DropType"/>
+            </GameLink>
+            <GameLink GameLink="Prot">
+                <Field Id="MainRace"/>
+            </GameLink>
+            <GameLink GameLink="UI_ConsoleProtoss_Fenix">
+                <Field Id="Console"/>
             </GameLink>
             <Image Image="Assets\Factions\PurifierLogo.dds">
                 <Field Id="Icon"/>
@@ -755,24 +760,6 @@
             <Unit Unit="Assimilator">
                 <Field Id="UnitRefinery"/>
             </Unit>
-            <User Type="Factions" Instance="Protoss">
-                <Field Id="ReplacementFaction"/>
-            </User>
-            <User Type="Skins" Instance="Purifiers">
-                <Field Id="Skins"/>
-            </User>
-            <User Type="FactionsUnitCategories" Instance="Purifiers">
-                <Field Id="CategoryUnits"/>
-            </User>
-            <User Type="Commanders" Instance="ProtossFenix">
-                <Field Id="Commander"/>
-            </User>
-            <GameLink GameLink="Prot">
-                <Field Id="DropType"/>
-            </GameLink>
-            <GameLink GameLink="Prot">
-                <Field Id="MainRace"/>
-            </GameLink>
             <Unit Unit="SentryPurifier">
                 <Field Id="UnitCaster"/>
             </Unit>
@@ -821,6 +808,15 @@
             <Unit Unit="KhaydarinMonolith">
                 <Field Id="UnitDefense" Index="2"/>
             </Unit>
+            <User Type="Factions" Instance="Protoss">
+                <Field Id="ReplacementFaction"/>
+            </User>
+            <User Type="Skins" Instance="Purifiers">
+                <Field Id="Skins"/>
+            </User>
+            <User Type="Commanders" Instance="ProtossFenix">
+                <Field Id="Commander"/>
+            </User>
         </Instances>
         <Instances Id="Marauders">
             <GameLink GameLink="TerrM">
@@ -834,6 +830,15 @@
             </GameLink>
             <GameLink GameLink="Terr">
                 <Field Id="VORace"/>
+            </GameLink>
+            <GameLink GameLink="Terr">
+                <Field Id="DropType"/>
+            </GameLink>
+            <GameLink GameLink="Terr">
+                <Field Id="MainRace"/>
+            </GameLink>
+            <GameLink GameLink="UI_ConsoleTerran_Horner">
+                <Field Id="Console"/>
             </GameLink>
             <Image Image="Assets\Factions\MirasMaraudersLogo.dds">
                 <Field Id="Icon"/>
@@ -862,24 +867,6 @@
             <Unit Unit="Refinery">
                 <Field Id="UnitRefinery"/>
             </Unit>
-            <User Type="Factions" Instance="Terran">
-                <Field Id="ReplacementFaction"/>
-            </User>
-            <User Type="Skins" Instance="[Default]">
-                <Field Id="Skins"/>
-            </User>
-            <User Type="FactionsUnitCategories" Instance="Marauders">
-                <Field Id="CategoryUnits"/>
-            </User>
-            <User Type="Commanders" Instance="TerranHorner">
-                <Field Id="Commander"/>
-            </User>
-            <GameLink GameLink="Terr">
-                <Field Id="DropType"/>
-            </GameLink>
-            <GameLink GameLink="Terr">
-                <Field Id="MainRace"/>
-            </GameLink>
             <Unit Unit="HHRaven">
                 <Field Id="UnitDetector"/>
             </Unit>
@@ -916,6 +903,15 @@
             <Unit Unit="Bunker">
                 <Field Id="UnitDefense" Index="2"/>
             </Unit>
+            <User Type="Factions" Instance="Terran">
+                <Field Id="ReplacementFaction"/>
+            </User>
+            <User Type="Skins" Instance="[Default]">
+                <Field Id="Skins"/>
+            </User>
+            <User Type="Commanders" Instance="TerranHorner">
+                <Field Id="Commander"/>
+            </User>
         </Instances>
         <Instances Id="CovertOps">
             <GameLink GameLink="Terr">
@@ -929,6 +925,15 @@
             </GameLink>
             <GameLink GameLink="Terr">
                 <Field Id="VORace"/>
+            </GameLink>
+            <GameLink GameLink="Terr">
+                <Field Id="DropType"/>
+            </GameLink>
+            <GameLink GameLink="Terr">
+                <Field Id="MainRace"/>
+            </GameLink>
+            <GameLink GameLink="UI_ConsoleTerran_CovertOps">
+                <Field Id="Console"/>
             </GameLink>
             <Image Image="Assets\Factions\CovertOpsLogo.dds">
                 <Field Id="Icon"/>
@@ -954,24 +959,6 @@
             <Unit Unit="AutomatedRefinery">
                 <Field Id="UnitRefinery"/>
             </Unit>
-            <User Type="Skins" Instance="CovertOps">
-                <Field Id="Skins"/>
-            </User>
-            <User Type="Factions" Instance="Terran">
-                <Field Id="ReplacementFaction"/>
-            </User>
-            <User Type="FactionsUnitCategories" Instance="CovertOps">
-                <Field Id="CategoryUnits"/>
-            </User>
-            <User Type="Commanders" Instance="TerranNova">
-                <Field Id="Commander"/>
-            </User>
-            <GameLink GameLink="Terr">
-                <Field Id="DropType"/>
-            </GameLink>
-            <GameLink GameLink="Terr">
-                <Field Id="MainRace"/>
-            </GameLink>
             <Unit Unit="Ghost_BlackOps">
                 <Field Id="UnitCaster"/>
             </Unit>
@@ -1026,6 +1013,15 @@
             <Unit Unit="MissileTurret">
                 <Field Id="UnitDefense" Index="1"/>
             </Unit>
+            <User Type="Skins" Instance="CovertOps">
+                <Field Id="Skins"/>
+            </User>
+            <User Type="Factions" Instance="Terran">
+                <Field Id="ReplacementFaction"/>
+            </User>
+            <User Type="Commanders" Instance="TerranNova">
+                <Field Id="Commander"/>
+            </User>
         </Instances>
         <Instances Id="Dominion">
             <GameLink GameLink="Terr">
@@ -1039,6 +1035,15 @@
             </GameLink>
             <GameLink GameLink="Terr">
                 <Field Id="VORace"/>
+            </GameLink>
+            <GameLink GameLink="Terr">
+                <Field Id="MainRace"/>
+            </GameLink>
+            <GameLink GameLink="Terr">
+                <Field Id="DropType"/>
+            </GameLink>
+            <GameLink GameLink="UI_ConsoleTerran_Imperial">
+                <Field Id="Console"/>
             </GameLink>
             <Image>
                 <Field Id="IconWaves"/>
@@ -1061,24 +1066,6 @@
             <Unit Unit="RefineryMengsk">
                 <Field Id="UnitRefinery"/>
             </Unit>
-            <User Type="Skins" Instance="[Default]">
-                <Field Id="Skins"/>
-            </User>
-            <User Type="FactionsUnitCategories" Instance="Dominion">
-                <Field Id="CategoryUnits"/>
-            </User>
-            <User Type="Factions" Instance="Terran">
-                <Field Id="ReplacementFaction"/>
-            </User>
-            <User Type="Commanders" Instance="TerranMengsk">
-                <Field Id="Commander"/>
-            </User>
-            <GameLink GameLink="Terr">
-                <Field Id="MainRace"/>
-            </GameLink>
-            <GameLink GameLink="Terr">
-                <Field Id="DropType"/>
-            </GameLink>
             <Unit Unit="GhostMengsk">
                 <Field Id="UnitCaster"/>
             </Unit>
@@ -1115,6 +1102,15 @@
             <Unit Unit="RefineryMengsk">
                 <Field Id="UnitVespene"/>
             </Unit>
+            <User Type="Skins" Instance="[Default]">
+                <Field Id="Skins"/>
+            </User>
+            <User Type="Factions" Instance="Terran">
+                <Field Id="ReplacementFaction"/>
+            </User>
+            <User Type="Commanders" Instance="TerranMengsk">
+                <Field Id="Commander"/>
+            </User>
         </Instances>
         <Instances Id="Infested">
             <GameLink GameLink="Terr">
@@ -1128,6 +1124,15 @@
             </GameLink>
             <GameLink GameLink="Zerg">
                 <Field Id="VORace"/>
+            </GameLink>
+            <GameLink GameLink="Terr">
+                <Field Id="MainRace"/>
+            </GameLink>
+            <GameLink GameLink="Zerg">
+                <Field Id="DropType"/>
+            </GameLink>
+            <GameLink GameLink="UI_ConsoleZerg_RCZ">
+                <Field Id="Console"/>
             </GameLink>
             <Image>
                 <Field Id="IconWaves"/>
@@ -1150,24 +1155,6 @@
             <Unit Unit="SIRefinery">
                 <Field Id="UnitRefinery"/>
             </Unit>
-            <User Type="Skins" Instance="[Default]">
-                <Field Id="Skins"/>
-            </User>
-            <User Type="FactionsUnitCategories" Instance="Infested">
-                <Field Id="CategoryUnits"/>
-            </User>
-            <User Type="Factions" Instance="Terran">
-                <Field Id="ReplacementFaction"/>
-            </User>
-            <User Type="Commanders" Instance="ZergStukov">
-                <Field Id="Commander"/>
-            </User>
-            <GameLink GameLink="Terr">
-                <Field Id="MainRace"/>
-            </GameLink>
-            <GameLink GameLink="Zerg">
-                <Field Id="DropType"/>
-            </GameLink>
             <Unit Unit="Infestor">
                 <Field Id="UnitCaster"/>
             </Unit>
@@ -1207,6 +1194,15 @@
             <Unit Unit="SIMissileTurret">
                 <Field Id="UnitDefense" Index="1"/>
             </Unit>
+            <User Type="Skins" Instance="[Default]">
+                <Field Id="Skins"/>
+            </User>
+            <User Type="Factions" Instance="Terran">
+                <Field Id="ReplacementFaction"/>
+            </User>
+            <User Type="Commanders" Instance="ZergStukov">
+                <Field Id="Commander"/>
+            </User>
         </Instances>
         <Instances Id="Simulant">
             <GameLink GameLink="ZergM">
@@ -1214,6 +1210,15 @@
             </GameLink>
             <GameLink GameLink="Zerg">
                 <Field Id="VORace"/>
+            </GameLink>
+            <GameLink GameLink="Terr">
+                <Field Id="DropType"/>
+            </GameLink>
+            <GameLink GameLink="Zerg">
+                <Field Id="MainRace"/>
+            </GameLink>
+            <GameLink GameLink="UI_ConsoleZerg_Mecha">
+                <Field Id="Console"/>
             </GameLink>
             <Image Image="Assets\Factions\SimulantSwarmLogo.dds">
                 <Field Id="Icon"/>
@@ -1242,24 +1247,6 @@
             <Unit Unit="ExtractorStetmann">
                 <Field Id="UnitRefinery"/>
             </Unit>
-            <User Type="Skins" Instance="[Default]">
-                <Field Id="Skins"/>
-            </User>
-            <User Type="Factions" Instance="Zerg">
-                <Field Id="ReplacementFaction"/>
-            </User>
-            <User Type="FactionsUnitCategories" Instance="Simulant">
-                <Field Id="CategoryUnits"/>
-            </User>
-            <User Type="Commanders" Instance="Stetmann">
-                <Field Id="Commander"/>
-            </User>
-            <GameLink GameLink="Terr">
-                <Field Id="DropType"/>
-            </GameLink>
-            <GameLink GameLink="Zerg">
-                <Field Id="MainRace"/>
-            </GameLink>
             <Unit Unit="InfestorStetmann">
                 <Field Id="UnitCaster"/>
             </Unit>
@@ -1302,6 +1289,15 @@
             <Unit Unit="LarvaStetmann">
                 <Field Id="UnitFood" Index="1"/>
             </Unit>
+            <User Type="Skins" Instance="[Default]">
+                <Field Id="Skins"/>
+            </User>
+            <User Type="Factions" Instance="Zerg">
+                <Field Id="ReplacementFaction"/>
+            </User>
+            <User Type="Commanders" Instance="Stetmann">
+                <Field Id="Commander"/>
+            </User>
         </Instances>
         <Instances Id="Primal">
             <GameLink GameLink="Zerg">
@@ -1315,6 +1311,15 @@
             </GameLink>
             <GameLink GameLink="Zerg">
                 <Field Id="VORace"/>
+            </GameLink>
+            <GameLink GameLink="Zerg">
+                <Field Id="DropType"/>
+            </GameLink>
+            <GameLink GameLink="Zerg">
+                <Field Id="MainRace"/>
+            </GameLink>
+            <GameLink GameLink="UI_ConsoleZerg_Dehaka">
+                <Field Id="Console"/>
             </GameLink>
             <Image Image="Assets\Factions\PrimalZergLogo.dds">
                 <Field Id="Icon"/>
@@ -1343,24 +1348,6 @@
             <Unit Unit="Extractor">
                 <Field Id="UnitRefinery"/>
             </Unit>
-            <User Type="FactionsUnitCategories" Instance="Primal">
-                <Field Id="CategoryUnits"/>
-            </User>
-            <User Type="Skins" Instance="Primal">
-                <Field Id="Skins"/>
-            </User>
-            <User Type="Factions" Instance="Zerg">
-                <Field Id="ReplacementFaction"/>
-            </User>
-            <User Type="Commanders" Instance="ZergDehaka">
-                <Field Id="Commander"/>
-            </User>
-            <GameLink GameLink="Zerg">
-                <Field Id="DropType"/>
-            </GameLink>
-            <GameLink GameLink="Zerg">
-                <Field Id="MainRace"/>
-            </GameLink>
             <Unit Unit="Dehaka">
                 <Field Id="UnitCaster"/>
             </Unit>
@@ -1400,6 +1387,15 @@
             <Unit Unit="DehakaNydusDestroyer">
                 <Field Id="UnitDefense"/>
             </Unit>
+            <User Type="Skins" Instance="Primal">
+                <Field Id="Skins"/>
+            </User>
+            <User Type="Factions" Instance="Zerg">
+                <Field Id="ReplacementFaction"/>
+            </User>
+            <User Type="Commanders" Instance="ZergDehaka">
+                <Field Id="Commander"/>
+            </User>
         </Instances>
         <Instances Id="Evolved">
             <GameLink GameLink="Zerg">
@@ -1414,12 +1410,33 @@
             <GameLink GameLink="Zerg">
                 <Field Id="VORace"/>
             </GameLink>
+            <GameLink GameLink="Zerg">
+                <Field Id="MainRace"/>
+            </GameLink>
+            <GameLink GameLink="Zerg">
+                <Field Id="DropType"/>
+            </GameLink>
+            <GameLink GameLink="UI_ConsoleZerg_Abathur">
+                <Field Id="Console"/>
+            </GameLink>
             <Image Image="Assets\Factions\AbathursRenegadeBroodsLogo.dds">
                 <Field Id="Icon"/>
             </Image>
             <Image>
                 <Field Id="IconWaves"/>
             </Image>
+            <Int Int="3">
+                <Field Id="ZZ_StockCount1"/>
+            </Int>
+            <Int Int="4">
+                <Field Id="ZZ_StockCount2"/>
+            </Int>
+            <Int Int="5">
+                <Field Id="ZZ_StockCount3"/>
+            </Int>
+            <Int Int="6">
+                <Field Id="ZZ_StockCount4"/>
+            </Int>
             <String String="Zerg">
                 <Field Id="Category"/>
             </String>
@@ -1438,36 +1455,6 @@
             <Unit Unit="Overlord">
                 <Field Id="UnitExtra"/>
             </Unit>
-            <User Type="Skins" Instance="[Default]">
-                <Field Id="Skins"/>
-            </User>
-            <User Type="FactionsUnitCategories" Instance="ZergEvolved">
-                <Field Id="CategoryUnits"/>
-            </User>
-            <User Type="Factions" Instance="Zerg">
-                <Field Id="ReplacementFaction"/>
-            </User>
-            <User Type="Commanders" Instance="Abathur">
-                <Field Id="Commander"/>
-            </User>
-            <GameLink GameLink="Zerg">
-                <Field Id="MainRace"/>
-            </GameLink>
-            <GameLink GameLink="Zerg">
-                <Field Id="DropType"/>
-            </GameLink>
-            <Int Int="3">
-                <Field Id="ZZ_StockCount1"/>
-            </Int>
-            <Int Int="4">
-                <Field Id="ZZ_StockCount2"/>
-            </Int>
-            <Int Int="5">
-                <Field Id="ZZ_StockCount3"/>
-            </Int>
-            <Int Int="6">
-                <Field Id="ZZ_StockCount4"/>
-            </Int>
             <Unit Unit="DefilerMP">
                 <Field Id="UnitCaster"/>
             </Unit>
@@ -1534,6 +1521,15 @@
             <Unit Unit="Larva">
                 <Field Id="UnitFood" Index="1"/>
             </Unit>
+            <User Type="Skins" Instance="[Default]">
+                <Field Id="Skins"/>
+            </User>
+            <User Type="Factions" Instance="Zerg">
+                <Field Id="ReplacementFaction"/>
+            </User>
+            <User Type="Commanders" Instance="Abathur">
+                <Field Id="Commander"/>
+            </User>
         </Instances>
         <Instances Id="Leviathan">
             <GameLink GameLink="Zerg">
@@ -1548,12 +1544,33 @@
             <GameLink GameLink="Zerg">
                 <Field Id="VORace"/>
             </GameLink>
+            <GameLink GameLink="Zerg">
+                <Field Id="MainRace"/>
+            </GameLink>
+            <GameLink GameLink="Zerg">
+                <Field Id="DropType"/>
+            </GameLink>
+            <GameLink GameLink="UI_ConsoleZerg_Zagara">
+                <Field Id="Console"/>
+            </GameLink>
             <Image Image="Assets\Factions\LeviathanBroodLogo.dds">
                 <Field Id="Icon"/>
             </Image>
             <Image>
                 <Field Id="IconWaves"/>
             </Image>
+            <Int Int="3">
+                <Field Id="ZZ_StockCount1"/>
+            </Int>
+            <Int Int="4">
+                <Field Id="ZZ_StockCount2"/>
+            </Int>
+            <Int Int="5">
+                <Field Id="ZZ_StockCount3"/>
+            </Int>
+            <Int Int="6">
+                <Field Id="ZZ_StockCount4"/>
+            </Int>
             <String String="Zerg">
                 <Field Id="Category"/>
             </String>
@@ -1572,36 +1589,6 @@
             <Unit Unit="Overlord">
                 <Field Id="UnitExtra"/>
             </Unit>
-            <User Type="Factions" Instance="Zerg">
-                <Field Id="ReplacementFaction"/>
-            </User>
-            <User Type="Skins" Instance="[Default]">
-                <Field Id="Skins"/>
-            </User>
-            <User Type="FactionsUnitCategories" Instance="ZergLeviathan">
-                <Field Id="CategoryUnits"/>
-            </User>
-            <User Type="Commanders" Instance="Zagara">
-                <Field Id="Commander"/>
-            </User>
-            <GameLink GameLink="Zerg">
-                <Field Id="MainRace"/>
-            </GameLink>
-            <GameLink GameLink="Zerg">
-                <Field Id="DropType"/>
-            </GameLink>
-            <Int Int="3">
-                <Field Id="ZZ_StockCount1"/>
-            </Int>
-            <Int Int="4">
-                <Field Id="ZZ_StockCount2"/>
-            </Int>
-            <Int Int="5">
-                <Field Id="ZZ_StockCount3"/>
-            </Int>
-            <Int Int="6">
-                <Field Id="ZZ_StockCount4"/>
-            </Int>
             <Unit Unit="DefilerMP">
                 <Field Id="UnitCaster"/>
             </Unit>
@@ -1665,6 +1652,15 @@
             <Unit Unit="Larva">
                 <Field Id="UnitFood" Index="1"/>
             </Unit>
+            <User Type="Factions" Instance="Zerg">
+                <Field Id="ReplacementFaction"/>
+            </User>
+            <User Type="Skins" Instance="[Default]">
+                <Field Id="Skins"/>
+            </User>
+            <User Type="Commanders" Instance="Zagara">
+                <Field Id="Commander"/>
+            </User>
         </Instances>
         <Instances Id="Dragon">
             <GameLink GameLink="Dragon">
@@ -1678,6 +1674,15 @@
             </GameLink>
             <GameLink GameLink="Zerg">
                 <Field Id="Doodads"/>
+            </GameLink>
+            <GameLink GameLink="Zerg">
+                <Field Id="DropType"/>
+            </GameLink>
+            <GameLink GameLink="Prot">
+                <Field Id="MainRace"/>
+            </GameLink>
+            <GameLink GameLink="UI_ConsoleZerg_Dehaka">
+                <Field Id="Console"/>
             </GameLink>
             <Image Image="Assets\Textures\icon-1v1-Dragon.dds">
                 <Field Id="Icon"/>
@@ -1700,9 +1705,36 @@
             <Unit Unit="Coagulater">
                 <Field Id="UnitRefinery"/>
             </Unit>
-            <User Type="FactionsUnitCategories" Instance="Dragon">
-                <Field Id="CategoryUnits"/>
-            </User>
+            <Unit Unit="HornedMagus">
+                <Field Id="UnitCaster"/>
+            </Unit>
+            <Unit Unit="PhlogistonGuardian">
+                <Field Id="UnitDefense"/>
+            </Unit>
+            <Unit Unit="SunkenGuardian">
+                <Field Id="UnitDefense" Index="1"/>
+            </Unit>
+            <Unit Unit="GrimGlider">
+                <Field Id="UnitDetector"/>
+            </Unit>
+            <Unit Unit="Razorback">
+                <Field Id="UnitFood"/>
+            </Unit>
+            <Unit Unit="Razorback">
+                <Field Id="UnitExtra"/>
+            </Unit>
+            <Unit Unit="DenizenoftheDeep">
+                <Field Id="UnitTownHall"/>
+            </Unit>
+            <Unit Unit="Arkwyrm">
+                <Field Id="UnitTransport"/>
+            </Unit>
+            <Unit Unit="Coagulater">
+                <Field Id="UnitVespene"/>
+            </Unit>
+            <Unit Unit="Plodder">
+                <Field Id="UnitWorker"/>
+            </Unit>
             <User Type="FactionSkins" Instance="[Default]">
                 <Field Id="Skins"/>
             </User>
@@ -1712,29 +1744,6 @@
             <User Type="Commanders" Instance="Dragon">
                 <Field Id="Commander"/>
             </User>
-            <GameLink GameLink="Zerg"><Field Id="DropType"/></GameLink>
-            <GameLink GameLink="Prot"><Field Id="MainRace"/></GameLink>
-            <Unit Unit="SunkenGuardian"><Field Id="DefenseStructure"/></Unit>
-            <Unit Unit="PhlogistonGuardian"><Field Id="DefenseStructure" Index="1"/></Unit>
-            <Unit Unit="FrontierDeepOne"><Field Id="DefenseStructure" Index="2"/></Unit>
-            <Unit Unit="GrimGlider"><Field Id="Detector"/></Unit>
-            <Unit Unit="DenizenoftheDeep"><Field Id="MainStructure"/></Unit>
-            <Unit Unit="Razorback"><Field Id="Supply"/></Unit>
-            <Unit Unit="AscendedHornedMagus"><Field Id="Support"/></Unit>
-            <Unit Unit="Arkwyrm"><Field Id="Transport"/></Unit>
-            <Unit Unit="Plodder"><Field Id="Worker"/></Unit>
-            <Unit Unit="AscendedVolcanicHarbinger"><Field Id="Ultimate"/></Unit>
-            <Unit Unit="HandofPower"><Field Id="Caster"/></Unit>
-            <Unit Unit="HornedMagus"><Field Id="UnitCaster"/></Unit>
-            <Unit Unit="PhlogistonGuardian"><Field Id="UnitDefense"/></Unit>
-            <Unit Unit="SunkenGuardian"><Field Id="UnitDefense" Index="1"/></Unit>
-            <Unit Unit="GrimGlider"><Field Id="UnitDetector"/></Unit>
-            <Unit Unit="Razorback"><Field Id="UnitFood"/></Unit>
-            <Unit Unit="Razorback"><Field Id="UnitExtra"/></Unit>
-            <Unit Unit="DenizenoftheDeep"><Field Id="UnitTownHall"/></Unit>
-            <Unit Unit="Arkwyrm"><Field Id="UnitTransport"/></Unit>
-            <Unit Unit="Coagulater"><Field Id="UnitVespene"/></Unit>
-            <Unit Unit="Plodder"><Field Id="UnitWorker"/></Unit>
         </Instances>
         <Instances Id="Keiron">
             <GameLink GameLink="Keir">
@@ -1742,6 +1751,15 @@
             </GameLink>
             <GameLink GameLink="Prot">
                 <Field Id="VORace"/>
+            </GameLink>
+            <GameLink GameLink="Prot">
+                <Field Id="MainRace"/>
+            </GameLink>
+            <GameLink GameLink="Prot">
+                <Field Id="DropType"/>
+            </GameLink>
+            <GameLink GameLink="UI_ConsoleProtoss_Fenix">
+                <Field Id="Console"/>
             </GameLink>
             <Image Image="Assets\Textures\icon-1v1-keiron.dds">
                 <Field Id="Icon"/>
@@ -1764,9 +1782,39 @@
             <Unit Unit="Formulator">
                 <Field Id="UnitRefinery"/>
             </Unit>
-            <User Type="FactionsUnitCategories" Instance="Keiron">
-                <Field Id="CategoryUnits"/>
-            </User>
+            <Unit Unit="Meridian">
+                <Field Id="UnitCaster"/>
+            </Unit>
+            <Unit Unit="Nullifier">
+                <Field Id="UnitDefense"/>
+            </Unit>
+            <Unit Unit="Stratus">
+                <Field Id="UnitDefense" Index="1"/>
+            </Unit>
+            <Unit Unit="Aegis">
+                <Field Id="UnitDefense" Index="2"/>
+            </Unit>
+            <Unit Unit="Gyre">
+                <Field Id="UnitDetector"/>
+            </Unit>
+            <Unit Unit="Reliquary">
+                <Field Id="UnitFood"/>
+            </Unit>
+            <Unit Unit="Citadel">
+                <Field Id="UnitTownHall"/>
+            </Unit>
+            <Unit Unit="CitadelCharged">
+                <Field Id="UnitTownHall" Index="1"/>
+            </Unit>
+            <Unit Unit="Aperture">
+                <Field Id="UnitTransport"/>
+            </Unit>
+            <Unit Unit="Formulator">
+                <Field Id="UnitVespene"/>
+            </Unit>
+            <Unit Unit="Converter">
+                <Field Id="UnitWorker"/>
+            </Unit>
             <User Type="FactionSkins" Instance="[Default]">
                 <Field Id="Skins"/>
             </User>
@@ -1776,47 +1824,6 @@
             <User Type="Commanders" Instance="Keiron">
                 <Field Id="Commander"/>
             </User>
-            <GameLink GameLink="Prot"><Field Id="MainRace"/></GameLink>
-            <GameLink GameLink="Prot"><Field Id="DropType"/></GameLink>
-            <Int Int="1"><Field Id="Stock Count 3Hard"/></Int>
-            <Int Int="1"><Field Id="Stock Count 4Brutal"/></Int>
-            <Int Int="1"><Field Id="Stock Count 1Easy" Index="1"/></Int>
-            <Int Int="1"><Field Id="Stock Count 1Easy" Index="2"/></Int>
-            <Int Int="1"><Field Id="Stock Count 1Easy" Index="3"/></Int>
-            <Int Int="1"><Field Id="Stock Count 1Easy" Index="4"/></Int>
-            <Int Int="1"><Field Id="Stock Count 2Normal" Index="1"/></Int>
-            <Int Int="1"><Field Id="Stock Count 2Normal" Index="2"/></Int>
-            <Int Int="1"><Field Id="Stock Count 2Normal" Index="3"/></Int>
-            <Int Int="1"><Field Id="Stock Count 2Normal" Index="4"/></Int>
-            <Int Int="1"><Field Id="Stock Count 3Hard" Index="1"/></Int>
-            <Int Int="1"><Field Id="Stock Count 3Hard" Index="2"/></Int>
-            <Int Int="1"><Field Id="Stock Count 3Hard" Index="3"/></Int>
-            <Int Int="1"><Field Id="Stock Count 3Hard" Index="4"/></Int>
-            <Int Int="1"><Field Id="Stock Count 4Brutal" Index="1"/></Int>
-            <Int Int="1"><Field Id="Stock Count 4Brutal" Index="2"/></Int>
-            <Int Int="1"><Field Id="Stock Count 4Brutal" Index="3"/></Int>
-            <Int Int="1"><Field Id="Stock Count 4Brutal" Index="4"/></Int>
-            <Unit Unit="Citadel"><Field Id="MainStructure"/></Unit>
-            <Unit Unit="Meridian"><Field Id="Support"/></Unit>
-            <Unit Unit="Meridian"><Field Id="Caster"/></Unit>
-            <Unit Unit="Echo"><Field Id="Detector"/></Unit>
-            <Unit Unit="Paradox"><Field Id="DetectorDanger"/></Unit>
-            <Unit Unit="Converter"><Field Id="Worker"/></Unit>
-            <Unit Unit="Aperture"><Field Id="Transport"/></Unit>
-            <Unit Unit="Aegis"><Field Id="Stock Unit"/></Unit>
-            <Unit Unit="CitadelCharged"><Field Id="MainStructure" Index="1"/></Unit>
-            <Unit Unit="Aquifer"><Field Id="Supply"/></Unit>
-            <Unit Unit="Meridian"><Field Id="UnitCaster"/></Unit>
-            <Unit Unit="Nullifier"><Field Id="UnitDefense"/></Unit>
-            <Unit Unit="Stratus"><Field Id="UnitDefense" Index="1"/></Unit>
-            <Unit Unit="Aegis"><Field Id="UnitDefense" Index="2"/></Unit>
-            <Unit Unit="Gyre"><Field Id="UnitDetector"/></Unit>
-            <Unit Unit="Reliquary"><Field Id="UnitFood"/></Unit>
-            <Unit Unit="Citadel"><Field Id="UnitTownHall"/></Unit>
-            <Unit Unit="CitadelCharged"><Field Id="UnitTownHall" Index="1"/></Unit>
-            <Unit Unit="Aperture"><Field Id="UnitTransport"/></Unit>
-            <Unit Unit="Formulator"><Field Id="UnitVespene"/></Unit>
-            <Unit Unit="Converter"><Field Id="UnitWorker"/></Unit>
         </Instances>
         <Instances Id="Genetron">
             <GameLink GameLink="Terr">
@@ -1830,6 +1837,15 @@
             </GameLink>
             <GameLink GameLink="Terr">
                 <Field Id="VORace"/>
+            </GameLink>
+            <GameLink GameLink="Terr">
+                <Field Id="MainRace"/>
+            </GameLink>
+            <GameLink GameLink="Terr">
+                <Field Id="DropType"/>
+            </GameLink>
+            <GameLink GameLink="UI_ConsoleTerran_Swann">
+                <Field Id="Console"/>
             </GameLink>
             <Image>
                 <Field Id="IconWaves"/>
@@ -1852,11 +1868,35 @@
             <Unit Unit="FilteringPlant">
                 <Field Id="UnitRefinery"/>
             </Unit>
+            <Unit Unit="Processor">
+                <Field Id="UnitDetector"/>
+            </Unit>
+            <Unit Unit="Node">
+                <Field Id="UnitFood"/>
+            </Unit>
+            <Unit Unit="Tesla">
+                <Field Id="UnitCaster"/>
+            </Unit>
+            <Unit Unit="ProcessingCore">
+                <Field Id="UnitTownHall"/>
+            </Unit>
+            <Unit Unit="Courier">
+                <Field Id="UnitTransport"/>
+            </Unit>
+            <Unit Unit="FilteringPlant">
+                <Field Id="UnitVespene"/>
+            </Unit>
+            <Unit Unit="ACR">
+                <Field Id="UnitWorker"/>
+            </Unit>
+            <Unit Unit="Repulsor">
+                <Field Id="UnitDefense"/>
+            </Unit>
+            <Unit Unit="Interdictor">
+                <Field Id="UnitDefense" Index="1"/>
+            </Unit>
             <User Type="Skins" Instance="[Default]">
                 <Field Id="Skins"/>
-            </User>
-            <User Type="FactionsUnitCategories" Instance="Genetron">
-                <Field Id="CategoryUnits"/>
             </User>
             <User Type="Factions" Instance="Terran">
                 <Field Id="ReplacementFaction"/>
@@ -1864,22 +1904,6 @@
             <User Type="Commanders" Instance="Genetron">
                 <Field Id="Commander"/>
             </User>
-            <GameLink GameLink="Terr"><Field Id="MainRace"/></GameLink>
-            <GameLink GameLink="Terr"><Field Id="DropType"/></GameLink>
-            <Unit Unit="ACR"><Field Id="Worker"/></Unit>
-            <Unit Unit="Courier"><Field Id="Transport"/></Unit>
-            <Unit Unit="ProcessingCore"><Field Id="MainStructure"/></Unit>
-            <Unit Unit="ProcessingDrone"><Field Id="Detector"/></Unit>
-            <Unit Unit="ProcessingNode"><Field Id="Supply"/></Unit>
-            <Unit Unit="Processor"><Field Id="UnitDetector"/></Unit>
-            <Unit Unit="Node"><Field Id="UnitFood"/></Unit>
-            <Unit Unit="Tesla"><Field Id="UnitCaster"/></Unit>
-            <Unit Unit="ProcessingCore"><Field Id="UnitTownHall"/></Unit>
-            <Unit Unit="Courier"><Field Id="UnitTransport"/></Unit>
-            <Unit Unit="FilteringPlant"><Field Id="UnitVespene"/></Unit>
-            <Unit Unit="ACR"><Field Id="UnitWorker"/></Unit>
-            <Unit Unit="Repulsor"><Field Id="UnitDefense"/></Unit>
-            <Unit Unit="Interdictor"><Field Id="UnitDefense" Index="1"/></Unit>
         </Instances>
         <Instances Id="Xayid">
             <GameLink GameLink="Zerg">
@@ -1893,6 +1917,15 @@
             </GameLink>
             <GameLink GameLink="Zerg">
                 <Field Id="VORace"/>
+            </GameLink>
+            <GameLink GameLink="Prot">
+                <Field Id="MainRace"/>
+            </GameLink>
+            <GameLink GameLink="Zerg">
+                <Field Id="DropType"/>
+            </GameLink>
+            <GameLink GameLink="UI_ConsoleZerg_Dehaka">
+                <Field Id="Console"/>
             </GameLink>
             <Image>
                 <Field Id="IconWaves"/>
@@ -1915,11 +1948,32 @@
             <Unit Unit="Siphoner">
                 <Field Id="UnitRefinery"/>
             </Unit>
+            <Unit Unit="Casnolisk">
+                <Field Id="UnitCaster"/>
+            </Unit>
+            <Unit Unit="BilePit">
+                <Field Id="UnitDefense"/>
+            </Unit>
+            <Unit Unit="Ferrion">
+                <Field Id="UnitDetector"/>
+            </Unit>
+            <Unit Unit="FeedingPool">
+                <Field Id="UnitFood"/>
+            </Unit>
+            <Unit Unit="ScavengerNest">
+                <Field Id="UnitTownHall"/>
+            </Unit>
+            <Unit Unit="Ferrion">
+                <Field Id="UnitTransport"/>
+            </Unit>
+            <Unit Unit="Siphoner">
+                <Field Id="UnitVespene"/>
+            </Unit>
+            <Unit Unit="Scavenger">
+                <Field Id="UnitWorker"/>
+            </Unit>
             <User Type="FactionSkins" Instance="[Default]">
                 <Field Id="Skins"/>
-            </User>
-            <User Type="FactionsUnitCategories" Instance="Xayid">
-                <Field Id="CategoryUnits"/>
             </User>
             <User Type="Factions" Instance="Protoss">
                 <Field Id="ReplacementFaction"/>
@@ -1927,25 +1981,6 @@
             <User Type="Commanders" Instance="Xayid">
                 <Field Id="Commander"/>
             </User>
-            <GameLink GameLink="Prot"><Field Id="MainRace"/></GameLink>
-            <GameLink GameLink="Zerg"><Field Id="DropType"/></GameLink>
-            <Unit Unit="Scavenger"><Field Id="Worker"/></Unit>
-            <Unit Unit="Casnolisk"><Field Id="Caster"/></Unit>
-            <Unit Unit="Ferrion"><Field Id="Detector"/></Unit>
-            <Unit Unit="Xayithoan"><Field Id="DetectorDanger"/></Unit>
-            <Unit Unit="Mendling"><Field Id="Support"/></Unit>
-            <Unit Unit="ScavengerNest"><Field Id="MainStructure"/></Unit>
-            <Unit Unit="Ferrion"><Field Id="Transport"/></Unit>
-            <Unit Unit="Leviathan"><Field Id="Ultimate"/></Unit>
-            <Unit Unit="FeedingPool"><Field Id="Supply"/></Unit>
-            <Unit Unit="Casnolisk"><Field Id="UnitCaster"/></Unit>
-            <Unit Unit="BilePit"><Field Id="UnitDefense"/></Unit>
-            <Unit Unit="Ferrion"><Field Id="UnitDetector"/></Unit>
-            <Unit Unit="FeedingPool"><Field Id="UnitFood"/></Unit>
-            <Unit Unit="ScavengerNest"><Field Id="UnitTownHall"/></Unit>
-            <Unit Unit="Ferrion"><Field Id="UnitTransport"/></Unit>
-            <Unit Unit="Siphoner"><Field Id="UnitVespene"/></Unit>
-            <Unit Unit="Scavenger"><Field Id="UnitWorker"/></Unit>
         </Instances>
         <Instances Id="UED">
             <GameLink GameLink="Terr">
@@ -1959,6 +1994,15 @@
             </GameLink>
             <GameLink GameLink="Terr">
                 <Field Id="VORace"/>
+            </GameLink>
+            <GameLink GameLink="Terr">
+                <Field Id="MainRace"/>
+            </GameLink>
+            <GameLink GameLink="Terr">
+                <Field Id="DropType"/>
+            </GameLink>
+            <GameLink GameLink="UI_ConsoleTerran_Swann">
+                <Field Id="Console"/>
             </GameLink>
             <Image Image="Assets\Textures\icon-1v1-ued.dds">
                 <Field Id="Icon"/>
@@ -1981,9 +2025,36 @@
             <Unit Unit="VespenePurificationPlant">
                 <Field Id="UnitRefinery"/>
             </Unit>
-            <User Type="FactionsUnitCategories" Instance="UED">
-                <Field Id="CategoryUnits"/>
-            </User>
+            <Unit Unit="PoliticalAdvisor">
+                <Field Id="UnitCaster"/>
+            </Unit>
+            <Unit Unit="HeavyTower">
+                <Field Id="UnitDefense"/>
+            </Unit>
+            <Unit Unit="MissileTower">
+                <Field Id="UnitDefense" Index="1"/>
+            </Unit>
+            <Unit Unit="SuppressionTower">
+                <Field Id="UnitDefense" Index="2"/>
+            </Unit>
+            <Unit Unit="SupportShuttle">
+                <Field Id="UnitDetector"/>
+            </Unit>
+            <Unit Unit="OperationHeadquarters">
+                <Field Id="UnitTownHall"/>
+            </Unit>
+            <Unit Unit="Arsenal">
+                <Field Id="UnitFood"/>
+            </Unit>
+            <Unit Unit="TransportShuttle">
+                <Field Id="UnitTransport"/>
+            </Unit>
+            <Unit Unit="VespenePurificationPlant">
+                <Field Id="UnitVespene"/>
+            </Unit>
+            <Unit Unit="Salvager">
+                <Field Id="UnitWorker"/>
+            </Unit>
             <User Type="Factions" Instance="Terran">
                 <Field Id="ReplacementFaction"/>
             </User>
@@ -1993,26 +2064,6 @@
             <User Type="Commanders" Instance="UED">
                 <Field Id="Commander"/>
             </User>
-            <GameLink GameLink="Terr"><Field Id="MainRace"/></GameLink>
-            <GameLink GameLink="Terr"><Field Id="DropType"/></GameLink>
-            <Unit Unit="Salvager"><Field Id="Worker"/></Unit>
-            <Unit Unit="TransportShuttle"><Field Id="Transport"/></Unit>
-            <Unit Unit="OperationHeadquarters"><Field Id="MainStructure"/></Unit>
-            <Unit Unit="CrimsonEye"><Field Id="Detector"/></Unit>
-            <Unit Unit="Lazarus"><Field Id="Caster"/></Unit>
-            <Unit Unit="CrimsonEye"><Field Id="Support"/></Unit>
-            <Unit Unit="HonorguardCruiser"><Field Id="Ultimate"/></Unit>
-            <Unit Unit="Arsenal"><Field Id="Supply"/></Unit>
-            <Unit Unit="PoliticalAdvisor"><Field Id="UnitCaster"/></Unit>
-            <Unit Unit="HeavyTower"><Field Id="UnitDefense"/></Unit>
-            <Unit Unit="MissileTower"><Field Id="UnitDefense" Index="1"/></Unit>
-            <Unit Unit="SuppressionTower"><Field Id="UnitDefense" Index="2"/></Unit>
-            <Unit Unit="SupportShuttle"><Field Id="UnitDetector"/></Unit>
-            <Unit Unit="OperationHeadquarters"><Field Id="UnitTownHall"/></Unit>
-            <Unit Unit="Arsenal"><Field Id="UnitFood"/></Unit>
-            <Unit Unit="TransportShuttle"><Field Id="UnitTransport"/></Unit>
-            <Unit Unit="VespenePurificationPlant"><Field Id="UnitVespene"/></Unit>
-            <Unit Unit="Salvager"><Field Id="UnitWorker"/></Unit>
         </Instances>
         <Instances Id="Hybrids">
             <GameLink GameLink="NHbr">
@@ -2020,6 +2071,15 @@
             </GameLink>
             <GameLink GameLink="Prot">
                 <Field Id="VORace"/>
+            </GameLink>
+            <GameLink GameLink="Prot">
+                <Field Id="MainRace"/>
+            </GameLink>
+            <GameLink GameLink="Prot">
+                <Field Id="DropType"/>
+            </GameLink>
+            <GameLink GameLink="UI_ConsoleProtoss_GalacticCelebration">
+                <Field Id="Console"/>
             </GameLink>
             <Image Image="assets\UI\Hybrid\icon-1v1-hybrid.dds">
                 <Field Id="Icon"/>
@@ -2042,9 +2102,39 @@
             <Unit Unit="NHbrHarvester">
                 <Field Id="UnitRefinery"/>
             </Unit>
-            <User Type="FactionsUnitCategories" Instance="Network">
-                <Field Id="CategoryUnits"/>
-            </User>
+            <Unit Unit="NHbrScreamer">
+                <Field Id="UnitCaster"/>
+            </Unit>
+            <Unit Unit="NHbrScreamer">
+                <Field Id="UnitDetector"/>
+            </Unit>
+            <Unit Unit="NHbrConstruct@AntiAir">
+                <Field Id="UnitDefense"/>
+            </Unit>
+            <Unit Unit="NHbrConstruct@AntiGround">
+                <Field Id="UnitDefense" Index="1"/>
+            </Unit>
+            <Unit Unit="NHbrIonicCrystal">
+                <Field Id="UnitFood"/>
+            </Unit>
+            <Unit Unit="NHbrIonicCrystal@Moveable">
+                <Field Id="UnitFood" Index="1"/>
+            </Unit>
+            <Unit Unit="NHbrScreamer">
+                <Field Id="UnitSupport"/>
+            </Unit>
+            <Unit Unit="NHbrTemple">
+                <Field Id="UnitTownHall"/>
+            </Unit>
+            <Unit Unit="NHbrNavigator">
+                <Field Id="UnitTransport"/>
+            </Unit>
+            <Unit Unit="NHbrHarvester">
+                <Field Id="UnitVespene"/>
+            </Unit>
+            <Unit Unit="NHbrMinion">
+                <Field Id="UnitWorker"/>
+            </Unit>
             <User Type="FactionSkins" Instance="[Default]">
                 <Field Id="Skins"/>
             </User>
@@ -2054,28 +2144,6 @@
             <User Type="Commanders" Instance="NetworkHybrids">
                 <Field Id="Commander"/>
             </User>
-            <GameLink GameLink="Prot"><Field Id="MainRace"/></GameLink>
-            <GameLink GameLink="Prot"><Field Id="DropType"/></GameLink>
-            <Unit Unit="NHbrMinion"><Field Id="Worker"/></Unit>
-            <Unit Unit="NHbrDominatorAdvanced"><Field Id="Caster"/></Unit>
-            <Unit Unit="NHbrScreamer"><Field Id="DetectorDanger"/></Unit>
-            <Unit Unit="NHbrScreamer"><Field Id="Support"/></Unit>
-            <Unit Unit="NHbrTemple"><Field Id="MainStructure"/></Unit>
-            <Unit Unit="NHbrNavigator"><Field Id="Transport"/></Unit>
-            <Unit Unit="NHbrNemesis"><Field Id="Ultimate"/></Unit>
-            <Unit Unit="NHbrIonicCrystal"><Field Id="Supply"/></Unit>
-            <Unit Unit="NHbrIonicCrystal@Moveable"><Field Id="Supply" Index="1"/></Unit>
-            <Unit Unit="NHbrScreamer"><Field Id="UnitCaster"/></Unit>
-            <Unit Unit="NHbrScreamer"><Field Id="UnitDetector"/></Unit>
-            <Unit Unit="NHbrConstruct@AntiAir"><Field Id="UnitDefense"/></Unit>
-            <Unit Unit="NHbrConstruct@AntiGround"><Field Id="UnitDefense" Index="1"/></Unit>
-            <Unit Unit="NHbrIonicCrystal"><Field Id="UnitFood"/></Unit>
-            <Unit Unit="NHbrIonicCrystal@Moveable"><Field Id="UnitFood" Index="1"/></Unit>
-            <Unit Unit="NHbrScreamer"><Field Id="UnitSupport"/></Unit>
-            <Unit Unit="NHbrTemple"><Field Id="UnitTownHall"/></Unit>
-            <Unit Unit="NHbrNavigator"><Field Id="UnitTransport"/></Unit>
-            <Unit Unit="NHbrHarvester"><Field Id="UnitVespene"/></Unit>
-            <Unit Unit="NHbrMinion"><Field Id="UnitWorker"/></Unit>
         </Instances>
         <Instances Id="UPL">
             <GameLink GameLink="Terr">
@@ -2089,6 +2157,15 @@
             </GameLink>
             <GameLink GameLink="Terr">
                 <Field Id="VORace"/>
+            </GameLink>
+            <GameLink GameLink="Terr">
+                <Field Id="DropType"/>
+            </GameLink>
+            <GameLink GameLink="Terr">
+                <Field Id="MainRace"/>
+            </GameLink>
+            <GameLink GameLink="UI_ConsoleTerran_Classic">
+                <Field Id="Console"/>
             </GameLink>
             <Image Image="icon-1v1-upl.dds">
                 <Field Id="Icon"/>
@@ -2111,6 +2188,27 @@
             <Unit Unit="UPLExhumer">
                 <Field Id="UnitRefinery"/>
             </Unit>
+            <Unit Unit="InfantryOfficer">
+                <Field Id="UnitCaster"/>
+            </Unit>
+            <Unit Unit="InfantryOfficer">
+                <Field Id="UnitDetector"/>
+            </Unit>
+            <Unit Unit="UPLGenerator">
+                <Field Id="UnitFood"/>
+            </Unit>
+            <Unit Unit="OperationHeadquarters">
+                <Field Id="UnitTownHall"/>
+            </Unit>
+            <Unit Unit="Condor">
+                <Field Id="UnitTransport"/>
+            </Unit>
+            <Unit Unit="UPLExhumer">
+                <Field Id="UnitVespene"/>
+            </Unit>
+            <Unit Unit="MiningDrone">
+                <Field Id="UnitWorker"/>
+            </Unit>
             <User Type="Commanders" Instance="UPL">
                 <Field Id="Commander"/>
             </User>
@@ -2120,18 +2218,6 @@
             <User Type="Factions" Instance="Terran">
                 <Field Id="ReplacementFaction"/>
             </User>
-            <User Type="FactionsUnitCategories" Instance="UPL">
-                <Field Id="CategoryUnits"/>
-            </User>
-            <GameLink GameLink="Terr"><Field Id="DropType"/></GameLink>
-            <GameLink GameLink="Terr"><Field Id="MainRace"/></GameLink>
-            <Unit Unit="InfantryOfficer"><Field Id="UnitCaster"/></Unit>
-            <Unit Unit="InfantryOfficer"><Field Id="UnitDetector"/></Unit>
-            <Unit Unit="UPLGenerator"><Field Id="UnitFood"/></Unit>
-            <Unit Unit="OperationHeadquarters"><Field Id="UnitTownHall"/></Unit>
-            <Unit Unit="Condor"><Field Id="UnitTransport"/></Unit>
-            <Unit Unit="UPLExhumer"><Field Id="UnitVespene"/></Unit>
-            <Unit Unit="MiningDrone"><Field Id="UnitWorker"/></Unit>
         </Instances>
         <Instances Id="Outlaws">
             <GameLink GameLink="Terr">
@@ -2145,6 +2231,9 @@
             </GameLink>
             <GameLink GameLink="Terr">
                 <Field Id="VORace"/>
+            </GameLink>
+            <GameLink GameLink="UI_ConsoleTerran_ArcadePurple">
+                <Field Id="Console"/>
             </GameLink>
             <Image>
                 <Field Id="Icon"/>
@@ -2187,6 +2276,15 @@
             <GameLink GameLink="Prot">
                 <Field Id="VORace"/>
             </GameLink>
+            <GameLink GameLink="Prot">
+                <Field Id="DropType"/>
+            </GameLink>
+            <GameLink GameLink="Prot">
+                <Field Id="MainRace"/>
+            </GameLink>
+            <GameLink GameLink="UI_ConsoleProtoss_Forged">
+                <Field Id="Console"/>
+            </GameLink>
             <Image Image="Assets\Textures\Talon_Decal_(First-Assault-Armada).dds">
                 <Field Id="Icon"/>
             </Image>
@@ -2208,6 +2306,30 @@
             <Unit Unit="Probe">
                 <Field Id="UnitPeon"/>
             </Unit>
+            <Unit Unit="Pacifier">
+                <Field Id="UnitCaster"/>
+            </Unit>
+            <Unit Unit="Observer">
+                <Field Id="UnitDetector"/>
+            </Unit>
+            <Unit Unit="Pylon">
+                <Field Id="UnitFood"/>
+            </Unit>
+            <Unit Unit="Nexus">
+                <Field Id="UnitTownHall"/>
+            </Unit>
+            <Unit Unit="WarpPrism">
+                <Field Id="UnitTransport"/>
+            </Unit>
+            <Unit Unit="ArcStar">
+                <Field Id="UnitUltimate"/>
+            </Unit>
+            <Unit Unit="Assimilator">
+                <Field Id="UnitVespene"/>
+            </Unit>
+            <Unit Unit="Probe">
+                <Field Id="UnitWorker"/>
+            </Unit>
             <User Type="Commanders" Instance="ProtossVolchron">
                 <Field Id="Commander"/>
             </User>
@@ -2217,20 +2339,6 @@
             <User Type="Factions" Instance="Protoss">
                 <Field Id="ReplacementFaction"/>
             </User>
-            <User Type="FactionsUnitCategories" Instance="Talon">
-                <Field Id="CategoryUnits"/>
-            </User>
-            <GameLink GameLink="Prot"><Field Id="DropType"/></GameLink>
-            <GameLink GameLink="Prot"><Field Id="MainRace"/></GameLink>
-            <Unit Unit="Pacifier"><Field Id="UnitCaster"/></Unit>
-            <Unit Unit="Observer"><Field Id="UnitDetector"/></Unit>
-            <Unit Unit="Pylon"><Field Id="UnitFood"/></Unit>
-            <Unit Unit="Nexus"><Field Id="UnitTownHall"/></Unit>
-            <Unit Unit="WarpPrism"><Field Id="UnitTransport"/></Unit>
-            <Unit Unit="ArcStar"><Field Id="UnitUltimate"/></Unit>
-            <Unit Unit="Assimilator"><Field Id="UnitVespene"/></Unit>
-            <Unit Unit="Probe"><Field Id="UnitWorker"/></Unit>
-        </Instances>
         </Instances>
     </CUser>
 </Catalog>

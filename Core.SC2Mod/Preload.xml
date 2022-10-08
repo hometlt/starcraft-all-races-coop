@@ -75,6 +75,7 @@
 <Actor id="TriggerRegion"/>
 <Actor id="Aiur_Puddle"/>
 <Actor id="Fog_Hazy"/>
+<Actor id="WaterPuddle"/>
 <Actor id="ThunderLightning"/>
 <Actor id="RainEmitterLarge"/>
 <Actor id="RainEmitterMedium"/>

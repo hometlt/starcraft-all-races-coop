@@ -7371,6 +7371,9 @@ Commander/Name/Amon=Amon
 Commander/Name/Nova=Nova
 Commander/Name/ProtossCommander=Protoss
 Commander/Name/TerranCommander=Terran
+Commander/Name/UI_ConsoleProtoss_GalacticCelebration=UI_ConsoleProtoss_GalacticCelebration
+Commander/Name/UI_ConsoleTerran_Default=UI_ConsoleTerran_Default
+Commander/Name/UI_ConsoleZerg_Default=UI_ConsoleZerg_Default
 Commander/Name/UnknownCommander=--
 Commander/Name/ZergCommander=Zerg
 ConsoleSkin/Name/ConsoleGeneric_Alliance=Human Alliance
@@ -10930,6 +10933,7 @@ Param/Value/lib_COMI_15DEF116=~TIME~
 Param/Value/lib_COMI_15F390A4=Applying Settings
 Param/Value/lib_COMI_1665482B=<c val="FF8000">SlimUI deactivated</c>
 Param/Value/lib_COMI_175187BA=~Reviver~
+Param/Value/lib_COMI_17C147D7=Starting Base
 Param/Value/lib_COMI_17E287A6=~Spawner~
 Param/Value/lib_COMI_17F93FCB=Control of All Production and Tech buildings will be granted at 2:00
 Param/Value/lib_COMI_182B0D60=<c val="FF8000">AI unpaused</c>
@@ -11001,6 +11005,7 @@ Param/Value/lib_COMI_4A925500=Ran out of CoopAI upgrade slots, need to increase 
 Param/Value/lib_COMI_4AED1CA4=MASTERY
 Param/Value/lib_COMI_4B6A7FB8=<c val="FF8000">Tech reset</c>
 Param/Value/lib_COMI_4C18CEB4=APM
+Param/Value/lib_COMI_4CE3C5EB=Starting Base
 Param/Value/lib_COMI_4D0EA868=https://discord.gg/8T4MUA3xXr
 Param/Value/lib_COMI_4D91C023=~NAME~
 Param/Value/lib_COMI_4EE80295=CLOSE
@@ -11016,7 +11021,6 @@ Param/Value/lib_COMI_58E9F685=Fenix has been revived at your Nexus.
 Param/Value/lib_COMI_5A218560=Acceptable commands are "on", "off" or "random" after -TargetSpawners cheat
 Param/Value/lib_COMI_5A703436=(DEBUG) Only player 1 can do this.  Sorry!
 Param/Value/lib_COMI_5C0911D5=Too many Amon Factions
-Param/Value/lib_COMI_5C52372E=Starting Base
 Param/Value/lib_COMI_5FD3EBFB=<s val="ArmyCustomizationSelectedUnitDescriptionName"><c val="FFFFFF">Healing log</c></s> <s val="AchievementFrameName_Prot"><c val="FFFFFF">(total:
 Param/Value/lib_COMI_5FD56F8C=The game speed cannot be modified when Brutal difficulty is selected.
 Param/Value/lib_COMI_6084511B=Hybrid Nemesis
@@ -11074,7 +11078,6 @@ Param/Value/lib_COMI_8F56BF35=First Wave Location
 Param/Value/lib_COMI_8F7C580B=Deactivate
 Param/Value/lib_COMI_8F8A32E2=<c val="FF9800">Fenix has died. You must warp in a Nexus to revive him.</c>
 Param/Value/lib_COMI_904C23E1=BRUTAL
-Param/Value/lib_COMI_907B08EE=Starting Base
 Param/Value/lib_COMI_90CDBC78=<c val="FF8000">Ally control acquired</c>
 Param/Value/lib_COMI_90EC773D=~NAME~
 Param/Value/lib_COMI_90F87EFD=Hybrid Nemesis

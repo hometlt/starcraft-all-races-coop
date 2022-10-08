@@ -4,8 +4,12 @@
     <CConsoleSkin id="ConsoleProtoss_Default">
         <Name value="ConsoleSkin/Name/ProtossDefault"/>
     </CConsoleSkin>
-    <CConsoleSkin id="ConsoleProtoss_Fenix"/>
-    <CConsoleSkin id="ConsoleProtoss_Forged"/>
+    <CConsoleSkin id="ConsoleProtoss_Fenix">
+        <Default value="1"/>
+    </CConsoleSkin>
+    <CConsoleSkin id="ConsoleProtoss_Forged">
+        <Default value="1"/>
+    </CConsoleSkin>
     <CConsoleSkin id="ConsoleProtoss_Ihanrii"/>
     <CConsoleSkin id="ConsoleProtoss_Nerazim"/>
     <CConsoleSkin id="ConsoleTerran_ArcadePurple"/>
@@ -18,10 +22,16 @@
     <CConsoleSkin id="ConsoleTerran_Swann"/>
     <CConsoleSkin id="ConsoleZerg_Abathur"/>
     <CConsoleSkin id="ConsoleZerg_Alliance"/>
-    <CConsoleSkin id="ConsoleZerg_ArcadePurple"/>
-    <CConsoleSkin id="ConsoleZerg_Classic"/>
+    <CConsoleSkin id="ConsoleZerg_ArcadePurple">
+        <Default value="1"/>
+    </CConsoleSkin>
+    <CConsoleSkin id="ConsoleZerg_Classic">
+        <Default value="1"/>
+    </CConsoleSkin>
     <CConsoleSkin id="ConsoleZerg_Default"/>
-    <CConsoleSkin id="ConsoleZerg_Dehaka"/>
+    <CConsoleSkin id="ConsoleZerg_Dehaka">
+        <Default value="1"/>
+    </CConsoleSkin>
     <CConsoleSkin id="ConsoleZerg_Horde"/>
     <CConsoleSkin id="ConsoleZerg_Mecha"/>
     <CConsoleSkin id="ConsoleZerg_RCZ"/>
