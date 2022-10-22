@@ -516,7 +516,7 @@
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
     <CUnit id="CreepTumorQueen">
-        <EditorCategories value="ObjectType:Structure,ObjectFamily:Coop"/>
+        <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
     </CUnit>
     <CUnit id="CreepTumorQueenNoCreep">
         <EditorCategories value="ObjectType:Structure,ObjectFamily:Coop"/>
@@ -531,7 +531,6 @@
         <KillXP value="0"/>
         <AbilArray Link="CycloneWreckage"/>
         <!--BehaviorArray Link="SwannCommanderMechRebirth"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts index="0">
             <LayoutButtons index="5" Face="LockOnCancel" AbilCmd="LockOnCancel,Execute" Column="4"/>
             <LayoutButtons index="6" Face="LockOn" AbilCmd="LockOn,Execute" Column="0"/>
@@ -1995,7 +1994,6 @@
         <KillXP value="0"/>
         <BehaviorArray index="0" Link=""/>
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts index="0">
             <LayoutButtons index="7" Requirements="HaveDragoonHealth" Column="2"/>
             <LayoutButtons Face="VoidStalkerDragoonRange" Type="Passive" Requirements="HaveSingularityCharge" Row="2" Column="1"/>
@@ -2028,7 +2026,6 @@
         <BehaviorArray index="0" Link="DamageDisablesAttackHighTemplar"/>
         <BehaviorArray index="1" Link=""/>
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <!--WeaponArray index="0" Link="ArchonAdvanced"/-->
         <CardLayouts index="0">
             <LayoutButtons index="7" Face="ArchonAdvancedMergeSelection" AbilCmd="ArchonAdvancedMerge,SelectedUnits"/>
@@ -2119,7 +2116,6 @@
         <AbilArray Link="EvolveToBrutaliskQueen"/>
         <AbilArray Link="BioMechanicalTransfusion"/>
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts index="0">
             <LayoutButtons index="5" Face="BurrowDown" AbilCmd="BurrowQueenDown,Execute" Column="4"/>
             <LayoutButtons index="6" Face="DeepTunnel" AbilCmd="DeepTunnel,Execute" Column="3"/>
@@ -2273,7 +2269,6 @@
         <AbilArray Link="stop"/>
         <AbilArray Link="attack"/>
         <AbilArray Link="move"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="CommanderPrestigeArtanisOrbitalStrikesArchon"/>
         <WeaponArray Link="CommanderPrestigeArtanisOrbitalStrikesArchon"/>
         <CardLayouts>
@@ -2319,7 +2314,6 @@
         <KillXP value="0"/>
         <BehaviorArray index="1" Link=""/>
         <!--BehaviorArray Link="Supply4"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Coop"/>
         <Attributes index="Psionic" value="1"/>
     </CUnit>
@@ -2592,7 +2586,6 @@
         <KillXP value="0"/>
         <AbilArray Link="DiamondbackWreckage"/>
         <!--BehaviorArray Link="Supply3"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <!--BehaviorArray Link="SwannCommanderMechRebirth"/-->
@@ -2686,7 +2679,6 @@
         <KillXP value="0"/>
         <AbilArray Link="StimpackMarauder"/>
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts index="0">
             <LayoutButtons index="5" AbilCmd="255,255" Column="1"/>
             <LayoutButtons index="6" AbilCmd="255,255" Column="2"/>
@@ -2768,7 +2760,6 @@
         <AbilArray Link="SprayTerran"/>
         <BehaviorArray Link="KelMorianWorkerCloak"/>
         <!--BehaviorArray Link="Supply1"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts index="0">
             <LayoutButtons index="8" Requirements="ConstructionEnabled"/>
             <LayoutButtons index="9" Requirements="ConstructionEnabled"/>
@@ -2888,7 +2879,6 @@
         <KillXP value="0"/>
         <AbilArray Link="GoliathWreckage"/>
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts index="0">
             <LayoutButtons index="5" AbilCmd="255,255" Column="1"/>
             <LayoutButtons index="6" AbilCmd="255,255" Column="0"/>
@@ -2916,9 +2906,7 @@
         <AbilArray Link="SymbioteCarapace"/>
         <AbilArray Link="AbathurSymbioteHangerLeviathan"/>
         <AbilArray Link="que1Passive"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="CarapaceDamageResponse"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts index="0">
             <LayoutButtons index="5" Face="SymbioteCarapace" AbilCmd="SymbioteCarapace,Execute" Row="0" Column="4"/>
             <LayoutButtons index="6" Face="AbathurBrutaliskLeviathanSymbiote" Type="Passive" AbilCmd="" Requirements="HaveBrutaliskLeviathanSymbiote" Column="0"/>
@@ -2952,7 +2940,6 @@
         <DamageTakenXP value="0"/>
         <KillXP value="0"/>
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts index="0">
             <LayoutButtons index="5" Face="Lurker" AbilCmd="MorphHydraliskToLurker,Train1" Column="0"/>
             <LayoutButtons index="6" Face="Move" AbilCmd="move,Move" Row="0"/>
@@ -3073,7 +3060,6 @@
         <KillXP value="0"/>
         <AbilArray Link="heal"/>
         <AbilArray Link="HealPlusMech"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts index="0">
             <LayoutButtons index="7" Face="StabilizerMedPacks" Type="Passive" AbilCmd="255,255" Requirements="UseStabilizerMedpacks"/>
             <LayoutButtons index="8" Face="MedicHealPlusMech" Type="AbilCmd" AbilCmd="HealPlusMech,Execute" Requirements="" Column="0"/>
@@ -3208,7 +3194,6 @@
         <DamageTakenXP value="0"/>
         <KillXP value="0"/>
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="KerriganOwned"/>
         <CardLayouts index="0">
             <LayoutButtons index="5" Face="SeveringGlave" Requirements="HaveKerriganSunderingGlaive" Row="1" Column="2"/>
@@ -3229,7 +3214,6 @@
         <DamageTakenXP value="0"/>
         <KillXP value="0"/>
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Coop"/>
@@ -3309,6 +3293,8 @@
         <TacticalAIThink value="libCOMU_gf_CT_AmonHeroKarax_AIThink"/>
     </CUnit>
     <CUnit id="MutatorAmonKaraxInvisiblePylon">
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Coop"/>
+
         <Race value="Prot"/>
         <FlagArray index="Turnable" value="0"/>
         <FlagArray index="Unselectable" value="1"/>
@@ -3484,6 +3470,26 @@
             </LayoutButtons>
             <LayoutButtons Face="Shuttle" Type="AbilCmd" AbilCmd="RoboticsFacilityTrain,Train11" Row="1" Column="1"/>
             <LayoutButtons Face="WarpinVindicator" Type="AbilCmd" AbilCmd="RoboticsFacilityTrainTalon,255" Row="1" Column="2"/>
+<!--   ADDED-->
+            <LayoutButtons index="4" Face="Immortal" AbilCmd="RoboticsFacilityTrain,Train4"/>
+            <LayoutButtons index="5" Face="WarpinDisruptor" AbilCmd="RoboticsFacilityTrain,Train19"/>
+            <LayoutButtons index="6" Face="Reaver" AbilCmd="RoboticsFacilityTrain,Train5"/>
+            <LayoutButtons index="11" Face="FenixWarpinDisruptorLocked" Type="Passive" AbilCmd="" Requirements="FenixLevel07" Column="2"/>
+            <LayoutButtons index="12" Column="2"/>
+            <LayoutButtons index="13" Face="ImmortalAiur" Type="AbilCmd" AbilCmd="RoboticsFacilityTrain,Train6"/>
+            <LayoutButtons index="14" Face="WarpPrism" Type="AbilCmd" AbilCmd="RoboticsFacilityTrain,Train1" Row="1" Column="1"/>
+            <LayoutButtons index="15" Face="WarpInWarPrism" Type="AbilCmd" AbilCmd="RoboticsFacilityTrain,Train30" Row="1" Column="1"/>
+            <LayoutButtons index="16" Face="ImmortalTaldarim" Type="AbilCmd" AbilCmd="RoboticsFacilityTrain,Train8"/>
+            <LayoutButtons index="17" Face="ImmortalShakuras" Type="AbilCmd" AbilCmd="RoboticsFacilityTrain,Train7" Requirements="HaveMasteryAlarakUnitAttackSpeed"/>
+            <LayoutButtons index="18" Face="WarpInCrusader"/>
+            <LayoutButtons index="19" Face="" Type="Undefined" AbilCmd=""/>
+            <LayoutButtons index="20" Face="" Type="Undefined" AbilCmd=""/>
+            <LayoutButtons index="21" Face="" Type="Undefined" AbilCmd=""/>
+            <LayoutButtons index="22" Face="WarpinDisruptorFIX" Type="AbilCmd" AbilCmd="RoboticsFacilityTrainTalon,255" Requirements=""/>
+            <LayoutButtons index="23" Row="0" Column="3"/>
+            <LayoutButtons index="24" Face="WarpInVaporizer" Type="AbilCmd" AbilCmd="RoboticsFacilityTrainTalon,255" Requirements="" Row="0"/>
+            <LayoutButtons Face="ColossusTaldarim" Type="AbilCmd" AbilCmd="RoboticsFacilityTrain,Train10" Row="0" Column="1"/>
+
         </CardLayouts>
         <Footprint value="Footprint3x3CreepNormalContour"/>
         <PlacementFootprint value="Footprint3x3CreepNormal"/>
@@ -4181,7 +4187,6 @@
         <AbilArray Link="ScienceVesselNanoRepairDouble"/>
         <AbilArray Link="CommanderPrestigeSwannHerculesScienceVesselTacticalJump"/>
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts index="0">
             <LayoutButtons index="0" Face="MoveChampions"/>
             <LayoutButtons index="4" Face="AttackChampions"/>
@@ -4217,7 +4222,6 @@
         <AbilArray Link="FenixMojoScoutMorph"/>
         <BehaviorArray index="0" Link=""/>
         <!--BehaviorArray Link="Supply3"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <WeaponArray index="0" Link="ScoutAir"/>
         <WeaponArray index="1" Link="ScoutGround"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Coop"/>
@@ -4347,7 +4351,6 @@
         <AbilArray Link="VoodooShield"/>
         <AbilArray Link="SpectreDomination"/>
         <AbilArray Link="SpectreReleaseMinion"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts index="0">
             <LayoutButtons index="4" Face="AttackGhost" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons index="5" Face="Cancel" AbilCmd="TacNukeStrike,Cancel" Column="4"/>
@@ -4629,7 +4632,6 @@
             <LayoutButtons Face="BiomassPassiveEmpty" Type="Passive" Requirements="BiomassBuffEmptyVisible" Row="2" Column="3"/>
             <LayoutButtons Face="GuardianAttackRangeIncrease" Type="Passive" Requirements="HaveGuardianAttackRangeIncrease" Row="1" Column="0"/>
         </CardLayouts>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <AbilArray Link="EvolveToLeviathanGuardianMP"/>
         <AbilArray Link="que1"/>
         <SubgroupPriority value="112"/>
@@ -4879,7 +4881,6 @@
         <AbilArray Link="EvolveToBrutaliskRoach"/>
         <AbilArray Link="AbathurDeepTunnelImproved"/>
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="ZagaraOwned"/>
         <CardLayouts index="0">
             <LayoutButtons index="5" Row="1" Column="0"/>
@@ -4914,7 +4915,6 @@
         <SubgroupPriority value="115"/>
     </CUnit>
     <CUnit id="NovaInfestedSiegeTankUprooted">
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <SubgroupPriority value="113"/>
@@ -4979,7 +4979,6 @@
     <CUnit id="Archon">
         <BehaviorArray index="2" Link=""/>
         <!--BehaviorArray Link="Supply4"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="ArtanisHighArchon"/>
         <ScoreKill value="0"/>
         <AbilArray Link="FeedbackArchon"/>
@@ -5064,7 +5063,6 @@
     </CUnit>
     <CUnit id="Banshee">
         <!--BehaviorArray Link="Supply3"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <!--BehaviorArray Link="VorazunCloakDamageBoostPermanent"/-->
         <BehaviorArray Link="VorazunCloakedShieldRegenPermanent"/>
         <TacticalAIThink value="AIThinkBanshee"/>
@@ -5092,7 +5090,6 @@
         <AbilArray index="5" Link="HyperjumpNoVision"/>
         <AbilArray Link="VehicleAfterburners"/>
         <!--BehaviorArray Link="Supply6"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts index="0">
             <LayoutButtons index="6" AbilCmd="HyperjumpNoVision,Execute"/>
             <LayoutButtons Face="IgniteAfterburners" Type="AbilCmd" AbilCmd="VehicleAfterburners,Execute" Row="2" Column="2"/>
@@ -5144,7 +5141,6 @@
     </CUnit>
     <CUnit id="BroodLord">
         <!--BehaviorArray Link="Supply4"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <CardLayouts index="0">
@@ -5224,7 +5220,6 @@
     <CUnit id="Carrier">
         <BehaviorArray index="0" Link="Supply"/>
         <!--BehaviorArray Link="Supply6"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <RepairTime value="80"/>
@@ -5234,7 +5229,10 @@
         <AbilArray Link="FenixClolarionCarrierMorph"/>
         <SubgroupPriority value="111"/>
     </CUnit>
-    <CUnit id="CarrierHyperjumping"/>
+    <CUnit id="CarrierHyperjumping">
+        <Race value="Prot"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
+    </CUnit>
     <CUnit id="CarrionBird">
         <DamageDealtXP value="0"/>
         <DamageTakenXP value="0"/>
@@ -5306,7 +5304,6 @@
     <CUnit id="Colossus">
         <BehaviorArray index="0" Link=""/>
         <!--BehaviorArray Link="Supply6"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <RepairTime value="42.86"/>
@@ -5340,7 +5337,6 @@
     </CUnit>
     <CUnit id="Corruptor">
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <KillXP value="0"/>
@@ -5410,7 +5406,6 @@
             <LayoutButtons Face="BiomassPassive" Type="Passive" Requirements="BiomassBuffVisible" Row="2" Column="3"/>
             <LayoutButtons Face="BiomassPassiveEmpty" Type="Passive" Requirements="BiomassBuffEmptyVisible" Row="2" Column="3"/>
         </CardLayouts>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <SubgroupPriority value="17"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Coop"/>
         <HotkeyCategory value="Unit/Category/ZergEvolved"/>
@@ -5441,7 +5436,6 @@
         <DamageDealtXP value="0"/>
         <DamageTakenXP value="0"/>
         <BehaviorArray Link="DisruptorPermanentCloak"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <AbilArray Link="FenixPurificationNova"/>
         <AbilArray Link="attack"/>
         <CardLayouts index="0">
@@ -5471,7 +5465,6 @@
     </CUnit>
     <CUnit id="DominionKillTeam">
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <KillXP value="0"/>
@@ -5480,7 +5473,6 @@
     </CUnit>
     <CUnit id="Drone">
         <!--BehaviorArray Link="Supply1"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <AbilArray Link="MapObjectInteract"/>
         <AbilArray Link="MutatorRemoveWorkerSleep"/>
         <AbilArray Link="SprayZerg"/>
@@ -5670,7 +5662,6 @@
         <ScoreResult value="BuildOrder"/>
         <SubgroupPriority value="50"/>
         <MinimapRadius value="1.375"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="SOASummonSelendisPlanetCracker"/>
         <EquipmentArray Weapon="InterceptorsDummy"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
@@ -5749,7 +5740,6 @@
         <ScoreKill value="0"/>
     </CUnit>
     <CUnit id="Hercules">
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <Food value="-3"/>
         <CostResource index="Minerals" value="100"/>
         <CostResource index="Vespene" value="50"/>
@@ -5802,7 +5792,6 @@
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="HotSSplitterlingMedium">
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <AbilArray index="5" Link="ExplodeSmall"/>
         <CardLayouts index="0">
             <LayoutButtons index="5" Face="BurrowDown" AbilCmd="BurrowHotSSplitterlingMediumDown,Execute" Column="4"/>
@@ -5840,7 +5829,6 @@
         <DamageTakenXP value="0"/>
     </CUnit>
     <CUnit id="HunterKiller">
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="ZagaraOwned"/>
         <LifeStart value="150"/>
         <LifeMax value="150"/>
@@ -5856,7 +5844,6 @@
         <SubgroupPriority value="157"/>
     </CUnit>
     <CUnit id="HunterKillerBurrowed">
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <LifeStart value="150"/>
         <LifeMax value="150"/>
         <ScoreKill value="0"/>
@@ -6141,7 +6128,6 @@
     <CUnit id="Liberator">
         <AbilArray Link="WarpableNova"/>
         <AbilArray Link="VehicleAfterburners"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <CardLayouts index="0">
@@ -6153,7 +6139,6 @@
         <SubgroupPriority value="115"/>
     </CUnit>
     <CUnit id="LiberatorAG">
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <KillXP value="0"/>
@@ -6168,7 +6153,6 @@
         <DamageTakenXP value="0"/>
         <HotkeyCategory value="Unit/Category/ZergUnits"/>
         <BehaviorArray Link="TriggerInheritsParentBuffs"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <SubgroupPriority value="101"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Coop"/>
     </CUnit>
@@ -6275,7 +6259,6 @@
         <AttackTargetPriority value="20"/>
         <AbilArray index="1" Link="HerculesTransport"/>
         <BehaviorArray Link="ScavengingSystemsMechDeath"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts index="0">
             <LayoutButtons index="0" Column="2"/>
             <LayoutButtons index="2" AbilCmd="HerculesTransport,Load" Column="0"/>
@@ -6315,7 +6298,6 @@
         <AbilArray index="4" Link="HerculesTransport"/>
         <AbilArray Link="Hyperjump"/>
         <BehaviorArray Link="ScavengingSystemsMechDeath"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts index="0">
             <LayoutButtons index="6" Face="HerculesUnloadAll" AbilCmd="HerculesTransport,UnloadAt"/>
             <LayoutButtons index="7" Face="HyperjumpHercules" AbilCmd="Hyperjump,Execute"/>
@@ -6428,7 +6410,6 @@
     <CUnit id="Oracle">
         <AbilArray Link="EnterWormhole"/>
         <AbilArray Link="PlaceWormhole"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="CorsairPermanentCloak"/>
         <CardLayouts index="0">
             <LayoutButtons index="6" Face="OracleWeaponOn" AbilCmd="OracleWeapon,On" Column="1"/>
@@ -6455,7 +6436,6 @@
         <AbilArray index="3" Link="GenerateCreep"/>
         <AbilArray index="4" Link="MorphToTransportOverlord"/>
         <AbilArray index="5" Link="OverlordTransportVentralSacs"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="SupplyLT1"/>
         <BehaviorArray Link="GenerateCreepHealingBehavior"/>
         <ScoreMake value="0"/>
@@ -6472,7 +6452,6 @@
         <SubgroupPriority value="110"/>
     </CUnit>
     <CUnit id="OverlordCocoon">
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreKill value="0"/>
         <KillXP value="0"/>
         <DamageDealtXP value="0"/>
@@ -6482,14 +6461,12 @@
         <BehaviorArray Link="MassiveVoidRayVulnerability"/-->
     </CUnit>
     <CUnit id="Ravager">
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <SubgroupPriority value="119"/>
     </CUnit>
     <CUnit id="RavagerBurrowed">
         <ScoreKill value="0"/>
         <CostResource index="Vespene" value="0"/>
         <CostResource index="Terrazine" value="50"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <SubgroupPriority value="119"/>
     </CUnit>
     <CUnit id="RavagerAbathur">
@@ -6529,7 +6506,6 @@
         <AbilArray Link="RavagerAbathurCorrosiveBile"/>
         <AbilArray Link="EvolveToBrutaliskRavager"/>
         <AbilArray Link="AbathurDeepTunnelImproved"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <WeaponArray Link="RavagerWeapon"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -6601,7 +6577,6 @@
         <AbilArray Link="BurrowRavagerAbathurUp"/>
         <AbilArray Link="AbathurDeepTunnelImproved"/>
         <AbilArray Link="que1"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="AcquireMove" Type="AbilCmd" AbilCmd="move,AcquireMove" Row="0" Column="4"/>
@@ -7300,7 +7275,6 @@
     </CUnit>
     <CUnit id="DroneBurrowed">
         <!--BehaviorArray Link="Supply1"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreKill value="0"/>
         <KillXP value="0"/>
         <DamageDealtXP value="0"/>
@@ -7309,7 +7283,6 @@
     </CUnit>
     <CUnit id="Impaler">
         <!--BehaviorArray Link="Supply3"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <KillXP value="0"/>
@@ -7320,7 +7293,6 @@
     </CUnit>
     <CUnit id="ImpalerBurrowed">
         <!--BehaviorArray Link="Supply3"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <!--BehaviorArray Link="VorazunCloakDamageBoostPermanent"/-->
         <ScoreKill value="0"/>
         <KillXP value="0"/>
@@ -7370,7 +7342,6 @@
         <AbilArray Link="BurrowImpalerAbathurDown"/>
         <AbilArray Link="AbathurDeepTunnel"/>
         <BehaviorArray Link="ImpalerWeaponDisabled"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <WeaponArray Link="ImpalerAbathur" Turret="FreeRotate"/>
         <!--EquipmentArray Weapon="Impaler"/-->
         <CardLayouts>
@@ -7444,7 +7415,6 @@
         <AbilArray Link="move"/>
         <AbilArray Link="BurrowImpalerAbathurUp"/>
         <AbilArray Link="AbathurDeepTunnel"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <!--BehaviorArray Link="VorazunCloakDamageBoostPermanent"/-->
         <BehaviorArray Link="ImpalerGenerateCreep"/>
         <WeaponArray Link="ImpalerAbathur" Turret="FreeRotate"/>
@@ -7528,7 +7498,6 @@
     <CUnit id="InfestedAbomination">
         <!--BehaviorArray Link="Supply3"/-->
         <BehaviorArray Link="AberrationArmorAura"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="AbberationBanelingIncubation"/>
         <LifeArmor value="0"/>
         <ScoreMake value="0"/>
@@ -7547,7 +7516,6 @@
     </CUnit>
     <CUnit id="InfestedAbominationBurrowed">
         <!--BehaviorArray Link="Supply3"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="AbberationBanelingIncubation"/>
         <LifeArmor value="0"/>
         <ScoreKill value="0"/>
@@ -7566,7 +7534,6 @@
     </CUnit>
     <CUnit id="InfestedMedic">
         <!--BehaviorArray Link="Supply1"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <KillXP value="0"/>
@@ -7578,7 +7545,6 @@
     </CUnit>
     <CUnit id="InfestedSiegeBreaker">
         <!--BehaviorArray Link="Supply3"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <KillXP value="0"/>
@@ -7589,7 +7555,6 @@
     </CUnit>
     <CUnit id="InfestedSiegeBreakerSieged">
         <!--BehaviorArray Link="Supply3"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreKill value="0"/>
         <KillXP value="0"/>
         <DamageDealtXP value="0"/>
@@ -7600,7 +7565,6 @@
     <CUnit id="Leviathan">
         <!--BehaviorArray Link="Supply6"/-->
         <UserTag value="Zerg"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <KillXP value="0"/>
@@ -7610,7 +7574,6 @@
     </CUnit>
     <CUnit id="Lurker">
         <!--BehaviorArray Link="Supply3"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <Speed value="2.9531"/>
         <Radius value="0.9375"/>
         <InnerRadius value="0.5"/>
@@ -7635,7 +7598,6 @@
     </CUnit>
     <CUnit id="LurkerBurrowed">
         <!--BehaviorArray Link="Supply3"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <!--BehaviorArray Link="VorazunCloakDamageBoostPermanent"/-->
         <AbilArray Link="LurkerHoldFire"/>
         <AbilArray Link="LurkerRemoveHoldFire"/>
@@ -7665,7 +7627,6 @@
     </CUnit>
     <CUnit id="Marauder">
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <KillXP value="0"/>
@@ -7681,7 +7642,6 @@
     </CUnit>
     <CUnit id="Marine">
         <!--BehaviorArray Link="Supply1"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <CardLayouts index="0">
@@ -7698,7 +7658,6 @@
     <CUnit id="Medivac">
         <AbilArray Link="WarpableNova"/>
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <RepairTime value="42"/>
@@ -7716,7 +7675,6 @@
     <CUnit id="Mothership">
         <!--BehaviorArray Link="Supply6"/-->
         <UserTag value="Prot"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <KillXP value="0"/>
@@ -7725,7 +7683,6 @@
     </CUnit>
     <CUnit id="QueenBurrowed">
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreKill value="0"/>
         <KillXP value="0"/>
         <DamageDealtXP value="0"/>
@@ -7745,7 +7702,6 @@
     </CUnit>
     <CUnit id="Infestor">
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <KillXP value="0"/>
@@ -7762,7 +7718,6 @@
     </CUnit>
     <CUnit id="InfestorBurrowed">
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreKill value="0"/>
         <KillXP value="0"/>
         <DamageDealtXP value="0"/>
@@ -7807,7 +7762,6 @@
         <BehaviorArray Link="HyperionVoidCoopDamageAura"/>
         <BehaviorArray Link="HyperionVoidCoopSecondaryWeapons"/>
         <!--BehaviorArray Link="Supply6"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <WeaponArray Link="HyperionVoidCoopGround" Turret="Battlecruiser"/>
         <WeaponArray Link="HyperionVoidCoopAir" Turret="Battlecruiser"/>
         <CardLayouts>
@@ -7897,7 +7851,6 @@
         <AbilArray Link="EvolveToBrutaliskDefiler"/>
         <AbilArray Link="que1"/>
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <KillXP value="0"/>
@@ -7910,7 +7863,6 @@
     </CUnit>
     <CUnit id="DefilerMPBurrowed">
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <KillXP value="0"/>
@@ -7955,7 +7907,6 @@
         <AbilArray Link="BurrowQueenUpCoop"/>
         <AbilArray Link="QueenBuild"/>
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowQueenUpCoop,Execute" Row="2" Column="4"/>
@@ -8023,7 +7974,6 @@
         <AbilArray Link="SpawnLarva"/>
         <AbilArray Link="TransfusionCoop"/>
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="QueenMustBeOnCreep"/>
         <WeaponArray Link="AcidSpines"/>
         <WeaponArray Link="TalonsMissile"/>
@@ -8079,7 +8029,6 @@
         <WeaponArray Link="QueenClassicDummyWeapon"/>
         <AbilArray Link="attack"/>
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts index="0">
             <LayoutButtons index="5" Face="QueenMPEnsnare" AbilCmd="QueenMPEnsnare,Execute"/>
             <LayoutButtons index="6" Face="QueenMPSpawnBroodlings" AbilCmd="QueenMPSpawnBroodlings,Execute"/>
@@ -8093,7 +8042,6 @@
     <CUnit id="Reaver">
         <BehaviorArray index="0" Link=""/>
         <!--BehaviorArray Link="Supply6"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <RepairTime value="42.9"/>
@@ -8116,7 +8064,6 @@
     </CUnit>
     <CUnit id="ScoutMP">
         <!--BehaviorArray Link="Supply3"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <RepairTime value="28.125"/>
         <KillXP value="0"/>
         <DamageDealtXP value="0"/>
@@ -8350,7 +8297,6 @@
     <CUnit id="Tempest">
         <BehaviorArray index="0" Link=""/>
         <!--BehaviorArray Link="Supply4"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <AbilArray Link="LightningBomb"/>
         <CardLayouts index="0">
             <LayoutButtons index="6" Column="1"/>
@@ -8424,7 +8370,6 @@
         <AbilArray Link="stop"/>
         <!--BehaviorArray Link="SwannCommanderMechRebirth"/-->
         <!--BehaviorArray Link="Supply6"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts index="0">
             <LayoutButtons Face="330mmBarrageCannons" Type="AbilCmd" AbilCmd="330mmBarrageCannons,Execute" Row="2" Column="0"/>
             <LayoutButtons Face="330mmBarrageCannonLocked" Type="Passive" Requirements="SwannLevel07" Row="2" Column="0"/>
@@ -8870,7 +8815,6 @@
         <GlossaryPriority value="11"/>
     </CUnit>
     <CUnit id="Baneling">
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="SupplyLT1"/>
         <BehaviorArray Link="NoScrapDrop"/>
         <CardLayouts index="0">
@@ -8920,7 +8864,6 @@
         <Collide index="Ground" value="0"/>
     </CUnit>
     <CUnit id="BanelingBurrowed">
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="SupplyLT1"/>
         <!--BehaviorArray Link="VorazunCloakDamageBoostPermanent"/-->
         <BehaviorArray Link="NoScrapDrop"/>
@@ -9056,7 +8999,6 @@
         <ScoreKill value="0"/>
         <BehaviorArray Link="Frenzy"/>
         <BehaviorArray Link="CarapaceDamageResponse"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts index="0">
             <LayoutButtons Face="BrutaliskDeepTunnel" Type="AbilCmd" AbilCmd="BrutaliskDeepTunnel,Execute" Row="2" Column="3"/>
             <!--LayoutButtons Face="SymbioteStab" Type="AbilCmd" AbilCmd="SymbioteStab,Execute" Row="2" Column="0"/>
@@ -9162,7 +9104,6 @@
         <BehaviorArray index="0" Link="VoidDetectorRadar"/>
         <!--BehaviorArray Link="Supply2"/-->
         <!--BehaviorArray Link="WarpInAttackSpeedBehavior"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <KillXP value="0"/>
@@ -9189,7 +9130,6 @@
     <CUnit id="DevilDog">
         <!--BehaviorArray Link="RaynorMercVeterancyApplyDummy"/-->
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CostResource index="Minerals" value="100"/>
         <CostResource index="Vespene" value="25"/>
         <!--Food value="0"/-->
@@ -9202,7 +9142,6 @@
     <CUnit id="DukesRevenge">
         <!--BehaviorArray Link="RaynorMercVeterancyApplyDummy"/-->
         <!--BehaviorArray Link="Supply6"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <KillXP value="0"/>
@@ -9213,7 +9152,6 @@
         <!--BehaviorArray Link="RaynorMercVeterancyApplyDummy"/-->
         <!--BehaviorArray Link="Supply3"/-->
         <AbilArray Link="WarpableNova"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <!--BehaviorArray Link="VorazunCloakDamageBoostPermanent"/-->
         <BehaviorArray Link="VorazunCloakedShieldRegenPermanent"/>
         <CostResource index="Minerals" value="150"/>
@@ -9504,6 +9442,12 @@
             <LayoutButtons Face="DarkArchon" Type="AbilCmd" AbilCmd="GatewayTrain,Train9" Row="1" Column="2"/>
             <LayoutButtons Face="WarpInDarkArchonLocked" Type="Passive" Requirements="VorazunLevel05" Row="1" Column="2"/>
             <LayoutButtons Face="AlarakMasteryUnitAttackSpeed" Type="Passive" Requirements="HaveMasteryAlarakUnitAttackSpeed" Row="2" Column="2"/>
+            <!--ADDED-->
+            <LayoutButtons index="13" Face="ZealotShakuras" Type="AbilCmd" AbilCmd="GatewayTrain,Train19"/>
+            <LayoutButtons index="14" Face="WarpInSupplicant" Type="AbilCmd" AbilCmd="GatewayTrain,Train11"/>
+            <LayoutButtons index="15" Face="ZealotPurifier" AbilCmd="GatewayTrain,Train20"/>
+            <LayoutButtons index="16" Face="WarpInTalonPredator" AbilCmd="GatewayTrainTalon,255"/>
+            <LayoutButtons index="17" Face="WarpInCyberHunter" Type="Undefined" AbilCmd="GatewayTrainTalon,255"/>
         </CardLayouts>
         <RepairTime value="32.5"/>
         <BehaviorArray Link="ChronoBoostTarget"/>
@@ -9511,7 +9455,6 @@
         <AbilArray Link="GatewayTrain2"/>
     </CUnit>
     <CUnit id="Ghost">
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts index="0">
             <LayoutButtons Face="PermanentlyCloakedGhost" Type="Passive" Requirements="GhostPermanentCloak" Row="2" Column="2"/>
         </CardLayouts>
@@ -9580,7 +9523,6 @@
         <!--BehaviorArray Link="RaynorMercVeterancyApplyDummy"/-->
         <!--BehaviorArray Link="Supply2"/-->
         <AbilArray Link="WarpableNova"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <DamageDealtXP value="0"/>
@@ -9631,6 +9573,15 @@
         <BehaviorArray Link="HatcheryLarvaDeath"/>
         <BehaviorArray Link="ChronoBoostTarget"/>
         <BehaviorArray Link="HatcheryDoubleQueue"/>
+        <!--ADDED-->
+        <BehaviorArray index="3" Link="makeCreep8x6Enhanced"/>
+        <BehaviorArray index="4" Link="GameTime5Seconds"/>
+        <BehaviorArray index="5" Link="HatcheryLarvaDeath"/>
+        <BehaviorArray index="6" Link="ChronoBoostTarget"/>
+        <BehaviorArray index="7" Link="HatcheryDoubleQueue"/>
+        <BehaviorArray index="8" removed="1"/>
+
+
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <SubgroupPriority value="67"/>
@@ -9640,7 +9591,6 @@
     <CUnit id="HelsAngelAssault">
         <!--BehaviorArray Link="RaynorMercVeterancyApplyDummy"/-->
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CostResource index="Minerals" value="150"/>
         <CostResource index="Vespene" value="75"/>
         <ScoreKill value="0"/>
@@ -9652,7 +9602,6 @@
     <CUnit id="HelsAngelFighter">
         <!--BehaviorArray Link="RaynorMercVeterancyApplyDummy"/-->
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CostResource index="Minerals" value="150"/>
         <CostResource index="Vespene" value="75"/>
         <ScoreMake value="0"/>
@@ -9666,7 +9615,6 @@
         <BehaviorArray index="0" Link="DamageDisablesAttackHighTemplar"/>
         <BehaviorArray index="1" Link=""/>
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <CardLayouts index="0">
@@ -9768,7 +9716,6 @@
     <CUnit id="HotSNoxious">
         <LifeArmor value="1"/>
         <!--BehaviorArray Link="Supply6"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="VorazunCloakDamageBoostPermanentUltraliskBurrowCharge"/>
         <CardLayouts index="0">
             <LayoutButtons index="6" Row="1" Column="3"/>
@@ -9788,7 +9735,6 @@
         <LifeArmor value="1"/>
         <BehaviorArray Link="UltraliskOutOfCombat1"/>
         <!--BehaviorArray Link="Supply6"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts index="0">
             <LayoutButtons index="2" Row="1" Column="3"/>
             <LayoutButtons index="3" Row="1" Column="2"/>
@@ -9803,7 +9749,6 @@
     </CUnit>
     <CUnit id="HotSRaptor">
         <BehaviorArray Link="SupplyLT1"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <!--BehaviorArray Link="ZerglingArmorShredPassive"/-->
         <CardLayouts index="0">
             <LayoutButtons index="9" Row="1" Column="2"/>
@@ -9823,7 +9768,6 @@
     </CUnit>
     <CUnit id="HotSRaptorBurrowed">
         <BehaviorArray index="0" Link="SupplyLT1"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts index="0">
             <LayoutButtons index="2" Row="1" Column="2"/>
             <LayoutButtons index="3" Requirements="HaveMPAdrenalGlands" Row="1"/>
@@ -9839,7 +9783,6 @@
         <SubgroupPriority value="108"/>
     </CUnit>
     <CUnit id="HotSSplitterlingBig">
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="NoScrapDrop"/>
         <AbilArray Link="Explode"/>
         <!--BehaviorArray Link="Supply1"/-->
@@ -9862,7 +9805,6 @@
         <Collide index="Ground" value="0"/>
     </CUnit>
     <CUnit id="HotSSplitterlingBigBurrowed">
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <!--BehaviorArray Link="Supply1"/-->
         <!--BehaviorArray Link="VorazunCloakDamageBoostPermanent"/-->
         <BehaviorArray Link="NoScrapDrop"/>
@@ -9882,7 +9824,6 @@
         <SubgroupPriority value="116"/>
     </CUnit>
     <CUnit id="HotSSplitterlingMediumBurrowed">
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <!--BehaviorArray Link="VorazunCloakDamageBoostPermanent"/-->
         <CardLayouts index="0">
             <LayoutButtons index="3" Row="1" Column="0"/>
@@ -9899,7 +9840,6 @@
     </CUnit>
     <CUnit id="HotSSwarmling">
         <BehaviorArray Link="SupplyLT1"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="MasteryZagaraZerglingDodgeChance"/>
         <!--BehaviorArray Link="ZerglingArmorShredPassive"/-->
         <CardLayouts index="0">
@@ -9921,7 +9861,6 @@
     </CUnit>
     <CUnit id="HotSSwarmlingBurrowed">
         <BehaviorArray index="0" Link="SupplyLT1"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts index="0">
             <LayoutButtons index="2" Row="1" Column="2"/>
             <LayoutButtons index="3" Requirements="HaveMPAdrenalGlands" Row="1"/>
@@ -9989,7 +9928,6 @@
     </CUnit>
     <CUnit id="Hydralisk">
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts index="0">
             <LayoutButtons index="6" Row="1" Column="1"/>
             <LayoutButtons index="7" Face="MuscularAugmentsCoop" Requirements="HaveMuscularAugments" Row="1"/>
@@ -10034,7 +9972,6 @@
     </CUnit>
     <CUnit id="HydraliskBurrowed">
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts index="0">
             <LayoutButtons index="0" Face="BurrowUp" AbilCmd="BurrowHydraliskUp,Execute" Row="2"/>
             <LayoutButtons index="1" Face="BurrowDown" AbilCmd="BurrowDroneDown,Execute" Column="3"/>
@@ -10131,7 +10068,6 @@
     </CUnit>
     <CUnit id="HydraliskImpaler">
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts index="0">
             <LayoutButtons index="6" Column="1"/>
             <LayoutButtons index="7" Row="1"/>
@@ -10150,7 +10086,6 @@
     </CUnit>
     <CUnit id="HydraliskImpalerBurrowed">
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts index="0">
             <LayoutButtons index="2" Row="1"/>
             <LayoutButtons index="3" Face="MuscularAugmentsCoop" Requirements="HaveGroovedSpines" Row="1" Column="0"/>
@@ -10164,7 +10099,6 @@
     </CUnit>
     <CUnit id="HydraliskLurkerBurrowed">
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts index="0">
             <LayoutButtons index="2" Face="MuscularAugmentsCoop" Requirements="HaveMuscularAugments" Row="1" Column="0"/>
             <LayoutButtons index="3" Face="AncillaryCarapaceHydralisk" Requirements="HaveHotSHydraliskHealth" Row="1"/>
@@ -10180,7 +10114,6 @@
     <CUnit id="Immortal">
         <BehaviorArray index="0" Link=""/>
         <!--BehaviorArray Link="Supply4"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <RepairTime value="36.667"/>
@@ -10280,7 +10213,6 @@
         <BehaviorArray index="0" Link="KerriganUnburrowedDummy"/>
         <BehaviorArray index="1" Link="KerriganAssimilationLifesteal"/>
         <BehaviorArray Link="HeroCCImmunity"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="HeroicFortitude"/>
         <AbilArray Link="KerriganMaelstrom"/>
         <AbilArray Link="KerriganVoidCoopEconDrop"/>
@@ -10373,7 +10305,6 @@
         <BehaviorArray index="0" Link="K5KerriganBurrowedDisabler"/>
         <BehaviorArray index="1" Link="KerriganAssimilationLifesteal"/>
         <BehaviorArray Link="HeroCCImmunity"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="HeroicFortitude"/>
         <AbilArray Link="KerriganMaelstrom"/>
         <AbilArray Link="KerriganVoidCoopEconDrop"/>
@@ -10631,7 +10562,6 @@
         <SubgroupPriority value="101"/>
     </CUnit>
     <CUnit id="MULE">
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="KelMorianWorkerCloak"/>
         <BehaviorArray Link="SupplyLT1"/>
         <KillXP value="0"/>
@@ -10701,7 +10631,6 @@
     <CUnit id="MercHellion">
         <!--BehaviorArray Link="RaynorMercVeterancyApplyDummy"/-->
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <KillXP value="0"/>
@@ -10713,7 +10642,6 @@
         <!--BehaviorArray Link="RaynorMercVeterancyApplyDummy"/-->
         <BehaviorArray Link="MercMedicNormalHeal"/>
         <!--BehaviorArray Link="Supply1"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <LifeStart value="100"/>
         <LifeMax value="100"/>
         <EnergyStart value="200"/>
@@ -10735,7 +10663,6 @@
         <!--BehaviorArray Link="RaynorMercVeterancyApplyDummy"/-->
         <!--BehaviorArray Link="Supply1"/-->
         <AbilArray Link="WarpableNova"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="ReaperRegen"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
@@ -10853,7 +10780,6 @@
             <LayoutButtons Face="BiomassPassiveEmpty" Type="Passive" Requirements="BiomassBuffEmptyVisible" Row="2" Column="3"/>
         </CardLayouts>
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <KillXP value="0"/>
@@ -10888,7 +10814,6 @@
     </CUnit>
     <CUnit id="Observer">
         <!--BehaviorArray Link="Supply1"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <!--WeaponArray Link="ObserverFakeWeapon"/-->
         <AbilArray Link="attack"/>
         <AbilArray Link="Warpable"/>
@@ -10952,7 +10877,6 @@
         <BehaviorArray index="0" Link="VorazunCommanderCloak"/>
         <BehaviorArray Link="DestructionBeamWeaponUpgrade"/>
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts index="0">
             <LayoutButtons Face="ScoutStats" Type="Passive" Behavior="DestructionBeamWeaponUpgrade" Row="2" Column="1"/>
         </CardLayouts>
@@ -11122,7 +11046,6 @@
         </CardLayouts>
         <BehaviorArray index="0" Link=""/>
         <!--BehaviorArray Link="Supply1"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <RepairTime value="8.5"/>
@@ -11328,7 +11251,6 @@
             <LayoutButtons Face="PointDefenseDrone" Type="AbilCmd" AbilCmd="PlacePointDefenseDrone,Execute" Row="2" Column="3"/>
         </CardLayouts>
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <KillXP value="0"/>
@@ -11351,7 +11273,6 @@
             <LayoutButtons Face="EnlightenedDynamics" Type="Passive" Requirements="HaveReaperEnlightenedDynamics" Row="1" Column="4"/>
         </CardLayouts>
         <!--BehaviorArray Link="Supply1"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <KillXP value="0"/>
@@ -11370,7 +11291,6 @@
     </CUnit>
     <CUnit id="RoachBurrowed">
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <TacticalAIThink value="AIThinkRoachBurrowed"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
@@ -11439,7 +11359,6 @@
     </CUnit>
     <CUnit id="RoachCorpser">
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <TacticalAIThink value="AIThinkRoach"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
@@ -11464,7 +11383,6 @@
     </CUnit>
     <CUnit id="RoachCorpserBurrowed">
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <Acceleration value="0"/>
         <TacticalAIThink value="AIThinkRoachBurrowed"/>
         <ScoreKill value="0"/>
@@ -11488,7 +11406,6 @@
     </CUnit>
     <CUnit id="RoachVile">
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="AbathurPropArmor"/>
         <TacticalAIThink value="AIThinkRoach"/>
         <ScoreMake value="0"/>
@@ -11523,7 +11440,6 @@
     </CUnit>
     <CUnit id="RoachVileBurrowed">
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <Acceleration value="0"/>
         <TacticalAIThink value="AIThinkRoachBurrowed"/>
         <ScoreKill value="0"/>
@@ -11679,6 +11595,30 @@
             <LayoutButtons Face="ResearchShadowCannonLocked" Type="Passive" Requirements="KaraxLevel09" Row="0" Column="3"/>
             <LayoutButtons Face="ResearchChargedBlastChargeTimeLocked" Type="Passive" Requirements="AlarakLevel06" Row="0" Column="3"/>
             <LayoutButtons Face="FenixResearchDisruptorSecondExplosionLocked" Type="Passive" Requirements="FenixLevel09" Row="0" Column="3"/>
+
+<!--ADDED-->
+            <LayoutButtons index="7" Row="0" Column="4"/>
+            <LayoutButtons index="8" Column="4"/>
+            <LayoutButtons index="9" Row="0" Column="4"/>
+            <LayoutButtons index="10" Column="4"/>
+            <LayoutButtons index="12" Face="ResearchBarrier" AbilCmd="RoboticsBayResearch,Research9" Column="2"/>
+            <LayoutButtons index="14" Face="ResearchFireBeamLocked" Type="Passive" AbilCmd="" Requirements="KaraxLevel09"/>
+            <LayoutButtons index="15" Face="ResearchShadowCannon" AbilCmd="RoboticsBayResearch,Research10" Column="3"/>
+            <LayoutButtons index="16" Column="3"/>
+            <LayoutButtons index="17" Face="ResearchAlarakColossusChargedBlastAirAttack" AbilCmd="RoboticsBayResearch,Research18" Column="0"/>
+            <LayoutButtons index="18" Face="ResearchVanguardArmoredDamage" AbilCmd="RoboticsBayResearch,Research16"/>
+            <LayoutButtons index="19" Face="ResearchReaverIncreasedScarabCount" AbilCmd="RoboticsBayResearch,Research13" Row="1"/>
+            <LayoutButtons index="20" Face="ResearchDisruptorCloak" Type="AbilCmd" AbilCmd="RoboticsBayResearch,Research19" Requirements="" Row="1"/>
+            <LayoutButtons index="21" Face="ResearchIncreasedScarabCountLocked" Requirements="ArtanisLevel09" Row="1"/>
+            <LayoutButtons index="22" Face="FenixResearchDisruptorCloakLocked" Requirements="FenixLevel09" Row="1"/>
+            <LayoutButtons index="23" Row="1"/>
+            <LayoutButtons index="24" Face="ResearchAlarakColossusChargedBlastChargeTime" AbilCmd="RoboticsBayResearch,Research17" Column="1"/>
+            <LayoutButtons index="25" Face="FenixResearchDisruptorSecondExplosionLocked" Type="Passive" AbilCmd="" Requirements="FenixLevel09" Row="1"/>
+            <LayoutButtons index="26" Row="1"/>
+            <LayoutButtons index="27" Row="1"/>
+            <LayoutButtons index="29" Column="1"/>
+            <LayoutButtons index="30" Face="ResearchAlarakVanguardIncreaseSplashArea" Type="AbilCmd" AbilCmd="RoboticsBayResearch,Research15" Requirements=""/>
+
         </CardLayouts>
         <Attributes index="Mechanical" value="1"/>
         <ScoreMake value="0"/>
@@ -12047,7 +11987,6 @@
         <EditorCategories value="ObjectType:Set,ObjectFamily:Storymode"/>
     </CUnit>
     <CUnit id="Scourge">
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="SupplyLT1"/>
         <BehaviorArray Link="NoScrapDrop"/>
         <CostResource index="Minerals" value="12"/>
@@ -12080,7 +12019,6 @@
         <BehaviorArray index="0" Link="VoidSentrySubgroupModifier"/>
         <BehaviorArray index="1" Link=""/>
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <RepairTime value="18.5"/>
@@ -12098,7 +12036,6 @@
         <!--BehaviorArray Link="RaynorMercVeterancyApplyDummy"/-->
         <!--BehaviorArray Link="Supply3"/-->
         <AbilArray Link="WarpableNova"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <KillXP value="0"/>
@@ -12108,7 +12045,6 @@
     <CUnit id="SiegeBreakerSieged">
         <!--BehaviorArray Link="RaynorMercVeterancyApplyDummy"/-->
         <!--BehaviorArray Link="Supply3"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreKill value="0"/>
         <KillXP value="0"/>
         <DamageDealtXP value="0"/>
@@ -12269,7 +12205,6 @@
         <!--BehaviorArray Link="RaynorMercVeterancyApplyDummy"/-->
         <!--BehaviorArray Link="Supply2"/-->
         <AbilArray Link="WarpableNova"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <RepairTime value="40"/>
         <DamageDealtXP value="0"/>
         <DamageTakenXP value="0"/>
@@ -12351,7 +12286,6 @@
     <CUnit id="Stalker">
         <BehaviorArray index="0" Link="AlarakStalkerPhasingArmor"/>
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <RepairTime value="21"/>
@@ -12712,7 +12646,6 @@
     </CUnit>
     <CUnit id="SwarmHostBurrowed">
         <!--BehaviorArray Link="Supply3"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="SwarmHostCreep"/>
         <CardLayouts index="0">
             <LayoutButtons index="1" Row="1"/>
@@ -12739,7 +12672,6 @@
     </CUnit>
     <CUnit id="SwarmHostBurrowedMP">
         <!--BehaviorArray Link="Supply3"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <AbilArray index="2" Link="SpawnLocustsTargeted"/>
         <CardLayouts index="0">
             <LayoutButtons index="1" AbilCmd="SpawnLocustsTargeted,Execute"/>
@@ -12751,7 +12683,6 @@
     <CUnit id="SwarmHostMP">
         <!--BehaviorArray Link="Supply3"/-->
         <WeaponArray Link="SwarmHostFakeWeapon"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <AbilArray Link="attack"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
@@ -12762,7 +12693,6 @@
     </CUnit>
     <CUnit id="SwarmHostRooted">
         <!--BehaviorArray Link="Supply3"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts index="0">
             <LayoutButtons index="4" Column="2"/>
         </CardLayouts>
@@ -12773,7 +12703,6 @@
     </CUnit>
     <CUnit id="SwarmHostSplitA">
         <!--BehaviorArray Link="Supply3"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts index="0">
             <LayoutButtons index="8" Column="2"/>
         </CardLayouts>
@@ -12783,7 +12712,6 @@
     </CUnit>
     <CUnit id="SwarmHostSplitABurrowed">
         <!--BehaviorArray Link="Supply3"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts index="0">
             <LayoutButtons index="4" Column="2"/>
         </CardLayouts>
@@ -12793,7 +12721,6 @@
     </CUnit>
     <CUnit id="SwarmHostSplitARooted">
         <!--BehaviorArray Link="Supply3"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts index="0">
             <LayoutButtons index="4" Column="2"/>
         </CardLayouts>
@@ -12803,7 +12730,6 @@
     </CUnit>
     <CUnit id="SwarmHostSplitB">
         <!--BehaviorArray Link="Supply3"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts index="0">
             <LayoutButtons index="10" Row="1" Column="3"/>
             <LayoutButtons index="11" Face="AbathurDeepTunnel"/>
@@ -12814,7 +12740,6 @@
     </CUnit>
     <CUnit id="SwarmHostSplitBBurrowed">
         <!--BehaviorArray Link="Supply3"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts index="0">
             <LayoutButtons index="5" Row="1" Column="3"/>
             <LayoutButtons index="9" Face="AbathurDeepTunnel"/>
@@ -12825,7 +12750,6 @@
     </CUnit>
     <CUnit id="SwarmHostSplitBRooted">
         <!--BehaviorArray Link="Supply3"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts index="0">
             <LayoutButtons index="5" Row="1" Column="3"/>
             <LayoutButtons index="9" Face="AbathurDeepTunnel"/>
@@ -13106,7 +13030,6 @@
         <BehaviorArray index="1" Link="UltraliskOutOfCombat1"/>
         <BehaviorArray index="2" Link=""/>
         <!--BehaviorArray Link="Supply6"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="VorazunCloakDamageBoostPermanentUltraliskBurrowCharge"/>
         <CardLayouts index="0">
             <LayoutButtons index="6" Row="1" Column="0"/>
@@ -13142,7 +13065,6 @@
         <LifeArmor value="1"/>
         <BehaviorArray Link="UltraliskOutOfCombat1"/>
         <!--BehaviorArray Link="Supply6"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts index="0">
             <LayoutButtons index="2" Row="1" Column="0"/>
             <LayoutButtons index="3" Face="TissueAssimilation" Requirements="HaveHotSTissueAssimilation" Row="1" Column="2"/>
@@ -13192,7 +13114,6 @@
     </CUnit>
     <CUnit id="VikingAssault">
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreKill value="0"/>
         <AbilArray Link="VehicleAfterburners"/>
         <CardLayouts index="0">
@@ -13214,7 +13135,6 @@
     </CUnit>
     <CUnit id="VikingFighter">
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <AbilArray Link="VehicleAfterburners"/>
@@ -13295,7 +13215,6 @@
     </CUnit>
     <CUnit id="Viper">
         <!--BehaviorArray Link="Supply3"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <KillXP value="0"/>
@@ -13349,7 +13268,6 @@
     <CUnit id="VoidRay">
         <BehaviorArray index="0" Link=""/>
         <!--BehaviorArray Link="Supply4"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <RepairTime value="36"/>
@@ -13459,7 +13377,6 @@
         <KillXP value="0"/>
         <!--BehaviorArray Link="Supply2"/-->
         <AbilArray Link="VehicleAfterburners"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts index="0">
             <LayoutButtons index="6" AbilCmd="255,255" Column="3"/>
             <LayoutButtons Face="IgniteAfterburners" Type="AbilCmd" AbilCmd="VehicleAfterburners,Execute" Row="2" Column="2"/>
@@ -13513,7 +13430,6 @@
         <AbilArray Link="WarbotB"/>
         <AbilArray Link="WarbotC"/-->
         <!--BehaviorArray Link="WarbotSpawn"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <WeaponArray Link="WarbotA" Turret="Warbot"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -13614,7 +13530,6 @@
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <RepairTime value="40"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <SubgroupPriority value="104"/>
     </CUnit>
     <CUnit id="WidowMineBurrowed">
@@ -13634,7 +13549,6 @@
             <LayoutButtons Face="ReplenishWidowMines" Type="AbilCmd" AbilCmd="WidowMineMakeAttackCharges,Specialize1" Row="1" Column="2"/>
         </CardLayouts-->
         <ScoreKill value="0"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <SubgroupPriority value="104"/>
     </CUnit>
     <CUnit id="DrakkenLaserDrillCoop">
@@ -13818,7 +13732,7 @@
         <CardLayouts index="0">
             <LayoutButtons Face="ZagaraVoidCoopCreepMaster" Type="AbilCmd" AbilCmd="CreepTumorBuild,Build2" Row="2" Column="0"/>
         </CardLayouts>
-        <EditorCategories value="ObjectType:Structure,ObjectFamily:Coop"/>
+        <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
     </CUnit>
     <CUnit id="OdinMKII">
         <DeathRevealRadius value="3"/>
@@ -13940,7 +13854,6 @@
         <!--BehaviorArray Link="Supply2"/-->
         <!--BehaviorArray Link="VorazunCloakDamageBoostPermanent"/-->
         <BehaviorArray Link="VorazunCloakedShieldRegenPermanent"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="SwannBurstLaserMovementBuff"/>
         <BehaviorArray Link="SwannGeminiMissileMovementBuff"/>
         <CardLayouts index="0">
@@ -14136,7 +14049,6 @@
         <BehaviorArray Link="KerriganUnburrowedDummy"/>
         <BehaviorArray Link="ZagaraVoidCoopCreepMasterRegen"/>
         <BehaviorArray Link="HeroCCImmunity"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="HeroicFortitude"/>
         <!--BehaviorArray Link="ZagaraVoidCoopCollectEssence"/-->
         <WeaponArray Link="ZagaraVoidCoopRanged"/>
@@ -14239,7 +14151,6 @@
         <BehaviorArray Link="ZagaraVoidCoopBurrowedDisabler"/>
         <BehaviorArray Link="ZagaraVoidCoopCreepMasterRegen"/>
         <BehaviorArray Link="HeroCCImmunity"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="HeroicFortitude"/>
         <!--BehaviorArray Link="ZagaraVoidCoopCollectEssence"/-->
         <CardLayouts>
@@ -14366,7 +14277,6 @@
     <CUnit id="Zealot">
         <BehaviorArray index="1" Link=""/>
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts index="0">
             <LayoutButtons Face="WhirlwindLocked" Type="Passive" Requirements="ArtanisLevel04" Row="2" Column="1"/>
         </CardLayouts>
@@ -14393,7 +14303,6 @@
     <CUnit id="ZealotAiur">
         <BehaviorArray index="1" Link=""/>
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <KillXP value="0"/>
@@ -14414,7 +14323,6 @@
     <!--  Swann Commander Mech Rebirth  -->
     <CUnit id="Hellion">
         <AbilArray Link="HellionWreckage"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <!--BehaviorArray Link="Supply2"/-->
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
@@ -14437,7 +14345,6 @@
     </CUnit>
     <CUnit id="HellionTank">
         <AbilArray Link="HellbatWreckage"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <!--BehaviorArray Link="Supply2"/-->
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
@@ -14457,7 +14364,6 @@
         <!--AbilArray Link="SiegeTankJumpJet"/>
         <AbilArray Link="CloakingFieldSiegeTank"/-->
         <!--BehaviorArray Link="Supply3"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts index="0">
             <LayoutButtons index="6" Face="ImprovedSiegeMode" Requirements="HaveImprovedSiegeMode" Column="3"/>
             <LayoutButtons Face="VehicleWeaponRange" Type="Passive" Requirements="HaveVehicleWeaponRange" Row="1" Column="2"/>
@@ -14484,7 +14390,6 @@
         <!--AbilArray Link="SiegeTankSiegedJumpJet"/>
         <AbilArray Link="CloakingFieldSiegeTank"/-->
         <!--BehaviorArray Link="Supply3"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreKill value="0"/>
         <CardLayouts index="0">
             <LayoutButtons index="6" AbilCmd="255,255" Row="1" Column="1"/>
@@ -14508,7 +14413,6 @@
         <AbilArray Link="ThorWreckageSwann"/>
         <AbilArray Link="SelfRepair"/>
         <!--BehaviorArray Link="Supply6"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts index="0">
             <LayoutButtons Face="SelfRepair" Type="AbilCmd" AbilCmd="SelfRepair,Execute" Row="2" Column="2"/>
         </CardLayouts>
@@ -14532,9 +14436,7 @@
         <AbilArray index="3" removed="1"/>
         <AbilArray index="4" removed="1"/>
         <AbilArray index="5" removed="1"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="Unrepairable"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts index="0">
             <LayoutButtons index="5" Face="LockOnUpgraded" AbilCmd="LockOnUpgraded,255" Column="4"/>
             <LayoutButtons index="7" Face="CycloneLockOnAir" Requirements="HaveCycloneLockOnAirUpgrade" Row="1" Column="1"/>
@@ -14570,7 +14472,6 @@
         <!--SubgroupPriority value="2"/-->
         <AbilArray Link="DiamondbackReborn"/>
         <AbilArray Link="DiamondbackRebornCheap"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="Unrepairable"/>
         <CardLayouts index="0">
             <LayoutButtons index="6" AbilCmd="255"/>
@@ -15154,7 +15055,6 @@
         <KillXP value="0"/>
         <BehaviorArray index="1" Link=""/>
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Coop"/>
@@ -15190,7 +15090,6 @@
     </CUnit>
     <CUnit id="Zergling">
         <BehaviorArray Link="SupplyLT1"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="MasteryZagaraZerglingDodgeChance"/>
         <!--BehaviorArray Link="ZerglingArmorShredPassive"/-->
         <CardLayouts index="0">
@@ -15212,7 +15111,6 @@
     </CUnit>
     <CUnit id="ZerglingBurrowed">
         <BehaviorArray index="0" Link="SupplyLT1"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts index="0">
             <LayoutButtons index="2" Row="1" Column="2"/>
             <LayoutButtons index="3" Requirements="HaveMPAdrenalGlands" Row="1"/>
@@ -15295,6 +15193,7 @@
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
     <CUnit id="SwannSpecialDeliveryDropship">
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Coop"/>
         <DeathRevealRadius value="3"/>
         <Race value="Terr"/>
         <Mob value="Campaign"/>
@@ -15376,7 +15275,6 @@
         <BehaviorArray Link="ScavengingSystemsMechDeath"/>
         <!--BehaviorArray Link="RaynorMercVeterancyApplyDummy"/-->
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <WeaponArray Link="MercVulture"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -15630,7 +15528,6 @@
     </CUnit>
     <CUnit id="Overseer">
         <BehaviorArray index="0" Link="Detector11"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="SupplyLT1"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
@@ -15807,7 +15704,6 @@
         <Acceleration value="1000"/>
     </CUnit>
     <CUnit id="SpecialOpsDropship">
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="ScavengingSystemsMechDeath"/>
         <AbilArray Link="VehicleAfterburners"/>
         <AbilArray Link="FlyOut"/>
@@ -15940,7 +15836,6 @@
         <BehaviorArray Link="ShadowGuardDetectionDisableAura"/>
         <!--BehaviorArray Link="VorazunCloakDamageBoostPermanent"/-->
         <BehaviorArray Link="VorazunCloakedShieldRegenPermanent"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="VoidDetectorRadar"/>
         <WeaponArray Link="DarkTemplarChampionWeapon"/>
         <CardLayouts>
@@ -16110,6 +16005,8 @@
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="BansheeAirstrikePlaceholder">
+        <Race value="Terr"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
         <EditorFlags index="NoPlacement" value="1"/>
         <FlagArray index="Unselectable" value="1"/>
         <FlagArray index="Untargetable" value="1"/>
@@ -16237,7 +16134,6 @@
         <RankDisplay value="Never"/>
         <BehaviorArray Link="SupplyLT1"/>
         <BehaviorArray Link="TriggerInheritsParentBuffs"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
     </CUnit>
     <CUnit id="LocustNest">
         <EditorFlags index="NoPlacement" value="1"/>
@@ -16601,7 +16497,6 @@
         <AbilArray Link="que1"/>
         <AbilArray Link="BurrowHydraliskEvolvedDown"/>
         <AbilArray Link="HydraliskFrenzy"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <WeaponArray Link="HydraliskMelee"/>
         <WeaponArray Link="EvolvedNeedleSpines"/>
         <CardLayouts>
@@ -16669,7 +16564,6 @@
         <AttackTargetPriority value="20"/>
         <AbilArray Link="BurrowHydraliskEvolvedUp"/>
         <AbilArray Link="HydraliskFrenzy"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowHydraliskEvolvedUp,Execute" Row="2" Column="4"/>
@@ -16687,6 +16581,8 @@
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="SiegeTankJumpJetPlaceholder">
+        <Race value="Terr"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
         <LifeStart value="10000"/>
         <LifeMax value="10000"/>
         <Radius value="0.4375"/>
@@ -16706,6 +16602,8 @@
         <Collide index="Small" value="1"/>
     </CUnit>
     <CUnit id="SiegeTankSiegedJumpJetPlaceholder">
+        <Race value="Terr"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
         <LifeStart value="10000"/>
         <LifeMax value="10000"/>
         <Radius value="0.4375"/>
@@ -16761,7 +16659,6 @@
         <AbilArray Link="Warpable"/>
         <AbilArray Link="ProgressRally"/>
         <BehaviorArray Link="Detector10"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <WeaponArray Link="MutatorStoneZealot"/>
         <WeaponArray Link="MutatorStoneZealotEyeBlast"/>
         <CardLayouts>
@@ -17112,7 +17009,6 @@
         <AbilArray Link="HybridImmortalShadowPull"/>
         <BehaviorArray Link="Detector11"/>
         <BehaviorArray Link="HybridUnitDummy"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="MutatorHybridImmortalDontDie"/>
         <WeaponArray Link="MutatorHybridImmortal"/>
         <CardLayouts>
@@ -17239,7 +17135,6 @@
         <AbilArray Link="stop"/>
         <AbilArray Link="move"/>
         <AbilArray Link="MutatorWidowMineAttack"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
@@ -17306,7 +17201,6 @@
         <AbilArray Link="MutatorWidowMineUnburrow"/>
         <AbilArray Link="MutatorWidowMineAttack"/>
         <BehaviorArray Link="MutatorWidowMineArmed"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts>
             <LayoutButtons Face="WidowMineBioSplash" Type="Passive" AbilCmd="MutatorWidowMineAttack,Execute" Row="2" Column="0"/>
             <LayoutButtons Face="WidowMineUnburrow" Type="AbilCmd" AbilCmd="MutatorWidowMineUnburrow,Execute" Row="2" Column="2"/>
@@ -18176,7 +18070,6 @@
         <AbilArray Link="stop"/>
         <AbilArray Link="attack"/>
         <AbilArray Link="move"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="CorruptorScourgeIncubation"/>
         <WeaponArray Link="ZagaraParasiteSpore"/>
         <CardLayouts>
@@ -18273,6 +18166,8 @@
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="PhaseShieldBatteryDummy">
+        <Race value="Prot"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
         <FlagArray index="Unselectable" value="1"/>
         <FlagArray index="Untargetable" value="1"/>
         <FlagArray index="UseLineOfSight" value="1"/>
@@ -18293,6 +18188,8 @@
         <PlacementFootprint value="Footprint2x2CreepNormal"/>
     </CUnit>
     <CUnit id="PhaseMonolithDummy">
+        <Race value="Prot"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
         <FlagArray index="Unselectable" value="1"/>
         <FlagArray index="Untargetable" value="1"/>
         <FlagArray index="UseLineOfSight" value="1"/>
@@ -18313,6 +18210,8 @@
         <PlacementFootprint value="Footprint3x3CreepNormal"/>
     </CUnit>
     <CUnit id="PhaseCannonDummy">
+        <Race value="Prot"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
         <FlagArray index="Unselectable" value="1"/>
         <FlagArray index="Untargetable" value="1"/>
         <FlagArray index="UseLineOfSight" value="1"/>
@@ -18368,6 +18267,7 @@
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="SoloDummy">
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
         <FlagArray index="Unselectable" value="1"/>
         <FlagArray index="Untargetable" value="1"/>
         <FlagArray index="Uncursorable" value="1"/>
@@ -18384,6 +18284,7 @@
         <LifeRegenRate value="10000"/>
     </CUnit>
     <CUnit id="GWDummy">
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
         <FlagArray index="Uncommandable" value="1"/>
         <FlagArray index="Unselectable" value="1"/>
         <FlagArray index="Untargetable" value="1"/>
@@ -18401,6 +18302,7 @@
         <InnerRadius value="1.1875"/>
     </CUnit>
     <CUnit id="DummyArmored">
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
         <DeathTime value="-1"/>
         <DeathRevealRadius value="3"/>
         <Mob value="Multiplayer"/>
@@ -18430,6 +18332,7 @@
         <BehaviorArray Link="PreventKnockback"/>
     </CUnit>
     <CUnit id="DummyLight">
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
         <DeathTime value="-1"/>
         <DeathRevealRadius value="3"/>
         <Mob value="Multiplayer"/>
@@ -18459,6 +18362,7 @@
         <BehaviorArray Link="PreventKnockback"/>
     </CUnit>
     <CUnit id="DummyStructure">
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
         <DeathTime value="-1"/>
         <DeathRevealRadius value="3"/>
         <Mob value="Multiplayer"/>
@@ -18533,7 +18437,6 @@
         <AbilArray Link="ConsumeDNA"/>
         <BehaviorArray Link="Detector11"/>
         <BehaviorArray Link="HybridUnitDummy"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="ShadowTerror"/>
         <WeaponArray Link="ShadowTerrorClaws"/>
         <CardLayouts>
@@ -18556,6 +18459,7 @@
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="Dummy">
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
         <DeathTime value="-1"/>
         <DeathRevealRadius value="3"/>
         <Mob value="Multiplayer"/>
@@ -18728,7 +18632,6 @@
         <AbilArray Link="WarbotA2"/>
         <AbilArray Link="WarbotB2"/>
         <AbilArray Link="WarbotC2"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <WeaponArray Link="VoidCoopARES" Turret="Warbot"/>
         <WeaponArray/>
         <WeaponArray/>
@@ -18948,7 +18851,6 @@
         <AbilArray Link="AdunBlink"/>
         <AbilArray Link="Warpable"/>
         <AbilArray Link="ProgressRally"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="HeroCCImmunity"/>
         <BehaviorArray Link="ZeratulShadowPhaseController"/>
         <WeaponArray Link="ZeratulCoopWeapon"/>
@@ -19221,24 +19123,6 @@
         <CostResource index="Minerals" value="200"/>
         <CostResource index="Vespene" value="50"/>
         <CargoSize value="2"/>
-    </CUnit>
-    <CUnit id="Changeling">
-        <BehaviorArray Link="AllUnitBehaviorController"/>
-    </CUnit>
-    <CUnit id="ChangelingMarine">
-        <BehaviorArray Link="AllUnitBehaviorController"/>
-    </CUnit>
-    <CUnit id="ChangelingMarineShield">
-        <BehaviorArray Link="AllUnitBehaviorController"/>
-    </CUnit>
-    <CUnit id="ChangelingZealot">
-        <BehaviorArray Link="AllUnitBehaviorController"/>
-    </CUnit>
-    <CUnit id="ChangelingZergling">
-        <BehaviorArray Link="AllUnitBehaviorController"/>
-    </CUnit>
-    <CUnit id="ChangelingZerglingWings">
-        <BehaviorArray Link="AllUnitBehaviorController"/>
     </CUnit>
     <CUnit id="NydusBeast">
         <LifeStart value="4000"/>

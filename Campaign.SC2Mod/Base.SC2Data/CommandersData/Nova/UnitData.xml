@@ -121,7 +121,6 @@
         <AbilArray Link="WarpableNova"/>
         <AbilArray Link="EMPBlackOps"/>
         <AbilArray Link="TacNukeStrike"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="PermanentlyCloaked"/>
         <!--BehaviorArray Link="VorazunCloakDamageBoostPermanent"/-->
         <WeaponArray Link="Ghost_BlackOps"/>
@@ -254,7 +253,6 @@
         <AbilArray Link="attack"/>
         <AbilArray Link="move"/>
         <AbilArray Link="NovaPsiStrike"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <!--BehaviorArray Link="NovaCoopDecoyTimedLife"/-->
         <WeaponArray Link="NovaWeaponPsiBlade"/>
         <CardLayouts>
@@ -342,7 +340,8 @@
         <GlossaryPriority value="300"/>
     </CUnit>
     <CUnit id="NovaStunDrone">
-        <Race value="Terr"/>
+        <Race value="TerrC"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
         <Mob value="Multiplayer"/>
         <FlagArray index="Turnable" value="0"/>
         <FlagArray index="NoPortraitTalk" value="1"/>
@@ -541,7 +540,6 @@
         <Attributes index="MapBoss" value="1"/>
         <BehaviorArray Link="Unmoved"/>
         <BehaviorArray Link="Unrepairable"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="NovaGriffinTransportDelay"/>
         <BehaviorArray Link="NovaGriffinTransportInitialCloak"/>
         <BehaviorArray Link="NovaGriffinTransportUnloadUnitsDespawnDelayFallback"/>
@@ -846,7 +844,6 @@
         <AbilArray Link="attack"/>
         <AbilArray Link="move"/>
         <AbilArray Link="MorphToHellbatBlackOps"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="NovaStunResistance"/>
         <WeaponArray Link="HellionBlackOps" Turret="Hellion"/>
         <CardLayouts>
@@ -916,7 +913,6 @@
         <AbilArray Link="MorphToHellionBlackOps"/>
         <AbilArray Link="HellbatCharge"/>
         <AbilArray Link="SuperStimpackMarine"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="NovaStunResistance"/>
         <WeaponArray Link="HellbatBlackOps"/>
         <CardLayouts>
@@ -1029,7 +1025,6 @@
         <BehaviorArray Link="NovaWeaponImprovedCanisterRifle"/>
         <BehaviorArray Link="NovaWeaponHellfireShotgun"/>
         <BehaviorArray Link="NovaPermanentlyCloaked"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="NovaDecoyCooldown"/>
         <BehaviorArray Link="NovaNukeCooldown"/>
         <BehaviorArray Link="CommanderPrestigeNovaSuperCloak"/>
@@ -1322,7 +1317,6 @@
         <AbilArray Link="WarpableNova"/>
         <AbilArray Link="SuperStimpackMarine"/>
         <AbilArray Link="NovaWeaponHellfireShotgunBlast2"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <WeaponArray Link="Marine_BlackOps"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -1533,7 +1527,6 @@
         <AbilArray Link="WarpableNova"/>
         <AbilArray Link="DeploySpiderMines"/>
         <AbilArray Link="SiegeTankJumpJet"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <!--BehaviorArray Link="SiegeTankSiegeModeProgressiveRangeIncease"/-->
         <WeaponArray Link="SiegeTank_BlackOps" Turret="SiegeTank"/>
         <WeaponArray Link="90mmCannonsLookAt" Turret="SiegeTank"/>
@@ -1605,7 +1598,6 @@
         <AbilArray Link="SiegeTank_BlackOpsUnsiege"/>
         <AbilArray Link="DeploySpiderMines"/>
         <AbilArray Link="SiegeTankSiegedJumpJet"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <!--BehaviorArray Link="SiegeTankSiegeModeProgressiveRangeIncease"/-->
         <WeaponArray Link="SiegeTankSieged_BlackOps" Turret="SiegeTankSieged"/>
         <CardLayouts>
@@ -1679,7 +1671,6 @@
         <AbilArray Link="SiegeTankJumpJet"/>
         <BehaviorArray Link="MultilockTargetingSystems"/>
         <BehaviorArray Link="ScavengingSystemsMechDeath"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <WeaponArray Link="Goliath_BlackOpsA" Turret="SpartanCompany"/>
         <WeaponArray Link="Goliath_BlackOpsAUpgraded" Turret="FreeRotate"/>
         <WeaponArray Link="Goliath_BlackOpsG" Turret="SpartanCompany"/>
@@ -1760,7 +1751,6 @@
         <AbilArray Link="MagrailMunitionsMarauder"/>
         <AbilArray Link="NovaGadgetBoombots2"/>
         <AbilArray Link="SuperStimpackMarine"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <WeaponArray Link="Marauder_BlackOps"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -1833,7 +1823,6 @@
         <AbilArray Link="LiberatorAG_BlackOpsTarget"/>
         <AbilArray Link="WarpableNova"/>
         <AbilArray Link="VehicleAfterburners"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <WeaponArray Link="Liberator_BlackOpsMissileLaunchers"/>
         <WeaponArray Turret="Liberator_BlackOps"/>
         <CardLayouts>
@@ -1903,7 +1892,6 @@
         <AbilArray Link="Liberator_BlackOpsMorphtoAG"/>
         <AbilArray Link="LiberatorAA_BlackOpsTarget"/>
         <BehaviorArray Link="LiberatorInitialMovable"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <WeaponArray Link="LiberatorAG_BlackOpsWeapon" Turret="LiberatorAG_BlackOps"/>
         <CardLayouts>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
@@ -1966,7 +1954,6 @@
         <AbilArray Link="WarpableNova"/>
         <AbilArray Link="EMPBlackOps"/>
         <AbilArray Link="TacNukeStrike"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="PermanentlyCloaked"/>
         <!--BehaviorArray Link="VorazunCloakDamageBoostPermanent"/-->
         <WeaponArray Link="Ghost_BlackOps"/>
@@ -2049,7 +2036,6 @@
         <AbilArray Link="WarpableNova"/>
         <AbilArray Link="Banshee_BlackOpsAirstrike"/>
         <BehaviorArray Link="DistortionBlasters"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <!--BehaviorArray Link="VorazunCloakDamageBoostPermanent"/-->
         <BehaviorArray Link="VorazunCloakedShieldRegenPermanent"/>
         <BehaviorArray Link="BansheeBlackOpsPermanentCloak"/>
@@ -2134,7 +2120,6 @@
         <AbilArray Link="BuildAutoTurret_BlackOps"/>
         <AbilArray Link="PlaceHealingDrone"/>
         <BehaviorArray Link="Detector11"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
@@ -2230,6 +2215,9 @@
         <Mover value="AutoTurretReleaseWeapon"/>
     </CUnit>
     <CUnit id="Medivac_BlackOps">
+        <Race value="TerrC"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+
         <DeathRevealRadius value="3"/>
         <Race value="Terr"/>
         <Mob value="Multiplayer"/>
@@ -2269,7 +2257,6 @@
         <AbilArray Link="MedivacSpeedBoost"/>
         <AbilArray Link="MedivacDoubleBeamHeal"/>
         <AbilArray Link="WarpableNova"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
@@ -2399,7 +2386,8 @@
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Coop"/>
     </CUnit>
     <CUnit id="PointDefenseDrone_BlackOps">
-        <Race value="Terr"/>
+        <Race value="TerrC"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
         <FlagArray index="NoPortraitTalk" value="1"/>
         <FlagArray index="AILifetime" value="1"/>
         <FlagArray index="ArmorDisabledWhileConstructing" value="1"/>

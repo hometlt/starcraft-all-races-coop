@@ -374,7 +374,6 @@
             <ChanceArray index="Idle" value="33"/>
             <ChanceArray index="Turn" value="33"/>
         </Fidget>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
     </CUnit>
     <CUnit id="HHStarport">
         <TechAliasArray value="Alias_Starport"/>
@@ -729,7 +728,6 @@
         <AbilArray Link="HHMercStarportMorph"/>
         <AbilArray Link="Rally"/>
         <BehaviorArray Link="HHMercStarportHangarBayResearch"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <EffectArray index="Create" value="TheHornersStatUpdate"/>
         <EffectArray index="Death" value="TheHornersStatUpdate"/>
         <CardLayouts>
@@ -788,7 +786,6 @@
         <AbilArray Link="que5Passive"/>
         <AbilArray Link="SummonHornerMercenaries"/>
         <AbilArray Link="HHMercStarportHangar"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <WeaponArray Link="HHMercStarportLaunch"/>
         <WeaponArray Link="MiraStarportTyphoonMissilePod"/>
         <WeaponArray Link="HHMercStarportLaunchDummy"/>
@@ -860,7 +857,6 @@
         <AbilArray Link="ReaperFlyMorph"/>
         <AbilArray Link="HHReaperFly"/>
         <BehaviorArray Link="MercReaperJump"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="ReaperRegen"/>
         <BehaviorArray Link="NoScrapDrop"/>
         <WeaponArray Link="HHReaperP38ScytheGuassPistol"/>
@@ -960,7 +956,6 @@
         <!--AbilArray Link="HHWidowMineAttack"/-->
         <AbilArray Link="HHWidowMineBlossom"/>
         <BehaviorArray Link="HHWidowMineArmed"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="NoScrapDrop"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -1029,7 +1024,6 @@
         <AbilArray Link="HHWidowMineBurrowedAttack"/>
         <AbilArray Link="HHWidowMineBlossom"/>
         <BehaviorArray Link="HHWidowMineArmed"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="NoScrapDrop"/>
         <CardLayouts>
             <LayoutButtons Face="HHWidowMineBioSplash" Type="Passive" AbilCmd="HHWidowMineAttack,Execute" Row="2" Column="0"/>
@@ -1323,7 +1317,6 @@
         <AbilArray Link="FleetwideJump"/>
         <!--BehaviorArray Link="VorazunCloakDamageBoostPermanent"/-->
         <BehaviorArray Link="VorazunCloakedShieldRegenPermanent"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="HHWraithPermanentCloak"/>
         <BehaviorArray Link="HHArmyOOCRegenSpeed"/>
         <WeaponArray Link="HHWraith"/>
@@ -1549,7 +1542,6 @@
         <AbilArray Link="HHBattlecruiserHyperjump"/>
         <AbilArray Link="HHYamatoShots"/>
         <BehaviorArray Link="MassiveVoidRayVulnerability"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="HHYamatoShotsActivate"/>
         <BehaviorArray Link="HHArmyOOCRegenSpeed"/>
         <!--WeaponArray Link="HHATSLaserBattery" Turret="Battlecruiser"/-->
@@ -1638,7 +1630,6 @@
         <AbilArray Link="move"/>
         <AbilArray Link="HHFighterMode"/>
         <AbilArray Link="FleetwideJump"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="HHArmyOOCRegenSpeed"/>
         <WeaponArray Link="HHTwinGatlingCannon"/>
         <CardLayouts>
@@ -1710,7 +1701,6 @@
         <AbilArray Link="VehicleAfterburners"/>
         <AbilArray Link="FleetwideJump"/>
         <AbilArray Link="HHVikingRockets"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="HHArmyOOCRegenSpeed"/>
         <WeaponArray Link="HHLanzerTorpedoes"/>
         <CardLayouts>
@@ -1803,7 +1793,6 @@
         <AbilArray Link="RavenTargetLock"/>
         <AbilArray Link="FleetwideJump"/>
         <BehaviorArray Link="Detector11"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="HHRavenSensor"/>
         <BehaviorArray Link="HHArmyOOCRegenSpeed"/>
         <EffectArray index="Create" value="TheHornersStatUpdate"/>
@@ -1938,7 +1927,6 @@
         <AbilArray Link="move"/>
         <AbilArray Link="MorphToHHHellionTank"/>
         <AbilArray Link="HHHellionBomb"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="NoScrapDrop"/>
         <WeaponArray Link="HHHellionPunisherGrenades" Turret="Hellion"/>
         <WeaponArray Link="HHHellionPunisherGrenadesFake" Turret="Hellion"/>
@@ -2000,7 +1988,6 @@
         <AbilArray Link="attack"/>
         <AbilArray Link="move"/>
         <AbilArray Link="MorphToHHHellion"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="NoScrapDrop"/>
         <WeaponArray Link="HHHellionTank"/>
         <EffectArray index="Create" value="TheHornersStatUpdate"/>
@@ -2028,7 +2015,9 @@
         <HotkeyCategory value="Unit/Category/TerranMarauder"/>
     </CUnit>
     <CUnit id="HornerAirFleetTargeter">
-        <Race value="Terr"/>
+        <Race value="TerrM"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Coop"/>
+
         <FlagArray index="Turnable" value="0"/>
         <FlagArray index="Unselectable" value="1"/>
         <FlagArray index="Untargetable" value="1"/>
@@ -2045,6 +2034,9 @@
         <MinimapRadius value="0"/>
     </CUnit>
     <CUnit id="HornerAirFleetStrafer">
+        <Race value="TerrM"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Coop"/>
+
         <Race value="Terr"/>
         <Mob value="Multiplayer"/>
         <FlagArray index="Unselectable" value="1"/>

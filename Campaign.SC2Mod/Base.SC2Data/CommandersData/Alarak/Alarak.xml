@@ -232,7 +232,6 @@
         <CostCategory value="Army"/>
         <CostResource index="Minerals" value="75"/>
         <AttackTargetPriority value="20"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="UnderConstructionOrDeadTracker"/>
         <!--BehaviorArray Link="WorshipAlarak"/-->
         <WeaponArray Link="SupplicantWeapon"/>

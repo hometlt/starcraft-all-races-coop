@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
-    <CUnit id="PowerRadius_Stetmann_Terrain"/>
+    <CUnit id="PowerRadius_Stetmann_Terrain">
+        <Race value="ZergM"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Coop"/>
+    </CUnit>
     <CUnit id="BroodLordStetmannBWeapon" parent="MISSILE_INVULNERABLE">
         <Race value="ZergM"/>
         <Mover value="BroodLordBWeapon"/>
@@ -135,7 +138,6 @@
     </CUnit>
     <CUnit id="BanelingStetmannBurrowed">
         <HotkeyCategory value="Unit/Category/ZergMecha"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="BanelingStetmannExplode"/>
         <BehaviorArray Link="BurrowCracks"/>
         <BehaviorArray Link="SupplyLT1"/>
@@ -298,7 +300,6 @@
         <AbilArray Link="BanelingStetmannExplode"/>
         <AbilArray Link="VolatileBurstBuilding"/>
         <AbilArray Link="BanelingStetmannJump"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="BanelingStetmannExplode"/>
         <BehaviorArray Link="SupplyLT1"/>
         <BehaviorArray Link="NoScrapDrop"/>
@@ -525,7 +526,6 @@
         <AbilArray Link="BroodLordStetmannYamatoGun"/>
         <AbilArray Link="BroodLordStetmannBroodlingEscortArm"/>
         <AbilArray Link="BroodLordStetmannBroodlingEscortArmAugment"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="BroodLordStetmannDisableBroodlingArm"/>
         <WeaponArray Link="BroodlingStrikeStetmann"/>
         <EffectArray index="Death" value="StetmannUnitDeathFindPickupUnitSearch"/>
@@ -750,7 +750,6 @@
         <AbilArray Link="move"/>
         <AbilArray Link="CorruptorStetmannMissilePods"/>
         <AbilArray Link="CorruptorStetmannCausticSpray"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <WeaponArray Link="CorruptorParasiteSporeStetmann"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -824,7 +823,6 @@
         <AttackTargetPriority value="20"/>
         <AIOverideTargetPriority value="10"/>
         <AbilArray Link="BurrowDroneUpStetmann"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts>
             <LayoutButtons Face="AttackWorker" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowDroneUpStetmann,Execute" Row="2" Column="4"/>
@@ -893,7 +891,6 @@
         <AbilArray Link="MutatorRemoveWorkerSleep"/>
         <AbilArray Link="SprayZerg"/>
         <AbilArray Link="Repair"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <WeaponArray Link="DroneSpinesStetmann"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -1136,7 +1133,8 @@
         <CostCategory value="Economy"/>
         <CostResource index="Minerals" value="75"/>
         <AttackTargetPriority value="11"/>
-        <BehaviorArray Link="HarvestableVespeneGeyserGasZerg"/>
+<!--        <BehaviorArray Link="HarvestableVespeneGeyserGasZerg"/>-->
+        <BehaviorArray Link="HarvestableVespeneGeyserGas"/>
         <!--        <BehaviorArray Link="ExtractorMorph"/>-->
         <BehaviorArray Link="MechaExtractorMorph"/>
         <CardLayouts>
@@ -1300,7 +1298,6 @@
         <AbilArray Link="PowerFieldSuperGaryStetmannSpeed"/>
         <AbilArray Link="PowerFieldSuperGaryStetmannHealth"/>
         <AbilArray Link="PowerFieldSuperGaryStetmannEnergy"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="PowerSourceStetmannGary"/>
         <BehaviorArray Link="Detector11"/>
         <BehaviorArray Link="SuperGaryStetmannTheBestOilAttribute"/>
@@ -1690,7 +1687,6 @@
         <AbilArray Link="BurrowHydraliskUpStetmann"/>
         <AbilArray Link="HydraliskFrenzy"/>
         <BehaviorArray Link="BurrowCracks"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="HydraliskStetmannMissilePowerOn"/>
         <CardLayouts>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
@@ -1758,7 +1754,6 @@
         <AbilArray Link="MorphToLurkerStetmann"/>
         <AbilArray Link="HydraliskStetmannMissilePowerOn"/>
         <AbilArray Link="HydraliskStetmannMissilePowerOff"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="HydraliskStetmannMissilePowerOn"/>
         <WeaponArray Link="HydraliskMelee"/>
         <WeaponArray Link="HydraliskHellfireMissilesStetmann"/>
@@ -2033,7 +2028,6 @@
         <AbilArray Link="InfestorStetmannEggLaunch"/>
         <AbilArray Link="InfestorStetmannHealingTentacle"/>
         <AbilArray Link="InfestorStetmannInfestBuilding"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Row="0" Column="0"/>
@@ -2119,7 +2113,6 @@
         <AbilArray Link="InfestorStetmannHealingTentacle"/>
         <AbilArray Link="InfestorStetmannInfestBuilding"/>
         <AbilArray Link="InfestorStetmannEggLaunch"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Row="0" Column="0"/>
@@ -2356,7 +2349,6 @@
         <AbilArray Link="LurkerRemoveHoldFire"/>
         <AbilArray Link="LurkerStetmannChannelingSpines"/>
         <AbilArray Link="LurkerStetmannTunnelingBurst"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <WeaponArray Link="LurkerStetmann" Turret="FreeRotate"/>
         <CardLayouts>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
@@ -2615,7 +2607,6 @@
         <EnergyMax value="200"/>
         <EffectArray index="Death" value="StetmannUnitDeathFindPickupUnitSearch"/>
         <RepairTime value="50"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
     </CUnit>
     <CUnit id="HydraliskGroundWeaponStetmann" parent="MISSILE">
         <Race value="ZergM"/>
@@ -2652,7 +2643,6 @@
         <AttackTargetPriority value="10"/>
         <AbilArray Link="MorphToOverseerStetmann"/>
         <AbilArray Link="move"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
@@ -2711,7 +2701,6 @@
         <AbilArray Link="move"/>
         <AbilArray Link="MorphToOverseerStetmann"/>
         <AbilArray Link="OverlordStetmannTransport"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="SupplyLT1"/>
         <BehaviorArray Link="GenerateCreepHealingBehavior"/>
         <CardLayouts>
@@ -2783,7 +2772,6 @@
         <AbilArray Link="Contaminate"/>
         <AbilArray Link="OverseerSiegeMorphtoOverseerStetmann"/>
         <BehaviorArray Link="Detector16.5"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="SupplyLT1"/>
         <BehaviorArray Link="SupplyLT1"/>
         <CardLayouts>
@@ -2864,7 +2852,6 @@
         <AbilArray Link="Contaminate"/>
         <AbilArray Link="OverseerMorphtoOverseerSiegeStetmann"/>
         <BehaviorArray Link="Detector11"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="SupplyLT1"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -2992,7 +2979,6 @@
         <CostCategory value="Army"/>
         <AttackTargetPriority value="20"/>
         <AbilArray Link="BurrowRavagerUpStetmann"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowRavagerUpStetmann,Execute" Row="2" Column="4"/>
@@ -3090,7 +3076,6 @@
         <AbilArray Link="move"/>
         <AbilArray Link="BurrowRavagerDownStetmann"/>
         <AbilArray Link="RavagerStetmannCorrosiveBile"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <WeaponArray Link="RavagerStetmannPlasmaDischarge"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -3159,7 +3144,6 @@
         <AbilArray Link="stop"/>
         <AbilArray Link="move"/>
         <AbilArray Link="que1"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="AcquireMove" Type="AbilCmd" AbilCmd="move,AcquireMove" Row="0" Column="4"/>
@@ -3220,7 +3204,6 @@
         <AbilArray Link="attack"/>
         <AbilArray Link="move"/>
         <AbilArray Link="BurrowRoachDownStetmann"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <WeaponArray Link="RoachStetmannMelee"/>
         <WeaponArray Link="RoachStetmannAcidSaliva"/>
         <CardLayouts>
@@ -3921,7 +3904,6 @@
         <AbilArray Link="GaryStetmannPowerTowerOverchargeSpeed"/>
         <AbilArray Link="GaryStetmannPowerTowerOverchargeHealth"/>
         <AbilArray Link="GaryStetmannPowerTowerOverchargeEnergy"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <WeaponArray Link="GaryStetmannGun" Turret="GaryStetmannRotate"/>
         <CardLayouts>
             <LayoutButtons Face="MoveChampions" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -3987,7 +3969,6 @@
         <AttackTargetPriority value="20"/>
         <AbilArray Link="BurrowUltraliskUpStetmann"/>
         <BehaviorArray Link="Frenzy"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="ChitinousPlatingStetmann"/>
         <EffectArray index="Death" value="StetmannUnitDeathFindPickupUnitSearch"/>
         <CardLayouts>
@@ -4067,7 +4048,6 @@
         <AbilArray Link="UltraliskWeaponCooldown"/>
         <AbilArray Link="UltraliskStetmannMechanicalLifeLeech"/>
         <BehaviorArray Link="Frenzy"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="VorazunCloakDamageBoostPermanentUltraliskBurrowCharge"/>
         <BehaviorArray Link="ChitinousPlatingStetmann"/>
         <WeaponArray Link="UltraliskKaiserBladesStetmann"/>
@@ -4251,7 +4231,6 @@
         <AttackTargetPriority value="20"/>
         <AbilArray Link="BurrowZerglingUpStetmann"/>
         <BehaviorArray Link="SupplyLT1"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="ZerglingHardenedShieldStetmann"/>
         <EffectArray index="Death" value="StetmannUnitDeathFindPickupUnitSearch"/>
         <CardLayouts>
@@ -4318,7 +4297,6 @@
         <AbilArray Link="BurrowZerglingDownStetmann"/>
         <AbilArray Link="MorphToBanelingStetmann"/>
         <BehaviorArray Link="SupplyLT1"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="ZerglingAttackSpeedStetmann"/>
         <BehaviorArray Link="ZerglingHardenedShieldStetmann"/>
         <WeaponArray Link="ZerglingClawsStetmann"/>
@@ -4468,7 +4446,6 @@
         <AbilArray Link="move"/>
         <AbilArray Link="MechaLocustMorphToAir"/>
         <BehaviorArray Link="TriggerInheritsParentBuffs"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="StetmannLocustDeathExplode"/>
         <WeaponArray Link="LocustStetmannMelee"/>
         <WeaponArray Link="LocustStetmann"/>
@@ -4526,7 +4503,6 @@
         <AbilArray Link="stop"/>
         <AbilArray Link="MorphToSwarmHostUprootedStetmann"/>
         <AbilArray Link="SpawnMechaLocustsTargeted"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="SwarmHostUproot" Type="AbilCmd" AbilCmd="MorphToSwarmHostUprootedStetmann,Execute" Row="2" Column="4"/>
@@ -4589,7 +4565,6 @@
         <AbilArray Link="stop"/>
         <AbilArray Link="MorphToMechaSwarmHost"/>
         <AbilArray Link="SpawnMechaLocustsTargeted"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="SwarmHostStetmannBurrowUp" Type="AbilCmd" AbilCmd="MorphToMechaSwarmHost,Execute" Row="2" Column="4"/>
@@ -4651,7 +4626,6 @@
         <AbilArray Link="MorphToSwarmHostRootedStetmann"/>
         <AbilArray Link="MorphToMechaSwarmHostBurrowed"/>
         <AbilArray Link="SpawnMechaLocustsTargeted"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <WeaponArray Link="SwarmHostFakeWeapon"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -4789,7 +4763,6 @@
         <AbilArray Link="BurrowQueenDownStetmann"/>
         <AbilArray Link="MechanicalTransfusion"/>
         <AbilArray Link="SpawnLarvaStetmann"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="LightningFieldDeathEffect"/>
         <WeaponArray Link="AcidSpinesQueenStetmann"/>
         <WeaponArray Link="TalonsQueenStetmann"/>
@@ -4874,7 +4847,6 @@
         <AbilArray Link="move"/>
         <AbilArray Link="BurrowBigRoachDownStetmann"/>
         <AbilArray Link="MorphToRavagerStetmann"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="StetmannRoachSuperRegeneration"/>
         <BehaviorArray Link="StetmannRoachVanadiumClaws"/>
         <BehaviorArray Link="StetmannRoachShield"/>
@@ -4957,7 +4929,6 @@
         <AbilArray Link="stop"/>
         <AbilArray Link="move"/>
         <AbilArray Link="que1"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="StetmannRoachBurrowedSuperRegeneration"/>
         <BehaviorArray Link="StetmannRoachSuperRegeneration"/>
         <BehaviorArray Link="StetmannRoachShield"/>
@@ -5028,7 +4999,6 @@
         <AbilArray Link="BurrowBigRavagerDownStetmann"/>
         <AbilArray Link="RavagerStetmannCorrosiveBile2"/>
         <AbilArray Link="RavagerStetmannUnstableBile"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <WeaponArray Link="RavagerStetmannPlasmaDischarge"/>
         <EffectArray index="Death" value="StetmannUnitDeathFindPickupUnitSearch"/>
         <CardLayouts>
@@ -5100,7 +5070,6 @@
         <RepairTime value="14"/>
         <AttackTargetPriority value="20"/>
         <AbilArray Link="BurrowBigRavagerUpStetmann"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
@@ -5159,7 +5128,6 @@
         <CostResource index="Vespene" value="50"/>
         <AttackTargetPriority value="20"/>
         <AbilArray Link="BurrowQueenUpStetmann"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="LightningFieldDeathEffect"/>
         <CardLayouts>
             <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowQueenUpStetmann,Execute" Row="2" Column="4"/>

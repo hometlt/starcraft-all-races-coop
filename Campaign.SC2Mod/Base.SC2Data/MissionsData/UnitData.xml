@@ -337,7 +337,6 @@
         <KillXP value="0"/>
         <!--BehaviorArray Link="Supply6"/-->
         <BehaviorArray Link="HybridUnitDummy"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <TacticalAIThink value="AIThinkHybridNemesis"/>
@@ -658,7 +657,6 @@
     </CUnit>
     <CUnit id="Hybrid">
         <!--BehaviorArray Link="Supply6"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="HybridUnitDummy"/>
         <ScoreKill value="0"/>
         <KillXP value="0"/>
@@ -670,7 +668,6 @@
     <CUnit id="HybridChannel">
         <!--BehaviorArray Link="Supply6"/-->
         <BehaviorArray Link="HybridUnitDummy"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreKill value="0"/>
         <KillXP value="0"/>
         <DamageDealtXP value="0"/>
@@ -680,7 +677,6 @@
     <CUnit id="HybridDominator">
         <!--BehaviorArray Link="Supply6"/-->
         <BehaviorArray Link="HybridUnitDummy"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreKill value="0"/>
         <KillXP value="0"/>
         <DamageDealtXP value="0"/>
@@ -723,7 +719,6 @@
     <CUnit id="Maar">
         <!--BehaviorArray Link="Supply6"/-->
         <BehaviorArray Link="HybridUnitDummy"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreKill value="0"/>
         <KillXP value="0"/>
         <DamageDealtXP value="0"/>
@@ -733,7 +728,6 @@
     <CUnit id="MaarChannel">
         <!--BehaviorArray Link="Supply6"/-->
         <BehaviorArray Link="HybridUnitDummy"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreKill value="0"/>
         <KillXP value="0"/>
         <DamageDealtXP value="0"/>
@@ -778,7 +772,6 @@
         <TacticalAIThink value="AIThinkHybridBehemoth"/>
         <!--BehaviorArray Link="Supply6"/-->
         <BehaviorArray Link="HybridUnitDummy"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreKill value="0"/>
         <WeaponArray index="1" removed="1"/>
         <KillXP value="0"/>
@@ -792,7 +785,6 @@
         <TacticalAIThink value="AIThinkHybridDestroyer"/>
         <!--BehaviorArray Link="Supply6"/-->
         <BehaviorArray Link="HybridUnitDummy"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreKill value="0"/>
         <KillXP value="0"/>
         <DamageDealtXP value="0"/>
@@ -805,7 +797,6 @@
         <TacticalAIThink value="AIThinkHybridDominatorVoid"/>
         <!--BehaviorArray Link="Supply6"/-->
         <BehaviorArray Link="HybridUnitDummy"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreKill value="0"/>
         <KillXP value="0"/>
         <DamageDealtXP value="0"/>
@@ -817,7 +808,6 @@
         <TacticalAIThink value="AIThinkHybridReaver"/>
         <!--BehaviorArray Link="Supply6"/-->
         <BehaviorArray Link="HybridUnitDummy"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreKill value="0"/>
         <KillXP value="0"/>
         <DamageDealtXP value="0"/>
@@ -1026,7 +1016,6 @@
         <!--AbilArray Link="WarbotB"/>
         <AbilArray Link="WarbotC"/-->
         <BehaviorArray Link="WarbotSpawn"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <!--BehaviorArray Link="WarbotA"/-->
         <WeaponArray Turret="Warbot"/>
         <CardLayouts>
@@ -1870,6 +1859,7 @@
         <ResourceType value="Unknown"/>
     </CUnit>
     <CUnit id="TerrazineNodeOff">
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
         <Name value="Unit/Name/TerrazineNode"/>
         <Description value="Button/Tooltip/TerrazineNode"/>
         <DeathRevealRadius value="3"/>
@@ -2622,7 +2612,6 @@
         <AbilArray Link="MoebiusSeekerLockOn"/>
         <BehaviorArray Link="Detector10"/>
         <BehaviorArray Link="HybridUnitDummy"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="TimeStopImmune"/>
         <BehaviorArray Link="PreventKnockback"/>
         <BehaviorArray Link="LavaDamageCoopImmune"/>
@@ -2677,7 +2666,6 @@
         <AbilArray Link="move"/>
         <BehaviorArray Link="Detector11"/>
         <BehaviorArray Link="HybridUnitDummy"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="TimeStopImmune"/>
         <BehaviorArray Link="PreventKnockback"/>
         <BehaviorArray Link="LavaDamageCoopImmune"/>
@@ -3141,6 +3129,7 @@
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
     <CUnit id="CODXelNagaConstructChaseBeamUnit">
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
         <Mob value="Campaign"/>
         <FlagArray index="Turnable" value="0"/>
         <FlagArray index="CreateVisible" value="1"/>
@@ -3548,7 +3537,6 @@
         <BehaviorArray Link="Unmoved"/>
         <BehaviorArray Link="Unrepairable"/>
         <BehaviorArray Link="ScavengingSystemsMechDeath"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="PreventKnockback"/>
         <LifeStart value="3000"/>
         <LifeMax value="3000"/>
@@ -3618,7 +3606,6 @@
         <AbilArray Link="ResearchVesselLand"/>
         <AbilArray Link="ResearchVesselLiftOff"/>
         <BehaviorArray Link="ScavengingSystemsMechDeath"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="PreventKnockback"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>

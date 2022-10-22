@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CActorDoodad id="NONE">
+        <EditorCategories value=""/>
+    </CActorDoodad>
     <CActorModel default="1" id="SuperCloak" parent="ModelAddition">
         <?token id="behaviorCloak" type="CBehaviorLink" value="Bogus"?>
         <On Terms="Behavior.##behaviorCloak##.On" Send="Create"/>

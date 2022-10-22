@@ -50,6 +50,9 @@
         <EquipmentArray Weapon="NeedleClaws"/>
     </CUnit>
     <CUnit id="InfestedCivilianPlaceholder">
+        <Race value="TerrI"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Coop"/>
+
         <FlagArray index="Uncursorable" value="1"/>
         <FlagArray index="NoDraw" value="1"/>
         <FlagArray index="UseLineOfSight" value="1"/>
@@ -349,7 +352,6 @@
         <AbilArray Link="StopRedirect"/>
         <AbilArray Link="SIStukovPlaceHordeRally"/>
         <AbilArray Link="SIInfestedBunkerRally"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="SIInfestedBunkerAutoSpawner"/>
         <EffectArray index="Create" value="SIInfestedBunkerCreation"/>
         <CardLayouts>
@@ -423,7 +425,6 @@
         <AbilArray Link="SIInfestedBunkerTransport"/>
         <AbilArray Link="SIInfestedBunkerRoot"/>
         <AbilArray Link="SIInfestedBunkerRally"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="OnCreep"/>
         <BehaviorArray Link="DisableRedirect"/>
         <WeaponArray Link="InfestedBunkerHiddenRealUprootedWeapon"/>
@@ -473,7 +474,6 @@
             <LayoutButtons index="7" Face="BurrowDown"/>
             <LayoutButtons Face="BansheeBurrowedLifeRegen" Type="Passive" Requirements="IsInfestedBansheeBurrowed" Row="1" Column="0"/>
         </CardLayouts>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <SubgroupPriority value="111"/>
@@ -485,14 +485,12 @@
             <LayoutButtons index="1" Face="BurrowUp" AbilCmd="BurrowNovaInfestedBansheeUp,Execute"/>
             <LayoutButtons Face="BansheeBurrowedLifeRegen" Type="Passive" Row="1" Column="0"/>
         </CardLayouts>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <SubgroupPriority value="111"/>
         <Race value="TerrI"/>
     </CUnit>
     <CUnit id="NovaInfestedSiegeTank">
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreKill value="0"/>
         <SubgroupPriority value="113"/>
         <Race value="TerrI"/>
@@ -725,7 +723,6 @@
         <AbilArray Link="SIQueenFungalGrowth"/>
         <AbilArray Link="attack"/>
         <AbilArray Link="QueenStukovSpawnBroodlings"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <WeaponArray Link="SIQueen"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -974,6 +971,7 @@
         <LifeRegenRate value="0.2734"/>
     </CUnit>
     <CUnit id="SIWraith">
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
         <DeathRevealRadius value="3"/>
         <Race value="TerrI"/>
         <Mob value="Campaign"/>
@@ -1049,7 +1047,6 @@
         <GlossaryWeakArray value="SporeCrawler"/>
         <GlossaryWeakArray value="PhotonCannon"/>
         <GlossaryWeakArray value="MissileTurret"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
     </CUnit>
     <CUnit id="StukovInfestedDiamondBack">
         <DeathRevealRadius value="3"/>
@@ -1088,7 +1085,6 @@
         <AbilArray Link="move"/>
         <AbilArray Link="StukovInfestedDiamondbackSnare"/>
         <BehaviorArray Link="ScavengingSystemsMechDeath"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="StukovInfestedDiamondSlimePuddleCreator"/>
         <BehaviorArray Link="DiamondBackSnareAutoCastCheck"/>
         <WeaponArray Link="StukovInfestedDiamondBack" Turret="StukovInfestedDiamondBack"/>
@@ -1191,7 +1187,6 @@
         <AbilArray Link="SIStukovExplodeInfested"/>
         <AbilArray Link="SIStukovMassNeuralParasite"/>
         <AbilArray Link="InfestedStukovCoopBurrow"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="HeroCCImmunity"/>
         <WeaponArray Link="InfestedStukov"/>
         <CardLayouts>
@@ -1261,7 +1256,6 @@
         <AbilArray Link="attack"/>
         <AbilArray Link="move"/>
         <AbilArray Link="InfestedStukovCoopUnburrow"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="HeroCCImmunity"/>
         <!--BehaviorArray Link="InfestedStukovCoopRegenAura"/-->
         <BehaviorArray Link="InfestedStukovCoopBurrowedDisabler"/>
@@ -1492,7 +1486,6 @@
         <AbilArray Link="MapObjectInteract"/>
         <AbilArray Link="MutatorRemoveWorkerSleep"/>
         <AbilArray Link="SprayZerg"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <WeaponArray Link="FusionCutter"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -2672,7 +2665,6 @@
         <GlossaryPriority value="201"/>
         <GlossaryCategory value="Unit/Category/InfestedTerranUnits"/>
         <HotkeyCategory value="Unit/Category/InfestedTerranUnits"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
     </CUnit>
     <CUnit id="SIInfestedCivilianBurrowed">
         <Name value="Unit/Name/SIInfestedCivilian"/>
@@ -3225,7 +3217,6 @@
         <TauntDuration index="Cheer" value="5"/>
         <TauntDuration index="Dance" value="5"/>
         <Response value="AcquireNoFlee"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="Frenzy"/>
         <BehaviorArray Link="TimeStopHaste"/>
         <BehaviorArray Link="NoScrapDrop"/>
@@ -3273,7 +3264,6 @@
         <AbilArray Link="StukovAleksanderCrashedInstant"/>
         <!--AbilArray Link="SIStukovExplodeInfested"/>
         <AbilArray Link="SIStukovMassNeuralParasite"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="MercAirDrop"/>
         <BehaviorArray Link="StukovAleksanderInfestedSwarm"/>
         <BehaviorArray Link="StukovAleksanderTentacleStunSearch"/>
@@ -3686,7 +3676,6 @@
         <AbilArray Link="StukovInfestedSiegeTankDeepTunnel"/>
         <!--AbilArray Link="StukovInfestedSiegeTankAmmoRestockSearchToggle"/-->
         <!--AbilArray Link="StukovInfestedSiegeTankAmmoRestock"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="SISiegeTankSiegedTentacle"/>
         <BehaviorArray Link="StukovInfestedSiegeTankOnCreep"/>
         <BehaviorArray Link="InfestedSiegeTankAmmoAuto"/>
@@ -3766,7 +3755,6 @@
         <AbilArray Link="StukovInfestedSiegeTankUproot"/>
         <AbilArray Link="StukovInfestedSiegeTankDeepTunnel"/>
         <!--AbilArray Link="StukovInfestedSiegeTankAmmoRestock"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="SISiegeTankSiegedTentacle"/>
         <BehaviorArray Link="InfestedSiegeTankAmmoAuto"/>
         <BehaviorArray Link="StukovInfestedSiegeTankAmmoRestockSearch"/>
@@ -3865,7 +3853,6 @@
         <AbilArray Link="CommanderPrestigeStukovBansheeTransport"/>
         <AbilArray Link="CommanderPrestigeStukovBansheesDeploy"/>
         <WeaponArray Link="StukovInfestedBacklashRockets"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts>
             <LayoutButtons Face="MoveChampions" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
@@ -3936,7 +3923,6 @@
         <DamageTakenXP value="1"/>
         <AbilArray Link="BurrowStukovInfestedBansheeUp"/>
         <AbilArray Link="CommanderPrestigeStukovBansheeTransport"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts>
             <LayoutButtons Face="AttackChampions" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowStukovInfestedBansheeUp,Execute" Row="2" Column="4"/>
@@ -3990,8 +3976,6 @@
         <AbilArray Link="attack"/>
         <AbilArray Link="move"/>
         <AbilArray Link="SILiberatorSwarmFormLaunchAttack"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <WeaponArray Link="SILiberator"/>
         <WeaponArray Link="SILiberatorSwarmFormPermanent"/>
         <CardLayouts>
@@ -4027,6 +4011,8 @@
         <Mover value="MissileDefault"/>
     </CUnit>
     <CUnit id="StukovInfestedSiegeTankDeepTunnelPlacementUnit">
+        <Race value="TerrI"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Coop"/>
         <EditorFlags index="NoPlacement" value="1"/>
         <FlagArray index="Uncommandable" value="1"/>
         <FlagArray index="Unselectable" value="1"/>

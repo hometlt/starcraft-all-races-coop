@@ -141,6 +141,8 @@
         <AlertIcon value="Assets\Buttons\btn-ability-protoss-chronoboost-talon.dds"/>
     </CButton>
     <CUnit id="TemporalAnchorCaster">
+        <Race value="Prot"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Coop"/>
         <AbilArray Link="SOASuperChronoMapwide"/>
         <AbilArray Link="SOAMapWideChrono"/>
         <AbilArray Link="SOASuperChrono"/>

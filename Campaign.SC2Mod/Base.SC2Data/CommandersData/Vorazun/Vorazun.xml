@@ -22,6 +22,7 @@
         </Wireframe>
     </CActorUnit>
     <CUnit id="VorazunChampion">
+        <EditorCategories value="ObjectType:Hero,ObjectFamily:Coop"/>
         <DeathTime value="-1"/>
         <BehaviorArray Link="HeroCCImmunity"/>
         <AbilArray Link="PrologueVoidArmor"/>

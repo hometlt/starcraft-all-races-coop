@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Catalog>
-<CTargetSortField id="GroundTarget">
-  <Field value="PlaneArray[Ground]"/>
-  <Value value="1"/>
-</CTargetSortField>
-<CTargetSortValidator id="TSGroundOrFiring">
-  <Validator value="TargetIsGroundorCasterIsFiringandNotMoving"/>
-</CTargetSortValidator>
 <CTargetSortMarker id="TSMarkerDesc">
   <Descending value="1"/>
 </CTargetSortMarker>
@@ -14,15 +7,6 @@
   <Descending value="1"/>
   <Descending value="1"/>
 </CTargetSortPriority>
-<CTargetSortValidator id="TSThreatenBattlecruiser">
-  <Validator value="ThreatensBattlecruiser"/>
-</CTargetSortValidator>
-<CTargetSortValidator id="TSTrackedByBattlecruiser">
-  <Validator value="AttackTrackedByBattlecruiser"/>
-</CTargetSortValidator>
-<CTargetSortValidator id="TSTransientBattlecruiser">
-  <Validator value="TransientTrackedByBattlecruiser"/>
-</CTargetSortValidator>
 <CTargetSortBehaviorCount id="CarryMineralFieldMinerals">
   <Behavior value="CarryMineralFieldMinerals"/>
 </CTargetSortBehaviorCount>
@@ -46,37 +30,6 @@
   <Descending value="1"/>
   <Value value="1"/>
 </CTargetSortInterruptible>
-<CTargetSortValidator id="TSNotDestructible">
-  <Validator value="NotDestructible"/>
-</CTargetSortValidator>
-<CTargetSortValidator id="TSNotHeroicOrMapBoss">
-  <Validator value="NotMapBossOrHeroic"/>
-</CTargetSortValidator>
-<CTargetSortField id="TSSupply">
-  <Field value="Food"/>
-  <Value value="0"/>
-  <Descending value="1"/>
-</CTargetSortField>
-<CTargetSortValidator id="TSUnitsAndAttackingStructures">
-  <Validator value="UnitOrAttackingStructure"/>
-</CTargetSortValidator>
-<CTargetSortField id="HighestUnitLevel">
-  <Descending value="1"/>
-  <Field value="Level"/>
-  <Value value="0"/>
-</CTargetSortField>
-<CTargetSortValidator id="TSEnemy">
-  <Validator value="TargetIsEnemy"/>
-</CTargetSortValidator>
-<CTargetSortValidator id="TSInCombat">
-  <Validator value="TargetInCombatLong"/>
-</CTargetSortValidator>
-<CTargetSortValidator id="TSNeutral">
-  <Validator value="TargetIsNeutral"/>
-</CTargetSortValidator>
-<CTargetSortValidator id="TSPlayer">
-  <Validator value="TargetIsPlayer"/>
-</CTargetSortValidator>
 <CTargetSortVital id="TSShieldLargestFirst">
   <Descending value="1"/>
   <Vital value="Shields"/>
@@ -93,21 +46,11 @@
   <WhichUnit Value="Target"/>
   <Behavior value="CommanderPrestigeAlarakMechBuff"/>
 </CTargetSortBehaviorCount>
-<CTargetSortValidator id="TSNotDeathFleet">
-  <Descending value="1"/>
-  <Validator value="IsDeathFleet"/>
-</CTargetSortValidator>
 <CTargetSortBehaviorCount id="TSBattlecruiserMengskYamatoTarget">
   <WhichUnit Value="Target"/>
   <Descending value="1"/>
   <Behavior value="BattlecruiserMengskYamatoTargetMarker"/>
 </CTargetSortBehaviorCount>
-<CTargetSortValidator id="TSRavagerBileNoMarker">
-  <Validator value="RavagerStetmannCorrosiveBileNoNearbyMarker"/>
-</CTargetSortValidator>
-<CTargetSortValidator id="TSGaryStetmannorSuperGaryStetmann">
-  <Validator value="IsGaryStetmannOrSuperGaryStetmann"/>
-</CTargetSortValidator>
 <CTargetSortBehaviorCount id="TychusMedicHealPrioritizeTychus">
   <Descending value="1"/>
   <Behavior value="TychusHeroCount"/>
@@ -128,9 +71,6 @@
   <Descending value="1"/>
   <Behavior value="KeironUnitCharge"/>
 </CTargetSortBehaviorCount>
-<CTargetSortValidator id="PrioritizeRelayTower">
-  <Validator value="IsRelayTower"/>
-</CTargetSortValidator>
 <CTargetSortPriority id="TSPriority2">
   <WhichUnit Value="Target"/>
 </CTargetSortPriority>

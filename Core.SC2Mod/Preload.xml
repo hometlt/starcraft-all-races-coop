@@ -112,6 +112,7 @@
 <Behavior id="TimeStopImmune"/>
 <Behavior id="PXOwnership"/>
 <Behavior id="BiomassMaxedMarker"/>
+<Behavior id="ChronoBoostTarget"/>
 <Behavior id="MutatorBoomBotSpeedUp"/>
 <Behavior id="HHMercStarportCargoInstalled"/>
 <Behavior id="GasWorker"/>

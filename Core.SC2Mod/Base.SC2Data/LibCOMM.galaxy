@@ -2042,6 +2042,51 @@ bool auto_libCOMM_gf_CM_AbilityTransmissionDehakaWurmReminderActionVer_TriggerFu
     return true;
 }
 
+trigger auto_libCOMM_gf_UT_Dehaka_DevourCooldownScoreCheck_Trigger = null;
+
+void libCOMM_gf_UT_Dehaka_DevourCooldownScoreCheck () {
+    if (auto_libCOMM_gf_UT_Dehaka_DevourCooldownScoreCheck_Trigger == null) {
+        auto_libCOMM_gf_UT_Dehaka_DevourCooldownScoreCheck_Trigger = TriggerCreate("auto_libCOMM_gf_UT_Dehaka_DevourCooldownScoreCheck_TriggerFunc");
+    }
+
+    TriggerExecute(auto_libCOMM_gf_UT_Dehaka_DevourCooldownScoreCheck_Trigger, false, false);
+}
+
+bool auto_libCOMM_gf_UT_Dehaka_DevourCooldownScoreCheck_TriggerFunc (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_vDehaka;
+
+    // Automatic Variable Declarations
+    playergroup auto20962B0A_g;
+    int auto20962B0A_var;
+
+    // Variable Initialization
+
+    // Implementation
+    Wait(1.0, c_timeGame);
+    auto20962B0A_g = libCOMI_gf_UT_ActiveCommanderPlayers();
+    auto20962B0A_var = -1;
+    while (true) {
+        auto20962B0A_var = PlayerGroupNextPlayer(auto20962B0A_g, auto20962B0A_var);
+        if (auto20962B0A_var < 0) { break; }
+        if ((libCOMI_gf_ActiveCommanderForPlayer(auto20962B0A_var) == "Dehaka")) {
+            while (!((GameGetMissionTime() > 0.0) && (UnitIsAlive(libCOMM_gf_OBSOLETE_AF_GetHeroUnit(auto20962B0A_var)) == true))) {
+                Wait(0.5, c_timeGame);
+            }
+            lv_vDehaka = libCOMM_gf_OBSOLETE_AF_GetHeroUnit(auto20962B0A_var);
+            while (true) {
+                if ((UnitIsAlive(lv_vDehaka) == true) && (UnitAbilityGetCooldown(lv_vDehaka, "DehakaConsume", "Abil/DehakaConsume") <= 0.0)) {
+                    PlayerScoreValueSetFromFixed(auto20962B0A_var, "Devouroffcooldown", (PlayerScoreValueGetAsFixed(auto20962B0A_var, "Devouroffcooldown")+0.5));
+                }
+
+                Wait(0.5, c_timeGame);
+            }
+        }
+
+    }
+    return true;
+}
+
 void libCOMM_gf_CM_DehakaConsumeFloatText (text lp_text, int lp_p, point lp_loc) {
     // Automatic Variable Declarations
     // Implementation
@@ -9285,7 +9330,7 @@ bool libCOMM_gt_InitDehaka_Func (bool testConds, bool runActions) {
         }
 
         libCOMM_gv_cM_DehakaVODehakaPlayer = autoE1728E31_var;
-        libCOMI_gf_UT_Dehaka_DevourCooldownScoreCheck();
+        libCOMM_gf_UT_Dehaka_DevourCooldownScoreCheck();
         if ((TechTreeUpgradeCount(autoE1728E31_var, "CommanderLevel", c_techCountCompleteOnly) >= 5)) {
             libCOMM_gv_cM_DehakaLevelsMax[autoE1728E31_var] = 12;
             libCOMM_gv_cM_DehakaVeterencyBehavior[autoE1728E31_var] = "DehakaVeterancyCoopMedium";
@@ -16786,7 +16831,7 @@ bool libCOMM_gt_DUT_CommanderMengsk_Func (bool testConds, bool runActions) {
     TriggerEnable(libCOMM_gt_CM_Mengsk_WeaponPickerUpperUnregister, true);
     TriggerEnable(libCOMM_gt_CM_Mengsk_WeaponPickupRegister, true);
     TriggerExecute(libCOMM_gt_CM_Mengsk_WeaponPickup, true, false);
-    TriggerEnable(libCOMI_gt_UT_Mengsk_ContaminatedStrikeDmgScore, true);
+    TriggerEnable(libCOMM_gt_UT_Mengsk_ContaminatedStrikeDmgScore, true);
     TriggerEnable(libCOMM_gt_CM_Mengsk_ArtilleryBuilt, true);
     TriggerEnable(libCOMM_gt_CM_Mengsk_ArtilleryStarted, true);
     TriggerEnable(libCOMM_gt_CM_AbilityTransmissionMengskDirtyBomb, true);
@@ -16984,6 +17029,27 @@ void libCOMM_gt_CM_AbilityTransmissionMengskForcedConscription_Init () {
     libCOMM_gt_CM_AbilityTransmissionMengskForcedConscription = TriggerCreate("libCOMM_gt_CM_AbilityTransmissionMengskForcedConscription_Func");
     TriggerEnable(libCOMM_gt_CM_AbilityTransmissionMengskForcedConscription, false);
     TriggerAddEventUnitAbility(libCOMM_gt_CM_AbilityTransmissionMengskForcedConscription, null, AbilityCommand("BunkerDepotMengskDrop", 0), c_unitAbilStageExecute, false);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: UT_Mengsk_ContaminatedStrikeDmgScore
+//--------------------------------------------------------------------------------------------------
+bool libCOMM_gt_UT_Mengsk_ContaminatedStrikeDmgScore_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    PlayerScoreValueSetFromFixed(EventUnitDamageSourcePlayer(), "DamageDealtbyContaminatedStrike", (PlayerScoreValueGetAsFixed(EventUnitDamageSourcePlayer(), "DamageDealtbyContaminatedStrike")+EventUnitDamageAmount()));
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMM_gt_UT_Mengsk_ContaminatedStrikeDmgScore_Init () {
+    libCOMM_gt_UT_Mengsk_ContaminatedStrikeDmgScore = TriggerCreate("libCOMM_gt_UT_Mengsk_ContaminatedStrikeDmgScore_Func");
+    TriggerEnable(libCOMM_gt_UT_Mengsk_ContaminatedStrikeDmgScore, false);
+    TriggerAddEventUnitDamaged(libCOMM_gt_UT_Mengsk_ContaminatedStrikeDmgScore, null, c_unitDamageTypeAny, c_unitDamageEither, "ArtilleryMengskExperimentalStrikePeriodicDamage");
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -29458,6 +29524,7 @@ void libCOMM_InitTriggers () {
     libCOMM_gt_CM_AbilityTransmissionMengskDirtyBomb_Init();
     libCOMM_gt_CM_AbilityTransmissionMengskZergCalldown_Init();
     libCOMM_gt_CM_AbilityTransmissionMengskForcedConscription_Init();
+    libCOMM_gt_UT_Mengsk_ContaminatedStrikeDmgScore_Init();
     libCOMM_gt_CC_ScoreMengskDamage_Init();
     libCOMM_gt_CM_MasteryMengskRoyalGuardCostList_Init();
     libCOMM_gt_CM_Mengsk_TopBarKills_Init();

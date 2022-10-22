@@ -13855,8 +13855,6 @@
   <EffectArray Reference="Unit,SoACasterFenix,Food" Value="2"/>
 </CUpgrade>
 <CUpgrade default="1" id="MengskTrooperArmors">
-  <?token id="terranairarmor" value="Assets\Textures\btn-upgrade-terran-shipplatinglevel1.dds"?>
-  <?token id="icon" value="Assets\Textures\btn-upgrade-mengsk-engineeringbay-dominionarmorlevel1.dds"?>
   <Icon value="##icon##"/>
   <EffectArray Operation="Set" Reference="Actor,SCVMengsk,LifeArmorIcon" Value="##icon##"/>
   <EffectArray Reference="Unit,SCVMengsk,LifeArmorLevel" Value="1"/>
@@ -13902,7 +13900,6 @@
   <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
 </CUpgrade>
 <CUpgrade default="1" id="MengskTrooperWeapons">
-  <?token id="icon" value="Assets\Textures\btn-upgrade-mengsk-engineeringbay-dominionweaponslevel1.dds"?>
   <Icon value="Assets\Textures\btn-upgrade-mengsk-engineeringbay-dominionweaponslevel1.dds"/>
   <EffectArray Operation="Set" Reference="Weapon,TrooperMengsk,Icon" Value="##icon##"/>
   <EffectArray Reference="Weapon,TrooperMengsk,Level" Value="1"/>
@@ -15154,7 +15151,6 @@
   <AffectedUnitArray value="Odin"/>
 </CUpgrade>
 <CUpgrade default="1" id="StetmannGroundArmors">
-  <?token id="icon" value="Assets\Textures\btn-upgrade-stetmann-mechagroundplating-level1.dds"?>
   <Icon value="##icon##"/>
   <EditorCategories value="Race:Zerg,UpgradeType:Talents"/>
   <EffectArray Operation="Set" Reference="Actor,DroneStetmann,LifeArmorIcon" Value="##icon##"/>
@@ -15266,7 +15262,6 @@
   <LeaderLevel value="1"/>
 </CUpgrade>
 <CUpgrade default="1" id="StetmannMeleeWeapons">
-  <?token id="icon" value="Assets\Textures\btn-upgrade-stetmann-mechameleeattacks-level1.dds"?>
   <Icon value="##icon##"/>
   <EffectArray Operation="Set" Reference="Weapon,ZerglingClawsStetmann,Icon" Value="##icon##"/>
   <EffectArray Reference="Weapon,ZerglingClawsStetmann,Level" Value="1"/>
@@ -15293,7 +15288,6 @@
   <LeaderLevel value="1"/>
 </CUpgrade>
 <CUpgrade default="1" id="StetmannMissileWeapons">
-  <?token id="icon" value="Assets\Textures\btn-upgrade-stetmann-mechamissileattacks-level1.dds"?>
   <Icon value="##icon##"/>
   <EffectArray Operation="Set" Reference="Weapon,HydraliskNeedleSpinesStetmann,Icon" Value="##icon##"/>
   <EffectArray Reference="Weapon,HydraliskNeedleSpinesStetmann,Level" Value="1"/>
@@ -15340,7 +15334,6 @@
   <LeaderLevel value="1"/>
 </CUpgrade>
 <CUpgrade default="1" id="StetmannAirArmors">
-  <?token id="icon" value="Assets\Textures\btn-upgrade-stetmann-mechaflyerplating-level1.dds"?>
   <Icon value="##icon##"/>
   <EditorCategories value="Race:Zerg,UpgradeType:Talents"/>
   <EffectArray Operation="Set" Reference="Actor,OverlordStetmann,LifeArmorIcon" Value="##icon##"/>
@@ -15367,7 +15360,6 @@
   <LeaderLevel value="1"/>
 </CUpgrade>
 <CUpgrade default="1" id="StetmannAirWeapons">
-  <?token id="icon" value="Assets\Textures\btn-upgrade-stetmann-mechaflyerattacks-level1.dds"?>
   <Icon value="##icon##"/>
   <EffectArray Operation="Set" Reference="Weapon,CorruptorParasiteSporeStetmann,Icon" Value="##icon##"/>
   <EffectArray Reference="Weapon,CorruptorParasiteSporeStetmann,Level" Value="1"/>
@@ -18217,8 +18209,6 @@
   <EditorCategories value="Race:Terran"/>
 </CUpgrade>
 <CUpgrade default="1" id="ZeratulArmors">
-  <?token id="icon" type="CImagePath" value="Assets\Textures\btn-upgrade-protoss-groundarmorlevel1.dds"?>
-  <?token id="airicon" type="CImagePath" value="Assets\Textures\btn-upgrade-protoss-airarmorlevel1.dds"?>
   <Race value="Prot"/>
   <Icon value="##icon##"/>
   <EditorCategories value="Race:Protoss,UpgradeType:ArmorBonus"/>
@@ -18333,8 +18323,6 @@
   <LeaderLevel value="1"/>
 </CUpgrade>
 <CUpgrade default="1" id="ZeratulWeapons">
-  <?token id="icon" type="CImagePath" value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel1.dds"?>
-  <?token id="airicon" type="CImagePath" value="Assets\Textures\btn-upgrade-protoss-airweaponslevel1.dds"?>
   <Race value="Prot"/>
   <Icon value="##icon##"/>
   <EditorCategories value="Race:Protoss,UpgradeType:AttackBonus"/>
@@ -18449,7 +18437,6 @@
   <LeaderLevel value="1"/>
 </CUpgrade>
 <CUpgrade default="1" id="ZeratulShields">
-  <?token id="icon" value="Assets\Textures\btn-upgrade-protoss-shieldslevel1.dds"?>
   <Race value="Prot"/>
   <Icon value="##icon##"/>
   <EditorCategories value="Race:Protoss,UpgradeType:ArmorBonus"/>
@@ -19444,7 +19431,6 @@
   <EditorCategories value="Race:Xayid,UpgradeType:Talents"/>
 </CUpgrade>
 <CUpgrade default="1" id="GenetronAircraftPlating">
-  <?token id="Icon"?>
   <Race value="Gen"/>
   <Icon value="##Icon##"/>
   <ScoreCount value="ArmorTechnologyCount"/>
@@ -19482,7 +19468,6 @@
   <AffectedUnitArray value="Processor"/>
 </CUpgrade>
 <CUpgrade default="1" id="GenetronAircraftWeapons">
-  <?token id="Icon"?>
   <Race value="Gen"/>
   <Icon value="##Icon##"/>
   <ScoreCount value="WeaponTechnologyCount"/>
@@ -19511,7 +19496,6 @@
   <AffectedUnitArray value="Hornet"/>
 </CUpgrade>
 <CUpgrade default="1" id="GenetronGroundPlating">
-  <?token id="Icon"?>
   <Icon value="##Icon##"/>
   <Race value="Gen"/>
   <ScoreCount value="ArmorTechnologyCount"/>
@@ -19571,7 +19555,6 @@
   <LeaderAlias value="GenetronGroundPlating"/>
 </CUpgrade>
 <CUpgrade default="1" id="GenetronHeavyWeapons">
-  <?token id="Icon"?>
   <Icon value="##Icon##"/>
   <Race value="Gen"/>
   <ScoreCount value="WeaponTechnologyCount"/>
@@ -19605,7 +19588,6 @@
   <AffectedUnitArray value="Virtus"/>
 </CUpgrade>
 <CUpgrade default="1" id="GenetronLightWeapons">
-  <?token id="Icon"?>
   <Icon value="##Icon##"/>
   <Race value="Gen"/>
   <ScoreCount value="WeaponTechnologyCount"/>
@@ -19643,7 +19625,6 @@
   <AffectedUnitArray value="Spitfire"/>
 </CUpgrade>
 <CUpgrade default="1" id="XayidFlyerAttacks">
-  <?token id="Icon"?>
   <Icon value="##Icon##"/>
   <Race value="Xayi"/>
   <ScoreCount value="WeaponTechnologyCount"/>
@@ -19669,7 +19650,6 @@
   <AffectedUnitArray value="Kraken"/>
 </CUpgrade>
 <CUpgrade default="1" id="XayidFlyerCarapace">
-  <?token id="Icon"?>
   <Icon value="##Icon##"/>
   <Race value="Xayi"/>
   <ScoreCount value="ArmorTechnologyCount"/>
@@ -19703,7 +19683,6 @@
   <AffectedUnitArray value="Xayithoan"/>
 </CUpgrade>
 <CUpgrade default="1" id="XayidGroundAttacks">
-  <?token id="Icon"?>
   <Icon value="##Icon##"/>
   <Race value="Xayi"/>
   <ScoreCount value="WeaponTechnologyCount"/>
@@ -19752,7 +19731,6 @@
   <AffectedUnitArray value="Xayidling"/>
 </CUpgrade>
 <CUpgrade default="1" id="XayidGroundCarapace">
-  <?token id="Icon"?>
   <Icon value="##Icon##"/>
   <Race value="Xayi"/>
   <ScoreCount value="ArmorTechnologyCount"/>
@@ -19809,7 +19787,6 @@
   <AffectedUnitArray value="Xayidling"/>
 </CUpgrade>
 <CUpgrade default="1" id="KeironBioArmor">
-  <?token id="Icon"?>
   <Icon value="##Icon##"/>
   <Race value="Keir"/>
   <ScoreCount value="ArmorTechnologyCount"/>
@@ -19859,7 +19836,6 @@
   <LeaderAlias value="KeironBioArmor"/>
 </CUpgrade>
 <CUpgrade default="1" id="KeironBioWeapons">
-  <?token id="Icon"?>
   <Icon value="##Icon##"/>
   <Race value="Keir"/>
   <ScoreCount value="WeaponTechnologyCount"/>
@@ -19901,7 +19877,6 @@
   <LeaderAlias value="KeironBioWeapons"/>
 </CUpgrade>
 <CUpgrade default="1" id="KeironMechArmor">
-  <?token id="Icon"?>
   <Icon value="##Icon##"/>
   <Race value="Keir"/>
   <ScoreCount value="ArmorTechnologyCount"/>
@@ -19951,7 +19926,6 @@
   <LeaderAlias value="KeironMechArmor"/>
 </CUpgrade>
 <CUpgrade default="1" id="KeironMechWeapons">
-  <?token id="Icon"?>
   <Icon value="##Icon##"/>
   <Race value="Keir"/>
   <ScoreCount value="WeaponTechnologyCount"/>
@@ -19998,7 +19972,6 @@
   <LeaderAlias value="KeironMechWeapons"/>
 </CUpgrade>
 <CUpgrade default="1" id="KeironShields">
-  <?token id="Icon"?>
   <Icon value="##Icon##"/>
   <Race value="Keir"/>
   <ScoreCount value="ArmorTechnologyCount"/>
@@ -21116,9 +21089,7 @@
 </CUpgrade>
 <CUpgrade id="UEDCommander">
   <EditorCategories value="Race:UED,UpgradeType:Talents"/>
-  <EditorCategories value="Race:UED"/>
   <Icon value="Assets\Textures\Viper_Decal.dds"/>
-  <Flags index="UpgradeCheat" value="0"/>
 </CUpgrade>
 <CUpgrade id="UEDVehicalsLevel2" parent="TerranInfantryWeapons">
   <Name value="Upgrade/Name/UEDVehicalsLevel2"/>
@@ -22191,8 +22162,6 @@
 <CUpgrade id="DragonCommander">
   <Race value="Dragon"/>
   <EditorCategories value="Race:Dragon,UpgradeType:Talents"/>
-  <EditorCategories value="Race:Dragon"/>
-  <Flags index="UpgradeCheat" value="0"/>
 </CUpgrade>
 <CUpgrade id="DragonFireAttacksLevel1" parent="DragonFireAttacks">
   <EffectArray Operation="Set" Reference="Weapon,AuroraConduitNetherShock,Icon" Value="Assets\Textures\fireball_6.dds"/>
@@ -22689,782 +22658,6 @@
   <AffectedUnitArray value="GrimGlider"/>
   <ScoreAmount value="510"/>
   <Race value="Dragon"/>
-</CUpgrade>
-<CUpgrade default="1" id="UPLShipArmor">
-  <WebPriority value="0"/>
-  <Icon value="##path####lvl##.dds"/>
-  <Race value="UPL"/>
-  <ScoreCount value="ArmorTechnologyCount"/>
-  <ScoreValue value="ArmorTechnologyValue"/>
-  <ScoreResult value="BuildOrder"/>
-  <EffectArray Reference="Unit,RaptorJet,LifeArmorLevel" Value="1"/>
-  <EffectArray Reference="Unit,RaptorJet,LifeArmor" Value="1"/>
-  <EffectArray Reference="Unit,Osprey,LifeArmor" Value="1.000000"/>
-  <EffectArray Reference="Unit,Osprey,LifeArmorLevel" Value="1"/>
-  <EffectArray Reference="Unit,Condor,LifeArmor" Value="1.000000"/>
-  <EffectArray Reference="Unit,Condor,LifeArmorLevel" Value="1"/>
-  <EffectArray Operation="Set" Reference="Actor,RaptorJet,LifeArmorIcon" Value="##path####lvl##.dds"/>
-  <EffectArray Operation="Set" Reference="Actor,Osprey,LifeArmorIcon" Value="##path####lvl##.dds"/>
-  <EffectArray Operation="Set" Reference="Actor,Condor,LifeArmorIcon" Value="##path####lvl##.dds"/>
-  <EditorCategories value="Race:UPL,UpgradeType:ArmorBonus"/>
-  <AffectedUnitArray value="RaptorJet"/>
-  <AffectedUnitArray value="Osprey"/>
-  <AffectedUnitArray value="Condor"/>
-  <LeaderAlias value="UPLShipArmors"/>
-</CUpgrade>
-<CUpgrade default="1" id="UPLShipWeapons">
-  <WebPriority value="0"/>
-  <Icon value="##path####lvl##.dds"/>
-  <Race value="UPL"/>
-  <ScoreCount value="WeaponTechnologyCount"/>
-  <ScoreValue value="WeaponTechnologyValue"/>
-  <ScoreResult value="BuildOrder"/>
-  <EffectArray Reference="Weapon,RaptorJet,Level" Value="1"/>
-  <EffectArray Reference="Weapon,OspreyAirWeapon,Level" Value="1"/>
-  <EffectArray Reference="Weapon,OspreyGround,Level" Value="1"/>
-  <EffectArray Reference="Effect,RaptorAirDamage,Amount" Value="1"/>
-  <EffectArray Reference="Effect,RaptorGroundDamage,Amount" Value="1"/>
-  <EffectArray Reference="Effect,RaptorAirBurningDamage,Amount" Value="1"/>
-  <EffectArray Reference="Effect,OspreyAirDamage,Amount" Value="1"/>
-  <EffectArray Reference="Effect,OspreyGroundDamage,Amount" Value="1"/>
-  <EffectArray Operation="Set" Reference="Weapon,RaptorJet,Icon" Value="##path####lvl##.dds"/>
-  <EffectArray Operation="Set" Reference="Weapon,OspreyAirWeapon,Icon" Value="##path####lvl##.dds"/>
-  <EffectArray Operation="Set" Reference="Weapon,OspreyGround,Icon" Value="##path####lvl##.dds"/>
-  <EditorCategories value="Race:UPL,UpgradeType:AttackBonus"/>
-  <AffectedUnitArray value="RaptorJet"/>
-  <AffectedUnitArray value="Osprey"/>
-  <LeaderAlias value="UPLShipWeapons"/>
-</CUpgrade>
-<CUpgrade default="1" id="UPLVehicleArmor">
-  <WebPriority value="0"/>
-  <Icon value="##path####lvl##.dds"/>
-  <Race value="UPL"/>
-  <ScoreCount value="ArmorTechnologyCount"/>
-  <ScoreValue value="ArmorTechnologyValue"/>
-  <ScoreResult value="BuildOrder"/>
-  <EffectArray Reference="Unit,MiningDrone,LifeArmorLevel" Value="1"/>
-  <EffectArray Reference="Unit,MiningDrone,LifeArmor" Value="1"/>
-  <EffectArray Reference="Unit,A6,LifeArmorLevel" Value="1"/>
-  <EffectArray Reference="Unit,A6,LifeArmor" Value="1"/>
-  <EffectArray Reference="Unit,TR17,LifeArmorLevel" Value="1"/>
-  <EffectArray Reference="Unit,TR17,LifeArmor" Value="1"/>
-  <EffectArray Reference="Unit,Z1,LifeArmorLevel" Value="1"/>
-  <EffectArray Reference="Unit,Z1,LifeArmor" Value="1"/>
-  <EffectArray Reference="Unit,RoutheTank,LifeArmor" Value="1"/>
-  <EffectArray Reference="Unit,RoutheTank,LifeArmorLevel" Value="1"/>
-  <EffectArray Reference="Unit,CSV,LifeArmor" Value="1"/>
-  <EffectArray Reference="Unit,CSV,LifeArmorLevel" Value="1"/>
-  <EffectArray Reference="Unit,CSVDeployed,LifeArmor" Value="1.000000"/>
-  <EffectArray Reference="Unit,CSVDeployed,LifeArmorLevel" Value="1"/>
-  <EffectArray Reference="Unit,RaptorJet,LifeArmorLevel" Value="1"/>
-  <EffectArray Reference="Unit,RaptorJet,LifeArmor" Value="1"/>
-  <EffectArray Reference="Unit,Osprey,LifeArmor" Value="1.000000"/>
-  <EffectArray Reference="Unit,Osprey,LifeArmorLevel" Value="1"/>
-  <EffectArray Reference="Unit,OspreyLanded,LifeArmor" Value="1.000000"/>
-  <EffectArray Reference="Unit,OspreyLanded,LifeArmorLevel" Value="1"/>
-  <EffectArray Reference="Unit,Condor,LifeArmor" Value="1.000000"/>
-  <EffectArray Reference="Unit,Condor,LifeArmorLevel" Value="1"/>
-  <EffectArray Reference="Unit,CondorLanded,LifeArmor" Value="1.000000"/>
-  <EffectArray Reference="Unit,CondorLanded,LifeArmorLevel" Value="1"/>
-  <EffectArray Reference="Unit,APC,LifeArmor" Value="1.000000"/>
-  <EffectArray Reference="Unit,APC,LifeArmorLevel" Value="1"/>
-  <EffectArray Reference="Unit,SwatVan,LifeArmor" Value="1.000000"/>
-  <EffectArray Reference="Unit,SwatVan,LifeArmorLevel" Value="1"/>
-  <EffectArray Reference="Unit,PoliceCruiser,LifeArmor" Value="1.000000"/>
-  <EffectArray Reference="Unit,PoliceCruiser,LifeArmorLevel" Value="1"/>
-  <EffectArray Reference="Unit,AltonPetersZ1,LifeArmor" Value="1.000000"/>
-  <EffectArray Reference="Unit,AltonPetersZ1,LifeArmorLevel" Value="1"/>
-  <EffectArray Reference="Unit,CARR,LifeArmor" Value="1.000000"/>
-  <EffectArray Reference="Unit,CARR,LifeArmorLevel" Value="1"/>
-  <EffectArray Reference="Unit,RileyJerico,LifeArmor" Value="1.000000"/>
-  <EffectArray Reference="Unit,RileyJerico,LifeArmorLevel" Value="1"/>
-  <EffectArray Operation="Set" Reference="Actor,A6,LifeArmorIcon" Value="##path####lvl##.dds"/>
-  <EffectArray Operation="Set" Reference="Actor,MiningDrone,LifeArmorIcon" Value="##path####lvl##.dds"/>
-  <EffectArray Operation="Set" Reference="Actor,TR17,LifeArmorIcon" Value="##path####lvl##.dds"/>
-  <EffectArray Operation="Set" Reference="Actor,Z1,LifeArmorIcon" Value="##path####lvl##.dds"/>
-  <EffectArray Operation="Set" Reference="Actor,RoutheTank,LifeArmorIcon" Value="##path####lvl##.dds"/>
-  <EffectArray Operation="Set" Reference="Actor,CSV,LifeArmorIcon" Value="##path####lvl##.dds"/>
-  <EffectArray Operation="Set" Reference="Actor,CSVDeployed,LifeArmorIcon" Value="##path####lvl##.dds"/>
-  <EffectArray Operation="Set" Reference="Actor,RaptorJet,LifeArmorIcon" Value="##path####lvl##.dds"/>
-  <EffectArray Operation="Set" Reference="Actor,Osprey,LifeArmorIcon" Value="##path####lvl##.dds"/>
-  <EffectArray Operation="Set" Reference="Actor,OspreyLanded,LifeArmorIcon" Value="##path####lvl##.dds"/>
-  <EffectArray Operation="Set" Reference="Actor,Condor,LifeArmorIcon" Value="##path####lvl##.dds"/>
-  <EffectArray Operation="Set" Reference="Actor,CondorLanded,LifeArmorIcon" Value="##path####lvl##.dds"/>
-  <EffectArray Operation="Set" Reference="Actor,APC,LifeArmorIcon" Value="##path####lvl##.dds"/>
-  <EffectArray Operation="Set" Reference="Actor,SwatVan,LifeArmorIcon" Value="##path####lvl##.dds"/>
-  <EffectArray Operation="Set" Reference="Actor,PoliceCruiser,LifeArmorIcon" Value="##path####lvl##.dds"/>
-  <EffectArray Operation="Set" Reference="Actor,AltonPetersZ1,LifeArmorIcon" Value="##path####lvl##.dds"/>
-  <EffectArray Operation="Set" Reference="Actor,CARR,LifeArmorIcon" Value="##path####lvl##.dds"/>
-  <EffectArray Operation="Set" Reference="Actor,RileyJerico,LifeArmorIcon" Value="##path####lvl##.dds"/>
-  <EditorCategories value="Race:UPL,UpgradeType:ArmorBonus"/>
-  <AffectedUnitArray value="A6"/>
-  <AffectedUnitArray value="TR17"/>
-  <AffectedUnitArray value="Z1"/>
-  <AffectedUnitArray value="RoutheTank"/>
-  <AffectedUnitArray value="MiningDrone"/>
-  <AffectedUnitArray value="CSV"/>
-  <AffectedUnitArray value="CSVDeployed"/>
-  <AffectedUnitArray value="RaptorJet"/>
-  <AffectedUnitArray value="Osprey"/>
-  <AffectedUnitArray value="OspreyLanded"/>
-  <AffectedUnitArray value="Condor"/>
-  <AffectedUnitArray value="CondorLanded"/>
-  <AffectedUnitArray value="APC"/>
-  <AffectedUnitArray value="SwatVan"/>
-  <AffectedUnitArray value="PoliceCruiser"/>
-  <AffectedUnitArray value="AltonPetersZ1"/>
-  <AffectedUnitArray value="CARR"/>
-  <AffectedUnitArray value="RileyJerico"/>
-  <LeaderAlias value="TechVehicleArmors"/>
-</CUpgrade>
-<CUpgrade default="1" id="UPLVehicleWeapons">
-  <WebPriority value="0"/>
-  <Icon value="##path####lvl##.dds"/>
-  <Race value="UPL"/>
-  <ScoreCount value="WeaponTechnologyCount"/>
-  <ScoreValue value="WeaponTechnologyValue"/>
-  <ScoreResult value="BuildOrder"/>
-  <EffectArray Reference="Weapon,A6,Level" Value="1"/>
-  <EffectArray Reference="Weapon,CSV,Level" Value="1"/>
-  <EffectArray Reference="Weapon,RoutheTank,Level" Value="1"/>
-  <EffectArray Reference="Weapon,TR17,Level" Value="1"/>
-  <EffectArray Reference="Weapon,Z1,Level" Value="1"/>
-  <EffectArray Reference="Weapon,UPLNightjarWeapon,Level" Value="1"/>
-  <EffectArray Reference="Weapon,UPLSolitaireWeapon,Level" Value="1"/>
-  <EffectArray Reference="Weapon,RaptorJet,Level" Value="1"/>
-  <EffectArray Reference="Weapon,OspreyAirWeapon,Level" Value="1"/>
-  <EffectArray Reference="Weapon,OspreyGround,Level" Value="1"/>
-  <EffectArray Reference="Weapon,MiningDrone,Level" Value="1"/>
-  <EffectArray Reference="Effect,A6WeaponDamage,Amount" Value="2"/>
-  <EffectArray Reference="Effect,CSVDamage,Amount" Value="2"/>
-  <EffectArray Reference="Effect,RoutheTankDamage,Amount" Value="3"/>
-  <EffectArray Reference="Effect,RoutheTankDamage,AttributeBonus[Armored]" Value="1.0"/>
-  <EffectArray Reference="Effect,RoutheTankDamageStructure,Amount" Value="1.0"/>
-  <EffectArray Reference="Effect,RoutheTankDamageDisplay,Amount" Value="3"/>
-  <EffectArray Reference="Effect,RoutheTankDamageDisplay,AttributeBonus[Armored]" Value="1.0"/>
-  <EffectArray Reference="Effect,RoutheTankDamageDisplay,AttributeBonus[Structure]" Value="1.0"/>
-  <EffectArray Reference="Effect,TR17Damage,Amount" Value="5"/>
-  <EffectArray Reference="Effect,Z1Damage,Amount" Value="2"/>
-  <EffectArray Reference="Effect,UPLNightjarDamage,Amount" Value="2"/>
-  <EffectArray Reference="Effect,UPLNightjarDamage,AttributeBonus[Armored]" Value="1"/>
-  <EffectArray Reference="Effect,UPLSolitaireDamage,Amount" Value="1"/>
-  <EffectArray Reference="Effect,RaptorAirDamage,Amount" Value="2"/>
-  <EffectArray Reference="Effect,OspreyAirDamage,Amount" Value="2"/>
-  <EffectArray Reference="Effect,OspreyGroundDamage,Amount" Value="1"/>
-  <EffectArray Reference="Effect,MiningDroneDamage,Amount" Value="1"/>
-  <EffectArray Operation="Set" Reference="Weapon,A6,Icon" Value="##path####lvl##.dds"/>
-  <EffectArray Operation="Set" Reference="Weapon,CSV,Icon" Value="##path####lvl##.dds"/>
-  <EffectArray Operation="Set" Reference="Weapon,RoutheTank,Icon" Value="##path####lvl##.dds"/>
-  <EffectArray Operation="Set" Reference="Weapon,TR17,Icon" Value="##path####lvl##.dds"/>
-  <EffectArray Operation="Set" Reference="Weapon,Z1,Icon" Value="##path####lvl##.dds"/>
-  <EffectArray Operation="Set" Reference="Weapon,UPLNightjarWeapon,Icon" Value="##path####lvl##.dds"/>
-  <EffectArray Operation="Set" Reference="Weapon,UPLSolitaireWeapon,Icon" Value="##path####lvl##.dds"/>
-  <EffectArray Operation="Set" Reference="Weapon,RaptorJet,Icon" Value="##path####lvl##.dds"/>
-  <EffectArray Operation="Set" Reference="Weapon,OspreyGround,Icon" Value="##path####lvl##.dds"/>
-  <EffectArray Operation="Set" Reference="Weapon,OspreyAirWeapon,Icon" Value="##path####lvl##.dds"/>
-  <EffectArray Operation="Set" Reference="Weapon,MiningDrone,Icon" Value="##path####lvl##.dds"/>
-  <EffectArray Reference="Weapon,CARRGround,Level" Value="1"/>
-  <EffectArray Reference="Weapon,CARRAir,Level" Value="1"/>
-  <EffectArray Reference="Weapon,RileyJerico,Level" Value="1"/>
-  <EffectArray Reference="Weapon,AltonPetersZ1,Level" Value="1"/>
-  <EffectArray Reference="Effect,CARRAirDamage,Amount" Value="2"/>
-  <EffectArray Reference="Effect,CARRGroundDamage,Amount" Value="2"/>
-  <EffectArray Reference="Effect,CARRGroundDamage,AttributeBonus[Biological]" Value="1"/>
-  <EffectArray Reference="Effect,RileyJericoDamage,Amount" Value="4"/>
-  <EffectArray Reference="Effect,AltonPetersZ1Damage,Amount" Value="4"/>
-  <EffectArray Operation="Set" Reference="Weapon,CARRGround,Icon" Value="##path####lvl##.dds"/>
-  <EffectArray Operation="Set" Reference="Weapon,RileyJerico,Icon" Value="##path####lvl##.dds"/>
-  <EffectArray Operation="Set" Reference="Weapon,AltonPetersZ1,Icon" Value="##path####lvl##.dds"/>
-  <EditorCategories value="Race:UPL,UpgradeType:AttackBonus"/>
-  <AffectedUnitArray value="A6"/>
-  <AffectedUnitArray value="CSV"/>
-  <AffectedUnitArray value="CSVDeployed"/>
-  <AffectedUnitArray value="RoutheTank"/>
-  <AffectedUnitArray value="TR17"/>
-  <AffectedUnitArray value="Z1"/>
-  <AffectedUnitArray value="MiningDrone"/>
-  <AffectedUnitArray value="RaptorJet"/>
-  <AffectedUnitArray value="Osprey"/>
-  <AffectedUnitArray value="Condor"/>
-  <AffectedUnitArray value="CARR"/>
-  <AffectedUnitArray value="AltonPetersZ1"/>
-  <AffectedUnitArray value="RileyJerico"/>
-  <AffectedUnitArray value="UPLNightjar"/>
-  <AffectedUnitArray value="UPLSolitaire"/>
-  <LeaderAlias value="TechVehicleWeapons"/>
-</CUpgrade>
-<CUpgrade default="1" id="UPLInfantryArmor">
-  <WebPriority value="0"/>
-  <Icon value="##path####lvl##.dds"/>
-  <Race value="UPL"/>
-  <ScoreAmount value="200"/>
-  <ScoreCount value="ArmorTechnologyCount"/>
-  <ScoreValue value="ArmorTechnologyValue"/>
-  <ScoreResult value="BuildOrder"/>
-  <EffectArray Reference="Unit,InfantryRifle,LifeArmorLevel" Value="1"/>
-  <EffectArray Reference="Unit,InfantryRifle,LifeArmor" Value="1"/>
-  <EffectArray Reference="Unit,InfantryHeavy,LifeArmorLevel" Value="1"/>
-  <EffectArray Reference="Unit,InfantryHeavy,LifeArmor" Value="1"/>
-  <EffectArray Reference="Unit,InfantryRocket,LifeArmorLevel" Value="1"/>
-  <EffectArray Reference="Unit,InfantryRocket,LifeArmor" Value="1"/>
-  <EffectArray Reference="Unit,InfantryMortar,LifeArmorLevel" Value="1"/>
-  <EffectArray Reference="Unit,InfantryMortar,LifeArmor" Value="1"/>
-  <EffectArray Reference="Unit,InfantryFlamethrower,LifeArmor" Value="1"/>
-  <EffectArray Reference="Unit,InfantryFlamethrower,LifeArmorLevel" Value="1"/>
-  <EffectArray Reference="Unit,InfantryOfficer,LifeArmor" Value="1"/>
-  <EffectArray Reference="Unit,InfantryOfficer,LifeArmorLevel" Value="1"/>
-  <EffectArray Operation="Set" Reference="Actor,InfantryRifle,LifeArmorIcon" Value="##path####lvl##.dds"/>
-  <EffectArray Operation="Set" Reference="Actor,InfantryRocket,LifeArmorIcon" Value="##path####lvl##.dds"/>
-  <EffectArray Operation="Set" Reference="Actor,InfantryHeavy,LifeArmorIcon" Value="##path####lvl##.dds"/>
-  <EffectArray Operation="Set" Reference="Actor,InfantryMortar,LifeArmorIcon" Value="##path####lvl##.dds"/>
-  <EffectArray Operation="Set" Reference="Actor,InfantryFlamethrower,LifeArmorIcon" Value="##path####lvl##.dds"/>
-  <EffectArray Operation="Set" Reference="Actor,InfantryOfficer,LifeArmorIcon" Value="##path####lvl##.dds"/>
-  <EffectArray Reference="Unit,UPLScout,LifeArmor" Value="1"/>
-  <EffectArray Reference="Unit,UPLScout,LifeArmorLevel" Value="1"/>
-  <EffectArray Operation="Set" Reference="Actor,UPLScout,LifeArmorIcon" Value="##path####lvl##.dds"/>
-  <EffectArray Reference="Unit,UPLSpecOps,LifeArmor" Value="1"/>
-  <EffectArray Reference="Unit,UPLSpecOps,LifeArmorLevel" Value="1"/>
-  <EffectArray Operation="Set" Reference="Actor,UPLSpecOps,LifeArmorIcon" Value="##path####lvl##.dds"/>
-  <EffectArray Reference="Unit,UPLPoliceOfficer,LifeArmor" Value="1"/>
-  <EffectArray Reference="Unit,UPLPoliceOfficer,LifeArmorLevel" Value="1"/>
-  <EffectArray Operation="Set" Reference="Actor,UPLPoliceOfficer,LifeArmorIcon" Value="##path####lvl##.dds"/>
-  <EffectArray Reference="Unit,UPLRiotOfficer,LifeArmor" Value="1"/>
-  <EffectArray Reference="Unit,UPLRiotOfficer,LifeArmorLevel" Value="1"/>
-  <EffectArray Operation="Set" Reference="Actor,UPLRiotOfficer,LifeArmorIcon" Value="##path####lvl##.dds"/>
-  <EffectArray Reference="Unit,UPLAnimalControlOfficer,LifeArmor" Value="1"/>
-  <EffectArray Reference="Unit,UPLAnimalControlOfficer,LifeArmorLevel" Value="1"/>
-  <EffectArray Operation="Set" Reference="Actor,UPLAnimalControlOfficer,LifeArmorIcon" Value="##path####lvl##.dds"/>
-  <EffectArray Reference="Unit,UPLDetectiveFemale,LifeArmor" Value="1"/>
-  <EffectArray Reference="Unit,UPLDetectiveFemale,LifeArmorLevel" Value="1"/>
-  <EffectArray Operation="Set" Reference="Actor,UPLDetectiveFemale,LifeArmorIcon" Value="##path####lvl##.dds"/>
-  <EffectArray Reference="Unit,UPLDetectiveMale,LifeArmor" Value="1"/>
-  <EffectArray Reference="Unit,UPLDetectiveMale,LifeArmorLevel" Value="1"/>
-  <EffectArray Operation="Set" Reference="Actor,UPLDetectiveMale,LifeArmorIcon" Value="##path####lvl##.dds"/>
-  <EffectArray Reference="Unit,HazmatTechnician,LifeArmor" Value="1"/>
-  <EffectArray Reference="Unit,HazmatTechnician,LifeArmorLevel" Value="1"/>
-  <EffectArray Operation="Set" Reference="Actor,HazmatTechnician,LifeArmorIcon" Value="##path####lvl##.dds"/>
-  <EffectArray Reference="Unit,RichardGideon,LifeArmor" Value="1"/>
-  <EffectArray Reference="Unit,RichardGideon,LifeArmorLevel" Value="1"/>
-  <EffectArray Operation="Set" Reference="Actor,RichardGideon,LifeArmorIcon" Value="##path####lvl##.dds"/>
-  <EffectArray Reference="Unit,MyraDavisOfficer,LifeArmor" Value="1"/>
-  <EffectArray Reference="Unit,MyraDavisOfficer,LifeArmorLevel" Value="1"/>
-  <EffectArray Operation="Set" Reference="Actor,MyraDavisOfficer,LifeArmorIcon" Value="##path####lvl##.dds"/>
-  <EffectArray Reference="Unit,MyraDavisRiotOfficer,LifeArmor" Value="1"/>
-  <EffectArray Reference="Unit,MyraDavisRiotOfficer,LifeArmorLevel" Value="1"/>
-  <EffectArray Operation="Set" Reference="Actor,MyraDavisRiotOfficer,LifeArmorIcon" Value="##path####lvl##.dds"/>
-  <EffectArray Reference="Unit,DeniseAllisterRiotOfficer,LifeArmor" Value="1"/>
-  <EffectArray Reference="Unit,DeniseAllisterRiotOfficer,LifeArmorLevel" Value="1"/>
-  <EffectArray Operation="Set" Reference="Actor,DeniseAllisterRiotOfficer,LifeArmorIcon" Value="##path####lvl##.dds"/>
-  <EffectArray Reference="Unit,TrevorRand,LifeArmor" Value="1"/>
-  <EffectArray Reference="Unit,TrevorRand,LifeArmorLevel" Value="1"/>
-  <EffectArray Operation="Set" Reference="Actor,TrevorRand,LifeArmorIcon" Value="##path####lvl##.dds"/>
-  <EffectArray Reference="Unit,LillyRollins,LifeArmor" Value="1"/>
-  <EffectArray Reference="Unit,LillyRollins,LifeArmorLevel" Value="1"/>
-  <EffectArray Operation="Set" Reference="Actor,LillyRollins,LifeArmorIcon" Value="##path####lvl##.dds"/>
-  <EffectArray Reference="Unit,WilliamGraves,LifeArmor" Value="1"/>
-  <EffectArray Reference="Unit,WilliamGraves,LifeArmorLevel" Value="1"/>
-  <EffectArray Operation="Set" Reference="Actor,WilliamGraves,LifeArmorIcon" Value="##path####lvl##.dds"/>
-  <EffectArray Reference="Unit,AltonPeters,LifeArmor" Value="1"/>
-  <EffectArray Reference="Unit,AltonPeters,LifeArmorLevel" Value="1"/>
-  <EffectArray Operation="Set" Reference="Actor,AltonPeters,LifeArmorIcon" Value="##path####lvl##.dds"/>
-  <EffectArray Reference="Unit,KatherineHalsey,LifeArmor" Value="1"/>
-  <EffectArray Reference="Unit,KatherineHalsey,LifeArmorLevel" Value="1"/>
-  <EffectArray Operation="Set" Reference="Actor,KatherineHalsey,LifeArmorIcon" Value="##path####lvl##.dds"/>
-  <EffectArray Reference="Unit,KatherineHalseyPistol,LifeArmor" Value="1"/>
-  <EffectArray Reference="Unit,KatherineHalseyPistol,LifeArmorLevel" Value="1"/>
-  <EffectArray Operation="Set" Reference="Actor,KatherineHalseyPistol,LifeArmorIcon" Value="##path####lvl##.dds"/>
-  <EffectArray Reference="Unit,KatherineHalseyElder,LifeArmor" Value="1"/>
-  <EffectArray Reference="Unit,KatherineHalseyElder,LifeArmorLevel" Value="1"/>
-  <EffectArray Operation="Set" Reference="Actor,KatherineHalseyElder,LifeArmorIcon" Value="##path####lvl##.dds"/>
-  <EffectArray Reference="Unit,DarrenRodgers,LifeArmor" Value="1"/>
-  <EffectArray Reference="Unit,DarrenRodgers,LifeArmorLevel" Value="1"/>
-  <EffectArray Operation="Set" Reference="Actor,DarrenRodgers,LifeArmorIcon" Value="##path####lvl##.dds"/>
-  <EffectArray Reference="Unit,MilesJenkins,LifeArmor" Value="1"/>
-  <EffectArray Reference="Unit,MilesJenkins,LifeArmorLevel" Value="1"/>
-  <EffectArray Operation="Set" Reference="Actor,MilesJenkins,LifeArmorIcon" Value="##path####lvl##.dds"/>
-  <EffectArray Reference="Unit,RusellPeters,LifeArmor" Value="1"/>
-  <EffectArray Reference="Unit,RusellPeters,LifeArmorLevel" Value="1"/>
-  <EffectArray Operation="Set" Reference="Actor,RusellPeters,LifeArmorIcon" Value="##path####lvl##.dds"/>
-  <EffectArray Reference="Unit,GordonTrenchard,LifeArmor" Value="1"/>
-  <EffectArray Reference="Unit,GordonTrenchard,LifeArmorLevel" Value="1"/>
-  <EffectArray Operation="Set" Reference="Actor,GordonTrenchard,LifeArmorIcon" Value="##path####lvl##.dds"/>
-  <EditorCategories value="Race:UPL,UpgradeType:ArmorBonus"/>
-  <AffectedUnitArray value="InfantryRifle"/>
-  <AffectedUnitArray value="InfantryHeavy"/>
-  <AffectedUnitArray value="InfantryMortar"/>
-  <AffectedUnitArray value="InfantryFlamethrower"/>
-  <AffectedUnitArray value="InfantryRocket"/>
-  <AffectedUnitArray value="InfantryOfficer"/>
-  <AffectedUnitArray value="UPLScout"/>
-  <AffectedUnitArray value="UPLSpecOps"/>
-  <AffectedUnitArray value="UPLPoliceOfficer"/>
-  <AffectedUnitArray value="UPLRiotOfficer"/>
-  <AffectedUnitArray value="UPLAnimalControlOfficer"/>
-  <AffectedUnitArray value="UPLDetectiveFemale"/>
-  <AffectedUnitArray value="UPLDetectiveMale"/>
-  <AffectedUnitArray value="HazmatTechnician"/>
-  <AffectedUnitArray value="RichardGideon"/>
-  <AffectedUnitArray value="MyraDavisOfficer"/>
-  <AffectedUnitArray value="MyraDavisRiotOfficer"/>
-  <AffectedUnitArray value="DeniseAllisterRiotOfficer"/>
-  <AffectedUnitArray value="TrevorRand"/>
-  <AffectedUnitArray value="LillyRollins"/>
-  <AffectedUnitArray value="WilliamGraves"/>
-  <AffectedUnitArray value="AltonPeters"/>
-  <AffectedUnitArray value="KatherineHalsey"/>
-  <AffectedUnitArray value="KatherineHalseyPistol"/>
-  <AffectedUnitArray value="KatherineHalseyElder"/>
-  <AffectedUnitArray value="DarrenRodgers"/>
-  <AffectedUnitArray value="MilesJenkins"/>
-  <AffectedUnitArray value="RusellPeters"/>
-  <AffectedUnitArray value="GordonTrenchard"/>
-  <LeaderAlias value="TechInfantryArmors"/>
-  <LeaderLevel value="1"/>
-</CUpgrade>
-<CUpgrade default="1" id="UPLInfantryWeapons">
-  <InfoTooltipPriority value="61"/>
-  <Icon value="##path####lvl##.dds"/>
-  <WebPriority value="0"/>
-  <Race value="UPL"/>
-  <ScoreCount value="WeaponTechnologyCount"/>
-  <ScoreValue value="WeaponTechnologyValue"/>
-  <ScoreResult value="BuildOrder"/>
-  <EffectArray Reference="Weapon,InfantryRifle,Level" Value="1"/>
-  <EffectArray Reference="Weapon,InfantryHeavy,Level" Value="1"/>
-  <EffectArray Reference="Weapon,InfantryMortar,Level" Value="1"/>
-  <EffectArray Reference="Weapon,InfantryFlamethrower,Level" Value="1"/>
-  <EffectArray Reference="Weapon,InfantryRocket,Level" Value="1"/>
-  <EffectArray Reference="Weapon,InfantryOfficer,Level" Value="1"/>
-  <EffectArray Reference="Effect,InfantryRifleDamage,Amount" Value="1"/>
-  <EffectArray Reference="Effect,InfantryHeavyDamage,Amount" Value="1"/>
-  <EffectArray Reference="Effect,InfantryHeavyDamage,AttributeBonus[Armored]" Value="1"/>
-  <EffectArray Reference="Effect,InfantryMortarDamage,Amount" Value="5"/>
-  <EffectArray Reference="Effect,InfantryFlamethrowerDamage,Amount" Value="1"/>
-  <EffectArray Reference="Effect,InfantryFlamethrowerDamagedirect,Amount" Value="1"/>
-  <EffectArray Reference="Effect,InfantryRocketDamage,Amount" Value="3"/>
-  <EffectArray Reference="Effect,InfantryOfficerDamage,Amount" Value="2"/>
-  <EffectArray Operation="Set" Reference="Weapon,InfantryRifle,Icon" Value="##path####lvl##.dds"/>
-  <EffectArray Operation="Set" Reference="Weapon,InfantryHeavy,Icon" Value="##path####lvl##.dds"/>
-  <EffectArray Operation="Set" Reference="Weapon,InfantryMortar,Icon" Value="##path####lvl##.dds"/>
-  <EffectArray Operation="Set" Reference="Weapon,InfantryFlamethrower,Icon" Value="##path####lvl##.dds"/>
-  <EffectArray Operation="Set" Reference="Weapon,InfantryRocket,Icon" Value="##path####lvl##.dds"/>
-  <EffectArray Operation="Set" Reference="Weapon,InfantryOfficer,Icon" Value="##path####lvl##.dds"/>
-  <EffectArray Reference="Weapon,UPLScout,Level" Value="1"/>
-  <EffectArray Operation="Set" Reference="Weapon,UPLScout,Icon" Value="##path####lvl##.dds"/>
-  <EffectArray Reference="Effect,UPLScout,Amount" Value="2"/>
-  <EffectArray Reference="Weapon,UPLSpecOpsAttack,Level" Value="1"/>
-  <EffectArray Operation="Set" Reference="Weapon,UPLSpecOpsAttack,Icon" Value="##path####lvl##.dds"/>
-  <EffectArray Reference="Effect,UPLSpecOpsAttackDamage,Amount" Value="2"/>
-  <EffectArray Reference="Effect,UPLSpecOpsAttackDamage,AttributeBonus[Light]" Value="1"/>
-  <EffectArray Reference="Weapon,WilliamGraves,Level" Value="1"/>
-  <EffectArray Operation="Set" Reference="Weapon,WilliamGraves,Icon" Value="##path####lvl##.dds"/>
-  <EffectArray Reference="Effect,WilliamGravesDamage,Amount" Value="2"/>
-  <EffectArray Reference="Weapon,LillyRollins,Level" Value="1"/>
-  <EffectArray Operation="Set" Reference="Weapon,LillyRollins,Icon" Value="##path####lvl##.dds"/>
-  <EffectArray Reference="Effect,LillyRollinsDamage,Amount" Value="2"/>
-  <EffectArray Reference="Weapon,TrevorRand,Level" Value="1"/>
-  <EffectArray Operation="Set" Reference="Weapon,TrevorRand,Icon" Value="##path####lvl##.dds"/>
-  <EffectArray Reference="Effect,TrevorRandDamage,Amount" Value="2"/>
-  <EffectArray Reference="Weapon,AltonPeters,Level" Value="1"/>
-  <EffectArray Operation="Set" Reference="Weapon,AltonPeters,Icon" Value="##path####lvl##.dds"/>
-  <EffectArray Reference="Effect,AltonPetersDamage,Amount" Value="2"/>
-  <EffectArray Reference="Effect,AltonPetersDamage,AttributeBonus[Armored]" Value="1"/>
-  <EffectArray Reference="Weapon,RichardGideon,Level" Value="1"/>
-  <EffectArray Operation="Set" Reference="Weapon,RichardGideon,Icon" Value="##path####lvl##.dds"/>
-  <EffectArray Reference="Effect,RichardGideon,Amount" Value="10"/>
-  <EffectArray Reference="Weapon,KatherineHalseyPistol,Level" Value="1"/>
-  <EffectArray Operation="Set" Reference="Weapon,KatherineHalseyPistol,Icon" Value="##path####lvl##.dds"/>
-  <EffectArray Reference="Effect,KatherineHalseyPistolDamage,Amount" Value="2"/>
-  <EffectArray Reference="Weapon,UPLPoliceOfficerPistol,Level" Value="1"/>
-  <EffectArray Operation="Set" Reference="Weapon,UPLPoliceOfficerPistol,Icon" Value="##path####lvl##.dds"/>
-  <EffectArray Reference="Effect,UPLPoliceOfficerPistolDamage,Amount" Value="1"/>
-  <EffectArray Reference="Weapon,UPLPoliceOfficerShotgun,Level" Value="1"/>
-  <EffectArray Operation="Set" Reference="Weapon,UPLPoliceOfficerShotgun,Icon" Value="##path####lvl##.dds"/>
-  <EffectArray Reference="Effect,UPLPoliceOfficerShotgunDamage,Amount" Value="1"/>
-  <EffectArray Reference="Effect,UPLPoliceOfficerShotgunDamage,AttributeBonus[Light]" Value="1"/>
-  <EffectArray Reference="Weapon,UPLPoliceOfficerRifle,Level" Value="1"/>
-  <EffectArray Operation="Set" Reference="Weapon,UPLPoliceOfficerRifle,Icon" Value="##path####lvl##.dds"/>
-  <EffectArray Reference="Effect,UPLPoliceOfficerRifleDamage,Amount" Value="1"/>
-  <EffectArray Reference="Effect,UPLPoliceOfficerRifleDamage,AttributeBonus[Armored]" Value="1"/>
-  <EffectArray Reference="Weapon,UPLRiotOfficerShotgun,Level" Value="1"/>
-  <EffectArray Operation="Set" Reference="Weapon,UPLRiotOfficerShotgun,Icon" Value="##path####lvl##.dds"/>
-  <EffectArray Reference="Effect,UPLRiotOfficerShotgunDamage,Amount" Value="1"/>
-  <EffectArray Reference="Effect,UPLRiotOfficerShotgunDamage,AttributeBonus[Light]" Value="1"/>
-  <EffectArray Reference="Weapon,UPLRiotOfficerRifle,Level" Value="1"/>
-  <EffectArray Operation="Set" Reference="Weapon,UPLRiotOfficerRifle,Icon" Value="##path####lvl##.dds"/>
-  <EffectArray Reference="Effect,UPLRiotOfficerRifleDamage,Amount" Value="1"/>
-  <EffectArray Reference="Effect,UPLRiotOfficerRifleDamage,AttributeBonus[Armored]" Value="1"/>
-  <EffectArray Reference="Weapon,MyraDavisPistol,Level" Value="1"/>
-  <EffectArray Operation="Set" Reference="Weapon,MyraDavisPistol,Icon" Value="##path####lvl##.dds"/>
-  <EffectArray Reference="Effect,MyraDavisPistolDamage,Amount" Value="2"/>
-  <EffectArray Reference="Weapon,MyraDavisShotgun,Level" Value="1"/>
-  <EffectArray Operation="Set" Reference="Weapon,MyraDavisShotgun,Icon" Value="##path####lvl##.dds"/>
-  <EffectArray Reference="Effect,MyraDavisShotgunDamage,Amount" Value="2"/>
-  <EffectArray Reference="Effect,MyraDavisShotgunDamage,AttributeBonus[Light]" Value="1"/>
-  <EffectArray Reference="Weapon,MyraDavisRifle,Level" Value="1"/>
-  <EffectArray Operation="Set" Reference="Weapon,MyraDavisRifle,Icon" Value="##path####lvl##.dds"/>
-  <EffectArray Reference="Effect,MyraDavisRifleDamage,Amount" Value="2"/>
-  <EffectArray Reference="Effect,MyraDavisRifleDamage,AttributeBonus[Armored]" Value="1"/>
-  <EditorCategories value="Race:UPL,UpgradeType:AttackBonus"/>
-  <AffectedUnitArray value="InfantryRifle"/>
-  <AffectedUnitArray value="InfantryHeavy"/>
-  <AffectedUnitArray value="InfantryMortar"/>
-  <AffectedUnitArray value="InfantryFlamethrower"/>
-  <AffectedUnitArray value="InfantryRocket"/>
-  <AffectedUnitArray value="InfantryOfficer"/>
-  <AffectedUnitArray value="UPLScout"/>
-  <AffectedUnitArray value="UPLSpecOps"/>
-  <AffectedUnitArray value="UPLPoliceOfficer"/>
-  <AffectedUnitArray value="UPLRiotOfficer"/>
-  <AffectedUnitArray value="UPLAnimalControlOfficer"/>
-  <AffectedUnitArray value="UPLDetectiveFemale"/>
-  <AffectedUnitArray value="UPLDetectiveMale"/>
-  <AffectedUnitArray value="HazmatTechnician"/>
-  <AffectedUnitArray value="RichardGideon"/>
-  <AffectedUnitArray value="MyraDavisOfficer"/>
-  <AffectedUnitArray value="MyraDavisRiotOfficer"/>
-  <AffectedUnitArray value="DeniseAllisterRiotOfficer"/>
-  <AffectedUnitArray value="TrevorRand"/>
-  <AffectedUnitArray value="LillyRollins"/>
-  <AffectedUnitArray value="WilliamGraves"/>
-  <AffectedUnitArray value="AltonPeters"/>
-  <AffectedUnitArray value="RusellPeters"/>
-  <AffectedUnitArray value="KatherineHalsey"/>
-  <AffectedUnitArray value="KatherineHalseyPistol"/>
-  <AffectedUnitArray value="KatherineHalseyElder"/>
-  <LeaderAlias value="TechInfantryWeapons"/>
-</CUpgrade>
-<CUpgrade id="LotC_InfantryCamoSkin">
-  <Flags index="UpgradeCheat" value="0"/>
-  <EditorCategories value="Race:UPL,UpgradeType:Talents"/>
-  <AffectedUnitArray value="InfantryRifle"/>
-  <AffectedUnitArray value="InfantryRocket"/>
-  <AffectedUnitArray value="InfantryMortar"/>
-</CUpgrade>
-<CUpgrade id="UPLShipPlatingLevel1" parent="UPLShipArmor" path="Assets\Textures\btn-upgrade-terran-shipplatinglevel" lvl="1">
-  <ScoreAmount value="300"/>
-  <LeaderLevel value="1"/>
-</CUpgrade>
-<CUpgrade id="UPLShipPlatingLevel2" parent="UPLShipArmor" path="Assets\Textures\btn-upgrade-terran-shipplatinglevel" lvl="2">
-  <ScoreAmount value="450"/>
-  <LeaderLevel value="2"/>
-</CUpgrade>
-<CUpgrade id="UPLShipPlatingLevel3" parent="UPLShipArmor" path="Assets\Textures\btn-upgrade-terran-shipplatinglevel" lvl="3">
-  <ScoreAmount value="600"/>
-  <LeaderLevel value="3"/>
-</CUpgrade>
-<CUpgrade id="UPLShipWeaponsLevel1" parent="UPLShipWeapons" path="Assets\Textures\btn-upgrade-terran-shipweaponslevel" lvl="1">
-  <ScoreAmount value="200"/>
-  <LeaderLevel value="1"/>
-</CUpgrade>
-<CUpgrade id="UPLShipWeaponsLevel2" parent="UPLShipWeapons" path="Assets\Textures\btn-upgrade-terran-shipweaponslevel" lvl="2">
-  <ScoreAmount value="350"/>
-  <LeaderLevel value="2"/>
-</CUpgrade>
-<CUpgrade id="UPLShipWeaponsLevel3" parent="UPLShipWeapons" path="Assets\Textures\btn-upgrade-terran-shipweaponslevel" lvl="3">
-  <ScoreAmount value="500"/>
-  <LeaderLevel value="3"/>
-</CUpgrade>
-<CUpgrade id="UPLVehiclePlatingLevel1" parent="UPLVehicleArmor" path="Assets\Textures\btn-upgrades-upl-vehicleplating-lvl" lvl="1">
-  <ScoreAmount value="200"/>
-  <LeaderLevel value="1"/>
-</CUpgrade>
-<CUpgrade id="UPLVehiclePlatingLevel2" parent="UPLVehicleArmor" path="Assets\Textures\btn-upgrades-upl-vehicleplating-lvl" lvl="2">
-  <ScoreAmount value="350"/>
-  <LeaderLevel value="2"/>
-</CUpgrade>
-<CUpgrade id="UPLVehiclePlatingLevel3" parent="UPLVehicleArmor" path="Assets\Textures\btn-upgrades-upl-vehicleplating-lvl" lvl="3">
-  <ScoreAmount value="500"/>
-  <LeaderLevel value="3"/>
-</CUpgrade>
-<CUpgrade id="UPLVehicleWeaponsLevel1" parent="UPLVehicleWeapons" path="Assets\Textures\btn-upgrades-upl-vehicleweapons-lvl" lvl="1">
-  <ScoreAmount value="200"/>
-  <LeaderLevel value="1"/>
-</CUpgrade>
-<CUpgrade id="UPLVehicleWeaponsLevel2" parent="UPLVehicleWeapons" path="Assets\Textures\btn-upgrades-upl-vehicleweapons-lvl" lvl="2">
-  <ScoreAmount value="350"/>
-  <LeaderLevel value="2"/>
-</CUpgrade>
-<CUpgrade id="UPLVehicleWeaponsLevel3" parent="UPLVehicleWeapons" path="Assets\Textures\btn-upgrades-upl-vehicleweapons-lvl" lvl="3">
-  <ScoreAmount value="500"/>
-  <LeaderLevel value="3"/>
-  <Race value="Terr"/>
-</CUpgrade>
-<CUpgrade id="UPLInfantryArmorLevel1" parent="UPLInfantryArmor" path="Assets\Textures\btn-upgrades-upl-infantryarmor-lvl" lvl="1"/>
-<CUpgrade id="UPLInfantryArmorLevel2" parent="UPLInfantryArmor" path="Assets\Textures\btn-upgrades-upl-infantryarmor-lvl" lvl="2">
-  <ScoreAmount value="350"/>
-  <LeaderLevel value="2"/>
-</CUpgrade>
-<CUpgrade id="UPLInfantryArmorLevel3" parent="UPLInfantryArmor" path="Assets\Textures\btn-upgrades-upl-infantryarmor-lvl" lvl="3">
-  <ScoreAmount value="500"/>
-  <LeaderLevel value="3"/>
-</CUpgrade>
-<CUpgrade id="UPLInfantryWeaponsLevel1" parent="UPLInfantryWeapons" path="Assets\Textures\btn-upgrades-upl-infantryweapons-lvl" lvl="1">
-  <InfoTooltipPriority value="0"/>
-  <ScoreAmount value="200"/>
-  <LeaderLevel value="1"/>
-</CUpgrade>
-<CUpgrade id="UPLInfantryWeaponsLevel2" parent="UPLInfantryWeapons" path="Assets\Textures\btn-upgrades-upl-infantryweapons-lvl" lvl="2">
-  <InfoTooltipPriority value="0"/>
-  <ScoreAmount value="350"/>
-  <LeaderLevel value="2"/>
-</CUpgrade>
-<CUpgrade id="UPLInfantryWeaponsLevel3" parent="UPLInfantryWeapons" path="Assets\Textures\btn-upgrades-upl-infantryweapons-lvl" lvl="3">
-  <InfoTooltipPriority value="0"/>
-  <ScoreAmount value="500"/>
-  <LeaderLevel value="3"/>
-</CUpgrade>
-<CUpgrade id="UPLRenameZerg">
-  <EffectArray Operation="Set" Reference="Unit,Larva,Name" Value="Unit/Name/LarvaUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,Drone,Name" Value="Unit/Name/DroneUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,DroneBurrowed,Name" Value="Unit/Name/DroneUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,Zergling,Name" Value="Unit/Name/ZerglingUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,ZerglingBurrowed,Name" Value="Unit/Name/ZerglingUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,Hydralisk,Name" Value="Unit/Name/HydraliskUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,HydraliskBurrowed,Name" Value="Unit/Name/HydraliskUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,Ultralisk,Name" Value="Unit/Name/UltraliskUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,UltraliskBurrowed,Name" Value="Unit/Name/UltraliskUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,Roach,Name" Value="Unit/Name/RoachUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,RoachBurrowed,Name" Value="Unit/Name/RoachUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,Mutalisk,Name" Value="Unit/Name/MutaliskUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,DefilerMP,Name" Value="Unit/Name/DefilerMPUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,GuardianMP,Name" Value="Unit/Name/GuardianMPUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,Guardian,Name" Value="Unit/Name/GuardianMPUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,Queen,Name" Value="Unit/Name/QueenUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,QueenBurrowed,Name" Value="Unit/Name/QueenUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,QueenClassic,Name" Value="Unit/Name/QueenMPUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,QueenMP,Name" Value="Unit/Name/QueenMPUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,Overlord,Name" Value="Unit/Name/OverlordUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,NydusCanal,Name" Value="Unit/Name/NydusCanalUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,Spire,Name" Value="Unit/Name/SpireUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,GreaterSpire,Name" Value="Unit/Name/GreaterSpireUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,UltraliskCavern,Name" Value="Unit/Name/UltraliskCavernUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,BanelingNest,Name" Value="Unit/Name/BanelingNestUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,SpawningPool,Name" Value="Unit/Name/SpawningPoolUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,RoachWarren,Name" Value="Unit/Name/RoachWarrenUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,HydraliskDen,Name" Value="Unit/Name/HydraliskDenUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,Hatchery,Name" Value="Unit/Name/HatcheryUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,Lair,Name" Value="Unit/Name/LairUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,Hive,Name" Value="Unit/Name/HiveUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,NydusNetwork,Name" Value="Unit/Name/NydusNetworkUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,DefilerMound,Name" Value="Unit/Name/DefilerMoundUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,CreepColonyLotC,Name" Value="Unit/Name/CreepColonyUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,SunkenColony,Name" Value="Unit/Name/SunkenColonyUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,SpineCrawler,Name" Value="Unit/Name/SpineCrawlerUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,SporeCrawler,Name" Value="Unit/Name/SporeCrawlerUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,Scourge,Name" Value="Unit/Name/ScourgeUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,Egg,Name" Value="Unit/Name/EggLotC"/>
-  <EffectArray Operation="Set" Reference="Unit,Virophage,Name" Value="Unit/Name/VirophageUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,NydusCanalCreeper,Name" Value="Unit/Name/NydusCanalCreeperUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,CreepTumor,Name" Value="Unit/Name/CreepTumorUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,CreepTumorUsed,Name" Value="Unit/Name/CreepTumorUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,CreepTumorBurrowed,Name" Value="Unit/Name/CreepTumorUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,SporeCannon,Name" Value="Unit/Name/SporeCannonUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,Lurker,Name" Value="Unit/Name/LurkerUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,LurkerBurrowed,Name" Value="Unit/Name/LurkerUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,LurkerMP,Name" Value="Unit/Name/LurkerUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,LurkerMPBurrowed,Name" Value="Unit/Name/LurkerUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,Devourer,Name" Value="Unit/Name/DevourerUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,DevourerMP,Name" Value="Unit/Name/DevourerUPL"/>
-  <EffectArray Operation="Set" Reference="Actor,Larva,HighlightTooltip" Value="Unit/Name/LarvaUPL"/>
-  <EffectArray Operation="Set" Reference="Actor,Drone,HighlightTooltip" Value="Unit/Name/DroneUPL"/>
-  <EffectArray Operation="Set" Reference="Actor,Zergling,HighlightTooltip" Value="Unit/Name/ZerglingUPL"/>
-  <EffectArray Operation="Set" Reference="Actor,Hydralisk,HighlightTooltip" Value="Unit/Name/HydraliskUPL"/>
-  <EffectArray Operation="Set" Reference="Actor,Ultralisk,HighlightTooltip" Value="Unit/Name/UltraliskUPL"/>
-  <EffectArray Operation="Set" Reference="Actor,Roach,HighlightTooltip" Value="Unit/Name/RoachUPL"/>
-  <EffectArray Operation="Set" Reference="Actor,Mutalisk,HighlightTooltip" Value="Unit/Name/MutaliskUPL"/>
-  <EffectArray Operation="Set" Reference="Actor,DefilerMP,HighlightTooltip" Value="Unit/Name/DefilerMPUPL"/>
-  <EffectArray Operation="Set" Reference="Actor,GuardianMP,HighlightTooltip" Value="Unit/Name/GuardianMPUPL"/>
-  <EffectArray Operation="Set" Reference="Actor,Guardian,HighlightTooltip" Value="Unit/Name/GuardianMPUPL"/>
-  <EffectArray Operation="Set" Reference="Actor,Queen,HighlightTooltip" Value="Unit/Name/QueenUPL"/>
-  <EffectArray Operation="Set" Reference="Actor,QueenMP,HighlightTooltip" Value="Unit/Name/QueenMPUPL"/>
-  <EffectArray Operation="Set" Reference="Actor,QueenClassic,HighlightTooltip" Value="Unit/Name/QueenMPUPL"/>
-  <EffectArray Operation="Set" Reference="Actor,Overlord,HighlightTooltip" Value="Unit/Name/OverlordUPL"/>
-  <EffectArray Operation="Set" Reference="Actor,NydusCanal,HighlightTooltip" Value="Unit/Name/NydusCanalUPL"/>
-  <EffectArray Operation="Set" Reference="Actor,Spire,HighlightTooltip" Value="Unit/Name/SpireUPL"/>
-  <EffectArray Operation="Set" Reference="Actor,GreaterSpire,HighlightTooltip" Value="Unit/Name/GreaterSpireUPL"/>
-  <EffectArray Operation="Set" Reference="Actor,UltraliskCavern,HighlightTooltip" Value="Unit/Name/UltraliskCavernUPL"/>
-  <EffectArray Operation="Set" Reference="Actor,BanelingNest,HighlightTooltip" Value="Unit/Name/BanelingNestUPL"/>
-  <EffectArray Operation="Set" Reference="Actor,SpawningPool,HighlightTooltip" Value="Unit/Name/SpawningPoolUPL"/>
-  <EffectArray Operation="Set" Reference="Actor,RoachWarren,HighlightTooltip" Value="Unit/Name/RoachWarrenUPL"/>
-  <EffectArray Operation="Set" Reference="Actor,HydraliskDen,HighlightTooltip" Value="Unit/Name/HydraliskDenUPL"/>
-  <EffectArray Operation="Set" Reference="Actor,Hatchery,HighlightTooltip" Value="Unit/Name/HatcheryUPL"/>
-  <EffectArray Operation="Set" Reference="Actor,Lair,HighlightTooltip" Value="Unit/Name/LairUPL"/>
-  <EffectArray Operation="Set" Reference="Actor,Hive,HighlightTooltip" Value="Unit/Name/HiveUPL"/>
-  <EffectArray Operation="Set" Reference="Actor,NydusNetwork,HighlightTooltip" Value="Unit/Name/NydusNetworkUPL"/>
-  <EffectArray Operation="Set" Reference="Actor,DefilerMound,HighlightTooltip" Value="Unit/Name/DefilerMoundUPL"/>
-  <EffectArray Operation="Set" Reference="Actor,CreepColonyLotC,HighlightTooltip" Value="Unit/Name/CreepColonyUPL"/>
-  <EffectArray Operation="Set" Reference="Actor,SunkenColony,HighlightTooltip" Value="Unit/Name/SunkenColonyUPL"/>
-  <EffectArray Operation="Set" Reference="Actor,SpineCrawler,HighlightTooltip" Value="Unit/Name/SpineCrawlerUPL"/>
-  <EffectArray Operation="Set" Reference="Actor,SporeCrawler,HighlightTooltip" Value="Unit/Name/SporeCrawlerUPL"/>
-  <EffectArray Operation="Set" Reference="Actor,Scourge,HighlightTooltip" Value="Unit/Name/ScourgeUPL"/>
-  <EffectArray Operation="Set" Reference="Actor,Egg,HighlightTooltip" Value="Unit/Name/EggLotC"/>
-  <EffectArray Operation="Set" Reference="Actor,Plaguebringer,HighlightTooltip" Value="Unit/Name/VirophageUPL"/>
-  <EffectArray Operation="Set" Reference="Actor,NydusCanalCreeper,HighlightTooltip" Value="Unit/Name/NydusCanalCreeperUPL"/>
-  <EffectArray Operation="Set" Reference="Actor,CreepTumor,HighlightTooltip" Value="Unit/Name/CreepTumorUPL"/>
-  <EffectArray Operation="Set" Reference="Actor,CreepTumorUsed,HighlightTooltip" Value="Unit/Name/CreepTumorUPL"/>
-  <EffectArray Operation="Set" Reference="Actor,SporeCannon,HighlightTooltip" Value="Unit/Name/SporeCannonUPL"/>
-  <EffectArray Operation="Set" Reference="Actor,Lurker,HighlightTooltip" Value="Unit/Name/LurkerUPL"/>
-  <EffectArray Operation="Set" Reference="Actor,LurkerMP,HighlightTooltip" Value="Unit/Name/LurkerUPL"/>
-  <EffectArray Operation="Set" Reference="Actor,Devourer,HighlightTooltip" Value="Unit/Name/DevourerUPL"/>
-  <EffectArray Operation="Set" Reference="Actor,DevourerMP,HighlightTooltip" Value="Unit/Name/DevourerUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,BroodMotherLotC,Name" Value="Unit/Name/BroodMotherUPL"/>
-  <EffectArray Operation="Set" Reference="Actor,BroodMotherLotC,HighlightTooltip" Value="Unit/Name/BroodMotherUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,BroodMotherLotCBurrowed,Name" Value="Unit/Name/BroodMotherUPL"/>
-  <EffectArray Operation="Set" Reference="Actor,BroodMotherLotCBurrowed,HighlightTooltip" Value="Unit/Name/BroodMotherUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,Hunterling,Name" Value="Unit/Name/HunterlingUPL"/>
-  <EffectArray Operation="Set" Reference="Actor,Hunterling,HighlightTooltip" Value="Unit/Name/HunterlingUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,HunterlingLeaping,Name" Value="Unit/Name/HunterlingUPL"/>
-  <EffectArray Operation="Set" Reference="Actor,HunterlingLeaping,HighlightTooltip" Value="Unit/Name/HunterlingUPL"/>
-  <EffectArray Operation="Set" Reference="Unit,EvolutionChamber,Name" Value="Unit/Name/EvolutionChamberUPL"/>
-  <EffectArray Operation="Set" Reference="Actor,EvolutionChamber,HighlightTooltip" Value="Unit/Name/EvolutionChamberUPL"/>
-  <EditorCategories value="Race:UPL,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="InfantryFlamethrower3xBurning">
-  <EffectArray Operation="Multiply" Reference="Effect,InfantryFlamethrowerBurningDamage,Amount" Value="3"/>
-  <Race value="UPL"/>
-  <EditorCategories value="UpgradeType:Talents,Race:UPL"/>
-  <Icon value="Assets\icons\Button_InfantryFlameThrower\btn-ability-UPL-NaniteIgnition.dds"/>
-</CUpgrade>
-<CUpgrade id="InfantryHeavyAttackmove">
-  <EffectArray Operation="Set" Reference="Weapon,InfantryHeavy,AllowedMovement" Value="Moving"/>
-  <EffectArray Operation="Set" Reference="Weapon,InfantryHeavy,Options[OnlyFireWhileInAttackOrder]" Value="0"/>
-  <EffectArray Operation="Set" Reference="Weapon,InfantryHeavy,Options[OnlyFireAtAttackOrderTarget]" Value="0"/>
-  <Race value="UPL"/>
-  <EditorCategories value="UpgradeType:Talents,Race:UPL"/>
-  <Icon value="Assets\Textures\btn-ability-UPL-Sprint.dds"/>
-</CUpgrade>
-<CUpgrade id="InfantryOfficerAuraUpgrade">
-  <EffectArray Operation="Set" Reference="Effect,InfantryOfficerChargeSearch,AreaArray[0].Radius" Value="9.375"/>
-  <EffectArray Operation="Set" Reference="Actor,InfantryOfficerAuraRange,Range" Value="9.375000"/>
-  <Race value="UPL"/>
-  <EditorCategories value="UpgradeType:Talents,Race:UPL"/>
-  <Icon value="Assets\Textures\btn-ability-UPL-InfantryOfficerCharge.dds"/>
-</CUpgrade>
-<CUpgrade id="InfantryRocket1Range">
-  <EffectArray Reference="Weapon,InfantryRocket,Range" Value="1"/>
-  <Race value="UPL"/>
-  <EditorCategories value="UpgradeType:Talents,Race:UPL"/>
-  <Icon value="Assets\Textures\btn-ability-UPL-Longshot.dds"/>
-</CUpgrade>
-<CUpgrade id="InfantryRocketAOE">
-  <Race value="UPL"/>
-  <EditorCategories value="UpgradeType:Talents,Race:UPL"/>
-  <Icon value="Assets\Textures\btn-ability-UPL-GrenadeLauncher.dds"/>
-</CUpgrade>
-<CUpgrade id="RoutheTankExplosiveShells">
-  <EffectArray Reference="Effect,RoutheTankDamage,AttributeBonus[Armored]" Value="1"/>
-  <EditorCategories value="UpgradeType:Talents,Race:UPL"/>
-  <Icon value="Assets\Textures\btn-ability-UPL-ExplosiveRounds.dds"/>
-</CUpgrade>
-<CUpgrade id="InfantryMedkit">
-  <AffectedUnitArray value="InfantryRifle"/>
-  <AffectedUnitArray value="InfantryMortar"/>
-  <AffectedUnitArray value="InfantryFlamethrower"/>
-  <AffectedUnitArray value="InfantryRocket"/>
-  <AffectedUnitArray value="InfantryHeavy"/>
-  <DataCollection value="InfantryMedkit"/>
-  <Icon value="Assets\Textures\btn-ability-upl-medkit.dds"/>
-  <ScoreAmount value="400"/>
-  <EditorCategories value="Race:UPL"/>
-</CUpgrade>
-<CUpgrade id="InfantryMortarRangeUpgrade">
-  <EffectArray Reference="Weapon,InfantryMortar,Range" Value="5"/>
-  <EffectArray Operation="Set" Reference="Unit,InfantryMortarMissile,Mover" Value="InfantryMortarMissileMoverUpgraded"/>
-  <EffectArray Operation="Set" Reference="Effect,InfantryMortarLaunch,Movers[1].Link" Value="InfantryMortarMissileMoverUpgraded"/>
-  <EffectArray Operation="Set" Reference="Effect,InfantryMortarLaunchDirected,Movers[1].Link" Value="InfantryMortarMissileMoverUpgraded"/>
-  <Race value="UPL"/>
-  <EditorCategories value="UpgradeType:Talents,Race:UPL"/>
-  <Icon value="Assets\icons\Button_InfantryMortar\btn-ability-UPL-LongRangeMortarShells.dds"/>
-  <AffectedUnitArray value="InfantryMortar"/>
-</CUpgrade>
-<CUpgrade id="InfantryRifleRangeUpgrade">
-  <EffectArray Reference="Weapon,InfantryRifle,Range" Value="1"/>
-  <Race value="UPL"/>
-  <EditorCategories value="UpgradeType:Talents,Race:UPL"/>
-  <Icon value="Assets\Textures\btn-ability-UPL-LongRange.dds"/>
-  <Icon value="Assets\Textures\btn-ability-UPL-AssaultRifle.dds"/>
-  <AffectedUnitArray value="InfantryRifle"/>
-</CUpgrade>
-<CUpgrade id="CondorEnhancedCargo" parent="Research">
-  <Icon value="Assets\Textures\btn-ability-UPL-EnlargeCargoBay.dds"/>
-  <Race value="UPL"/>
-  <ScoreAmount value="300"/>
-  <ScoreResult value="BuildOrder"/>
-  <EffectArray Reference="Abil,CondorTransport,TotalCargoSpace" Value="6"/>
-  <EffectArray Reference="Abil,CondorTransport,MaxCargoCount" Value="6"/>
-  <EditorCategories value="Race:UPL,UpgradeType:Talents"/>
-  <AffectedUnitArray value="Condor"/>
-  <AffectedUnitArray value="CondorLanded"/>
-</CUpgrade>
-<CUpgrade id="A6ExplosiveRounds" parent="Research">
-  <Icon value="Assets\Textures\btn-ability-UPL-Flak.dds"/>
-  <Race value="UPL"/>
-  <ScoreAmount value="350"/>
-  <ScoreResult value="BuildOrder"/>
-  <EffectArray Operation="Set" Reference="Effect,A6WeaponFlakDummy,Chance" Value="1"/>
-  <EditorCategories value="UpgradeType:Talents,Race:UPL"/>
-  <AffectedUnitArray value="A6"/>
-</CUpgrade>
-<CUpgrade id="FrancineFuelInjection" parent="Research">
-  <Icon value="Assets\Textures\btn-ability-UPL-AdvancedEnergyProcessing.dds"/>
-  <Race value="Terr"/>
-  <ScoreAmount value="450"/>
-  <ScoreResult value="BuildOrder"/>
-  <EffectArray Reference="Unit,Condor,Speed" Value="0.75"/>
-  <EffectArray Reference="Unit,Osprey,Speed" Value="1.15"/>
-  <EditorCategories value="Race:UPL,UpgradeType:Talents"/>
-  <AffectedUnitArray value="Condor"/>
-  <AffectedUnitArray value="Osprey"/>
-</CUpgrade>
-<CUpgrade id="RoutheTankArmorPlating">
-  <EffectArray Reference="Unit,RoutheTank,LifeArmor" Value="2"/>
-  <EffectArray Reference="Unit,RoutheTank,LifeArmorLevel" Value="2"/>
-  <EffectArray Reference="Unit,RoutheTank,LifeStart" Value="75"/>
-  <EffectArray Reference="Unit,RoutheTank,LifeMax" Value="75"/>
-  <Race value="UPL"/>
-  <EditorCategories value="UpgradeType:Talents,Race:UPL"/>
-  <Icon value="Assets\Textures\btn-ability-UPL-UnobtaniumArmorPlating.dds"/>
-  <AffectedUnitArray value="RoutheTank"/>
-</CUpgrade>
-<CUpgrade id="RaptorCloakAbilUpgrade">
-  <Race value="UPL"/>
-  <EditorCategories value="UpgradeType:SpellResearch,Race:UPL"/>
-  <AffectedUnitArray value="RaptorJet"/>
-  <Icon value="Assets\Textures\btn-ability-UPL-Metamateria-Suit.dds"/>
-</CUpgrade>
-<CUpgrade id="Z1SpeedUpgrade">
-  <EffectArray Operation="Set" Reference="Unit,Z1,Speed" Value="3.5"/>
-  <Race value="UPL"/>
-  <EditorCategories value="UpgradeType:Talents,Race:UPL"/>
-  <Icon value="Assets\Textures\btn-ability-stetmann-stetelliteoverloadspeed.dds"/>
-</CUpgrade>
-<CUpgrade id="CSVSupplyLineManagement" parent="Research">
-  <Icon value="Assets\Textures\btn-ability-UPL-SupplyManagement.dds"/>
-  <Race value="Terr"/>
-  <ScoreAmount value="400"/>
-  <ScoreResult value="BuildOrder"/>
-  <EditorCategories value="UpgradeType:Talents,Race:UPL"/>
-  <AffectedUnitArray value="CSV"/>
-  <AffectedUnitArray value="CSVDeployed"/>
-</CUpgrade>
-<CUpgrade id="CSVPersonnelCarrier" parent="Research">
-  <Icon value="Assets\Textures\btn-ability-UPL-PersonnelCarrier.dds"/>
-  <Race value="UPL"/>
-  <ScoreAmount value="250"/>
-  <ScoreResult value="BuildOrder"/>
-  <EditorCategories value="UpgradeType:SpellResearch,Race:UPL"/>
-  <AffectedUnitArray value="CSV"/>
-  <AffectedUnitArray value="CSVDeployed"/>
-  <LeaderAlias value="CSVSupplyLineManagement"/>
-</CUpgrade>
-<CUpgrade id="KatherineHalseyMedkit">
-  <DataCollection value="InfantryMedkit"/>
-  <EditorCategories value="Race:UPL"/>
-</CUpgrade>
-<CUpgrade id="WilliamGravesMedkit">
-  <DataCollection value="InfantryMedkit"/>
-  <EditorCategories value="Race:UPL"/>
 </CUpgrade>
 <CUpgrade id="ProtossTalon">
   <EffectArray Operation="Set" Reference="Unit,Archon,LifeStart" Value="25"/>
@@ -26654,490 +25847,781 @@
   <EffectArray index="0" Reference="Effect,TempestLaunchMissileGround,ImpactEffect" Value="TalonTempestAttackBounceS"/>
   <EditorCategories value="Race:ProtL,UpgradeType:SpellResearch"/>
 </CUpgrade>
-<CUpgrade id="XayidCommander">
+<CUpgrade default="1" id="UPLShipArmor">
+  <WebPriority value="0"/>
+  <Icon value="##path####lvl##.dds"/>
+  <Race value="UPL"/>
+  <ScoreCount value="ArmorTechnologyCount"/>
+  <ScoreValue value="ArmorTechnologyValue"/>
+  <ScoreResult value="BuildOrder"/>
+  <EffectArray Reference="Unit,RaptorJet,LifeArmorLevel" Value="1"/>
+  <EffectArray Reference="Unit,RaptorJet,LifeArmor" Value="1"/>
+  <EffectArray Reference="Unit,Osprey,LifeArmor" Value="1.000000"/>
+  <EffectArray Reference="Unit,Osprey,LifeArmorLevel" Value="1"/>
+  <EffectArray Reference="Unit,Condor,LifeArmor" Value="1.000000"/>
+  <EffectArray Reference="Unit,Condor,LifeArmorLevel" Value="1"/>
+  <EffectArray Operation="Set" Reference="Actor,RaptorJet,LifeArmorIcon" Value="##path####lvl##.dds"/>
+  <EffectArray Operation="Set" Reference="Actor,Osprey,LifeArmorIcon" Value="##path####lvl##.dds"/>
+  <EffectArray Operation="Set" Reference="Actor,Condor,LifeArmorIcon" Value="##path####lvl##.dds"/>
+  <EditorCategories value="Race:UPL,UpgradeType:ArmorBonus"/>
+  <AffectedUnitArray value="RaptorJet"/>
+  <AffectedUnitArray value="Osprey"/>
+  <AffectedUnitArray value="Condor"/>
+  <LeaderAlias value="UPLShipArmors"/>
+</CUpgrade>
+<CUpgrade default="1" id="UPLShipWeapons">
+  <WebPriority value="0"/>
+  <Icon value="##path####lvl##.dds"/>
+  <Race value="UPL"/>
+  <ScoreCount value="WeaponTechnologyCount"/>
+  <ScoreValue value="WeaponTechnologyValue"/>
+  <ScoreResult value="BuildOrder"/>
+  <EffectArray Reference="Weapon,RaptorJet,Level" Value="1"/>
+  <EffectArray Reference="Weapon,OspreyAirWeapon,Level" Value="1"/>
+  <EffectArray Reference="Weapon,OspreyGround,Level" Value="1"/>
+  <EffectArray Reference="Effect,RaptorAirDamage,Amount" Value="1"/>
+  <EffectArray Reference="Effect,RaptorGroundDamage,Amount" Value="1"/>
+  <EffectArray Reference="Effect,RaptorAirBurningDamage,Amount" Value="1"/>
+  <EffectArray Reference="Effect,OspreyAirDamage,Amount" Value="1"/>
+  <EffectArray Reference="Effect,OspreyGroundDamage,Amount" Value="1"/>
+  <EffectArray Operation="Set" Reference="Weapon,RaptorJet,Icon" Value="##path####lvl##.dds"/>
+  <EffectArray Operation="Set" Reference="Weapon,OspreyAirWeapon,Icon" Value="##path####lvl##.dds"/>
+  <EffectArray Operation="Set" Reference="Weapon,OspreyGround,Icon" Value="##path####lvl##.dds"/>
+  <EditorCategories value="Race:UPL,UpgradeType:AttackBonus"/>
+  <AffectedUnitArray value="RaptorJet"/>
+  <AffectedUnitArray value="Osprey"/>
+  <LeaderAlias value="UPLShipWeapons"/>
+</CUpgrade>
+<CUpgrade default="1" id="UPLVehicleArmor">
+  <WebPriority value="0"/>
+  <Icon value="##path####lvl##.dds"/>
+  <Race value="UPL"/>
+  <ScoreCount value="ArmorTechnologyCount"/>
+  <ScoreValue value="ArmorTechnologyValue"/>
+  <ScoreResult value="BuildOrder"/>
+  <EffectArray Reference="Unit,MiningDrone,LifeArmorLevel" Value="1"/>
+  <EffectArray Reference="Unit,MiningDrone,LifeArmor" Value="1"/>
+  <EffectArray Reference="Unit,A6,LifeArmorLevel" Value="1"/>
+  <EffectArray Reference="Unit,A6,LifeArmor" Value="1"/>
+  <EffectArray Reference="Unit,TR17,LifeArmorLevel" Value="1"/>
+  <EffectArray Reference="Unit,TR17,LifeArmor" Value="1"/>
+  <EffectArray Reference="Unit,Z1,LifeArmorLevel" Value="1"/>
+  <EffectArray Reference="Unit,Z1,LifeArmor" Value="1"/>
+  <EffectArray Reference="Unit,RoutheTank,LifeArmor" Value="1"/>
+  <EffectArray Reference="Unit,RoutheTank,LifeArmorLevel" Value="1"/>
+  <EffectArray Reference="Unit,CSV,LifeArmor" Value="1"/>
+  <EffectArray Reference="Unit,CSV,LifeArmorLevel" Value="1"/>
+  <EffectArray Reference="Unit,CSVDeployed,LifeArmor" Value="1.000000"/>
+  <EffectArray Reference="Unit,CSVDeployed,LifeArmorLevel" Value="1"/>
+  <EffectArray Reference="Unit,RaptorJet,LifeArmorLevel" Value="1"/>
+  <EffectArray Reference="Unit,RaptorJet,LifeArmor" Value="1"/>
+  <EffectArray Reference="Unit,Osprey,LifeArmor" Value="1.000000"/>
+  <EffectArray Reference="Unit,Osprey,LifeArmorLevel" Value="1"/>
+  <EffectArray Reference="Unit,OspreyLanded,LifeArmor" Value="1.000000"/>
+  <EffectArray Reference="Unit,OspreyLanded,LifeArmorLevel" Value="1"/>
+  <EffectArray Reference="Unit,Condor,LifeArmor" Value="1.000000"/>
+  <EffectArray Reference="Unit,Condor,LifeArmorLevel" Value="1"/>
+  <EffectArray Reference="Unit,CondorLanded,LifeArmor" Value="1.000000"/>
+  <EffectArray Reference="Unit,CondorLanded,LifeArmorLevel" Value="1"/>
+  <EffectArray Reference="Unit,APC,LifeArmor" Value="1.000000"/>
+  <EffectArray Reference="Unit,APC,LifeArmorLevel" Value="1"/>
+  <EffectArray Reference="Unit,SwatVan,LifeArmor" Value="1.000000"/>
+  <EffectArray Reference="Unit,SwatVan,LifeArmorLevel" Value="1"/>
+  <EffectArray Reference="Unit,PoliceCruiser,LifeArmor" Value="1.000000"/>
+  <EffectArray Reference="Unit,PoliceCruiser,LifeArmorLevel" Value="1"/>
+  <EffectArray Reference="Unit,AltonPetersZ1,LifeArmor" Value="1.000000"/>
+  <EffectArray Reference="Unit,AltonPetersZ1,LifeArmorLevel" Value="1"/>
+  <EffectArray Reference="Unit,CARR,LifeArmor" Value="1.000000"/>
+  <EffectArray Reference="Unit,CARR,LifeArmorLevel" Value="1"/>
+  <EffectArray Reference="Unit,RileyJerico,LifeArmor" Value="1.000000"/>
+  <EffectArray Reference="Unit,RileyJerico,LifeArmorLevel" Value="1"/>
+  <EffectArray Operation="Set" Reference="Actor,A6,LifeArmorIcon" Value="##path####lvl##.dds"/>
+  <EffectArray Operation="Set" Reference="Actor,MiningDrone,LifeArmorIcon" Value="##path####lvl##.dds"/>
+  <EffectArray Operation="Set" Reference="Actor,TR17,LifeArmorIcon" Value="##path####lvl##.dds"/>
+  <EffectArray Operation="Set" Reference="Actor,Z1,LifeArmorIcon" Value="##path####lvl##.dds"/>
+  <EffectArray Operation="Set" Reference="Actor,RoutheTank,LifeArmorIcon" Value="##path####lvl##.dds"/>
+  <EffectArray Operation="Set" Reference="Actor,CSV,LifeArmorIcon" Value="##path####lvl##.dds"/>
+  <EffectArray Operation="Set" Reference="Actor,CSVDeployed,LifeArmorIcon" Value="##path####lvl##.dds"/>
+  <EffectArray Operation="Set" Reference="Actor,RaptorJet,LifeArmorIcon" Value="##path####lvl##.dds"/>
+  <EffectArray Operation="Set" Reference="Actor,Osprey,LifeArmorIcon" Value="##path####lvl##.dds"/>
+  <EffectArray Operation="Set" Reference="Actor,OspreyLanded,LifeArmorIcon" Value="##path####lvl##.dds"/>
+  <EffectArray Operation="Set" Reference="Actor,Condor,LifeArmorIcon" Value="##path####lvl##.dds"/>
+  <EffectArray Operation="Set" Reference="Actor,CondorLanded,LifeArmorIcon" Value="##path####lvl##.dds"/>
+  <EffectArray Operation="Set" Reference="Actor,APC,LifeArmorIcon" Value="##path####lvl##.dds"/>
+  <EffectArray Operation="Set" Reference="Actor,SwatVan,LifeArmorIcon" Value="##path####lvl##.dds"/>
+  <EffectArray Operation="Set" Reference="Actor,PoliceCruiser,LifeArmorIcon" Value="##path####lvl##.dds"/>
+  <EffectArray Operation="Set" Reference="Actor,AltonPetersZ1,LifeArmorIcon" Value="##path####lvl##.dds"/>
+  <EffectArray Operation="Set" Reference="Actor,CARR,LifeArmorIcon" Value="##path####lvl##.dds"/>
+  <EffectArray Operation="Set" Reference="Actor,RileyJerico,LifeArmorIcon" Value="##path####lvl##.dds"/>
+  <EditorCategories value="Race:UPL,UpgradeType:ArmorBonus"/>
+  <AffectedUnitArray value="A6"/>
+  <AffectedUnitArray value="TR17"/>
+  <AffectedUnitArray value="Z1"/>
+  <AffectedUnitArray value="RoutheTank"/>
+  <AffectedUnitArray value="MiningDrone"/>
+  <AffectedUnitArray value="CSV"/>
+  <AffectedUnitArray value="CSVDeployed"/>
+  <AffectedUnitArray value="RaptorJet"/>
+  <AffectedUnitArray value="Osprey"/>
+  <AffectedUnitArray value="OspreyLanded"/>
+  <AffectedUnitArray value="Condor"/>
+  <AffectedUnitArray value="CondorLanded"/>
+  <AffectedUnitArray value="APC"/>
+  <AffectedUnitArray value="SwatVan"/>
+  <AffectedUnitArray value="PoliceCruiser"/>
+  <AffectedUnitArray value="AltonPetersZ1"/>
+  <AffectedUnitArray value="CARR"/>
+  <AffectedUnitArray value="RileyJerico"/>
+  <LeaderAlias value="TechVehicleArmors"/>
+</CUpgrade>
+<CUpgrade default="1" id="UPLVehicleWeapons">
+  <WebPriority value="0"/>
+  <Icon value="##path####lvl##.dds"/>
+  <Race value="UPL"/>
+  <ScoreCount value="WeaponTechnologyCount"/>
+  <ScoreValue value="WeaponTechnologyValue"/>
+  <ScoreResult value="BuildOrder"/>
+  <EffectArray Reference="Weapon,A6,Level" Value="1"/>
+  <EffectArray Reference="Weapon,CSV,Level" Value="1"/>
+  <EffectArray Reference="Weapon,RoutheTank,Level" Value="1"/>
+  <EffectArray Reference="Weapon,TR17,Level" Value="1"/>
+  <EffectArray Reference="Weapon,Z1,Level" Value="1"/>
+  <EffectArray Reference="Weapon,UPLNightjarWeapon,Level" Value="1"/>
+  <EffectArray Reference="Weapon,UPLSolitaireWeapon,Level" Value="1"/>
+  <EffectArray Reference="Weapon,RaptorJet,Level" Value="1"/>
+  <EffectArray Reference="Weapon,OspreyAirWeapon,Level" Value="1"/>
+  <EffectArray Reference="Weapon,OspreyGround,Level" Value="1"/>
+  <EffectArray Reference="Weapon,MiningDrone,Level" Value="1"/>
+  <EffectArray Reference="Effect,A6WeaponDamage,Amount" Value="2"/>
+  <EffectArray Reference="Effect,CSVDamage,Amount" Value="2"/>
+  <EffectArray Reference="Effect,RoutheTankDamage,Amount" Value="3"/>
+  <EffectArray Reference="Effect,RoutheTankDamage,AttributeBonus[Armored]" Value="1.0"/>
+  <EffectArray Reference="Effect,RoutheTankDamageStructure,Amount" Value="1.0"/>
+  <EffectArray Reference="Effect,RoutheTankDamageDisplay,Amount" Value="3"/>
+  <EffectArray Reference="Effect,RoutheTankDamageDisplay,AttributeBonus[Armored]" Value="1.0"/>
+  <EffectArray Reference="Effect,RoutheTankDamageDisplay,AttributeBonus[Structure]" Value="1.0"/>
+  <EffectArray Reference="Effect,TR17Damage,Amount" Value="5"/>
+  <EffectArray Reference="Effect,Z1Damage,Amount" Value="2"/>
+  <EffectArray Reference="Effect,UPLNightjarDamage,Amount" Value="2"/>
+  <EffectArray Reference="Effect,UPLNightjarDamage,AttributeBonus[Armored]" Value="1"/>
+  <EffectArray Reference="Effect,UPLSolitaireDamage,Amount" Value="1"/>
+  <EffectArray Reference="Effect,RaptorAirDamage,Amount" Value="2"/>
+  <EffectArray Reference="Effect,OspreyAirDamage,Amount" Value="2"/>
+  <EffectArray Reference="Effect,OspreyGroundDamage,Amount" Value="1"/>
+  <EffectArray Reference="Effect,MiningDroneDamage,Amount" Value="1"/>
+  <EffectArray Operation="Set" Reference="Weapon,A6,Icon" Value="##path####lvl##.dds"/>
+  <EffectArray Operation="Set" Reference="Weapon,CSV,Icon" Value="##path####lvl##.dds"/>
+  <EffectArray Operation="Set" Reference="Weapon,RoutheTank,Icon" Value="##path####lvl##.dds"/>
+  <EffectArray Operation="Set" Reference="Weapon,TR17,Icon" Value="##path####lvl##.dds"/>
+  <EffectArray Operation="Set" Reference="Weapon,Z1,Icon" Value="##path####lvl##.dds"/>
+  <EffectArray Operation="Set" Reference="Weapon,UPLNightjarWeapon,Icon" Value="##path####lvl##.dds"/>
+  <EffectArray Operation="Set" Reference="Weapon,UPLSolitaireWeapon,Icon" Value="##path####lvl##.dds"/>
+  <EffectArray Operation="Set" Reference="Weapon,RaptorJet,Icon" Value="##path####lvl##.dds"/>
+  <EffectArray Operation="Set" Reference="Weapon,OspreyGround,Icon" Value="##path####lvl##.dds"/>
+  <EffectArray Operation="Set" Reference="Weapon,OspreyAirWeapon,Icon" Value="##path####lvl##.dds"/>
+  <EffectArray Operation="Set" Reference="Weapon,MiningDrone,Icon" Value="##path####lvl##.dds"/>
+  <EffectArray Reference="Weapon,CARRGround,Level" Value="1"/>
+  <EffectArray Reference="Weapon,CARRAir,Level" Value="1"/>
+  <EffectArray Reference="Weapon,RileyJerico,Level" Value="1"/>
+  <EffectArray Reference="Weapon,AltonPetersZ1,Level" Value="1"/>
+  <EffectArray Reference="Effect,CARRAirDamage,Amount" Value="2"/>
+  <EffectArray Reference="Effect,CARRGroundDamage,Amount" Value="2"/>
+  <EffectArray Reference="Effect,CARRGroundDamage,AttributeBonus[Biological]" Value="1"/>
+  <EffectArray Reference="Effect,RileyJericoDamage,Amount" Value="4"/>
+  <EffectArray Reference="Effect,AltonPetersZ1Damage,Amount" Value="4"/>
+  <EffectArray Operation="Set" Reference="Weapon,CARRGround,Icon" Value="##path####lvl##.dds"/>
+  <EffectArray Operation="Set" Reference="Weapon,RileyJerico,Icon" Value="##path####lvl##.dds"/>
+  <EffectArray Operation="Set" Reference="Weapon,AltonPetersZ1,Icon" Value="##path####lvl##.dds"/>
+  <EditorCategories value="Race:UPL,UpgradeType:AttackBonus"/>
+  <AffectedUnitArray value="A6"/>
+  <AffectedUnitArray value="CSV"/>
+  <AffectedUnitArray value="CSVDeployed"/>
+  <AffectedUnitArray value="RoutheTank"/>
+  <AffectedUnitArray value="TR17"/>
+  <AffectedUnitArray value="Z1"/>
+  <AffectedUnitArray value="MiningDrone"/>
+  <AffectedUnitArray value="RaptorJet"/>
+  <AffectedUnitArray value="Osprey"/>
+  <AffectedUnitArray value="Condor"/>
+  <AffectedUnitArray value="CARR"/>
+  <AffectedUnitArray value="AltonPetersZ1"/>
+  <AffectedUnitArray value="RileyJerico"/>
+  <AffectedUnitArray value="UPLNightjar"/>
+  <AffectedUnitArray value="UPLSolitaire"/>
+  <LeaderAlias value="TechVehicleWeapons"/>
+</CUpgrade>
+<CUpgrade default="1" id="UPLInfantryArmor">
+  <WebPriority value="0"/>
+  <Icon value="##path####lvl##.dds"/>
+  <Race value="UPL"/>
+  <ScoreAmount value="200"/>
+  <ScoreCount value="ArmorTechnologyCount"/>
+  <ScoreValue value="ArmorTechnologyValue"/>
+  <ScoreResult value="BuildOrder"/>
+  <EffectArray Reference="Unit,InfantryRifle,LifeArmorLevel" Value="1"/>
+  <EffectArray Reference="Unit,InfantryRifle,LifeArmor" Value="1"/>
+  <EffectArray Reference="Unit,InfantryHeavy,LifeArmorLevel" Value="1"/>
+  <EffectArray Reference="Unit,InfantryHeavy,LifeArmor" Value="1"/>
+  <EffectArray Reference="Unit,InfantryRocket,LifeArmorLevel" Value="1"/>
+  <EffectArray Reference="Unit,InfantryRocket,LifeArmor" Value="1"/>
+  <EffectArray Reference="Unit,InfantryMortar,LifeArmorLevel" Value="1"/>
+  <EffectArray Reference="Unit,InfantryMortar,LifeArmor" Value="1"/>
+  <EffectArray Reference="Unit,InfantryFlamethrower,LifeArmor" Value="1"/>
+  <EffectArray Reference="Unit,InfantryFlamethrower,LifeArmorLevel" Value="1"/>
+  <EffectArray Reference="Unit,InfantryOfficer,LifeArmor" Value="1"/>
+  <EffectArray Reference="Unit,InfantryOfficer,LifeArmorLevel" Value="1"/>
+  <EffectArray Operation="Set" Reference="Actor,InfantryRifle,LifeArmorIcon" Value="##path####lvl##.dds"/>
+  <EffectArray Operation="Set" Reference="Actor,InfantryRocket,LifeArmorIcon" Value="##path####lvl##.dds"/>
+  <EffectArray Operation="Set" Reference="Actor,InfantryHeavy,LifeArmorIcon" Value="##path####lvl##.dds"/>
+  <EffectArray Operation="Set" Reference="Actor,InfantryMortar,LifeArmorIcon" Value="##path####lvl##.dds"/>
+  <EffectArray Operation="Set" Reference="Actor,InfantryFlamethrower,LifeArmorIcon" Value="##path####lvl##.dds"/>
+  <EffectArray Operation="Set" Reference="Actor,InfantryOfficer,LifeArmorIcon" Value="##path####lvl##.dds"/>
+  <EffectArray Reference="Unit,UPLScout,LifeArmor" Value="1"/>
+  <EffectArray Reference="Unit,UPLScout,LifeArmorLevel" Value="1"/>
+  <EffectArray Operation="Set" Reference="Actor,UPLScout,LifeArmorIcon" Value="##path####lvl##.dds"/>
+  <EffectArray Reference="Unit,UPLSpecOps,LifeArmor" Value="1"/>
+  <EffectArray Reference="Unit,UPLSpecOps,LifeArmorLevel" Value="1"/>
+  <EffectArray Operation="Set" Reference="Actor,UPLSpecOps,LifeArmorIcon" Value="##path####lvl##.dds"/>
+  <EffectArray Reference="Unit,UPLPoliceOfficer,LifeArmor" Value="1"/>
+  <EffectArray Reference="Unit,UPLPoliceOfficer,LifeArmorLevel" Value="1"/>
+  <EffectArray Operation="Set" Reference="Actor,UPLPoliceOfficer,LifeArmorIcon" Value="##path####lvl##.dds"/>
+  <EffectArray Reference="Unit,UPLRiotOfficer,LifeArmor" Value="1"/>
+  <EffectArray Reference="Unit,UPLRiotOfficer,LifeArmorLevel" Value="1"/>
+  <EffectArray Operation="Set" Reference="Actor,UPLRiotOfficer,LifeArmorIcon" Value="##path####lvl##.dds"/>
+  <EffectArray Reference="Unit,UPLAnimalControlOfficer,LifeArmor" Value="1"/>
+  <EffectArray Reference="Unit,UPLAnimalControlOfficer,LifeArmorLevel" Value="1"/>
+  <EffectArray Operation="Set" Reference="Actor,UPLAnimalControlOfficer,LifeArmorIcon" Value="##path####lvl##.dds"/>
+  <EffectArray Reference="Unit,UPLDetectiveFemale,LifeArmor" Value="1"/>
+  <EffectArray Reference="Unit,UPLDetectiveFemale,LifeArmorLevel" Value="1"/>
+  <EffectArray Operation="Set" Reference="Actor,UPLDetectiveFemale,LifeArmorIcon" Value="##path####lvl##.dds"/>
+  <EffectArray Reference="Unit,UPLDetectiveMale,LifeArmor" Value="1"/>
+  <EffectArray Reference="Unit,UPLDetectiveMale,LifeArmorLevel" Value="1"/>
+  <EffectArray Operation="Set" Reference="Actor,UPLDetectiveMale,LifeArmorIcon" Value="##path####lvl##.dds"/>
+  <EffectArray Reference="Unit,HazmatTechnician,LifeArmor" Value="1"/>
+  <EffectArray Reference="Unit,HazmatTechnician,LifeArmorLevel" Value="1"/>
+  <EffectArray Operation="Set" Reference="Actor,HazmatTechnician,LifeArmorIcon" Value="##path####lvl##.dds"/>
+  <EffectArray Reference="Unit,RichardGideon,LifeArmor" Value="1"/>
+  <EffectArray Reference="Unit,RichardGideon,LifeArmorLevel" Value="1"/>
+  <EffectArray Operation="Set" Reference="Actor,RichardGideon,LifeArmorIcon" Value="##path####lvl##.dds"/>
+  <EffectArray Reference="Unit,MyraDavisOfficer,LifeArmor" Value="1"/>
+  <EffectArray Reference="Unit,MyraDavisOfficer,LifeArmorLevel" Value="1"/>
+  <EffectArray Operation="Set" Reference="Actor,MyraDavisOfficer,LifeArmorIcon" Value="##path####lvl##.dds"/>
+  <EffectArray Reference="Unit,MyraDavisRiotOfficer,LifeArmor" Value="1"/>
+  <EffectArray Reference="Unit,MyraDavisRiotOfficer,LifeArmorLevel" Value="1"/>
+  <EffectArray Operation="Set" Reference="Actor,MyraDavisRiotOfficer,LifeArmorIcon" Value="##path####lvl##.dds"/>
+  <EffectArray Reference="Unit,DeniseAllisterRiotOfficer,LifeArmor" Value="1"/>
+  <EffectArray Reference="Unit,DeniseAllisterRiotOfficer,LifeArmorLevel" Value="1"/>
+  <EffectArray Operation="Set" Reference="Actor,DeniseAllisterRiotOfficer,LifeArmorIcon" Value="##path####lvl##.dds"/>
+  <EffectArray Reference="Unit,TrevorRand,LifeArmor" Value="1"/>
+  <EffectArray Reference="Unit,TrevorRand,LifeArmorLevel" Value="1"/>
+  <EffectArray Operation="Set" Reference="Actor,TrevorRand,LifeArmorIcon" Value="##path####lvl##.dds"/>
+  <EffectArray Reference="Unit,LillyRollins,LifeArmor" Value="1"/>
+  <EffectArray Reference="Unit,LillyRollins,LifeArmorLevel" Value="1"/>
+  <EffectArray Operation="Set" Reference="Actor,LillyRollins,LifeArmorIcon" Value="##path####lvl##.dds"/>
+  <EffectArray Reference="Unit,WilliamGraves,LifeArmor" Value="1"/>
+  <EffectArray Reference="Unit,WilliamGraves,LifeArmorLevel" Value="1"/>
+  <EffectArray Operation="Set" Reference="Actor,WilliamGraves,LifeArmorIcon" Value="##path####lvl##.dds"/>
+  <EffectArray Reference="Unit,AltonPeters,LifeArmor" Value="1"/>
+  <EffectArray Reference="Unit,AltonPeters,LifeArmorLevel" Value="1"/>
+  <EffectArray Operation="Set" Reference="Actor,AltonPeters,LifeArmorIcon" Value="##path####lvl##.dds"/>
+  <EffectArray Reference="Unit,KatherineHalsey,LifeArmor" Value="1"/>
+  <EffectArray Reference="Unit,KatherineHalsey,LifeArmorLevel" Value="1"/>
+  <EffectArray Operation="Set" Reference="Actor,KatherineHalsey,LifeArmorIcon" Value="##path####lvl##.dds"/>
+  <EffectArray Reference="Unit,KatherineHalseyPistol,LifeArmor" Value="1"/>
+  <EffectArray Reference="Unit,KatherineHalseyPistol,LifeArmorLevel" Value="1"/>
+  <EffectArray Operation="Set" Reference="Actor,KatherineHalseyPistol,LifeArmorIcon" Value="##path####lvl##.dds"/>
+  <EffectArray Reference="Unit,KatherineHalseyElder,LifeArmor" Value="1"/>
+  <EffectArray Reference="Unit,KatherineHalseyElder,LifeArmorLevel" Value="1"/>
+  <EffectArray Operation="Set" Reference="Actor,KatherineHalseyElder,LifeArmorIcon" Value="##path####lvl##.dds"/>
+  <EffectArray Reference="Unit,DarrenRodgers,LifeArmor" Value="1"/>
+  <EffectArray Reference="Unit,DarrenRodgers,LifeArmorLevel" Value="1"/>
+  <EffectArray Operation="Set" Reference="Actor,DarrenRodgers,LifeArmorIcon" Value="##path####lvl##.dds"/>
+  <EffectArray Reference="Unit,MilesJenkins,LifeArmor" Value="1"/>
+  <EffectArray Reference="Unit,MilesJenkins,LifeArmorLevel" Value="1"/>
+  <EffectArray Operation="Set" Reference="Actor,MilesJenkins,LifeArmorIcon" Value="##path####lvl##.dds"/>
+  <EffectArray Reference="Unit,RusellPeters,LifeArmor" Value="1"/>
+  <EffectArray Reference="Unit,RusellPeters,LifeArmorLevel" Value="1"/>
+  <EffectArray Operation="Set" Reference="Actor,RusellPeters,LifeArmorIcon" Value="##path####lvl##.dds"/>
+  <EffectArray Reference="Unit,GordonTrenchard,LifeArmor" Value="1"/>
+  <EffectArray Reference="Unit,GordonTrenchard,LifeArmorLevel" Value="1"/>
+  <EffectArray Operation="Set" Reference="Actor,GordonTrenchard,LifeArmorIcon" Value="##path####lvl##.dds"/>
+  <EditorCategories value="Race:UPL,UpgradeType:ArmorBonus"/>
+  <AffectedUnitArray value="InfantryRifle"/>
+  <AffectedUnitArray value="InfantryHeavy"/>
+  <AffectedUnitArray value="InfantryMortar"/>
+  <AffectedUnitArray value="InfantryFlamethrower"/>
+  <AffectedUnitArray value="InfantryRocket"/>
+  <AffectedUnitArray value="InfantryOfficer"/>
+  <AffectedUnitArray value="UPLScout"/>
+  <AffectedUnitArray value="UPLSpecOps"/>
+  <AffectedUnitArray value="UPLPoliceOfficer"/>
+  <AffectedUnitArray value="UPLRiotOfficer"/>
+  <AffectedUnitArray value="UPLAnimalControlOfficer"/>
+  <AffectedUnitArray value="UPLDetectiveFemale"/>
+  <AffectedUnitArray value="UPLDetectiveMale"/>
+  <AffectedUnitArray value="HazmatTechnician"/>
+  <AffectedUnitArray value="RichardGideon"/>
+  <AffectedUnitArray value="MyraDavisOfficer"/>
+  <AffectedUnitArray value="MyraDavisRiotOfficer"/>
+  <AffectedUnitArray value="DeniseAllisterRiotOfficer"/>
+  <AffectedUnitArray value="TrevorRand"/>
+  <AffectedUnitArray value="LillyRollins"/>
+  <AffectedUnitArray value="WilliamGraves"/>
+  <AffectedUnitArray value="AltonPeters"/>
+  <AffectedUnitArray value="KatherineHalsey"/>
+  <AffectedUnitArray value="KatherineHalseyPistol"/>
+  <AffectedUnitArray value="KatherineHalseyElder"/>
+  <AffectedUnitArray value="DarrenRodgers"/>
+  <AffectedUnitArray value="MilesJenkins"/>
+  <AffectedUnitArray value="RusellPeters"/>
+  <AffectedUnitArray value="GordonTrenchard"/>
+  <LeaderAlias value="TechInfantryArmors"/>
+  <LeaderLevel value="1"/>
+</CUpgrade>
+<CUpgrade default="1" id="UPLInfantryWeapons">
+  <InfoTooltipPriority value="61"/>
+  <Icon value="##path####lvl##.dds"/>
+  <WebPriority value="0"/>
+  <Race value="UPL"/>
+  <ScoreCount value="WeaponTechnologyCount"/>
+  <ScoreValue value="WeaponTechnologyValue"/>
+  <ScoreResult value="BuildOrder"/>
+  <EffectArray Reference="Weapon,InfantryRifle,Level" Value="1"/>
+  <EffectArray Reference="Weapon,InfantryHeavy,Level" Value="1"/>
+  <EffectArray Reference="Weapon,InfantryMortar,Level" Value="1"/>
+  <EffectArray Reference="Weapon,InfantryFlamethrower,Level" Value="1"/>
+  <EffectArray Reference="Weapon,InfantryRocket,Level" Value="1"/>
+  <EffectArray Reference="Weapon,InfantryOfficer,Level" Value="1"/>
+  <EffectArray Reference="Effect,InfantryRifleDamage,Amount" Value="1"/>
+  <EffectArray Reference="Effect,InfantryHeavyDamage,Amount" Value="1"/>
+  <EffectArray Reference="Effect,InfantryHeavyDamage,AttributeBonus[Armored]" Value="1"/>
+  <EffectArray Reference="Effect,InfantryMortarDamage,Amount" Value="5"/>
+  <EffectArray Reference="Effect,InfantryFlamethrowerDamage,Amount" Value="1"/>
+  <EffectArray Reference="Effect,InfantryFlamethrowerDamagedirect,Amount" Value="1"/>
+  <EffectArray Reference="Effect,InfantryRocketDamage,Amount" Value="3"/>
+  <EffectArray Reference="Effect,InfantryOfficerDamage,Amount" Value="2"/>
+  <EffectArray Operation="Set" Reference="Weapon,InfantryRifle,Icon" Value="##path####lvl##.dds"/>
+  <EffectArray Operation="Set" Reference="Weapon,InfantryHeavy,Icon" Value="##path####lvl##.dds"/>
+  <EffectArray Operation="Set" Reference="Weapon,InfantryMortar,Icon" Value="##path####lvl##.dds"/>
+  <EffectArray Operation="Set" Reference="Weapon,InfantryFlamethrower,Icon" Value="##path####lvl##.dds"/>
+  <EffectArray Operation="Set" Reference="Weapon,InfantryRocket,Icon" Value="##path####lvl##.dds"/>
+  <EffectArray Operation="Set" Reference="Weapon,InfantryOfficer,Icon" Value="##path####lvl##.dds"/>
+  <EffectArray Reference="Weapon,UPLScout,Level" Value="1"/>
+  <EffectArray Operation="Set" Reference="Weapon,UPLScout,Icon" Value="##path####lvl##.dds"/>
+  <EffectArray Reference="Effect,UPLScout,Amount" Value="2"/>
+  <EffectArray Reference="Weapon,UPLSpecOpsAttack,Level" Value="1"/>
+  <EffectArray Operation="Set" Reference="Weapon,UPLSpecOpsAttack,Icon" Value="##path####lvl##.dds"/>
+  <EffectArray Reference="Effect,UPLSpecOpsAttackDamage,Amount" Value="2"/>
+  <EffectArray Reference="Effect,UPLSpecOpsAttackDamage,AttributeBonus[Light]" Value="1"/>
+  <EffectArray Reference="Weapon,WilliamGraves,Level" Value="1"/>
+  <EffectArray Operation="Set" Reference="Weapon,WilliamGraves,Icon" Value="##path####lvl##.dds"/>
+  <EffectArray Reference="Effect,WilliamGravesDamage,Amount" Value="2"/>
+  <EffectArray Reference="Weapon,LillyRollins,Level" Value="1"/>
+  <EffectArray Operation="Set" Reference="Weapon,LillyRollins,Icon" Value="##path####lvl##.dds"/>
+  <EffectArray Reference="Effect,LillyRollinsDamage,Amount" Value="2"/>
+  <EffectArray Reference="Weapon,TrevorRand,Level" Value="1"/>
+  <EffectArray Operation="Set" Reference="Weapon,TrevorRand,Icon" Value="##path####lvl##.dds"/>
+  <EffectArray Reference="Effect,TrevorRandDamage,Amount" Value="2"/>
+  <EffectArray Reference="Weapon,AltonPeters,Level" Value="1"/>
+  <EffectArray Operation="Set" Reference="Weapon,AltonPeters,Icon" Value="##path####lvl##.dds"/>
+  <EffectArray Reference="Effect,AltonPetersDamage,Amount" Value="2"/>
+  <EffectArray Reference="Effect,AltonPetersDamage,AttributeBonus[Armored]" Value="1"/>
+  <EffectArray Reference="Weapon,RichardGideon,Level" Value="1"/>
+  <EffectArray Operation="Set" Reference="Weapon,RichardGideon,Icon" Value="##path####lvl##.dds"/>
+  <EffectArray Reference="Effect,RichardGideon,Amount" Value="10"/>
+  <EffectArray Reference="Weapon,KatherineHalseyPistol,Level" Value="1"/>
+  <EffectArray Operation="Set" Reference="Weapon,KatherineHalseyPistol,Icon" Value="##path####lvl##.dds"/>
+  <EffectArray Reference="Effect,KatherineHalseyPistolDamage,Amount" Value="2"/>
+  <EffectArray Reference="Weapon,UPLPoliceOfficerPistol,Level" Value="1"/>
+  <EffectArray Operation="Set" Reference="Weapon,UPLPoliceOfficerPistol,Icon" Value="##path####lvl##.dds"/>
+  <EffectArray Reference="Effect,UPLPoliceOfficerPistolDamage,Amount" Value="1"/>
+  <EffectArray Reference="Weapon,UPLPoliceOfficerShotgun,Level" Value="1"/>
+  <EffectArray Operation="Set" Reference="Weapon,UPLPoliceOfficerShotgun,Icon" Value="##path####lvl##.dds"/>
+  <EffectArray Reference="Effect,UPLPoliceOfficerShotgunDamage,Amount" Value="1"/>
+  <EffectArray Reference="Effect,UPLPoliceOfficerShotgunDamage,AttributeBonus[Light]" Value="1"/>
+  <EffectArray Reference="Weapon,UPLPoliceOfficerRifle,Level" Value="1"/>
+  <EffectArray Operation="Set" Reference="Weapon,UPLPoliceOfficerRifle,Icon" Value="##path####lvl##.dds"/>
+  <EffectArray Reference="Effect,UPLPoliceOfficerRifleDamage,Amount" Value="1"/>
+  <EffectArray Reference="Effect,UPLPoliceOfficerRifleDamage,AttributeBonus[Armored]" Value="1"/>
+  <EffectArray Reference="Weapon,UPLRiotOfficerShotgun,Level" Value="1"/>
+  <EffectArray Operation="Set" Reference="Weapon,UPLRiotOfficerShotgun,Icon" Value="##path####lvl##.dds"/>
+  <EffectArray Reference="Effect,UPLRiotOfficerShotgunDamage,Amount" Value="1"/>
+  <EffectArray Reference="Effect,UPLRiotOfficerShotgunDamage,AttributeBonus[Light]" Value="1"/>
+  <EffectArray Reference="Weapon,UPLRiotOfficerRifle,Level" Value="1"/>
+  <EffectArray Operation="Set" Reference="Weapon,UPLRiotOfficerRifle,Icon" Value="##path####lvl##.dds"/>
+  <EffectArray Reference="Effect,UPLRiotOfficerRifleDamage,Amount" Value="1"/>
+  <EffectArray Reference="Effect,UPLRiotOfficerRifleDamage,AttributeBonus[Armored]" Value="1"/>
+  <EffectArray Reference="Weapon,MyraDavisPistol,Level" Value="1"/>
+  <EffectArray Operation="Set" Reference="Weapon,MyraDavisPistol,Icon" Value="##path####lvl##.dds"/>
+  <EffectArray Reference="Effect,MyraDavisPistolDamage,Amount" Value="2"/>
+  <EffectArray Reference="Weapon,MyraDavisShotgun,Level" Value="1"/>
+  <EffectArray Operation="Set" Reference="Weapon,MyraDavisShotgun,Icon" Value="##path####lvl##.dds"/>
+  <EffectArray Reference="Effect,MyraDavisShotgunDamage,Amount" Value="2"/>
+  <EffectArray Reference="Effect,MyraDavisShotgunDamage,AttributeBonus[Light]" Value="1"/>
+  <EffectArray Reference="Weapon,MyraDavisRifle,Level" Value="1"/>
+  <EffectArray Operation="Set" Reference="Weapon,MyraDavisRifle,Icon" Value="##path####lvl##.dds"/>
+  <EffectArray Reference="Effect,MyraDavisRifleDamage,Amount" Value="2"/>
+  <EffectArray Reference="Effect,MyraDavisRifleDamage,AttributeBonus[Armored]" Value="1"/>
+  <EditorCategories value="Race:UPL,UpgradeType:AttackBonus"/>
+  <AffectedUnitArray value="InfantryRifle"/>
+  <AffectedUnitArray value="InfantryHeavy"/>
+  <AffectedUnitArray value="InfantryMortar"/>
+  <AffectedUnitArray value="InfantryFlamethrower"/>
+  <AffectedUnitArray value="InfantryRocket"/>
+  <AffectedUnitArray value="InfantryOfficer"/>
+  <AffectedUnitArray value="UPLScout"/>
+  <AffectedUnitArray value="UPLSpecOps"/>
+  <AffectedUnitArray value="UPLPoliceOfficer"/>
+  <AffectedUnitArray value="UPLRiotOfficer"/>
+  <AffectedUnitArray value="UPLAnimalControlOfficer"/>
+  <AffectedUnitArray value="UPLDetectiveFemale"/>
+  <AffectedUnitArray value="UPLDetectiveMale"/>
+  <AffectedUnitArray value="HazmatTechnician"/>
+  <AffectedUnitArray value="RichardGideon"/>
+  <AffectedUnitArray value="MyraDavisOfficer"/>
+  <AffectedUnitArray value="MyraDavisRiotOfficer"/>
+  <AffectedUnitArray value="DeniseAllisterRiotOfficer"/>
+  <AffectedUnitArray value="TrevorRand"/>
+  <AffectedUnitArray value="LillyRollins"/>
+  <AffectedUnitArray value="WilliamGraves"/>
+  <AffectedUnitArray value="AltonPeters"/>
+  <AffectedUnitArray value="RusellPeters"/>
+  <AffectedUnitArray value="KatherineHalsey"/>
+  <AffectedUnitArray value="KatherineHalseyPistol"/>
+  <AffectedUnitArray value="KatherineHalseyElder"/>
+  <LeaderAlias value="TechInfantryWeapons"/>
+</CUpgrade>
+<CUpgrade id="LotC_InfantryCamoSkin">
   <Flags index="UpgradeCheat" value="0"/>
-  <EditorCategories value="Race:Xayid"/>
-</CUpgrade>
-<CUpgrade id="CommanderPrestigeXayidBio" parent="CommanderPrestige">
-  <EditorCategories value="Race:Xayid"/>
-</CUpgrade>
-<CUpgrade id="CommanderPrestigeXayidMech" parent="CommanderPrestige">
-  <EditorCategories value="Race:Xayid"/>
-</CUpgrade>
-<CUpgrade id="CommanderPrestigeXayidAir" parent="CommanderPrestige">
-  <EditorCategories value="Race:Xayid"/>
-</CUpgrade>
-<CUpgrade id="UpgradeXayidLevel01">
-  <EditorCategories value="Race:Xayid,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeXayidLevel02">
-  <EditorCategories value="Race:Xayid,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeXayidLevel03">
-  <EditorCategories value="Race:Xayid,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeXayidLevel04">
-  <EditorCategories value="Race:Xayid,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeXayidLevel05">
-  <EditorCategories value="Race:Xayid,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeXayidLevel06">
-  <EditorCategories value="Race:Xayid,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeXayidLevel07">
-  <EditorCategories value="Race:Xayid,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeXayidLevel08">
-  <EditorCategories value="Race:Xayid,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeXayidLevel09">
-  <EditorCategories value="Race:Xayid,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeXayidLevel10">
-  <EditorCategories value="Race:Xayid,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeXayidLevel11">
-  <EditorCategories value="Race:Xayid,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeXayidLevel12">
-  <EditorCategories value="Race:Xayid,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeXayidLevel13">
-  <EditorCategories value="Race:Xayid,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeXayidLevel14">
-  <EditorCategories value="Race:Xayid,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeXayidLevel15">
-  <EditorCategories value="Race:Xayid,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeXayidMastery1">
-  <Flags index="UpgradeCheat" value="0"/>
-  <EditorCategories value="Race:Xayid,UpgradeType:Talents"/>
-  <MaxLevel value="30"/>
-</CUpgrade>
-<CUpgrade id="UpgradeXayidMastery2">
-  <Flags index="UpgradeCheat" value="0"/>
-  <EditorCategories value="Race:Xayid,UpgradeType:Talents"/>
-  <MaxLevel value="30"/>
-</CUpgrade>
-<CUpgrade id="UpgradeXayidMastery3">
-  <Flags index="UpgradeCheat" value="0"/>
-  <EditorCategories value="Race:Xayid,UpgradeType:Talents"/>
-  <MaxLevel value="30"/>
-</CUpgrade>
-<CUpgrade id="UpgradeXayidMastery4">
-  <Flags index="UpgradeCheat" value="0"/>
-  <EditorCategories value="Race:Xayid,UpgradeType:Talents"/>
-  <MaxLevel value="30"/>
-</CUpgrade>
-<CUpgrade id="UpgradeXayidMastery5">
-  <Flags index="UpgradeCheat" value="0"/>
-  <EditorCategories value="Race:Xayid,UpgradeType:Talents"/>
-  <MaxLevel value="30"/>
-</CUpgrade>
-<CUpgrade id="UpgradeXayidMastery6">
-  <Flags index="UpgradeCheat" value="0"/>
-  <EditorCategories value="Race:Xayid,UpgradeType:Talents"/>
-  <MaxLevel value="30"/>
-</CUpgrade>
-<CUpgrade id="CommanderPrestigeUEDBio" parent="CommanderPrestige">
-  <EditorCategories value="Race:UED"/>
-</CUpgrade>
-<CUpgrade id="CommanderPrestigeUEDMech" parent="CommanderPrestige">
-  <EditorCategories value="Race:UED"/>
-</CUpgrade>
-<CUpgrade id="CommanderPrestigeUEDAir" parent="CommanderPrestige">
-  <EditorCategories value="Race:UED"/>
-</CUpgrade>
-<CUpgrade id="UpgradeUEDLevel01">
-  <EditorCategories value="Race:UED,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeUEDLevel02">
-  <EditorCategories value="Race:UED,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeUEDLevel03">
-  <EditorCategories value="Race:UED,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeUEDLevel04">
-  <EditorCategories value="Race:UED,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeUEDLevel05">
-  <EditorCategories value="Race:UED,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeUEDLevel06">
-  <EditorCategories value="Race:UED,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeUEDLevel07">
-  <EditorCategories value="Race:UED,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeUEDLevel08">
-  <EditorCategories value="Race:UED,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeUEDLevel09">
-  <EditorCategories value="Race:UED,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeUEDLevel10">
-  <EditorCategories value="Race:UED,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeUEDLevel11">
-  <EditorCategories value="Race:UED,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeUEDLevel12">
-  <EditorCategories value="Race:UED,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeUEDLevel13">
-  <EditorCategories value="Race:UED,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeUEDLevel14">
-  <EditorCategories value="Race:UED,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeUEDLevel15">
-  <EditorCategories value="Race:UED,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeUEDMastery1">
-  <Flags index="UpgradeCheat" value="0"/>
-  <EditorCategories value="Race:UED,UpgradeType:Talents"/>
-  <MaxLevel value="30"/>
-</CUpgrade>
-<CUpgrade id="UpgradeUEDMastery2">
-  <Flags index="UpgradeCheat" value="0"/>
-  <EditorCategories value="Race:UED,UpgradeType:Talents"/>
-  <MaxLevel value="30"/>
-</CUpgrade>
-<CUpgrade id="UpgradeUEDMastery3">
-  <Flags index="UpgradeCheat" value="0"/>
-  <EditorCategories value="Race:UED,UpgradeType:Talents"/>
-  <MaxLevel value="30"/>
-</CUpgrade>
-<CUpgrade id="UpgradeUEDMastery4">
-  <Flags index="UpgradeCheat" value="0"/>
-  <EditorCategories value="Race:UED,UpgradeType:Talents"/>
-  <MaxLevel value="30"/>
-</CUpgrade>
-<CUpgrade id="UpgradeUEDMastery5">
-  <Flags index="UpgradeCheat" value="0"/>
-  <EditorCategories value="Race:UED,UpgradeType:Talents"/>
-  <MaxLevel value="30"/>
-</CUpgrade>
-<CUpgrade id="UpgradeUEDMastery6">
-  <Flags index="UpgradeCheat" value="0"/>
-  <EditorCategories value="Race:UED,UpgradeType:Talents"/>
-  <MaxLevel value="30"/>
-</CUpgrade>
-<CUpgrade id="KeironCommander"/>
-<CUpgrade id="UpgradeKeironLevel01">
-  <EffectArray Operation="Set" Reference="Unit,Aegis,CostResource[Vespene]" Value="0"/>
-  <EffectArray Operation="Set" Reference="Unit,Aegis,CostResource[Minerals]" Value="0"/>
-  <EffectArray Operation="Set" Reference="Unit,AegisShielded,CostResource[Vespene]" Value="0"/>
-  <EffectArray Operation="Set" Reference="Unit,AegisShielded,CostResource[Minerals]" Value="0"/>
-  <EffectArray Operation="Set" Reference="Abil,KeironCitadelAegisTrain,InfoArray[Train1].Button.Flags[UseDefaultButton]" Value="0"/>
-</CUpgrade>
-<CUpgrade id="UpgradeKeironLevel02"/>
-<CUpgrade id="UpgradeKeironLevel03"/>
-<CUpgrade id="UpgradeKeironLevel04">
-  <EffectArray Operation="Set" Reference="Unit,Pariah,LifeStart" Value="90"/>
-  <EffectArray Operation="Set" Reference="Unit,Pariah,LifeMax" Value="90"/>
-  <EffectArray Operation="Set" Reference="Unit,Pariah,ShieldsMax" Value="70"/>
-  <EffectArray Operation="Set" Reference="Unit,Pariah,ShieldsStart" Value="70"/>
-  <EffectArray Operation="Set" Reference="Actor,Pariah,Scale" Value="1.200000"/>
-  <EffectArray Operation="Set" Reference="Unit,PariahProjection,Speed" Value="4.000000"/>
-  <EffectArray Operation="Set" Reference="Unit,Volt,LifeStart" Value="70"/>
-  <EffectArray Operation="Set" Reference="Unit,Volt,LifeMax" Value="70"/>
-  <EffectArray Operation="Set" Reference="Unit,Volt,ShieldsMax" Value="40"/>
-  <EffectArray Operation="Set" Reference="Unit,Volt,ShieldsStart" Value="40"/>
-  <EffectArray Operation="Set" Reference="Actor,Volt,Scale" Value="1.200000"/>
-</CUpgrade>
-<CUpgrade id="UpgradeKeironLevel05"/>
-<CUpgrade id="UpgradeKeironLevel06"/>
-<CUpgrade id="UpgradeKeironLevel07"/>
-<CUpgrade id="UpgradeKeironLevel08"/>
-<CUpgrade id="UpgradeKeironLevel09"/>
-<CUpgrade id="UpgradeKeironLevel10"/>
-<CUpgrade id="UpgradeKeironLevel11"/>
-<CUpgrade id="UpgradeKeironLevel12"/>
-<CUpgrade id="UpgradeKeironLevel13"/>
-<CUpgrade id="UpgradeKeironLevel14"/>
-<CUpgrade id="UpgradeKeironLevel15"/>
-<CUpgrade id="UpgradeKeironMastery1"/>
-<CUpgrade id="UpgradeKeironMastery2">
-  <EffectArray Operation="Subtract" Reference="Abil,KeironCitadelMaterialize,InfoArray[Train1].Time" Value="2.500000"/>
-  <EffectArray Operation="Subtract" Reference="Abil,KeironCitadelMaterialize,InfoArray[Train2].Time" Value="2.500000"/>
-  <EffectArray Operation="Subtract" Reference="Abil,KeironCitadelMaterialize,InfoArray[Train3].Time" Value="2.500000"/>
-  <EffectArray Operation="Subtract" Reference="Abil,KeironCitadelMaterialize,InfoArray[Train4].Time" Value="2.500000"/>
-  <EffectArray Operation="Subtract" Reference="Abil,KeironCitadelMaterialize,InfoArray[Train5].Time" Value="2.500000"/>
-  <EffectArray Operation="Subtract" Reference="Abil,KeironCitadelMaterialize,InfoArray[Train6].Time" Value="2.500000"/>
-  <EffectArray Operation="Subtract" Reference="Abil,KeironCitadelMaterialize,InfoArray[Train7].Time" Value="2.500000"/>
-  <EffectArray Operation="Subtract" Reference="Abil,KeironCitadelMaterialize,InfoArray[Train8].Time" Value="2.500000"/>
-  <EffectArray Operation="Subtract" Reference="Abil,KeironCitadelMaterialize,InfoArray[Train9].Time" Value="2.500000"/>
-  <EffectArray Operation="Subtract" Reference="Abil,KeironCitadelMaterialize,InfoArray[Train10].Time" Value="2.500000"/>
-  <EffectArray Operation="Subtract" Reference="Abil,KeironCitadelMaterialize,InfoArray[Train11].Time" Value="2.500000"/>
-  <EffectArray Operation="Subtract" Reference="Abil,KeironCitadelMaterialize,InfoArray[Train12].Time" Value="2.500000"/>
-  <EffectArray Operation="Subtract" Reference="Abil,KeironCitadelMaterialize,InfoArray[Train13].Time" Value="2.500000"/>
-  <EffectArray Operation="Subtract" Reference="Abil,KeironCitadelMaterialize,InfoArray[Train14].Time" Value="2.500000"/>
-  <EffectArray Operation="Subtract" Reference="Abil,KeironCitadelMaterialize,InfoArray[Train15].Time" Value="2.500000"/>
-  <EffectArray Operation="Subtract" Reference="Abil,KeironCitadelMaterialize,InfoArray[Train16].Time" Value="2.500000"/>
-  <EffectArray Operation="Subtract" Reference="Abil,KeironCitadelMaterialize,InfoArray[Train17].Time" Value="2.500000"/>
-  <EffectArray Operation="Subtract" Reference="Abil,KeironCitadelMaterialize,InfoArray[Train18].Time" Value="2.500000"/>
-  <EffectArray Operation="Subtract" Reference="Abil,KeironCitadelMaterialize,InfoArray[Train19].Time" Value="2.500000"/>
-  <EffectArray Operation="Subtract" Reference="Abil,KeironCitadelMaterialize,InfoArray[Train20].Time" Value="2.500000"/>
-  <EffectArray Operation="Set" Reference="Abil,KeironBuild,InfoArray[Build1].Time" Value="50.000000"/>
-  <EffectArray Operation="Set" Reference="Abil,KeironBuild,InfoArray[Build2].Time" Value="12.500000"/>
-  <EffectArray Operation="Set" Reference="Abil,KeironBuild,InfoArray[Build3].Time" Value="20.000000"/>
-  <EffectArray Operation="Set" Reference="Abil,KeironBuild,InfoArray[Build4].Time" Value="25.000000"/>
-  <EffectArray Operation="Set" Reference="Abil,KeironBuild,InfoArray[Build5].Time" Value="15.000000"/>
-  <EffectArray Operation="Set" Reference="Abil,KeironBuild,InfoArray[Build6].Time" Value="25.000000"/>
-  <EffectArray Operation="Set" Reference="Abil,KeironBuild,InfoArray[Build7].Time" Value="32.500000"/>
-  <EffectArray Operation="Set" Reference="Abil,KeironBuild,InfoArray[Build8].Time" Value="30.000000"/>
-  <EffectArray Operation="Set" Reference="Abil,KeironBuild,InfoArray[Build9].Time" Value="30.000000"/>
-  <EffectArray Operation="Set" Reference="Abil,KeironBuild,InfoArray[Build10].Time" Value="25.000000"/>
-  <EffectArray Operation="Set" Reference="Abil,KeironBuild,InfoArray[Build12].Time" Value="40.000000"/>
-  <EffectArray Operation="Set" Reference="Abil,KeironBuild,InfoArray[Build13].Time" Value="22.500000"/>
-  <EffectArray Operation="Set" Reference="Abil,KeironBuild,InfoArray[Build14].Time" Value="35.000000"/>
-  <EffectArray Operation="Set" Reference="Abil,KeironBuild,InfoArray[Build15].Time" Value="32.500000"/>
-  <EffectArray Operation="Set" Reference="Abil,KeironBuild,InfoArray[Build16].Time" Value="40.000000"/>
-  <EffectArray Operation="Set" Reference="Abil,KeironBuild,InfoArray[Build17].Time" Value="12.500000"/>
-  <EffectArray Operation="Subtract" Reference="Abil,EdificeResearch,InfoArray[Research1].Resource[Vespene]" Value="2"/>
-  <EffectArray Operation="Subtract" Reference="Abil,EdificeResearch,InfoArray[Research1].Time" Value="2.000000"/>
-  <EffectArray Operation="Subtract" Reference="Abil,EdificeResearch,InfoArray[Research1].Resource[Minerals]" Value="2"/>
-</CUpgrade>
-<CUpgrade id="UpgradeKeironMastery3"/>
-<CUpgrade id="UpgradeKeironMastery4"/>
-<CUpgrade id="UpgradeKeironMastery5"/>
-<CUpgrade id="UpgradeKeironMastery6"/>
-<CUpgrade id="NetworkCommander">
-  <Flags index="UpgradeCheat" value="0"/>
-  <EditorCategories value="Race:NHbr"/>
-</CUpgrade>
-<CUpgrade id="UpgradeNetworkLevel01">
-  <EditorCategories value="Race:NHbr,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeNetworkLevel02">
-  <EditorCategories value="Race:NHbr,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeNetworkLevel03">
-  <EditorCategories value="Race:NHbr,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeNetworkLevel04">
-  <EditorCategories value="Race:NHbr,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeNetworkLevel05">
-  <EditorCategories value="Race:NHbr,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeNetworkLevel06">
-  <EditorCategories value="Race:NHbr,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeNetworkLevel07">
-  <EditorCategories value="Race:NHbr,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeNetworkLevel08">
-  <EditorCategories value="Race:NHbr,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeNetworkLevel09">
-  <EditorCategories value="Race:NHbr,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeNetworkLevel10">
-  <EditorCategories value="Race:NHbr,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeNetworkLevel11">
-  <EditorCategories value="Race:NHbr,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeNetworkLevel12">
-  <EditorCategories value="Race:NHbr,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeNetworkLevel13">
-  <EditorCategories value="Race:NHbr,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeNetworkLevel14">
-  <EditorCategories value="Race:NHbr,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeNetworkLevel15">
-  <EditorCategories value="Race:NHbr,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeNetworkMastery1">
-  <Flags index="UpgradeCheat" value="0"/>
-  <EditorCategories value="Race:NHbr,UpgradeType:Talents"/>
-  <MaxLevel value="30"/>
-</CUpgrade>
-<CUpgrade id="UpgradeNetworkMastery2">
-  <Flags index="UpgradeCheat" value="0"/>
-  <EditorCategories value="Race:NHbr,UpgradeType:Talents"/>
-  <MaxLevel value="30"/>
-</CUpgrade>
-<CUpgrade id="UpgradeNetworkMastery3">
-  <Flags index="UpgradeCheat" value="0"/>
-  <EditorCategories value="Race:NHbr,UpgradeType:Talents"/>
-  <MaxLevel value="30"/>
-</CUpgrade>
-<CUpgrade id="UpgradeNetworkMastery4">
-  <Flags index="UpgradeCheat" value="0"/>
-  <EditorCategories value="Race:NHbr,UpgradeType:Talents"/>
-  <MaxLevel value="30"/>
-</CUpgrade>
-<CUpgrade id="UpgradeNetworkMastery5">
-  <Flags index="UpgradeCheat" value="0"/>
-  <EditorCategories value="Race:NHbr,UpgradeType:Talents"/>
-  <MaxLevel value="30"/>
-</CUpgrade>
-<CUpgrade id="UpgradeNetworkMastery6">
-  <Flags index="UpgradeCheat" value="0"/>
-  <EditorCategories value="Race:NHbr,UpgradeType:Talents"/>
-  <MaxLevel value="30"/>
-</CUpgrade>
-<CUpgrade id="UpgradeDragonLevel01">
-  <EditorCategories value="Race:Dragon,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeDragonLevel02">
-  <EditorCategories value="Race:Dragon,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeDragonLevel03">
-  <EditorCategories value="Race:Dragon,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeDragonLevel04">
-  <EditorCategories value="Race:Dragon,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeDragonLevel05">
-  <EditorCategories value="Race:Dragon,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeDragonLevel06">
-  <EditorCategories value="Race:Dragon,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeDragonLevel07">
-  <EditorCategories value="Race:Dragon,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeDragonLevel08">
-  <EditorCategories value="Race:Dragon,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeDragonLevel09">
-  <EditorCategories value="Race:Dragon,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeDragonLevel10">
-  <EditorCategories value="Race:Dragon,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeDragonLevel11">
-  <EditorCategories value="Race:Dragon,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeDragonLevel12">
-  <EditorCategories value="Race:Dragon,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeDragonLevel13">
-  <EditorCategories value="Race:Dragon,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeDragonLevel14">
-  <EditorCategories value="Race:Dragon,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeDragonLevel15">
-  <EditorCategories value="Race:Dragon,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeDragonMastery1">
-  <Flags index="UpgradeCheat" value="0"/>
-  <EditorCategories value="Race:Dragon,UpgradeType:Talents"/>
-  <MaxLevel value="30"/>
-</CUpgrade>
-<CUpgrade id="UpgradeDragonMastery2">
-  <Flags index="UpgradeCheat" value="0"/>
-  <EditorCategories value="Race:Dragon,UpgradeType:Talents"/>
-  <MaxLevel value="30"/>
-</CUpgrade>
-<CUpgrade id="UpgradeDragonMastery3">
-  <Flags index="UpgradeCheat" value="0"/>
-  <EditorCategories value="Race:Dragon,UpgradeType:Talents"/>
-  <MaxLevel value="30"/>
-</CUpgrade>
-<CUpgrade id="UpgradeDragonMastery4">
-  <Flags index="UpgradeCheat" value="0"/>
-  <EditorCategories value="Race:Dragon,UpgradeType:Talents"/>
-  <MaxLevel value="30"/>
-</CUpgrade>
-<CUpgrade id="UpgradeDragonMastery5">
-  <Flags index="UpgradeCheat" value="0"/>
-  <EditorCategories value="Race:Dragon,UpgradeType:Talents"/>
-  <MaxLevel value="30"/>
-</CUpgrade>
-<CUpgrade id="UpgradeDragonMastery6">
-  <Flags index="UpgradeCheat" value="0"/>
-  <EditorCategories value="Race:Dragon,UpgradeType:Talents"/>
-  <MaxLevel value="30"/>
-</CUpgrade>
-<CUpgrade id="GenetronCommander">
-  <Flags index="UpgradeCheat" value="0"/>
-  <EditorCategories value="Race:Genetron"/>
-</CUpgrade>
-<CUpgrade id="UpgradeGenetronLevel01">
-  <EditorCategories value="Race:Genetron,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeGenetronLevel02">
-  <EditorCategories value="Race:Genetron,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeGenetronLevel03">
-  <EditorCategories value="Race:Genetron,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeGenetronLevel04">
-  <EditorCategories value="Race:Genetron,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeGenetronLevel05">
-  <EditorCategories value="Race:Genetron,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeGenetronLevel06">
-  <EditorCategories value="Race:Genetron,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeGenetronLevel07">
-  <EditorCategories value="Race:Genetron,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeGenetronLevel08">
-  <EditorCategories value="Race:Genetron,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeGenetronLevel09">
-  <EditorCategories value="Race:Genetron,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeGenetronLevel10">
-  <EditorCategories value="Race:Genetron,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeGenetronLevel11">
-  <EditorCategories value="Race:Genetron,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeGenetronLevel12">
-  <EditorCategories value="Race:Genetron,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeGenetronLevel13">
-  <EditorCategories value="Race:Genetron,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeGenetronLevel14">
-  <EditorCategories value="Race:Genetron,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeGenetronLevel15">
-  <EditorCategories value="Race:Genetron,UpgradeType:Talents"/>
-</CUpgrade>
-<CUpgrade id="UpgradeGenetronMastery1">
-  <Flags index="UpgradeCheat" value="0"/>
-  <EditorCategories value="Race:Genetron,UpgradeType:Talents"/>
-  <MaxLevel value="30"/>
-</CUpgrade>
-<CUpgrade id="UpgradeGenetronMastery2">
-  <Flags index="UpgradeCheat" value="0"/>
-  <EditorCategories value="Race:Genetron,UpgradeType:Talents"/>
-  <MaxLevel value="30"/>
-</CUpgrade>
-<CUpgrade id="UpgradeGenetronMastery3">
-  <Flags index="UpgradeCheat" value="0"/>
-  <EditorCategories value="Race:Genetron,UpgradeType:Talents"/>
-  <MaxLevel value="30"/>
-</CUpgrade>
-<CUpgrade id="UpgradeGenetronMastery4">
-  <Flags index="UpgradeCheat" value="0"/>
-  <EditorCategories value="Race:Genetron,UpgradeType:Talents"/>
-  <MaxLevel value="30"/>
-</CUpgrade>
-<CUpgrade id="UpgradeGenetronMastery5">
-  <Flags index="UpgradeCheat" value="0"/>
-  <EditorCategories value="Race:Genetron,UpgradeType:Talents"/>
-  <MaxLevel value="30"/>
-</CUpgrade>
-<CUpgrade id="UpgradeGenetronMastery6">
-  <Flags index="UpgradeCheat" value="0"/>
-  <EditorCategories value="Race:Genetron,UpgradeType:Talents"/>
-  <MaxLevel value="30"/>
+  <EditorCategories value="Race:UPL,UpgradeType:Talents"/>
+  <AffectedUnitArray value="InfantryRifle"/>
+  <AffectedUnitArray value="InfantryRocket"/>
+  <AffectedUnitArray value="InfantryMortar"/>
+</CUpgrade>
+<CUpgrade id="UPLShipPlatingLevel1" parent="UPLShipArmor" path="Assets\Textures\btn-upgrade-terran-shipplatinglevel" lvl="1">
+  <ScoreAmount value="300"/>
+  <LeaderLevel value="1"/>
+</CUpgrade>
+<CUpgrade id="UPLShipPlatingLevel2" parent="UPLShipArmor" path="Assets\Textures\btn-upgrade-terran-shipplatinglevel" lvl="2">
+  <ScoreAmount value="450"/>
+  <LeaderLevel value="2"/>
+</CUpgrade>
+<CUpgrade id="UPLShipPlatingLevel3" parent="UPLShipArmor" path="Assets\Textures\btn-upgrade-terran-shipplatinglevel" lvl="3">
+  <ScoreAmount value="600"/>
+  <LeaderLevel value="3"/>
+</CUpgrade>
+<CUpgrade id="UPLShipWeaponsLevel1" parent="UPLShipWeapons" path="Assets\Textures\btn-upgrade-terran-shipweaponslevel" lvl="1">
+  <ScoreAmount value="200"/>
+  <LeaderLevel value="1"/>
+</CUpgrade>
+<CUpgrade id="UPLShipWeaponsLevel2" parent="UPLShipWeapons" path="Assets\Textures\btn-upgrade-terran-shipweaponslevel" lvl="2">
+  <ScoreAmount value="350"/>
+  <LeaderLevel value="2"/>
+</CUpgrade>
+<CUpgrade id="UPLShipWeaponsLevel3" parent="UPLShipWeapons" path="Assets\Textures\btn-upgrade-terran-shipweaponslevel" lvl="3">
+  <ScoreAmount value="500"/>
+  <LeaderLevel value="3"/>
+</CUpgrade>
+<CUpgrade id="UPLVehiclePlatingLevel1" parent="UPLVehicleArmor" path="Assets\Textures\btn-upgrades-upl-vehicleplating-lvl" lvl="1">
+  <ScoreAmount value="200"/>
+  <LeaderLevel value="1"/>
+</CUpgrade>
+<CUpgrade id="UPLVehiclePlatingLevel2" parent="UPLVehicleArmor" path="Assets\Textures\btn-upgrades-upl-vehicleplating-lvl" lvl="2">
+  <ScoreAmount value="350"/>
+  <LeaderLevel value="2"/>
+</CUpgrade>
+<CUpgrade id="UPLVehiclePlatingLevel3" parent="UPLVehicleArmor" path="Assets\Textures\btn-upgrades-upl-vehicleplating-lvl" lvl="3">
+  <ScoreAmount value="500"/>
+  <LeaderLevel value="3"/>
+</CUpgrade>
+<CUpgrade id="UPLVehicleWeaponsLevel1" parent="UPLVehicleWeapons" path="Assets\Textures\btn-upgrades-upl-vehicleweapons-lvl" lvl="1">
+  <ScoreAmount value="200"/>
+  <LeaderLevel value="1"/>
+</CUpgrade>
+<CUpgrade id="UPLVehicleWeaponsLevel2" parent="UPLVehicleWeapons" path="Assets\Textures\btn-upgrades-upl-vehicleweapons-lvl" lvl="2">
+  <ScoreAmount value="350"/>
+  <LeaderLevel value="2"/>
+</CUpgrade>
+<CUpgrade id="UPLVehicleWeaponsLevel3" parent="UPLVehicleWeapons" path="Assets\Textures\btn-upgrades-upl-vehicleweapons-lvl" lvl="3">
+  <ScoreAmount value="500"/>
+  <LeaderLevel value="3"/>
+  <Race value="Terr"/>
+</CUpgrade>
+<CUpgrade id="UPLInfantryArmorLevel1" parent="UPLInfantryArmor" path="Assets\Textures\btn-upgrades-upl-infantryarmor-lvl" lvl="1"/>
+<CUpgrade id="UPLInfantryArmorLevel2" parent="UPLInfantryArmor" path="Assets\Textures\btn-upgrades-upl-infantryarmor-lvl" lvl="2">
+  <ScoreAmount value="350"/>
+  <LeaderLevel value="2"/>
+</CUpgrade>
+<CUpgrade id="UPLInfantryArmorLevel3" parent="UPLInfantryArmor" path="Assets\Textures\btn-upgrades-upl-infantryarmor-lvl" lvl="3">
+  <ScoreAmount value="500"/>
+  <LeaderLevel value="3"/>
+</CUpgrade>
+<CUpgrade id="UPLInfantryWeaponsLevel1" parent="UPLInfantryWeapons" path="Assets\Textures\btn-upgrades-upl-infantryweapons-lvl" lvl="1">
+  <InfoTooltipPriority value="0"/>
+  <ScoreAmount value="200"/>
+  <LeaderLevel value="1"/>
+</CUpgrade>
+<CUpgrade id="UPLInfantryWeaponsLevel2" parent="UPLInfantryWeapons" path="Assets\Textures\btn-upgrades-upl-infantryweapons-lvl" lvl="2">
+  <InfoTooltipPriority value="0"/>
+  <ScoreAmount value="350"/>
+  <LeaderLevel value="2"/>
+</CUpgrade>
+<CUpgrade id="UPLInfantryWeaponsLevel3" parent="UPLInfantryWeapons" path="Assets\Textures\btn-upgrades-upl-infantryweapons-lvl" lvl="3">
+  <InfoTooltipPriority value="0"/>
+  <ScoreAmount value="500"/>
+  <LeaderLevel value="3"/>
+</CUpgrade>
+<CUpgrade id="UPLRenameZerg">
+  <EffectArray Operation="Set" Reference="Unit,Larva,Name" Value="Unit/Name/LarvaUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,Drone,Name" Value="Unit/Name/DroneUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,DroneBurrowed,Name" Value="Unit/Name/DroneUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,Zergling,Name" Value="Unit/Name/ZerglingUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,ZerglingBurrowed,Name" Value="Unit/Name/ZerglingUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,Hydralisk,Name" Value="Unit/Name/HydraliskUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,HydraliskBurrowed,Name" Value="Unit/Name/HydraliskUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,Ultralisk,Name" Value="Unit/Name/UltraliskUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,UltraliskBurrowed,Name" Value="Unit/Name/UltraliskUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,Roach,Name" Value="Unit/Name/RoachUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,RoachBurrowed,Name" Value="Unit/Name/RoachUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,Mutalisk,Name" Value="Unit/Name/MutaliskUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,DefilerMP,Name" Value="Unit/Name/DefilerMPUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,GuardianMP,Name" Value="Unit/Name/GuardianMPUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,Guardian,Name" Value="Unit/Name/GuardianMPUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,Queen,Name" Value="Unit/Name/QueenUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,QueenBurrowed,Name" Value="Unit/Name/QueenUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,QueenClassic,Name" Value="Unit/Name/QueenMPUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,QueenMP,Name" Value="Unit/Name/QueenMPUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,Overlord,Name" Value="Unit/Name/OverlordUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,NydusCanal,Name" Value="Unit/Name/NydusCanalUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,Spire,Name" Value="Unit/Name/SpireUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,GreaterSpire,Name" Value="Unit/Name/GreaterSpireUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,UltraliskCavern,Name" Value="Unit/Name/UltraliskCavernUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,BanelingNest,Name" Value="Unit/Name/BanelingNestUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,SpawningPool,Name" Value="Unit/Name/SpawningPoolUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,RoachWarren,Name" Value="Unit/Name/RoachWarrenUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,HydraliskDen,Name" Value="Unit/Name/HydraliskDenUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,Hatchery,Name" Value="Unit/Name/HatcheryUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,Lair,Name" Value="Unit/Name/LairUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,Hive,Name" Value="Unit/Name/HiveUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,NydusNetwork,Name" Value="Unit/Name/NydusNetworkUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,DefilerMound,Name" Value="Unit/Name/DefilerMoundUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,CreepColonyLotC,Name" Value="Unit/Name/CreepColonyUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,SunkenColony,Name" Value="Unit/Name/SunkenColonyUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,SpineCrawler,Name" Value="Unit/Name/SpineCrawlerUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,SporeCrawler,Name" Value="Unit/Name/SporeCrawlerUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,Scourge,Name" Value="Unit/Name/ScourgeUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,Egg,Name" Value="Unit/Name/EggLotC"/>
+  <EffectArray Operation="Set" Reference="Unit,Virophage,Name" Value="Unit/Name/VirophageUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,NydusCanalCreeper,Name" Value="Unit/Name/NydusCanalCreeperUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,CreepTumor,Name" Value="Unit/Name/CreepTumorUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,CreepTumorUsed,Name" Value="Unit/Name/CreepTumorUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,CreepTumorBurrowed,Name" Value="Unit/Name/CreepTumorUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,SporeCannon,Name" Value="Unit/Name/SporeCannonUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,Lurker,Name" Value="Unit/Name/LurkerUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,LurkerBurrowed,Name" Value="Unit/Name/LurkerUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,LurkerMP,Name" Value="Unit/Name/LurkerUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,LurkerMPBurrowed,Name" Value="Unit/Name/LurkerUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,Devourer,Name" Value="Unit/Name/DevourerUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,DevourerMP,Name" Value="Unit/Name/DevourerUPL"/>
+  <EffectArray Operation="Set" Reference="Actor,Larva,HighlightTooltip" Value="Unit/Name/LarvaUPL"/>
+  <EffectArray Operation="Set" Reference="Actor,Drone,HighlightTooltip" Value="Unit/Name/DroneUPL"/>
+  <EffectArray Operation="Set" Reference="Actor,Zergling,HighlightTooltip" Value="Unit/Name/ZerglingUPL"/>
+  <EffectArray Operation="Set" Reference="Actor,Hydralisk,HighlightTooltip" Value="Unit/Name/HydraliskUPL"/>
+  <EffectArray Operation="Set" Reference="Actor,Ultralisk,HighlightTooltip" Value="Unit/Name/UltraliskUPL"/>
+  <EffectArray Operation="Set" Reference="Actor,Roach,HighlightTooltip" Value="Unit/Name/RoachUPL"/>
+  <EffectArray Operation="Set" Reference="Actor,Mutalisk,HighlightTooltip" Value="Unit/Name/MutaliskUPL"/>
+  <EffectArray Operation="Set" Reference="Actor,DefilerMP,HighlightTooltip" Value="Unit/Name/DefilerMPUPL"/>
+  <EffectArray Operation="Set" Reference="Actor,GuardianMP,HighlightTooltip" Value="Unit/Name/GuardianMPUPL"/>
+  <EffectArray Operation="Set" Reference="Actor,Guardian,HighlightTooltip" Value="Unit/Name/GuardianMPUPL"/>
+  <EffectArray Operation="Set" Reference="Actor,Queen,HighlightTooltip" Value="Unit/Name/QueenUPL"/>
+  <EffectArray Operation="Set" Reference="Actor,QueenMP,HighlightTooltip" Value="Unit/Name/QueenMPUPL"/>
+  <EffectArray Operation="Set" Reference="Actor,QueenClassic,HighlightTooltip" Value="Unit/Name/QueenMPUPL"/>
+  <EffectArray Operation="Set" Reference="Actor,Overlord,HighlightTooltip" Value="Unit/Name/OverlordUPL"/>
+  <EffectArray Operation="Set" Reference="Actor,NydusCanal,HighlightTooltip" Value="Unit/Name/NydusCanalUPL"/>
+  <EffectArray Operation="Set" Reference="Actor,Spire,HighlightTooltip" Value="Unit/Name/SpireUPL"/>
+  <EffectArray Operation="Set" Reference="Actor,GreaterSpire,HighlightTooltip" Value="Unit/Name/GreaterSpireUPL"/>
+  <EffectArray Operation="Set" Reference="Actor,UltraliskCavern,HighlightTooltip" Value="Unit/Name/UltraliskCavernUPL"/>
+  <EffectArray Operation="Set" Reference="Actor,BanelingNest,HighlightTooltip" Value="Unit/Name/BanelingNestUPL"/>
+  <EffectArray Operation="Set" Reference="Actor,SpawningPool,HighlightTooltip" Value="Unit/Name/SpawningPoolUPL"/>
+  <EffectArray Operation="Set" Reference="Actor,RoachWarren,HighlightTooltip" Value="Unit/Name/RoachWarrenUPL"/>
+  <EffectArray Operation="Set" Reference="Actor,HydraliskDen,HighlightTooltip" Value="Unit/Name/HydraliskDenUPL"/>
+  <EffectArray Operation="Set" Reference="Actor,Hatchery,HighlightTooltip" Value="Unit/Name/HatcheryUPL"/>
+  <EffectArray Operation="Set" Reference="Actor,Lair,HighlightTooltip" Value="Unit/Name/LairUPL"/>
+  <EffectArray Operation="Set" Reference="Actor,Hive,HighlightTooltip" Value="Unit/Name/HiveUPL"/>
+  <EffectArray Operation="Set" Reference="Actor,NydusNetwork,HighlightTooltip" Value="Unit/Name/NydusNetworkUPL"/>
+  <EffectArray Operation="Set" Reference="Actor,DefilerMound,HighlightTooltip" Value="Unit/Name/DefilerMoundUPL"/>
+  <EffectArray Operation="Set" Reference="Actor,CreepColonyLotC,HighlightTooltip" Value="Unit/Name/CreepColonyUPL"/>
+  <EffectArray Operation="Set" Reference="Actor,SunkenColony,HighlightTooltip" Value="Unit/Name/SunkenColonyUPL"/>
+  <EffectArray Operation="Set" Reference="Actor,SpineCrawler,HighlightTooltip" Value="Unit/Name/SpineCrawlerUPL"/>
+  <EffectArray Operation="Set" Reference="Actor,SporeCrawler,HighlightTooltip" Value="Unit/Name/SporeCrawlerUPL"/>
+  <EffectArray Operation="Set" Reference="Actor,Scourge,HighlightTooltip" Value="Unit/Name/ScourgeUPL"/>
+  <EffectArray Operation="Set" Reference="Actor,Egg,HighlightTooltip" Value="Unit/Name/EggLotC"/>
+  <EffectArray Operation="Set" Reference="Actor,Plaguebringer,HighlightTooltip" Value="Unit/Name/VirophageUPL"/>
+  <EffectArray Operation="Set" Reference="Actor,NydusCanalCreeper,HighlightTooltip" Value="Unit/Name/NydusCanalCreeperUPL"/>
+  <EffectArray Operation="Set" Reference="Actor,CreepTumor,HighlightTooltip" Value="Unit/Name/CreepTumorUPL"/>
+  <EffectArray Operation="Set" Reference="Actor,CreepTumorUsed,HighlightTooltip" Value="Unit/Name/CreepTumorUPL"/>
+  <EffectArray Operation="Set" Reference="Actor,SporeCannon,HighlightTooltip" Value="Unit/Name/SporeCannonUPL"/>
+  <EffectArray Operation="Set" Reference="Actor,Lurker,HighlightTooltip" Value="Unit/Name/LurkerUPL"/>
+  <EffectArray Operation="Set" Reference="Actor,LurkerMP,HighlightTooltip" Value="Unit/Name/LurkerUPL"/>
+  <EffectArray Operation="Set" Reference="Actor,Devourer,HighlightTooltip" Value="Unit/Name/DevourerUPL"/>
+  <EffectArray Operation="Set" Reference="Actor,DevourerMP,HighlightTooltip" Value="Unit/Name/DevourerUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,BroodMotherLotC,Name" Value="Unit/Name/BroodMotherUPL"/>
+  <EffectArray Operation="Set" Reference="Actor,BroodMotherLotC,HighlightTooltip" Value="Unit/Name/BroodMotherUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,BroodMotherLotCBurrowed,Name" Value="Unit/Name/BroodMotherUPL"/>
+  <EffectArray Operation="Set" Reference="Actor,BroodMotherLotCBurrowed,HighlightTooltip" Value="Unit/Name/BroodMotherUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,Hunterling,Name" Value="Unit/Name/HunterlingUPL"/>
+  <EffectArray Operation="Set" Reference="Actor,Hunterling,HighlightTooltip" Value="Unit/Name/HunterlingUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,HunterlingLeaping,Name" Value="Unit/Name/HunterlingUPL"/>
+  <EffectArray Operation="Set" Reference="Actor,HunterlingLeaping,HighlightTooltip" Value="Unit/Name/HunterlingUPL"/>
+  <EffectArray Operation="Set" Reference="Unit,EvolutionChamber,Name" Value="Unit/Name/EvolutionChamberUPL"/>
+  <EffectArray Operation="Set" Reference="Actor,EvolutionChamber,HighlightTooltip" Value="Unit/Name/EvolutionChamberUPL"/>
+  <EditorCategories value="Race:UPL,UpgradeType:Talents"/>
+</CUpgrade>
+<CUpgrade id="InfantryFlamethrower3xBurning">
+  <EffectArray Operation="Multiply" Reference="Effect,InfantryFlamethrowerBurningDamage,Amount" Value="3"/>
+  <Race value="UPL"/>
+  <EditorCategories value="UpgradeType:Talents,Race:UPL"/>
+  <Icon value="Assets\icons\Button_InfantryFlameThrower\btn-ability-UPL-NaniteIgnition.dds"/>
+</CUpgrade>
+<CUpgrade id="InfantryHeavyAttackmove">
+  <EffectArray Operation="Set" Reference="Weapon,InfantryHeavy,AllowedMovement" Value="Moving"/>
+  <EffectArray Operation="Set" Reference="Weapon,InfantryHeavy,Options[OnlyFireWhileInAttackOrder]" Value="0"/>
+  <EffectArray Operation="Set" Reference="Weapon,InfantryHeavy,Options[OnlyFireAtAttackOrderTarget]" Value="0"/>
+  <Race value="UPL"/>
+  <EditorCategories value="UpgradeType:Talents,Race:UPL"/>
+  <Icon value="Assets\Textures\btn-ability-UPL-Sprint.dds"/>
+</CUpgrade>
+<CUpgrade id="InfantryOfficerAuraUpgrade">
+  <EffectArray Operation="Set" Reference="Effect,InfantryOfficerChargeSearch,AreaArray[0].Radius" Value="9.375"/>
+  <EffectArray Operation="Set" Reference="Actor,InfantryOfficerAuraRange,Range" Value="9.375000"/>
+  <Race value="UPL"/>
+  <EditorCategories value="UpgradeType:Talents,Race:UPL"/>
+  <Icon value="Assets\Textures\btn-ability-UPL-InfantryOfficerCharge.dds"/>
+</CUpgrade>
+<CUpgrade id="InfantryRocket1Range">
+  <EffectArray Reference="Weapon,InfantryRocket,Range" Value="1"/>
+  <Race value="UPL"/>
+  <EditorCategories value="UpgradeType:Talents,Race:UPL"/>
+  <Icon value="Assets\Textures\btn-ability-UPL-Longshot.dds"/>
+</CUpgrade>
+<CUpgrade id="InfantryRocketAOE">
+  <Race value="UPL"/>
+  <EditorCategories value="UpgradeType:Talents,Race:UPL"/>
+  <Icon value="Assets\Textures\btn-ability-UPL-GrenadeLauncher.dds"/>
+</CUpgrade>
+<CUpgrade id="RoutheTankExplosiveShells">
+  <EffectArray Reference="Effect,RoutheTankDamage,AttributeBonus[Armored]" Value="1"/>
+  <EditorCategories value="UpgradeType:Talents,Race:UPL"/>
+  <Icon value="Assets\Textures\btn-ability-UPL-ExplosiveRounds.dds"/>
+</CUpgrade>
+<CUpgrade id="InfantryMedkit">
+  <AffectedUnitArray value="InfantryRifle"/>
+  <AffectedUnitArray value="InfantryMortar"/>
+  <AffectedUnitArray value="InfantryFlamethrower"/>
+  <AffectedUnitArray value="InfantryRocket"/>
+  <AffectedUnitArray value="InfantryHeavy"/>
+  <DataCollection value="InfantryMedkit"/>
+  <Icon value="Assets\Textures\btn-ability-upl-medkit.dds"/>
+  <ScoreAmount value="400"/>
+  <EditorCategories value="Race:UPL"/>
+</CUpgrade>
+<CUpgrade id="InfantryMortarRangeUpgrade">
+  <EffectArray Reference="Weapon,InfantryMortar,Range" Value="5"/>
+  <EffectArray Operation="Set" Reference="Unit,InfantryMortarMissile,Mover" Value="InfantryMortarMissileMoverUpgraded"/>
+  <EffectArray Operation="Set" Reference="Effect,InfantryMortarLaunch,Movers[1].Link" Value="InfantryMortarMissileMoverUpgraded"/>
+  <EffectArray Operation="Set" Reference="Effect,InfantryMortarLaunchDirected,Movers[1].Link" Value="InfantryMortarMissileMoverUpgraded"/>
+  <Race value="UPL"/>
+  <EditorCategories value="UpgradeType:Talents,Race:UPL"/>
+  <Icon value="Assets\icons\Button_InfantryMortar\btn-ability-UPL-LongRangeMortarShells.dds"/>
+  <AffectedUnitArray value="InfantryMortar"/>
+</CUpgrade>
+<CUpgrade id="InfantryRifleRangeUpgrade">
+  <EffectArray Reference="Weapon,InfantryRifle,Range" Value="1"/>
+  <Race value="UPL"/>
+  <EditorCategories value="UpgradeType:Talents,Race:UPL"/>
+  <Icon value="Assets\Textures\btn-ability-UPL-LongRange.dds"/>
+  <Icon value="Assets\Textures\btn-ability-UPL-AssaultRifle.dds"/>
+  <AffectedUnitArray value="InfantryRifle"/>
+</CUpgrade>
+<CUpgrade id="CondorEnhancedCargo" parent="Research">
+  <Icon value="Assets\Textures\btn-ability-UPL-EnlargeCargoBay.dds"/>
+  <Race value="UPL"/>
+  <ScoreAmount value="300"/>
+  <ScoreResult value="BuildOrder"/>
+  <EffectArray Reference="Abil,CondorTransport,TotalCargoSpace" Value="6"/>
+  <EffectArray Reference="Abil,CondorTransport,MaxCargoCount" Value="6"/>
+  <EditorCategories value="Race:UPL,UpgradeType:Talents"/>
+  <AffectedUnitArray value="Condor"/>
+  <AffectedUnitArray value="CondorLanded"/>
+</CUpgrade>
+<CUpgrade id="A6ExplosiveRounds" parent="Research">
+  <Icon value="Assets\Textures\btn-ability-UPL-Flak.dds"/>
+  <Race value="UPL"/>
+  <ScoreAmount value="350"/>
+  <ScoreResult value="BuildOrder"/>
+  <EffectArray Operation="Set" Reference="Effect,A6WeaponFlakDummy,Chance" Value="1"/>
+  <EditorCategories value="UpgradeType:Talents,Race:UPL"/>
+  <AffectedUnitArray value="A6"/>
+</CUpgrade>
+<CUpgrade id="FrancineFuelInjection" parent="Research">
+  <Icon value="Assets\Textures\btn-ability-UPL-AdvancedEnergyProcessing.dds"/>
+  <Race value="Terr"/>
+  <ScoreAmount value="450"/>
+  <ScoreResult value="BuildOrder"/>
+  <EffectArray Reference="Unit,Condor,Speed" Value="0.75"/>
+  <EffectArray Reference="Unit,Osprey,Speed" Value="1.15"/>
+  <EditorCategories value="Race:UPL,UpgradeType:Talents"/>
+  <AffectedUnitArray value="Condor"/>
+  <AffectedUnitArray value="Osprey"/>
+</CUpgrade>
+<CUpgrade id="RoutheTankArmorPlating">
+  <EffectArray Reference="Unit,RoutheTank,LifeArmor" Value="2"/>
+  <EffectArray Reference="Unit,RoutheTank,LifeArmorLevel" Value="2"/>
+  <EffectArray Reference="Unit,RoutheTank,LifeStart" Value="75"/>
+  <EffectArray Reference="Unit,RoutheTank,LifeMax" Value="75"/>
+  <Race value="UPL"/>
+  <EditorCategories value="UpgradeType:Talents,Race:UPL"/>
+  <Icon value="Assets\Textures\btn-ability-UPL-UnobtaniumArmorPlating.dds"/>
+  <AffectedUnitArray value="RoutheTank"/>
+</CUpgrade>
+<CUpgrade id="RaptorCloakAbilUpgrade">
+  <Race value="UPL"/>
+  <EditorCategories value="UpgradeType:SpellResearch,Race:UPL"/>
+  <AffectedUnitArray value="RaptorJet"/>
+  <Icon value="Assets\Textures\btn-ability-UPL-Metamateria-Suit.dds"/>
+</CUpgrade>
+<CUpgrade id="Z1SpeedUpgrade">
+  <EffectArray Operation="Set" Reference="Unit,Z1,Speed" Value="3.5"/>
+  <Race value="UPL"/>
+  <EditorCategories value="UpgradeType:Talents,Race:UPL"/>
+  <Icon value="Assets\Textures\btn-ability-stetmann-stetelliteoverloadspeed.dds"/>
+</CUpgrade>
+<CUpgrade id="CSVSupplyLineManagement" parent="Research">
+  <Icon value="Assets\Textures\btn-ability-UPL-SupplyManagement.dds"/>
+  <Race value="Terr"/>
+  <ScoreAmount value="400"/>
+  <ScoreResult value="BuildOrder"/>
+  <EditorCategories value="UpgradeType:Talents,Race:UPL"/>
+  <AffectedUnitArray value="CSV"/>
+  <AffectedUnitArray value="CSVDeployed"/>
+</CUpgrade>
+<CUpgrade id="CSVPersonnelCarrier" parent="Research">
+  <Icon value="Assets\Textures\btn-ability-UPL-PersonnelCarrier.dds"/>
+  <Race value="UPL"/>
+  <ScoreAmount value="250"/>
+  <ScoreResult value="BuildOrder"/>
+  <EditorCategories value="UpgradeType:SpellResearch,Race:UPL"/>
+  <AffectedUnitArray value="CSV"/>
+  <AffectedUnitArray value="CSVDeployed"/>
+  <LeaderAlias value="CSVSupplyLineManagement"/>
+</CUpgrade>
+<CUpgrade id="KatherineHalseyMedkit">
+  <DataCollection value="InfantryMedkit"/>
+  <EditorCategories value="Race:UPL"/>
+</CUpgrade>
+<CUpgrade id="WilliamGravesMedkit">
+  <DataCollection value="InfantryMedkit"/>
+  <EditorCategories value="Race:UPL"/>
 </CUpgrade>
 
 </Catalog>

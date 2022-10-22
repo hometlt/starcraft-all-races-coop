@@ -70,7 +70,6 @@
         <KillXP value="0"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="RetributionField"/>
         <BehaviorArray Link="PredatorCloaking"/>
         <BehaviorArray Link="CloakAttackBuff"/>

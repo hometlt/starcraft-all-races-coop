@@ -4,19 +4,6 @@
   <CaseArray Validator="CasterHasBatteryOverchargeBehavior" Accumulator="ShieldBatteryRechargeEx5@CostMutiplierFree"/>
   <CaseDefault value="ShieldBatteryRechargeEx5@CostMutiplierNormal"/>
 </CAccumulatorSwitch>
-<CAccumulatorConstant id="ShieldBatteryRechargeEx5@CostMutiplierFree">
-  <ApplicationRule value="Multiply"/>
-</CAccumulatorConstant>
-<CAccumulatorConstant id="ShieldBatteryRechargeEx5@CostMutiplierNormal">
-  <ApplicationRule value="Multiply"/>
-  <Amount value="1"/>
-</CAccumulatorConstant>
-<CAccumulatorVeterancyLevel id="DehakaConsumeEffectPsionicExplosionRadiusBonus">
-  <MinAccumulation value="0"/>
-  <Amount value="0.5"/>
-  <BonusPerLevel value="0.0625"/>
-  <PreviousValueFactor value="1"/>
-</CAccumulatorVeterancyLevel>
 <CAccumulatorArithmetic id="DehakaLeapStompDamage">
   <Parameters value="0">
     <AccumulatorArray value="DehakaLeapStompLevelDamageFactor"/>
@@ -26,33 +13,10 @@
   </Parameters>
   <Operation value="Multiply"/>
 </CAccumulatorArithmetic>
-<CAccumulatorConstant id="DehakaLeapStompDamageBonus">
-  <Amount value="25"/>
-</CAccumulatorConstant>
 <CAccumulatorAbilLevel id="DehakaLeapStompLevelDamageFactor">
   <Amount value="0.5"/>
   <Amount value="0.75"/>
 </CAccumulatorAbilLevel>
-<CAccumulatorVeterancyLevel id="DehakaLeapStompRadiusBonus">
-  <MinAccumulation value="0"/>
-  <Amount value="1.5"/>
-  <BonusPerLevel value="0.0625"/>
-  <PreviousValueFactor value="1"/>
-</CAccumulatorVeterancyLevel>
-<CAccumulatorVeterancyLevel id="DehakaLevelAttackDamageScaling">
-  <MinAccumulation value="0"/>
-  <Amount value="10"/>
-  <BonusPerLevel value="10"/>
-  <PreviousValueFactor value="1"/>
-</CAccumulatorVeterancyLevel>
-<CAccumulatorConstant id="DehakaLevelMammothBeamDamageFactor">
-  <ApplicationRule value="Multiply"/>
-  <Amount value="0.25"/>
-</CAccumulatorConstant>
-<CAccumulatorConstant id="DehakaLevelPsiExplodeDamageFactor">
-  <ApplicationRule value="Multiply"/>
-  <Amount value="2"/>
-</CAccumulatorConstant>
 <CAccumulatorAttributePoints id="CommanderPrestigeVorazunTimeStopGuardCount">
   <MinAccumulation value="0"/>
   <Attribute value="CommanderPrestigeVorazunTimeStopCount"/>
@@ -156,15 +120,9 @@
     <AccumulatorArray value="NHbrNemesisWeapon@Ionizer"/>
   </Parameters>
 </CAccumulatorArithmetic>
-<CAccumulatorConstant id="NHbrDominatorUpgradeToAdvancedDominator@AdditionWeaponDamage">
-  <Amount value="10"/>
-</CAccumulatorConstant>
 <CAccumulatorSwitch id="NHbrDominatorUpgradeToAdvancedDominator@Switch">
   <CaseArray Validator="NHbrDominatorUpgradeToAdvancedDominator@HasUpgrade" Accumulator="NHbrDominatorUpgradeToAdvancedDominator@AdditionWeaponDamage"/>
 </CAccumulatorSwitch>
-<CAccumulatorConstant id="NHbrReaverUpgradeToAdvancedReaver@AdditionWeaponDamage">
-  <Amount value="5"/>
-</CAccumulatorConstant>
 <CAccumulatorSwitch id="NHbrReaverUpgradeToAdvancedReaver@Switch">
   <CaseArray Validator="NHbrReaverUpgradeToAdvancedReaver@HasUpgrade" Accumulator="NHbrReaverUpgradeToAdvancedReaver@AdditionWeaponDamage"/>
 </CAccumulatorSwitch>
@@ -190,29 +148,11 @@
 <CAccumulatorSwitch id="NHbrNetwork@NetworkVitalRegenRestriction">
   <CaseArray Validator="NHbrIonicCrystalTeleport@TargetIsTeleporting" Accumulator="NHbrNetwork@0Multiply"/>
 </CAccumulatorSwitch>
-<CAccumulatorConstant id="NHbrNetworkNEW@PowerSourceNonChargedAdd">
-  <MinAccumulation value="0"/>
-  <MaxAccumulation value="12"/>
-</CAccumulatorConstant>
-<CAccumulatorConstant id="NHbrNetworkNEW@PowerSourceNonChargedMultiply">
-  <MinAccumulation value="0"/>
-  <MaxAccumulation value="12"/>
-  <ApplicationRule value="Multiply"/>
-</CAccumulatorConstant>
 <CAccumulatorSwitch id="NHbrNetwork@NetworkEnergyRegenRestriction">
   <CaseArray Validator="NHbrCommon@DefaultEnergyUser" Accumulator="NHbrNetwork@0Multiply"/>
   <CaseArray Validator="NHbrTimeScaleBuff@NetworkRegenSupressed" Accumulator="NHbrNetwork@0Multiply"/>
   <CaseDefault value="NHbrNetwork@Arithmetic"/>
 </CAccumulatorSwitch>
-<CAccumulatorConstant id="NHbrNetworkNEW@PowerSourceChargedAdd">
-  <MinAccumulation value="0"/>
-  <MaxAccumulation value="12"/>
-</CAccumulatorConstant>
-<CAccumulatorConstant id="NHbrNetworkNEW@PowerSourceChargedMultiply">
-  <MinAccumulation value="0"/>
-  <MaxAccumulation value="12"/>
-  <ApplicationRule value="Multiply"/>
-</CAccumulatorConstant>
 <CAccumulatorArithmetic id="NHbrNetwork@Arithmetic">
   <ApplicationRule value="Multiply"/>
   <Parameters value="1.66">
@@ -222,9 +162,6 @@
     <AccumulatorArray value="NHbrNetworkNEW@PowerSourceNonChargedMultiply"/>
   </Parameters>
 </CAccumulatorArithmetic>
-<CAccumulatorConstant id="NHbrNetwork@0Multiply">
-  <ApplicationRule value="Multiply"/>
-</CAccumulatorConstant>
 <CAccumulatorUnitCustomValue id="NHbrProtection@SpellArmor">
   <ApplicationRule value="Multiply"/>
   <Index value="2"/>
@@ -234,31 +171,6 @@
   <ApplicationRule value="Multiply"/>
   <Index value="1"/>
 </CAccumulatorUnitCustomValue>
-<CAccumulatorConstant id="0"/>
-<CAccumulatorConstant id="1">
-  <Amount value="1"/>
-</CAccumulatorConstant>
-<CAccumulatorConstant id="2">
-  <Amount value="2"/>
-</CAccumulatorConstant>
-<CAccumulatorConstant id="3">
-  <Amount value="3"/>
-</CAccumulatorConstant>
-<CAccumulatorConstant id="4">
-  <Amount value="4"/>
-</CAccumulatorConstant>
-<CAccumulatorConstant id="5">
-  <Amount value="5"/>
-</CAccumulatorConstant>
-<CAccumulatorConstant id="15">
-  <Amount value="15"/>
-</CAccumulatorConstant>
-<CAccumulatorConstant id="16">
-  <Amount value="16"/>
-</CAccumulatorConstant>
-<CAccumulatorConstant id="21">
-  <Amount value="21"/>
-</CAccumulatorConstant>
 <CAccumulatorCargo id="CSVTransportCargoFree">
   <MinAccumulation value="0"/>
   <Type value="Free"/>

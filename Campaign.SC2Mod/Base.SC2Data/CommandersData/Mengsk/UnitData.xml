@@ -29,7 +29,6 @@
     </CUnit>
     <CUnit id="MengskGoliath">
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <DamageDealtXP value="0"/>
         <DamageTakenXP value="0"/>
         <Race value="TerrD"/>
@@ -52,7 +51,6 @@
     </CUnit>
     <CUnit id="MengskBC">
         <!--BehaviorArray Link="Supply6"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <KillXP value="0"/>
@@ -65,7 +63,6 @@
     </CUnit>
     <CUnit id="MengskDiamondback">
         <!--BehaviorArray Link="Supply3"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <KillXP value="0"/>
@@ -75,7 +72,6 @@
     </CUnit>
     <CUnit id="MengskFirebat">
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <KillXP value="0"/>
@@ -85,7 +81,6 @@
     </CUnit>
     <CUnit id="MengskHellion">
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <KillXP value="0"/>
@@ -95,7 +90,6 @@
     </CUnit>
     <CUnit id="MengskMarauder">
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <DamageDealtXP value="0"/>
@@ -104,7 +98,6 @@
     </CUnit>
     <CUnit id="MengskMarine">
         <!--BehaviorArray Link="Supply1"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <DamageDealtXP value="0"/>
@@ -113,7 +106,6 @@
     </CUnit>
     <CUnit id="MengskMedic">
         <!--BehaviorArray Link="Supply1"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <KillXP value="0"/>
@@ -123,7 +115,6 @@
     </CUnit>
     <CUnit id="MengskReaper">
         <!--BehaviorArray Link="Supply1"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <KillXP value="0"/>
@@ -133,7 +124,6 @@
     </CUnit>
     <CUnit id="MengskSiegeTank">
         <!--BehaviorArray Link="Supply3"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <KillXP value="0"/>
@@ -143,7 +133,6 @@
     </CUnit>
     <CUnit id="MengskSiegeTankSieged">
         <!--BehaviorArray Link="Supply3"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreKill value="0"/>
         <KillXP value="0"/>
         <DamageDealtXP value="0"/>
@@ -152,7 +141,6 @@
     </CUnit>
     <CUnit id="MengskThor">
         <!--BehaviorArray Link="Supply6"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <KillXP value="0"/>
@@ -162,7 +150,6 @@
     </CUnit>
     <CUnit id="MengskVikingAssault">
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreKill value="0"/>
         <KillXP value="0"/>
         <DamageDealtXP value="0"/>
@@ -171,7 +158,6 @@
     </CUnit>
     <CUnit id="MengskVikingFighter">
         <!--BehaviorArray Link="Supply2"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <KillXP value="0"/>
@@ -448,7 +434,6 @@
         <AbilArray Link="BattlecruiserMengskHyperjump"/>
         <AbilArray Link="BattlecruiserMengskHyperjumpTwoCharges"/>
         <BehaviorArray Link="MassiveVoidRayVulnerability"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="BattlecruiserMengskVeterancyController"/>
         <BehaviorArray Link="BattlecruiserMengskBonusRangeSource"/>
         <WeaponArray Link="SwitchLaserBatteryMengsk" Turret="Battlecruiser"/>
@@ -708,7 +693,6 @@
         <AbilArray Link="move"/>
         <AbilArray Link="RavenMengskMorphtoRavenMengskSieged"/>
         <BehaviorArray Link="Detector11"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
@@ -773,7 +757,6 @@
         <AbilArray Link="RavenMengskMorphtoRavenMengskSieged"/>
         <AbilArray Link="RavenMengskSiegedMorphtoRavenMengsk"/>
         <BehaviorArray Link="Detector15"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="RavenMengskPropagandaAura"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -939,7 +922,6 @@
         <AbilArray Link="stop"/>
         <AbilArray Link="attack"/>
         <AbilArray Link="move"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="MengskZergSpawnDelay"/>
         <BehaviorArray Link="MengskZergTimedLife"/>
         <BehaviorArray Link="MutaliskMengskAirDropDelay"/>
@@ -996,7 +978,6 @@
         <AbilArray Link="stop"/>
         <AbilArray Link="attack"/>
         <AbilArray Link="move"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="MengskZergSpawnDelay"/>
         <BehaviorArray Link="MengskZergTimedLife"/>
         <WeaponArray Link="HydraliskMengskMelee"/>
@@ -1060,7 +1041,6 @@
         <AttackTargetPriority value="20"/>
         <AbilArray Link="BurrowHydraliskMengskUp"/>
         <BehaviorArray Link="BurrowCracks"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowHydraliskMengskUp,Execute" Row="2" Column="4"/>
@@ -1630,7 +1610,6 @@
         <AbilArray Link="StimpackMengsk"/>
         <AbilArray Link="TrooperMengskEnlist"/>
         <AbilArray Link="TrooperMengskBuild"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <WeaponArray Link="TrooperMengskImproved"/>
         <EffectArray index="Death" value="TrooperMengskDeathSwitch"/>
         <CardLayouts>
@@ -1713,7 +1692,6 @@
         <AbilArray Link="StimpackMengsk"/>
         <AbilArray Link="TrooperMengskEnlist"/>
         <AbilArray Link="TrooperMengskBuild"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <WeaponArray Link="TrooperMengskRocket"/>
         <WeaponArray Link="TrooperMengsk"/>
         <EffectArray index="Death" value="TrooperMengskDeathSwitch"/>
@@ -1796,7 +1774,6 @@
         <AbilArray Link="StimpackMengsk"/>
         <AbilArray Link="TrooperMengskEnlist"/>
         <AbilArray Link="TrooperMengskBuild"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <WeaponArray Link="TrooperMengskFlamethrower"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -1957,7 +1934,6 @@
         <AbilArray Link="GhostMengskSuperCloak"/>
         <AbilArray Link="GhostMengskEMPLongStun"/>
         <AbilArray Link="GhostMengskIrradiateBigDamage"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="GhostMengskVeterancyController"/>
         <WeaponArray Link="C10CanisterRifleMengsk"/>
         <EffectArray index="Create" value="MengskVeteranTrigger"/>
@@ -2117,7 +2093,6 @@
         <AbilArray Link="attack"/>
         <AbilArray Link="move"/>
         <AbilArray Link="MarauderMengskAttackSpeedBoost"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="MarauderMengskVeterancyController"/>
         <WeaponArray Link="PunisherGrenadesMengsk"/>
         <EffectArray index="Create" value="MengskVeteranTrigger"/>
@@ -2204,7 +2179,6 @@
         <AbilArray Link="TrooperMengskEnlist"/>
         <AbilArray Link="TrooperMengskMorphSCV"/>
         <AbilArray Link="TrooperMengskBuild"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <WeaponArray Link="TrooperMengsk"/>
         <EffectArray index="Create" value="TrooperMengskWeaponPickerUpperRegister"/>
         <CardLayouts>
@@ -2294,7 +2268,6 @@
         <AbilArray Link="MedivacMengskSpeedBoost"/>
         <AbilArray Link="MedivacMengskDoubleBeamHeal"/>
         <AbilArray Link="attack"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="MedivacMengskPermanentCloak"/>
         <BehaviorArray Link="SiegeTankMengskRangeBonus"/>
         <WeaponArray Link="MedivacMengskSiegeTankAirlift" Turret="MedivacMengskSiegeTankAirliftTurret"/>
@@ -2420,7 +2393,6 @@
         <AbilArray Link="SCVMengskMorphTrooperNoWeapon"/>
         <AbilArray Link="SCVMengskEnlist"/>
         <AbilArray Link="TrooperMengskBuild"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <WeaponArray Link="FusionCutterMengsk"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -2521,7 +2493,6 @@
         <AbilArray Link="attack"/>
         <AbilArray Link="move"/>
         <AbilArray Link="SiegeModeMengsk"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="SiegeTankMengskVeterancyController"/>
         <WeaponArray Link="SiegeTankMengsk" Turret="SiegeTankMengsk"/>
         <WeaponArray Link="90mmCannonsMengskLookAt" Turret="SiegeTankMengsk"/>
@@ -2597,7 +2568,6 @@
         <AbilArray Link="stop"/>
         <AbilArray Link="attack"/>
         <AbilArray Link="UnsiegeMengsk"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="SiegeTankMengskVeterancyController"/>
         <BehaviorArray Link="SiegeTankMengskRangeBonus"/>
         <WeaponArray Link="SiegeTankMengskSieged" Turret="SiegeTankMengskSieged"/>
@@ -2842,7 +2812,6 @@
         <AbilArray Link="ThorMengskSiegeTargeted"/>
         <AbilArray Link="ThorMengskSiegeTargetedIncreasedRange"/>
         <AbilArray Link="ThorMengskSiegeTargetedLargeAoE"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="ThorMengskVeterancyController"/>
         <BehaviorArray Link="ThorMengskArmorAura"/>
         <WeaponArray Link="JavelinMissileLaunchersMengsk"/>
@@ -2924,7 +2893,6 @@
         <AbilArray Link="move"/>
         <AbilArray Link="stop"/>
         <AbilArray Link="ThorMengskUnsiege"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="ThorMengskVeterancyController"/>
         <BehaviorArray Link="ThorMengskSiegeAttackRate"/>
         <BehaviorArray Link="ThorMengskArmorAura"/>
@@ -3046,7 +3014,6 @@
         <AbilArray Link="attack"/>
         <AbilArray Link="move"/>
         <BehaviorArray Link="Frenzy"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="MengskZergSpawnDelay"/>
         <BehaviorArray Link="MengskZergTimedLife"/>
         <WeaponArray Link="UltraliskMengskKaiserBlades"/>
@@ -3121,7 +3088,6 @@
         <AbilArray Link="attack"/>
         <AbilArray Link="move"/>
         <AbilArray Link="FighterModeMengsk"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="VikingMengskVeterancyController"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -3218,7 +3184,6 @@
         <AbilArray Link="attack"/>
         <AbilArray Link="move"/>
         <AbilArray Link="AssaultModeMengsk"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="VikingMengskVeterancyController"/>
         <BehaviorArray Link="VikingMengskFighterDodge"/>
         <EffectArray index="Create" value="MengskVeteranTrigger"/>
@@ -3296,7 +3261,6 @@
         <AbilArray Link="attack"/>
         <AbilArray Link="move"/>
         <AbilArray Link="FirebatMengskAttackSpeedBoost"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="FirebatMengskVeterancyController"/>
         <WeaponArray Link="FirebatMengsk"/>
         <CardLayouts>
@@ -3385,7 +3349,6 @@
         <AttackTargetPriority value="20"/>
         <AbilArray Link="BurrowZerglingMengskUp"/>
         <BehaviorArray Link="SupplyLT1"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowZerglingMengskUp,Execute" Row="2" Column="4"/>
@@ -3444,7 +3407,6 @@
         <AbilArray Link="move"/>
         <AbilArray Link="que1"/>
         <BehaviorArray Link="SupplyLT1"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="MengskZergSpawnDelay"/>
         <BehaviorArray Link="MengskZergTimedLife"/>
         <WeaponArray Link="ZerglingMengskClaws"/>

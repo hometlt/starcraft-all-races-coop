@@ -11003,7 +11003,6 @@ Param/Value/lib_COMI_4968D704=<c val="FF8000">Bank saved</c>
 Param/Value/lib_COMI_4A917924=Artanis
 Param/Value/lib_COMI_4A925500=Ran out of CoopAI upgrade slots, need to increase the trigger constant.
 Param/Value/lib_COMI_4AED1CA4=MASTERY
-Param/Value/lib_COMI_4B6A7FB8=<c val="FF8000">Tech reset</c>
 Param/Value/lib_COMI_4C18CEB4=APM
 Param/Value/lib_COMI_4CE3C5EB=Starting Base
 Param/Value/lib_COMI_4D0EA868=https://discord.gg/8T4MUA3xXr

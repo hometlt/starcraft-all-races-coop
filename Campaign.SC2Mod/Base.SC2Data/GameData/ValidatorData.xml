@@ -4783,9 +4783,10 @@
     </CValidatorUnitType>
     <CValidatorCombine id="isTerranInteractWorker">
         <CombineArray value="IsSCV"/>
-        <CombineArray value="IsSISCV"/>
         <CombineArray value="IsTychusSCV"/>
         <CombineArray value="isHHSCV"/>
+        <CombineArray value="IsTychusSCV"/>
+        <CombineArray value="IsDroneStetmann"/>
     </CValidatorCombine>
     <CValidatorCombine id="isWorker">
         <CombineArray index="0" value="IsMULE"/>
@@ -4798,9 +4799,11 @@
         <CombineArray value="IsSIDrone"/>
         <CombineArray value="IsDehakaDrone"/>
         <CombineArray value="IsDroneFull"/>
+        <CombineArray value="IsSISCV"/>
     </CValidatorCombine>
     <CValidatorCombine id="isProtossInteractWorker">
         <CombineArray value="IsProbe"/>
+        <CombineArray value="IsZeratulProbe"/>
     </CValidatorCombine>
     <CValidatorUnitCompareBehaviorCount id="noDevour">
         <Behavior value="noDevour"/>

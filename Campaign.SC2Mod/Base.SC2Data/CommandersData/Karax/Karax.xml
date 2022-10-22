@@ -52,6 +52,9 @@
         <HotkeyCategory value="Unit/Category/ProtossTaldarim"/>
     </CUnit>
     <CUnit id="KaraxChampion">
+        <FlagArray index="ArmySelect" value="1"/>
+        <EditorCategories value="ObjectType:Hero,ObjectFamily:Coop"/>
+
         <DeathTime value="-1"/>
         <BehaviorArray Link="HeroCCImmunity"/>
         <AbilArray Link="PhaseCannon"/>

@@ -88,7 +88,6 @@
         <AbilArray Link="ProgressRally"/>
         <AbilArray Link="FenixSentryGuardianZone"/>
         <AbilArray Link="SentryFenixPhasingMode"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <WeaponArray Link="EnergizerWeapon"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -161,7 +160,6 @@
         <AbilArray Link="move"/>
         <AbilArray Link="FenixSentryGuardianZone"/>
         <AbilArray Link="SentryFenixMobileMode"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="SentryPowerSource"/>
         <BehaviorArray Link="FenixSentryGuardianZonePhasingMode"/>
         <WeaponArray/>
@@ -238,7 +236,6 @@
         <AbilArray Link="ProgressRally"/>
         <AbilArray Link="FenixTalisAdeptMorph"/>
         <AbilArray Link="FenixAdeptShadeCooldown"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="FenixAdeptShadeCooldown"/>
         <BehaviorArray Link="FenixSuppressAvengingProtocol"/>
         <WeaponArray Link="Adept"/>
@@ -324,7 +321,6 @@
         <AbilArray Link="Warpable"/>
         <AbilArray Link="ProgressRally"/>
         <AbilArray Link="FenixWarbringerColossusPowerShot"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="FenixWarbringerColossusPowerShotAutoCast"/>
         <!--WeaponArray Link="ThermalLances" Turret="Colossus"/-->
         <WeaponArray Link="FenixWarbringerColossusThermalLance" Turret="Colossus"/>
@@ -433,7 +429,6 @@
         <AbilArray Link="FenixSoAWhirlwind"/>
         <AbilArray Link="FenixThunderousChargeCoop"/>
         <AbilArray Link="VoidShieldCapacitor"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="SuppressEnergyRegen"/>
         <WeaponArray Link="FenixSOAWeapon"/>
         <WeaponArray Link="FenixChampionWhirlwind"/>
@@ -625,7 +620,6 @@
         <AbilArray Link="ChargedBuster"/>
         <AbilArray Link="FenixDragoonArsenalOvercharge"/>
         <AbilArray Link="FenixDragoonAirBomb"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="SuppressEnergyRegen"/>
         <WeaponArray Link="FenixDragoon" Turret="FenixDragoon"/>
         <CardLayouts>
@@ -714,7 +708,6 @@
         <AbilArray Link="FenixArbiterStasisField"/>
         <AbilArray Link="FenixArbiterCloakingField"/>
         <AbilArray Link="ArbiterMPRecall"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="SuppressEnergyRegen"/>
         <BehaviorArray Link="FenixArbiterDetector"/>
         <WeaponArray Link="FenixArbiterWeapon"/>
@@ -1058,7 +1051,6 @@
         <AbilArray Link="FenixTalisAdeptPhaseShiftCancel"/-->
         <AbilArray Link="FenixTalisShadeCooldown"/>
         <AbilArray Link="FenixTalisAdeptBounceShot"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="FenixTalisShadeCooldown"/>
         <WeaponArray Link="FenixTalisAdept"/>
         <CardLayouts>
@@ -1197,7 +1189,6 @@
         <GlossaryWeakArray value="Goliath"/>
         <GlossaryWeakArray value="MissileTurret"/>
         <GlossaryWeakArray value="Mutalisk"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ReviveInfoBase>
             <Charge Link="Abil/KerriganRevive"/>
             <Cooldown Link="Abil/KerriganRevive" Location="Player" TimeUse="0.1"/>
@@ -1270,7 +1261,6 @@
         <AbilArray Link="ProgressRally"/>
         <AbilArray Link="FenixKaldalisZealotCharge"/>
         <!--AbilArray Link="FenixKaldalisZealotReviveDeath"/-->
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <WeaponArray Link="FenixKaldalisZealotPsiBlades"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -1366,7 +1356,6 @@
         <AbilArray Link="move"/>
         <AbilArray Link="Warpable"/>
         <AbilArray Link="ImmortalOverload"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <WeaponArray Link="FenixTaldarinImmortalPhaseDisruptors" Turret="Immortal"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -1455,7 +1444,6 @@
         <AbilArray Link="FenixClolarionHangarQueue5"/>
         <AbilArray Link="Warpable"/>
         <AbilArray Link="FenixClolarionCarrierBomberDummy"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <WeaponArray Link="FenixClolarionPrismaticBeam"/>
         <!--WeaponArray Link="FenixClolarionInterceptorLaunch"/-->
         <CardLayouts>

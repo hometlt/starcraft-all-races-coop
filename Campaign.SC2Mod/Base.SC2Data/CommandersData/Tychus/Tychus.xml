@@ -14176,7 +14176,6 @@
         <AttackTargetPriority value="20"/>
         <AbilArray Link="stop"/>
         <AbilArray Link="move"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="TychusHeroCount"/>
         <WeaponArray Link="##id##"/>
         <CardLayouts>
@@ -14516,7 +14515,6 @@
         <AbilArray Link="move"/>
         <AbilArray Link="TychusOdinBarrage"/>
         <AbilArray Link="TychusOdinNuclearStrike"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="HeroCCImmunity"/>
         <BehaviorArray Link="TychusCalldownOdinInitialOdinFallingStun"/>
         <BehaviorArray Link="Frenzy"/>
@@ -15044,7 +15042,6 @@
         <AbilArray Link="MutatorRemoveWorkerSleep"/>
         <AbilArray Link="TerranBuildFullRefund"/>
         <AbilArray Link="SprayTerran"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <WeaponArray Link="FusionCutter"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -15363,7 +15360,6 @@
         <Attributes index="MapBoss" value="1"/>
         <BehaviorArray Link="Unmoved"/>
         <BehaviorArray Link="Unrepairable"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="TychusMedicTransportDelay"/>
         <BehaviorArray Link="TychusMedicTransportInitialCloak"/>
         <BehaviorArray Link="TychusMedicTransportUnloadUnitsDespawnDelayFallback"/>

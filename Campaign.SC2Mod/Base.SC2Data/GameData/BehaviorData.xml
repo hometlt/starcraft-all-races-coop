@@ -429,42 +429,44 @@
         <TechAliasArray value="Alias_VorazunStasis"/>
     </CBehaviorBuff>
     <CBehaviorResource id="HighYieldMineralFieldMinerals">
-        <Capacity value="4300"/>
+        <Capacity value="100000"/>
         <Contents value="4300"/>
         <DepletionThreshold value="750"/>
         <IdealHarvesterCount value="3"/>
     </CBehaviorResource>
-    <CBehaviorResource id="HighYieldMineralFieldMinerals750"/>
+    <CBehaviorResource id="HighYieldMineralFieldMinerals750">
+        <Capacity value="100000"/>
+    </CBehaviorResource>
     <CBehaviorResource id="MineralFieldMinerals">
-        <Capacity value="4300"/>
+        <Capacity value="100000"/>
         <Contents value="4300"/>
         <DepletionThreshold value="750"/>
         <IdealHarvesterCount value="3"/>
     </CBehaviorResource>
     <CBehaviorResource id="MineralFieldMinerals450">
-        <Capacity value="4300"/>
+        <Capacity value="100000"/>
         <Contents value="4300"/>
         <DepletionThreshold value="750"/>
         <IdealHarvesterCount value="3"/>
     </CBehaviorResource>
     <CBehaviorResource id="MineralFieldMinerals750">
-        <Capacity value="4300"/>
+        <Capacity value="100000"/>
         <Contents value="4300"/>
         <DepletionThreshold value="750"/>
         <IdealHarvesterCount value="3"/>
     </CBehaviorResource>
     <CBehaviorResource id="MineralFieldMineralsNoRemove">
-        <Capacity value="4300"/>
+        <Capacity value="100000"/>
         <Contents value="4300"/>
     </CBehaviorResource>
     <CBehaviorResource id="MineralFieldMineralsOpaque">
-        <Capacity value="4300"/>
+        <Capacity value="100000"/>
         <Contents value="4300"/>
         <DepletionThreshold value="750"/>
         <IdealHarvesterCount value="3"/>
     </CBehaviorResource>
     <CBehaviorResource id="MineralFieldMineralsOpaque900">
-        <Capacity value="4300"/>
+        <Capacity value="100000"/>
         <Contents value="4300"/>
         <DepletionThreshold value="750"/>
         <IdealHarvesterCount value="3"/>

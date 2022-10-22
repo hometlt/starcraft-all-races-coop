@@ -367,12 +367,6 @@
   <CombineArray value="IsNotTempestDisruptionSphereWeapon"/>
   <CombineArray value="NotVoidThrasherMissile"/>
 </CValidatorCombine>
-<CValidatorUnitCompareCooldown id="PurificationNovaTargetedCooldownLT1">
-  <CooldownLink value="Abil/PurificationNovaTargetted"/>
-  <Compare value="LT"/>
-  <Value value="1"/>
-  <Ability value="PurificationNovaTargeted"/>
-</CValidatorUnitCompareCooldown>
 <CValidatorPlayerRequirement id="HydraliskRangeUpgraded">
   <ResultNoPlayer value="Error"/>
   <Find value="1"/>
@@ -500,11 +494,6 @@
   <Value value="1"/>
   <Behavior value="ResonatingGlaivesPhaseShift"/>
 </CValidatorUnitCompareBehaviorCount>
-<CValidatorUnitCompareCooldown id="BarrierNotOnCooldown">
-  <WhichUnit Value="Caster"/>
-  <CooldownLink value="Abil/ImmortalOverload"/>
-  <Ability value="ImmortalOverload"/>
-</CValidatorUnitCompareCooldown>
 <CValidatorLocationEnumArea id="MineralNearCommandCenter">
   <WhichLocation Value="TargetUnitOrPoint"/>
   <AreaArray Radius="10" Validator="IsTerranTownHall"/>
@@ -666,10 +655,6 @@
   <WhichUnit Value="Caster"/>
   <Value value="LocustMPFlying"/>
 </CValidatorUnitType>
-<CValidatorUnitCompareCooldown id="WidowMineAttackNotOnCooldown">
-  <CooldownLink value="Abil/WidowMineAttack"/>
-  <Ability value="WidowMineAttack"/>
-</CValidatorUnitCompareCooldown>
 <CValidatorPlayerRequirement id="NotHaveArmory">
   <Value value="HaveArmory"/>
 </CValidatorPlayerRequirement>
@@ -677,11 +662,6 @@
   <Value value="HaveArmory"/>
   <Find value="1"/>
 </CValidatorPlayerRequirement>
-<CValidatorUnitCompareCooldown id="WidowMineAttackOnCooldown">
-  <CooldownLink value="Abil/WidowMineAttack"/>
-  <Ability value="WidowMineAttack"/>
-  <Compare value="NE"/>
-</CValidatorUnitCompareCooldown>
 <CValidatorPlayerRequirement id="HasArmorPiercingUpgrade">
   <ResultNoPlayer value="Error"/>
   <Find value="1"/>
@@ -763,11 +743,6 @@
   <WhichUnit Value="Caster"/>
   <Behavior value="RavenScramblerMissile"/>
 </CValidatorUnitCompareBehaviorCount>
-<CValidatorUnitCompareCooldown id="BarrierOnCooldown">
-  <CooldownLink value="Abil/ImmortalOverload"/>
-  <Ability value="ImmortalOverload"/>
-  <Compare value="GT"/>
-</CValidatorUnitCompareCooldown>
 <CValidatorUnitFilters id="InfestorEnsnareReheightSourceLaunchMissileCasterNotDead">
   <Filters value="-;Dead"/>
   <WhichUnit Effect="InfestorEnsnareLM"/>
@@ -892,11 +867,7 @@
   <Behavior value="CommanderPrestigeTychusLoneWolf"/>
 </CValidatorUnitCompareBehaviorCount>
 <CValidatorUnitCompareCargo id="CasterHasCargo" parent="HasCargo">
-  <ResultFailed value="NotWhileOccupied,Error/MustHaveCargo"/>
   <WhichUnit Value="Caster"/>
-  <WhichUnit Value="Caster"/>
-  <Compare value="GT"/>
-  <Type value="Load"/>
 </CValidatorUnitCompareCargo>
 <CValidatorUnitFilters id="CasterIsStructure">
   <WhichUnit Value="Caster"/>
@@ -1142,15 +1113,6 @@
   <CombineArray value="PlayerUnit"/>
   <CombineArray value="NoCommanderPrestigeAlarakDeathFleet"/>
 </CValidatorCombine>
-<CValidatorCompareTrackedUnitsCount id="SpawningUnitTracker">
-  <Compare value="GT"/>
-  <BehaviorLink value="SpawningUnitTracker"/>
-  <TrackerUnit Value="Target"/>
-</CValidatorCompareTrackedUnitsCount>
-<CValidatorCompareTrackedUnitsCount id="SpawningUnitTrackerCaster">
-  <Compare value="GT"/>
-  <BehaviorLink value="SpawningUnitTracker"/>
-</CValidatorCompareTrackedUnitsCount>
 <CValidatorCombine id="StructureOrNoCommanderPrestigeKaraxStructures">
   <ResultFailed value="MustTargetStructures"/>
   <CombineArray value="IsStructureTarget"/>
@@ -4391,11 +4353,6 @@
   <AreaArray Compare="GE" Count="3" Radius="4"/>
   <SearchFilters value="Visible;Player,Ally,Neutral,Structure,Missile,Dead,Hidden"/>
 </CValidatorLocationEnumArea>
-<CValidatorUnitCompareCooldown id="CarapaceNotOnCooldown">
-  <WhichUnit Value="Caster"/>
-  <CooldownLink value="Abil/SymbioteCarapace"/>
-  <Ability value="SymbioteCarapace"/>
-</CValidatorUnitCompareCooldown>
 <CValidatorUnitCompareBehaviorCount id="HasCarapaceTakenDamageBehaviorCheck">
   <WhichUnit Value="Caster"/>
   <Compare value="GT"/>
@@ -4948,11 +4905,6 @@
   <Value value="HHD8ClusterBomb"/>
   <Find value="0"/>
 </CValidatorUnitType>
-<CValidatorUnitCompareCooldown id="HHWidowMineBlossomNotOnCooldown">
-  <WhichUnit Value="Caster"/>
-  <CooldownLink value="Abil/HHWidowMineBlossom"/>
-  <Ability value="HHWidowMineBlossom"/>
-</CValidatorUnitCompareCooldown>
 <CValidatorLocationCompareRange id="HHReaperKnockbackRange">
   <WhichLocation Effect="HHReaperCluster" Value="TargetUnit"/>
   <Compare value="LE"/>
@@ -5489,12 +5441,10 @@
 </CValidatorUnitType>
 <CValidatorCombine id="isTerranInteractWorker">
   <CombineArray value="IsSCV"/>
-  <CombineArray value="IsSISCV"/>
   <CombineArray value="IsTychusSCV"/>
   <CombineArray value="isHHSCV"/>
-  <CombineArray value="isGenetronACR"/>
-  <CombineArray value="IsSalvager"/>
-  <CombineArray value="IsMiningDrone"/>
+  <CombineArray value="IsTychusSCV"/>
+  <CombineArray value="IsDroneStetmann"/>
 </CValidatorCombine>
 <CValidatorCombine id="isWorker">
   <CombineArray index="0" value="IsMULE"/>
@@ -5507,14 +5457,11 @@
   <CombineArray value="IsSIDrone"/>
   <CombineArray value="IsDehakaDrone"/>
   <CombineArray value="IsDroneFull"/>
-  <CombineArray value="isXayedScavenger"/>
-  <CombineArray value="isDragonPlodder"/>
-  <CombineArray value="isDragonAscendedPlodder"/>
+  <CombineArray value="IsSISCV"/>
 </CValidatorCombine>
 <CValidatorCombine id="isProtossInteractWorker">
   <CombineArray value="IsProbe"/>
-  <CombineArray value="isKeironConverter"/>
-  <CombineArray value="NHbrCommon@IsMinion"/>
+  <CombineArray value="IsZeratulProbe"/>
 </CValidatorCombine>
 <CValidatorUnitCompareBehaviorCount id="noDevour">
   <Behavior value="noDevour"/>
@@ -5677,11 +5624,6 @@
   <CombineArray value="CommanderPrestigeDehakaPackLeaders"/>
   <CombineArray value="DehakaTopBarSummonTimedLife"/>
 </CValidatorCombine>
-<CValidatorCompareTrackedUnitsCount id="CommanderPrestigeDehakaCloneExists">
-  <Compare value="GT"/>
-  <BehaviorLink value="CommanderPrestigeDehakaCloneSpawnTracker"/>
-  <TrackedUnitValidatorArray value="IsDehakaCoopClone"/>
-</CValidatorCompareTrackedUnitsCount>
 <CValidatorPlayerRequirement id="CommanderPrestigeDehakaDevour">
   <Find value="1"/>
   <Value value="CommanderPrestigeDehakaDevour"/>
@@ -5694,25 +5636,6 @@
   <Compare value="GT"/>
   <Behavior value="CommanderPrestigeDehakaPackLeadersExitGame"/>
 </CValidatorUnitCompareBehaviorCount>
-<CValidatorUnitCompareAbilLevel id="DehakaStompAbilLevel1">
-  <WhichUnit Value="Caster"/>
-  <AbilLink value="DehakaLeapStomp"/>
-</CValidatorUnitCompareAbilLevel>
-<CValidatorUnitCompareAbilLevel id="DehakaStompAbilLevelGT1">
-  <WhichUnit Value="Caster"/>
-  <AbilLink value="DehakaLeapStomp"/>
-  <Compare value="GT"/>
-</CValidatorUnitCompareAbilLevel>
-<CValidatorUnitCompareAbilLevel id="DehakaStompAbilLevel2">
-  <WhichUnit Value="Caster"/>
-  <AbilLink value="DehakaLeapStomp"/>
-  <Value value="1"/>
-</CValidatorUnitCompareAbilLevel>
-<CValidatorUnitCompareAbilLevel id="DehakaStompAbilLevel3">
-  <WhichUnit Value="Caster"/>
-  <AbilLink value="DehakaLeapStomp"/>
-  <Value value="2"/>
-</CValidatorUnitCompareAbilLevel>
 <CValidatorPlayerRequirement id="HaveCommanderPrestigeDehakaClone">
   <Find value="1"/>
   <Value value="CommanderPrestigeDehakaClone"/>
@@ -6161,43 +6084,14 @@
   <AbilLink value="FenixSentryGuardianZone"/>
   <Value value="9"/>
 </CValidatorUnitCompareOrderTargetRange>
-<CValidatorUnitCompareCooldown id="FenixDragoonArsenalOverchargeNotOnCooldown">
-  <WhichUnit Value="Caster"/>
-  <CooldownLink value="Abil/FenixDragoonArsenalOvercharge"/>
-  <Location value="Player"/>
-</CValidatorUnitCompareCooldown>
 <CValidatorUnitFilters id="FenixMojoScoutAirDamageStunApplyBehaviorTargetFilters">
   <Filters value="-;Player,Ally,Neutral,Heroic,User1"/>
 </CValidatorUnitFilters>
-<CValidatorUnitCompareCooldown id="FenixSuitPraetorInCooldown">
-  <Compare value="GT"/>
-  <Ability value="SOASummonFenix"/>
-  <CooldownLink value="SOASummonFenix"/>
-  <Location value="Player"/>
-</CValidatorUnitCompareCooldown>
-<CValidatorUnitCompareCooldown id="FenixSuitDragoonInCooldown">
-  <Compare value="GT"/>
-  <Ability value="SOASummonFenixDragoon"/>
-  <CooldownLink value="SOASummonFenixDragoon"/>
-  <Location value="Player"/>
-</CValidatorUnitCompareCooldown>
-<CValidatorUnitCompareCooldown id="FenixSuitArbiterInCooldown">
-  <Compare value="GT"/>
-  <Ability value="SOASummonFenixArbiter"/>
-  <CooldownLink value="SOASummonFenixArbiter"/>
-  <Location value="Player"/>
-</CValidatorUnitCompareCooldown>
 <CValidatorUnitCompareOrderTargetRange id="Fenix_ThunderousChargeRangeCheck">
   <Compare value="GT"/>
   <AbilLink value="FenixThunderousChargeCoop"/>
   <Value value="12"/>
 </CValidatorUnitCompareOrderTargetRange>
-<CValidatorUnitCompareCooldown id="FenixTalisShadeNotOnCooldown">
-  <WhichUnit Value="Caster"/>
-  <CooldownLink value="Abil/FenixTalisShadeCooldown"/>
-  <Location value="Unit"/>
-  <Behavior value="FenixTalisShadeCooldown"/>
-</CValidatorUnitCompareCooldown>
 <CValidatorPlayerRequirement id="HaveAdeptFenixShadeSpawn">
   <Find value="1"/>
   <Value value="HaveAdeptFenixShadeSpawn"/>
@@ -6341,12 +6235,6 @@
   <Find value="1"/>
   <Value value="HaveFenixCommander"/>
 </CValidatorPlayerRequirement>
-<CValidatorUnitCompareCooldown id="FenixAdeptShadeNotOnCooldown">
-  <WhichUnit Value="Caster"/>
-  <CooldownLink value="Abil/FenixAdeptShadeCooldown"/>
-  <Location value="Unit"/>
-  <Behavior value="FenixAdeptShadeCooldown"/>
-</CValidatorUnitCompareCooldown>
 <CValidatorCombine id="IsFenixSuitCombine">
   <CombineArray value="IsFenixCoop"/>
   <CombineArray value="IsFenixDragoon"/>
@@ -8852,10 +8740,6 @@
 <CValidatorUnitType id="IsTychusMedivacPlatform">
   <Value value="TychusMedivacPlatform"/>
 </CValidatorUnitType>
-<CValidatorUnitCompareCooldown id="MedivacPlatformNoCooldown">
-  <CooldownLink value="Abil/TychusMedicTransportLoadUnits"/>
-  <Ability value="TychusMedicTransportLoadUnits"/>
-</CValidatorUnitCompareCooldown>
 <CValidatorCombine id="MedivacPlatformReady">
   <Type value="And"/>
   <CombineArray value="NotUnderConstruction"/>
@@ -9378,11 +9262,6 @@
   <Value value="HaveProphecyArtifactsRemaining"/>
   <Find value="1"/>
 </CValidatorPlayerRequirement>
-<CValidatorUnitCompareCooldown id="ZeratulProphecyNoCooldown">
-  <CooldownLink value="Abil/ProphecyVision"/>
-  <Ability value="ProphecyVision"/>
-  <Location value="Player"/>
-</CValidatorUnitCompareCooldown>
 <CValidatorCombine id="ZeratulProphecyReady">
   <Type value="And"/>
   <CombineArray value="TargetNotDead"/>
@@ -9546,11 +9425,6 @@
   <Find value="1"/>
   <Value value="HaveZeratulArtifactTier3AndRoboticsBay"/>
 </CValidatorPlayerRequirement>
-<CValidatorUnitCompareCooldown id="StalkerShadowBlinkNotOnCooldown">
-  <WhichUnit Value="Caster"/>
-  <CooldownLink value="Abil/ZeratulStalkerBlink"/>
-  <Ability value="ZeratulStalkerBlink"/>
-</CValidatorUnitCompareCooldown>
 <CValidatorCombine id="NotHaveZeratulXelNagaConstructEvolve">
   <CombineArray value="NotHaveZeratulXelNagaConstructEvolve1"/>
   <CombineArray value="NotHaveZeratulXelNagaConstructEvolve2"/>
@@ -9662,12 +9536,6 @@
   <WhichUnit Value="Caster"/>
   <Value value="ZeratulAdept"/>
 </CValidatorUnitType>
-<CValidatorUnitCompareCooldown id="ZeratulAdeptShadeNotOnCooldown">
-  <WhichUnit Value="Caster"/>
-  <CooldownLink value="Abil/ZeratulAdeptShadeCooldown"/>
-  <Location value="Unit"/>
-  <Behavior value="ZeratulAdeptShadeCooldown"/>
-</CValidatorUnitCompareCooldown>
 <CValidatorUnitCompareOrderTargetRange id="ZeratulZealotBlinkMinDistance">
   <ResultFailed value="TargetIsTooClose"/>
   <Compare value="GT"/>
@@ -10861,10 +10729,6 @@
   <AreaArray Compare="GT" Count="0" Radius="8"/>
   <SearchFilters value="Worker;Ally,Neutral,Enemy,Stasis,Dead,Hidden"/>
 </CValidatorLocationEnumArea>
-<CValidatorUnitCompareCooldown id="BlindingBurstCooldownComplete">
-  <CooldownLink value="Abil/BlindingBurst"/>
-  <Ability value="BlindingBurst"/>
-</CValidatorUnitCompareCooldown>
 <CValidatorLocationEnumArea id="RepulsorBurrowedTacticalAI">
   <ResultFailed value="CantFindEnoughTargets"/>
   <WhichLocation Value="SourceUnit"/>
@@ -12455,13 +12319,6 @@
   <Value value="NHbrScreamer"/>
   <Find value="0"/>
 </CValidatorUnitType>
-<CValidatorCompareTrackedUnitsCount id="NHbrVespeneConcentratorVespeneConcentration@TrackedUnitCountEq0">
-  <BehaviorLink value="NHbrVespeneConcentratorVespeneConcentration@UnitTracker"/>
-</CValidatorCompareTrackedUnitsCount>
-<CValidatorCompareTrackedUnitsCount id="NHbrVespeneConcentratorVespeneConcentration@TrackedUnitCountGT0">
-  <Compare value="GT"/>
-  <BehaviorLink value="NHbrVespeneConcentratorVespeneConcentration@UnitTracker"/>
-</CValidatorCompareTrackedUnitsCount>
 <CValidatorPlayerRequirement id="NHbrNetworkFastCharging@UpgradeCompleted">
   <Find value="1"/>
   <Value value="NHbrNetworkFastCharging@Completed"/>
@@ -12587,10 +12444,6 @@
   <Value value="75"/>
   <Vital value="Energy"/>
 </CValidatorUnitCompareVital>
-<CValidatorUnitCompareCooldown id="NHbrReaverConsumeDNA@NotOnCooldown">
-  <CooldownLink value="Abil/NHbrReaverConsumeDNA"/>
-  <Ability value="NHbrReaverConsumeDNA"/>
-</CValidatorUnitCompareCooldown>
 <CValidatorUnitCompareBehaviorCount id="NHbrReaverConsumeDNA@HasAutocastController">
   <Value value="1"/>
   <Behavior value="NHbrReaverConsumeDNA@AutocastController"/>
@@ -13303,6 +13156,209 @@
 <CValidatorPlayerCompareFoodAvailable id="DragonFissionSupply6Available" parent="DragonFissionSupplyAvailable">
   <Value value="6"/>
 </CValidatorPlayerCompareFoodAvailable>
+<CValidatorUnitCompareBehaviorCount id="HasNotBeenBlastWaved">
+  <Behavior value="TalonBlastWaveAffectedCheck"/>
+</CValidatorUnitCompareBehaviorCount>
+<CValidatorPlayerRequirement id="HaveNullChargedClawMissile">
+  <WhichPlayer Value="Caster"/>
+  <ResultNoPlayer value="Error"/>
+  <Find value="1"/>
+  <Value value="HaveNullChargedClawMissiles"/>
+</CValidatorPlayerRequirement>
+<CValidatorCombine id="BiocraftersAndNotUnderConstruction">
+  <Type value="And"/>
+  <CombineArray value="NoBiocrafters"/>
+  <CombineArray value="IsNotConstructing"/>
+</CValidatorCombine>
+<CValidatorCombine id="FirstAssaultAndNotUnderConstruction">
+  <Type value="And"/>
+  <CombineArray value="NoFirstAssault"/>
+  <CombineArray value="IsNotConstructing"/>
+</CValidatorCombine>
+<CValidatorCombine id="BiocraftersIsConstructing">
+  <Type value="And"/>
+  <CombineArray value="NoBiocrafters"/>
+  <CombineArray value="IsConstructing"/>
+</CValidatorCombine>
+<CValidatorCombine id="FirstAssaultIsConstructing">
+  <Type value="And"/>
+  <CombineArray value="NoFirstAssault"/>
+  <CombineArray value="IsConstructing"/>
+</CValidatorCombine>
+<CValidatorCombine id="BiocraftersIsNotConstructing">
+  <Type value="And"/>
+  <CombineArray value="NoBiocrafters"/>
+  <CombineArray value="IsNotConstructing"/>
+</CValidatorCombine>
+<CValidatorCombine id="FirstAssaultIsNotConstructing">
+  <Type value="And"/>
+  <CombineArray value="NoFirstAssault"/>
+  <CombineArray value="IsNotConstructing"/>
+</CValidatorCombine>
+<CValidatorPlayerRequirement id="HaveDispersingSingularity">
+  <WhichPlayer Value="Caster"/>
+  <ResultNoPlayer value="Error"/>
+  <Find value="1"/>
+  <Value value="HaveDispersingSingularity"/>
+</CValidatorPlayerRequirement>
+<CValidatorUnitAbil id="HaveTyrantBehavior">
+  <WhichUnit Value="Caster"/>
+  <Find value="1"/>
+  <AbilLink value="MutateTyrant"/>
+</CValidatorUnitAbil>
+<CValidatorCombine id="IsTalonKnockbackUnmovable">
+  <CombineArray value="IsSiegedSiegeTank"/>
+  <CombineArray value="IsSwarmHostBurrowed"/>
+  <CombineArray value="IsSwarmHostBurrowedMP"/>
+  <CombineArray value="IsStructure"/>
+  <CombineArray value="IsCrusaderBastion"/>
+  <CombineArray value="IsVindicatorFortress"/>
+</CValidatorCombine>
+<CValidatorUnitType id="IsVindicatorFortress">
+  <Value value="VindicatorDeployed"/>
+</CValidatorUnitType>
+<CValidatorUnitType id="IsCrusaderBastion">
+  <Value value="RoyalCrusaderDeployed"/>
+</CValidatorUnitType>
+<CValidatorPlayerRequirement id="NoCrusaderSwap">
+  <ResultNoPlayer value="Error"/>
+  <Find value="1"/>
+  <Value value="UseCrusaderSwap"/>
+</CValidatorPlayerRequirement>
+<CValidatorPlayerRequirement id="NoCrystalwingSwap">
+  <ResultNoPlayer value="Error"/>
+  <Find value="1"/>
+  <Value value="UseCrystalwingSwap"/>
+</CValidatorPlayerRequirement>
+<CValidatorPlayerRequirement id="NoPacifierSwap">
+  <ResultNoPlayer value="Error"/>
+  <Find value="1"/>
+  <Value value="UsePacifierSwap"/>
+</CValidatorPlayerRequirement>
+<CValidatorPlayerRequirement id="NoStarwingSwap">
+  <ResultNoPlayer value="Error"/>
+  <Find value="1"/>
+  <Value value="UseStarwingSwap"/>
+</CValidatorPlayerRequirement>
+<CValidatorPlayerRequirement id="NoTheSilentSwap">
+  <ResultNoPlayer value="Error"/>
+  <Find value="1"/>
+  <Value value="UseTheSilentSwap"/>
+</CValidatorPlayerRequirement>
+<CValidatorPlayerRequirement id="NoGolemSwap">
+  <ResultNoPlayer value="Error"/>
+  <Find value="1"/>
+  <Value value="UseGolemSwap"/>
+</CValidatorPlayerRequirement>
+<CValidatorPlayerRequirement id="NoBiocrafters">
+  <ResultNoPlayer value="Error"/>
+  <Find value="1"/>
+  <Value value="UseBiocrafters"/>
+</CValidatorPlayerRequirement>
+<CValidatorPlayerRequirement id="NoCyberInitiative">
+  <ResultNoPlayer value="Error"/>
+  <Find value="1"/>
+  <Value value="UseCyberInitiative"/>
+</CValidatorPlayerRequirement>
+<CValidatorPlayerRequirement id="NoEnlightendSwap">
+  <ResultNoPlayer value="Error"/>
+  <Find value="1"/>
+  <Value value="UseEnlightendSwap"/>
+</CValidatorPlayerRequirement>
+<CValidatorPlayerRequirement id="NoCrystalInfusion">
+  <ResultNoPlayer value="Error"/>
+  <Find value="1"/>
+  <Value value="HaveCrystalInfusion"/>
+</CValidatorPlayerRequirement>
+<CValidatorPlayerRequirement id="NoVindicatorSwapBiocrafters">
+  <ResultNoPlayer value="Error"/>
+  <Find value="1"/>
+  <Value value="UseVindicatorSwapBiocrafters"/>
+</CValidatorPlayerRequirement>
+<CValidatorUnitCompareBehaviorCount id="NotHaveTalonKnockbackTriggerOverride">
+  <WhichUnit Value="Caster"/>
+  <Behavior value="TalonKnockbackTriggerOverride"/>
+</CValidatorUnitCompareBehaviorCount>
+<CValidatorUnitCompareBehaviorCount id="NotPsiStriked">
+  <ResultFailed value="CantTargetThatUnit"/>
+  <Compare value="LE"/>
+  <Behavior value="KerriganPsiStrikeDamaged"/>
+</CValidatorUnitCompareBehaviorCount>
+<CValidatorPlayerRequirement id="PsiStormComplete">
+  <ResultNoPlayer value="Error"/>
+  <Find value="1"/>
+  <Value value="PsiStormComplete"/>
+</CValidatorPlayerRequirement>
+<CValidatorPlayerRequirement id="NoLancerSwap">
+  <ResultNoPlayer value="Error"/>
+  <Find value="1"/>
+  <Value value="UseLancerSwap"/>
+</CValidatorPlayerRequirement>
+<CValidatorPlayerRequirement id="NoTheForgedSwap">
+  <ResultNoPlayer value="Error"/>
+  <Find value="1"/>
+  <Value value="UseTheForgedSwap"/>
+</CValidatorPlayerRequirement>
+<CValidatorPlayerRequirement id="NoVindicatorSwapStandard">
+  <ResultNoPlayer value="Error"/>
+  <Find value="1"/>
+  <Value value="UseVindicatorSwapStandard"/>
+</CValidatorPlayerRequirement>
+<CValidatorPlayerRequirement id="NoFirstAssault">
+  <ResultNoPlayer value="Error"/>
+  <Find value="1"/>
+  <Value value="UseFirstAssaultArmada"/>
+</CValidatorPlayerRequirement>
+<CValidatorPlayerRequirement id="NoForgers">
+  <ResultNoPlayer value="Error"/>
+  <Find value="1"/>
+  <Value value="UseForgers"/>
+</CValidatorPlayerRequirement>
+<CValidatorPlayerRequirement id="NoScoutSwap">
+  <ResultNoPlayer value="Error"/>
+  <Find value="1"/>
+  <Value value="UseScoutSwap"/>
+</CValidatorPlayerRequirement>
+<CValidatorPlayerRequirement id="NoVaporizerSwap">
+  <ResultNoPlayer value="Error"/>
+  <Find value="1"/>
+  <Value value="UseVaporizerSwap"/>
+</CValidatorPlayerRequirement>
+<CValidatorPlayerRequirement id="NoBehemothSwap">
+  <ResultNoPlayer value="Error"/>
+  <Find value="1"/>
+  <Value value="UseBehemothSwap"/>
+</CValidatorPlayerRequirement>
+<CValidatorCombine id="BiocraftersMutation">
+  <Type value="And"/>
+  <CombineArray value="CasterNotInCombat"/>
+  <CombineArray value="CasterNotForcedToMove"/>
+</CValidatorCombine>
+<CValidatorUnitCompareBehaviorCount id="PsiStrikeAbort">
+  <ResultFailed value="CantTargetThatUnit"/>
+  <WhichUnit Value="Source"/>
+  <Compare value="LE"/>
+  <Behavior value="PsiStrikeAbort"/>
+</CValidatorUnitCompareBehaviorCount>
+<CValidatorLocationCompareRange id="PsiStrikeTargetClose">
+  <Compare value="GT"/>
+</CValidatorLocationCompareRange>
+<CValidatorCombine id="PsiStrikeTargetCloseAndPsiStrikeAbort">
+  <Type value="And"/>
+  <CombineArray value="PsiStrikeTargetClose"/>
+  <CombineArray value="PsiStrikeAbort"/>
+</CValidatorCombine>
+<CValidatorUnitCompareOrderTargetRange id="TempestDisruptionBlastRangeCheck">
+  <AbilLink value="TalonTempestDisruptionBlast"/>
+</CValidatorUnitCompareOrderTargetRange>
+<CValidatorLocationEnumArea id="VoidZealotWhirlwindCheck">
+  <WhichLocation Value="CasterUnit"/>
+  <AreaArray Compare="GE" Count="2" Radius="1.5"/>
+  <Compare value="GE"/>
+  <Count value="2"/>
+  <SearchFilters value="Ground,Visible;Player,Ally,Neutral,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+</CValidatorLocationEnumArea>
+<CValidatorUnitInWeaponRange id="WeaponInRange"/>
 <CValidatorCombine id="HaveCommStationBuff">
   <CombineArray value="HaveCommStationBuffStructure"/>
   <CombineArray value="HaveCommStationBuffMech"/>
@@ -13607,10 +13663,6 @@
   <Compare value="GT"/>
   <Behavior value="ClaymoreMineReady"/>
 </CValidatorUnitCompareBehaviorCount>
-<CValidatorCompareTrackedUnitsCount id="ClaymoreMineTrackerEmpty">
-  <BehaviorLink value="ClaymoreMineTracker"/>
-  <TrackerUnit Value="Target"/>
-</CValidatorCompareTrackedUnitsCount>
 <CValidatorCombine id="ClaymoreMineTrackerEnumStage1">
   <CombineArray value="ClaymoreMineTrackerCheckCasterCharges"/>
   <CombineArray value="ClaymoreMineTrackerEnumStage1Order"/>
@@ -14310,283 +14362,6 @@
 </CValidatorUnitType>
 <CValidatorUnitType id="UPLOspreyTransportCargoIsWilliamGraves">
   <Value value="WilliamGraves"/>
-</CValidatorUnitType>
-<CValidatorUnitCompareBehaviorCount id="HasNotBeenBlastWaved">
-  <Behavior value="TalonBlastWaveAffectedCheck"/>
-</CValidatorUnitCompareBehaviorCount>
-<CValidatorPlayerRequirement id="HaveNullChargedClawMissile">
-  <WhichPlayer Value="Caster"/>
-  <ResultNoPlayer value="Error"/>
-  <Find value="1"/>
-  <Value value="HaveNullChargedClawMissiles"/>
-</CValidatorPlayerRequirement>
-<CValidatorCombine id="BiocraftersAndNotUnderConstruction">
-  <Type value="And"/>
-  <CombineArray value="NoBiocrafters"/>
-  <CombineArray value="IsNotConstructing"/>
-</CValidatorCombine>
-<CValidatorCombine id="FirstAssaultAndNotUnderConstruction">
-  <Type value="And"/>
-  <CombineArray value="NoFirstAssault"/>
-  <CombineArray value="IsNotConstructing"/>
-</CValidatorCombine>
-<CValidatorCombine id="BiocraftersIsConstructing">
-  <Type value="And"/>
-  <CombineArray value="NoBiocrafters"/>
-  <CombineArray value="IsConstructing"/>
-</CValidatorCombine>
-<CValidatorCombine id="FirstAssaultIsConstructing">
-  <Type value="And"/>
-  <CombineArray value="NoFirstAssault"/>
-  <CombineArray value="IsConstructing"/>
-</CValidatorCombine>
-<CValidatorCombine id="BiocraftersIsNotConstructing">
-  <Type value="And"/>
-  <CombineArray value="NoBiocrafters"/>
-  <CombineArray value="IsNotConstructing"/>
-</CValidatorCombine>
-<CValidatorCombine id="FirstAssaultIsNotConstructing">
-  <Type value="And"/>
-  <CombineArray value="NoFirstAssault"/>
-  <CombineArray value="IsNotConstructing"/>
-</CValidatorCombine>
-<CValidatorPlayerRequirement id="HaveDispersingSingularity">
-  <WhichPlayer Value="Caster"/>
-  <ResultNoPlayer value="Error"/>
-  <Find value="1"/>
-  <Value value="HaveDispersingSingularity"/>
-</CValidatorPlayerRequirement>
-<CValidatorUnitAbil id="HaveTyrantBehavior">
-  <WhichUnit Value="Caster"/>
-  <Find value="1"/>
-  <AbilLink value="MutateTyrant"/>
-</CValidatorUnitAbil>
-<CValidatorCombine id="IsTalonKnockbackUnmovable">
-  <CombineArray value="IsSiegedSiegeTank"/>
-  <CombineArray value="IsSwarmHostBurrowed"/>
-  <CombineArray value="IsSwarmHostBurrowedMP"/>
-  <CombineArray value="IsStructure"/>
-  <CombineArray value="IsCrusaderBastion"/>
-  <CombineArray value="IsVindicatorFortress"/>
-</CValidatorCombine>
-<CValidatorUnitType id="IsVindicatorFortress">
-  <Value value="VindicatorDeployed"/>
-</CValidatorUnitType>
-<CValidatorUnitType id="IsCrusaderBastion">
-  <Value value="RoyalCrusaderDeployed"/>
-</CValidatorUnitType>
-<CValidatorPlayerRequirement id="NoCrusaderSwap">
-  <ResultNoPlayer value="Error"/>
-  <Find value="1"/>
-  <Value value="UseCrusaderSwap"/>
-</CValidatorPlayerRequirement>
-<CValidatorPlayerRequirement id="NoCrystalwingSwap">
-  <ResultNoPlayer value="Error"/>
-  <Find value="1"/>
-  <Value value="UseCrystalwingSwap"/>
-</CValidatorPlayerRequirement>
-<CValidatorPlayerRequirement id="NoPacifierSwap">
-  <ResultNoPlayer value="Error"/>
-  <Find value="1"/>
-  <Value value="UsePacifierSwap"/>
-</CValidatorPlayerRequirement>
-<CValidatorPlayerRequirement id="NoStarwingSwap">
-  <ResultNoPlayer value="Error"/>
-  <Find value="1"/>
-  <Value value="UseStarwingSwap"/>
-</CValidatorPlayerRequirement>
-<CValidatorPlayerRequirement id="NoTheSilentSwap">
-  <ResultNoPlayer value="Error"/>
-  <Find value="1"/>
-  <Value value="UseTheSilentSwap"/>
-</CValidatorPlayerRequirement>
-<CValidatorPlayerRequirement id="NoGolemSwap">
-  <ResultNoPlayer value="Error"/>
-  <Find value="1"/>
-  <Value value="UseGolemSwap"/>
-</CValidatorPlayerRequirement>
-<CValidatorPlayerRequirement id="NoBiocrafters">
-  <ResultNoPlayer value="Error"/>
-  <Find value="1"/>
-  <Value value="UseBiocrafters"/>
-</CValidatorPlayerRequirement>
-<CValidatorPlayerRequirement id="NoCyberInitiative">
-  <ResultNoPlayer value="Error"/>
-  <Find value="1"/>
-  <Value value="UseCyberInitiative"/>
-</CValidatorPlayerRequirement>
-<CValidatorPlayerRequirement id="NoEnlightendSwap">
-  <ResultNoPlayer value="Error"/>
-  <Find value="1"/>
-  <Value value="UseEnlightendSwap"/>
-</CValidatorPlayerRequirement>
-<CValidatorPlayerRequirement id="NoCrystalInfusion">
-  <ResultNoPlayer value="Error"/>
-  <Find value="1"/>
-  <Value value="HaveCrystalInfusion"/>
-</CValidatorPlayerRequirement>
-<CValidatorPlayerRequirement id="NoVindicatorSwapBiocrafters">
-  <ResultNoPlayer value="Error"/>
-  <Find value="1"/>
-  <Value value="UseVindicatorSwapBiocrafters"/>
-</CValidatorPlayerRequirement>
-<CValidatorUnitCompareBehaviorCount id="NotHaveTalonKnockbackTriggerOverride">
-  <WhichUnit Value="Caster"/>
-  <Behavior value="TalonKnockbackTriggerOverride"/>
-</CValidatorUnitCompareBehaviorCount>
-<CValidatorUnitCompareBehaviorCount id="NotPsiStriked">
-  <ResultFailed value="CantTargetThatUnit"/>
-  <Compare value="LE"/>
-  <Behavior value="KerriganPsiStrikeDamaged"/>
-</CValidatorUnitCompareBehaviorCount>
-<CValidatorPlayerRequirement id="PsiStormComplete">
-  <ResultNoPlayer value="Error"/>
-  <Find value="1"/>
-  <Value value="PsiStormComplete"/>
-</CValidatorPlayerRequirement>
-<CValidatorPlayerRequirement id="NoLancerSwap">
-  <ResultNoPlayer value="Error"/>
-  <Find value="1"/>
-  <Value value="UseLancerSwap"/>
-</CValidatorPlayerRequirement>
-<CValidatorPlayerRequirement id="NoTheForgedSwap">
-  <ResultNoPlayer value="Error"/>
-  <Find value="1"/>
-  <Value value="UseTheForgedSwap"/>
-</CValidatorPlayerRequirement>
-<CValidatorPlayerRequirement id="NoVindicatorSwapStandard">
-  <ResultNoPlayer value="Error"/>
-  <Find value="1"/>
-  <Value value="UseVindicatorSwapStandard"/>
-</CValidatorPlayerRequirement>
-<CValidatorPlayerRequirement id="NoFirstAssault">
-  <ResultNoPlayer value="Error"/>
-  <Find value="1"/>
-  <Value value="UseFirstAssaultArmada"/>
-</CValidatorPlayerRequirement>
-<CValidatorPlayerRequirement id="NoForgers">
-  <ResultNoPlayer value="Error"/>
-  <Find value="1"/>
-  <Value value="UseForgers"/>
-</CValidatorPlayerRequirement>
-<CValidatorPlayerRequirement id="NoScoutSwap">
-  <ResultNoPlayer value="Error"/>
-  <Find value="1"/>
-  <Value value="UseScoutSwap"/>
-</CValidatorPlayerRequirement>
-<CValidatorPlayerRequirement id="NoVaporizerSwap">
-  <ResultNoPlayer value="Error"/>
-  <Find value="1"/>
-  <Value value="UseVaporizerSwap"/>
-</CValidatorPlayerRequirement>
-<CValidatorPlayerRequirement id="NoBehemothSwap">
-  <ResultNoPlayer value="Error"/>
-  <Find value="1"/>
-  <Value value="UseBehemothSwap"/>
-</CValidatorPlayerRequirement>
-<CValidatorCombine id="BiocraftersMutation">
-  <Type value="And"/>
-  <CombineArray value="CasterNotInCombat"/>
-  <CombineArray value="CasterNotForcedToMove"/>
-</CValidatorCombine>
-<CValidatorUnitCompareBehaviorCount id="PsiStrikeAbort">
-  <ResultFailed value="CantTargetThatUnit"/>
-  <WhichUnit Value="Source"/>
-  <Compare value="LE"/>
-  <Behavior value="PsiStrikeAbort"/>
-</CValidatorUnitCompareBehaviorCount>
-<CValidatorLocationCompareRange id="PsiStrikeTargetClose">
-  <Compare value="GT"/>
-</CValidatorLocationCompareRange>
-<CValidatorCombine id="PsiStrikeTargetCloseAndPsiStrikeAbort">
-  <Type value="And"/>
-  <CombineArray value="PsiStrikeTargetClose"/>
-  <CombineArray value="PsiStrikeAbort"/>
-</CValidatorCombine>
-<CValidatorUnitCompareOrderTargetRange id="TempestDisruptionBlastRangeCheck">
-  <AbilLink value="TalonTempestDisruptionBlast"/>
-</CValidatorUnitCompareOrderTargetRange>
-<CValidatorLocationEnumArea id="VoidZealotWhirlwindCheck">
-  <WhichLocation Value="CasterUnit"/>
-  <AreaArray Compare="GE" Count="2" Radius="1.5"/>
-  <Compare value="GE"/>
-  <Count value="2"/>
-  <SearchFilters value="Ground,Visible;Player,Ally,Neutral,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
-</CValidatorLocationEnumArea>
-<CValidatorUnitInWeaponRange id="WeaponInRange"/>
-<CValidatorUnitType id="isXayedScavenger">
-  <Value value="Scavenger"/>
-</CValidatorUnitType>
-<CValidatorUnitCompareBehaviorCount id="IsChronoBoosted115">
-  <WhichUnit Value="Source"/>
-  <Compare value="GT"/>
-  <Behavior value="SOAMapWideChronoPassiveTarget"/>
-</CValidatorUnitCompareBehaviorCount>
-<CValidatorUnitCompareBehaviorCount id="IsChronoBoosted122">
-  <WhichUnit Value="Source"/>
-  <Compare value="GT"/>
-  <Behavior value="TimeWarpProduction"/>
-</CValidatorUnitCompareBehaviorCount>
-<CValidatorUnitCompareBehaviorCount id="IsChronoBoosted150">
-  <WhichUnit Value="Source"/>
-  <Compare value="GT"/>
-  <Behavior value="ChronoBoostEnergyCost"/>
-</CValidatorUnitCompareBehaviorCount>
-<CValidatorUnitCompareBehaviorCount id="IsChronoBoosted200">
-  <WhichUnit Value="Source"/>
-  <Compare value="GT"/>
-  <Behavior value="SOAMapWideChrono"/>
-</CValidatorUnitCompareBehaviorCount>
-<CValidatorUnitCompareBehaviorCount id="IsChronoBoosted999">
-  <WhichUnit Value="Source"/>
-  <Compare value="GT"/>
-  <Behavior value="SOASuperChrono"/>
-</CValidatorUnitCompareBehaviorCount>
-<CValidatorCombine id="SOATimewarpProduction">
-  <CombineArray value="IsEdifice"/>
-  <CombineArray value="IsAtrium"/>
-  <CombineArray value="IsElysium"/>
-  <CombineArray value="IsFoundry"/>
-  <CombineArray value="IsSanctum"/>
-  <CombineArray value="IsPantheon"/>
-  <CombineArray value="IsAstralConduit"/>
-  <CombineArray value="IsCelestialOutlet"/>
-  <CombineArray value="IsEmpyrean"/>
-  <CombineArray value="IsZenith"/>
-  <CombineArray value="IsCitadel"/>
-  <CombineArray value="IsCitadelCharged"/>
-  <CombineArray value="IsAquifer"/>
-</CValidatorCombine>
-<CValidatorCombine id="SOATimewarpResearch">
-  <CombineArray value="IsEdifice"/>
-  <CombineArray value="IsAtrium"/>
-  <CombineArray value="IsElysium"/>
-  <CombineArray value="IsFoundry"/>
-  <CombineArray value="IsSanctum"/>
-  <CombineArray value="IsPantheon"/>
-  <CombineArray value="IsAstralConduit"/>
-  <CombineArray value="IsCelestialOutlet"/>
-  <CombineArray value="IsEmpyrean"/>
-  <CombineArray value="IsZenith"/>
-  <CombineArray value="IsReliquary"/>
-</CValidatorCombine>
-<CValidatorUnitType id="isKeironConverter"/>
-<CValidatorUnitCompareBehaviorCount id="IsDisabledSOAMapWideChronoPassiveTarget"/>
-<CValidatorUnitCompareBehaviorCount id="IsDisabledMapWideChrono"/>
-<CValidatorUnitCompareBehaviorCount id="IsDisabledChronoBoostEnergyCost"/>
-<CValidatorUnitCompareBehaviorCount id="IsDisabledSOASuperChrono"/>
-<CValidatorUnitCompareBehaviorCount id="IsDisabledTimeWarpProduction"/>
-<CValidatorPlayerRequirement id="KeironLevel01"/>
-<CValidatorUnitType id="IsAquifer"/>
-<CValidatorUnitType id="IsReliquary"/>
-<CValidatorUnitType id="isDragonPlodder">
-  <Value value="Plodder"/>
-</CValidatorUnitType>
-<CValidatorUnitType id="isDragonAscendedPlodder">
-  <Value value="AscendedPlodder"/>
-</CValidatorUnitType>
-<CValidatorUnitType id="isGenetronACR">
-  <Value value="ACR"/>
 </CValidatorUnitType>
 
 </Catalog>

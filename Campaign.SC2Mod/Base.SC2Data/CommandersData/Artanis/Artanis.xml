@@ -29,6 +29,7 @@
         <MinimapUseSelectionColor value="0"/>
     </CActorMissile>
     <CUnit id="ArtanisVoid">
+        <FlagArray index="ArmySelect" value="1"/>
         <EditorCategories value="ObjectType:Hero,ObjectFamily:Coop"/>
         <DeathTime value="-1"/>
         <BehaviorArray Link="HeroCCImmunity"/>

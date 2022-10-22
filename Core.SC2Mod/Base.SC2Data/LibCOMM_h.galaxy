@@ -378,6 +378,7 @@ void libCOMM_gf_CM_Abathur_BiomassTransfer (int lp_indexPlayer, unit lp_trainUni
 void libCOMM_gf_CM_Abathur_BiomassScale (unit lp_biomassUnit, bool lp_instantScale);
 void libCOMM_gf_CM_Abathur_BiomassMerge (unit lp_biomassUnit, int lp_biomassUnitCount);
 void libCOMM_gf_CM_AbilityTransmissionDehakaWurmReminderActionVer (int lp_dehakaPlayer);
+void libCOMM_gf_UT_Dehaka_DevourCooldownScoreCheck ();
 void libCOMM_gf_CM_DehakaConsumeFloatText (text lp_text, int lp_p, point lp_loc);
 void libCOMM_gf_CM_DehakaConsumeUpdatePsiExplodeDamage (int lp_dehakaPlayer, unit lp_dehakaUnit, fixed lp_maguroMemorialWeaponDamage);
 void libCOMM_gf_CM_Dehaka_SetLevelValues (int lp_player);
@@ -776,6 +777,7 @@ trigger libCOMM_gt_CM_AbilityTransmissionMengskNuclearAnnihilation;
 trigger libCOMM_gt_CM_AbilityTransmissionMengskDirtyBomb;
 trigger libCOMM_gt_CM_AbilityTransmissionMengskZergCalldown;
 trigger libCOMM_gt_CM_AbilityTransmissionMengskForcedConscription;
+trigger libCOMM_gt_UT_Mengsk_ContaminatedStrikeDmgScore;
 trigger libCOMM_gt_CC_ScoreMengskDamage;
 trigger libCOMM_gt_CM_MasteryMengskRoyalGuardCostList;
 trigger libCOMM_gt_CM_Mengsk_TopBarKills;

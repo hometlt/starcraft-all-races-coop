@@ -22,10 +22,6 @@
 <CTexture id="flare2borange">
   <Slot value="generic02"/>
 </CTexture>
-<CTexture id="InfantryCamo">
-  <File value="Assets\Textures\INF_DIFFUSE_death.dds"/>
-  <Slot value="main.diffuse"/>
-</CTexture>
 <CTexture id="Hex">
   <File value="Assets\Textures\Talon_Decal_(SimpleHex).dds"/>
 </CTexture>
@@ -40,6 +36,10 @@
 </CTexture>
 <CTexture id="Forgers">
   <File value="Assets\Textures\TDecal_Forgers.dds"/>
+</CTexture>
+<CTexture id="InfantryCamo">
+  <File value="Assets\Textures\INF_DIFFUSE_death.dds"/>
+  <Slot value="main.diffuse"/>
 </CTexture>
 
 </Catalog>

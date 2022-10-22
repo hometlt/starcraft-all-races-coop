@@ -45,14 +45,12 @@
         <AbilArray Link="DehakaArmorUpgrade"/>
         <!--BehaviorArray Link="DehakaJump"/-->
         <BehaviorArray Link="NoBiomassDrop"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <!--BehaviorArray Link="DehakaVeterancyCoopLow"/>
         <BehaviorArray Link="DehakaVeterancyCoopMedium"/>
         <BehaviorArray Link="DehakaVeterancyCoopHigh"/-->
         <BehaviorArray Link="DehakaAttEssence"/>
         <BehaviorArray Link="DehakaAirUnkillable"/>
         <BehaviorArray Link="CommanderPrestigeDehakaCloneSpawnTracker"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <WeaponArray Link="DehakaCoop"/>
         <EffectArray index="Death" value="CommanderPrestigeDehakaCloneFateIterate"/>
         <CardLayouts>
@@ -261,7 +259,6 @@
     <CUnit id="PrimalZergling">
         <Race value="ZergP"/>
         <BehaviorArray Link="SupplyLT1"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <HotkeyCategory value=""/>
@@ -271,7 +268,6 @@
     <CUnit id="PrimalZerglingBurrowed">
         <Race value="ZergP"/>
         <BehaviorArray Link="SupplyLT1"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <ScoreMake value="0"/>
         <ScoreKill value="0"/>
         <SubgroupPriority value="108"/>
@@ -341,7 +337,6 @@
         <BehaviorArray Link="DehakaVeterancyCoopHigh"/-->
         <BehaviorArray Link="DehakaAttEssence"/>
         <BehaviorArray Link="DehakaAttEssenceUpdater"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="DehakaDeepTunnel" Type="AbilCmd" AbilCmd="DehakaDeepTunnel,Execute" Row="2" Column="3"/>
@@ -1358,7 +1353,6 @@
         <AbilArray Link="MapObjectInteract"/>
         <AbilArray Link="MutatorRemoveWorkerSleep"/>
         <AbilArray Link="SprayZerg"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <WeaponArray Link="DehakaDroneSpines"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -1434,7 +1428,6 @@
         <AttackTargetPriority value="20"/>
         <AIOverideTargetPriority value="10"/>
         <AbilArray Link="BurrowDehakaDroneUp"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts>
             <LayoutButtons Face="AttackWorker" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowDehakaDroneUp,Execute" Row="2" Column="4"/>
@@ -1577,7 +1570,6 @@
         <AbilArray Link="PrimalZerglingLevel2Mergeable"/>
         <AbilArray Link="PrimalZerglingRavasaurMerge"/>
         <BehaviorArray Link="SupplyLT1"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <WeaponArray Link="DehakaZerglingLevel2"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -1626,7 +1618,6 @@
         <AttackTargetPriority value="20"/>
         <AbilArray Link="BurrowDehakaZerglingLevel2Up"/>
         <BehaviorArray Link="SupplyLT1"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowDehakaZerglingLevel2Up,Execute" Row="2" Column="4"/>
@@ -1815,7 +1806,6 @@
         <AbilArray Link="PrimalRoachGuardianMerge"/>
         <WeaponArray Link="DehakaRoachLevel2Melee"/>
         <WeaponArray Link="DehakaRoachLevel2"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
@@ -1877,7 +1867,6 @@
         <AttackTargetPriority value="20"/>
         <AbilArray Link="BurrowDehakaRoachLevel2Up"/>
         <BehaviorArray Link="RoachRegenDummy"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
@@ -1938,7 +1927,6 @@
         <AbilArray Link="BurrowDehakaRoachLevel3Down"/>
         <AbilArray Link="PrimalRoachLevel2Mergeable"/>
         <AbilArray Link="ProgressRally"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <WeaponArray Link="DehakaRoachLevel3Cone"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -2002,7 +1990,6 @@
         <AttackTargetPriority value="20"/>
         <AbilArray Link="BurrowDehakaRoachLevel3Up"/>
         <BehaviorArray Link="RoachRegenDummy"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
@@ -2065,7 +2052,6 @@
         <AbilArray Link="BurrowDehakaHydraliskLevel2Down"/>
         <AbilArray Link="PrimalHydraliskToMutalisk"/>
         <AbilArray Link="PrimalHydraliskImpalerMerge"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <WeaponArray Link="DehakaHydraliskLevel2Melee"/>
         <WeaponArray Link="DehakaHydraliskLevel2NeedleSpines"/>
         <CardLayouts>
@@ -2118,7 +2104,6 @@
         <CostResource index="Vespene" value="50"/>
         <AttackTargetPriority value="20"/>
         <AbilArray Link="BurrowDehakaHydraliskLevel2Up"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowDehakaHydraliskLevel2Up,Execute" Row="2" Column="4"/>
@@ -2171,7 +2156,6 @@
         <AbilArray Link="PrimalUltraliskMergeable"/>
         <AbilArray Link="PrimalUltraliskLevel2Merge"/>
         <AbilArray Link="DehakaUltraliskCrashingCharge"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="DehakaUltraliskBash"/>
         <BehaviorArray Link="Frenzy"/>
         <WeaponArray Link="DehakaKaiserBladesLevel2"/>
@@ -2229,7 +2213,6 @@
         <CostResource index="Vespene" value="200"/>
         <AttackTargetPriority value="20"/>
         <AbilArray Link="BurrowDehakaUltraliskLevel2Up"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="Frenzy"/>
         <CardLayouts>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
@@ -2285,7 +2268,6 @@
         <AbilArray Link="PrimalUltraliskLevel2Mergeable"/>
         <AbilArray Link="DehakaTyrannozorFanOfKnives"/>
         <AbilArray Link="ProgressRally"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="DehakaTyrannozorArmorAuraCaster"/>
         <BehaviorArray Link="DehakaUltraliskBash"/>
         <BehaviorArray Link="Frenzy"/>
@@ -2349,7 +2331,6 @@
         <CostResource index="Vespene" value="300"/>
         <AttackTargetPriority value="20"/>
         <AbilArray Link="BurrowDehakaUltraliskLevel3Up"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="DehakaTyrannozorArmorAuraCaster"/>
         <BehaviorArray Link="Frenzy"/>
         <CardLayouts>
@@ -2414,7 +2395,6 @@
         <AbilArray Link="DehakaSpawnLocustsTargeted"/>
         <BehaviorArray Link="TrainInfestedTerran"/>
         <BehaviorArray Link="SpawnLocusts"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts>
             <LayoutButtons Face="SwarmHostBurrowUp" Type="AbilCmd" AbilCmd="DehakaMorphToSwarmHost,Execute" Row="2" Column="4"/>
             <LayoutButtons Face="DehakaSpawnLocusts" Type="AbilCmd" AbilCmd="DehakaSpawnLocustsTargeted,Execute" Row="2" Column="0"/>
@@ -2471,7 +2451,6 @@
         <AbilArray Link="DehakaSpawnLocustsTargeted"/>
         <AbilArray Link="PrimalSwarmHostMerge"/>
         <AbilArray Link="attack"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <WeaponArray Link="SwarmHostFakeWeapon"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -2625,7 +2604,6 @@
         <AbilArray Link="move"/>
         <AbilArray Link="PrimalMutaliskLevel2Mergeable"/>
         <AbilArray Link="DehakaMutaliskRevive"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="DehakaMutaliskDamageReduction"/>
         <BehaviorArray Link="PrimalReconstitutionCooldownIndicator"/>
         <WeaponArray Link="DehakaMutaliskAirGlaiveWurm"/>
@@ -2696,7 +2674,6 @@
         <AbilArray Link="DehakaMutaliskRevive"/>
         <AbilArray Link="DehakaMutaliskFightMorphToDehakaMutalisk"/>
         <AbilArray Link="ProgressRally"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="DehakaMutaliskDamageReduction"/>
         <BehaviorArray Link="DehakaMutaliskFightMorphToDehakaMutalisk"/>
         <WeaponArray Link="DehakaMutaliskAirGlaiveWurm"/>
@@ -2791,7 +2768,6 @@
         <AbilArray Link="PrimalRoachLevel3GuardianMergeable"/>
         <AbilArray Link="DehakaGuardianMineCharge"/>
         <WeaponArray Link="DehakaAcidSpores"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
@@ -2848,7 +2824,6 @@
         <AbilArray Link="DehakaGuardianFightMorphToDehakaGuardian"/>
         <AbilArray Link="ProgressRally"/>
         <BehaviorArray Link="DehakaGuardianFightMorphToDehakaGuardian"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <WeaponArray Link="DehakaAcidSpores"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -2923,7 +2898,6 @@
         <AbilArray Link="attack"/>
         <AbilArray Link="EvolveToLeviathanViper"/>
         <AbilArray Link="que1"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <WeaponArray Link="DehakaViperAir"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -3095,7 +3069,6 @@
         <RankDisplay value="Never"/>
         <HotkeyAlias value="DehakaLocustFlying"/>
         <BehaviorArray Link="TriggerInheritsParentBuffs"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
     </CUnit>
     <CUnit id="DehakaLocustFlying">
         <DeathRevealRadius value="3"/>
@@ -3197,7 +3170,6 @@
         <AbilArray Link="PrimalHydraliskLevel2Mergeable"/>
         <AbilArray Link="ProgressRally"/>
         <BehaviorArray Link="ImpalerWeaponDisabled"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <!--WeaponArray Link="ImpalerDehaka" Turret="FreeRotate"/-->
         <EquipmentArray Weapon="ImpalerDehaka"/>
         <CardLayouts>
@@ -3273,7 +3245,6 @@
         <AbilArray Link="stop"/>
         <AbilArray Link="move"/>
         <AbilArray Link="BurrowImpalerDehakaUp"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <!--BehaviorArray Link="VorazunCloakDamageBoostPermanent"/-->
         <BehaviorArray Link="ImpalerGenerateCreep"/>
         <WeaponArray Link="ImpalerDehaka" Turret="FreeRotate"/>
@@ -3341,7 +3312,6 @@
         <AbilArray Link="PrimalZerglingLevel2Mergeable"/>
         <AbilArray Link="ProgressRally"/>
         <WeaponArray Link="DehakaRavasaur"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
@@ -3390,7 +3360,6 @@
         <CostResource index="Vespene" value="50"/>
         <AttackTargetPriority value="20"/>
         <AbilArray Link="BurrowDehakaRavasaurUp"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
@@ -3457,7 +3426,6 @@
         <AbilArray Link="DehakaGlevigFirebreath"/>
         <AbilArray Link="BuildInProgress"/>
         <AbilArray Link="CommanderPrestigeDehakaPackLeadersRetreat"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="GlevigLairCheck"/>
         <BehaviorArray Link="DehakaBossesSummonDelay"/>
         <BehaviorArray Link="CommanderPrestigeDehakaPackLeaders"/>
@@ -3548,7 +3516,6 @@
         <AbilArray Link="CoopMurvarSpawnCreepers"/>
         <AbilArray Link="MurvarCoopPuke"/>
         <AbilArray Link="CommanderPrestigeDehakaPackLeadersRetreat"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="MurvarLairCheck"/>
         <BehaviorArray Link="DehakaBossesSummonDelay"/>
         <BehaviorArray Link="NoScrapDrop"/>
@@ -3625,7 +3592,6 @@
         <BehaviorArray Link="DehakaDakrunThorns"/>
         <BehaviorArray Link="DakrunLairCheck"/>
         <BehaviorArray Link="DehakaBossesSummonDelay"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="CommanderPrestigeDehakaPackLeaders"/>
         <WeaponArray Link="KraithMelee"/>
         <CardLayouts>
@@ -3691,7 +3657,6 @@
         <AbilArray Link="PrimalSwarmHostMergeable"/>
         <AbilArray Link="attack"/>
         <AbilArray Link="ProgressRally"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <WeaponArray Link="DehakaPrimalSwarmHostFakeWeapon"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -3758,7 +3723,6 @@
         <AbilArray Link="DehakaSpawnCreeperTargeted"/>
         <BehaviorArray Link="TrainInfestedTerran"/>
         <BehaviorArray Link="SpawnLocusts"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <CardLayouts>
             <LayoutButtons Face="SwarmHostBurrowUp" Type="AbilCmd" AbilCmd="DehakaMorphToPrimalSwarmHost,Execute" Row="2" Column="4"/>
             <LayoutButtons Face="DehakaSpawnLocustsBomb" Type="AbilCmd" AbilCmd="DehakaSpawnCreeperTargeted,Execute" Row="2" Column="0"/>

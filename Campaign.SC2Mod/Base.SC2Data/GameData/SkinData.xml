@@ -373,4 +373,301 @@
         <EffectArray Operation="Set" Reference="Button,CorruptorPassive,Icon" Value="Assets\Textures\btn-unit-collection-webby-corruptor.dds"/>
         <EffectArray Operation="Set" Reference="Button,CorruptorPassive,AlertIcon" Value="Assets\Textures\btn-unit-collection-webby-corruptor.dds"/>
     </CSkin>
+    <!--Tech-->
+    <CSkin id="NONE"/>
+    <!--Commentators-->
+    <CSkin default="1" id="VoicePackDefaultBase">
+        <?token id="suffix" value="Suffix"?>
+
+        <ReplacementArray Catalog="Sound"         From="Alert_TerranAddOnComplete"               To="Alert_TerranAddOnComplete_##suffix##"/>
+        <ReplacementArray Catalog="Sound"     From="e_cmdCantBuildLocationInvalid"           To="e_cmdCantBuildLocationInvalid_##suffix##"/>
+        <!--        <ReplacementArray Catalog="Sound"           From="e_cmdCouldntReachTarget"                 To="e_cmdCouldntReachTarget_##suffix##"/>-->
+        <ReplacementArray Catalog="Sound" From="e_cmdCantBuildTooCloseToResources"       To="e_cmdCantBuildTooCloseToResources_##suffix##"/>
+        <!--        <ReplacementArray Catalog="Sound"                  From="Alert_GamePaused"                        To="Alert_GamePaused_##suffix##"/>-->
+        <!--        <ReplacementArray Catalog="Sound"                 From="Alert_GameResumed"                       To="Alert_GameResumed_##suffix##"/>-->
+        <ReplacementArray Catalog="Sound"      From="e_cmdCantLandLocationInvalid"                    To="e_cmdCantBuildOnThat_##suffix##"/>
+        <ReplacementArray Catalog="Sound"          From="e_cmdFoodUsageImpossible"                To="e_cmdFoodUsageImpossible_##suffix##"/>
+        <ReplacementArray Catalog="Sound"              From="e_cmdCantBuildOnThat"                   To="e_cmdCantBuildOnThat_##suffix##" />
+        <ReplacementArray Catalog="Sound"                From="e_cmdNotEnoughFood"                      To="e_cmdNotEnoughFood_##suffix##"/>
+        <ReplacementArray Catalog="Sound"             From="e_cmdNotEnoughVespene"                   To="e_cmdNotEnoughVespene_##suffix##"/>
+        <ReplacementArray Catalog="Sound"            From="e_cmdNotEnoughMinerals"                  To="e_cmdNotEnoughMinerals_##suffix##"/>
+
+        <ReplacementArray Catalog="Sound"         From="Alert_TerranAddOnComplete_Zerg"          To="Alert_TerranAddOnComplete_##suffix##"/>
+        <ReplacementArray Catalog="Sound"     From="e_cmdCantBuildLocationInvalid_Zerg"      To="e_cmdCantBuildLocationInvalid_##suffix##"/>
+        <ReplacementArray Catalog="Sound"           From="e_cmdCouldntReachTarget_Zerg"            To="e_cmdCouldntReachTarget_##suffix##"/>
+        <ReplacementArray Catalog="Sound" From="e_cmdCantBuildTooCloseToResources_Zerg"  To="e_cmdCantBuildTooCloseToResources_##suffix##"/>
+        <ReplacementArray Catalog="Sound"                  From="Alert_GamePaused_Zerg"                   To="Alert_GamePaused_##suffix##"/>
+        <ReplacementArray Catalog="Sound"                 From="Alert_GameResumed_Zerg"                  To="Alert_GameResumed_##suffix##"/>
+        <ReplacementArray Catalog="Sound"      From="e_cmdCantLandLocationInvalid_Zerg"       To="e_cmdCantLandLocationInvalid_##suffix##"/>
+        <ReplacementArray Catalog="Sound"              From="e_cmdCantBuildOnThat_Zerg"               To="e_cmdCantBuildOnThat_##suffix##"/>
+        <ReplacementArray Catalog="Sound"          From="e_cmdFoodUsageImpossible_Zerg"           To="e_cmdFoodUsageImpossible_##suffix##"/>
+        <ReplacementArray Catalog="Sound"                From="e_cmdNotEnoughFood_Zerg"                 To="e_cmdNotEnoughFood_##suffix##"/>
+        <ReplacementArray Catalog="Sound"             From="e_cmdNotEnoughVespene_Zerg"              To="e_cmdNotEnoughVespene_##suffix##"/>
+        <ReplacementArray Catalog="Sound"            From="e_cmdNotEnoughMinerals_Zerg"             To="e_cmdNotEnoughMinerals_##suffix##"/>
+        e_cmdNotEnoughEnergy_
+        <ReplacementArray Catalog="Sound"         From="Alert_TerranAddOnComplete_Terr"          To="Alert_TerranAddOnComplete_##suffix##"/>
+        <!--        <ReplacementArray Catalog="Sound"     From="e_cmdCantBuildLocationInvalid_Terr"      To="e_cmdCantBuildLocationInvalid_##suffix##"/>-->
+        <ReplacementArray Catalog="Sound"           From="e_cmdCouldntReachTarget_Terr"            To="e_cmdCouldntReachTarget_##suffix##"/>
+        <!--        <ReplacementArray Catalog="Sound" From="e_cmdCantBuildTooCloseToResources_Terr"  To="e_cmdCantBuildTooCloseToResources_##suffix##"/>-->
+        <ReplacementArray Catalog="Sound"                  From="Alert_GamePaused_Terr"                   To="Alert_GamePaused_##suffix##"/>
+        <ReplacementArray Catalog="Sound"                 From="Alert_GameResumed_Terr"                  To="Alert_GameResumed_##suffix##"/>
+        <!--        <ReplacementArray Catalog="Sound"      From="e_cmdCantLandLocationInvalid_Terr"           To="e_cmdFoodUsageImpossible_##suffix##"/>-->
+        <!--        <ReplacementArray Catalog="Sound"          From="e_cmdFoodUsageImpossible_Terr"               To="e_cmdCantBuildOnThat_##suffix##"/>-->
+        <!--        <ReplacementArray Catalog="Sound"              From="e_cmdCantBuildOnThat_Terr"                 To="e_cmdNotEnoughFood_##suffix##"/>-->
+        <!--        <ReplacementArray Catalog="Sound"                From="e_cmdNotEnoughFood_Terr"              To="e_cmdNotEnoughVespene_##suffix##"/>-->
+        <!--        <ReplacementArray Catalog="Sound"             From="e_cmdNotEnoughVespene_Terr"             To="e_cmdNotEnoughMinerals_##suffix##"/>-->
+        <!--        <ReplacementArray Catalog="Sound"            From="e_cmdNotEnoughMinerals_Terr"               To="e_cmdNotEnoughEnergy_##suffix##"/>-->
+
+        <ReplacementArray Catalog="Sound"         From="Alert_TerranAddOnComplete_Prot"          To="Alert_TerranAddOnComplete_##suffix##"/>
+        <!--    <ReplacementArray Catalog="Sound"     From="e_cmdCantBuildLocationInvalid_Prot"      To="e_cmdCantBuildLocationInvalid_##suffix##"/>-->
+        <ReplacementArray Catalog="Sound"           From="e_cmdCouldntReachTarget_Prot"            To="e_cmdCouldntReachTarget_##suffix##"/>
+        <ReplacementArray Catalog="Sound" From="e_cmdCantBuildTooCloseToResources_Prot"  To="e_cmdCantBuildTooCloseToResources_##suffix##"/>
+        <ReplacementArray Catalog="Sound"                  From="Alert_GamePaused_Prot"                   To="Alert_GamePaused_##suffix##"/>
+        <ReplacementArray Catalog="Sound"                 From="Alert_GameResumed_Prot"                  To="Alert_GameResumed_##suffix##"/>
+        <!--    <ReplacementArray Catalog="Sound"      From="e_cmdCantLandLocationInvalid_Prot"       To="e_cmdCantLandLocationInvalid_##suffix##"/>-->
+        <ReplacementArray Catalog="Sound"          From="e_cmdFoodUsageImpossible_Prot"           To="e_cmdFoodUsageImpossible_##suffix##"/>
+        <ReplacementArray Catalog="Sound"              From="e_cmdCantBuildOnThat_Prot"               To="e_cmdCantBuildOnThat_##suffix##"/>
+        <ReplacementArray Catalog="Sound"                From="e_cmdNotEnoughFood_Prot"                 To="e_cmdNotEnoughFood_##suffix##"/>
+        <ReplacementArray Catalog="Sound"             From="e_cmdNotEnoughVespene_Prot"              To="e_cmdNotEnoughVespene_##suffix##"/>
+        <ReplacementArray Catalog="Sound"            From="e_cmdNotEnoughMinerals_Prot"              To="e_cmdNotEnoughMinerals_##suffix##"/>
+    </CSkin>
+    <CSkin default="1" id="VoicePackCommanderBase">
+        <?token id="prefix" value="Prefix"?>
+        <?token id="suffix" value="Suffix"?>
+
+        <ReplacementArray Catalog="Sound" From="e_cmdCantBuildLocationInvalid"          To="##prefix##_BuildError##suffix##"/>
+        <ReplacementArray Catalog="Sound" From="e_cmdCantBuildLocationInvalid_Zerg"     To="##prefix##_BuildError##suffix##"/>
+        <!--        <ReplacementArray Catalog="Sound" From="e_cmdCantBuildLocationInvalid_Prot"     To="##prefix##_BuildError##suffix##"/>-->
+        <!--        <ReplacementArray Catalog="Sound" From="e_cmdCantBuildLocationInvalid_Terr"     To="##prefix##_BuildError##suffix##"/>-->
+
+        <ReplacementArray Catalog="Sound" From="e_cmdCantLandLocationInvalid"           To="##prefix##_LandingInterrupt"/>
+        <ReplacementArray Catalog="Sound" From="e_cmdCantLandLocationInvalid_Zerg"      To="##prefix##_LandingInterrupt"/>
+        <!--        <ReplacementArray Catalog="Sound" From="e_cmdCantLandLocationInvalid_Terr"      To="##prefix##_LandingInterrupt"/>-->
+        <!--        <ReplacementArray Catalog="Sound" From="e_cmdCantLandLocationInvalid_Prot"      To="##prefix##_LandingInterrupt"/>-->
+
+        <ReplacementArray Catalog="Sound" From="e_cmdCantBuildTooCloseToResources"      To="##prefix##_BuildError##suffix##"/>
+        <!--        <ReplacementArray Catalog="Sound" From="e_cmdCantBuildTooCloseToResources_Terr" To="##prefix##_BuildError##suffix##"/>-->
+        <ReplacementArray Catalog="Sound" From="e_cmdCantBuildTooCloseToResources_Zerg" To="##prefix##_BuildError##suffix##"/>
+        <ReplacementArray Catalog="Sound" From="e_cmdCantBuildTooCloseToResources_Prot" To="##prefix##_BuildError##suffix##"/>
+
+        <ReplacementArray Catalog="Sound" From="e_cmdFoodUsageImpossible"               To="##prefix##_MaxSupply##suffix##"/>
+        <!--        <ReplacementArray Catalog="Sound" From="e_cmdFoodUsageImpossible_Terr"          To="##prefix##_MaxSupply##suffix##"/>-->
+        <ReplacementArray Catalog="Sound" From="e_cmdFoodUsageImpossible_Zerg"          To="##prefix##_MaxSupply##suffix##"/>
+        <ReplacementArray Catalog="Sound" From="e_cmdFoodUsageImpossible_Prot"          To="##prefix##_MaxSupply##suffix##"/>
+
+        <ReplacementArray Catalog="Sound" From="e_cmdCantBuildOnThat"                   To="##prefix##_NeedGeyser##suffix##"/>
+        <!--        <ReplacementArray Catalog="Sound" From="e_cmdCantBuildOnThat_Terr"              To="##prefix##_NeedGeyser##suffix##"/>-->
+        <ReplacementArray Catalog="Sound" From="e_cmdCantBuildOnThat_Zerg"              To="##prefix##_NeedGeyser##suffix##"/>
+        <ReplacementArray Catalog="Sound" From="e_cmdCantBuildOnThat_Prot"              To="##prefix##_NeedGeyser##suffix##"/>
+
+        <ReplacementArray Catalog="Sound" From="e_cmdNotEnoughFood"                     To="##prefix##_NeedMoreFood##suffix##"/>
+        <!--        <ReplacementArray Catalog="Sound" From="e_cmdNotEnoughFood_Terr"                To="##prefix##_NeedMoreFood##suffix##"/>-->
+        <ReplacementArray Catalog="Sound" From="e_cmdNotEnoughFood_Prot"                To="##prefix##_NeedMoreFood##suffix##"/>
+        <ReplacementArray Catalog="Sound" From="e_cmdNotEnoughFood_Zerg"                To="##prefix##_NeedMoreFood##suffix##"/>
+
+        <ReplacementArray Catalog="Sound" From="e_cmdNotEnoughVespene"                  To="##prefix##_NeedMoreGas"/>
+        <!--        <ReplacementArray Catalog="Sound" From="e_cmdNotEnoughVespene_Terr"             To="##prefix##_NeedMoreGas"/>-->
+        <ReplacementArray Catalog="Sound" From="e_cmdNotEnoughVespene_Zerg"             To="##prefix##_NeedMoreGas"/>
+        <ReplacementArray Catalog="Sound" From="e_cmdNotEnoughVespene_Prot"             To="##prefix##_NeedMoreGas"/>
+
+        <ReplacementArray Catalog="Sound" From="e_cmdNotEnoughMinerals"                 To="##prefix##_NeedMoreMinerals"/>
+        <!--        <ReplacementArray Catalog="Sound" From="e_cmdNotEnoughMinerals_Terr"            To="##prefix##_NeedMoreMinerals"/>-->
+        <ReplacementArray Catalog="Sound" From="e_cmdNotEnoughMinerals_Zerg"            To="##prefix##_NeedMoreMinerals"/>
+        <ReplacementArray Catalog="Sound" From="e_cmdNotEnoughMinerals_Prot"            To="##prefix##_NeedMoreMinerals"/>
+
+        <ReplacementArray Catalog="Sound" From="e_cmdNotEnoughEnergy"                   To="##prefix##_NotEnoughEnergy"/>
+        <!--        <ReplacementArray Catalog="Sound" From="e_cmdNotEnoughEnergy_Terr"              To="##prefix##_NotEnoughEnergy"/>-->
+        <ReplacementArray Catalog="Sound" From="e_cmdNotEnoughEnergy_Prot"              To="##prefix##_NotEnoughEnergy"/>
+        <ReplacementArray Catalog="Sound" From="e_cmdNotEnoughEnergy_Zerg"              To="##prefix##_NotEnoughEnergy"/>
+
+        <ReplacementArray Catalog="Sound" From="Alert_TerranAddOnComplete"              To="##prefix##_AddOnComplete"/>
+        <ReplacementArray Catalog="Sound" From="Alert_TerranAddOnComplete_Terr"         To="##prefix##_AddOnComplete"/>
+        <ReplacementArray Catalog="Sound" From="Alert_TerranAddOnComplete_Zerg"         To="##prefix##_AddOnComplete"/>
+        <ReplacementArray Catalog="Sound" From="Alert_TerranAddOnComplete_Prot"         To="##prefix##_AddOnComplete"/>
+
+        <!--        <ReplacementArray Catalog="Sound" From="Alert_GamePaused"                       To="##prefix##_GamePaused"/>-->
+        <ReplacementArray Catalog="Sound" From="Alert_GamePaused_Terr"                  To="##prefix##_GamePaused"/>
+        <ReplacementArray Catalog="Sound" From="Alert_GamePaused_Zerg"                  To="##prefix##_GamePaused"/>
+        <ReplacementArray Catalog="Sound" From="Alert_GamePaused_Prot"                  To="##prefix##_GamePaused"/>
+
+        <!--        <ReplacementArray Catalog="Sound" From="Alert_GameResumed"                     To="##prefix##_GameResumed"/>-->
+        <ReplacementArray Catalog="Sound" From="Alert_GameResumed_Terr"                 To="##prefix##_GameResumed"/>
+        <ReplacementArray Catalog="Sound" From="Alert_GameResumed_Zerg"                 To="##prefix##_GameResumed"/>
+        <ReplacementArray Catalog="Sound" From="Alert_GameResumed_Prot"                 To="##prefix##_GameResumed"/>
+
+        <!--        <ReplacementArray Catalog="Sound" From="e_cmdCouldntReachTarget"               To="##prefix##_BuildError##suffix##"/>-->
+        <ReplacementArray Catalog="Sound" From="e_cmdCouldntReachTarget_Terr"           To="##prefix##_BuildError##suffix##"/>
+        <ReplacementArray Catalog="Sound" From="e_cmdCouldntReachTarget_Zerg"           To="##prefix##_BuildError##suffix##"/>
+        <ReplacementArray Catalog="Sound" From="e_cmdCouldntReachTarget_Prot"           To="##prefix##_BuildError##suffix##"/>
+
+        <ReplacementArray Catalog="Sound" From="Alert_ZergAllyBaseUnderAttack" To="##prefix##_AllyBaseUnderAttack"/>
+        <ReplacementArray Catalog="Sound" From="Alert_TerranAllyBaseUnderAttack" To="##prefix##_AllyBaseUnderAttack"/>
+        <ReplacementArray Catalog="Sound" From="Alert_ProtossAllysBaseUnderAttack" To="##prefix##_AllyBaseUnderAttack"/>
+
+        <ReplacementArray Catalog="Sound" From="Alert_ZergAllyUnderAttack" To="##prefix##_AllyUnderAttack"/>
+        <ReplacementArray Catalog="Sound" From="Alert_TerranAllyUnderAttack" To="##prefix##_AllyUnderAttack"/>
+        <ReplacementArray Catalog="Sound" From="Alert_ProtossAllyUnderAttack" To="##prefix##_AllyUnderAttack"/>
+
+        <ReplacementArray Catalog="Sound" From="Alert_ZergMineralsDepleted" To="##prefix##_MineralsDepleted"/>
+        <ReplacementArray Catalog="Sound" From="Alert_TerranMineralsDepleted" To="##prefix##_MineralsDepleted"/>
+        <ReplacementArray Catalog="Sound" From="Alert_ProtossMineralsDepleted" To="##prefix##_MineralsDepleted"/>
+
+        <ReplacementArray Catalog="Sound" From="Alert_ZergWarpTrainComplete" To="##prefix##_WarpInComplete"/>
+        <ReplacementArray Catalog="Sound" From="Alert_TerranWarpTrainComplete" To="##prefix##_WarpInComplete"/>
+        <ReplacementArray Catalog="Sound" From="Alert_ProtossWarpTrainComplete" To="##prefix##_WarpInComplete"/>
+
+        <ReplacementArray Catalog="Sound" From="Alert_ProtossBaseUnderAttack" To="##prefix##_BaseUnderAttack##suffix##"/>
+        <ReplacementArray Catalog="Sound" From="Alert_TerranBaseUnderAttack" To="##prefix##_BaseUnderAttack##suffix##"/>
+        <ReplacementArray Catalog="Sound" From="Alert_ZergBaseUnderAttack" To="##prefix##_BaseUnderAttack##suffix##"/>
+
+        <ReplacementArray Catalog="Sound" From="Alert_ZergBuildError" To="##prefix##_BuildError##suffix##"/>
+        <ReplacementArray Catalog="Sound" From="Alert_TerranBuildError" To="##prefix##_BuildError##suffix##"/>
+        <ReplacementArray Catalog="Sound" From="Alert_ProtossBuildError" To="##prefix##_BuildError##suffix##"/>
+
+        <ReplacementArray Catalog="Sound" From="Alert_ZergForcesUnderAttack" To="##prefix##_ForcesUnderAttack##suffix##"/>
+        <ReplacementArray Catalog="Sound" From="Alert_TerranForcesUnderAttack" To="##prefix##_ForcesUnderAttack##suffix##"/>
+        <ReplacementArray Catalog="Sound" From="Alert_ProtossForcesUnderAttack" To="##prefix##_ForcesUnderAttack##suffix##"/>
+
+        <ReplacementArray Catalog="Sound" From="Alert_ZergVespeneGeyserExhausted" To="##prefix##_GeyserExhausted##suffix##"/>
+        <ReplacementArray Catalog="Sound" From="Alert_TerranVespeneGeyserExhausted" To="##prefix##_GeyserExhausted##suffix##"/>
+        <ReplacementArray Catalog="Sound" From="Alert_ProtossVespeneGeyserExhausted" To="##prefix##_GeyserExhausted##suffix##"/>
+
+        <ReplacementArray Catalog="Sound" From="Alert_ZergEconomyUnderAttack" To="##prefix##_WorkersUnderAttack##suffix##"/>
+        <ReplacementArray Catalog="Sound" From="Alert_TerranEconomyUnderAttack" To="##prefix##_WorkersUnderAttack##suffix##"/>
+        <ReplacementArray Catalog="Sound" From="Alert_ProtossEconomyUnderAttack" To="##prefix##_WorkersUnderAttack##suffix##"/>
+
+        <ReplacementArray Catalog="Sound" From="Alert_TerranCalldownLaunch" To="##prefix##_CalldownLaunch"/>
+        <ReplacementArray Catalog="Sound" From="Alert_ProtossCalldownLaunch" To="##prefix##_CalldownLaunch"/>
+        <ReplacementArray Catalog="Sound" From="Alert_ZergCalldownLaunch" To="##prefix##_CalldownLaunch"/>
+
+        <ReplacementArray Catalog="Sound" From="e_cmdCantLandTooCloseToResources" To="##prefix##_LandingInterrupt"/>
+        <ReplacementArray Catalog="Sound" From="e_cmdCantBuildTooFarFromBuildPowerSource" To="##prefix##_PlaceInPowerField"/>
+        <ReplacementArray Catalog="Sound" From="e_cmdCantBuildTooFarFromCreepSource" To="##prefix##_NeedCreep"/>
+
+        <ReplacementArray Catalog="Sound" From="Alert_TerranResearchComplete" To="##prefix##_ResearchComplete"/>
+        <ReplacementArray Catalog="Sound" From="Alert_ProtossResearchComplete" To="##prefix##_ResearchComplete"/>
+        <ReplacementArray Catalog="Sound" From="Alert_ZergReasearchComplete" To="##prefix##_EvolutionComplete"/>
+
+        <ReplacementArray Catalog="Sound" From="Alert_ZergUpgradeComplete" To="##prefix##_MutationComplete"/>
+        <ReplacementArray Catalog="Sound" From="Alert_ProtossUpgradeComplete" To="##prefix##_UpgradeComplete"/>
+        <ReplacementArray Catalog="Sound" From="Alert_TerranUpgradeComplete" To="##prefix##_UpgradeComplete"/>
+
+        <ReplacementArray Catalog="Sound" From="Alert_ZergPlaceOnCreep" To="##prefix##_NeedCreep"/>
+        <ReplacementArray Catalog="Sound" From="Alert_ZergCreepTumorUnderAttack" To="##prefix##_TumorUnderAttack"/>
+        <ReplacementArray Catalog="Sound" From="Alert_TerranUnacceptableLandingZone" To="##prefix##_BadLZ"/>
+        <ReplacementArray Catalog="Sound" From="Alert_TerranCommandCenterUpgradeComplete" To="##prefix##_CommandCenterUpgraded"/>
+        <ReplacementArray Catalog="Sound" From="Alert_TerranConstructionInterrupted" To="##prefix##_ConstructInterrupt"/>
+        <ReplacementArray Catalog="Sound" From="Alert_TerranNukeReady" To="##prefix##_NukeReady"/>
+        <ReplacementArray Catalog="Sound" From="Alert_TerranSalvageComplete" To="##prefix##_SalvageComplete"/>
+        <ReplacementArray Catalog="Sound" From="Alert_TerranThorRepairComplete" To="##prefix##_ThorRepaired"/>
+        <ReplacementArray Catalog="Sound" From="Alert_ProtossPylonUnderAttack" To="##prefix##_PylonUnderAttack"/>
+        <ReplacementArray Catalog="Sound" From="Alert_GameStart" To="##prefix##_GoodLuckHaveFun"/>
+        <ReplacementArray Catalog="Sound" From="Alert_Victory" To="##prefix##_GGWin"/>
+        <ReplacementArray Catalog="Sound" From="Alert_Defeat" To="##prefix##_GGLose"/>
+        <ReplacementArray Catalog="Sound" From="QueenReady" To="##prefix##_QueenDeployed"/>
+        <ReplacementArray Catalog="Sound" From="SCV_CantBuildAlert" To="##prefix##_BuildError##suffix##"/>
+    </CSkin>
+    <CSkin id="VoicePackZerg" parent="VoicePackDefaultBase" suffix="Zerg"/>
+    <CSkin id="VoicePackTerran" parent="VoicePackDefaultBase" suffix="Terran"/>
+    <CSkin id="VoicePackProtoss" parent="VoicePackDefaultBase" suffix="Protoss"/>
+    <CSkin id="VoicePackProtossAbathur" parent="VoicePackCommanderBase" prefix="AbathurA" suffix="Protoss"/>
+    <CSkin id="VoicePackTerranAbathur" parent="VoicePackCommanderBase" prefix="AbathurA" suffix="Terran"/>
+    <CSkin id="VoicePackZergAbathur" parent="VoicePackCommanderBase" prefix="AbathurA" suffix="Zerg"/>
+    <CSkin id="VoicePackProtossArtanis" parent="VoicePackCommanderBase" prefix="ArtanisA" suffix="Protoss"/>
+    <CSkin id="VoicePackTerranArtanis" parent="VoicePackCommanderBase" prefix="ArtanisA" suffix="Terran"/>
+    <CSkin id="VoicePackZergArtanis" parent="VoicePackCommanderBase" prefix="ArtanisA" suffix="Zerg"/>
+    <CSkin id="VoicePackProtossAlarak" parent="VoicePackCommanderBase" prefix="AlarakA" suffix="Protoss"/>
+    <CSkin id="VoicePackTerranAlarak" parent="VoicePackCommanderBase" prefix="AlarakA" suffix="Terran"/>
+    <CSkin id="VoicePackZergAlarak" parent="VoicePackCommanderBase" prefix="AlarakA" suffix="Zerg"/>
+    <CSkin id="VoicePackProtossBlizzConDVa" parent="VoicePackCommanderBase" prefix="DVaA" suffix="Protoss"/>
+    <CSkin id="VoicePackTerranBlizzConDVa" parent="VoicePackCommanderBase" prefix="DVaA" suffix="Terran"/>
+    <CSkin id="VoicePackZergBlizzConDVa" parent="VoicePackCommanderBase" prefix="DVaA" suffix="Zerg"/>
+    <CSkin id="VoicePackProtossKerrigan" parent="VoicePackCommanderBase" prefix="KerriganA" suffix="Protoss"/>
+    <CSkin id="VoicePackTerranKerrigan" parent="VoicePackCommanderBase" prefix="KerriganA" suffix="Terran"/>
+    <CSkin id="VoicePackZergKerrigan" parent="VoicePackCommanderBase" prefix="KerriganA" suffix="Zerg"/>
+    <CSkin id="VoicePackProtossRaynor" parent="VoicePackCommanderBase" prefix="RaynorA" suffix="Protoss"/>
+    <CSkin id="VoicePackTerranRaynor" parent="VoicePackCommanderBase" prefix="RaynorA" suffix="Terran"/>
+    <CSkin id="VoicePackZergRaynor" parent="VoicePackCommanderBase" prefix="RaynorA" suffix="Zerg"/>
+    <CSkin id="VoicePackProtossSwann" parent="VoicePackCommanderBase" prefix="SwannA" suffix="Protoss"/>
+    <CSkin id="VoicePackTerranSwann" parent="VoicePackCommanderBase" prefix="SwannA" suffix="Terran"/>
+    <CSkin id="VoicePackZergSwann" parent="VoicePackCommanderBase" prefix="SwannA" suffix="Zerg"/>
+    <CSkin id="VoicePackProtossNova" parent="VoicePackCommanderBase" prefix="NovaA" suffix="Protoss"/>
+    <CSkin id="VoicePackTerranNova" parent="VoicePackCommanderBase" prefix="NovaA" suffix="Terran"/>
+    <CSkin id="VoicePackZergNova" parent="VoicePackCommanderBase" prefix="NovaA" suffix="Zerg"/>
+    <CSkin id="VoicePackProtossTotalBiscuit" parent="VoicePackCommanderBase" prefix="TotalBiscuitA" suffix="Protoss"/>
+    <CSkin id="VoicePackTerranTotalBiscuit" parent="VoicePackCommanderBase" prefix="TotalBiscuitA" suffix="Terran"/>
+    <CSkin id="VoicePackZergTotalBiscuit" parent="VoicePackCommanderBase" prefix="TotalBiscuitA" suffix="Zerg"/>
+    <CSkin id="VoicePackProtossFenix" parent="VoicePackCommanderBase" prefix="FenixA" suffix="Protoss"/>
+    <CSkin id="VoicePackTerranFenix" parent="VoicePackCommanderBase" prefix="FenixA" suffix="Terran"/>
+    <CSkin id="VoicePackZergFenix" parent="VoicePackCommanderBase" prefix="FenixA" suffix="Zerg"/>
+    <CSkin id="VoicePackProtossTastosis" parent="VoicePackCommanderBase" prefix="TastosisArenaCrowdA" suffix="Protoss"/>
+    <CSkin id="VoicePackTerranTastosis" parent="VoicePackCommanderBase" prefix="TastosisArenaCrowdA" suffix="Terran"/>
+    <CSkin id="VoicePackZergTastosis" parent="VoicePackCommanderBase" prefix="TastosisArenaCrowdA" suffix="Zerg"/>
+    <CSkin id="VoicePackProtossNathanias" parent="VoicePackCommanderBase" prefix="NathaniasA" suffix="Protoss"/>
+    <CSkin id="VoicePackTerranNathanias" parent="VoicePackCommanderBase" prefix="NathaniasA" suffix="Terran"/>
+    <CSkin id="VoicePackZergNathanias" parent="VoicePackCommanderBase" prefix="NathaniasA" suffix="Zerg"/>
+    <CSkin id="VoicePackProtossPark" parent="VoicePackCommanderBase" prefix="ParkA" suffix="Protoss"/>
+    <CSkin id="VoicePackTerranPark" parent="VoicePackCommanderBase" prefix="ParkA" suffix="Terran"/>
+    <CSkin id="VoicePackZergPark" parent="VoicePackCommanderBase" prefix="ParkA" suffix="Zerg"/>
+    <CSkin id="VoicePackProtossDehaka" parent="VoicePackCommanderBase" prefix="DehakaA" suffix="Protoss"/>
+    <CSkin id="VoicePackTerranDehaka" parent="VoicePackCommanderBase" prefix="DehakaA" suffix="Terran"/>
+    <CSkin id="VoicePackZergDehaka" parent="VoicePackCommanderBase" prefix="DehakaA" suffix="Zerg"/>
+    <CSkin id="VoicePackProtossiNcontrol" parent="VoicePackCommanderBase" prefix="iNcontrolA" suffix="Protoss"/>
+    <CSkin id="VoicePackTerraniNcontrol" parent="VoicePackCommanderBase" prefix="iNcontrolA" suffix="Terran"/>
+    <CSkin id="VoicePackZergiNcontrol" parent="VoicePackCommanderBase" prefix="iNcontrolA" suffix="Zerg"/>
+    <CSkin id="VoicePackProtossSCBoy" parent="VoicePackCommanderBase" prefix="scboyA" suffix="Protoss"/>
+    <CSkin id="VoicePackTerranSCBoy" parent="VoicePackCommanderBase" prefix="scboyA" suffix="Terran"/>
+    <CSkin id="VoicePackZergSCBoy" parent="VoicePackCommanderBase" prefix="scboyA" suffix="Zerg"/>
+    <CSkin id="VoicePackProtossDay9" parent="VoicePackCommanderBase" prefix="DayNine" suffix="Protoss"/>
+    <CSkin id="VoicePackTerranDay9" parent="VoicePackCommanderBase" prefix="DayNine" suffix="Terran"/>
+    <CSkin id="VoicePackZergDay9" parent="VoicePackCommanderBase" prefix="DayNine" suffix="Zerg"/>
+    <CSkin id="VoicePackProtossHornerHan" parent="VoicePackCommanderBase" prefix="HornerHanAnnouncer" suffix="Protoss"/>
+    <CSkin id="VoicePackTerranHornerHan" parent="VoicePackCommanderBase" prefix="HornerHanAnnouncer" suffix="Terran"/>
+    <CSkin id="VoicePackZergHornerHan" parent="VoicePackCommanderBase" prefix="HornerHanAnnouncer" suffix="Zerg"/>
+    <CSkin id="VoicePackProtossStone" parent="VoicePackCommanderBase" prefix="StoneAnnouncer" suffix="Protoss"/>
+    <CSkin id="VoicePackTerranStone" parent="VoicePackCommanderBase" prefix="StoneAnnouncer" suffix="Terran"/>
+    <CSkin id="VoicePackZergStone" parent="VoicePackCommanderBase" prefix="StoneAnnouncer" suffix="Zerg"/>
+    <CSkin id="VoicePackProtossAlex007" parent="VoicePackCommanderBase" prefix="Alex007_Announcer" suffix="Protoss"/>
+    <CSkin id="VoicePackTerranAlex007" parent="VoicePackCommanderBase" prefix="Alex007_Announcer" suffix="Terran"/>
+    <CSkin id="VoicePackZergAlex007" parent="VoicePackCommanderBase" prefix="Alex007_Announcer" suffix="Zerg"/>
+    <CSkin id="VoicePackProtossTychus" parent="VoicePackCommanderBase" prefix="TychusAnnouncer" suffix="Protoss"/>
+    <CSkin id="VoicePackTerranTychus" parent="VoicePackCommanderBase" prefix="TychusAnnouncer" suffix="Terran"/>
+    <CSkin id="VoicePackZergTychus" parent="VoicePackCommanderBase" prefix="TychusAnnouncer" suffix="Zerg"/>
+    <CSkin id="VoicePackProtossPomfThud" parent="VoicePackCommanderBase" prefix="PomfThudAnnouncer" suffix="Protoss"/>
+    <CSkin id="VoicePackTerranPomfThud" parent="VoicePackCommanderBase" prefix="PomfThudAnnouncer" suffix="Terran"/>
+    <CSkin id="VoicePackZergPomfThud" parent="VoicePackCommanderBase" prefix="PomfThudAnnouncer" suffix="Zerg"/>
+    <CSkin id="VoicePackProtossZeratul" parent="VoicePackCommanderBase" prefix="ZeratulA" suffix="Protoss"/>
+    <CSkin id="VoicePackTerranZeratul" parent="VoicePackCommanderBase" prefix="ZeratulA" suffix="Terran"/>
+    <CSkin id="VoicePackZergZeratul" parent="VoicePackCommanderBase" prefix="ZeratulA" suffix="Zerg"/>
+    <CSkin id="VoicePackProtossLowko" parent="VoicePackCommanderBase" prefix="Lowko" suffix="Protoss"/>
+    <CSkin id="VoicePackTerranLowko" parent="VoicePackCommanderBase" prefix="Lowko" suffix="Terran"/>
+    <CSkin id="VoicePackZergLowko" parent="VoicePackCommanderBase" prefix="Lowko" suffix="Zerg"/>
+    <CSkin id="VoicePackProtossMrSheng" parent="VoicePackCommanderBase" prefix="MrSheng" suffix="Protoss"/>
+    <CSkin id="VoicePackTerranMrSheng" parent="VoicePackCommanderBase" prefix="MrSheng" suffix="Terran"/>
+    <CSkin id="VoicePackZergMrSheng" parent="VoicePackCommanderBase" prefix="MrSheng" suffix="Zerg"/>
+    <CSkin id="VoicePackProtossVorazun" parent="VoicePackCommanderBase" prefix="VorazunA" suffix="Protoss"/>
+    <CSkin id="VoicePackTerranVorazun" parent="VoicePackCommanderBase" prefix="VorazunA" suffix="Terran"/>
+    <CSkin id="VoicePackZergVorazun" parent="VoicePackCommanderBase" prefix="VorazunA" suffix="Zerg"/>
+    <CSkin id="VoicePackProtossStetmann" parent="VoicePackCommanderBase" prefix="StetmannA" suffix="Protoss"/>
+    <CSkin id="VoicePackTerranStetmann" parent="VoicePackCommanderBase" prefix="StetmannA" suffix="Terran"/>
+    <CSkin id="VoicePackZergStetmann" parent="VoicePackCommanderBase" prefix="StetmannA" suffix="Zerg"/>
+    <CSkin id="VoicePackProtossJeon" parent="VoicePackCommanderBase" prefix="JeonA" suffix="Protoss"/>
+    <CSkin id="VoicePackTerranJeon" parent="VoicePackCommanderBase" prefix="JeonA" suffix="Terran"/>
+    <CSkin id="VoicePackZergJeon" parent="VoicePackCommanderBase" prefix="JeonA" suffix="Zerg"/>
+    <CSkin id="VoicePackProtossKim" parent="VoicePackCommanderBase" prefix="KimA" suffix="Protoss"/>
+    <CSkin id="VoicePackTerranKim" parent="VoicePackCommanderBase" prefix="KimA" suffix="Terran"/>
+    <CSkin id="VoicePackZergKim" parent="VoicePackCommanderBase" prefix="KimA" suffix="Zerg"/>
+    <CSkin id="VoicePackProtossUm" parent="VoicePackCommanderBase" prefix="UmA" suffix="Protoss"/>
+    <CSkin id="VoicePackTerranUm" parent="VoicePackCommanderBase" prefix="UmA" suffix="Terran"/>
+    <CSkin id="VoicePackZergUm" parent="VoicePackCommanderBase" prefix="UmA" suffix="Zerg"/>
+    <CSkin id="VoicePackProtossWinter" parent="VoicePackCommanderBase" prefix="WinterGamingA" suffix="Protoss"/>
+    <CSkin id="VoicePackTerranWinter" parent="VoicePackCommanderBase" prefix="WinterGamingA" suffix="Terran"/>
+    <CSkin id="VoicePackZergWinter" parent="VoicePackCommanderBase" prefix="WinterGamingA" suffix="Zerg"/>
+    <CSkin id="VoicePackProtossMengsk" parent="VoicePackCommanderBase" prefix="MengskA" suffix="Protoss"/>
+    <CSkin id="VoicePackTerranMengsk" parent="VoicePackCommanderBase" prefix="MengskA" suffix="Terran"/>
+    <CSkin id="VoicePackZergMengsk" parent="VoicePackCommanderBase" prefix="MengskA" suffix="Zerg"/>
+    <CSkin id="VoicePackProtossWhiteRa" parent="VoicePackCommanderBase" prefix="WhiteRa_Announcer" suffix="Protoss"/>
+    <CSkin id="VoicePackTerranWhiteRa" parent="VoicePackCommanderBase" prefix="WhiteRa_Announcer" suffix="Terran"/>
+    <CSkin id="VoicePackZergWhiteRa" parent="VoicePackCommanderBase" prefix="WhiteRa_Announcer" suffix="Zerg"/>
+
 </Catalog>

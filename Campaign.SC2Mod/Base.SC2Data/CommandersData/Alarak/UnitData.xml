@@ -223,7 +223,6 @@
         <AbilArray Link="AlarakACDeadlyCharge"/>
         <AbilArray Link="DestructionWaveNoOffset"/>
         <AbilArray Link="AlarakEmpower"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="SoulAbsorption"/>
         <BehaviorArray Link="AlarakTheStrongestSurvive"/>
         <!--BehaviorArray Link="AlarakTheStrongestSurviveDeathPrevent"/-->
@@ -408,7 +407,6 @@
         <AbilArray Link="PhasingModeTaldarim"/>
         <AbilArray Link="WarpPrismTransport"/>
         <AbilArray Link="Warpable"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <WeaponArray Link="WarpPrismTaldarimWeapon"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -476,7 +474,6 @@
         <AbilArray Link="attack"/>
         <AbilArray Link="stop"/>
         <BehaviorArray Link="WarpPrismTaldarimPowerSource"/>
-        <BehaviorArray Link="AllUnitBehaviorController"/>
         <WeaponArray Turret="WarpPrismPhasingRotate"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
