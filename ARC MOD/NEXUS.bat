@@ -1,1 +1,0 @@
-COPY /Y "NEXUS.SC2Mod" "../../ARC.SC2Mod"
