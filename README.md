@@ -18,7 +18,7 @@ git clone hometlt/all-races-coop <SC2Directory>/mods/all-races-coop
     - Infested
     - Taldarims
     - CoverOps
-    - Simulant
+    - Simulant      
     - Primals
     - Dominion
 - Additional factions available to play as commanders or can be set as Amon Faction 
