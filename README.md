@@ -61,3 +61,11 @@ TESTER.SC2Mod
 |---|---|
 | ARC              | used by all coop maps                                                |
 | ARM              | Core Dependency. links all races dependency mods                     |
+
+
+
+
+
+### links
+
+layouts editor https://docs.google.com/document/d/1aTq9Q_DggMywVgE6pbOx-9av5lm2K9ZjAUd-vD07DFc/edit
