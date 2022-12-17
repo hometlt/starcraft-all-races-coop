@@ -2340,5 +2340,19 @@
                 <Field Id="ReplacementFaction"/>
             </User>
         </Instances>
+        <Instances Id="Nerazim">
+            <GameLink GameLink="Vorazun">
+                <Field Id="Console"/>
+            </GameLink>
+            <GameLink GameLink="Prot">
+                <Field Id="MainRace"/>
+            </GameLink>
+            <Image>
+                <Field Id="Icon"/>
+            </Image>
+            <Int Int="1">
+                <Field Id="Hidden"/>
+            </Int>
+        </Instances>
     </CUser>
 </Catalog>

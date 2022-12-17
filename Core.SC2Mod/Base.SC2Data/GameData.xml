@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Includes>
+    <Catalog path="UserData/Maps.xml"/>
     <Catalog path="UserData/Commanders.xml"/>
     <Catalog path="UserData/Enemies.xml"/>
     <Catalog path="UserData/Heroes.xml"/>
@@ -11,8 +12,6 @@
     <Catalog path="UserData/Waves.xml"/>
     <Catalog path="UserData/Compositions.xml"/>
     <Catalog path="UserData/Factions.xml"/>
-
-
     <Catalog path="CommandersData/Dragons/CommanderData.xml"/>
     <Catalog path="CommandersData/Dragons/UnitData.xml"/>
     <Catalog path="CommandersData/Genetron/CommanderData.xml"/>

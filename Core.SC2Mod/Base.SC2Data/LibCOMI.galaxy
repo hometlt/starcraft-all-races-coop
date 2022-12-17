@@ -553,6 +553,27 @@ void libCOMI_InitVariables () {
     libCOMI_gv_cU_ScoreTotalValueLabel = c_invalidDialogControlId;
     libCOMI_gv_aF_SlimUI_PlayerGroup = PlayerGroupEmpty();
     libCOMI_gv_cM_FullScreenUpperContainer = c_invalidDialogControlId;
+    libCOMI_gv_dialog = c_invalidDialogId;
+    libCOMI_gv_startMissionDialogButton = c_invalidDialogControlId;
+    libCOMI_gv_selectMissionDialog = c_invalidDialogId;
+    libCOMI_gv_selectMissionDialogBig = c_invalidDialogId;
+    libCOMI_gv_selectMissionPulldownDialog = c_invalidDialogControlId;
+    for (init_i = 0; init_i <= libCOMI_gv_mAPS_MAX; init_i += 1) {
+        libCOMI_gv_mapFiles[init_i] = "";
+    }
+    for (init_i = 0; init_i <= libCOMI_gv_mAPS_MAX; init_i += 1) {
+        libCOMI_gv_missionButton[init_i] = c_invalidDialogControlId;
+    }
+    for (init_i = 0; init_i <= libCOMI_gv_mAPS_MAX; init_i += 1) {
+        libCOMI_gv_missionImage[init_i] = c_invalidDialogControlId;
+    }
+    for (init_i = 0; init_i <= libCOMI_gv_mAPS_MAX; init_i += 1) {
+        libCOMI_gv_missionText[init_i] = c_invalidDialogControlId;
+    }
+    for (init_i = 0; init_i <= libCOMI_gv_mAPS_MAX; init_i += 1) {
+        libCOMI_gv_mapBorder[init_i] = c_invalidDialogControlId;
+    }
+    libCOMI_gv_missionsButton = c_invalidDialogControlId;
     libCOMI_gv_inactiveZone = RegionFromName("Inactive Zone");
     libCOMI_gv_cC_NoSpawnRegion = RegionEmpty();
     libCOMI_gv_cM_RevealersEnabled = true;
@@ -645,27 +666,6 @@ void libCOMI_InitVariables () {
     for (init_i = 0; init_i <= libCOMI_gv_cCC_MAXPLAYERS; init_i += 1) {
         libCOMI_gv_cM_EndMissionResult[init_i] = c_gameOverDefeat;
     }
-    libCOMI_gv_dialog = c_invalidDialogId;
-    libCOMI_gv_startMissionDialogButton = c_invalidDialogControlId;
-    libCOMI_gv_selectMissionDialog = c_invalidDialogId;
-    libCOMI_gv_selectMissionDialogBig = c_invalidDialogId;
-    libCOMI_gv_selectMissionPulldownDialog = c_invalidDialogControlId;
-    for (init_i = 0; init_i <= 50; init_i += 1) {
-        libCOMI_gv_mapFiles[init_i] = "";
-    }
-    for (init_i = 0; init_i <= 50; init_i += 1) {
-        libCOMI_gv_missionButton[init_i] = c_invalidDialogControlId;
-    }
-    for (init_i = 0; init_i <= 50; init_i += 1) {
-        libCOMI_gv_missionImage[init_i] = c_invalidDialogControlId;
-    }
-    for (init_i = 0; init_i <= 50; init_i += 1) {
-        libCOMI_gv_missionText[init_i] = c_invalidDialogControlId;
-    }
-    for (init_i = 0; init_i <= 50; init_i += 1) {
-        libCOMI_gv_mapBorder[init_i] = c_invalidDialogControlId;
-    }
-    libCOMI_gv_missionsButton = c_invalidDialogControlId;
     for (init_i = 0; init_i <= libCOMI_gv_cCC_MAXPLAYERS; init_i += 1) {
         libCOMI_gv_cM_ScreenMode[init_i] = c_uiModeConsole;
     }
@@ -6510,7 +6510,7 @@ void libCOMI_gf_ActivateMonobattleProfile (int lp_player, string lp_profile) {
     auto12ACC51C_var = 1;
     for ( ; auto12ACC51C_var <= auto12ACC51C_ae; auto12ACC51C_var += 1 ) {
         if ((UserDataGetGameLink("Rules", UserDataInstance("Rules", auto12ACC51C_var), "Race", 1) == PlayerRace(lp_player))) {
-            libCOMI_gv_euhutamdcifabggw[lp_player] = UserDataInstance("Rules", auto12ACC51C_var);
+            libCOMI_gv_didwaftqtuvgfetd[lp_player] = UserDataInstance("Rules", auto12ACC51C_var);
             break;
         }
 
@@ -6531,7 +6531,7 @@ void libCOMI_gf_ActivateMonobattleProfile (int lp_player, string lp_profile) {
     auto25630AC8_ae = UserDataFieldValueCount("Rules", "Unit");
     lv_i = 1;
     for ( ; ( (auto25630AC8_ai >= 0 && lv_i <= auto25630AC8_ae) || (auto25630AC8_ai < 0 && lv_i >= auto25630AC8_ae) ) ; lv_i += auto25630AC8_ai ) {
-        lv_uNIT = UserDataGetUnit("Rules", libCOMI_gv_euhutamdcifabggw[lp_player], "Unit", lv_i);
+        lv_uNIT = UserDataGetUnit("Rules", libCOMI_gv_didwaftqtuvgfetd[lp_player], "Unit", lv_i);
         libCOMI_gf_ArmUnitType(lp_player, lv_uNIT);
         libCOMI_gf_CacheUnit(lp_player, lv_uNIT, true);
     }
@@ -6621,7 +6621,7 @@ int libCOMI_gf_AllowCommonUnit (int lp_player, string lp_unit) {
     lv_cAbilityEffectAttack = CatalogEntryClass(c_gameCatalogAbil, "attack");
 
     // Implementation
-    if ((UserDataGetInt("Rules", libCOMI_gv_euhutamdcifabggw[lp_player], "Supply", 1) > 0)) {
+    if ((UserDataGetInt("Rules", libCOMI_gv_didwaftqtuvgfetd[lp_player], "Supply", 1) > 0)) {
         lv_fOOD = true;
     }
     else {
@@ -6817,7 +6817,7 @@ void libCOMI_gf_CacheUnit (int lp_player, string lp_unit, bool lp_scan) {
     int lv_b;
     int lv_cl;
     int lv_lb;
-    string lv_qlconedekvgnjkqo;
+    string lv_vxtsuturrmpxqufc;
 
     // Automatic Variable Declarations
     int auto49F40041_ae;
@@ -6851,7 +6851,7 @@ void libCOMI_gf_CacheUnit (int lp_player, string lp_unit, bool lp_scan) {
 
     // Variable Initialization
     lv_hasDangerAbilities = libCOMI_gf_UnitTypeisArmed(lp_player, lp_unit);
-    lv_qlconedekvgnjkqo = ("Race:" + UserDataGetString("Rules", libCOMI_gv_euhutamdcifabggw[lp_player], "Category", 1));
+    lv_vxtsuturrmpxqufc = ("Race:" + UserDataGetString("Rules", libCOMI_gv_didwaftqtuvgfetd[lp_player], "Category", 1));
 
     // Implementation
     if ((CatalogEntryIsValid(c_gameCatalogUnit, lp_unit) == false)) {
@@ -6943,7 +6943,7 @@ void libCOMI_gf_CacheUnit (int lp_player, string lp_unit, bool lp_scan) {
         auto3F83692D_i = 1;
         for ( ; auto3F83692D_i <= CatalogEntryCount(c_gameCatalogAbil) ; auto3F83692D_i += 1 ) {
             lv_aBILITY = CatalogEntryGet(auto3F83692D_catalog, auto3F83692D_i);
-            if ((PlayerRace(lp_player) != "Neut") && (StringFind(CatalogFieldValueGet(c_gameCatalogAbil, lv_aBILITY, "EditorCategories", lp_player), lv_qlconedekvgnjkqo, c_stringNoCase) == -1)) {
+            if ((PlayerRace(lp_player) != "Neut") && (StringFind(CatalogFieldValueGet(c_gameCatalogAbil, lv_aBILITY, "EditorCategories", lp_player), lv_vxtsuturrmpxqufc, c_stringNoCase) == -1)) {
                 continue;
             }
             else {
@@ -7020,7 +7020,7 @@ void libCOMI_gf_CacheUnit (int lp_player, string lp_unit, bool lp_scan) {
         auto2B5942ED_i = 1;
         for ( ; auto2B5942ED_i <= CatalogEntryCount(c_gameCatalogBehavior) ; auto2B5942ED_i += 1 ) {
             lv_bEHAVIOR = CatalogEntryGet(auto2B5942ED_catalog, auto2B5942ED_i);
-            if ((PlayerRace(lp_player) != "Neut") && (StringFind(CatalogFieldValueGet(c_gameCatalogBehavior, lv_bEHAVIOR, "EditorCategories", lp_player), lv_qlconedekvgnjkqo, c_stringNoCase) == -1)) {
+            if ((PlayerRace(lp_player) != "Neut") && (StringFind(CatalogFieldValueGet(c_gameCatalogBehavior, lv_bEHAVIOR, "EditorCategories", lp_player), lv_vxtsuturrmpxqufc, c_stringNoCase) == -1)) {
                 continue;
             }
             else {
@@ -7147,7 +7147,7 @@ void libCOMI_gf_CacheUpgrade (int lp_player, string lp_upgrade, bool lp_scan) {
     int lv_abilityCommandIndex;
     int lv_effectArrayIndex;
     string lv_effeectArrayReference;
-    string lv_dkuiyqshiveamuak;
+    string lv_hugvgdkbjekxkwrh;
 
     // Automatic Variable Declarations
     int auto20AAF7D3_ae;
@@ -7159,7 +7159,7 @@ void libCOMI_gf_CacheUpgrade (int lp_player, string lp_upgrade, bool lp_scan) {
 
     // Variable Initialization
     lv_effeectArrayReference = "";
-    lv_dkuiyqshiveamuak = ("Race:" + UserDataGetString("Rules", libCOMI_gv_euhutamdcifabggw[lp_player], "Category", 1));
+    lv_hugvgdkbjekxkwrh = ("Race:" + UserDataGetString("Rules", libCOMI_gv_didwaftqtuvgfetd[lp_player], "Category", 1));
 
     // Implementation
     if ((CatalogEntryIsValid(c_gameCatalogUpgrade, lp_upgrade) == false)) {
@@ -7182,7 +7182,7 @@ void libCOMI_gf_CacheUpgrade (int lp_player, string lp_upgrade, bool lp_scan) {
         auto6BC66C56_i = 1;
         for ( ; auto6BC66C56_i <= CatalogEntryCount(c_gameCatalogAbil) ; auto6BC66C56_i += 1 ) {
             lv_aBILITY = CatalogEntryGet(auto6BC66C56_catalog, auto6BC66C56_i);
-            if ((PlayerRace(lp_player) != "Neut") && (StringFind(CatalogFieldValueGet(c_gameCatalogAbil, lv_aBILITY, "EditorCategories", lp_player), lv_dkuiyqshiveamuak, c_stringNoCase) == -1)) {
+            if ((PlayerRace(lp_player) != "Neut") && (StringFind(CatalogFieldValueGet(c_gameCatalogAbil, lv_aBILITY, "EditorCategories", lp_player), lv_hugvgdkbjekxkwrh, c_stringNoCase) == -1)) {
                 continue;
             }
             else {
@@ -9500,10 +9500,10 @@ void libCOMI_gf_CreateFactionsDialog () {
     libCOMI_gv_amonFactionsDialog = DialogLastCreated();
     DialogSetImageVisible(DialogLastCreated(), false);
     auto713042BC_ae = UserDataInstanceCount("Factions");
-    auto713042BC_var = 1;
+    auto713042BC_var = 4;
     for ( ; auto713042BC_var <= auto713042BC_ae; auto713042BC_var += 1 ) {
         lv_faction = UserDataInstance("Factions", auto713042BC_var);
-        if ((UserDataGetInt("Factions", lv_faction, "HideInLauncher", 1) == 1)) {
+        if ((UserDataGetInt("Factions", lv_faction, "Hidden", 1) == 1)) {
             continue;
         }
 
@@ -14065,6 +14065,59 @@ color libCOMI_gf_ProgressColor (int lp_minValue, int lp_maxValue, int lp_progres
     else {
     }
     return lp_color1;
+}
+
+void libCOMI_gf_UpdateMapSelection (int lp_player, int lp_mapIndex) {
+    // Variable Declarations
+    int lv_i;
+    color lv_color;
+    int lv_p;
+    int lv_votes;
+    int lv_mapIndex;
+    int lv_old;
+
+    // Automatic Variable Declarations
+    int auto09A419F0_ae;
+    const int auto09A419F0_ai = 1;
+    playergroup autoAE5580BA_g;
+    int auto4B72E0D3_val;
+
+    // Variable Initialization
+    lv_color = Color(0,0,0);
+    lv_mapIndex = lp_mapIndex;
+    lv_old = libCOMI_gv_selected[lp_player];
+
+    // Implementation
+    libCOMI_gv_selected[lp_player] = lv_mapIndex;
+    auto09A419F0_ae = libCOMI_gv_totalMaps;
+    lv_i = 1;
+    for ( ; ( (auto09A419F0_ai >= 0 && lv_i <= auto09A419F0_ae) || (auto09A419F0_ai < 0 && lv_i >= auto09A419F0_ae) ) ; lv_i += auto09A419F0_ai ) {
+        lv_votes = 0;
+        autoAE5580BA_g = PlayerGroupAll();
+        lv_p = -1;
+        while (true) {
+            lv_p = PlayerGroupNextPlayer(autoAE5580BA_g, lv_p);
+            if (lv_p < 0) { break; }
+            if ((PlayerType(lv_p) == c_playerTypeUser) && (libCOMI_gv_selected[lv_p] == lv_i)) {
+                lv_votes += 1;
+                lv_color = libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(lv_p, false));
+            }
+
+        }
+        auto4B72E0D3_val = lv_votes;
+        if (auto4B72E0D3_val == 0) {
+            DialogControlSetVisible(libCOMI_gv_mapBorder[lv_i], libCOMI_gv_all, false);
+        }
+        else if (auto4B72E0D3_val == 1) {
+            libNtve_gf_SetDialogItemColor(libCOMI_gv_mapBorder[lv_i], lv_color, libCOMI_gv_all);
+            DialogControlSetVisible(libCOMI_gv_mapBorder[lv_i], libCOMI_gv_all, true);
+        }
+        else {
+            libNtve_gf_SetDialogItemColor(libCOMI_gv_mapBorder[lv_i], Color(100.00, 100.00, 100.00), libCOMI_gv_all);
+            DialogControlSetVisible(libCOMI_gv_mapBorder[lv_i], libCOMI_gv_all, true);
+        }
+    }
+    DialogControlSelectItem(libCOMI_gv_selectMissionPulldownDialog, libCOMI_gv_all, lv_mapIndex);
 }
 
 point libCOMI_gf_PointWithPathingNearBase (playergroup lp_players) {
@@ -21798,59 +21851,6 @@ fixed libCOMI_gf_SafetyRadius () {
     // Automatic Variable Declarations
     // Implementation
     return UserDataGetFixed("MissionSettings", "CurrentMission", "SafetyRadius", 1);
-}
-
-void libCOMI_gf_UpdateMapSelection (int lp_player, int lp_mapIndex) {
-    // Variable Declarations
-    int lv_i;
-    color lv_color;
-    int lv_p;
-    int lv_votes;
-    int lv_mapIndex;
-    int lv_old;
-
-    // Automatic Variable Declarations
-    int auto09A419F0_ae;
-    const int auto09A419F0_ai = 1;
-    playergroup autoAE5580BA_g;
-    int auto4B72E0D3_val;
-
-    // Variable Initialization
-    lv_color = Color(0,0,0);
-    lv_mapIndex = lp_mapIndex;
-    lv_old = libCOMI_gv_selected[lp_player];
-
-    // Implementation
-    libCOMI_gv_selected[lp_player] = lv_mapIndex;
-    auto09A419F0_ae = libCOMI_gv_totalMaps;
-    lv_i = 1;
-    for ( ; ( (auto09A419F0_ai >= 0 && lv_i <= auto09A419F0_ae) || (auto09A419F0_ai < 0 && lv_i >= auto09A419F0_ae) ) ; lv_i += auto09A419F0_ai ) {
-        lv_votes = 0;
-        autoAE5580BA_g = PlayerGroupAll();
-        lv_p = -1;
-        while (true) {
-            lv_p = PlayerGroupNextPlayer(autoAE5580BA_g, lv_p);
-            if (lv_p < 0) { break; }
-            if ((PlayerType(lv_p) == c_playerTypeUser) && (libCOMI_gv_selected[lv_p] == lv_i)) {
-                lv_votes += 1;
-                lv_color = libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(lv_p, false));
-            }
-
-        }
-        auto4B72E0D3_val = lv_votes;
-        if (auto4B72E0D3_val == 0) {
-            DialogControlSetVisible(libCOMI_gv_mapBorder[lv_i], libCOMI_gv_all, false);
-        }
-        else if (auto4B72E0D3_val == 1) {
-            libNtve_gf_SetDialogItemColor(libCOMI_gv_mapBorder[lv_i], lv_color, libCOMI_gv_all);
-            DialogControlSetVisible(libCOMI_gv_mapBorder[lv_i], libCOMI_gv_all, true);
-        }
-        else {
-            libNtve_gf_SetDialogItemColor(libCOMI_gv_mapBorder[lv_i], Color(100.00, 100.00, 100.00), libCOMI_gv_all);
-            DialogControlSetVisible(libCOMI_gv_mapBorder[lv_i], libCOMI_gv_all, true);
-        }
-    }
-    DialogControlSelectItem(libCOMI_gv_selectMissionPulldownDialog, libCOMI_gv_all, lv_mapIndex);
 }
 
 string libCOMI_gf_CC_CurrentMap () {
@@ -32050,6 +32050,261 @@ void libCOMI_gt_AF_SlimUI_Delayed_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Trigger: MapListslectionChanged
+//--------------------------------------------------------------------------------------------------
+bool libCOMI_gt_MapListslectionChanged_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((EventDialogControl() == libCOMI_gv_selectMissionPulldownDialog))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libCOMI_gf_UpdateMapSelection(EventPlayer(), DialogControlGetSelectedItem(libCOMI_gv_selectMissionPulldownDialog, EventPlayer()));
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMI_gt_MapListslectionChanged_Init () {
+    libCOMI_gt_MapListslectionChanged = TriggerCreate("libCOMI_gt_MapListslectionChanged_Func");
+    TriggerAddEventDialogControl(libCOMI_gt_MapListslectionChanged, c_playerAny, c_invalidDialogControlId, c_triggerControlEventTypeSelectionChanged);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: MapButtonClicked
+//--------------------------------------------------------------------------------------------------
+bool libCOMI_gt_MapButtonClicked_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_votes;
+    int lv_i;
+    int lv_old;
+
+    // Automatic Variable Declarations
+    int autoC91347E2_ae;
+    const int autoC91347E2_ai = 1;
+
+    // Variable Initialization
+    lv_old = libCOMI_gv_selected[EventPlayer()];
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    autoC91347E2_ae = libCOMI_gv_totalMaps;
+    lv_i = 1;
+    for ( ; ( (autoC91347E2_ai >= 0 && lv_i <= autoC91347E2_ae) || (autoC91347E2_ai < 0 && lv_i >= autoC91347E2_ae) ) ; lv_i += autoC91347E2_ai ) {
+        if ((EventDialogControl() == libCOMI_gv_missionButton[lv_i])) {
+            libCOMI_gf_UpdateMapSelection(EventPlayer(), lv_i);
+        }
+
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMI_gt_MapButtonClicked_Init () {
+    libCOMI_gt_MapButtonClicked = TriggerCreate("libCOMI_gt_MapButtonClicked_Func");
+    TriggerAddEventDialogControl(libCOMI_gt_MapButtonClicked, c_playerAny, c_invalidDialogControlId, c_triggerControlEventTypeClick);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: MissionsButtonClicked
+//--------------------------------------------------------------------------------------------------
+bool libCOMI_gt_MissionsButtonClicked_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((EventDialogControl() == libCOMI_gv_missionsButton))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if ((DialogIsVisible(libCOMI_gv_selectMissionDialogBig, EventPlayer()) == true)) {
+        DialogSetVisible(libCOMI_gv_selectMissionDialogBig, PlayerGroupSingle(EventPlayer()), false);
+    }
+    else {
+        DialogSetVisible(libCOMI_gv_selectMissionDialogBig, PlayerGroupSingle(EventPlayer()), true);
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMI_gt_MissionsButtonClicked_Init () {
+    libCOMI_gt_MissionsButtonClicked = TriggerCreate("libCOMI_gt_MissionsButtonClicked_Func");
+    TriggerAddEventDialogControl(libCOMI_gt_MissionsButtonClicked, c_playerAny, c_invalidDialogControlId, c_triggerControlEventTypeClick);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Start Mission
+//--------------------------------------------------------------------------------------------------
+bool libCOMI_gt_StartMission_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_selected;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_selected = DialogControlGetSelectedItem(libCOMI_gv_selectMissionPulldownDialog, 1);
+
+    // Conditions
+    if (testConds) {
+        if (!((EventDialogControl() == libCOMI_gv_startMissionDialogButton))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if ((lv_selected == 1)) {
+        lv_selected = RandomInt(2, libCOMI_gv_totalMaps);
+    }
+
+    if ((GameIsOnline() == true)) {
+        OnlineMapToMapLoad(libCOMI_gv_mapSlots[lv_selected], PlayerGroupAll(), PlayerGroupEmpty());
+    }
+    else {
+        GameSetNextMap(("coop/" + libCOMI_gv_mapFiles[lv_selected]));
+        GameOver(1, c_gameOverVictory, false, false);
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMI_gt_StartMission_Init () {
+    libCOMI_gt_StartMission = TriggerCreate("libCOMI_gt_StartMission_Func");
+    TriggerEnable(libCOMI_gt_StartMission, false);
+    TriggerAddEventDialogControl(libCOMI_gt_StartMission, c_playerAny, c_invalidDialogControlId, c_triggerControlEventTypeClick);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Create Missions Dialog
+//--------------------------------------------------------------------------------------------------
+bool libCOMI_gt_CreateMissionsDialog_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_offsetX;
+    int lv_offsetY;
+    int lv_x;
+    string lv_map;
+    int lv_y;
+    int lv_image;
+    int lv_buttonWidth;
+    int lv_buttonsInRow;
+
+    // Automatic Variable Declarations
+    int autoA303AEE5_ae;
+    int autoA303AEE5_var;
+    playergroup auto39CB0EC4_g;
+    int auto39CB0EC4_var;
+
+    // Variable Initialization
+    lv_offsetX = 10;
+    lv_offsetY = -60;
+    lv_image = c_invalidDialogControlId;
+    lv_buttonWidth = 180;
+    lv_buttonsInRow = 9;
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    Wait(2.0, c_timeGame);
+    DialogCreate(1000, 1000, c_anchorTopRight, 20, 20, true);
+    DialogSetImageVisible(DialogLastCreated(), false);
+    libCOMI_gv_selectMissionDialog = DialogLastCreated();
+    DialogSetRenderPriority(libCOMI_gv_selectMissionDialog, 9000);
+    DialogControlCreate(libCOMI_gv_selectMissionDialog, c_triggerControlTypePulldown);
+    libCOMI_gv_selectMissionPulldownDialog = DialogControlLastCreated();
+    DialogControlSetSize(libCOMI_gv_selectMissionPulldownDialog, libCOMI_gv_all, 470, 90);
+    DialogControlSetPosition(libCOMI_gv_selectMissionPulldownDialog, libCOMI_gv_all, c_anchorTopRight, 390, -5);
+    libNtve_gf_CreateDialogItemButton(libCOMI_gv_selectMissionDialog, 350, 80, c_anchorTopRight, 0, 0, StringExternal("Param/Value/lib_COMI_A3FDC3D3"), StringExternal("Param/Value/lib_COMI_8D7D1E1A"), "");
+    libCOMI_gv_startMissionDialogButton = DialogControlLastCreated();
+    DialogSetVisible(libCOMI_gv_selectMissionDialog, libCOMI_gv_all, true);
+    DialogControlSetVisible(libCOMI_gv_selectMissionPulldownDialog, libCOMI_gv_all, true);
+    DialogControlSetVisible(libCOMI_gv_startMissionDialogButton, libCOMI_gv_all, true);
+    DialogCreate(1820, 970, c_anchorTopLeft, 120, 125, true);
+    libCOMI_gv_selectMissionDialogBig = DialogLastCreated();
+    DialogSetRenderPriority(libCOMI_gv_selectMissionDialogBig, 5000);
+    DialogSetTitle(libCOMI_gv_selectMissionDialogBig, StringExternal("Param/Value/lib_COMI_033B1E98"));
+    DialogSetVisible(libCOMI_gv_selectMissionDialogBig, libCOMI_gv_all, true);
+    autoA303AEE5_ae = UserDataInstanceCount("Maps");
+    autoA303AEE5_var = 1;
+    for ( ; autoA303AEE5_var <= autoA303AEE5_ae; autoA303AEE5_var += 1 ) {
+        lv_map = UserDataInstance("Maps", autoA303AEE5_var);
+        if ((UserDataGetInt("Maps", lv_map, "Hidden", 1) == 0)) {
+            if ((((UserDataGetInt("Maps", lv_map, "Map Slot", 1) != 0) && (GameIsOnline() == true)) || ((UserDataGetString("Maps", lv_map, "localFile", 1) != "") && (GameIsOnline() == false)))) {
+                lv_x = (lv_offsetX + ((lv_buttonWidth + 10) * ((libCOMI_gv_totalMaps - (lv_buttonsInRow * (libCOMI_gv_totalMaps / lv_buttonsInRow))) - 0)));
+                lv_y = (lv_offsetY + (140 * (libCOMI_gv_totalMaps / lv_buttonsInRow)));
+                libCOMI_gv_totalMaps += 1;
+                libCOMI_gv_mapNames[libCOMI_gv_totalMaps] = UserDataGetText("Maps", lv_map, "Name", 1);
+                libCOMI_gv_mapSlots[libCOMI_gv_totalMaps] = UserDataGetInt("Maps", lv_map, "Map Slot", 1);
+                libCOMI_gv_mapFiles[libCOMI_gv_totalMaps] = UserDataGetString("Maps", lv_map, "localFile", 1);
+                DialogControlAddItem(libCOMI_gv_selectMissionPulldownDialog, libCOMI_gv_all, libCOMI_gv_mapNames[libCOMI_gv_totalMaps]);
+                libNtve_gf_CreateDialogItemButton(DialogLastCreated(), lv_buttonWidth, 130, c_anchorTopLeft, (lv_x + 50), (lv_y + 145), UserDataGetText("Maps", lv_map, "Description", 1), libCOMI_gv_mapNames[libCOMI_gv_totalMaps], UserDataGetImagePath("Maps", lv_map, "Image", 1));
+                DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypeButton, "Coop_CommanderSelection/CommanderButtonTemplate");
+                DialogControlSetSize(DialogControlLastCreated(), libCOMI_gv_all, lv_buttonWidth, 130);
+                DialogControlSetPosition(DialogControlLastCreated(), libCOMI_gv_all, c_anchorTopLeft, (lv_x + 50), (lv_y + 145));
+                libCOMI_gv_missionButton[libCOMI_gv_totalMaps] = DialogControlLastCreated();
+                libNtve_gf_SetDialogItemTooltip(libCOMI_gv_missionButton[libCOMI_gv_totalMaps], UserDataGetText("Maps", lv_map, "Description", 1), libCOMI_gv_all);
+                DialogControlHookup(libCOMI_gv_missionButton[libCOMI_gv_totalMaps], c_triggerControlTypeImage, "CheckMark");
+                DialogControlSetVisible(DialogControlLastCreated(), libCOMI_gv_all, false);
+                DialogControlSetVisible(libARRA_gf_HookUpDialogItemandshowforplayers("CommanderPortrait", c_triggerControlTypePortrait, libCOMI_gv_missionButton[libCOMI_gv_totalMaps], libCOMI_gv_all), libCOMI_gv_all, false);
+                libCOMI_gv_missionImage[libCOMI_gv_totalMaps] = libARRA_gf_HookUpDialogItemandshowforplayers("Locked", c_triggerControlTypeImage, libCOMI_gv_missionButton[libCOMI_gv_totalMaps], libCOMI_gv_all);
+                DialogControlSetVisible(libCOMI_gv_missionImage[libCOMI_gv_totalMaps], libCOMI_gv_all, false);
+                libCOMI_gv_missionImage[libCOMI_gv_totalMaps] = libARRA_gf_HookUpDialogItemandshowforplayers("BackgroundImage", c_triggerControlTypeImage, libCOMI_gv_missionButton[libCOMI_gv_totalMaps], libCOMI_gv_all);
+                libNtve_gf_SetDialogItemImage(libCOMI_gv_missionImage[libCOMI_gv_totalMaps], UserDataGetImagePath("Maps", lv_map, "Image", 1), libCOMI_gv_all);
+                libCOMI_gv_missionText[libCOMI_gv_totalMaps] = libARRA_gf_HookUpDialogItemandshowforplayers("CommanderName", c_triggerControlTypeLabel, libCOMI_gv_missionButton[libCOMI_gv_totalMaps], libCOMI_gv_all);
+                libNtve_gf_SetDialogItemText(libCOMI_gv_missionText[libCOMI_gv_totalMaps], libCOMI_gv_mapNames[libCOMI_gv_totalMaps], libCOMI_gv_all);
+                libCOMI_gv_mapBorder[libCOMI_gv_totalMaps] = libARRA_gf_HookUpDialogItemandshowforplayers("SelectionBorder", c_triggerControlTypeImage, libCOMI_gv_missionButton[libCOMI_gv_totalMaps], libCOMI_gv_all);
+                DialogControlSetVisible(libCOMI_gv_mapBorder[libCOMI_gv_totalMaps], libCOMI_gv_all, false);
+                libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), (lv_buttonWidth - 20), 50, c_anchorTopLeft, (lv_x + 55), (lv_y + 230), libCOMI_gv_mapNames[libCOMI_gv_totalMaps], ColorWithAlpha(0,0,0,0), false, 2.0);
+                libCOMI_gv_missionText[libCOMI_gv_totalMaps] = DialogControlLastCreated();
+                libNtve_gf_SetDialogItemStyle(DialogControlLastCreated(), "CenterJustified", libCOMI_gv_all);
+                libNtve_gf_SetDialogItemStyle(DialogControlLastCreated(), "ModCenterSize12", libCOMI_gv_all);
+            }
+
+        }
+
+    }
+    DialogControlSelectItem(libCOMI_gv_selectMissionPulldownDialog, libCOMI_gv_all, 1);
+    DialogCreate(1200, 100, c_anchorBottomLeft, 120, 20, true);
+    libCOMI_gv_dialog = DialogLastCreated();
+    DialogSetImageVisible(DialogLastCreated(), false);
+    libNtve_gf_CreateDialogItemButton(libCOMI_gv_dialog, 200, 80, c_anchorBottomLeft, 0, 0, StringExternal("Param/Value/lib_COMI_1F33D1A1"), StringExternal("Param/Value/lib_COMI_F4C11E4E"), "");
+    libCOMI_gv_missionsButton = DialogControlLastCreated();
+    DialogControlSetVisible(libCOMI_gv_missionsButton, libCOMI_gv_all, true);
+    DialogSetVisible(libCOMI_gv_dialog, libCOMI_gv_all, true);
+    auto39CB0EC4_g = PlayerGroupActive();
+    auto39CB0EC4_var = -1;
+    while (true) {
+        auto39CB0EC4_var = PlayerGroupNextPlayer(auto39CB0EC4_g, auto39CB0EC4_var);
+        if (auto39CB0EC4_var < 0) { break; }
+        libCOMI_gf_UpdateMapSelection(auto39CB0EC4_var, 1);
+    }
+    TriggerEnable(libCOMI_gt_StartMission, true);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCOMI_gt_CreateMissionsDialog_Init () {
+    libCOMI_gt_CreateMissionsDialog = TriggerCreate("libCOMI_gt_CreateMissionsDialog_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger: Performance Sleep Area
 //--------------------------------------------------------------------------------------------------
 bool libCOMI_gt_PerformanceSleepArea_Func (bool testConds, bool runActions) {
@@ -34332,257 +34587,6 @@ bool libCOMI_gt_AF_MissionEnds_Func (bool testConds, bool runActions) {
 void libCOMI_gt_AF_MissionEnds_Init () {
     libCOMI_gt_AF_MissionEnds = TriggerCreate("libCOMI_gt_AF_MissionEnds_Func");
     TriggerAddEventGeneric(libCOMI_gt_AF_MissionEnds, "UT_MissionEnd");
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: MapListslectionChanged
-//--------------------------------------------------------------------------------------------------
-bool libCOMI_gt_MapListslectionChanged_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Conditions
-    if (testConds) {
-        if (!((EventDialogControl() == libCOMI_gv_selectMissionPulldownDialog))) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    libCOMI_gf_UpdateMapSelection(EventPlayer(), DialogControlGetSelectedItem(libCOMI_gv_selectMissionPulldownDialog, EventPlayer()));
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMI_gt_MapListslectionChanged_Init () {
-    libCOMI_gt_MapListslectionChanged = TriggerCreate("libCOMI_gt_MapListslectionChanged_Func");
-    TriggerAddEventDialogControl(libCOMI_gt_MapListslectionChanged, c_playerAny, c_invalidDialogControlId, c_triggerControlEventTypeSelectionChanged);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: MapButtonClicked
-//--------------------------------------------------------------------------------------------------
-bool libCOMI_gt_MapButtonClicked_Func (bool testConds, bool runActions) {
-    // Variable Declarations
-    int lv_votes;
-    int lv_i;
-    int lv_old;
-
-    // Automatic Variable Declarations
-    int autoC91347E2_ae;
-    const int autoC91347E2_ai = 1;
-
-    // Variable Initialization
-    lv_old = libCOMI_gv_selected[EventPlayer()];
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    autoC91347E2_ae = libCOMI_gv_totalMaps;
-    lv_i = 1;
-    for ( ; ( (autoC91347E2_ai >= 0 && lv_i <= autoC91347E2_ae) || (autoC91347E2_ai < 0 && lv_i >= autoC91347E2_ae) ) ; lv_i += autoC91347E2_ai ) {
-        if ((EventDialogControl() == libCOMI_gv_missionButton[lv_i])) {
-            libCOMI_gf_UpdateMapSelection(EventPlayer(), lv_i);
-        }
-
-    }
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMI_gt_MapButtonClicked_Init () {
-    libCOMI_gt_MapButtonClicked = TriggerCreate("libCOMI_gt_MapButtonClicked_Func");
-    TriggerAddEventDialogControl(libCOMI_gt_MapButtonClicked, c_playerAny, c_invalidDialogControlId, c_triggerControlEventTypeClick);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: MissionsButtonClicked
-//--------------------------------------------------------------------------------------------------
-bool libCOMI_gt_MissionsButtonClicked_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Conditions
-    if (testConds) {
-        if (!((EventDialogControl() == libCOMI_gv_missionsButton))) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    if ((DialogIsVisible(libCOMI_gv_selectMissionDialogBig, EventPlayer()) == true)) {
-        DialogSetVisible(libCOMI_gv_selectMissionDialogBig, PlayerGroupSingle(EventPlayer()), false);
-    }
-    else {
-        DialogSetVisible(libCOMI_gv_selectMissionDialogBig, PlayerGroupSingle(EventPlayer()), true);
-    }
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMI_gt_MissionsButtonClicked_Init () {
-    libCOMI_gt_MissionsButtonClicked = TriggerCreate("libCOMI_gt_MissionsButtonClicked_Func");
-    TriggerAddEventDialogControl(libCOMI_gt_MissionsButtonClicked, c_playerAny, c_invalidDialogControlId, c_triggerControlEventTypeClick);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Start Mission
-//--------------------------------------------------------------------------------------------------
-bool libCOMI_gt_StartMission_Func (bool testConds, bool runActions) {
-    // Variable Declarations
-    int lv_selected;
-
-    // Automatic Variable Declarations
-    // Variable Initialization
-    lv_selected = DialogControlGetSelectedItem(libCOMI_gv_selectMissionPulldownDialog, 1);
-
-    // Conditions
-    if (testConds) {
-        if (!((EventDialogControl() == libCOMI_gv_startMissionDialogButton))) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    if ((lv_selected == 1)) {
-        lv_selected = RandomInt(2, libCOMI_gv_totalMaps);
-    }
-
-    if ((GameIsOnline() == true)) {
-        OnlineMapToMapLoad(libCOMI_gv_mapSlots[lv_selected], PlayerGroupAll(), PlayerGroupEmpty());
-    }
-    else {
-        GameSetNextMap(("coop/" + libCOMI_gv_mapFiles[lv_selected]));
-        GameOver(1, c_gameOverVictory, false, false);
-    }
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMI_gt_StartMission_Init () {
-    libCOMI_gt_StartMission = TriggerCreate("libCOMI_gt_StartMission_Func");
-    TriggerEnable(libCOMI_gt_StartMission, false);
-    TriggerAddEventDialogControl(libCOMI_gt_StartMission, c_playerAny, c_invalidDialogControlId, c_triggerControlEventTypeClick);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Create Missions Dialog
-//--------------------------------------------------------------------------------------------------
-bool libCOMI_gt_CreateMissionsDialog_Func (bool testConds, bool runActions) {
-    // Variable Declarations
-    int lv_offsetX;
-    int lv_offsetY;
-    int lv_x;
-    string lv_map;
-    int lv_y;
-    int lv_image;
-
-    // Automatic Variable Declarations
-    int autoA303AEE5_ae;
-    int autoA303AEE5_var;
-    playergroup auto39CB0EC4_g;
-    int auto39CB0EC4_var;
-
-    // Variable Initialization
-    lv_offsetX = 10;
-    lv_offsetY = -60;
-    lv_image = c_invalidDialogControlId;
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    Wait(2.0, c_timeGame);
-    DialogCreate(1000, 1000, c_anchorTopRight, 20, 20, true);
-    DialogSetImageVisible(DialogLastCreated(), false);
-    libCOMI_gv_selectMissionDialog = DialogLastCreated();
-    DialogSetRenderPriority(libCOMI_gv_selectMissionDialog, 9000);
-    DialogControlCreate(libCOMI_gv_selectMissionDialog, c_triggerControlTypePulldown);
-    libCOMI_gv_selectMissionPulldownDialog = DialogControlLastCreated();
-    DialogControlSetSize(libCOMI_gv_selectMissionPulldownDialog, libCOMI_gv_all, 470, 90);
-    DialogControlSetPosition(libCOMI_gv_selectMissionPulldownDialog, libCOMI_gv_all, c_anchorTopRight, 390, -5);
-    libNtve_gf_CreateDialogItemButton(libCOMI_gv_selectMissionDialog, 350, 80, c_anchorTopRight, 0, 0, StringExternal("Param/Value/lib_COMI_A3FDC3D3"), StringExternal("Param/Value/lib_COMI_8D7D1E1A"), "");
-    libCOMI_gv_startMissionDialogButton = DialogControlLastCreated();
-    DialogSetVisible(libCOMI_gv_selectMissionDialog, libCOMI_gv_all, true);
-    DialogControlSetVisible(libCOMI_gv_selectMissionPulldownDialog, libCOMI_gv_all, true);
-    DialogControlSetVisible(libCOMI_gv_startMissionDialogButton, libCOMI_gv_all, true);
-    DialogCreate(1890, 990, c_anchorTopLeft, 100, 100, true);
-    libCOMI_gv_selectMissionDialogBig = DialogLastCreated();
-    DialogSetRenderPriority(libCOMI_gv_selectMissionDialogBig, 5000);
-    DialogSetTitle(libCOMI_gv_selectMissionDialogBig, StringExternal("Param/Value/lib_COMI_033B1E98"));
-    DialogSetVisible(libCOMI_gv_selectMissionDialogBig, libCOMI_gv_all, true);
-    autoA303AEE5_ae = UserDataInstanceCount("Maps");
-    autoA303AEE5_var = 1;
-    for ( ; autoA303AEE5_var <= autoA303AEE5_ae; autoA303AEE5_var += 1 ) {
-        lv_map = UserDataInstance("Maps", autoA303AEE5_var);
-        if ((UserDataGetInt("Maps", lv_map, "Hidden", 1) == 0)) {
-            if ((((UserDataGetInt("Maps", lv_map, "Map Slot", 1) != 0) && (GameIsOnline() == true)) || ((UserDataGetString("Maps", lv_map, "localFile", 1) != "") && (GameIsOnline() == false)))) {
-                lv_x = (lv_offsetX + (220 * ((libCOMI_gv_totalMaps - (8 * (libCOMI_gv_totalMaps / 8))) - 0)));
-                lv_y = (lv_offsetY + (140 * (libCOMI_gv_totalMaps / 8)));
-                libCOMI_gv_totalMaps += 1;
-                libCOMI_gv_mapNames[libCOMI_gv_totalMaps] = UserDataGetText("Maps", lv_map, "Name", 1);
-                libCOMI_gv_mapSlots[libCOMI_gv_totalMaps] = UserDataGetInt("Maps", lv_map, "Map Slot", 1);
-                libCOMI_gv_mapFiles[libCOMI_gv_totalMaps] = UserDataGetString("Maps", lv_map, "localFile", 1);
-                DialogControlAddItem(libCOMI_gv_selectMissionPulldownDialog, libCOMI_gv_all, libCOMI_gv_mapNames[libCOMI_gv_totalMaps]);
-                libNtve_gf_CreateDialogItemButton(DialogLastCreated(), 210, 130, c_anchorTopLeft, (lv_x + 50), (lv_y + 145), UserDataGetText("Maps", lv_map, "Description", 1), libCOMI_gv_mapNames[libCOMI_gv_totalMaps], UserDataGetImagePath("Maps", lv_map, "Image", 1));
-                DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypeButton, "Coop_CommanderSelection/CommanderButtonTemplate");
-                DialogControlSetSize(DialogControlLastCreated(), libCOMI_gv_all, 210, 130);
-                DialogControlSetPosition(DialogControlLastCreated(), libCOMI_gv_all, c_anchorTopLeft, (lv_x + 50), (lv_y + 145));
-                libCOMI_gv_missionButton[libCOMI_gv_totalMaps] = DialogControlLastCreated();
-                libNtve_gf_SetDialogItemTooltip(libCOMI_gv_missionButton[libCOMI_gv_totalMaps], UserDataGetText("Maps", lv_map, "Description", 1), libCOMI_gv_all);
-                DialogControlHookup(libCOMI_gv_missionButton[libCOMI_gv_totalMaps], c_triggerControlTypeImage, "CheckMark");
-                DialogControlSetVisible(DialogControlLastCreated(), libCOMI_gv_all, false);
-                DialogControlSetVisible(libARRA_gf_HookUpDialogItemandshowforplayers("CommanderPortrait", c_triggerControlTypePortrait, libCOMI_gv_missionButton[libCOMI_gv_totalMaps], libCOMI_gv_all), libCOMI_gv_all, false);
-                libCOMI_gv_missionImage[libCOMI_gv_totalMaps] = libARRA_gf_HookUpDialogItemandshowforplayers("Locked", c_triggerControlTypeImage, libCOMI_gv_missionButton[libCOMI_gv_totalMaps], libCOMI_gv_all);
-                DialogControlSetVisible(libCOMI_gv_missionImage[libCOMI_gv_totalMaps], libCOMI_gv_all, false);
-                libCOMI_gv_missionImage[libCOMI_gv_totalMaps] = libARRA_gf_HookUpDialogItemandshowforplayers("BackgroundImage", c_triggerControlTypeImage, libCOMI_gv_missionButton[libCOMI_gv_totalMaps], libCOMI_gv_all);
-                libNtve_gf_SetDialogItemImage(libCOMI_gv_missionImage[libCOMI_gv_totalMaps], UserDataGetImagePath("Maps", lv_map, "Image", 1), libCOMI_gv_all);
-                libCOMI_gv_missionText[libCOMI_gv_totalMaps] = libARRA_gf_HookUpDialogItemandshowforplayers("CommanderName", c_triggerControlTypeLabel, libCOMI_gv_missionButton[libCOMI_gv_totalMaps], libCOMI_gv_all);
-                libNtve_gf_SetDialogItemText(libCOMI_gv_missionText[libCOMI_gv_totalMaps], libCOMI_gv_mapNames[libCOMI_gv_totalMaps], libCOMI_gv_all);
-                libCOMI_gv_mapBorder[libCOMI_gv_totalMaps] = libARRA_gf_HookUpDialogItemandshowforplayers("SelectionBorder", c_triggerControlTypeImage, libCOMI_gv_missionButton[libCOMI_gv_totalMaps], libCOMI_gv_all);
-                DialogControlSetVisible(libCOMI_gv_mapBorder[libCOMI_gv_totalMaps], libCOMI_gv_all, false);
-                libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), 200, 50, c_anchorTopLeft, (lv_x + 55), (lv_y + 230), libCOMI_gv_mapNames[libCOMI_gv_totalMaps], ColorWithAlpha(0,0,0,0), false, 2.0);
-                libCOMI_gv_missionText[libCOMI_gv_totalMaps] = DialogControlLastCreated();
-                libNtve_gf_SetDialogItemStyle(DialogControlLastCreated(), "CenterJustified", libCOMI_gv_all);
-                libNtve_gf_SetDialogItemStyle(DialogControlLastCreated(), "ModCenterSize12", libCOMI_gv_all);
-            }
-
-        }
-
-    }
-    DialogControlSelectItem(libCOMI_gv_selectMissionPulldownDialog, libCOMI_gv_all, 1);
-    DialogCreate(1200, 100, c_anchorBottomLeft, 120, 20, true);
-    libCOMI_gv_dialog = DialogLastCreated();
-    DialogSetImageVisible(DialogLastCreated(), false);
-    libNtve_gf_CreateDialogItemButton(libCOMI_gv_dialog, 200, 80, c_anchorBottomLeft, 0, 0, StringExternal("Param/Value/lib_COMI_1F33D1A1"), StringExternal("Param/Value/lib_COMI_F4C11E4E"), "");
-    libCOMI_gv_missionsButton = DialogControlLastCreated();
-    DialogControlSetVisible(libCOMI_gv_missionsButton, libCOMI_gv_all, true);
-    DialogSetVisible(libCOMI_gv_dialog, libCOMI_gv_all, true);
-    auto39CB0EC4_g = PlayerGroupActive();
-    auto39CB0EC4_var = -1;
-    while (true) {
-        auto39CB0EC4_var = PlayerGroupNextPlayer(auto39CB0EC4_g, auto39CB0EC4_var);
-        if (auto39CB0EC4_var < 0) { break; }
-        libCOMI_gf_UpdateMapSelection(auto39CB0EC4_var, 1);
-    }
-    TriggerEnable(libCOMI_gt_StartMission, true);
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libCOMI_gt_CreateMissionsDialog_Init () {
-    libCOMI_gt_CreateMissionsDialog = TriggerCreate("libCOMI_gt_CreateMissionsDialog_Func");
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -44234,6 +44238,11 @@ void libCOMI_InitTriggers () {
     libCOMI_gt_CU_FanfareDismissed_Init();
     libCOMI_gt_AF_SlimUI_Init();
     libCOMI_gt_AF_SlimUI_Delayed_Init();
+    libCOMI_gt_MapListslectionChanged_Init();
+    libCOMI_gt_MapButtonClicked_Init();
+    libCOMI_gt_MissionsButtonClicked_Init();
+    libCOMI_gt_StartMission_Init();
+    libCOMI_gt_CreateMissionsDialog_Init();
     libCOMI_gt_PerformanceSleepArea_Init();
     libCOMI_gt_CM_AutoRevealRegionController_Init();
     libCOMI_gt_TasksInitialization_Init();
@@ -44285,11 +44294,6 @@ void libCOMI_InitTriggers () {
     libCOMI_gt_CM_MissionVictoryCallbackBlockActionQueueOneMinute_Init();
     libCOMI_gt_CM_MissionVictoryCallbackBlockActionQueue_Init();
     libCOMI_gt_AF_MissionEnds_Init();
-    libCOMI_gt_MapListslectionChanged_Init();
-    libCOMI_gt_MapButtonClicked_Init();
-    libCOMI_gt_MissionsButtonClicked_Init();
-    libCOMI_gt_StartMission_Init();
-    libCOMI_gt_CreateMissionsDialog_Init();
     libCOMI_gt_CM_CinematicModeOn_Init();
     libCOMI_gt_CM_CinematicModeOff_Init();
     libCOMI_gt_CM_CampaignMissionIntroZoomIn_Init();
