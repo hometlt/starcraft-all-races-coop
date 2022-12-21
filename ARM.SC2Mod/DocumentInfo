@@ -5,7 +5,7 @@
     </ModType>
     <Dependencies>
         <Value>bnet:[ARM] LOTV/0.0/312344,file:Mods\all-races-mods\VoidBalance.SC2Mod</Value>
-        <Value>bnet:[ARM] Campaign/0.0/313122,file:Mods\all-races-coop\Campaign.SC2Mod</Value>
+        <Value>bnet:[ARM] Campaign/0.0/313122,file:Mods\all-races-mods\Campaign.SC2Mod</Value>
         <Value>bnet:[ARM] Scion Races/0.0/206557,file:Mods\all-races-mods\Scion.SC2Mod</Value>
         <Value>bnet:[ARM] UED/0.0/206558,file:Mods\all-races-mods\UED.SC2Mod</Value>
         <Value>bnet:[ARM] Network Hybrids/0.0/206556,file:Mods\all-races-mods\Hybrids.SC2Mod</Value>
