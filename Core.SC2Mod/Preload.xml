@@ -349,6 +349,9 @@
 <Effect id="NuclearAnnihilationMengskSmallNukeDropDelayCP"/>
 <Effect id="TrooperMengskEnlistingAB"/>
 <Effect id="TrooperMengskEnlistingRB"/>
+<Effect id="TrooperMengskMorphAA"/>
+<Effect id="TrooperMengskMorphFlamethrower"/>
+<Effect id="TrooperMengskMorphImproved"/>
 <Effect id="NovaGriffinGCD"/>
 <Effect id="NovaGriffinTransportCancelUnloadSet"/>
 <Effect id="NovaGriffinTransportUnhideUnitsSet"/>
